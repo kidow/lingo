@@ -1,0 +1,120 @@
+{
+  "schema": "hanja-independent-whole-native-review/v1",
+  "date": "2026-10-26",
+  "glyph": "逈",
+  "root": "hkcs_m9008",
+  "status": "PASS-whole-shape-compatible",
+  "reviewer": "ROOT direct browser panel observation, tab151",
+  "recordedBy": "C from ROOT observation; C did not operate browser",
+  "input": {
+    "config": {
+      "path": "docs/hanja-source-raw-compare-u9008-hkcs-whole-2026-10-26/config.json",
+      "SHA256": "2a88799b36a8c35e7378bcdeecddd6f2488be79435bff328ef817d0764205da1"
+    },
+    "launcher": {
+      "path": "scripts/hanja-raw-static-compare.py",
+      "SHA256": "ec72421a0aa4e7e2caf9fdf54604b5335aa199933e47876b9109c4a2330a85bd"
+    },
+    "source": {
+      "path": "docs/hanja-source-alternative-u9008-hkcs-2026-10-26/sources.json",
+      "SHA256": "966e792241d603fbde7bd3c2ec45615ce4e48d326b4294c34176942edc88de22"
+    },
+    "readiness": {
+      "path": "docs/hanja-source-alternative-u9008-hkcs-2026-10-26/source-readiness.json",
+      "SHA256": "099f87e3ee7f2caa0aa595ed14abd8dc3a02ee8845f703dead2b2c948e2fccc1"
+    },
+    "capture": {
+      "path": "docs/hanja-actual-engine-capture-u9008-hkcs-2026-10-26/capture.json",
+      "SHA256": "6afcb6fb448d79a32ac141b9f8e9d9de33daf72284c1f0f58e3618cf4e71c8b1"
+    },
+    "captureScript": {
+      "path": "docs/hanja-actual-engine-capture-u9008-hkcs-2026-10-26/capture-once.mjs",
+      "SHA256": "0ddd90c3aa324e4730b629185f54c27a84f2b0e89543fff82b2e50e69d3f3a5a"
+    },
+    "full5": {
+      "path": "docs/hanja-actual-engine-capture-u9008-hkcs-2026-10-26/engine-whole-hkcs_m9008.json",
+      "SHA256": "5c94337d91522ab21760d32fa40ea070984ef2621f8114fff78935fb0b2c8ce2"
+    }
+  },
+  "reference": {
+    "publisher": "e-hanja",
+    "examBodyOfficial": false,
+    "catalogStrokes": 9,
+    "dictionaryPlaybackStrokes": 10,
+    "clips": 10,
+    "SHA256": "d5e6ab0e623a06634a3ca3dfabee6158f17217e38262dcdebe1a7da321f29eec",
+    "privateMediaSaved": false
+  },
+  "observation": {
+    "freshWholeScreens": 1,
+    "wholeOnly": true,
+    "domesticAndSourceWholeShown": true,
+    "bothWholeBlack": true,
+    "sourceRaw": 14,
+    "sourceCalls": 15,
+    "sourceP": 27,
+    "sourceClosureRecords": 3,
+    "sourceRootVersion": "1",
+    "sourceRootVersionType": "string",
+    "original99EmptyFieldPreserved": true,
+    "outerEnclosureLeftVerticalBottomVisiblySeparatedFromSweep": true,
+    "compatibleStructure": [
+      "two left dots",
+      "upper short left-falling stroke",
+      "outer enclosure",
+      "inner mouth enclosure",
+      "walking-radical sweep"
+    ],
+    "missingRadicalObserved": false,
+    "innerMouthBottomStyleDifference": {
+      "domestic": "rounded ends",
+      "source": "flat, thicker corners",
+      "observedStructuralBlocker": false
+    },
+    "priorHoldsTransferred": false,
+    "oldCurrentJPositiveContactHOLDTransferred": false,
+    "exactGapOrContactAreaComputed": false,
+    "logical10MappingInferred": false,
+    "strokeDirectionsReviewed": false,
+    "sourceClockApproved": false,
+    "viewportWidth": null,
+    "viewportHeight": null
+  },
+  "validation": {
+    "preparationCheckOnlyPositive": 1,
+    "preparationNegativeConfigMutationsRejected": 6,
+    "checksReplayedForThisRecord": 0,
+    "engineDuringReview": 0,
+    "sourceProjection": 0
+  },
+  "postRun": {
+    "PID": 66249,
+    "port": 59412,
+    "tab": 151,
+    "cleanupStatus": "ROOT confirmed complete",
+    "PIDAbsent": true,
+    "portClosed": true,
+    "tabClosed": true,
+    "inputPinsAfterCleanupConfirmed": true,
+    "cleanupConfirmedBy": "ROOT; C did not operate server or browser",
+    "inputPinsCheckedBy": "C read-only file hashes after ROOT cleanup confirmation"
+  },
+  "wholeCompatibilityApproved": true,
+  "approval": {
+    "wholeShape": true,
+    "sourceOrder": false,
+    "direction": false,
+    "grouping": false,
+    "contactClock": false,
+    "nativeAnimation": false,
+    "runtime": false
+  },
+  "nativeAnimationApproval": false,
+  "runtimeApplied": false,
+  "limits": [
+    "Only this new authored HK whole shape was approved. Old current-J HOLD is not transferred.",
+    "Visible separation is a direct screen observation, not a new exact geometric gap or contact proof.",
+    "Source14raw/15calls/27P do not establish dictionary10 grouping or source-order correspondence.",
+    "Whole-form style variation does not approve microcontact, order, direction, progressive display, original clock or application runtime."
+  ]
+}

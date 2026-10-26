@@ -1,0 +1,110 @@
+{
+  "schema": "hanja-independent-whole-native-review/v1",
+  "date": "2026-10-26",
+  "glyph": "逈",
+  "root": "u9008-t",
+  "status": "HOLD-whole-left-walking-radical-structure",
+  "reviewer": "ROOT direct browser panel observation, tab152",
+  "recordedBy": "C from ROOT observation; C did not operate browser",
+  "input": {
+    "config": {
+      "path": "docs/hanja-source-raw-compare-u9008-t-whole-2026-10-26/config.json",
+      "SHA256": "051171f4fe6b4d8367b0f36a8691cb500daa5dcf4a1967b7afeb5f21061d9151"
+    },
+    "launcher": {
+      "path": "scripts/hanja-raw-static-compare.py",
+      "SHA256": "ec72421a0aa4e7e2caf9fdf54604b5335aa199933e47876b9109c4a2330a85bd"
+    },
+    "source": {
+      "path": "docs/hanja-source-alternative-u9008-t-2026-10-26/sources.json",
+      "SHA256": "f4ae43177a820b4d3b5f5c36c3844ac24fdabcf579f48dfabc951eeb3cc3bc08"
+    },
+    "readiness": {
+      "path": "docs/hanja-source-alternative-u9008-t-2026-10-26/source-readiness.json",
+      "SHA256": "901d5b8586a0f30a34b0035f3c0e5bb0dc538baabb8757f4229bc84bfecac3fe"
+    },
+    "capture": {
+      "path": "docs/hanja-actual-engine-capture-u9008-t-2026-10-26/capture.json",
+      "SHA256": "cc40a6df0f7f9c4897ab42a1bbcc33b63200f4aec818f144f5b4dcbb043e2914"
+    },
+    "captureScript": {
+      "path": "docs/hanja-actual-engine-capture-u9008-t-2026-10-26/capture-once.mjs",
+      "SHA256": "4c360b6acca0ae0803be22eb82beb5f4959f277967452ed8f22af23b9d00730a"
+    },
+    "full5": {
+      "path": "docs/hanja-actual-engine-capture-u9008-t-2026-10-26/engine-whole-u9008-t.json",
+      "SHA256": "5946f33b25a9b07f3ab98340f8ab1400722f5e14860e2b0a761e9b5a5c7395fd"
+    }
+  },
+  "reference": {
+    "publisher": "e-hanja",
+    "examBodyOfficial": false,
+    "catalogStrokes": 9,
+    "dictionaryPlaybackStrokes": 10,
+    "clips": 10,
+    "SHA256": "d5e6ab0e623a06634a3ca3dfabee6158f17217e38262dcdebe1a7da321f29eec",
+    "privateMediaSaved": false
+  },
+  "observation": {
+    "freshWholeScreens": 1,
+    "wholeOnly": true,
+    "domesticAndSourceWholeShown": true,
+    "sourceRaw": 15,
+    "sourceCalls": 16,
+    "sourceP": 29,
+    "sourceClosureRecords": 3,
+    "sourceRootVersion": "3",
+    "sourceRootVersionType": "string",
+    "domesticLeftStructure": "two detached dots and an independent horizontal-to-vertical-to-sweep component",
+    "sourceLeftStructure": "one detached upper dot and a lower Z-fold/bend connected vertically to the sweep",
+    "wholeStructuralMismatchObserved": true,
+    "differenceInferredFromRowCounts": false,
+    "upperFacingAndInnerMouthPresent": true,
+    "presentUpperAndInnerPartsDoNotRepairLeftMismatch": true,
+    "priorHoldsTransferred": false,
+    "oldCurrentJPositiveContactHOLDTransferred": false,
+    "exactGapOrContactAreaComputed": false,
+    "logical10MappingInferred": false,
+    "strokeDirectionsReviewed": false,
+    "sourceClockApproved": false,
+    "viewportWidth": null,
+    "viewportHeight": null
+  },
+  "validation": {
+    "preparationCheckOnlyPositive": 1,
+    "preparationNegativeConfigMutationsRejected": 6,
+    "checksReplayedForThisRecord": 0,
+    "engineDuringReview": 0,
+    "sourceProjection": 0
+  },
+  "postRun": {
+    "PID": 67214,
+    "port": 59412,
+    "tab": 152,
+    "cleanupStatus": "ROOT confirmed complete",
+    "PIDAbsent": true,
+    "portClosed": true,
+    "tabClosed": true,
+    "inputPinsAfterCleanupConfirmed": true,
+    "cleanupConfirmedBy": "ROOT; C did not operate server or browser",
+    "inputPinsCheckedBy": "C read-only file hashes after ROOT cleanup confirmation"
+  },
+  "wholeCompatibilityApproved": false,
+  "approval": {
+    "wholeShape": false,
+    "sourceOrder": false,
+    "direction": false,
+    "grouping": false,
+    "contactClock": false,
+    "nativeAnimation": false,
+    "runtime": false
+  },
+  "nativeAnimationApproval": false,
+  "runtimeApplied": false,
+  "limits": [
+    "This is a new direct T-whole structural HOLD; no current-J or HK HOLD/PASS is transferred.",
+    "The observed left radical differs structurally; raw15/calls16/P29 alone is not the reason for rejection.",
+    "Only this authored T whole is held. HK whole-only PASS is kept independently.",
+    "No source geometry, grouping, order, direction, contact-clock, native animation or runtime approval."
+  ]
+}

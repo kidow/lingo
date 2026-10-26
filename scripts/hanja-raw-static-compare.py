@@ -587,12 +587,14 @@ NEW_PUBLIC_WHOLES['u9c49-k@18']=json.loads("{\"glyph\":\"鱉\",\"catalogStrokes\
 NEW_PUBLIC_WHOLES['kesuuko_dot88-u7aea']={'glyph':'竪','catalogStrokes':13,'config':'docs/hanja-source-raw-compare-u7aea-kesuuko-whole-2026-10-26/config.json','kesuukoWhole':True,'configSemanticSHA256':'ec37acba33128f81e9ca4ada98e705ae9e51630ee600bf3fdb788ebe0ca4e107'}
 NEW_PUBLIC_WHOLES['u8587-ue0103']={'glyph':'薇','catalogStrokes':17,'config':'docs/hanja-source-raw-compare-u8587-ue0103-whole-2026-10-26/config.json','authoredWhole':'ue0103','rootVersion':'8','records':3,'counts':(19,20,42),'configSemanticSHA256':'87cff2d92ac4935434800d33f23d49fc3efa1c809f9c889e43f4a108ebecf5fc'}
 NEW_PUBLIC_WHOLES['twedu-a03578-001']={'glyph':'薇','catalogStrokes':17,'config':'docs/hanja-source-raw-compare-u8587-twedu-whole-2026-10-26/config.json','authoredWhole':'twedu','rootVersion':'3','records':6,'counts':(16,16,30),'configSemanticSHA256':'9cf83973c58cd59d59ffd7ddcb41eb184056d5b12167cbe12190a1363a44e3de'}
+NEW_PUBLIC_WHOLES["hkcs_m9008"]=json.loads("{\"glyph\":\"逈\",\"catalogStrokes\":9,\"dictionaryPlaybackStrokes\":10,\"config\":\"docs/hanja-source-raw-compare-u9008-hkcs-whole-2026-10-26/config.json\",\"authoredWhole\":\"hkcs\",\"sourcePath\":\"docs/hanja-source-alternative-u9008-hkcs-2026-10-26/sources.json\",\"capturePath\":\"docs/hanja-actual-engine-capture-u9008-hkcs-2026-10-26/capture.json\",\"rootVersion\":\"1\",\"records\":3,\"counts\":[14,15,27],\"configSemanticSHA256\":\"2f45ef5245e51c4bfd614e576c93fabc6c139037e87c631ec33e821d44f4282c\",\"u9008Dictionary10\":true}")
+NEW_PUBLIC_WHOLES["u9008-t"]=json.loads("{\"glyph\":\"逈\",\"catalogStrokes\":9,\"dictionaryPlaybackStrokes\":10,\"config\":\"docs/hanja-source-raw-compare-u9008-t-whole-2026-10-26/config.json\",\"authoredWhole\":\"t\",\"sourcePath\":\"docs/hanja-source-alternative-u9008-t-2026-10-26/sources.json\",\"capturePath\":\"docs/hanja-actual-engine-capture-u9008-t-2026-10-26/capture.json\",\"rootVersion\":\"3\",\"records\":3,\"counts\":[15,16,29],\"configSemanticSHA256\":\"742419873c7d11a82a6b7ed2608e8c3c891ea749593d6d06a2f09dd19a845f96\",\"u9008Dictionary10\":true}")
 def validate_new_public_whole(config,label,spec,path,config_path,case):
     if case.get('authoredWhole'):
         semantic={k:v for k,v in config.items()if k!='launcherSHA256'}
         require(config_path==ROOT/case['config'] and digest(json.dumps(semantic,sort_keys=True,separators=(',',':'),ensure_ascii=False).encode())==case['configSemanticSHA256'],'exact independent 薇 authored whole config required')
         require(label=='selected' and list(config['sourceRoots'])==['selected'] and path==pinned_path(spec['file']),'one exact original source only')
-        family=case['authoredWhole'];source_path=f'docs/hanja-source-alternative-u8587-{family}-2026-10-26/sources.json';capture_path=f'docs/hanja-actual-engine-capture-u8587-{family}-2026-10-26/capture.json'
+        family=case['authoredWhole'];source_path=case.get('sourcePath',f'docs/hanja-source-alternative-u8587-{family}-2026-10-26/sources.json');capture_path=case.get('capturePath',f'docs/hanja-actual-engine-capture-u8587-{family}-2026-10-26/capture.json')
         source=json.loads(pinned_path(source_path).read_bytes());cap=json.loads(pinned_path(capture_path).read_bytes());proof=json.loads(path.read_bytes())
         require(source['root']==spec['root'] and source['rootVersion']==case['rootVersion'] and type(source['rootVersion'])is str and len(source['records'])==case['records'],'original root version type and closure required')
         seen=set()
@@ -608,9 +610,15 @@ def validate_new_public_whole(config,label,spec,path,config_path,case):
         require(cap['full5']['path']==spec['file'] and cap['full5']['SHA256']==spec['fileSHA256'] and digest(path.read_bytes())==spec['fileSHA256'] and config['inputSHA256'].get(cap['helper']['path'])==cap['helper']['SHA256'],'unchanged actual capture and helper required')
         f=cap['captureFacts'];require((f['actualVMContexts'],f['vendorEvaluations'],f['captureEvaluation'],f['makeGlyphCalls'])==(1,8,1,1) and f['actualProviderRoot']==spec['root'] and f['aliasInserted']is False and f['newHeaderFromExecutedCodeBytesOnly']is True,'actual original execution without inserted aliases required')
         require(proof['engineRevision']==cap['engine']['revision']=='49232bac0348fe815f4200d4116ab7917e0db47f' and proof['engineHashes']==cap['engine']['actualLoadedHashes'] and len(proof['engineHashes'])==8,'executed engine8 header required')
-        groups,trace=proof['groups'],proof['trace'];require((len(groups),sum(map(len,trace)),sum(len(g['polygons'])for g in groups))==case['counts'] and len(trace)==len(groups),'exact independent source counts required')
+        groups,trace=proof['groups'],proof['trace'];require((len(groups),sum(map(len,trace)),sum(len(g['polygons'])for g in groups))==tuple(case['counts']) and len(trace)==len(groups),'exact independent source counts required')
         require(all(g['raw'][0]!=0 and len(g['polygons'])>0 for g in groups) and [g['polygons']for g in groups]==[[p for call in row for p in call['polygons']]for row in trace] and [len(g['polygons'])for g in groups]==spec['polygonCounts'],'original whole/trace/P and no invented metadata required')
         require(cap['nativeApproval']is False and cap['runtimeApplied']is False and all(v is False for v in cap['approval'].values()) and cap['sourceDataChanged']is False and cap['partsSubstituted']is False,'whole and animation remain unapproved')
+        if case.get('u9008Dictionary10'):
+            require(config['glyph']=='逈' and type(config['catalogStrokes'])is int and config['catalogStrokes']==9 and type(config.get('dictionaryPlaybackStrokes'))is int and config['dictionaryPlaybackStrokes']==10 and config['domestic']['clips']==10,'exact new 逈 catalogue9/private10 required')
+            require(cap['metadataRows']==[] and cap['finiteEvidence']['allActiveRawAndPCoordinatesFinite']is True and cap['finiteEvidence']['nonfiniteGeometry']==[] and cap['finiteEvidence']['unusedTailNeverCoerced']is True,'original active geometry and untouched unused tails required')
+            if spec['root']=='hkcs_m9008':
+                empty=cap['emptyFieldParserEvidence'];require(source['records']['hkcs_m9008']['data'].split('$')[0]==empty['originalRootFirstRow']=='99::0:0:0:200:200:hkcs_m8fb6-p05-s01' and empty['sourceModified']is False and empty['sourceLiteralPreserved']is True and cap['finiteEvidence']['unusedTailKinds']=={'NaN':44},'original HK empty field and44 unused tails required')
+            else:require(spec['root']=='u9008-t' and cap['emptyFieldParserEvidence']is None and cap['finiteEvidence']['unusedTailKinds']=={'NaN':46},'exact T original tail evidence required')
         return
     if case.get('kesuukoWhole'):
         semantic={k:v for k,v in config.items()if k!='launcherSHA256'}
@@ -874,7 +882,7 @@ def main():
     if original_u5ebe_config:validate_exact_u5ebe_vs2_dictionary12(config,config_path)
     if original_u83f1_family_config:validate_exact_u83f1_dictionary11_family(config,config_path)
     if original_u8910_family_config:validate_exact_u8910_dictionary13_family(config,config_path)
-    if original_u9008_config:validate_exact_u9008_dictionary10(config,config_path)
+    if original_u9008_config and not(new_public_whole and new_public_whole.get('u9008Dictionary10')):validate_exact_u9008_dictionary10(config,config_path)
     if original_u596b_config:validate_exact_u596b_dictionary15(config,config_path)
     require(type(roots)is dict and (len(roots)==10 if original_u83f1_family_config else 1<=len(roots)<=8) and config['defaultSource']in roots,'selected original roots required')
     for label,spec in roots.items():
