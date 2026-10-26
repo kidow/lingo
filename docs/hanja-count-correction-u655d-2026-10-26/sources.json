@@ -1,0 +1,53 @@
+{
+  "reviewedAt": "2026-10-26",
+  "scope": "敝 한 글자의 획수12→11 보정. 필순·경로·애니메이션 승인은 별도다.",
+  "workbook": {
+    "url": "https://www.hanja.re.kr/kccpt/exam/levelConfirm.do",
+    "sha256": "97b8db715ebe1dd6e00e8e58d338a9ba70e7420bf5ec84da38f987d60eb64b17",
+    "publicationDateKnown": false,
+    "originalRow": 5323,
+    "originalValues": ["폐", "00", "敝", "해질 폐:", "攴", "08", "12", ":"],
+    "existingEvidence": "docs/hanja-g3ii-pye-count-2026-09-13/sources.json",
+    "existingEvidenceSHA256": "bba8fd7b4e8671d2e980c6182830f2c8c7f270a97599a0ad5cb5dc2de327ed31",
+    "downloadedAgain": false
+  },
+  "grounds": [
+    {
+      "organization": "한국어문회",
+      "url": "https://www.hanja.re.kr/klea/counsel/hanjaDetail.do?id=16424",
+      "title": "敝가 攴부 8획으로 여겨지는 까닭",
+      "date": "2025-09-13",
+      "existingHTMLSHA256": "c281a39c5fff957d00d267e4d57679eaffcea4bca5e1e3eb14d505d1a889c38a",
+      "liveNativePanelReview": {"reviewer": "ROOT", "tab": "131", "answerScreenshotObserved": true, "tabClosed": true},
+      "finding": "답변은 㡀가7획이어야 한다고 명시하고, 교재의 敝8획/12획 표기를 기존 자전과 함께 바로잡아야 한다고 설명한다.",
+      "questionVersusAnswer": "질문은 㡀7 + 攵4 = 총11획이라고 쓴다. 답변의 총11획 직접 인용으로 취급하지 않으며 보정값11은 공식 구성요소 기준의 합산이다.",
+      "fetchLimits": "Firecrawl 한 차례 ERR_EMPTY_RESPONSE 후 Codex 브라우저 패널에서는 해당 공식 URL 접속과 답변 본문 직접 확인에 성공했다. HTML 원문·이미지는 새로 저장하지 않았다."
+    },
+    {
+      "organization": "중화민국 교육부",
+      "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=26212&la=0",
+      "finding": "攵는 攴의 이체이며 총4획이다.",
+      "role": "독립적인 구성요소 획수 근거이며 한국 시험의 敝 전체 자형·필순 승인으로 확대하지 않는다.",
+      "existingEvidence": "docs/hanja-count-corrections-u77a5-u9f08-2026-10-24/sources.json",
+      "existingEvidenceSHA256": "22f819def50f65c0a2c213898eb23086f8400c4a025d8bbb5565e58ca0d89c4d",
+      "fetchedAgain": false
+    }
+  ],
+  "conclusion": {"glyph": "敝", "id": "u655d", "components": [["㡀", 7], ["攵", 4]], "strokes": 11, "sourceStrokes": 12, "sourceRow": 5323, "correctionId": "eomunhoe-16424-u655d"},
+  "verification": {
+    "unrelatedCharactersSHA256BeforeAndAfter": "6944f1b3354559e3aff74bf7ac07767bb2736b020c8334af118709570d753543",
+    "otherRootMetadataSHA256BeforeAndAfter": "1085e5ef6074105589bf93d89686aa5483cf4a10d99257574fff17338b55d423",
+    "normalizerMatchesCorrectedCatalogExceptUnrelatedExampleEnrichment": true,
+    "originalRowInputUnchanged": true,
+    "changedSourceCountAndRowRejected": 2,
+    "existingTestSuite": {"tests": 7, "failures": 4, "errors": 0, "baselineWithoutNewCorrectionHasIdenticalFailures": true, "reason": "기존 테스트가 예문 보강 전의 정규화 결과를 예문이 추가된 다른 글자 카탈로그 전체와 비교해 실패한다. 이번 보정 없이도 같은4개 실패이며 관련 없는 예문이나 테스트는 수정하지 않았다."},
+    "buildRun": false,
+    "fullProjectTypeCheckRun": false
+  },
+  "limits": [
+    "식별자·자형·훈음·급수·부수·예문·원문 행·학습 기록 키는 보존한다.",
+    "공식 XLS의 발행일을 알 수 없어 상담보다 오래된 문서라고 주장하지 않는다.",
+    "획수 보정은 후보 u655d-g03의 자형·순서·방향·합획·재생 승인을 뜻하지 않는다.",
+    "기존12획 기준 검토 기록은 당시 입력으로 보존한다."
+  ]
+}
