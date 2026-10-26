@@ -1,0 +1,65 @@
+{
+  "schema": "hanja-actual-component-native-review/v1",
+  "date": "2026-10-26",
+  "glyph": "幪",
+  "status": "HOLD pen16 initial separated fragments; short13 CSS canonical fix passed",
+  "reviewer": "ROOT direct Codex browser-panel observation",
+  "profileSHA256": "dfae0dfb4a11c3417aea2aa3b97227a943c80a29cfd6ed57335893cf3ef4b3c5",
+  "componentSHA256": "fb60e43d2e8db824a102d021b8055b46014f8ad464a4939d727ae42777390bf8",
+  "helperSHA256": "9f80318ec58bc5127624112952ca320fb9c4cb00c86848c6ef091261ca8662b4",
+  "afterObservationPins": { "count": 405, "mismatches": 0 },
+  "finite": {
+    "buttons": 28,
+    "uniqueFreshStates": 57,
+    "allDOMBadAndErrorsEmpty": true,
+    "unaffectedApprovedStates": 51,
+    "heldTargetStates": 6,
+    "heldTarget": "u5e6a-hkcs-16-1",
+    "plan": "Each of seven caps and two short hooks: early3, mid-near2, complete residual; plus pen13 mask2 boundary3. Duplicate pen16 early3 enlargement is not counted again.",
+    "unchangedV1KernelStates": 26,
+    "unchangedV1KernelStatesReplayed": false
+  },
+  "short13Canonical": {
+    "sourceAttributeD": "M59.5 56 Q72.5 73.5 67.78568733133295 85.82974082574458",
+    "expectedCanonical": "path(\"M 59.5 56 Q 72.5 73.5 67.7857 85.8297\")",
+    "actualCssD": "path(\"M 59.5 56 Q 72.5 73.5 67.7857 85.8297\")",
+    "sourceAttributeExact": true,
+    "early3Mid2ResidualBoundary3": "PASS; visible source prefix, no residual visible, all target checks empty",
+    "naturalProgress": 0.19056992246349017,
+    "naturalEnd": 0.9999999999999964
+  },
+  "natural": {
+    "unaffectedUniqueObservationsApproved": 18,
+    "progressTargets": ["8-1", "12-1", "13-1", "14-1", "15-1", "17-1", "short-hook-2-3", "short-hook-13-2", "kernel-point-window-2-2", "kernel-point-window-9-2"],
+    "uniqueEndPens": [2, 8, 9, 12, 13, 14, 15, 17],
+    "duplicateEndObservations": "Pen2 and pen13 repeated after their other special mask; counted once each.",
+    "pen16ProgressObservedButNotApproved": 0.08168750001192165,
+    "endValuesPreserved": {"8": 0.9999999999999992, "12": 0.9999999999999992, "13Caps": 1, "13Hook": 0.9999999999999964, "14": 0.9999999999999992, "15": 0.9999999999999992, "17": 1, "2Hook": 0.9999999999999972, "2Kernel": 1, "9": 0.9999999999999966}
+  },
+  "completedState": {
+    "wholeImageObserved": 1,
+    "logicalPens": 17,
+    "specialTargets": 11,
+    "allSpecialTargetsExactlyOne": true,
+    "ordinarySourceMasks": 10,
+    "badAndErrorsEmpty": true,
+    "completedAppearancePassed": true,
+    "wholeAnimationApproved": false
+  },
+  "pen16Finding": {
+    "sampleProgress": 0.03,
+    "nativeLength": 18.45940589904785,
+    "nativeDistanceAndRadius": 0.5537821769714355,
+    "nativeEnd": [86.6884765625, 55.45783996582031],
+    "originalGuide": "M87 55 Q83 61 74 68",
+    "sourcePolygons": 3,
+    "sameFrameAndAllBindingChecks": true,
+    "observation": "Small separated line-like and triangular fragments appear at the initial right descending-left stroke. Confirmed both in the 200px sample and by UI pen16 progress .03 in the 520px main component. Not dismissed as antialiasing.",
+    "cause": "Pending independent public-path intersection analysis; no source geometry change or completed-state inference authorizes this initial frame."
+  },
+  "nativeApproval": false,
+  "actualAppUI": false,
+  "runtimeApplied": false,
+  "privateMediaSaved": false,
+  "server": { "ownedPID": 4106, "port": 59412, "tab": "109", "stopped": true, "pidAbsent": true, "portClosed": true, "tabClosed": true }
+}
