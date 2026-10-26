@@ -1,0 +1,85 @@
+{
+  "schema": "hanja-actual-component-native-review/v1",
+  "date": "2026-10-26",
+  "glyph": "藇",
+  "root": "hkcs_m85c7",
+  "status": "FAILED-BROWSER-INITIALIZATION-BEFORE-NATIVE-REVIEW",
+  "recordedBy": "D from ROOT browser/startup/cleanup observations and exact route readback",
+  "input": {
+    "commit": "4ef153ea6",
+    "profile": {
+      "path": "docs/hanja-actual-component-profiles-2026-10-22/u85c7-2.json",
+      "SHA256": "439bb50ebaa4884c65388582630f69d7aae6593ab184ce721516c654617c4e81"
+    },
+    "helperSHA256": "140f0c1f2758bbedf398c85148b6b432e9feef8412cacda211beca9a0dd2baee",
+    "rendererSHA256": "b21f09601449b16afd15fc0db13cc593d5e4e490e500cca94b229ad67d734737",
+    "geometrySHA256": "f9815c9af484d5f5a81ee6833768ce5b9a4e1606e5f40cdc830fd1bfabc945fc"
+  },
+  "startup": {
+    "pid": 45494,
+    "port": 59412,
+    "newSSRChecks": 1,
+    "CJSModules": 363,
+    "ESMModules": 363,
+    "ordinaryMatrixChecks": 0,
+    "engine": 0,
+    "sourceProjection": 0
+  },
+  "browser": {
+    "statusPre": "loading",
+    "controls": 0,
+    "nativeSourceFrames": 0,
+    "importMapNewModulesCorrect": true,
+    "browserJS": {
+      "httpStatus": 200,
+      "type": "text/javascript",
+      "bytes": 1434542
+    },
+    "newDependency0And1HTTP200": true,
+    "componentHTTP200": true,
+    "capsSourceInputExportPresent": true,
+    "rootAndBoardContainersPresent": true,
+    "moduleSyntaxDiagnostic": 0,
+    "errorConsoleUnavailable": true
+  },
+  "cause": {
+    "route": "/fixture.json",
+    "requiredFieldsOmitted": [
+      "capTargets",
+      "pointContactTargets",
+      "baselineCurveTargets",
+      "productPaint",
+      "naturalPlan",
+      "capExactZeroTargets",
+      "pointExactZeroTargets",
+      "pointInitialTargets",
+      "pointInitialProgress",
+      "pointContactBoundaries",
+      "pairProgress"
+    ],
+    "actualBrowserProfileKeys": [
+      "kind",
+      "glyph",
+      "pens",
+      "target",
+      "targets",
+      "attrs",
+      "prefixes"
+    ],
+    "missingKindProjection": "growing-u85c7-hkcs-caps",
+    "firstUndefinedAccess": "C.productPaint.inkColor",
+    "exceptionMessageCaptured": false,
+    "conclusion": "Missing browser-only projection fields block initialization; no geometry or product-source failure inferred."
+  },
+  "postRun": {
+    "profileSHA256": "439bb50ebaa4884c65388582630f69d7aae6593ab184ce721516c654617c4e81",
+    "helperSHA256": "140f0c1f2758bbedf398c85148b6b432e9feef8412cacda211beca9a0dd2baee",
+    "rendererSHA256": "b21f09601449b16afd15fc0db13cc593d5e4e490e500cca94b229ad67d734737",
+    "theseThreePinsUnchanged": true,
+    "pidAbsent": true,
+    "portClosed": true,
+    "tabClosed": true
+  },
+  "nativeApproval": false,
+  "runtimeApplied": false
+}
