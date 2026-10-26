@@ -1,0 +1,58 @@
+/** Isolated source-preserving pen2/4 previews. Native forward approval is pending. */
+import type {HanjaOutlineSegment,HanjaOutlineStrokes} from './hanja-stroke-outline.ts'
+import fixture from '../docs/hanja-source-original-u5a93-2026-10-26/fixtures.json' with {type:'json'}
+const FIXED=fixture.u5a93,STROKES=FIXED.strokes as HanjaOutlineStrokes,NS='http://www.w3.org/2000/svg',PREFIX='data-u5a93-remedial-start-'
+function freeze<T>(v:T):T{if(v&&typeof v==='object')for(const d of Object.values(Object.getOwnPropertyDescriptors(v)))if('value'in d)freeze(d.value);return Object.freeze(v)}
+function same(a:unknown,b:unknown):boolean{if(Object.is(a,b))return true;if(!a||!b||typeof a!=='object'||typeof b!=='object'||Array.isArray(a)!==Array.isArray(b)||Object.getPrototypeOf(a)!==Object.getPrototypeOf(b))return false;const ak=Reflect.ownKeys(a),bk=Reflect.ownKeys(b);return ak.length===bk.length&&bk.every(k=>{const x=Object.getOwnPropertyDescriptor(a,k),y=Object.getOwnPropertyDescriptor(b,k);return!!x&&!!y&&'value'in x&&'value'in y&&x.enumerable===y.enumerable&&same(x.value,y.value)})}
+freeze(FIXED)
+export type ReviewedU5a93StartsContext=Readonly<{id:'u5a93-pen2-4-source-start-preview'}>
+const CONTEXT:ReviewedU5a93StartsContext=Object.freeze({id:'u5a93-pen2-4-source-start-preview'})
+export function makeReviewedU5a93StartsContext(proof:unknown,identity:unknown,strokes:HanjaOutlineStrokes):ReviewedU5a93StartsContext|null{try{return arguments.length===3&&same(proof,FIXED.fullProof)&&same(identity,FIXED.identity)&&same(strokes,STROKES)?CONTEXT:null}catch{return null}}
+export type ReviewedU5a93StartsPolicy=Readonly<{id:string;kind:'source-Y-prefix-u5a93-pen2'|'source-point-kernel-u5a93-pen4';pen:2|4;segment:HanjaOutlineSegment;sourcePCount:2|3;authorClock:string;proofFingerprint:string;anchor:readonly[number,number]|null;previewOnly:true}>
+const POLICIES:readonly ReviewedU5a93StartsPolicy[]=freeze([
+ {id:'u5a93-remedial-start-2',kind:'source-Y-prefix-u5a93-pen2',pen:2,segment:STROKES[1][0],sourcePCount:2,authorClock:'source-author-whole-Y-prefix-27-94.35',proofFingerprint:'ba9b96fe5714f629b952a159a962b074b5b2b28746272e830d5f8d54da85f31c',anchor:null,previewOnly:true},
+ {id:'u5a93-remedial-start-4',kind:'source-point-kernel-u5a93-pen4',pen:4,segment:STROKES[3][0],sourcePCount:3,authorClock:'source-author-Q1over16-kernel-window',proofFingerprint:'45f022ddb291a67b09b36eafd78a5ecb997132175cc2aac3d6961582fe4643c6',anchor:[65.24245421875001,9.31825805078125],previewOnly:true}
+])
+export function reviewedU5a93StartsPolicy(context:ReviewedU5a93StartsContext|null,pen:number,mask:number):ReviewedU5a93StartsPolicy|null{return context===CONTEXT&&mask===0?POLICIES.find(p=>p.pen===pen+1)??null:null}
+function source(policy:ReviewedU5a93StartsPolicy,segment:HanjaOutlineSegment){if(!POLICIES.includes(policy)||!same(segment,policy.segment))throw Error('Private policy and unchanged original mask P/Q/width/weight required')}
+export function sampleReviewedU5a93StartsFrame(policy:ReviewedU5a93StartsPolicy,segment:HanjaOutlineSegment,progress:number){
+ source(policy,segment);if(!Number.isFinite(progress)||progress<0||progress>1)throw Error('Finite unit source-author progress required')
+ const A=policy.anchor,clip=A?{x:A[0]+(61-A[0])*progress,y:A[1]+(7.5-A[1])*progress,width:(69.4-61)*progress,height:(20.7-7.5)*progress}:{x:3.75,y:26,width:38.9,height:1+(94.35-27)*progress}
+ return Object.freeze({policyId:policy.id,progress,phase:progress===0?'empty':progress===1?'full':policy.kind,visible:progress>0,originalPDirect:progress===1,clip:Object.freeze(clip),cutoff:policy.pen===2?27+(94.35-27)*progress:null,anchor:A,sourcePCount:policy.sourcePCount,sourceGuide:segment.revealPath!,sourceWeight:segment.weight,sourceWidth:14 as const,sourceGroupingChanged:false as const,authorClock:policy.authorClock,originalGuideOrWeightClockEquivalent:false as const,anchorEqualsOriginalQ0:false as const,UARead:false as const,previewOnly:true as const,nativeForwardApproval:false as const,runtimeApplied:false as const})
+}
+export type ReviewedU5a93StartsNodes={group:SVGGElement|null;ink:SVGPathElement|null;rect:SVGRectElement|null;clipPath:SVGClipPathElement|null}
+function opaqueRGB(value:string):boolean{const m=/^rgba?\(([^)]+)\)$/.exec(value.trim());if(!m)return false;const s=m[1].split('/'),p=s[0].replaceAll(',',' ').trim().split(/\s+/);let a:string|undefined=s[1]?.trim();if(s.length>2)return false;if(a===undefined&&p.length===4)a=p.pop();return p.length===3&&p.every(v=>Number.isFinite(Number(v.replace('%',''))))&&(a===undefined||(a.endsWith('%')?Number(a.slice(0,-1))/100:Number(a))===1)}
+function cssSourcePath(doc:Document,value:string,outline:string):boolean{if(value==='')return true;const probe=doc.createElementNS(NS,'path');probe.style.setProperty('d','path('+JSON.stringify(outline)+')');const expected=probe.style.getPropertyValue('d');return expected!==''&&value===expected}
+/** Paint only the exact current owner/frame, or keep the original mask hidden. */
+export function commitReviewedU5a93Starts(policy:ReviewedU5a93StartsPolicy,segment:HanjaOutlineSegment,progress:number,clipId:string,nodes:ReviewedU5a93StartsNodes,frameId:string){
+ const {group:g,ink:p,rect:r,clipPath:c}=nodes,reset=()=>{p?.setAttribute('visibility','hidden');p?.setAttribute(PREFIX+'committed','false')};reset()
+ try{
+  const frame=sampleReviewedU5a93StartsFrame(policy,segment,progress),owner=g?.ownerSVGElement,doc=g?.ownerDocument,view=doc?.defaultView,pen=g?.parentNode,outer=pen?.parentNode,defs=c?.parentNode
+  if(!g||!p||!r||!c||!owner||!doc||!view||!pen||pen.nodeType!==1||!outer||outer.nodeType!==1||!defs||defs.nodeType!==1||!/^[A-Za-z0-9_:.-]+$/.test(clipId)||!clipId.endsWith('-'+(policy.pen-1)+'-0')||!/^[A-Za-z0-9_:.-]+$/.test(frameId)||view.document!==doc)throw Error('Exact original source owner/frame required')
+  const slot=pen as SVGGElement,outlines=outer as SVGGElement,key=clipId+'-u5a93-remedial-start-clip',tree:Element[]=[g,p,r,c,defs as Element],css=new Map<string,string>()
+  for(const[k,v]of Object.entries(frame.clip)){r.setAttribute(k,String(v));r.style.setProperty(k,String(v)+'px');css.set(k,r.style.getPropertyValue(k))}
+  if(frame.originalPDirect)p.removeAttribute('clip-path');else p.setAttribute('clip-path','url(#'+key+')')
+  const seen=new Set<Element>();let n:Element|null=slot
+  while(n){if(seen.has(n))throw Error('Cyclic original owner');seen.add(n);tree.push(n);if(n===owner)break;const parent:ParentNode|null=n.parentNode;n=parent&&parent.nodeType===1?parent as Element:null}
+  if(n!==owner)throw Error('Disconnected original source pen')
+  const parents=new Map(tree.map(n=>[n,n.parentNode]))
+  const exact=(visible:string,committed:boolean)=>owner.getAttribute('viewBox')==='0 0 100 100'&&slot.parentNode===outlines&&outlines.getAttribute('data-stroke-outlines')==='true'&&outlines.children.length===12&&outlines.children[policy.pen-1]===slot&&slot.getAttribute('data-outline-stroke')===String(policy.pen)&&slot.children.length===1&&slot.children[0]===g&&slot.getAttribute(PREFIX+'frame')===frameId&&slot.getAttribute(PREFIX+'progress')===String(progress)&&g.localName==='g'&&p.localName==='path'&&r.localName==='rect'&&c.localName==='clipPath'&&(defs as Element).localName==='defs'&&g.parentNode===slot&&g.children.length===2&&g.children[0]===defs&&g.children[1]===p&&p.parentNode===g&&defs.parentNode===g&&(defs as Element).children.length===1&&(defs as Element).children[0]===c&&c.children.length===1&&c.children[0]===r&&r.parentNode===c&&g.getAttribute('data-stroke-start-gate')===policy.id&&g.getAttribute('data-stroke-reveal-policy')===policy.kind&&g.getAttribute('data-stroke-reveal-progress')===String(progress)&&g.getAttribute(PREFIX+'clip')===clipId&&g.getAttribute(PREFIX+'frame')===frameId&&g.getAttribute(PREFIX+'fingerprint')===policy.proofFingerprint&&g.getAttribute(PREFIX+'source-guide')===segment.revealPath&&g.getAttribute(PREFIX+'source-weight')===String(segment.weight)&&g.getAttribute(PREFIX+'author-clock')===policy.authorClock&&g.getAttribute(PREFIX+'original-clock-equivalent')==='false'&&p.getAttribute('d')===segment.outline&&p.getAttribute('visibility')===visible&&p.getAttribute(PREFIX+'committed')===String(committed)&&p.getAttribute('clip-path')===(frame.originalPDirect?null:'url(#'+key+')')&&['mask','pathLength','stroke-dasharray','stroke-dashoffset'].every(k=>p.getAttribute(k)===null)&&c.id===key&&c.getAttribute('clipPathUnits')==='userSpaceOnUse'&&Object.entries(frame.clip).every(([k,v])=>r.getAttribute(k)===String(v))
+  const stable=(visible:string,committed:boolean)=>{
+   if(!exact(visible,committed)||owner.ownerDocument!==doc||doc.defaultView!==view||view.document!==doc)return false
+   for(const n of tree){const cs=view.getComputedStyle(n);if(!n.isConnected||n.ownerDocument!==doc||n.namespaceURI!==NS||n.parentNode!==parents.get(n)||(n!==owner&&(n as SVGElement).ownerSVGElement!==owner)||['mask','transform','filter'].some(k=>n.getAttribute(k)!==null)||(n!==p&&n.getAttribute('clip-path')!==null)||cs.display==='none'||Number(cs.opacity)!==1||Number(cs.fillOpacity)!==1||(n!==p&&cs.visibility!=='visible')||cs.transform!=='none'||cs.filter!=='none'||cs.mixBlendMode!=='normal'||!['','none'].includes(cs.getPropertyValue('mask-image'))||['translate','rotate','scale'].some(k=>!['','none'].includes(cs.getPropertyValue(k)))||(n!==p&&cs.clipPath!=='none'))return false}
+   const paint=view.getComputedStyle(p),rectStyle=view.getComputedStyle(r),probe=doc.createElementNS(NS,'path');probe.style.setProperty('clip-path',p.getAttribute('clip-path')??'none')
+   if(paint.clipPath!==probe.style.getPropertyValue('clip-path')||paint.visibility!==visible||paint.stroke!=='none'||paint.fillRule!=='nonzero'||Number(paint.fillOpacity)!==1||!opaqueRGB(paint.fill)||!cssSourcePath(doc,paint.getPropertyValue('d').trim(),segment.outline))return false
+   for(const[k,v]of css)if(v===''||r.style.getPropertyValue(k)!==v||rectStyle.getPropertyValue(k)!==v)return false
+   return exact(visible,committed)&&tree.every(n=>n.isConnected&&n.parentNode===parents.get(n)&&n.ownerDocument===doc&&(n===owner||(n as SVGElement).ownerSVGElement===owner))
+  }
+  if(!stable('hidden',false))throw Error('Changed original source owner/geometry/CSS')
+  p.setAttribute(PREFIX+'phase',frame.phase)
+  if(!stable('hidden',false))throw Error('Changed source start frame before paint')
+  p.setAttribute(PREFIX+'committed','true');p.setAttribute('visibility',frame.visible?'visible':'hidden')
+  if(!stable(frame.visible?'visible':'hidden',true))throw Error('Changed original source paint')
+  g.setAttribute(PREFIX+'error','')
+  return{status:progress===0?'empty' as const:progress===1?'complete' as const:'visible' as const,frame,cleanup:reset}
+ }catch(error){reset();const message=error instanceof Error?error.message:String(error);g?.setAttribute(PREFIX+'error',message);return{status:'hidden' as const,error:message,cleanup:reset}}
+}
+export const REVIEWED_U5A93_STARTS_INPUT=Object.freeze({fullProof:FIXED.fullProof,identity:FIXED.identity})
+export const REVIEWED_U5A93_STARTS_SOURCE=freeze({glyph:'媓',root:'u5a93',pens:12,masks:13,polygons:23,pensReviewed:[2,4],sourceGroupingChanged:false,sourceP_Q_WidthWeightsFlagsChanged:false,sourceAuthorClockNotOriginalGuideClock:true,previewOnly:true,nativeForwardApproval:false,runtimeApplied:false})

@@ -1,3 +1,4 @@
+import {makeReviewedU5a93StartsContext,REVIEWED_U5A93_STARTS_INPUT,reviewedU5a93StartsPolicy,commitReviewedU5a93Starts,type ReviewedU5a93StartsPolicy} from '@/lib/hanja-stroke-source-starts-u5a93'
 import {makeReviewedU5a93FirstPrefixContext,REVIEWED_U5A93_FIRST_PREFIX_INPUT,reviewedU5a93FirstPrefixPolicy,commitReviewedU5a93FirstPrefix,type ReviewedU5a93FirstPrefixPolicy} from '@/lib/hanja-stroke-source-prefix-u5a93-first'
 import {makeReviewedU83f0KSourceWindow10Context,REVIEWED_U83F0_K_SOURCE_WINDOW10_INPUT,reviewedU83f0KSourceWindow10Policy,commitReviewedU83f0KSourceWindow10,type ReviewedU83f0KSourceWindow10Policy} from '@/lib/hanja-stroke-source-window-u83f0-k-10'
 import {makeReviewedU655dSourceWindowContext,REVIEWED_U655D_SOURCE_WINDOW_INPUT,reviewedU655dSourceWindowPolicy,commitReviewedU655dSourceWindow,reviewedU655dBodyTailPolicy,commitReviewedU655dBodyTail,type ReviewedU655dSourceWindowPolicy,type ReviewedU655dBodyTailPolicy} from '@/lib/hanja-stroke-source-windows-u655d'
@@ -653,6 +654,7 @@ export function StrokeOutlines({ strokes, clock, phase, count, manual }: {
   const u7367FootContext = reviewedU7367FootContext(strokes)
   const u7d8cFootContext = reviewedU7d8cFootContext(strokes)
   const u6705TailContext = reviewedU6705TailContext(strokes)
+ const u5a93StartsContext=makeReviewedU5a93StartsContext(REVIEWED_U5A93_STARTS_INPUT.fullProof,REVIEWED_U5A93_STARTS_INPUT.identity,strokes)
  const u5a93FirstPreviewContext=makeReviewedU5a93FirstPrefixContext(REVIEWED_U5A93_FIRST_PREFIX_INPUT.fullProof,REVIEWED_U5A93_FIRST_PREFIX_INPUT.identity,strokes)
  const u5a93FirstPreviewFrame=id+'-first-prefix-frame-'+phase+'-'+count+'-'+String(manual)+'-'+String(elapsed)
  const u83f0KPreviewContext=makeReviewedU83f0KSourceWindow10Context(REVIEWED_U83F0_K_SOURCE_WINDOW10_INPUT.fullProof,REVIEWED_U83F0_K_SOURCE_WINDOW10_INPUT.identity,strokes)
@@ -740,6 +742,8 @@ export function StrokeOutlines({ strokes, clock, phase, count, manual }: {
       const amounts = outlineSegmentProgress(segments, progress)
       const u5a93FirstPreviewPolicy=reviewedU5a93FirstPrefixPolicy(u5a93FirstPreviewContext,stroke)
       if(u5a93FirstPreviewPolicy)return <U5a93FirstPreviewOutline key={stroke} policy={u5a93FirstPreviewPolicy} segments={segments} progress={Number.isFinite(progress)?Math.max(0,Math.min(1,progress)):NaN} frameId={u5a93FirstPreviewFrame} clipIds={[id+'-0-0',id+'-0-1']}/>
+      const u5a93StartPolicy=reviewedU5a93StartsPolicy(u5a93StartsContext,stroke,0)
+      if(u5a93StartPolicy)return <U5a93RemedialStartOutline key={stroke} policy={u5a93StartPolicy} segment={segments[0]} progress={Number.isFinite(progress)?Math.max(0,Math.min(1,progress)):NaN} frameId={u5a93FirstPreviewFrame} clipId={id+'-'+stroke+'-0'}/>
       const u705dHkcsMLogical3Policy=reviewedU705dHkcsMLogical3Policy(u705dHkcsMLogical3Context,stroke)
       if(u705dHkcsMLogical3Policy)return <g key={stroke} data-outline-stroke={stroke+1}><U705dHkcsMLogical3Outline policy={u705dHkcsMLogical3Policy} segments={segments} progress={Number.isFinite(progress)?Math.max(0,Math.min(1,progress)):NaN} clipId={id+'-'+stroke+'-u705d-hkcs-m'}/></g>
       const u6fe9HkcsMLogical3Policy=reviewedU6fe9HkcsMLogical3Policy(u6fe9HkcsMLogical3Context,stroke)
@@ -5707,6 +5711,16 @@ function U8609HkcsUnionPointOutline({policy,segment,progress,previousMaskProgres
   <defs><clipPath ref={clipPath} id={key} clipPathUnits="userSpaceOnUse"><rect ref={rect} x={policy.anchor[0]} y={policy.anchor[1]} width={0} height={0}/></clipPath></defs>
   <path ref={ink} data-u8609-hkcs-union-point-ink="true" d={segment.outline} fillRule="nonzero" clipPath={progress===1?undefined:'url(#'+key+')'} visibility="hidden"/>
  </g>
+}
+
+function U5a93RemedialStartOutline({policy,segment,progress,frameId,clipId}:{policy:ReviewedU5a93StartsPolicy;segment:HanjaOutlineSegment;progress:number;frameId:string;clipId:string}){
+ const group=useRef<SVGGElement>(null),ink=useRef<SVGPathElement>(null),rect=useRef<SVGRectElement>(null),clip=useRef<SVGClipPathElement>(null)
+ useLayoutEffect(()=>commitReviewedU5a93Starts(policy,segment,progress,clipId,{group:group.current,ink:ink.current,rect:rect.current,clipPath:clip.current},frameId).cleanup,[policy,segment,progress,clipId,frameId])
+ const key=clipId+'-u5a93-remedial-start-clip'
+ return <g data-outline-stroke={String(policy.pen)} data-u5a93-remedial-start-frame={frameId} data-u5a93-remedial-start-progress={String(progress)}><g ref={group} data-stroke-start-gate={policy.id} data-stroke-reveal-policy={policy.kind} data-stroke-reveal-progress={String(progress)} data-u5a93-remedial-start-clip={clipId} data-u5a93-remedial-start-frame={frameId} data-u5a93-remedial-start-fingerprint={policy.proofFingerprint} data-u5a93-remedial-start-source-guide={segment.revealPath??''} data-u5a93-remedial-start-source-weight={String(segment.weight)} data-u5a93-remedial-start-author-clock={policy.authorClock} data-u5a93-remedial-start-original-clock-equivalent="false">
+  <defs><clipPath ref={clip} id={key} clipPathUnits="userSpaceOnUse"><rect ref={rect} x={policy.anchor?.[0]??3.75} y={policy.anchor?.[1]??26} width={0} height={0}/></clipPath></defs>
+  <path ref={ink} data-u5a93-remedial-start-ink="true" d={segment.outline} fillRule="nonzero" clipPath={progress===1?undefined:'url(#'+key+')'} visibility="hidden"/>
+ </g></g>
 }
 
 function U5a93FirstPreviewOutline({policy,segments,progress,frameId,clipIds}:{policy:ReviewedU5a93FirstPrefixPolicy;segments:readonly HanjaOutlineSegment[];progress:number;frameId:string;clipIds:readonly[string,string]}){
