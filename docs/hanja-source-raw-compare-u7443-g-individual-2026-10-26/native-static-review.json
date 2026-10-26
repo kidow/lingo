@@ -1,0 +1,36 @@
+{
+  "schema": "hanja-original-static-correspondence-review/v1",
+  "date": "2026-10-26",
+  "glyph": "瑃",
+  "root": "u7443-g",
+  "reviewer": "ROOT 직접 Codex 브라우저 패널 관찰",
+  "status": "PASS-static-correspondence-only",
+  "inputs": {
+    "configSHA256": "cbbf8e98435e003a754cfc229ba5a372f5854f94cc9efd81a5882e266e2b0810",
+    "launcherSHA256": "154b5b6a7ecff24575b2b81b0f1ace92ea1235bde7d526970f9832f5b44cdcde",
+    "wholeSHA256": "709c291a306471e084acb00eb94191ecf6782033feef0989124b400e677c40c2"
+  },
+  "sourceGroupsOneBased": [[1],[2],[3],[4],[5],[6],[7],[8],[9],[10],[11,12],[13],[14]],
+  "qualifiedObservations": {
+    "singlePairs": [[1,1],[2,2],[3,3],[4,4],[5,5],[6,6],[7,7],[8,8],[9,9],[10,10],[11,11],[11,12],[12,13],[13,14]],
+    "prefixPairs": [[3,3],[4,4],[7,7],[9,9],[11,12],[13,14]],
+    "screens": 20,
+    "finding": "새 G 원본의 王은 국내와 같은 H,H,V,올림 대응이다. 春의 세 가로획과 두 벌어지는 획은 국내5~9획에 대응하며 오른쪽 벌어지는 획은 세 번째 가로획 높이에서 시작한다. 日의 국내11획 꺾임은 원raw11H와12V의 두 원형 부분 및 누적11↔raw12로 대조했다. 마지막 두 가로획도 개별·완성 누적으로 확인했다. 서로 다른 서체의 원좌표·굵기·끝장식이 픽셀 단위로 같다고 주장하지 않는다."
+  },
+  "exploratoryObservations": {
+    "singlePairs": [[2,3],[3,2]],
+    "screens": 2,
+    "finding": "이전 후보에서 제안된 王 순열 가설을 시험했으나 국내2는H,국내3은V여서 이 두 대응은 불일치였다. 새 원본의2↔2,3↔3을 별도로 직접 확인해 가설을 정정했다. 탐색2화면을 성공 대응 수에 포함하지 않는다."
+  },
+  "limits": {
+    "sourcePOrQEdited": false,
+    "sourceEngineReplayed": false,
+    "privateMediaSaved": false,
+    "temporalDirectionApproved": false,
+    "progressivePaintApproved": false,
+    "runtimeApplied": false,
+    "nativeLogicalGroupRendererTested": false
+  },
+  "verification": {"postObservationConfigAndLauncherHashesUnchanged": true, "qualifiedScreens": 20, "exploratoryScreens": 2},
+  "cleanup": {"PID": 11089, "port": 59412, "PIDAbsentConfirmed": true, "portClosedConfirmed": true, "ownedTabClosed": true}
+}
