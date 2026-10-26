@@ -1,0 +1,195 @@
+{
+  "schema": "hanja-public-compound-static-contact-and-start-risk/v1",
+  "date": "2026-10-26",
+  "glyph": "逈",
+  "root": "hkcs_m9008",
+  "inputs": {
+    "docs/hanja-actual-engine-capture-u9008-hkcs-2026-10-26/engine-whole-hkcs_m9008.json": "5c94337d91522ab21760d32fa40ea070984ef2621f8114fff78935fb0b2c8ce2",
+    "docs/hanja-actual-engine-capture-u9008-hkcs-2026-10-26/capture.json": "6afcb6fb448d79a32ac141b9f8e9d9de33daf72284c1f0f58e3618cf4e71c8b1",
+    "docs/hanja-source-alternative-u9008-hkcs-2026-10-26/sources.json": "966e792241d603fbde7bd3c2ec45615ce4e48d326b4294c34176942edc88de22",
+    "docs/hanja-source-original-u840d-hkcs-2026-10-25/verify-body-rising-bands.py": "2ceee7728789781ccb8bb58173b131560229dfebc794d47463bcad1f5ea00f76"
+  },
+  "results": [
+    {
+      "rawPair": [
+        3,
+        4
+      ],
+      "contact": "positive-area-original-nonzero-fill-overlap",
+      "areaOriginal200": "32",
+      "areaNormalized100": "8",
+      "positiveSlabs": [
+        {
+          "lo": "106",
+          "hi": "108",
+          "area": "16"
+        },
+        {
+          "lo": "108",
+          "hi": "110",
+          "area": "16"
+        }
+      ],
+      "firstEnd": [
+        "50",
+        "108"
+      ],
+      "nextStart": [
+        "48",
+        "108"
+      ],
+      "delta": [
+        "-2",
+        "0"
+      ],
+      "guideExact": false,
+      "gapSquaredOriginal200": "4",
+      "nextStartInFirstPStates": [
+        1
+      ],
+      "nextStartInOwnPStates": [
+        0,
+        1
+      ],
+      "firstEndInNextPStates": [
+        0,
+        1
+      ],
+      "fixedRadius14StartDiskFutureInkWitness": {
+        "W": [
+          "48",
+          "104"
+        ],
+        "halfBox": "1/100",
+        "positiveArea": "1/2500",
+        "headP1based": 2,
+        "strictHeadSupportingLineMargin": "18/11",
+        "wholeBoxInsideStartDisk14": true,
+        "wholeBoxStrictlyOutsideCompletedFirstPByBounds": true,
+        "scope": "If a fixed radius7-normalized start cap displays at transition, positive future ink outside prior can appear immediately; not an actual native renderer verdict."
+      },
+      "fixedButtNormalSectionRisk": {
+        "point": [
+          "54",
+          "108"
+        ],
+        "strictHeadMargin": "23/20",
+        "outsidePriorByX": true,
+        "normalToOriginalDownGuide": true,
+        "distanceFromStart": "6",
+        "scope": "Finite horizontal initial reach may remain even when endpoint circles shrink; all-time guide strip intersection is not certified."
+      }
+    },
+    {
+      "rawPair": [
+        5,
+        6
+      ],
+      "contact": "positive-area-original-nonzero-fill-overlap",
+      "areaOriginal200": "41256073/57414600",
+      "areaNormalized100": "41256073/229658400",
+      "positiveSlabs": [
+        {
+          "lo": "766/5",
+          "hi": "256063/1670",
+          "area": "655467/27889000"
+        },
+        {
+          "lo": "256063/1670",
+          "hi": "1547/10",
+          "area": "270766413/446224000"
+        },
+        {
+          "lo": "1547/10",
+          "hi": "774/5",
+          "area": "9773/217600"
+        },
+        {
+          "lo": "774/5",
+          "hi": "2665039/17190",
+          "area": "16216729/374054400"
+        }
+      ],
+      "firstEnd": [
+        "53",
+        "154"
+      ],
+      "nextStart": [
+        "51",
+        "150"
+      ],
+      "delta": [
+        "-2",
+        "-4"
+      ],
+      "guideExact": false,
+      "gapSquaredOriginal200": "20",
+      "nextStartInFirstPStates": [
+        -1,
+        -1,
+        -1
+      ],
+      "nextStartInOwnPStates": [
+        -1,
+        -1
+      ],
+      "firstEndInNextPStates": [
+        1,
+        -1
+      ],
+      "fixedRadius14StartDiskFutureInkWitness": {
+        "W": [
+          "55",
+          "154"
+        ],
+        "halfBox": "1/100",
+        "positiveArea": "1/2500",
+        "headP1based": 1,
+        "strictHeadSupportingLineMargin": "18/485",
+        "wholeBoxInsideStartDisk14": true,
+        "wholeBoxStrictlyOutsideCompletedFirstPByBounds": true,
+        "scope": "If a fixed radius7-normalized start cap displays at transition, positive future ink outside prior can appear immediately; not an actual native renderer verdict."
+      },
+      "initialCubicNormalSection": {
+        "originalStartDerivativeDirection": [
+          "16",
+          "20"
+        ],
+        "minForwardDotOverAllOriginalVertices": "122/5",
+        "t0NormalLineIntersectsSourceP": false,
+        "scope": "This excludes this precise t0 normal-line witness only, not later strip exposure, connectivity or clock mismatch."
+      }
+    }
+  ],
+  "method": {
+    "ASTAllowlist": [
+      "det",
+      "events",
+      "union_row",
+      "value",
+      "vec"
+    ],
+    "oldUtilityTargetLoopsExecuted": 0,
+    "exactOriginalDecimalNonzeroFillUnion": true,
+    "coordinateSpace": "original200;normalized100 distances/2 and areas/4",
+    "wholeBoxInSameHeadComponentBySupportingLineMargin": true
+  },
+  "limits": [
+    "HYPOTHESIS/static source conditions only; positive overlap does not justify logical merging, grouping, order or dynamic timing.",
+    "No forced guide join, coordinate edit, reversal, interpolation, trimming or new connector.",
+    "Fixed cap/strip risks are conditional source witnesses, not approved new policy or a fresh native observation.",
+    "The previous current-J7/400 contact result is a different input and was not recomputed or transferred.",
+    "Cross-group positive area alone is not a proof of connectivity of every decorative P or of all-time clipped-paint topology."
+  ],
+  "originalQ_C_WidthWeightsCoordsRowsChanged": false,
+  "engine": 0,
+  "projection": 0,
+  "privateRequests": 0,
+  "newNative": 0,
+  "runtimeApplied": false,
+  "verifier": {
+    "path": "docs/hanja-source-original-u9008-hkcs-2026-10-26/verify-compound-contact-and-start-risks.py",
+    "SHA256": "c6e45e688abcae17258f394e01453603e2e0cd7011b1bac1666a46dc77660ffb"
+  },
+  "calculationExecutions": 1
+}
