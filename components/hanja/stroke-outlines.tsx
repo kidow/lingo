@@ -1,3 +1,8 @@
+import {reviewedU6145HkcsCardinalPoint9Policy,sampleReviewedU6145HkcsCardinalPoint9Frame,verifyReviewedU6145HkcsCardinalPoint9PriorDOM,type ReviewedU6145HkcsCardinalPoint9Policy} from '@/lib/hanja-stroke-cardinal-point-window9-u6145-hkcs'
+import {makeReviewedU6145HkcsSourceContexts,REVIEWED_U6145_HKCS_SOURCE_INPUT} from '@/lib/hanja-stroke-source-context-u6145-hkcs'
+import {reviewedU6145HkcsPolicy,commitReviewedU6145HkcsCaps,type ReviewedU6145HkcsPolicy} from '@/lib/hanja-stroke-start-caps-u6145-hkcs'
+import {reviewedU6145HkcsUnion12Policy,sampleReviewedU6145HkcsUnion12Frame,type ReviewedU6145HkcsUnion12Policy} from '@/lib/hanja-stroke-union-point-window12-u6145-hkcs'
+import {reviewedU6145HkcsPointRect4Policy,sampleReviewedU6145HkcsPointRect4Frame,verifyReviewedU6145HkcsPointRect4Prior,type ReviewedU6145HkcsPointRect4Policy} from '@/lib/hanja-stroke-point-rect4-u6145-hkcs'
 import type {ReviewedU5e6aHkcsKernelBandContext} from '@/lib/hanja-stroke-contact-kernel-band-u5e6a-hkcs'
 import {reviewedU5e6aHkcsUnion16Policy,sampleReviewedU5e6aHkcsUnion16Frame,type ReviewedU5e6aHkcsUnion16Policy} from '@/lib/hanja-stroke-union-point-window16-u5e6a-hkcs'
 import {reviewedU8609HkcsPointRect19Context,reviewedU8609HkcsPointRect19Policy,sampleReviewedU8609HkcsPointRect19Frame,verifyReviewedU8609HkcsPointRect19Prior,type ReviewedU8609HkcsPointRect19Policy} from '@/lib/hanja-stroke-point-rect19-u8609-hkcs'
@@ -644,6 +649,7 @@ export function StrokeOutlines({ strokes, clock, phase, count, manual }: {
   const u7c67Context = reviewedU7c67Context(strokes)
   const u7c67LeftContext = reviewedU7c67LeftContext(strokes)
   const u8b92HkcsFlag5TailContext = reviewedU8b92HkcsFlag5TailContext(strokes)
+  const u6145SourceContexts=strokes.length===13?makeReviewedU6145HkcsSourceContexts(REVIEWED_U6145_HKCS_SOURCE_INPUT.fullProof,REVIEWED_U6145_HKCS_SOURCE_INPUT.identity,strokes):null
   const u8609SourceContexts=reviewedU8609HkcsSourceContexts(strokes)
   const u8609Rect19Context=reviewedU8609HkcsPointRect19Context(strokes)
   const u8609FoldContext:ReviewedU8609FoldContext|null=u8609SourceContexts?.fold??null
@@ -873,6 +879,14 @@ export function StrokeOutlines({ strokes, clock, phase, count, manual }: {
         if(u8b92HkcsPointHvPolicy)return <U8b92HkcsPointHvOutline key={index} policy={u8b92HkcsPointHvPolicy} segment={segment} progress={Number.isFinite(progress)?progress>=1?1:p:NaN} previousMaskProgress={amounts[index-1]} clipId={id+'-'+stroke+'-'+index}/>
         const u8b92HkcsHvPolicy = reviewedU8b92HkcsHvPolicy(u8b92HkcsHvContext,stroke,index)
         if(u8b92HkcsHvPolicy)return <U8b92HkcsHvOutline key={index} policy={u8b92HkcsHvPolicy} segment={segment} progress={Number.isFinite(progress)?progress>=1?1:p:NaN} previousMaskProgress={amounts[index-1]} clipId={id+'-'+stroke+'-'+index}/>
+        const u6145Rect4Policy=reviewedU6145HkcsPointRect4Policy(u6145SourceContexts?.pointRect4??null,stroke,index)
+        if(u6145Rect4Policy)return <U6145HkcsPointRect4Outline key={index} policy={u6145Rect4Policy} segment={segment} progress={Number.isFinite(progress)?progress>=1?1:p:NaN} previousMaskProgress={amounts[index-1]??0} clipId={id+'-'+stroke+'-'+index}/>
+        const u6145Union12Policy=reviewedU6145HkcsUnion12Policy(u6145SourceContexts?.union12??null,stroke,index)
+        if(u6145Union12Policy)return <U6145HkcsUnion12Outline key={index} policy={u6145Union12Policy} segment={segment} progress={Number.isFinite(progress)?progress>=1?1:p:NaN} clipId={id+'-'+stroke+'-'+index}/>
+        const u6145Point9Policy=reviewedU6145HkcsCardinalPoint9Policy(u6145SourceContexts?.point9??null,stroke,index)
+        if(u6145Point9Policy)return <U6145HkcsCardinalPoint9Outline key={index} policy={u6145Point9Policy} segment={segment} progress={Number.isFinite(progress)?progress>=1?1:p:NaN} previousMaskProgress={amounts[index-1]??0} clipId={id+'-'+stroke+'-'+index}/>
+        const u6145CapsPolicy=reviewedU6145HkcsPolicy(u6145SourceContexts?.caps??null,stroke,index)
+        if(u6145CapsPolicy)return <U6145HkcsCapsOutline key={index} policy={u6145CapsPolicy} segment={segment} progress={Number.isFinite(progress)?progress>=1?1:p:NaN} clipId={id+'-'+stroke+'-'+index}/>
         const u8609PointFoldPolicy=reviewedU8609PointFoldPolicy(u8609FoldContext,stroke,index)
         if(u8609PointFoldPolicy)return <U8609PointFoldOutline key={index} policy={u8609PointFoldPolicy} segment={segment} progress={Number.isFinite(progress)?progress>=1?1:p:NaN} previousMaskProgress={amounts[index-1]} clipId={id+'-'+stroke+'-'+index}/>
         const u8609PrefixPolicy=reviewedU8609PrefixPolicy(u8609SourceContexts?.prefix??null,stroke,index)
@@ -5460,6 +5474,121 @@ function U8609HkcsCapsOutline({policy,segment,progress,clipId}:{policy:ReviewedU
   </g>
 }
 
+
+function U6145HkcsCardinalPoint9Outline({policy,segment,progress,previousMaskProgress,clipId}:{policy:ReviewedU6145HkcsCardinalPoint9Policy;segment:HanjaOutlineSegment;progress:number;previousMaskProgress:number;clipId:string}){
+ const group=useRef<SVGGElement>(null),ink=useRef<SVGPathElement>(null),rect=useRef<SVGRectElement>(null),clipPath=useRef<SVGClipPathElement>(null)
+ useLayoutEffect(()=>{
+  const g=group.current,p=ink.current,r=rect.current,c=clipPath.current
+  const reset=()=>{p?.setAttribute('visibility','hidden');p?.setAttribute('data-u6145-hkcs-cardinal-point9-committed','false')};reset()
+  if(!g||!p||!r||!c)return reset
+  const prior=()=>!policy.predecessor||verifyReviewedU6145HkcsCardinalPoint9PriorDOM(policy,g,previousMaskProgress)
+  let f:ReturnType<typeof sampleReviewedU6145HkcsCardinalPoint9Frame>
+  try{f=sampleReviewedU6145HkcsCardinalPoint9Frame(policy,segment,progress,previousMaskProgress,prior())}catch{return reset}
+  const shape=f.clip??{x:policy.anchor[0],y:policy.anchor[1],width:0,height:0};for(const[k,v]of Object.entries(shape))r.setAttribute(k,String(v))
+  if(f.originalPDirect)p.removeAttribute('clip-path');else p.setAttribute('clip-path','url(#'+clipId+'-u6145-hkcs-cardinal-point9-clip)')
+  const owner=g.ownerSVGElement,doc=g.ownerDocument,view=doc.defaultView,defs=c.parentNode as SVGDefsElement|null,key=clipId+'-u6145-hkcs-cardinal-point9-clip'
+  const stable=()=>{
+   if(!owner||!view||!defs||defs.localName!=='defs'||defs.parentNode!==g||c.parentNode!==defs||r.parentNode!==c||c.children.length!==1||p.parentNode!==g||Array.from(g.children).filter(n=>n.localName==='path').length!==1)return false
+   if(g.getAttribute('data-stroke-start-gate')!==policy.id||g.getAttribute('data-stroke-reveal-policy')!==policy.kind||g.getAttribute('data-stroke-reveal-progress')!==String(progress)||p.getAttribute('d')!==segment.outline||p.getAttribute('mask')!==null||p.getAttribute('pathLength')!==null||c.getAttribute('id')!==key||c.getAttribute('clipPathUnits')!=='userSpaceOnUse')return false
+   if(f.originalPDirect){if(p.getAttribute('clip-path')!==null)return false}else{if(p.getAttribute('clip-path')!=='url(#'+key+')')return false}
+   const expected=f.clip??{x:policy.anchor[0],y:policy.anchor[1],width:0,height:0}
+   if(['x','y','width','height'].some(k=>r.getAttribute(k)!==String(expected[k as keyof typeof expected])))return false
+   for(const n of [g,p,defs,c,r]){if(!n.isConnected||n.ownerDocument!==doc||(n as SVGElement).ownerSVGElement!==owner||n.getAttribute('transform')!==null||n.getAttribute('filter')!==null||(n!==p&&n.getAttribute('clip-path')!==null)||n.getAttribute('mask')!==null)return false;const s=view.getComputedStyle(n);if(s.transform!=='none'||s.filter!=='none'||(n!==p&&s.clipPath!=='none')||!['','none'].includes(s.getPropertyValue('mask-image'))||Number(s.opacity)!==1||['translate','rotate','scale'].some(k=>!['','none'].includes(s.getPropertyValue(k))))return false}
+   const paint=view.getComputedStyle(p);return paint.stroke==='none'&&Number(paint.fillOpacity)===1&&paint.fill!=='none'&&paint.fill!=='transparent'&&paint.display!=='none'&&paint.visibility===p.getAttribute('visibility')&&paint.fillRule==='nonzero'&&(progress===0||prior())
+  }
+  if(!stable())return reset
+  p.setAttribute('data-u6145-hkcs-cardinal-point9-progress',String(progress));p.setAttribute('data-u6145-hkcs-cardinal-point9-phase',f.phase);p.setAttribute('data-u6145-hkcs-cardinal-point9-direct-original',String(f.originalPDirect));p.setAttribute('data-u6145-hkcs-cardinal-point9-source-full',String(f.originalPDirect));p.setAttribute('data-u6145-hkcs-cardinal-point9-one-ink','true');p.setAttribute('data-u6145-hkcs-cardinal-point9-source-subpaths',String((segment.outline.match(/M/g)||[]).length));p.setAttribute('data-u6145-hkcs-cardinal-point9-author-anchor-differs',String(f.authorAnchorDifferentFromSourceQ0));p.setAttribute('data-u6145-hkcs-cardinal-point9-ua-read','false');p.setAttribute('data-u6145-hkcs-cardinal-point9-original-line',f.originalLine);p.setAttribute('data-u6145-hkcs-cardinal-point9-segment-guide-added',String(f.segmentGuideAdded))
+  if(!stable())return reset
+  p.setAttribute('data-u6145-hkcs-cardinal-point9-committed','true');p.setAttribute('visibility',f.visible?'visible':'hidden');if(!stable())reset();return reset
+ },[policy,segment,progress,previousMaskProgress,clipId])
+ const key=clipId+'-u6145-hkcs-cardinal-point9-clip'
+ return <g ref={group} data-stroke-start-gate={policy.id} data-stroke-reveal-policy={policy.kind} data-stroke-reveal-progress={Number.isFinite(progress)?progress:'invalid'} data-u6145-cardinal-point-fingerprint={policy.proofFingerprint} data-u6145-cardinal-point-clip={clipId} data-u6145-hkcs-cardinal-point9-previous-progress={String(previousMaskProgress)} data-u6145-hkcs-cardinal-point9-display-clock="source-author-cardinal-point-window" data-u6145-hkcs-cardinal-point9-author-clock="true" data-u6145-hkcs-cardinal-point9-original-clock-equivalent="false" data-u6145-hkcs-cardinal-point9-source-guide={segment.revealPath??''}>
+  <defs><clipPath ref={clipPath} id={key} clipPathUnits="userSpaceOnUse"><rect ref={rect} x={policy.anchor[0]} y={policy.anchor[1]} width={0} height={0}/></clipPath></defs>
+  <path ref={ink} data-u6145-hkcs-cardinal-point9-ink="true" d={segment.outline} fillRule="nonzero" clipPath={progress===1?undefined:'url(#'+key+')'} visibility="hidden"/>
+ </g>
+}
+
+function U6145HkcsCapsOutline({policy,segment,progress,clipId}:{policy:ReviewedU6145HkcsPolicy;segment:HanjaOutlineSegment;progress:number;clipId:string}){
+  const measurement=useRef<SVGPathElement|null>(null),guide=useRef<SVGPathElement|null>(null),startCap=useRef<SVGCircleElement|null>(null),endCap=useRef<SVGCircleElement|null>(null),ink=useRef<SVGPathElement|null>(null)
+  useLayoutEffect(()=>commitReviewedU6145HkcsCaps(policy,segment,progress,clipId,{measurement:measurement.current,guide:guide.current,startCap:startCap.current,endCap:endCap.current,ink:ink.current}).cleanup,[policy,segment,progress,clipId])
+  const valid=Number.isFinite(progress)&&progress>=0&&progress<=1
+  return <g data-stroke-start-gate={policy.id} data-stroke-reveal-policy={policy.kind} data-u6145-hkcs-progress={String(progress)} data-u6145-hkcs-clip={clipId} data-stroke-reveal-progress={valid?progress:'invalid'}>
+    <defs>
+      <path ref={measurement} id={clipId+'-u6145-hkcs-measure'} data-growing-owner={clipId} data-u6145-hkcs-measurement="true" d={segment.revealPath} fill="none" stroke="none" visibility="hidden"/>
+      <mask id={clipId} maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100"><path d={segment.revealPath} fill="none" stroke="white" strokeWidth={segment.revealWidth} strokeLinecap="round" strokeLinejoin="miter" pathLength="1" strokeDasharray="1 2" strokeDashoffset={0}/></mask>
+      <mask id={clipId+'-u6145-hkcs-growing'} maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
+        <path ref={guide} id={clipId+'-u6145-hkcs-guide'} data-growing-owner={clipId} d={segment.revealPath} fill="none" stroke="white" strokeWidth={segment.revealWidth} strokeLinecap="butt" strokeLinejoin="miter" pathLength="1" strokeDasharray="0 2" strokeDashoffset={0}/>
+        <circle ref={startCap} data-growing-owner={clipId} cx="0" cy="0" r="0" fill="white"/><circle ref={endCap} data-growing-owner={clipId} cx="0" cy="0" r="0" fill="white"/>
+      </mask>
+    </defs>
+    {valid&&progress===1&&<path data-growing-full-round="true" d={segment.outline} mask={'url(#'+clipId+')'}/>}
+    {valid&&progress>0&&progress<1&&<path ref={ink} data-growing-owner={clipId} d={segment.outline} mask={'url(#'+clipId+'-u6145-hkcs-growing)'} visibility="hidden"/>}
+  </g>
+}
+
+
+function U6145HkcsUnion12Outline({policy,segment,progress,clipId}:{policy:ReviewedU6145HkcsUnion12Policy;segment:HanjaOutlineSegment;progress:number;clipId:string}){
+ const group=useRef<SVGGElement>(null),ink=useRef<SVGPathElement>(null),rect=useRef<SVGRectElement>(null),clipPath=useRef<SVGClipPathElement>(null)
+ let frame:ReturnType<typeof sampleReviewedU6145HkcsUnion12Frame>|null=null
+ try{frame=sampleReviewedU6145HkcsUnion12Frame(policy,segment,progress)}catch{}
+ useLayoutEffect(()=>{
+  const g=group.current,p=ink.current,r=rect.current,c=clipPath.current,f=frame
+  const reset=()=>{p?.setAttribute('visibility','hidden');p?.setAttribute('data-u6145-hkcs-union-point12-committed','false')};reset()
+  if(!g||!p||!r||!c||!f)return reset
+  const owner=g.ownerSVGElement,doc=g.ownerDocument,view=doc.defaultView,defs=c.parentNode as SVGDefsElement|null,key=clipId+'-u6145-hkcs-union-point12-clip'
+  const stable=()=>{
+   if(!owner||!view||!defs||defs.localName!=='defs'||defs.parentNode!==g||c.parentNode!==defs||r.parentNode!==c||c.children.length!==1||p.parentNode!==g||Array.from(g.children).filter(n=>n.localName==='path').length!==1)return false
+   if(g.getAttribute('data-stroke-start-gate')!==policy.id||g.getAttribute('data-stroke-reveal-policy')!==policy.kind||g.getAttribute('data-stroke-reveal-progress')!==String(progress)||p.getAttribute('d')!==segment.outline||p.getAttribute('mask')!==null||p.getAttribute('pathLength')!==null||c.getAttribute('id')!==key||c.getAttribute('clipPathUnits')!=='userSpaceOnUse')return false
+   if(f.originalPDirect){if(p.getAttribute('clip-path')!==null)return false}else{if(p.getAttribute('clip-path')!=='url(#'+key+')')return false}
+   const expected=f.clip??{x:policy.anchor[0],y:policy.anchor[1],width:0,height:0}
+   if(['x','y','width','height'].some(k=>r.getAttribute(k)!==String(expected[k as keyof typeof expected])))return false
+   for(const n of [g,p,defs,c,r]){if(!n.isConnected||n.ownerDocument!==doc||(n as SVGElement).ownerSVGElement!==owner||n.getAttribute('transform')!==null||n.getAttribute('filter')!==null||(n!==p&&n.getAttribute('clip-path')!==null)||n.getAttribute('mask')!==null)return false;const s=view.getComputedStyle(n);if(s.transform!=='none'||s.filter!=='none'||(n!==p&&s.clipPath!=='none')||!['','none'].includes(s.getPropertyValue('mask-image'))||Number(s.opacity)!==1||['translate','rotate','scale'].some(k=>!['','none'].includes(s.getPropertyValue(k))))return false}
+   const paint=view.getComputedStyle(p);return paint.stroke==='none'&&Number(paint.fillOpacity)===1&&paint.fill!=='none'&&paint.fill!=='transparent'&&paint.display!=='none'&&paint.visibility===p.getAttribute('visibility')&&paint.fillRule==='nonzero'
+  }
+  if(!stable())return reset
+  p.setAttribute('data-u6145-hkcs-union-point12-progress',String(progress));p.setAttribute('data-u6145-hkcs-union-point12-phase',f.phase);p.setAttribute('data-u6145-hkcs-union-point12-direct-original',String(f.originalPDirect));p.setAttribute('data-u6145-hkcs-union-point12-source-full',String(f.originalPDirect));p.setAttribute('data-u6145-hkcs-union-point12-one-ink','true');p.setAttribute('data-u6145-hkcs-union-point12-source-subpaths',String((segment.outline.match(/M/g)||[]).length));p.setAttribute('data-u6145-hkcs-union-point12-author-anchor-differs',String(f.authorAnchorDifferentFromSourceQ0));p.setAttribute('data-u6145-hkcs-union-point12-ua-read','false')
+  if(!stable())return reset
+  p.setAttribute('data-u6145-hkcs-union-point12-committed','true');p.setAttribute('visibility',f.visible?'visible':'hidden');if(!stable())reset();return reset
+ },[policy,segment,progress,clipId])
+ const clip=frame?.clip,key=clipId+'-u6145-hkcs-union-point12-clip'
+ return <g ref={group} data-stroke-start-gate={policy.id} data-stroke-reveal-policy={policy.kind} data-stroke-reveal-progress={Number.isFinite(progress)?progress:'invalid'} data-u6145-hkcs-union-point12-display-clock="source-author-union-point-window" data-u6145-hkcs-union-point12-author-clock="true" data-u6145-hkcs-union-point12-original-clock-equivalent="false" data-u6145-hkcs-union-point12-source-guide={segment.revealPath??''}>
+  <defs><clipPath ref={clipPath} id={key} clipPathUnits="userSpaceOnUse"><rect ref={rect} x={clip?.x??policy.anchor[0]} y={clip?.y??policy.anchor[1]} width={clip?.width??0} height={clip?.height??0}/></clipPath></defs>
+  <path ref={ink} data-u6145-hkcs-union-point12-ink="true" d={segment.outline} fillRule="nonzero" clipPath={frame?.originalPDirect?undefined:'url(#'+key+')'} visibility="hidden"/>
+ </g>
+}
+
+function U6145HkcsPointRect4Outline({policy,segment,progress,previousMaskProgress,clipId}:{policy:ReviewedU6145HkcsPointRect4Policy;segment:HanjaOutlineSegment;progress:number;previousMaskProgress:number;clipId:string}){
+ const group=useRef<SVGGElement>(null),ink=useRef<SVGPathElement>(null),rect=useRef<SVGRectElement>(null),clipPath=useRef<SVGClipPathElement>(null)
+ useLayoutEffect(()=>{
+  const g=group.current,p=ink.current,r=rect.current,c=clipPath.current
+  const reset=()=>{p?.setAttribute('visibility','hidden');p?.setAttribute('data-u6145-hkcs-point-rect4-committed','false')};reset()
+  if(!g||!p||!r||!c)return reset
+  const prior=()=>verifyReviewedU6145HkcsPointRect4Prior(policy,g,previousMaskProgress)
+  let f:ReturnType<typeof sampleReviewedU6145HkcsPointRect4Frame>
+  try{f=sampleReviewedU6145HkcsPointRect4Frame(policy,segment,progress,previousMaskProgress,prior())}catch{return reset}
+  const shape=f.clip??{x:policy.anchor[0],y:policy.anchor[1],width:0,height:0};for(const[k,v]of Object.entries(shape))r.setAttribute(k,String(v))
+  if(f.originalPDirect)p.removeAttribute('clip-path');else p.setAttribute('clip-path','url(#'+clipId+'-u6145-hkcs-point-rect4-clip)')
+  const owner=g.ownerSVGElement,doc=g.ownerDocument,view=doc.defaultView,defs=c.parentNode as SVGDefsElement|null,key=clipId+'-u6145-hkcs-point-rect4-clip'
+  const stable=()=>{
+   if(!owner||!view||!defs||defs.localName!=='defs'||defs.parentNode!==g||c.parentNode!==defs||r.parentNode!==c||c.children.length!==1||p.parentNode!==g||Array.from(g.children).filter(n=>n.localName==='path').length!==1)return false
+   if(g.getAttribute('data-stroke-start-gate')!==policy.id||g.getAttribute('data-stroke-reveal-policy')!==policy.kind||g.getAttribute('data-stroke-reveal-progress')!==String(progress)||p.getAttribute('d')!==segment.outline||p.getAttribute('mask')!==null||p.getAttribute('pathLength')!==null||c.getAttribute('id')!==key||c.getAttribute('clipPathUnits')!=='userSpaceOnUse')return false
+   if(f.originalPDirect){if(p.getAttribute('clip-path')!==null)return false}else{if(p.getAttribute('clip-path')!=='url(#'+key+')')return false}
+   const expected=f.clip??{x:policy.anchor[0],y:policy.anchor[1],width:0,height:0}
+   if(['x','y','width','height'].some(k=>r.getAttribute(k)!==String(expected[k as keyof typeof expected])))return false
+   for(const n of [g,p,defs,c,r]){if(!n.isConnected||n.ownerDocument!==doc||(n as SVGElement).ownerSVGElement!==owner||n.getAttribute('transform')!==null||n.getAttribute('filter')!==null||(n!==p&&n.getAttribute('clip-path')!==null)||n.getAttribute('mask')!==null)return false;const s=view.getComputedStyle(n);if(s.transform!=='none'||s.filter!=='none'||(n!==p&&s.clipPath!=='none')||!['','none'].includes(s.getPropertyValue('mask-image'))||Number(s.opacity)!==1||['translate','rotate','scale'].some(k=>!['','none'].includes(s.getPropertyValue(k))))return false}
+   const paint=view.getComputedStyle(p);return paint.stroke==='none'&&Number(paint.fillOpacity)===1&&paint.fill!=='none'&&paint.fill!=='transparent'&&paint.display!=='none'&&paint.visibility===p.getAttribute('visibility')&&paint.fillRule==='nonzero'&&(progress===0||prior())
+  }
+  if(!stable())return reset
+  p.setAttribute('data-u6145-hkcs-point-rect4-progress',String(progress));p.setAttribute('data-u6145-hkcs-point-rect4-phase',f.phase);p.setAttribute('data-u6145-hkcs-point-rect4-direct-original',String(f.originalPDirect));p.setAttribute('data-u6145-hkcs-point-rect4-source-full',String(f.originalPDirect));p.setAttribute('data-u6145-hkcs-point-rect4-one-ink','true');p.setAttribute('data-u6145-hkcs-point-rect4-source-subpaths',String((segment.outline.match(/M/g)||[]).length));p.setAttribute('data-u6145-hkcs-point-rect4-ua-read','false')
+  if(!stable())return reset
+  p.setAttribute('data-u6145-hkcs-point-rect4-committed','true');p.setAttribute('visibility',f.visible?'visible':'hidden');if(!stable())reset();return reset
+ },[policy,segment,progress,previousMaskProgress,clipId])
+ const key=clipId+'-u6145-hkcs-point-rect4-clip'
+ return <g ref={group} data-stroke-start-gate={policy.id} data-stroke-reveal-policy={policy.kind} data-stroke-reveal-progress={Number.isFinite(progress)?progress:'invalid'} data-u6145-point-rect4-fingerprint={policy.proofFingerprint} data-u6145-point-rect4-clip={clipId} data-u6145-hkcs-point-rect4-previous-progress={String(previousMaskProgress)} data-u6145-hkcs-point-rect4-display-clock="source-author-point-rect4" data-u6145-hkcs-point-rect4-author-clock="true" data-u6145-hkcs-point-rect4-original-clock-equivalent="false" data-u6145-hkcs-point-rect4-source-guide={segment.revealPath??''}>
+  <defs><clipPath ref={clipPath} id={key} clipPathUnits="userSpaceOnUse"><rect ref={rect} x={policy.anchor[0]} y={policy.anchor[1]} width={0} height={0}/></clipPath></defs>
+  <path ref={ink} data-u6145-hkcs-point-rect4-ink="true" d={segment.outline} fillRule="nonzero" clipPath={progress===1?undefined:'url(#'+key+')'} visibility="hidden"/>
+ </g>
+}
 
 function U8609HkcsUnionPointOutline({policy,segment,progress,previousMaskProgress,clipId}:{policy:ReviewedU8609HkcsUnionPointPolicy;segment:HanjaOutlineSegment;progress:number;previousMaskProgress:number;clipId:string}){
  const group=useRef<SVGGElement>(null),ink=useRef<SVGPathElement>(null),rect=useRef<SVGRectElement>(null),clipPath=useRef<SVGClipPathElement>(null)
