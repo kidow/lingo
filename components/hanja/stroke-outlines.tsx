@@ -1,3 +1,4 @@
+import {makeLocalU5ac2RevealContext,LOCAL_U5AC2_REVEAL_INPUT,localU5ac2RevealPolicy,commitLocalU5ac2Reveal,type LocalU5ac2RevealPolicy} from '@/lib/hanja-stroke-source-reveal-u5ac2-local'
 import {makeReviewedU83f0LocalPointWindowContext,reviewedU83f0LocalPointWindowPolicy,commitReviewedU83f0LocalPointWindow,type ReviewedU83f0LocalPointWindowPolicy} from '@/lib/hanja-stroke-source-point-windows-u83f0-local'
 import {makeLocalU83f0SourcePrefixContext,LOCAL_U83F0_SOURCE_PREFIX_INPUT,localU83f0SourcePrefixPolicy,commitLocalU83f0SourcePrefix,type LocalU83f0SourcePrefixPolicy} from '@/lib/hanja-stroke-source-prefix-u83f0-local'
 import {makeReviewedU7aeaLocalHeadTailContext,reviewedU7aeaLocalHeadTailPolicy,commitReviewedU7aeaLocalHeadTail,type ReviewedU7aeaLocalHeadTailPolicy} from '@/lib/hanja-stroke-source-head-tail-u7aea-local'
@@ -389,6 +390,8 @@ export function StrokeOutlines({ strokes, clock, phase, count, manual }: {
 }) {
   const id = useId()
   const [elapsed, setElapsed] = useState(0)
+  const u5ac2LocalRevealContext=makeLocalU5ac2RevealContext(LOCAL_U5AC2_REVEAL_INPUT.fullProof,LOCAL_U5AC2_REVEAL_INPUT.identity,strokes)
+  const u5ac2LocalRevealFrame=id+'-u5ac2-local-reveal-frame-'+phase+'-'+count+'-'+String(manual)+'-'+String(elapsed)
   const u5611Context = reviewedU5611Context(strokes)
   const u8a29Context = reviewedU8a29Context(strokes)
   const u4fd3Context = reviewedU4fd3Context(strokes)
@@ -785,6 +788,11 @@ export function StrokeOutlines({ strokes, clock, phase, count, manual }: {
       if(u840dHkcsLogical7Policy)return <g key={stroke} data-outline-stroke={stroke+1}><U840dHkcsLogical7Outline policy={u840dHkcsLogical7Policy} segments={segments} progress={Number.isFinite(progress)?Math.max(0,Math.min(1,progress)):NaN} clipId={id+'-'+stroke+'-u840d'}/></g>
       return <g key={stroke} data-outline-stroke={stroke + 1} data-u83f0-k-source-window10-owner={u83f0KPreviewContext&&stroke===9?id+'-'+stroke+'-1-owner':undefined} data-u8609-fold-owner={u8609SourceContexts&&[5,13].includes(stroke)?id+'-u8609-fold-'+(stroke+1):undefined} data-u8609-fold-pen={u8609SourceContexts&&[5,13].includes(stroke)?String(stroke+1):undefined} data-u8b92-prior14-owner={u8b92HkcsContext&&stroke===13?id+'-u8b92-prior14':undefined} data-u8b92-prior14-pen={u8b92HkcsContext&&stroke===13?'14':undefined}>{segments.map((segment, index) => {
         const p = amounts[index]
+        const u5ac2LocalRevealPolicy=localU5ac2RevealPolicy(u5ac2LocalRevealContext,stroke,index)
+        if(u5ac2LocalRevealPolicy){
+          if(p>=1)return <path key={index} d={segment.outline}/>
+          return <U5ac2LocalRevealOutline key={index} policy={u5ac2LocalRevealPolicy} segment={segment} progress={Number.isFinite(progress)?p:NaN} priorProgress={index>0?amounts[index-1]:0} clipId={id+'-'+stroke+'-'+index} logicalProgress={Number.isFinite(progress)?Math.max(0,Math.min(1,progress)):NaN} frameId={u5ac2LocalRevealFrame}/>
+        }
         const u995bLocalPointPolicy=reviewedU995bLocalPointWindowPolicy(u995bLocalPointContext,stroke,index)
         if(u995bLocalPointPolicy)return <U995bLocalPointWindowOutline key={index} policy={u995bLocalPointPolicy} segment={segment} progress={Number.isFinite(progress)?progress>=1?1:p:NaN} priorProgress={index>0?amounts[index-1]:0} clipId={id+'-'+stroke+'-'+index} logicalProgress={Number.isFinite(progress)?Math.max(0,Math.min(1,progress)):NaN} frameId={u995bLocalPrefixFrame}/>
         const u8587LocalPointPolicy=reviewedU8587LocalPointWindowPolicy(u8587LocalPointContext,stroke,index)
@@ -11753,4 +11761,10 @@ function U8587LocalPointWindowOutline({policy,segment,progress,priorProgress,log
  const group=useRef<SVGGElement>(null),ink=useRef<SVGPathElement>(null),rect=useRef<SVGRectElement>(null),clip=useRef<SVGClipPathElement>(null)
  useLayoutEffect(()=>{const result=commitReviewedU8587LocalPointWindow(policy,segment,progress,clipId,{group:group.current,ink:ink.current,rect:rect.current,clipPath:clip.current},priorProgress,logicalProgress);group.current?.setAttribute('data-u8587-local-preview-guard-status',result.status);group.current?.setAttribute('data-u8587-local-preview-guard-error',result.error??'');return result.cleanup},[policy,segment,progress,priorProgress,logicalProgress,clipId,frameId])
  return <g ref={group} data-stroke-start-gate={policy.id} data-stroke-reveal-policy={policy.kind} data-stroke-reveal-progress={String(progress)} data-u8587-local-source-window-clip={clipId} data-u8587-local-source-window-fingerprint={policy.proofFingerprint} data-u8587-local-source-window-prior-progress={String(priorProgress)} data-u8587-local-source-window-logical-progress={String(logicalProgress)}><defs><clipPath ref={clip} id={clipId+'-u8587-local-source-window-clip'} clipPathUnits="userSpaceOnUse"><rect ref={rect} x={policy.anchor[0]} y={policy.anchor[1]} width="0" height="0"/></clipPath></defs><path ref={ink} d={segment.outline} visibility="hidden"/></g>
+}
+
+function U5ac2LocalRevealOutline({policy,segment,progress,priorProgress,logicalProgress,clipId,frameId}:{policy:LocalU5ac2RevealPolicy;segment:HanjaOutlineSegment;progress:number;priorProgress:number;logicalProgress:number;clipId:string;frameId:string}){
+ const group=useRef<SVGGElement>(null),ink=useRef<SVGPathElement>(null),unionClip=useRef<SVGClipPathElement>(null),head=useRef<SVGPathElement>(null),rect=useRef<SVGRectElement>(null)
+ useLayoutEffect(()=>{const result=commitLocalU5ac2Reveal(policy,segment,progress,clipId,{group:group.current,ink:ink.current,unionClip:unionClip.current,head:head.current,rect:rect.current},priorProgress,logicalProgress,frameId);group.current?.setAttribute('data-u5ac2-local-preview-guard-status',result.status);group.current?.setAttribute('data-u5ac2-local-preview-guard-error',result.error??'');return result.cleanup},[policy,segment,progress,priorProgress,logicalProgress,clipId,frameId])
+ return <g ref={group} data-stroke-start-gate={policy.id} data-stroke-reveal-policy={policy.kind} data-stroke-reveal-progress={String(progress)} data-u5ac2-local-reveal-clip={clipId} data-u5ac2-local-reveal-fingerprint={policy.proofFingerprint} data-u5ac2-local-reveal-prior-progress={String(priorProgress)} data-u5ac2-local-reveal-logical-progress={String(logicalProgress)} data-u5ac2-local-reveal-frame={frameId}><defs><clipPath ref={unionClip} id={clipId+'-u5ac2-local-union'} clipPathUnits="userSpaceOnUse"><path ref={head} d=""/><rect ref={rect} x="0" y="0" width="0" height="0"/></clipPath></defs><path ref={ink} d={segment.outline} visibility="hidden"/></g>
 }

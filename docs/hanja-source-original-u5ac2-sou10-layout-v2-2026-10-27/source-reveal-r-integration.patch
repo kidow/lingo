@@ -1,0 +1,26 @@
+*** Begin Patch
+*** Update File: components/hanja/stroke-outlines.tsx
+@@
++import {makeLocalU5ac2RevealContext,LOCAL_U5AC2_REVEAL_INPUT,localU5ac2RevealPolicy,commitLocalU5ac2Reveal,type LocalU5ac2RevealPolicy} from '@/lib/hanja-stroke-source-reveal-u5ac2-local'
+ import {makeReviewedU83f0LocalPointWindowContext,reviewedU83f0LocalPointWindowPolicy,commitReviewedU83f0LocalPointWindow,type ReviewedU83f0LocalPointWindowPolicy} from '@/lib/hanja-stroke-source-point-windows-u83f0-local'
+@@
++  const u5ac2LocalRevealContext=makeLocalU5ac2RevealContext(LOCAL_U5AC2_REVEAL_INPUT.fullProof,LOCAL_U5AC2_REVEAL_INPUT.identity,strokes)
++  const u5ac2LocalRevealFrame=id+'-u5ac2-local-reveal-frame-'+phase+'-'+count+'-'+String(manual)+'-'+String(elapsed)
+   const u5611Context = reviewedU5611Context(strokes)
+@@
+         const p = amounts[index]
++        const u5ac2LocalRevealPolicy=localU5ac2RevealPolicy(u5ac2LocalRevealContext,stroke,index)
++        if(u5ac2LocalRevealPolicy){
++          if(p>=1)return <path key={index} d={segment.outline}/>
++          return <U5ac2LocalRevealOutline key={index} policy={u5ac2LocalRevealPolicy} segment={segment} progress={Number.isFinite(progress)?p:NaN} priorProgress={index>0?amounts[index-1]:0} clipId={id+'-'+stroke+'-'+index} logicalProgress={Number.isFinite(progress)?Math.max(0,Math.min(1,progress)):NaN} frameId={u5ac2LocalRevealFrame}/>
++        }
+@@
+  return <g ref={group} data-stroke-start-gate={policy.id} data-stroke-reveal-policy={policy.kind} data-stroke-reveal-progress={String(progress)} data-u8587-local-source-window-clip={clipId} data-u8587-local-source-window-fingerprint={policy.proofFingerprint} data-u8587-local-source-window-prior-progress={String(priorProgress)} data-u8587-local-source-window-logical-progress={String(logicalProgress)}><defs><clipPath ref={clip} id={clipId+'-u8587-local-source-window-clip'} clipPathUnits="userSpaceOnUse"><rect ref={rect} x={policy.anchor[0]} y={policy.anchor[1]} width="0" height="0"/></clipPath></defs><path ref={ink} d={segment.outline} visibility="hidden"/></g>
+ }
++
++function U5ac2LocalRevealOutline({policy,segment,progress,priorProgress,logicalProgress,clipId,frameId}:{policy:LocalU5ac2RevealPolicy;segment:HanjaOutlineSegment;progress:number;priorProgress:number;logicalProgress:number;clipId:string;frameId:string}){
++ const group=useRef<SVGGElement>(null),ink=useRef<SVGPathElement>(null),unionClip=useRef<SVGClipPathElement>(null),head=useRef<SVGPathElement>(null),rect=useRef<SVGRectElement>(null)
++ useLayoutEffect(()=>{const result=commitLocalU5ac2Reveal(policy,segment,progress,clipId,{group:group.current,ink:ink.current,unionClip:unionClip.current,head:head.current,rect:rect.current},priorProgress,logicalProgress,frameId);group.current?.setAttribute('data-u5ac2-local-preview-guard-status',result.status);group.current?.setAttribute('data-u5ac2-local-preview-guard-error',result.error??'');return result.cleanup},[policy,segment,progress,priorProgress,logicalProgress,clipId,frameId])
++ return <g ref={group} data-stroke-start-gate={policy.id} data-stroke-reveal-policy={policy.kind} data-stroke-reveal-progress={String(progress)} data-u5ac2-local-reveal-clip={clipId} data-u5ac2-local-reveal-fingerprint={policy.proofFingerprint} data-u5ac2-local-reveal-prior-progress={String(priorProgress)} data-u5ac2-local-reveal-logical-progress={String(logicalProgress)} data-u5ac2-local-reveal-frame={frameId}><defs><clipPath ref={unionClip} id={clipId+'-u5ac2-local-union'} clipPathUnits="userSpaceOnUse"><path ref={head} d=""/><rect ref={rect} x="0" y="0" width="0" height="0"/></clipPath></defs><path ref={ink} d={segment.outline} visibility="hidden"/></g>
++}
+*** End Patch
