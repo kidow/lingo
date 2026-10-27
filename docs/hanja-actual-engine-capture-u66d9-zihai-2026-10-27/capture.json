@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "glyph": "曙",
+  "date": "2026-10-27",
+  "source": {
+    "path": "docs/hanja-actual-engine-capture-u66d9-zihai-2026-10-27/sources.json",
+    "SHA256": "5da3ef7728cbb3b0ae414ef68cd4faae6f91846370c0d3731a72897377c361ae"
+  },
+  "helper": {
+    "path": "docs/hanja-actual-engine-capture-u66d9-zihai-2026-10-27/capture-once.mjs",
+    "SHA256": "385420119ed35096df365a6ee38f96e4242b629cdb83f4372310e54634f451b5"
+  },
+  "full5": {
+    "path": "docs/hanja-actual-engine-capture-u66d9-zihai-2026-10-27/engine-whole-zihai-084458.json",
+    "SHA256": "ef1bb04b161ac56f22ced56d230d61ba303bb63db00ba06040a1feb682f0afed"
+  },
+  "preflight": {
+    "completed": true,
+    "actualVMContexts": 0,
+    "makeGlyphCalls": 0,
+    "records": [
+      "zihai-084458",
+      "u65e5-01",
+      "u7f52-03",
+      "u723b-09",
+      "u65e5-04"
+    ],
+    "recordVersions": {
+      "zihai-084458": "1",
+      "u65e5-01": 10,
+      "u7f52-03": 7,
+      "u723b-09": 1,
+      "u65e5-04": 4
+    }
+  },
+  "actual": {
+    "sourcePath": "docs/hanja-actual-engine-capture-u66d9-zihai-2026-10-27/sources.json",
+    "sourceSHA256": "5da3ef7728cbb3b0ae414ef68cd4faae6f91846370c0d3731a72897377c361ae",
+    "actualProviderRoot": "zihai-084458",
+    "rootVersion": "1",
+    "recordVersions": {
+      "zihai-084458": "1",
+      "u65e5-01": 10,
+      "u7f52-03": 7,
+      "u723b-09": 1,
+      "u65e5-04": 4
+    },
+    "actualVMContexts": 1,
+    "vendorEvaluations": 8,
+    "captureEvaluation": 1,
+    "makeGlyphCalls": 1,
+    "instrumentSHA256": "89aa7d85dbcd9edafecad81e53f2bef2ff03ba2bb6d4289f211fb114ba273f5e",
+    "raw": 20,
+    "calls": 20,
+    "polygons": 29,
+    "wholePolygonsSHA256": "8b20556b1f2f5b2060351d3a7513a3dea6af85872fde6be11c9a7fc4c64d7e1d",
+    "wholeAndTracePolygonsExactlySame": true,
+    "diagnostics": {
+      "genericGuardPassed": true,
+      "badRaw": [],
+      "finiteCalls": true,
+      "finiteP": true,
+      "wholeMatches": true,
+      "traceMatches": true,
+      "errors": []
+    },
+    "aliasInserted": false,
+    "sourceRowsChanged": false,
+    "newLocalComposite": false,
+    "partSubstitution": false,
+    "sourceProjection": 0,
+    "nativeApproval": false,
+    "runtimeApplied": false
+  },
+  "history": {
+    "preflightAttempts": 1,
+    "preflightEngineExecutions": 0,
+    "actualCaptureAttempts": 1,
+    "actualVMContexts": 1,
+    "totalMakeGlyphCalls": 1,
+    "repeatedCaptureAttempts": 0,
+    "discardedActualOutputs": 0,
+    "originalGuardFailures": 0
+  },
+  "reviewReadiness": {
+    "wholeStaticCandidate": true,
+    "originalFourCurveBodyNotMappedToKoreanDot": true,
+    "rawDrawingCountNotFormalStrokeGrouping": true,
+    "previousWholePolygonsOrGapTransferred": false,
+    "wholeShapeReviewed": false,
+    "membershipApproved": false,
+    "orderApproved": false,
+    "directionApproved": false,
+    "contactApproved": false,
+    "sourceClockApproved": false,
+    "componentReuseApproved": false,
+    "nativeApproval": false,
+    "runtimeApplied": false
+  },
+  "next": "Request one strict whole-only native comparison before assigning any original curve to a Korean dot or invoking detailed direction/membership review. Shared raw viewer is not changed by this capture.",
+  "resources": {
+    "APIRequests": 0,
+    "serversStarted": 0,
+    "builds": 0,
+    "fullTypeChecks": 0,
+    "sharedFilesChanged": false,
+    "registryChanged": false
+  }
+}
