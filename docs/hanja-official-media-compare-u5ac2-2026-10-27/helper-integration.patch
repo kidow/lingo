@@ -1,0 +1,18 @@
+*** Begin Patch
+*** Update File: scripts/hanja-official-media-compare.py
+@@
+         require(config['glyph']=='莽' and config['sourceRoot']=='u83bd-t' and config['domesticClips']==11 and config['allowedStrokes']==list(range(1,12)) and config['metadataFile']=='docs/hanja-official-media-compare-u83bd-2026-10-25/metadata.json', 'Exact 莽 original11 control config required')
+         require(metadata['glyph']=='莽' and metadata['candidate']['strokes']==metadata['catalogStrokes']==12 and metadata['dictionaryStrokes']==metadata['dictionary']['clips']==11, 'Preserve 莽 catalogue12 and original11 separately')
+         require(config['media']['svg']=={'url':'http://img.e-hanja.kr/hanjaSvg/aniSVG/8300/83bd.svg','bytes':6167,'sha256':'107d4827848943479fd58bb4e5b579e64dbeb9314a77c248b3d8fd3d3e113235'}, 'Exact 莽 original-media bytes required')
++    elif path == ROOT/'docs/hanja-official-media-compare-u5ac2-2026-10-27/config.json':
++        require(config['glyph']=='嫂' and config['sourceRoot']=='u5ac2' and config['domesticClips']==13 and config['allowedStrokes']==list(range(1,14)) and config['defaultStroke']==1 and config['metadataFile']=='docs/hanja-goal-glyphwiki-batch1091-2026-10-13/metadata.json', 'Exact 嫂 original13 clock-audit config required')
++        require(config['metadataSHA256']=='66d6f90264725f8c0dc58d264f2f0cd539420cc08b32f3471c7247085be9b91a' and metadata['glyph']=='嫂' and metadata['candidate']['strokes']==12 and metadata['dictionaryStrokes']==metadata['dictionary']['clips']==13, 'Preserve 嫂 catalog12 and original13 separately')
++        require(config['media']['svg']=={'url':'http://img.e-hanja.kr/hanjaSvg/aniSVG/5a00/5ac2.svg','bytes':7231,'sha256':'14a3854c144db993f43765aeafda9dcb8c63a3bcbf97a100db9e372ed9e3cd20'}, 'Exact 嫂 original media required')
++        safe_raw=pinned_path('docs/hanja-official-media-compare-u5ac2-2026-10-27/safe-source-metadata.json').read_bytes()
++        require(sha(safe_raw)=='bbe619129ced4ae23fbe0d29e24a31f039bed64f97bf65fae756839831dd03de','Exact safe-only 嫂 timing audit metadata required')
++        safe=json.loads(safe_raw)
++        require(safe['glyph']=='嫂' and safe['bodyOutputOrFileSaved']is False and safe['logicalPensFromTimingApproved']is False and config['svgRoot']==safe['svgRoot'] and config['timedPaths']==safe['timedPaths'], 'Unchanged original 嫂 root/timing pins required; no logical count inference')
+     else:
+         require(metadata['glyph'] == config['glyph'] and metadata['candidate']['strokes'] == config['domesticClips'] == metadata['dictionary']['clips'], 'Domestic/catalog identity mismatch')
+     require({k:metadata['dictionary'][k] for k in ['url','bytes','sha256']} == config['media']['svg'], 'Original dictionary pin mismatch')
+*** End Patch
