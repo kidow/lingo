@@ -11,11 +11,11 @@ const read=(p:string)=>readFileSync(new URL('../'+p,import.meta.url)),json=(p:st
 function project1505PinnedInput(p:string,h:string,raw:Buffer,patches?:readonly Buffer[]):Buffer {
  if(hash(raw)===h)return raw
  assert.equal(p,'scripts/hanja-actual-component-review.mjs');assert.equal(h,'016ea5c818b111dc45de676c3d5c737b841e4c0eff03c2a46042c0fc485d8618')
- assert.equal(hash(raw),'462e9fe2a7b321dc510bf677b1c635290eda5ae387f68b2dc26b5a9132fdec8d')
- const chain=[['baseline-H-closure-integration.patch','6d830a6aec4cfdb249e4d796bc79a6edb153de142415a0659f90ec353aaeb16c','a637f5e2e86a7cb38ff2ed6290da9f64a7675c0fbbba55b30d7dbf066e10d621'],['baseline-H-integration.patch','0273d4f5e041577be864000379d580183f777fda8d122abab4c813ecf6874427',h]] as const
- if(patches)assert.equal(patches.length,2);let projected=raw.toString('utf8');assert(Buffer.from(projected).equals(raw))
+ assert.equal(hash(raw),'de558366f8550fa7186b81f770f25be9690efd0efc5f0b933447f0b9f4e0e9bc')
+ const chain=[['docs/hanja-source-original-u5ac2-sou10-layout-v2-2026-10-27/baseline-h-integration.patch','873323aba1f6a3f24d40ebbbb71867ac7c2bfbabfa022ec374e828a24aaa1dc1','462e9fe2a7b321dc510bf677b1c635290eda5ae387f68b2dc26b5a9132fdec8d'],['docs/hanja-source-original-u9008-hkcs-2026-10-27/baseline-H-closure-integration.patch','6d830a6aec4cfdb249e4d796bc79a6edb153de142415a0659f90ec353aaeb16c','a637f5e2e86a7cb38ff2ed6290da9f64a7675c0fbbba55b30d7dbf066e10d621'],['docs/hanja-source-original-u9008-hkcs-2026-10-27/baseline-H-integration.patch','0273d4f5e041577be864000379d580183f777fda8d122abab4c813ecf6874427',h]] as const
+ if(patches)assert.equal(patches.length,3);let projected=raw.toString('utf8');assert(Buffer.from(projected).equals(raw))
  for(const[index,[file,patchSHA,restoredSHA]]of chain.entries()){
- const fixedPatch=patches?.[index]??read('docs/hanja-source-original-u9008-hkcs-2026-10-27/'+file);assert.equal(hash(fixedPatch),patchSHA)
+ const fixedPatch=patches?.[index]??read(file);assert.equal(hash(fixedPatch),patchSHA)
  const lines=fixedPatch.toString('utf8').split('\n');assert.equal(lines[0],'*** Begin Patch');assert.equal(lines[1],'*** Update File: scripts/hanja-actual-component-review.mjs');assert.equal(lines.at(-2),'*** End Patch');assert.equal(lines.at(-1),'')
  const hunks:string[][]=[];let hunk:string[]=[]
  for(const line of lines.slice(2,-2)){if(line==='@@'){if(hunk.length)hunks.push(hunk);hunk=[]}else{assert(/^[ +\-]/.test(line),'Exact native patch line');hunk.push(line)}}if(hunk.length)hunks.push(hunk);assert(hunks.length>0)
@@ -56,12 +56,12 @@ test('1505 binds final finite-native review and source pins while ROOT runtime r
  assert.equal(source.review.reviewedEffectiveComponentSHA256,hash(read('components/hanja/stroke-outlines.tsx')))
  const notice=read('public/hanja-strokes/glyphwiki/NOTICE-995b.md').toString();assert(notice.includes('공개 원래 whole이 아니')&&notice.includes('시험주관기관 공식 인증이 아니'));assert.equal(source.review.all23NaturalPlaybackVerified,false)
 })
-test('1505 narrow review-harness projection accepts only exact 逈 patch and rejects foreign changes',()=>{
- const p='scripts/hanja-actual-component-review.mjs',h='016ea5c818b111dc45de676c3d5c737b841e4c0eff03c2a46042c0fc485d8618',raw=read(p),patches=['baseline-H-closure-integration.patch','baseline-H-integration.patch'].map(file=>read('docs/hanja-source-original-u9008-hkcs-2026-10-27/'+file))
- assert.equal(hash(raw),'462e9fe2a7b321dc510bf677b1c635290eda5ae387f68b2dc26b5a9132fdec8d')
+test('1505 narrow review-harness projection accepts only exact reviewed extensions and rejects foreign changes',()=>{
+ const p='scripts/hanja-actual-component-review.mjs',h='016ea5c818b111dc45de676c3d5c737b841e4c0eff03c2a46042c0fc485d8618',raw=read(p),patches=['docs/hanja-source-original-u5ac2-sou10-layout-v2-2026-10-27/baseline-h-integration.patch','docs/hanja-source-original-u9008-hkcs-2026-10-27/baseline-H-closure-integration.patch','docs/hanja-source-original-u9008-hkcs-2026-10-27/baseline-H-integration.patch'].map(read)
+ assert.equal(hash(raw),'de558366f8550fa7186b81f770f25be9690efd0efc5f0b933447f0b9f4e0e9bc')
  const historical=project1505PinnedInput(p,h,raw,patches);assert.equal(hash(historical),h);assert.strictEqual(project1505PinnedInput(p,h,historical),historical)
  assert.throws(()=>project1505PinnedInput(p,h,Buffer.concat([raw,Buffer.from('\n')]),patches))
- for(const index of[0,1]){const changed=[...patches];changed[index]=Buffer.concat([changed[index],Buffer.from('\n')]);assert.throws(()=>project1505PinnedInput(p,h,raw,changed))}
+ for(const index of[0,1,2]){const changed=[...patches];changed[index]=Buffer.concat([changed[index],Buffer.from('\n')]);assert.throws(()=>project1505PinnedInput(p,h,raw,changed))}
  assert.throws(()=>project1505PinnedInput('scripts/foreign-review.mjs',h,raw,patches))
  assert.throws(()=>project1505PinnedInput(p,'0'.repeat(64),raw,patches))
 })
