@@ -1,0 +1,39 @@
+{
+  "schema": "hanja-R-RAM-preview-substitutions/v1",
+  "baseComponent": "components/hanja/stroke-outlines.tsx",
+  "baseSHA256": "e753fbe759cbb66cb1ba6c107e164908e9d19a4a6b736645fa385a0e0dd832e5",
+  "scope": {
+    "root": "lingo-u7aea-no-extra-v1",
+    "kind": "plain-outline",
+    "previewComponentAdapter": "u7aea-local-source-preview-1",
+    "productionFileWrite": false,
+    "glyph": "竪",
+    "locallyAuthoredRoot": true,
+    "originalPublicWholeClaim": false,
+    "nativeApproval": false,
+    "runtimeApplied": false
+  },
+  "replacements": [
+    {
+      "old": "import {makeReviewedU5a93StartsContext",
+      "new": "import {makeReviewedU7aeaLocalHeadTailContext,reviewedU7aeaLocalHeadTailPolicy,commitReviewedU7aeaLocalHeadTail,type ReviewedU7aeaLocalHeadTailPolicy} from '@/lib/hanja-stroke-source-head-tail-u7aea-local'\nimport {makeLocalU7aeaSourcePrefixContext,LOCAL_U7AEA_SOURCE_PREFIX_INPUT,localU7aeaSourcePrefixPolicy,commitLocalU7aeaSourcePrefix,type LocalU7aeaSourcePrefixPolicy} from '@/lib/hanja-stroke-source-prefix-u7aea-local'\nimport {makeReviewedU5a93StartsContext"
+    },
+    {
+      "old": " const u5a93FirstPreviewFrame=",
+      "new": " const u7aeaLocalPointContext=makeReviewedU7aeaLocalHeadTailContext(LOCAL_U7AEA_SOURCE_PREFIX_INPUT.fullProof,LOCAL_U7AEA_SOURCE_PREFIX_INPUT.identity,strokes)\n const u7aeaLocalPrefixContext=makeLocalU7aeaSourcePrefixContext(LOCAL_U7AEA_SOURCE_PREFIX_INPUT.fullProof,LOCAL_U7AEA_SOURCE_PREFIX_INPUT.identity,strokes)\n const u7aeaLocalPrefixFrame=id+'-u7aea-local-prefix-frame-'+phase+'-'+count+'-'+String(manual)+'-'+String(elapsed)\n const u5a93FirstPreviewFrame="
+    },
+    {
+      "old": "      const amounts = outlineSegmentProgress(segments, progress)",
+      "new": "      const u7aeaLocalPrefixPolicy=localU7aeaSourcePrefixPolicy(u7aeaLocalPrefixContext,stroke)\n      if(u7aeaLocalPrefixPolicy)return <U7aeaLocalPrefixPreviewOutline key={stroke} policy={u7aeaLocalPrefixPolicy} segments={segments} progress={Number.isFinite(progress)?Math.max(0,Math.min(1,progress)):NaN} frameId={u7aeaLocalPrefixFrame} clipIds={segments.map((_,index)=>id+'-'+stroke+'-'+index)}/>\n      const amounts = outlineSegmentProgress(segments, progress)"
+    },
+    {
+      "old": "        const p = amounts[index]",
+      "new": "        const p = amounts[index]\n        const u7aeaLocalPointPolicy=reviewedU7aeaLocalHeadTailPolicy(u7aeaLocalPointContext,stroke,index)\n        if(u7aeaLocalPointPolicy)return <U7aeaLocalHeadTailOutline key={index} policy={u7aeaLocalPointPolicy} segment={segment} progress={Number.isFinite(progress)?progress>=1?1:p:NaN} priorProgress={index>0?amounts[index-1]:0} clipId={id+'-'+stroke+'-'+index} frameId={u7aeaLocalPrefixFrame}/>"
+    }
+  ],
+  "append": "\nfunction U7aeaLocalPrefixPreviewOutline({policy,segments,progress,frameId,clipIds}:{policy:LocalU7aeaSourcePrefixPolicy;segments:readonly HanjaOutlineSegment[];progress:number;frameId:string;clipIds:readonly string[]}){\n const groups=useRef<(SVGGElement|null)[]>([]),inks=useRef<(SVGPathElement|null)[]>([]),rects=useRef<(SVGRectElement|null)[]>([]),clips=useRef<(SVGClipPathElement|null)[]>([])\n useLayoutEffect(()=>{const result=commitLocalU7aeaSourcePrefix(policy,segments,progress,clipIds,segments.map((_,i)=>({group:groups.current[i],ink:inks.current[i],rect:rects.current[i],clipPath:clips.current[i]})));const slot=groups.current[0]?.parentElement;slot?.setAttribute('data-u7aea-local-preview-guard-status',result.status);slot?.setAttribute('data-u7aea-local-preview-guard-error',result.status==='hidden'?result.error:'');return result.cleanup},[policy,segments,progress,frameId,clipIds.join('|')])\n return <g data-outline-stroke={String(policy.pen)} data-u7aea-local-prefix-frame={frameId} data-u7aea-local-prefix-progress={String(progress)}>{segments.map((segment,index)=><g key={index} ref={node=>{groups.current[index]=node}} data-stroke-start-gate={policy.id} data-stroke-reveal-policy={policy.kind} data-stroke-reveal-progress={String(progress)} data-u7aea-local-prefix-mask={String(index+1)} data-u7aea-local-prefix-clip={clipIds[index]} data-u7aea-local-prefix-fingerprint={policy.proofFingerprint} data-u7aea-local-prefix-frame={frameId} data-u7aea-local-prefix-source-guide={segment.revealPath??''} data-u7aea-local-prefix-source-weight={String(segment.weight)} data-u7aea-local-prefix-author-clock=\"source-author-common-axis-prefix\" data-u7aea-local-prefix-original-clock-equivalent=\"false\">\n  <defs><clipPath ref={node=>{clips.current[index]=node}} id={clipIds[index]+'-u7aea-local-prefix-clip'} clipPathUnits=\"userSpaceOnUse\"><rect ref={node=>{rects.current[index]=node}} x={0} y={0} width={0} height={0}/></clipPath></defs>\n  <path ref={node=>{inks.current[index]=node}} data-u7aea-local-prefix-ink=\"true\" d={segment.outline} fillRule=\"nonzero\" clipPath={progress===1?undefined:'url(#'+clipIds[index]+'-u7aea-local-prefix-clip)'} visibility=\"hidden\"/>\n </g>)}</g>\n}\n\nfunction U7aeaLocalHeadTailOutline({policy,segment,progress,priorProgress,clipId,frameId}:{policy:ReviewedU7aeaLocalHeadTailPolicy;segment:HanjaOutlineSegment;progress:number;priorProgress:number;clipId:string;frameId:string}){\n const group=useRef<SVGGElement>(null),ink=useRef<SVGPathElement>(null),rect=useRef<SVGRectElement>(null),clip=useRef<SVGClipPathElement>(null)\n useLayoutEffect(()=>{const result=commitReviewedU7aeaLocalHeadTail(policy,segment,progress,clipId,{group:group.current,ink:ink.current,rect:rect.current,clipPath:clip.current},priorProgress);group.current?.setAttribute('data-u7aea-local-preview-guard-status',result.status);group.current?.setAttribute('data-u7aea-local-preview-guard-error',result.error??'');return result.cleanup},[policy,segment,progress,priorProgress,clipId,frameId])\n return <g ref={group} data-stroke-start-gate={policy.id} data-stroke-reveal-policy={policy.kind} data-stroke-reveal-progress={String(progress)} data-u7aea-local-head-tail-clip={clipId} data-u7aea-local-head-tail-fingerprint={policy.proofFingerprint} data-u7aea-local-head-tail-prior-progress={String(priorProgress)}><defs><clipPath ref={clip} id={clipId+'-u7aea-local-head-tail-clip'} clipPathUnits=\"userSpaceOnUse\"><rect ref={rect} x={policy.anchor[0]} y={policy.anchor[1]} width=\"0\" height=\"0\"/></clipPath></defs><path ref={ink} d={segment.outline} visibility=\"hidden\"/></g>\n}\n",
+  "newDependencies": [
+    "lib/hanja-stroke-source-prefix-u7aea-local.ts",
+    "lib/hanja-stroke-source-head-tail-u7aea-local.ts"
+  ]
+}
