@@ -1,0 +1,49 @@
+{
+  "schema": "hanja-actual-component-native-review/v1",
+  "glyph": "薇",
+  "source": "lingo-u8587-components-v1",
+  "reviewDate": "2026-10-27",
+  "reviewer": "Codex root, native in-app browser panel",
+  "profile": "docs/hanja-actual-component-profiles-2026-10-22/u8587-local-components-baseline-1.json",
+  "profileSHA256": "f3b5e2030dc8ba3c546b0c29807a4487e46c06e12c33f2e7ef2719f665f7bfa2",
+  "harnessSHA256": "38ab884e03a2473f788b28d91563baed2b7c380629bdd3c93118aba611abda78",
+  "productionRendererSHA256": "cad462b4ebfa4aba4f186a1b1cfa0ef9ee0c3b1db4f1d84bf9deb86b93724bfe",
+  "fixtureSHA256": "da117bf26e5d70e342e5ab5ae44767e002d663f80da72c7b123b1a1522707fd5",
+  "compiledSHA256": "3700d16a0661f86803707df324e76d2305f2b8e180baa38e6dbc1fefa860f67a",
+  "logicalStrokes": 17,
+  "masks": 22,
+  "sourcePolygons": 45,
+  "baselinePolicy": "Generic StrokeOutlines; no 薇 source policy applied",
+  "observations": {
+    "startPairs": { "pens": [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17], "progress": [0,0.000001], "count": 34 },
+    "internalBoundaries": [
+      { "pen": 9, "progress": 0.3670886075949367 },
+      { "pen": 12, "progress": 0.27477604454815785 },
+      { "pen": 13, "progress": 0.37592944017002594 },
+      { "pen": 13, "progress": 0.6740803754772878 },
+      { "pen": 13, "progress": 0.857406074418266 }
+    ],
+    "eachBoundaryOffsets": [-0.0000000001,0,0.0000000001],
+    "boundaryCount": 15,
+    "additionalPen13TerminalProgress": [0.9,0.95,1],
+    "manualCurrentPenScenes": 52,
+    "doneWholeObserved": true,
+    "displaySize": 520,
+    "allObservedUIErrorArraysEmpty": true,
+    "allObservedUIBadArraysEmpty": true,
+    "screenshots": "Inspected in native browser panel; not saved",
+    "fullAppUI": false,
+    "naturalFullSequence": false
+  },
+  "findings": [
+    { "pens": [5,6,14], "result": "hold", "observation": "Visible initial cap fragment already present at global zero and persists at 0.000001; geometric onset repair required" },
+    { "pens": [16,17], "result": "hold", "observation": "Visible initial cap fragment appears at 0.000001" },
+    { "pen": 12, "mask": 2, "result": "hold", "observation": "Curve cap area appears abruptly immediately after the internal boundary" },
+    { "pen": 13, "mask": 3, "result": "hold", "observation": "Curve cap area appears abruptly immediately after the internal boundary" },
+    { "pen": 13, "mask": 4, "result": "finite-terminal-observation-pass", "observation": "At 0.9, 0.95 and 1, the existing rightward clip progressively reveals the source upward-right terminal polygon. The horizontal guide alone does not establish terminal failure. Full corrected-animation approval remains pending." }
+  ],
+  "decision": "Hold registration; prepare exact-source onset policies for observed failures, then review corrected animation",
+  "runtimeApplied": false,
+  "examBodyCertificationClaimed": false,
+  "countsUnchanged": { "applied": 5918, "remaining": 60 }
+}

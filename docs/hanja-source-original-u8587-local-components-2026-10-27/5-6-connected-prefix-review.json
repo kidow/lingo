@@ -1,0 +1,91 @@
+{
+  "schema": "hanja-local-u8587-5-6-connected-prefix/v1",
+  "glyph": "薇",
+  "inputs": {
+    "docs/hanja-source-original-u8587-local-components-2026-10-27/fixtures-draft.json": "da117bf26e5d70e342e5ab5ae44767e002d663f80da72c7b123b1a1522707fd5",
+    "docs/hanja-source-original-u83f0-local-components-2026-10-27/verify-baseline-onset-conditions.py": "35b0d7f372a2ed37052ebbbd1b116e951786fe80a5d70798c95659cfc85a63cf",
+    "docs/hanja-source-original-u83f0-local-components-2026-10-27/verify-logical-axis-prefix-conditions.py": "db903056c1375705fd8133ee79dcc3ff5450c519012a3f249881af9abebdbd29",
+    "docs/hanja-source-original-u83f0-local-components-2026-10-27/verify-pen8-connected-x-prefix.py": "afa23cad9a8825a2d839a4c5128607b21b2b84d377f05bdbbab0b1c8bec076b0",
+    "docs/hanja-official-media-compare-u8587-2026-10-27/native-direction-review.json": "fe3e50f322aaaa437add4c00eedfdc4e5921bdd16bfcccc50d54ee37c5dd0e5a"
+  },
+  "newBatchedExecutions": 1,
+  "candidates": 2,
+  "newConnectedPrefixCases": 2,
+  "results": [
+    {
+      "pen": 5,
+      "sourceMasks": 1,
+      "sourceP": 3,
+      "axis": "x",
+      "direction": "decreasing",
+      "analysisTransform": "identity",
+      "eventCount": 28,
+      "convexSlabCells": 27,
+      "cutChecks": 55,
+      "noninitialCutChecks": 54,
+      "maxClosedComponents": 1,
+      "maxPositiveEdgeComponents": 1,
+      "noninitialIsolatedCutInkCases": 0,
+      "failureCount": 0,
+      "firstFailures": [],
+      "connectedPrefixSufficientConditionPassed": true,
+      "nativeFailureObserved": false,
+      "areaContinuity": {
+        "sourceProjectionRange": [
+          "63/10",
+          "147/5"
+        ],
+        "crossAxisSpan": "99/4",
+        "areaBoundCoefficient": "22869/40",
+        "bound": "area(prefix(p)) <= coefficient*p, p→0+",
+        "zeroExplicitEmptyRequired": true
+      },
+      "publisherMacro": "upper-right to lower-left",
+      "sourceMicroclockApproved": false,
+      "policyAdopted": false
+    },
+    {
+      "pen": 6,
+      "sourceMasks": 1,
+      "sourceP": 3,
+      "axis": "x",
+      "direction": "decreasing",
+      "analysisTransform": "identity",
+      "eventCount": 28,
+      "convexSlabCells": 27,
+      "cutChecks": 55,
+      "noninitialCutChecks": 54,
+      "maxClosedComponents": 1,
+      "maxPositiveEdgeComponents": 1,
+      "noninitialIsolatedCutInkCases": 0,
+      "failureCount": 0,
+      "firstFailures": [],
+      "connectedPrefixSufficientConditionPassed": true,
+      "nativeFailureObserved": false,
+      "areaContinuity": {
+        "sourceProjectionRange": [
+          "27/5",
+          "649/20"
+        ],
+        "crossAxisSpan": "287/10",
+        "areaBoundCoefficient": "155267/200",
+        "bound": "area(prefix(p)) <= coefficient*p, p→0+",
+        "zeroExplicitEmptyRequired": true
+      },
+      "publisherMacro": "upper-right to lower-left",
+      "sourceMicroclockApproved": false,
+      "policyAdopted": false
+    }
+  ],
+  "sourcePOrQOrWidthOrWeightChanged": false,
+  "oldSevenQKernelsReexecuted": false,
+  "pen13TerminalProofReexecuted": false,
+  "interpretation": "A connected-prefix result is weaker than single-section axis monotonicity. It is only a geometry family candidate until ROOT actual baseline observations; no failure or adoption is asserted.",
+  "actualFailuresAsserted": false,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "engine": 0,
+  "compiler": 0,
+  "server": 0,
+  "verifierSHA256": "2058aa876fbe98a0f99cbfd3e9d9b30c88e16f4065bf9aff24f6043afb359b66"
+}
