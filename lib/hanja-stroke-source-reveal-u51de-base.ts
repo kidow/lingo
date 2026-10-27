@@ -1,6 +1,7 @@
 /** Original 凞 source-axis19 draft; four contact/hook masks excluded. No native/runtime approval. */
 import {outlineSegmentProgress,outlineClip,type HanjaOutlineSegment,type HanjaOutlineStrokes} from './hanja-stroke-outline.ts'
 import fixture from '../docs/hanja-source-original-u51de-base-2026-10-27/fixtures-draft.json' with {type:'json'}
+import {makeReviewedU51deBaseContactHeadContext,reviewedU51deBaseContactHeadPolicy,sampleReviewedU51deBaseContactHeadFrame} from './hanja-stroke-contact-head-u51de-base.ts'
 const FIXED=fixture.u51de,STROKES=FIXED.strokes as HanjaOutlineStrokes
 const NS='http://www.w3.org/2000/svg',PREFIX='data-u51de-base-source-reveal-'
 function freeze<T>(v:T):T{if(v&&typeof v==='object')for(const d of Object.values(Object.getOwnPropertyDescriptors(v))){if('value'in d)freeze(d.value)}return Object.freeze(v)}
@@ -101,17 +102,26 @@ function exactAxisProjection(node:Element|undefined,pol:ReviewedU51deBaseSourceR
  const defs=node.children[0],ink=node.children[1],clip=defs?.children[0],rect=clip?.children[0],frame=sampleReviewedU51deBaseSourceRevealFrame(pol,pol.segment,amount,prior,prior===1),shape=frame.clip??{x:pol.anchor[0],y:pol.anchor[1],width:0,height:0},key=id+'-u51de-base-source-reveal-clip'
  return node.getAttribute('data-stroke-start-gate')===pol.id&&node.getAttribute('data-stroke-reveal-policy')===pol.kind&&node.getAttribute('data-stroke-reveal-progress')===String(amount)&&node.getAttribute(PREFIX+'clip')===id&&node.getAttribute(PREFIX+'fingerprint')===pol.proofFingerprint&&node.getAttribute(PREFIX+'prior-progress')===String(prior)&&node.getAttribute(PREFIX+'logical-progress')===String(logical)&&node.getAttribute(PREFIX+'frame')===frameId&&defs?.localName==='defs'&&defs.children.length===1&&clip?.localName==='clipPath'&&clip.id===key&&clip.getAttribute('clipPathUnits')==='userSpaceOnUse'&&clip.children.length===1&&rect?.localName==='rect'&&Object.entries(shape).every(([k,v])=>rect.getAttribute(k)===String(v))&&ink.localName==='path'&&ink.getAttribute('d')===pol.segment.outline&&['mask','pathLength','stroke-dasharray','stroke-dashoffset'].every(k=>ink.getAttribute(k)===null)&&ink.getAttribute('clip-path')===(amount===1?null:'url(#'+key+')')
 }
+/** Exact source-head peer projection only; the contact factory owns actual paint approval. */
+function exactContactProjection(node:Element|undefined,pen:number,amount:number,prior:number,logical:number,frameId:string,id:string,owner:SVGSVGElement|null,doc:Document):boolean{
+ if(![3,6,10].includes(pen)||!node||node.localName!=='g'||!node.isConnected||node.ownerDocument!==doc||(node as SVGElement).ownerSVGElement!==owner||node.children.length!==2)return false
+ const context=makeReviewedU51deBaseContactHeadContext(FIXED.fullProof,FIXED.identity,STROKES),policy=reviewedU51deBaseContactHeadPolicy(context,pen-1,1)
+ if(!policy)return false
+ const frame=sampleReviewedU51deBaseContactHeadFrame(policy,policy.segment,amount,prior,prior===1),pre='data-u51de-base-contact-head-',defs=node.children[0],ink=node.children[1],mask=defs?.children[0],head=mask?.children[0],body=mask?.children[1],key=id+'-u51de-base-contact-head-mask'
+ return node.getAttribute('data-stroke-start-gate')===policy.id&&node.getAttribute('data-stroke-reveal-policy')===policy.kind&&node.getAttribute('data-stroke-reveal-progress')===String(amount)&&node.getAttribute(pre+'context')==='u51de-base-original-16-contact-head'&&node.getAttribute(pre+'clip')===id&&node.getAttribute(pre+'fingerprint')===policy.proofFingerprint&&node.getAttribute(pre+'prior-progress')===String(prior)&&node.getAttribute(pre+'logical-progress')===String(logical)&&node.getAttribute(pre+'frame')===frameId&&defs?.localName==='defs'&&defs.children.length===1&&mask?.localName==='mask'&&mask.id===key&&mask.children.length===2&&[['maskUnits','userSpaceOnUse'],['maskContentUnits','userSpaceOnUse'],['x','0'],['y','0'],['width','100'],['height','100']].every(([k,v])=>mask.getAttribute(k)===v)&&head?.localName==='path'&&head.id===id+'-u51de-base-contact-head-head'&&head.getAttribute('d')===frame.headPath&&head.getAttribute('fill')==='white'&&body?.localName==='rect'&&body.id===id+'-u51de-base-contact-head-body'&&body.getAttribute('fill')==='white'&&Object.entries(frame.bodyClip).every(([k,v])=>body.getAttribute(k)===String(v))&&ink.localName==='path'&&ink.getAttribute('d')===policy.segment.outline&&['clip-path','pathLength','stroke-dasharray','stroke-dashoffset'].every(k=>ink.getAttribute(k)===null)&&ink.getAttribute('mask')===(amount===1?null:'url(#'+key+')')
+}
 function projectedOwnerCount(policy:ReviewedU51deBaseSourceRevealPolicy,p:number,prior:number,logical:number,g:SVGGElement|null,frameId:string):number|null{
  if(!g||!frameId||g.getAttribute(PREFIX+'frame')!==frameId||!Number.isFinite(logical)||logical<0||logical>1||g.getAttribute(PREFIX+'logical-progress')!==String(logical))return null
  const segments=STROKES[policy.pen-1],amounts=outlineSegmentProgress(segments,logical),target=policy.mask-1,slot=g.parentNode as SVGGElement|null,id=g.getAttribute(PREFIX+'clip')
  if(!slot||!id||!id.endsWith('-'+(policy.pen-1)+'-'+target)||amounts[target]!==p||(target?amounts[target-1]:0)!==prior)return null
- const indices=amounts.map((v,i)=>i===target||policy.pen===12&&i===2||POLICIES.some(q=>q.pen===policy.pen&&q.mask===i+1)||v>0?i:-1).filter(i=>i>=0)
+ const indices=amounts.map((v,i)=>i===target||[3,6,10].includes(policy.pen)&&i===1||policy.pen===12&&i===2||POLICIES.some(q=>q.pen===policy.pen&&q.mask===i+1)||v>0?i:-1).filter(i=>i>=0)
  if(slot.children.length!==indices.length||slot.children[indices.indexOf(target)]!==g)return null
  for(let position=0;position<indices.length;position++){
   const i=indices[position];if(i===target)continue
   const node:Element=slot.children[position],segment=segments[i],owner=g.ownerSVGElement,peer=POLICIES.find(q=>q.pen===policy.pen&&q.mask===i+1),clipId=id.slice(0,id.lastIndexOf('-')+1)+i
   if(!node||!node.isConnected||node.ownerDocument!==g.ownerDocument||(node as SVGElement).ownerSVGElement!==owner||node.parentNode!==slot)return null
   if(policy.pen===12&&i===2){if(!exactHookProjection(node,amounts[i],amounts[i-1],logical,frameId,clipId,owner,g.ownerDocument))return null;continue}
+  if([3,6,10].includes(policy.pen)&&i===1){if(!exactContactProjection(node,policy.pen,amounts[i],amounts[i-1],logical,frameId,clipId,owner,g.ownerDocument))return null;continue}
   if(peer){if(!exactAxisProjection(node,peer,amounts[i],i?amounts[i-1]:0,logical,frameId,clipId,owner,g.ownerDocument))return null;continue}
   if(amounts[i]===1){if(node.localName!=='path'||node.getAttribute('d')!==segment.outline||['clip-path','mask','pathLength','stroke-dasharray','stroke-dashoffset'].some(k=>node.getAttribute(k)!==null))return null}
   else{
