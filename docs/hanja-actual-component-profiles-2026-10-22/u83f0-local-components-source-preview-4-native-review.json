@@ -1,0 +1,52 @@
+{
+  "schema": "hanja-actual-component-native-source-correction-review/v1",
+  "glyph": "菰",
+  "reviewedAt": "2026-10-27",
+  "reviewer": "Codex root native browser panel",
+  "profileSHA256": "8189422725127ebbdae9df17b560b543c75085d352c5e1caaaa4e8bdef1ff89a",
+  "launcherSHA256": "9adb7e4c650ddcfe21634d48b05ea7b58f7ed41245b0d1643a53ebff7f89b838",
+  "effectiveRAMComponentSHA256": "e753fbe759cbb66cb1ba6c107e164908e9d19a4a6b736645fa385a0e0dd832e5",
+  "fixtureSHA256": "80df51355acb56c1b1d69fe5c67e866fb1d484f325e361d91a0b582e3ea11485",
+  "compiledSHA256": "efbf229cb5e874b17bb812b380408f71dccd6734a2653eda26d207cbaab50606",
+  "sourceRoot": "lingo-u83f0-components-v1",
+  "localAuthoredMixedParts": true,
+  "view": "Isolated actual StrokeOutlines with exact RAM preview component delta; main520",
+  "newManualNativeScenes": 40,
+  "manualProgressByPen": {
+    "5":[0.6038709908041106,0.6038709909041106,0.6038709910041106,0.8,0.9,1],
+    "6":[0.8485725178259205,0.8485725179259205,0.8485725180259205,0.925,0.975,1],
+    "7":[0.1,0.5,0.75,1],
+    "8":[0.1,0.5,0.75,1],
+    "9":[0.1,0.49038457191365803,0.49038457201365804,0.49038457211365805,0.75,1],
+    "10":[0.7542041783123979,0.8,0.9,1,0.7542041781123979,0.7542041782123979],
+    "11":[0.1,0.5,0.75,1],
+    "12":[0.1,0.5,0.75,1]
+  },
+  "all40ControllerProgressExactlyMatchedRequestedNumbers": true,
+  "all40FullStatusErrorsBadGuardErrorsEmpty": true,
+  "reusedSixInitialScenes": {
+    "record":"u83f0-local-components-source-preview-3-native-initial-diagnostic.json",
+    "scenes":[[7,0],[7,0.000001],[8,0.000001],[9,0.000001],[11,0.000001],[12,0.000001]],
+    "reason":"Prefix module, geometry and clock are unchanged; the point guard change only removes the extra positive-canonical-bbox requirement. These already accepted scenes retain identical rendering and expected invariants."
+  },
+  "additionalViews": [
+    {"mode":"done whole","nativeObserved":true,"fullStatusErrorsBadGuardErrorsEmpty":true,"allOriginalStrokesComplete":true},
+    {"mode":"natural8 controller","nativeObserved":"one progressing screenshot and one later paused completed screenshot","completedPen":12,"completedProgress":1,"finalFullStatusErrorsBadGuardErrorsEmpty":true,"allIntermediateFramesClaimed":false}
+  ],
+  "observations": [
+    "The previous finite chunks do not appear at the reviewed beginnings and compound boundaries.",
+    "Pens5,6,10 retain the completed prior original mask while their next mask grows continuously from its source-bound anchor.",
+    "Pen7 grows from the left toward the upper right; pen8 grows from the right toward the lower left.",
+    "Pen9 uses one common top-to-bottom prefix across its two original masks; the former per-mask boundary triple shows no restart or new lump.",
+    "Pens11 and12 grow downward along the observed macro directions, and all reviewed completion frames show their full original outlines.",
+    "The previously failing point10 sub-resolution frame now has exact matching browser-canonical empty geometry without progress snapping or a numerical tolerance."
+  ],
+  "result":"PASS-finite-isolated-actual-component-forward-review",
+  "sourceP_Q_WidthWeightsChanged":false,
+  "sourceMicroClockEquivalent":false,
+  "nativeAnimationApproval":true,
+  "approvalScope":"This pinned local candidate and these authored reveal policies in the isolated actual component. App integration, registration and app UI are separate.",
+  "actualAppUIVerified":false,
+  "runtimeApplied":false,
+  "privateMediaSaved":false
+}
