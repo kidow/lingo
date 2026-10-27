@@ -1,0 +1,78 @@
+{
+  "schema": "hanja-public-authority-followup/v1",
+  "date": "2026-10-27",
+  "scope": "Resolve exam-authority evidence separately from fixed dictionary and MM whole comparisons.",
+  "subjects": [
+    {
+      "glyph": "嫂",
+      "catalogStrokes": 12,
+      "dictionaryStrokes": 13,
+      "status": "unresolved",
+      "limit": "The fixed Korean assignment XLS supports the catalog count, but no concrete official exam presentation was located in this search. Neither dictionary priority nor MM geometry is approved."
+    },
+    {
+      "glyph": "朕",
+      "catalogStrokes": 10,
+      "status": "unresolved",
+      "limit": "Catalog Unicode and count do not choose between the dictionary and MM structural variants. A specific historical exam occurrence was located as an externally hosted document, without original attachment visual approval."
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://www.hanja.re.kr/kccpt/exam/levelConfirm.do",
+      "authority": "한국어문회 official host",
+      "context": "급수배정: 전체배정한자 XLS and 배정한자1급.hwp download buttons.",
+      "confirmed": "Public HTML GET 200; exact download_file_doc names were present.",
+      "downloadNames": [
+        "배정한자 전체 대표훈음 부수 음표 명기본(xls).xls",
+        "배정한자1급.hwp"
+      ],
+      "fetchLimit": "A direct download GET returned HTTP 500 and a POST returned HTML, not a verified workbook. No new binary download success is claimed.",
+      "existingXlsSHA256": "97b8db715ebe1dd6e00e8e58d338a9ba70e7420bf5ec84da38f987d60eb64b17"
+    },
+    {
+      "url": "https://www.hanja.re.kr/kccpt/exam/previousQuestion.do",
+      "authority": "한국어문회 official host",
+      "context": "Current official exam-paper list displayed rounds 114 and 113.",
+      "confirmed": "Public HTML GET 200 and ROOT browser panel view of the current list.",
+      "gradeOneButtons": [
+        { "round": 114, "fileSeq": "22394", "targetId": "588" },
+        { "round": 113, "fileSeq": "21379", "targetId": "568" }
+      ],
+      "rootNative": {
+        "tab": 44,
+        "sequence": "First URL visit redirected to the root page; after menu navigation to exam introduction, the exam-list URL worked. ROOT clicked the round-114 grade-one button.",
+        "siteMessage": "이미 다운로드가 진행중입니다. 완료 후 다시 진행해주세요.",
+        "messageAcknowledged": true,
+        "tabClosed": true,
+        "attachmentDownloadSucceeded": false,
+        "attachmentVisualReviewed": false
+      }
+    },
+    {
+      "url": "https://cfile213.uf.daum.net/attach/2327724551C9099C27011E",
+      "authority": "Official-authored exam document identified in a third-party mirror; not an official-host retrieval.",
+      "context": "제61회 전국한자능력검정시험 1급 문제지, question 158: ( )朕. Indexed document text states 한국어문회 주관 and 한국한자능력검정회 시행.",
+      "confirmed": "Search-index excerpt identifies the specific question and document context.",
+      "fetchLimit": "Direct web open returned 502. Original-host identity, binary authenticity, embedded glyph presentation and visual form remain unverified."
+    }
+  ],
+  "methodLimits": {
+    "publicSearchOnly": true,
+    "privateSourceTransmitted": false,
+    "jevCalled": false,
+    "jevReason": "Only a few direct source routes were useful; file and authority facts did not need semantic API classification.",
+    "dictionaryIsExamAuthority": false,
+    "fontIsAuthorityEvidence": false,
+    "additionalResearchRequired": "Obtain and directly inspect an authentic exam or official teaching example for the disputed form; do not infer accepted geometry from a catalog count alone."
+  },
+  "approvals": {
+    "examPresentedGlyphApproved": false,
+    "domesticStrokeOrderApproved": false,
+    "filledGeometryApproved": false,
+    "filledGapApproved": false,
+    "nativeRuntimeApproved": false,
+    "runtimeApplied": false
+  },
+  "lifecycle": { "ownedServersStarted": 0, "ownedServersRemaining": 0 }
+}
