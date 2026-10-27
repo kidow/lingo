@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Exact fixed MM 朕 JSON dataset adapter for the existing whole-only HTTP comparator."""
+"""Fixed original MM whole comparator core; exact cases are pinned by their adapters."""
 import sys
 sys.dont_write_bytecode = True
 import hashlib, html, importlib.util, json, math, re, xml.etree.ElementTree as ET
@@ -39,14 +39,14 @@ def validate_config(config, config_path):
     require(config_path == ROOT / CONFIG_FILE, 'one fixed MM comparison config required')
     require(type(config) is dict and set(config) == set(EXPECTED) | {'adapter', 'launcherSHA256'}, 'exact MM config fields required')
     require(same_json({k: v for k, v in config.items() if k not in ('adapter', 'launcherSHA256')}, EXPECTED), 'exact fixed MM source and fixed10/publisher10 required')
-    require(config['adapter'] == {'path': ADAPTER_FILE, 'SHA256': digest(Path(__file__).read_bytes())}, 'fixed MM adapter bytes required')
+    require(config['adapter'] == {'path': ADAPTER_FILE, 'SHA256': digest(fixed_file(ADAPTER_FILE).read_bytes())}, 'fixed MM adapter bytes required')
     require(type(config['launcherSHA256']) is str and re.fullmatch('[0-9a-f]{64}', config['launcherSHA256']) is not None, 'fixed launcher hash required')
 
 def parameter_guards(config, config_path, config_sha):
     validate_config(config, config_path)
     require(digest(config_path.read_bytes()) == config_sha, 'MM config changed')
     require(digest(fixed_file(LAUNCHER_FILE).read_bytes()) == config['launcherSHA256'], 'MM launcher changed')
-    require(digest(Path(__file__).read_bytes()) == config['adapter']['SHA256'], 'MM adapter changed')
+    require(digest(fixed_file(ADAPTER_FILE).read_bytes()) == config['adapter']['SHA256'], 'MM adapter changed')
     require(digest(fixed_file(EXPECTED['sharedServe']['path']).read_bytes()) == EXPECTED['sharedServe']['SHA256'], 'original shared comparator changed')
     for path, pin in EXPECTED['inputSHA256'].items():
         require(digest(fixed_file(path).read_bytes()) == pin, 'fixed MM input changed')
@@ -58,18 +58,18 @@ def read_original_mm():
     original = document['originalRecordJSON']
     require(type(original) is str and digest(original.encode('utf-8')) == EXPECTED['source']['originalRecordSHA256'] == document['originalRecordSHA256'], 'original MM raw JSON changed')
     record = document['record']
-    require(same_json(json.loads(original), record) and set(record) == {'character', 'strokes', 'medians'} and record['character'] == '朕', 'one exact original MM whole required')
+    require(same_json(json.loads(original), record) and set(record) == {'character', 'strokes', 'medians'} and record['character'] == EXPECTED['glyph'], 'one exact original MM whole required')
     require(document['schema'] == 'hanja-original-MM-single-record/v1' and document['source']['revision'] == EXPECTED['source']['revision'] and document['source']['wholeCorpusSHA256'] == EXPECTED['source']['wholeCorpusSHA256'], 'original fixed MM provenance required')
     require(document['license'] == EXPECTED['license'], 'original APL license references required')
     require(all(document[k] is False for k in ('filledGeometryApproved', 'domesticStrokeOrderApproved', 'filledGapApproved', 'componentReuseApproved', 'nativeApproval', 'runtimeApplied')), 'no prior source approval transfer')
-    require(type(record['strokes']) is list and type(record['medians']) is list and len(record['strokes']) == len(record['medians']) == 10, 'original MM10 filled paths and medians required')
+    require(type(record['strokes']) is list and type(record['medians']) is list and len(record['strokes']) == len(record['medians']) == EXPECTED['originalFilledStrokes'], 'fixed original MM filled paths and medians required')
     require(all(type(d) is str and d for d in record['strokes']), 'original filled path strings required')
     require(all(type(row) is list and len(row) >= 2 and all(type(p) is list and len(p) == 2 and all(type(v) in (int, float) and math.isfinite(v) for v in p) for p in row) for row in record['medians']), 'original finite medians retained, never rendered')
     return record
 
 def original_mm_svg(record):
     paths = ''.join('<path fill="#222" d="' + html.escape(d, quote=True) + '"/>' for d in record['strokes'])
-    return '<svg xmlns="http://www.w3.org/2000/svg" width="520" height="520" viewBox="0 0 1024 1024" aria-label="朕 original MM10 filled whole"><g transform="translate(0 900) scale(1 -1)">' + paths + '</g></svg>'
+    return '<svg xmlns="http://www.w3.org/2000/svg" width="520" height="520" viewBox="0 0 1024 1024" aria-label="' + html.escape(EXPECTED['glyph']) + ' original MM' + str(EXPECTED['originalFilledStrokes']) + ' filled whole"><g transform="translate(0 900) scale(1 -1)">' + paths + '</g></svg>'
 
 def check_original_svg(record):
     root = ET.fromstring(original_mm_svg(record))
@@ -77,13 +77,13 @@ def check_original_svg(record):
     require(root.tag == ns + 'svg' and root.get('viewBox') == EXPECTED['sourceViewBox'] and len(root) == 1, 'fixed MM SVG shell required')
     group = root[0]
     require(group.tag == ns + 'g' and group.attrib == {'transform': EXPECTED['sourceTransform']}, 'only explicit MM900 Y reflection allowed')
-    require(len(group) == 10 and all(p.tag == ns + 'path' and p.attrib == {'fill': '#222', 'd': d} for p, d in zip(group, record['strokes'])), 'every original filled path and order unchanged')
+    require(len(group) == EXPECTED['originalFilledStrokes'] and all(p.tag == ns + 'path' and p.attrib == {'fill': '#222', 'd': d} for p, d in zip(group, record['strokes'])), 'every original filled path and order unchanged')
 
 def whole_page(shared, route, selected, sources, domestic):
     require(route in ('/', '/whole') and selected is None and list(sources) == ['MM'], 'one fixed MM whole page required')
     publisher = shared.domestic_svg(domestic)
     original = original_mm_svg(sources['MM'])
-    return '<!doctype html><meta charset="utf-8"><title>朕 original MM whole comparison</title><style>body{font:16px system-ui;margin:16px}.panels{display:grid;grid-template-columns:repeat(auto-fit,520px);gap:16px}.panel{width:520px}svg{display:block;width:520px;height:520px}h2{font-size:16px}</style><h1>朕 · catalog10 / original MM10 / publisher10</h1><p>Whole-only source comparison. Count equality does not approve original shape, Korean order, filled gaps or runtime. MM paths are unchanged; only translate(0 900) and Y reflection are applied. No medians or per-stroke mapping are displayed.</p><div class="panels"><section class="panel"><h2>Original publisher whole10 · RAM only</h2>' + publisher + '</section><section class="panel"><h2>Fixed original MM filled whole10 · APL</h2>' + original + '</section></div>'
+    return '<!doctype html><meta charset="utf-8"><title>' + html.escape(EXPECTED['glyph']) + ' original MM whole comparison</title><style>body{font:16px system-ui;margin:16px}.panels{display:grid;grid-template-columns:repeat(auto-fit,520px);gap:16px}.panel{width:520px}svg{display:block;width:520px;height:520px}h2{font-size:16px}</style><h1>' + html.escape(EXPECTED['glyph']) + ' · catalog' + str(EXPECTED['catalogStrokes']) + ' / original MM' + str(EXPECTED['originalFilledStrokes']) + ' / publisher' + str(EXPECTED['dictionaryPlaybackStrokes']) + '</h1><p>Whole-only source comparison. Count equality does not approve original shape, Korean order, filled gaps or runtime. MM paths are unchanged; only translate(0 900) and Y reflection are applied. No medians or per-stroke mapping are displayed.</p><div class="panels"><section class="panel"><h2>Original publisher whole' + str(EXPECTED['dictionaryPlaybackStrokes']) + ' · RAM only</h2>' + publisher + '</section><section class="panel"><h2>Fixed original MM filled whole' + str(EXPECTED['originalFilledStrokes']) + ' · APL</h2>' + original + '</section></div>'
 
 def run_mm_original_whole(args, config, config_path):
     require(__debug__ and sys.flags.optimize == 0, 'optimized assertion-free execution forbidden')
@@ -97,9 +97,9 @@ def run_mm_original_whole(args, config, config_path):
     shared = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(shared)
     require(shared.FETCH_COUNT == 0 and callable(shared.main) and callable(shared.domestic_svg), 'original HTTP and publisher SVG functions required')
-    # Existing parser calls this field catalogStrokes; here it validates publisher10 only.
-    # Public MM/catalog10 remain separate in the fixed config and visible caption.
-    shared.CONFIG = {'glyph': '朕', 'catalogStrokes': 10, 'domestic': EXPECTED['domestic']}
+    # Existing parser calls this field catalogStrokes; validate the exact publisher count.
+    # Public MM/catalog counts remain separate in the fixed config and visible caption.
+    shared.CONFIG = {'glyph': EXPECTED['glyph'], 'catalogStrokes': EXPECTED['dictionaryPlaybackStrokes'], 'domestic': EXPECTED['domestic']}
     shared.ROOT = ROOT
     shared.HERE = config_path.parent
     shared.guards = guards
@@ -109,7 +109,7 @@ def run_mm_original_whole(args, config, config_path):
     if args.check_only:
         check_original_svg(record)
         require(shared.FETCH_COUNT == 0, 'MM check-only cannot fetch publisher')
-        print(json.dumps({'MMWholeCheck': 'PASS', 'glyph': '朕', 'originalFilledPaths': 10, 'catalogStrokes': 10, 'publisherStrokes': 10, 'countDifferencePresent': False, 'countEqualityIsNotApproval': True, 'originalPathStringsUnchanged': True, 'sourceTransform': EXPECTED['sourceTransform'], 'HTTP': 0, 'server': 0, 'engine': 0, 'projection': 0, 'blockedHTMLRead': False, 'nativeApproval': False, 'runtimeApplied': False}))
+        print(json.dumps({'MMWholeCheck': 'PASS', 'glyph': EXPECTED['glyph'], 'originalFilledPaths': EXPECTED['originalFilledStrokes'], 'catalogStrokes': EXPECTED['catalogStrokes'], 'publisherStrokes': EXPECTED['dictionaryPlaybackStrokes'], 'countDifferencePresent': EXPECTED['countDifferencePresent'], 'countEqualityIsNotApproval': True, 'originalPathStringsUnchanged': True, 'sourceTransform': EXPECTED['sourceTransform'], 'HTTP': 0, 'server': 0, 'engine': 0, 'projection': 0, 'blockedHTMLRead': False, 'nativeApproval': False, 'runtimeApplied': False}))
         return
     original_argv = sys.argv
     try:

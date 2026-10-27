@@ -1,0 +1,113 @@
+{
+  "schema": "hanja-original-MM-whole-preparation/v1",
+  "glyph": "瞥",
+  "date": "2026-10-27",
+  "source": {
+    "path": "docs/hanja-source-original-u77a5-mm-2026-10-27/source-record.json",
+    "SHA256": "1e473bc435d03da4f2bbed7e73b9480aca91199d78e2df9997a668678d25069c",
+    "originalRecordSHA256": "9ca8d951d390982370ae725bc6aab8e700e2098b3cc01629338c2fda247132df",
+    "revision": "bddc96d41bef78427ed0e034e9f7e31d71fd1b92",
+    "wholeCorpusSHA256": "a28c478b5178e98f67f510b2d52fde08a69dc664654ef43498253b9b764d46ee"
+  },
+  "counts": {
+    "catalog": 16,
+    "originalFilledPaths": 16,
+    "originalMediansRetained": 16,
+    "publisher": 16,
+    "countEqualityIsNotApproval": true
+  },
+  "publisher": {
+    "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/7700/77a5.svg",
+    "status": 200,
+    "bytes": 7989,
+    "sha256": "bd979384ebe47a9536dc0e0b0014983af9b6c1f6a8875c4191d822b656072084",
+    "clips": 16,
+    "glyph": "瞥",
+    "privateMediaSaved": false
+  },
+  "coordinate": {
+    "upstreamURL": "https://raw.githubusercontent.com/skishore/makemeahanzi/bddc96d41bef78427ed0e034e9f7e31d71fd1b92/README.md",
+    "upstreamLines": [
+      98,
+      118
+    ],
+    "viewBox": "0 0 1024 1024",
+    "upstreamTransform": "scale(1, -1) translate(0, -900)",
+    "displayTransform": "translate(0 900) scale(1 -1)",
+    "equivalentMatrix": [
+      1,
+      0,
+      0,
+      -1,
+      0,
+      900
+    ],
+    "originalPathStringsChanged": false,
+    "originalMediansChanged": false,
+    "mediansRendered": false
+  },
+  "frozenInputs": {
+    "config": {
+      "path": "docs/hanja-source-raw-compare-u77a5-mm-whole-2026-10-27/config.json",
+      "SHA256": "ed9b8f4188f063a1697211a4e532a4e0c9ec88cee39014689fd936b3e8b13df2"
+    },
+    "thinAdapter": {
+      "path": "scripts/hanja-static-original-mm-u77a5.py",
+      "SHA256": "ff67bf2b786ce3d961760c295cf176cf5804c52fc32864b1514837e1aa4732c5"
+    },
+    "core": {
+      "path": "scripts/hanja-static-original-mm-u6715.py",
+      "beforeSHA256": "c3feaf6f3ccf95b127a964d267f9ca6dc48132f4fb2fcb61480f96c81d8b3fe9",
+      "afterSHA256": "26f1f172a54fd35483a2db80dd56cdfb43cb58d1a7396d669de12784a1d81562"
+    },
+    "launcher": {
+      "path": "scripts/hanja-raw-static-compare.py",
+      "beforeSHA256": "eadddd2c099cf4850221cb155538fe734d3c6b04664ea76952ccb3b266093910",
+      "afterSHA256": "4afac79844d5bf1686ab2266b17cf7c1614b1a39cccdcbfdb3029624e9de00e7"
+    },
+    "patch": {
+      "path": "docs/hanja-source-raw-compare-u77a5-mm-whole-2026-10-27/helper-integration.patch",
+      "SHA256": "a2b775d733db8b7a89904d08e932918047c0adc2d92ebcb41ad2f050a2851221"
+    },
+    "sharedServe": {
+      "path": "docs/hanja-source-raw-compare-u8a29-2026-10-21/serve.py",
+      "SHA256": "ba91ba7f00bc2e4899ca4d3c69d03ab5cd6f8b0a9f888899eea49aa69a58665d"
+    }
+  },
+  "reuse": {
+    "rendererCopies": 0,
+    "XMLCheckerCopies": 0,
+    "routeCopies": 0,
+    "RAMPublisherFetchCore": "existing shared.domestic_svg/shared.main",
+    "executionCore": "existing run_mm_original_whole",
+    "caseClosedBy": "exact 瞥 EXPECTED constant plus exact core, adapter, source, config, launcher and license hashes",
+    "existingU6715ObservationPreserved": true,
+    "existingU6715ConfigNotRewritten": true,
+    "oldU6715ConfigCannotRunAgainstChangedCoreWithoutSeparateLegitimateRepin": true
+  },
+  "execution": {
+    "sharedPatchApplied": false,
+    "checkOnlyExecuted": false,
+    "checkOnlyReason": "Actual shared helper and MM core are unchanged; future pins require ROOT to apply exact document first.",
+    "afterApplyCheckOnlyCommand": "python3 scripts/hanja-raw-static-compare.py --config docs/hanja-source-raw-compare-u77a5-mm-whole-2026-10-27/config.json --config-sha ed9b8f4188f063a1697211a4e532a4e0c9ec88cee39014689fd936b3e8b13df2 --check-only",
+    "newHTTP": 0,
+    "newServer": 0,
+    "newBrowser": 0,
+    "newSSR": 0
+  },
+  "approval": {
+    "wholeShapeReviewed": false,
+    "wholeCompatible": false,
+    "domesticStrokeOrderApproved": false,
+    "sourceMappingApproved": false,
+    "nativeApproval": false,
+    "runtimeApplied": false
+  },
+  "privacy": {
+    "privateSVGBodySaved": false,
+    "privateCSSBodySaved": false,
+    "privateImagesSaved": false,
+    "privateMediaTransmitted": false
+  },
+  "sourceKind": "original MakeMeAHanzi strokes/medians; no Kage raw or trace wrapper"
+}

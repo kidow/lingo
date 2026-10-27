@@ -1,0 +1,22 @@
+#!/usr/bin/env python3
+"""Exact 瞥 source adapter; reuse original MM renderer, XML checks and RAM publisher routes."""
+import sys
+sys.dont_write_bytecode = True
+import hashlib, importlib.util, json
+from pathlib import Path
+ROOT = Path(__file__).resolve().parent.parent
+CONFIG_FILE = 'docs/hanja-source-raw-compare-u77a5-mm-whole-2026-10-27/config.json'
+ADAPTER_FILE = 'scripts/hanja-static-original-mm-u77a5.py'
+EXPECTED = json.loads("{\"schema\":\"hanja-fixed-MM-original-filled-whole/v1\",\"kind\":\"fixed-mm-original-filled-whole-u77a5\",\"glyph\":\"瞥\",\"catalogStrokes\":16,\"originalFilledStrokes\":16,\"dictionaryPlaybackStrokes\":16,\"source\":{\"path\":\"docs/hanja-source-original-u77a5-mm-2026-10-27/source-record.json\",\"SHA256\":\"1e473bc435d03da4f2bbed7e73b9480aca91199d78e2df9997a668678d25069c\",\"originalRecordSHA256\":\"9ca8d951d390982370ae725bc6aab8e700e2098b3cc01629338c2fda247132df\",\"revision\":\"bddc96d41bef78427ed0e034e9f7e31d71fd1b92\",\"wholeCorpusSHA256\":\"a28c478b5178e98f67f510b2d52fde08a69dc664654ef43498253b9b764d46ee\"},\"domestic\":{\"url\":\"http://img.e-hanja.kr/hanjaSvg/aniSVG/7700/77a5.svg\",\"status\":200,\"bytes\":7989,\"sha256\":\"bd979384ebe47a9536dc0e0b0014983af9b6c1f6a8875c4191d822b656072084\",\"clips\":16,\"glyph\":\"瞥\",\"privateMediaSaved\":false},\"license\":{\"kind\":\"Arphic Public License, original graphics.txt notice\",\"originalNoticeCopy\":{\"path\":\"public/hanja-strokes/MAKEMEAHANZI-COPYING.txt\",\"SHA256\":\"df2e856c73d2ddf036ba95556e25a27163de5cae6ef80e9509a86ec8ece9f84f\"},\"completeLicenseCopy\":{\"path\":\"public/hanja-strokes/ARPHICPL.txt\",\"SHA256\":\"76430f0e943a5a088af54d44a58af187be53528fffdfe5ce6abdfc44d508f78f\"},\"existingProjectRule\":\"scripts/hanja-stroke-audit.ts MAKE_ME_A_HANZI_SOURCE binds this exact graphics.txt revision and corpus SHA; no dictionary.txt used.\",\"freshUpstreamLicenseRequest\":false},\"sharedServe\":{\"path\":\"docs/hanja-source-raw-compare-u8a29-2026-10-21/serve.py\",\"SHA256\":\"ba91ba7f00bc2e4899ca4d3c69d03ab5cd6f8b0a9f888899eea49aa69a58665d\"},\"inputSHA256\":{\"docs/hanja-source-original-u77a5-mm-2026-10-27/source-record.json\":\"1e473bc435d03da4f2bbed7e73b9480aca91199d78e2df9997a668678d25069c\",\"docs/hanja-source-raw-compare-u77a5-2026-10-24/config.json\":\"6cd5d771d49d45f1ed4c18f8496679fc656553820b1a530fd1850f9bbb73e4fe\",\"public/hanja-strokes/MAKEMEAHANZI-COPYING.txt\":\"df2e856c73d2ddf036ba95556e25a27163de5cae6ef80e9509a86ec8ece9f84f\",\"public/hanja-strokes/ARPHICPL.txt\":\"76430f0e943a5a088af54d44a58af187be53528fffdfe5ce6abdfc44d508f78f\",\"scripts/hanja-static-original-mm-u6715.py\":\"26f1f172a54fd35483a2db80dd56cdfb43cb58d1a7396d669de12784a1d81562\"},\"sourceViewBox\":\"0 0 1024 1024\",\"sourceTransform\":\"translate(0 900) scale(1 -1)\",\"wholeOnly\":true,\"noPartialAnimation\":true,\"host\":\"127.0.0.1\",\"filledGeometryApproved\":false,\"domesticStrokeOrderApproved\":false,\"filledGapApproved\":false,\"nativeApproval\":false,\"runtimeApplied\":false,\"publisherReference\":{\"path\":\"docs/hanja-source-raw-compare-u77a5-2026-10-24/config.json\",\"SHA256\":\"6cd5d771d49d45f1ed4c18f8496679fc656553820b1a530fd1850f9bbb73e4fe\"},\"countDifferencePresent\":false,\"countEqualityIsNotApproval\":true,\"coreAdapter\":{\"path\":\"scripts/hanja-static-original-mm-u6715.py\",\"SHA256\":\"26f1f172a54fd35483a2db80dd56cdfb43cb58d1a7396d669de12784a1d81562\"}}")
+
+def run_mm_original_whole(args, config, config_path):
+    core_path = ROOT / EXPECTED['coreAdapter']['path']
+    if hashlib.sha256(core_path.read_bytes()).hexdigest() != EXPECTED['coreAdapter']['SHA256']:
+        raise ValueError('exact reviewed MM core bytes required')
+    spec = importlib.util.spec_from_file_location('hanja_exact_mm_u77a5_core', core_path)
+    core = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(core)
+    core.EXPECTED = EXPECTED
+    core.CONFIG_FILE = CONFIG_FILE
+    core.ADAPTER_FILE = ADAPTER_FILE
+    return core.run_mm_original_whole(args, config, config_path)
