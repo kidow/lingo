@@ -1,0 +1,33 @@
+*** Begin Patch
+*** Update File: scripts/hanja-raw-static-compare.py
+@@
+ def validate_exact_u5ac2_dictionary13(config,config_path):
++    if config_path==ROOT/U5AC2_LOCAL_LAYOUT_WHOLE_CASE['config']:
++        require(config.get('glyph')=='嫂' and config.get('catalogStrokes')==12 and config.get('dictionaryPlaybackStrokes')==13 and config.get('domestic')==U5AC2_LOCAL_LAYOUT_WHOLE_CASE['domestic'] and config.get('wholeOnly')is True,'exact authored 嫂 catalog12/publisher13 whole-only context required')
++        return
+@@
++U5AC2_LOCAL_LAYOUT_WHOLE_CASE=json.loads("{\"glyph\":\"嫂\",\"catalogStrokes\":12,\"dictionaryPlaybackStrokes\":13,\"config\":\"docs/hanja-source-raw-compare-u5ac2-sou10-layout-whole-2026-10-27/config.json\",\"root\":\"lingo-u5ac2-sou10-layout-v1\",\"local5ac2Layout\":true,\"localRecipe\":true,\"recipePath\":\"docs/hanja-component-recipe-u5ac2-sou10-layout-2026-10-27/recipe.json\",\"recipeSHA256\":\"85acc5aac7ed64f44ecfdccdc566a6045415e29b4b858ef1e104b4eed3380e67\",\"capturePath\":\"docs/hanja-component-capture-u5ac2-sou10-layout-2026-10-27/capture.json\",\"captureSHA256\":\"f618a96eddfa4efa9457003529e3287fae3c22304efd78b783f63da8ff097c3f\",\"fullPath\":\"docs/hanja-component-capture-u5ac2-sou10-layout-2026-10-27/engine-whole-lingo-u5ac2-sou10-layout-v1.json\",\"fullSHA256\":\"d43fa364bcb57fd802611d36a255340366c4ada995199f510a1c9bac3bcecf87\",\"configSemanticSHA256\":\"cfbb9a406191b37b4a31fb8b9fcfb2af21fbb8153b89671486157b68d2e65dd1\",\"domestic\":{\"url\":\"http://img.e-hanja.kr/hanjaSvg/aniSVG/5a00/5ac2.svg\",\"status\":200,\"bytes\":7231,\"sha256\":\"14a3854c144db993f43765aeafda9dcb8c63a3bcbf97a100db9e372ed9e3cd20\",\"clips\":13,\"glyph\":\"嫂\",\"privateMediaSaved\":false}}")
++NEW_PUBLIC_WHOLES["lingo-u5ac2-sou10-layout-v1"]=U5AC2_LOCAL_LAYOUT_WHOLE_CASE
+ NEW_PUBLIC_WHOLES["lingo-u995b-no-extra-v1"]=json.loads("{\"glyph\":\"饛\",\"catalogStrokes\":23,\"config\":\"docs/hanja-source-raw-compare-u995b-local-no-extra-whole-2026-10-27/config.json\",\"local995bOmission\":true,\"root\":\"lingo-u995b-no-extra-v1\",\"recipePath\":\"docs/hanja-component-recipe-u995b-2026-10-27/recipe.json\",\"recipeSHA256\":\"eaefeb0fc260ffd31857297168753b0e2803d8f50b9c8d8a1a3342a8aff107b8\",\"capturePath\":\"docs/hanja-component-capture-u995b-2026-10-27/capture.json\",\"captureSHA256\":\"8dd8b4dae17bc81a41b9257824dd9d12b42de1e1f1f6e604fb72a913e0959740\",\"configSemanticSHA256\":\"19d2aae0ee530fa4e4af3035d23a6a3ea36bc8034d3887fb42257f07ce66c8d1\",\"localRecipe\":true}")
+@@
++    if case.get('local5ac2Layout'):
++        semantic={k:v for k,v in config.items()if k!='launcherSHA256'}
++        require(config_path==ROOT/case['config'] and digest(json.dumps(semantic,sort_keys=True,separators=(',',':'),ensure_ascii=False).encode())==case['configSemanticSHA256'],'exact authored 嫂 layout comparison config required')
++        require(config['kind']=='local-authored-component-recipe' and config['sourceRootWasAuthored']is True and config['wholeOnly']is True and config['glyph']=='嫂' and config['catalogStrokes']==12 and config['dictionaryPlaybackStrokes']==config['domestic']['clips']==13 and config['domestic']==case['domestic'],'local catalog12/publisher13 whole-only required')
++        require(label=='selected' and list(config['sourceRoots'])==['selected'] and spec['root']==case['root'] and path==pinned_path(case['fullPath']) and spec['fileSHA256']==case['fullSHA256']==digest(path.read_bytes()),'one exact new authored whole required')
++        for p,h in config['inputSHA256'].items():require(digest(pinned_path(p).read_bytes())==h,'authored 嫂 input changed: '+p)
++        require(digest(pinned_path(case['recipePath']).read_bytes())==case['recipeSHA256'] and digest(pinned_path(case['capturePath']).read_bytes())==case['captureSHA256'],'fixed authored recipe/capture required')
++        recipe=json.loads(pinned_path(case['recipePath']).read_bytes());cap=json.loads(pinned_path(case['capturePath']).read_bytes());proof=json.loads(path.read_bytes())
++        require(recipe['recipeId']==case['root'] and recipe['mixedParts']is True and recipe['locallyAuthoredLayout']is True and recipe['originalLayoutPreserved']is False and recipe['originalWhole']is False and recipe['virtualRoot']['data']=='99:0:0:5:0:165:200:u5973-01$99:0:0:58:0:195:200:u53df','explicit authored integer parent, not public original layout')
++        require(cap['root']==case['root'] and cap['sourceSHA256']==case['recipeSHA256'] and cap['sourceParserRowsExactlyOriginalAffine']is True and cap['sourcePrimitiveRowsUnmodified']is True and cap['sourcePStitched']is False and cap['originalLayoutPreserved']is False,'fresh original-leaf/new-parent capture binding')
++        require((cap['actualVMContexts'],cap['vendorEvaluations'],cap['captureEvaluation'],cap['makeGlyphCalls'])==(1,8,1,1) and set(cap['usedReferences'])==set(recipe['localRecords']) and cap['aliasInserted']is False,'exact one VM/make and closed original child records')
++        require(cap['originalAliasMetadata']['u53df-ue0103']==recipe['originalRecords']['u53df-ue0103'] and cap['originalAliasMetadata']['u53df-ue0103']['related']=='u3013','original metadata alias preserved, not inserted')
++        require(sorted(proof)==FIVE and proof['engineRevision']==cap['engine']['revision']=='49232bac0348fe815f4200d4116ab7917e0db47f' and proof['engineHashes']==cap['engine']['actualLoadedHashes'] and len(proof['engineHashes'])==8,'actual pinned eight-vendor full5')
++        groups,trace=proof['groups'],proof['trace']
++        require((len(groups),len(trace),sum(map(len,trace)),sum(len(g['polygons'])for g in groups))==(16,16,16,27) and [len(g['polygons'])for g in groups]==spec['polygonCounts'],'16 raw/calls 27P; not logical13 inference')
++        require([g['polygons']for g in groups]==[[p for c in row for p in c['polygons']]for row in trace] and cap['wholeAndTracePolygonsExactlySame']is True,'original call/group/whole P exact')
++        require(cap['finiteEvidence']['nonfiniteGeometry']==[] and cap['finiteEvidence']['unusedTailKinds']=={'NaN':54} and cap['finiteEvidence']['unusedTailNeverCoerced']is True and cap['finiteEvidence']['allActiveRawAndPCoordinatesFinite']is True,'finite active source data and untouched unused tails')
++        require(cap['nativeApproval']is False and cap['runtimeApplied']is False and cap['playback13Approved']is False and config['nativeApproval']is False and config['runtimeApplied']is False,'no whole/mapping/clock/runtime approval')
++        return
+     if case.get('local995bOmission'):
+*** End Patch
