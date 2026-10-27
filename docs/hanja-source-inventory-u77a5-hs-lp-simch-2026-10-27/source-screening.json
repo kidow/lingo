@@ -1,0 +1,142 @@
+{
+  "schema": "hanja-public-source-only-screening/v1",
+  "date": "2026-10-27",
+  "glyph": "瞥",
+  "sourceFile": "docs/hanja-source-inventory-u77a5-hs-lp-simch-2026-10-27/public-records.json",
+  "priorEvidence": {
+    "original16MacroDirectionsReused": true,
+    "original15MappingsReused": true,
+    "heldPen": 4,
+    "var001WholeHOLDPreserved": true,
+    "noNewParentOrPrimitiveChosen": true
+  },
+  "roots": [
+    {
+      "name": "hs_u77a5",
+      "version": "1",
+      "versionType": "string",
+      "rootRow": "99:0:0:0:0:200:200:u77a5@9:0:0:0$0:-1:-1:-1",
+      "classification": "alias with original metadata row",
+      "dependency": "u77a5@9 -> u77a5-k@6",
+      "source4Condition": "unresolved; required fixed k@6 is not substituted by cached k@8 or archive k",
+      "closureComplete": false
+    },
+    {
+      "name": "hs_u77a5-var-001",
+      "version": "1",
+      "versionType": "string",
+      "classification": "alias with original metadata row",
+      "dependency": "u77a5-ue0100 unversioned",
+      "closureComplete": false,
+      "reason": "Child request rate-limited before execution; old archive child is not current response."
+    },
+    {
+      "name": "lp_lps-00017254",
+      "version": "1",
+      "versionType": "string",
+      "classification": "alias with original metadata row",
+      "dependency": "lp_lpy-00017254@1",
+      "closureComplete": false,
+      "reason": "Child request rate-limited before execution."
+    },
+    {
+      "name": "lp_lps-00106360",
+      "version": "1",
+      "versionType": "string",
+      "classification": "alias with original metadata row",
+      "dependency": "lp_lpy-00106360",
+      "closureComplete": false,
+      "reason": "Child request rate-limited before execution."
+    },
+    {
+      "name": "lp_lps-00127707",
+      "version": "1",
+      "versionType": "string",
+      "classification": "alias with original metadata row",
+      "dependency": "lp_lpy-00127707",
+      "closureComplete": false,
+      "reason": "Child request rate-limited before execution."
+    },
+    {
+      "name": "lp_lps-00151024",
+      "version": "1",
+      "versionType": "string",
+      "classification": "alias with original metadata row",
+      "dependency": "lp_lpy-00151024 (observed numeric version1/U+3013) -> j90-4a4d unversioned",
+      "cachedChild": "j90-4a4d@8 original fixed public response available",
+      "currentUnversionedChildBindingConfirmed": false,
+      "source4Condition": "Cached j90@8 row1:22:4:99:48:99:101, ending4. Not a new no-hook claim.",
+      "closureComplete": false
+    },
+    {
+      "name": "simch-kx_kp0ddf6",
+      "version": "1",
+      "versionType": "string",
+      "classification": "independent literal authored upper rows plus cached eye child",
+      "topLeftDL": "2:0:7:45:22:35:33:13:44",
+      "topRightDR": "2:7:8:78:20:95:26:105:36",
+      "rightFrame": "1:22:4:98:46:98:101",
+      "rightFrameType": 1,
+      "startFlag": 22,
+      "endFlag": 4,
+      "child": "u76ee-j cached numeric version2",
+      "cachedSnapshotClosureAvailable": true,
+      "currentWholeOrPolygonsCaptured": false,
+      "wholeApproved": false
+    },
+    {
+      "name": "simch-kx_t081701",
+      "version": "1",
+      "versionType": "string",
+      "classification": "independent literal authored upper rows plus cached eye child",
+      "topLeftDR": "2:7:8:18:19:34:28:41:41",
+      "topRightDL": "2:0:7:100:20:91:32:77:44",
+      "rightFrame": "1:22:0:96:49:96:105",
+      "rightFrameType": 1,
+      "startFlag": 22,
+      "endFlag": 0,
+      "originalSpecialRow": "101:2000:0:62:14:62:104",
+      "child": "u76ee-j cached numeric version2",
+      "cachedSnapshotClosureAvailable": true,
+      "currentWholeOrPolygonsCaptured": false,
+      "wholeApproved": false,
+      "reason": "End0 source condition alone does not prove no terminal filled feature or Korean whole compatibility; diagonal placement differs from the reused original macro observation. Original type101/flags must remain unchanged."
+    }
+  ],
+  "pendingExactRequests": [
+    "u77a5-k@6",
+    "u77a5-ue0100",
+    "lp_lpy-00017254@1",
+    "lp_lpy-00106360",
+    "lp_lpy-00127707",
+    "j90-4a4d unversioned only if current alias closure is pursued"
+  ],
+  "unrelatedUnversionedAlias": {
+    "name": "u6549-03",
+    "requestedThisUnit": false,
+    "substitutedByVersion1": false,
+    "reason": "Not needed by the eight requested roots; previously incomplete U+3097C alias remains separate."
+  },
+  "recommendation": {
+    "firstNextSourceRequest": "lp_lpy-00017254@1 (follow exact authored child of new lp root); other rate-limited child roots remain unclassified",
+    "nextIndependentWholeIfLaterChosen": "simch-kx_t081701@1 is independently authored and cached-snapshot-closed, but no whole P exists; it is not selected or approved as a remedy.",
+    "captureNowRecommended": false,
+    "reason": "No newly obtained source has established both required upper DL/DR placement and a compatible no-hook4th stroke. Close the three unknown LP children first; do not rerun existing end4 captures."
+  },
+  "limits": {
+    "sourceRowsAreNotGeometryApproval": true,
+    "noImplicitVersionSubstitution": true,
+    "originalMetadataRowsRetained": true,
+    "originalClockClaim": false,
+    "examBodyCertification": false,
+    "wholeApproved": false,
+    "groupingApproved": false,
+    "directionApproved": false,
+    "nativeApproved": false,
+    "runtimeApplied": false,
+    "engineRuns": 0,
+    "serverStarted": false,
+    "newPolicy": false
+  }
+}
+
