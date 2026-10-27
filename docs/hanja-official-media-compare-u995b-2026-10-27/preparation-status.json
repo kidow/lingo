@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "glyph": "饛",
+  "date": "2026-10-27",
+  "status": "WAITING-required-original-timing-metadata-after-single-RAM-fetch-failure",
+  "purpose": "Prepare exact original23 controlled-direction scenes at CSS fractions0.1,0.5,0.75; no native scene executed.",
+  "existingValidatedAuthority": [
+    {
+      "path": "docs/hanja-source-raw-compare-u995b-local-no-extra-whole-2026-10-27/config.json",
+      "SHA256": "54cd0920a93d58e6e3509a065c104f23b54d7a859038729d44d8d5f23f3aac17"
+    },
+    {
+      "path": "docs/hanja-goal-glyphwiki-batch571-2026-10-11/metadata.json",
+      "SHA256": "432cc95a1fd8208417ff23bad4e3850aeae5afffe5983f12af20949ac7001443"
+    }
+  ],
+  "expectedOriginalSVG": {
+    "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/9900/995b.svg",
+    "bytes": 10716,
+    "SHA256": "15c4a68d14997e01aad86e74271717009c6563359916f0b06f2a27c0f48291f1",
+    "clips": 23
+  },
+  "existingCSSPin": {
+    "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/libs/opmGna.svg.ani.min.css",
+    "bytes": 804,
+    "sha256": "5c427b5157bb10b0f03e2b42207c55cb2149098044c3a254cd6d0a8d22f8af18"
+  },
+  "originalMediaHelper": {
+    "path": "scripts/hanja-official-media-compare.py",
+    "SHA256": "6c81c111e4a652ba19c970b600d6f3f84890cbecf05ab7fdbc27c7389ab92ef0",
+    "unchanged": true
+  },
+  "singleRAMFetch": {
+    "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/9900/995b.svg",
+    "tool": "Node fetch",
+    "attempts": 1,
+    "successes": 0,
+    "error": "fetch failed",
+    "HTTPStatusKnown": false,
+    "responseBodyObtained": false,
+    "newByteHashValidationPerformed": false,
+    "retries": 0
+  },
+  "requiredMetadataStillMissing": [
+    "original svgRoot attributes",
+    "all23 original timed-path records: delay/duration/pathLength/generic inlineStyle/individual geometrySHA256"
+  ],
+  "guardStatus": {
+    "new23CaseAdded": false,
+    "genericMax16Changed": false,
+    "existingWei17CaseChanged": false,
+    "timingOrGeometryInvented": false,
+    "otherGlyphTimingCopied": false,
+    "strictValidationWeakened": false,
+    "configWritten": false
+  },
+  "dataBoundary": {
+    "SVGOrCSSBodyFilesSaved": 0,
+    "shapePathFilesSaved": 0,
+    "shapeBodyLogged": false,
+    "shapeBodySentToAPIOrContext": false
+  },
+  "execution": {
+    "nativeScenes": 0,
+    "serverStarts": 0,
+    "engine": 0,
+    "build": 0,
+    "fullTypeChecks": 0,
+    "sharedFilesChanged": 0,
+    "GitOperations": 0
+  },
+  "next": "Provide original995b RAM-derived safe metadata or separately authorize an actual retry through an existing working local publisher-fetch path. The failed retrieval is not treated as successful verification or permission to relax guards."
+}

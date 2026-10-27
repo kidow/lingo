@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "glyph": "饛",
+  "date": "2026-10-27",
+  "status": "WAITING-required-safe-metadata-after-bounded-alternate-transport-failure",
+  "priorNodeFailure": {
+    "path": "docs/hanja-official-media-compare-u995b-2026-10-27/preparation-status.json",
+    "SHA256": "b75b36f43570eea95af5ffe98fa1b753a58c5b19afd7c549db415b8ac02e0aa8"
+  },
+  "originalMetadataAuthority": [
+    {
+      "path": "docs/hanja-source-raw-compare-u995b-local-no-extra-whole-2026-10-27/config.json",
+      "SHA256": "54cd0920a93d58e6e3509a065c104f23b54d7a859038729d44d8d5f23f3aac17"
+    },
+    {
+      "path": "docs/hanja-goal-glyphwiki-batch571-2026-10-11/metadata.json",
+      "SHA256": "432cc95a1fd8208417ff23bad4e3850aeae5afffe5983f12af20949ac7001443"
+    }
+  ],
+  "expectedPublisher": {
+    "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/9900/995b.svg",
+    "bytes": 10716,
+    "SHA256": "15c4a68d14997e01aad86e74271717009c6563359916f0b06f2a27c0f48291f1",
+    "clips": 23
+  },
+  "alternateTransport": {
+    "transport": "Python urllib build_opener(NoRedirect), matching existing shared fetch",
+    "attempts": 1,
+    "successes": 0,
+    "errors": [
+      "URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    ]
+  },
+  "executionEnvironment": "Python subprocess launched by persistent Node REPL; no assumption that this has the same network environment as the working ROOT server.",
+  "resultScope": {
+    "HTTPStatusKnown": false,
+    "responseBodyObtained": false,
+    "safeMetadataObtained": false,
+    "byteHashRevalidatedHere": false,
+    "sourceAbsenceProven": false
+  },
+  "otherKnownObservation": {
+    "reportedBy": "ROOT",
+    "description": "ROOT reported a successful same-995b existing-server RAM fetch and old SHA verification. This local DNS failure does not contradict or replace that observation."
+  },
+  "limits": {
+    "alternateTransportAttempts": 1,
+    "additionalRetries": 0,
+    "SVGOrCSSOrDMediaFilesSaved": 0,
+    "shapeBodyLogged": false,
+    "shapeBodySentToAPIOrContext": false,
+    "configWritten": false,
+    "helperModified": false,
+    "guardWeakened": false,
+    "nativeScenes": 0,
+    "serversStarted": 0,
+    "builds": 0,
+    "fullTypeChecks": 0
+  },
+  "helperUnchanged": {
+    "path": "scripts/hanja-official-media-compare.py",
+    "SHA256": "6c81c111e4a652ba19c970b600d6f3f84890cbecf05ab7fdbc27c7389ab92ef0"
+  },
+  "next": "Stop transport attempts in this task. ROOT can supply the already working server RAM-derived safe metadata; never synthesize root/timing/geometry hashes or infer them from another glyph."
+}
