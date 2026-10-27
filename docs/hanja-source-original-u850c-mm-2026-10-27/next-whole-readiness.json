@@ -1,0 +1,174 @@
+{
+  "schema": "hanja-five-candidate-source-readiness/v1",
+  "date": "2026-10-28",
+  "scope": [
+    "蔌",
+    "樕",
+    "餗",
+    "穟",
+    "檖"
+  ],
+  "inputs": {
+    "docs/hanja-goal-glyphwiki-batch662-2026-10-11/metadata.json": "e54a70e41c31f546b0cbd81fde9e19625f706ee14e1763ff1468dccd67c77f60",
+    "docs/hanja-goal-glyphwiki-batch662-2026-10-11/progressive-review.json": "6e97d1ca517542ffa65546e243d381995e88d207b9021e28b3782992e206ffc4",
+    "docs/hanja-goal-glyphwiki-batch663-2026-10-11/metadata.json": "6bfea9449a2e46f117bfe96207862d14ed78cbebb781e7202cd417a28f52b882",
+    "docs/hanja-goal-glyphwiki-batch663-2026-10-11/progressive-review.json": "61545ab85d8b191cb94d68c57172a003f1a37f2161c92d038eea71982a1ee6c6",
+    "docs/hanja-goal-glyphwiki-batch664-2026-10-11/metadata.json": "e62f5c266ca916c8d5b19c4a2a2acd28dec4e5cbb493acc66c3018a244b30cfc",
+    "docs/hanja-goal-glyphwiki-batch664-2026-10-11/progressive-review.json": "515cb09eef0ea1e03fbfeeacd34cdb8ab45fe956f208b700fe20525c4dea9f8d",
+    "docs/hanja-goal-glyphwiki-batch672-2026-10-11/metadata.json": "2a3d632d3483f6c77fdedbf5a5246ef0f93db0b95fac895e2d2afc05c05f7800",
+    "docs/hanja-goal-glyphwiki-batch672-2026-10-11/progressive-review.json": "a9e8e2fd77d90d2f38cbeabd76b4e3ac524e17f96b547a90b4dcbe0076c7d8b7",
+    "docs/hanja-goal-glyphwiki-batch673-2026-10-11/metadata.json": "ef3089a96d3a7a9f43f44dcc4f2d32c1e2974ea9aa87211da165076df529b421",
+    "docs/hanja-goal-glyphwiki-batch673-2026-10-11/progressive-review.json": "f53e390617a5fe0fdd3dc96bbadfb37a308cc13f00efdefdaa07fc39af82e20e",
+    "docs/hanja-source-original-u850c-mm-2026-10-27/source-record.json": "6d8cdc5c03f9b40fe92e2733dca11e040675ef6d7b43d9668ff19c8af3138e14",
+    "docs/hanja-source-raw-compare-u9917-hkcs-whole-2026-10-26/native-whole-review.json": "f3b17b34cb4d6ca8c040d6810b009285eea80539ecdcf0ca6dbafe7499b2bab3",
+    "scripts/hanja-static-original-mm-u6715.py": "26f1f172a54fd35483a2db80dd56cdfb43cb58d1a7396d669de12784a1d81562",
+    "scripts/hanja-static-original-mm-u77a5.py": "ff67bf2b786ce3d961760c295cf176cf5804c52fc32864b1514837e1aa4732c5"
+  },
+  "inventory": [
+    {
+      "glyph": "餗",
+      "id": "u9917",
+      "metadataPath": "docs/hanja-goal-glyphwiki-batch662-2026-10-11/metadata.json",
+      "reviewPath": "docs/hanja-goal-glyphwiki-batch662-2026-10-11/progressive-review.json",
+      "catalog": 16,
+      "domestic": 16,
+      "status": "HOLD no original whole matches separated domestic food horizontal and 束 sweep",
+      "releaseCondition": "Exact original domestic food form with separated horizontal and right sweep,then full native stroke review;no synthetic separation",
+      "sourceGuards": {
+        "originalWholeCompatibilityApproved": false,
+        "runtimeApplied": false
+      }
+    },
+    {
+      "glyph": "樕",
+      "id": "u6a15",
+      "metadataPath": "docs/hanja-goal-glyphwiki-batch663-2026-10-11/metadata.json",
+      "reviewPath": "docs/hanja-goal-glyphwiki-batch663-2026-10-11/progressive-review.json",
+      "catalog": 15,
+      "domestic": 15,
+      "status": "HOLD original 欠 lower sweep starts on upper horizontal;domestic detached",
+      "releaseCondition": "Exact original 欠 lower sweep detached start and full native stroke review;no cropped or moved start",
+      "sourceGuards": {
+        "originalWholeCompatibilityApproved": false,
+        "runtimeApplied": false
+      }
+    },
+    {
+      "glyph": "蔌",
+      "id": "u850c",
+      "metadataPath": "docs/hanja-goal-glyphwiki-batch664-2026-10-11/metadata.json",
+      "reviewPath": "docs/hanja-goal-glyphwiki-batch664-2026-10-11/progressive-review.json",
+      "catalog": 15,
+      "domestic": 15,
+      "status": "HOLD no whole matches split 艹 and detached 欠 lower start",
+      "releaseCondition": "Exact original whole matching split 艹 and detached 欠 start,then full native stroke review;no mixing roots or cropped starts",
+      "sourceGuards": {
+        "originalWholeCompatibilityApproved": false,
+        "runtimeApplied": false
+      }
+    },
+    {
+      "glyph": "檖",
+      "id": "u6a96",
+      "metadataPath": "docs/hanja-goal-glyphwiki-batch672-2026-10-11/metadata.json",
+      "reviewPath": "docs/hanja-goal-glyphwiki-batch672-2026-10-11/progressive-review.json",
+      "catalog": 17,
+      "domestic": 17,
+      "status": "HOLD no original whole matches domestic 木 separation and 豕 long descending sweep",
+      "releaseCondition": "Exact original whole preserving domestic separation, two 辶 dots and top-start 豕 descending sweep then full native stroke review; no substitution or deformation",
+      "sourceGuards": {
+        "originalWholeCompatibilityApproved": false,
+        "runtimeApplied": false
+      }
+    },
+    {
+      "glyph": "穟",
+      "id": "u7a5f",
+      "metadataPath": "docs/hanja-goal-glyphwiki-batch673-2026-10-11/metadata.json",
+      "reviewPath": "docs/hanja-goal-glyphwiki-batch673-2026-10-11/progressive-review.json",
+      "catalog": 18,
+      "domestic": 18,
+      "status": "HOLD no original whole combines domestic top-start 豕 sweep and joined 禾 dot-to-辶",
+      "releaseCondition": "Exact original whole preserving domestic joined 禾 dot-to-辶,two 辶 dots and top-start 豕 descending sweep then full native stroke review; no mixing or deformation",
+      "sourceGuards": {
+        "originalWholeCompatibilityApproved": false,
+        "runtimeApplied": false
+      }
+    }
+  ],
+  "currentSourceGuardClarification": {
+    "glyph": "餗",
+    "latestRecord": "docs/hanja-source-raw-compare-u9917-hkcs-whole-2026-10-26/native-whole-review.json",
+    "root": "hkcs_m9917@1",
+    "status": "HOLD visible food-head seam; geometric disconnection is not claimed",
+    "reusedExactGeometryContactAreaOriginal200": "343/9400",
+    "contactEvidenceDoesNotResolveVisibleSeam": true,
+    "noAntialiasingCauseAssumed": true,
+    "noBridgeOrSeparationAuthorized": true,
+    "oldHOLDNotTransferredToNewMMWhole": true
+  },
+  "nextCandidate": {
+    "glyph": "蔌",
+    "id": "u850c",
+    "grade": "특급",
+    "source": {
+      "path": "docs/hanja-source-original-u850c-mm-2026-10-27/source-record.json",
+      "SHA256": "6d8cdc5c03f9b40fe92e2733dca11e040675ef6d7b43d9668ff19c8af3138e14",
+      "originalRecordSHA256": "c80c88002601c9379da531bd947f4765ff000cc1070a0b112851c074a47ca242",
+      "revision": "bddc96d41bef78427ed0e034e9f7e31d71fd1b92",
+      "wholeCorpusSHA256": "a28c478b5178e98f67f510b2d52fde08a69dc664654ef43498253b9b764d46ee"
+    },
+    "counts": {
+      "catalog": 15,
+      "publisher": 15,
+      "originalMMFilledPaths": 14,
+      "originalMediansRetained": 14,
+      "countDifferenceIsNotWholeRejection": true,
+      "countDifferenceIsNotStrokeMappingApproval": true
+    },
+    "preparationStage": "exact-MM-case-binding-missing",
+    "newMMWholeNativeReviewed": false,
+    "existingKageWholeHOLDPreserved": true,
+    "wholeGuardQuestions": [
+      "Does the unchanged complete MM whole match the split 艹 of the retained domestic whole?",
+      "Does the unchanged MM 欠 lower start have the same detached relation?"
+    ],
+    "guardedReuse": {
+      "existingCore": "scripts/hanja-static-original-mm-u6715.py",
+      "existingThinCase": "scripts/hanja-static-original-mm-u77a5.py",
+      "newRendererOrReviewSystemNeeded": false,
+      "originalPathStringsMustRemainExact": true,
+      "mediansMustRemainStoredButUnrendered": true,
+      "displayTransform": "translate(0 900) scale(1 -1)",
+      "minimumMissingBinding": "One exact 蔌 source/config constants adapter and exact launcher dispatch, reusing current original-MM whole execution/render/XML/RAM-publisher core; explicit catalog15/publisher15/MM14 counts and countDifferencePresent=true.",
+      "nextValidation": "After authorized implementation: exact source/JSON/hash and check-only with HTTP0, then ROOT paired whole native observation. Stop on whole mismatch; do not infer order or synthesize 15 mappings."
+    }
+  },
+  "others": {
+    "樕": "Original 欠 lower sweep starts attached while the retained domestic start is detached; no newly retained compatible whole identified in this focused inventory.",
+    "餗": "Latest complete HKCS whole remains a native visual seam HOLD despite exact positive public polygon contact; a guarded reveal cannot automatically repair the already completed whole.",
+    "穟": "Retained original variants do not combine the domestic joined 禾-dot/辶 relation and top-start 豕 sweep; no new compatible whole identified.",
+    "檖": "Retained variants do not jointly match 木 separation, two 辶 dots and top-start 豕 sweep; no new compatible whole identified."
+  },
+  "decision": {
+    "oneNextPreparationCandidate": "蔌",
+    "nativeReviewReadyNow": false,
+    "exactBindingRequired": true,
+    "wholeCompatible": false,
+    "orderOrDirectionApproved": false,
+    "reusableAnimationPolicyApproved": false,
+    "runtimeApplied": false
+  },
+  "workPerformed": {
+    "newGeometryComputation": 0,
+    "newSourceFetch": 0,
+    "newPrivateMediaRead": 0,
+    "newServer": 0,
+    "newBrowser": 0,
+    "newSSR": 0,
+    "newBuild": 0,
+    "newCommit": 0,
+    "sharedCodeChanges": 0,
+    "registryChanges": 0
+  }
+}
