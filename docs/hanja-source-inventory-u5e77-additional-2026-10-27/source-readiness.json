@@ -1,0 +1,80 @@
+{
+  "schema": "hanja-public-source-only-readiness/v1",
+  "date": "2026-10-27",
+  "glyph": "幷",
+  "source": {
+    "path": "docs/hanja-source-inventory-u5e77-additional-2026-10-27/sources.json",
+    "SHA256": "e026605bde5f58812be28fba4a76a62b1d0a40e8afc25197ea78a58983b21fed"
+  },
+  "closures": [
+    {
+      "root": "u5e77-02-var-005@2",
+      "closed": true,
+      "records": ["u5e77-02-var-005@2"],
+      "rawRows": 8,
+      "dataSHA256": "1bfcc84d01a7f1453365031e8f6698869410d3bd72b92bf103190118271b291d",
+      "upperHOriginalRows": ["1:0:0:88:57:138:57", "1:0:0:140:57:186:57"],
+      "priority": "first actual capture only"
+    },
+    {
+      "root": "u5e77-02-var-006@1",
+      "closed": true,
+      "records": ["u5e77-02-var-006@1"],
+      "rawRows": 8,
+      "dataSHA256": "5200fe9e2a6db37d856c5ca8f0877d23255e5ec56f1acc5551ed17a6df86964b",
+      "upperHOriginalRows": ["1:0:0:88:57:138:57", "1:0:0:140:57:186:57"],
+      "priority": "same target H rows as005, different whole rows; no engine requested in this unit"
+    },
+    {
+      "root": "simch-kx_t034007@1",
+      "closed": true,
+      "records": ["simch-kx_t034007@1"],
+      "rawRows": 8,
+      "dataSHA256": "0f6ad8ff2ffa387dfb1621f237fc195785ca0017cddbe7da2165635926ba7c14",
+      "upperHOriginalRows": ["1:0:0:20:53:97:53", "1:0:0:103:53:180:53"],
+      "priority": "distinct whole data; no engine requested in this unit"
+    }
+  ],
+  "deduplication": {
+    "method": "Exact original data-string equality and literal alias-reference expansion, not similar glyph appearance.",
+    "cachedPublicSources": [
+      {"path": "docs/hanja-source-inventory-u5e77-2026-10-26/sources.json", "SHA256": "e20f0253e0485d1a3f9eb6e5c3cf5e508ebffc417c30ea1c22b063d4128fcc5e"},
+      {"path": "docs/hanja-goal-glyphwiki-batch124-2026-09-27/sources.json", "SHA256": "f0adb1e4f4402d23c5ef8745fd7bb879b606c24ae817e5f3e65863b87655295f"},
+      {"path": "docs/hanja-goal-glyphwiki-batch124-2026-09-27/alternative-sources.json", "SHA256": "ba0b9487094c1a47a2861b939eeafc3f72a1c7080e1d6c998c8282bffb971f03"}
+    ],
+    "newThreeWholeDataStringsDistinctFromCachedFiveWholeStrings": true,
+    "005And006WholeDataEqual": false,
+    "005And006UpperHRowsEqual": true,
+    "excludedAliasDerived": {
+      "name": "hs_u5e77",
+      "version": 1,
+      "originalData": "99:0:0:0:0:200:200:u5e77@4:0:0:0$0:-1:-1:-1",
+      "referenceRecord": {"name": "u5e77", "version": "4", "related": "U+3013", "data": "99:0:0:0:0:200:200:u5e77-k"},
+      "resolvedDrawingRowsExactlyMatch": "cached u5e77-k@4",
+      "resolvedDrawingRows": 8,
+      "drawingRowsSHA256": "46acfcbd5d9fbd28426e7685ef1cda849a872462bfc5fc91b6c50d3360d06af6",
+      "otherLiteralRowsRetained": ["0:-1:-1:-1"],
+      "newIndependentDrawingRows": false,
+      "fullRenderedIdentityClaim": false,
+      "limit": "The extra literal row is not erased or assumed to have no rendering effect. Only the absence of new independent drawing rows is established."
+    },
+    "discoveryPageDeclaredAliasesNotCountedAsNew": ["u5e77@5 to u5e77-j@4", "u5e77-var-002 to u5e77-j@4"]
+  },
+  "existingPProof": {
+    "path": "docs/hanja-actual-engine-capture-u5e77-variants-2026-10-27/upper-h-contact-proof.json",
+    "SHA256": "1fb3f2f469b997fcfa1de9c7b64076dd931c8ecdf3f89c4fc8ba8e9f6612de63",
+    "scope": "Only original var001/003/004 source P has the proven7/6/6 gap; no proof or whole verdict is transferred to these additional roots.",
+    "recalculated": false
+  },
+  "newHTTPRequestsToSaveThisInventory": 0,
+  "engine": 0,
+  "projection": 0,
+  "newPrivateMediaFetch": 0,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "limits": [
+    "All three new literal sources are complete, but source centerline gaps do not establish contact or separation of actual generated P.",
+    "Standalone whole compatibility, stroke membership, order, direction and animation are unreviewed.",
+    "An actual005 capture may be prepared separately; this source inventory does not claim an engine run or approval."
+  ]
+}
