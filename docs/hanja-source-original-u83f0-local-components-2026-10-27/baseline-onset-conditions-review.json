@@ -1,0 +1,98 @@
+{
+  "schema": "hanja-local-compiled-baseline-onset-selected-findings/v1",
+  "glyph": "菰",
+  "fixtureSHA256": "80df51355acb56c1b1d69fe5c67e866fb1d484f325e361d91a0b582e3ea11485",
+  "verifier": "verify-baseline-onset-conditions.py",
+  "verifierSHA256": "35b0d7f372a2ed37052ebbbd1b116e951786fe80a5d70798c95659cfc85a63cf",
+  "execution": {
+    "parserFailureBeforeGeometry": 1,
+    "successfulSevenTargetBatch": 1,
+    "pen10ParentProofReexecuted": false,
+    "engine": 0,
+    "server": 0,
+    "native": 0,
+    "output": "Full exact result emitted by verifier and indexed in context-mode; this record preserves selected actionable findings, not every emitted rational."
+  },
+  "witnessContract": {
+    "region": "current compiled P intersect open disk radius7 at original compiled Q0, excluding every completed prior logical/mask P",
+    "halfWidth": "1/4096",
+    "boxArea": "1/4194304",
+    "allFourCornersStrictInsideTargetPolygonAndDiskAndOutsideAllPriorP": true,
+    "purpose": "Positive-area existence witness for finite initial ink; never adopted as a reveal anchor."
+  },
+  "results": [
+    {
+      "pen": 5, "mask": 2,
+      "kernelArea": "32725474121/1672137600",
+      "Q0StrictKernel": true,
+      "Q0OnPriorBoundary": true,
+      "testedJointKernelAndPreviousMaskPoint": "1/16",
+      "witnessCenter": ["30031/880", "589/16"],
+      "route": "Investigate exact source-Q t1/16 prior-contact/kernel family; author start and clock remain separate."
+    },
+    {
+      "pen": 6, "mask": 2,
+      "kernelArea": "10411237/511200",
+      "Q0StrictKernel": false,
+      "Q0OnPriorBoundary": true,
+      "testedJointKernelAndPreviousMaskPoint": "1/4",
+      "witnessCenter": ["989/40", "3547/40"],
+      "route": "Investigate exact source-Q t1/4 prior-contact/kernel family; no claim that this is the original start."
+    },
+    {
+      "pen": 7, "mask": 1,
+      "kernelArea": "13340972877789/540513836000",
+      "Q0StrictKernel": true,
+      "Q0InsidePriorInk": false,
+      "witnessCenter": ["2671/220", "113039/1760"],
+      "route": "Original Q0 itself satisfies strict kernel condition; source-bound point-window feasibility can be investigated."
+    },
+    {
+      "pen": 8, "mask": 1,
+      "kernelArea": "307083802568757/382169374259200",
+      "Q0StrictKernel": false,
+      "testedOneEighthAndOneQuarterStrictKernel": false,
+      "witnessCenter": ["665397/8800", "584899/17600"],
+      "route": "Do not infer a Q-family solution; consider an original-P monotone-prefix family only after its own proof."
+    },
+    {
+      "pen": 9, "mask": 2,
+      "kernelArea": "9314710729961/223419030400",
+      "Q0StrictKernel": false,
+      "Q0InsidePreviousMask": true,
+      "testedOneEighthAndOneQuarterStrictKernel": false,
+      "witnessCenter": ["802159/17600", "309548500000000033/4400000000000000"],
+      "route": "Previous-mask containment alone is insufficient; investigate a source-preserving prefix family rather than assert point-window eligibility."
+    },
+    {
+      "pen": 10, "mask": 2,
+      "reusedExactBinding": true,
+      "proofSHA256": "b5c078205f638248d69166e3814090590bb0dcd7873aa4026ed2492ca6c1fece",
+      "testedJointKernelAndPreviousMaskPoint": "1/8",
+      "newMathExecuted": false,
+      "route": "Reuse only the already bound conditional geometry; original Q0 gap and different author clock remain."
+    },
+    {
+      "pen": 11, "mask": 1,
+      "kernelArea": "587774053817/13854990000",
+      "Q0StrictKernel": false,
+      "testedOneEighthStrictKernel": true,
+      "testedOneEighthInsidePriorInk": false,
+      "witnessCenter": ["630051/8800", "173880750000000011/2200000000000000"],
+      "route": "A positive source-Q parameter is a new author start, with no prior-ink concealment; do not treat it as a solved onset."
+    },
+    {
+      "pen": 12, "mask": 1,
+      "kernelArea": "19239376102543/991750766400",
+      "Q0StrictKernel": false,
+      "testedOneEighthAndOneQuarterStrictKernel": false,
+      "witnessCenter": ["2688459/35200", "716869000000000077/17600000000000000"],
+      "route": "Investigate original-P monotone-prefix feasibility; source-Q axis order alone is not that proof."
+    }
+  ],
+  "wholeLogicalMonotonePrefixProved": false,
+  "POrQOrWidthOrWeightChanged": false,
+  "sourceClockApproved": false,
+  "nativeApproval": false,
+  "runtimeApplied": false
+}
