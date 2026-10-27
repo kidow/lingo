@@ -1,0 +1,987 @@
+{
+  "schema": "hanja-local-u7aea-five-source-bound-prefix-conditions/v1",
+  "date": "2026-10-27",
+  "glyph": "\u7aea",
+  "inputs": {
+    "docs/hanja-source-original-u7aea-local-2026-10-27/fixtures-draft.json": "9b6539a02fcad5e919ba79b193463f1e26556d434098f0154df0cb8a54a2c91e",
+    "docs/hanja-source-original-u83f0-local-components-2026-10-27/verify-baseline-onset-conditions.py": "35b0d7f372a2ed37052ebbbd1b116e951786fe80a5d70798c95659cfc85a63cf",
+    "docs/hanja-source-original-u83f0-local-components-2026-10-27/verify-logical-axis-prefix-conditions.py": "db903056c1375705fd8133ee79dcc3ff5450c519012a3f249881af9abebdbd29",
+    "docs/hanja-source-original-u83f0-local-components-2026-10-27/verify-pen8-connected-x-prefix.py": "afa23cad9a8825a2d839a4c5128607b21b2b84d377f05bdbbab0b1c8bec076b0",
+    "docs/hanja-source-original-u7443-g-2026-10-26/verify-raw9-point-rect.py": "4925401a247d15236789debce8eb467359569187a0bc99b761fb1921e8400cc3",
+    "docs/hanja-official-media-compare-u7aea-2026-10-27/native-direction-review.json": "32fedac3cf918dfefa6dce1de9df8eebe895c68deb271221961eaa2ee5a2f43a",
+    "docs/hanja-actual-component-profiles-2026-10-22/u7aea-local-no-extra-baseline-1-native-review.json": "31748452aebdc2354b2ca9434efec786da10818d0a856a2704c4e4e280e6176c"
+  },
+  "compiledSHA256": "c59c97d44ce071358ae98d1e01b34d32447276e5ab736f88d59766262dc0f110",
+  "wholeY": [
+    {
+      "pen": 8,
+      "axis": "y",
+      "directionHypothesis": "increasing",
+      "logicalMasks": 1,
+      "sourcePolygons": 2,
+      "eventCount": 23,
+      "openSlabCount": 22,
+      "allEventSectionsSingleInterval": true,
+      "allOpenSlabSectionsSingleInterval": true,
+      "wholeLogicalAxisMonotone": true,
+      "nonemptyProjectionInterval": [
+        "337/20",
+        "1169/20"
+      ],
+      "startCoordinate": "337/20",
+      "completionCoordinate": "1169/20",
+      "failureCount": 0,
+      "firstFailures": [],
+      "halfPlanePrefixGeometryEligible": true,
+      "initialCutMustExplicitlyBeEmptyAtProgressZero": true,
+      "cutForPositiveProgress": "start+(finish-start)*p",
+      "sourceDirectionApproved": false,
+      "sourceMicroClockApproved": false,
+      "nativeApproval": false,
+      "runtimeApplied": false,
+      "initialExtremalPoints": [
+        [
+          "1191/20",
+          "337/20"
+        ]
+      ],
+      "initialAreaLimitZero": "bounded union width times positive cut height tends to0",
+      "fullOriginalPAtCompletion": true,
+      "capFreeAxisCandidate": true,
+      "originalMasksRemainOne": true,
+      "sourceGuideYIncreasing": true
+    },
+    {
+      "pen": 9,
+      "axis": "y",
+      "directionHypothesis": "increasing",
+      "logicalMasks": 1,
+      "sourcePolygons": 2,
+      "eventCount": 6,
+      "openSlabCount": 5,
+      "allEventSectionsSingleInterval": true,
+      "allOpenSlabSectionsSingleInterval": true,
+      "wholeLogicalAxisMonotone": true,
+      "nonemptyProjectionInterval": [
+        "223/4",
+        "673/10"
+      ],
+      "startCoordinate": "223/4",
+      "completionCoordinate": "673/10",
+      "failureCount": 0,
+      "firstFailures": [],
+      "halfPlanePrefixGeometryEligible": true,
+      "initialCutMustExplicitlyBeEmptyAtProgressZero": true,
+      "cutForPositiveProgress": "start+(finish-start)*p",
+      "sourceDirectionApproved": false,
+      "sourceMicroClockApproved": false,
+      "nativeApproval": false,
+      "runtimeApplied": false,
+      "initialExtremalPoints": [
+        [
+          "47",
+          "223/4"
+        ]
+      ],
+      "initialAreaLimitZero": "bounded union width times positive cut height tends to0",
+      "fullOriginalPAtCompletion": true,
+      "capFreeAxisCandidate": true,
+      "originalMasksRemainOne": true,
+      "sourceGuideYIncreasing": true
+    },
+    {
+      "pen": 11,
+      "axis": "y",
+      "directionHypothesis": "increasing",
+      "logicalMasks": 1,
+      "sourcePolygons": 2,
+      "eventCount": 25,
+      "openSlabCount": 24,
+      "allEventSectionsSingleInterval": true,
+      "allOpenSlabSectionsSingleInterval": true,
+      "wholeLogicalAxisMonotone": true,
+      "nonemptyProjectionInterval": [
+        "1377/20",
+        "437/5"
+      ],
+      "startCoordinate": "1377/20",
+      "completionCoordinate": "437/5",
+      "failureCount": 0,
+      "firstFailures": [],
+      "halfPlanePrefixGeometryEligible": true,
+      "initialCutMustExplicitlyBeEmptyAtProgressZero": true,
+      "cutForPositiveProgress": "start+(finish-start)*p",
+      "sourceDirectionApproved": false,
+      "sourceMicroClockApproved": false,
+      "nativeApproval": false,
+      "runtimeApplied": false,
+      "initialExtremalPoints": [
+        [
+          "553/20",
+          "1377/20"
+        ]
+      ],
+      "initialAreaLimitZero": "bounded union width times positive cut height tends to0",
+      "fullOriginalPAtCompletion": true,
+      "capFreeAxisCandidate": true,
+      "originalMasksRemainOne": true,
+      "sourceGuideYIncreasing": true
+    }
+  ],
+  "pen12YFailurePreserved": {
+    "pen": 12,
+    "axis": "y",
+    "directionHypothesis": "increasing",
+    "logicalMasks": 1,
+    "sourcePolygons": 3,
+    "eventCount": 30,
+    "openSlabCount": 29,
+    "allEventSectionsSingleInterval": false,
+    "allOpenSlabSectionsSingleInterval": false,
+    "wholeLogicalAxisMonotone": false,
+    "nonemptyProjectionInterval": [
+      "135/2",
+      "451/5"
+    ],
+    "startCoordinate": "135/2",
+    "completionCoordinate": "451/5",
+    "failureCount": 2,
+    "firstFailures": [
+      {
+        "kind": "event",
+        "value": "1361/20",
+        "intervals": [
+          [
+            "1341/20",
+            "1341/20"
+          ],
+          [
+            "9389/140",
+            "85931/1260"
+          ]
+        ]
+      },
+      {
+        "kind": "open-slab",
+        "low": "1361/20",
+        "high": "155167/2280",
+        "sample": "310321/4560",
+        "intervals": [
+          [
+            "626773/9348",
+            "20385/304"
+          ],
+          [
+            "713551/10640",
+            "19593607/287280"
+          ]
+        ]
+      }
+    ],
+    "halfPlanePrefixGeometryEligible": false,
+    "initialCutMustExplicitlyBeEmptyAtProgressZero": true,
+    "cutForPositiveProgress": "start+(finish-start)*p",
+    "sourceDirectionApproved": false,
+    "sourceMicroClockApproved": false,
+    "nativeApproval": false,
+    "runtimeApplied": false
+  },
+  "pen12XSectionFailurePreserved": {
+    "pen": 12,
+    "axis": "x",
+    "directionHypothesis": "decreasing",
+    "logicalMasks": 1,
+    "sourcePolygons": 3,
+    "eventCount": 29,
+    "openSlabCount": 28,
+    "allEventSectionsSingleInterval": false,
+    "allOpenSlabSectionsSingleInterval": false,
+    "wholeLogicalAxisMonotone": false,
+    "nonemptyProjectionInterval": [
+      "1123/20",
+      "367/5"
+    ],
+    "startCoordinate": "367/5",
+    "completionCoordinate": "1123/20",
+    "failureCount": 2,
+    "firstFailures": [
+      {
+        "kind": "event",
+        "value": "1337/20",
+        "intervals": [
+          [
+            "1371/20",
+            "1371/20"
+          ],
+          [
+            "1097/16",
+            "15857/200"
+          ]
+        ]
+      },
+      {
+        "kind": "open-slab",
+        "low": "1337/20",
+        "high": "62843/940",
+        "sample": "62841/940",
+        "intervals": [
+          [
+            "193297/2820",
+            "257751/3760"
+          ],
+          [
+            "515549/7520",
+            "745253/9400"
+          ]
+        ]
+      }
+    ],
+    "halfPlanePrefixGeometryEligible": false,
+    "initialCutMustExplicitlyBeEmptyAtProgressZero": true,
+    "cutForPositiveProgress": "start+(finish-start)*p",
+    "sourceDirectionApproved": false,
+    "sourceMicroClockApproved": false,
+    "nativeApproval": false,
+    "runtimeApplied": false
+  },
+  "pen12ConnectedRightPrefix": {
+    "eventCount": 29,
+    "unionConvexSlabCells": 29,
+    "checks": [
+      {
+        "kind": "event",
+        "cut": "1123/20",
+        "positiveCells": 29,
+        "positiveEdgeComponents": 1,
+        "closedComponents": 1,
+        "isolatedCutIntervals": [],
+        "initialExplicitEmpty": false,
+        "positivePrefixConnected": true
+      },
+      {
+        "kind": "event",
+        "cut": "284/5",
+        "positiveCells": 28,
+        "positiveEdgeComponents": 1,
+        "closedComponents": 1,
+        "isolatedCutIntervals": [],
+        "initialExplicitEmpty": false,
+        "positivePrefixConnected": true
+      },
+      {
+        "kind": "event",
+        "cut": "287/5",
+        "positiveCells": 27,
+        "positiveEdgeComponents": 1,
+        "closedComponents": 1,
+        "isolatedCutIntervals": [],
+        "initialExplicitEmpty": false,
+        "positivePrefixConnected": true
+      },
+      {
+        "kind": "event",
+        "cut": "1173/20",
+        "positiveCells": 26,
+        "positiveEdgeComponents": 1,
+        "closedComponents": 1,
+        "isolatedCutIntervals": [],
+        "initialExplicitEmpty": false,
+        "positivePrefixConnected": true
+      },
+      {
+        "kind": "event",
+        "cut": "1177/20",
+        "positiveCells": 25,
+        "positiveEdgeComponents": 1,
+        "closedComponents": 1,
+        "isolatedCutIntervals": [],
+        "initialExplicitEmpty": false,
+        "positivePrefixConnected": true
+      },
+      {
+        "kind": "event",
+        "cut": "599/10",
+        "positiveCells": 24,
+        "positiveEdgeComponents": 1,
+        "closedComponents": 1,
+        "isolatedCutIntervals": [],
+        "initialExplicitEmpty": false,
+        "positivePrefixConnected": true
+      },
+      {
+        "kind": "event",
+        "cut": "304/5",
+        "positiveCells": 23,
+        "positiveEdgeComponents": 1,
+        "closedComponents": 1,
+        "isolatedCutIntervals": [],
+        "initialExplicitEmpty": false,
+        "positivePrefixConnected": true
+      },
+      {
+        "kind": "event",
+        "cut": "611/10",
+        "positiveCells": 22,
+        "positiveEdgeComponents": 1,
+        "closedComponents": 1,
+        "isolatedCutIntervals": [],
+        "initialExplicitEmpty": false,
+        "positivePrefixConnected": true
+      },
+      {
+        "kind": "event",
+        "cut": "623/10",
+        "positiveCells": 21,
+        "positiveEdgeComponents": 1,
+        "closedComponents": 1,
+        "isolatedCutIntervals": [],
+        "initialExplicitEmpty": false,
+        "positivePrefixConnected": true
+      },
+      {
+        "kind": "event",
+        "cut": "1251/20",
+        "positiveCells": 20,
+        "positiveEdgeComponents": 1,
+        "closedComponents": 1,
+        "isolatedCutIntervals": [],
+        "initialExplicitEmpty": false,
+        "positivePrefixConnected": true
+      },
+      {
+        "kind": "event",
+        "cut": "1267/20",
+        "positiveCells": 19,
+        "positiveEdgeComponents": 1,
+        "closedComponents": 1,
+        "isolatedCutIntervals": [],
+        "initialExplicitEmpty": false,
+        "positivePrefixConnected": true
+      },
+      {
+        "kind": "event",
+        "cut": "257/4",
+        "positiveCells": 18,
+        "positiveEdgeComponents": 1,
+        "closedComponents": 1,
+        "isolatedCutIntervals": [],
+        "initialExplicitEmpty": false,
+        "positivePrefixConnected": true
+      },
+      {
+        "kind": "event",
+        "cut": "322/5",
+        "positiveCells": 17,
+        "positiveEdgeComponents": 1,
+        "closedComponents": 1,
+        "isolatedCutIntervals": [],
+        "initialExplicitEmpty": false,
+        "positivePrefixConnected": true
+      },
+      {
+        "kind": "event",
+        "cut": "1307/20",
+        "positiveCells": 16,
+        "positiveEdgeComponents": 1,
+        "closedComponents": 1,
+        "isolatedCutIntervals": [],
+        "initialExplicitEmpty": false,
+        "positivePrefixConnected": true
+      },
+      {
+        "kind": "event",
+        "cut": "329/5",
+        "positiveCells": 15,
+        "positiveEdgeComponents": 1,
+        "closedComponents": 1,
+        "isolatedCutIntervals": [],
+        "initialExplicitEmpty": false,
+        "positivePrefixConnected": true
+      },
+      {
+        "kind": "event",
+        "cut": "265/4",
+        "positiveCells": 14,
+        "positiveEdgeComponents": 1,
+        "closedComponents": 1,
+        "isolatedCutIntervals": [],
+        "initialExplicitEmpty": false,
+        "positivePrefixConnected": true
+      },
+      {
+        "kind": "event",
+        "cut": "1337/20",
+        "positiveCells": 13,
+        "positiveEdgeComponents": 1,
+        "closedComponents": 1,
+        "isolatedCutIntervals": [],
+        "initialExplicitEmpty": false,
+        "positivePrefixConnected": true
+      },
+      {
+        "kind": "event",
+        "cut": "62843/940",
+        "positiveCells": 11,
+        "positiveEdgeComponents": 1,
+        "closedComponents": 1,
+        "isolatedCutIntervals": [],
+        "initialExplicitEmpty": false,
+        "positivePrefixConnected": true
+      },
+      {
+        "kind": "event",
+        "cut": "14719/220",
+        "positiveCells": 10,
+        "positiveEdgeComponents": 1,
+        "closedComponents": 1,
+        "isolatedCutIntervals": [],
+        "initialExplicitEmpty": false,
+        "positivePrefixConnected": true
+      },
+      {
+        "kind": "event",
+        "cut": "1341/20",
+        "positiveCells": 9,
+        "positiveEdgeComponents": 1,
+        "closedComponents": 1,
+        "isolatedCutIntervals": [],
+        "initialExplicitEmpty": false,
+        "positivePrefixConnected": true
+      },
+      {
+        "kind": "event",
+        "cut": "50967/760",
+        "positiveCells": 8,
+        "positiveEdgeComponents": 1,
+        "closedComponents": 1,
+        "isolatedCutIntervals": [],
+        "initialExplicitEmpty": false,
+        "positivePrefixConnected": true
+      },
+      {
+        "kind": "event",
+        "cut": "673/10",
+        "positiveCells": 7,
+        "positiveEdgeComponents": 1,
+        "closedComponents": 1,
+        "isolatedCutIntervals": [],
+        "initialExplicitEmpty": false,
+        "positivePrefixConnected": true
+      },
+      {
+        "kind": "event",
+        "cut": "687/10",
+        "positiveCells": 6,
+        "positiveEdgeComponents": 1,
+        "closedComponents": 1,
+        "isolatedCutIntervals": [],
+        "initialExplicitEmpty": false,
+        "positivePrefixConnected": true
+      },
+      {
+        "kind": "event",
+        "cut": "1401/20",
+        "positiveCells": 5,
+        "positiveEdgeComponents": 1,
+        "closedComponents": 1,
+        "isolatedCutIntervals": [],
+        "initialExplicitEmpty": false,
+        "positivePrefixConnected": true
+      },
+      {
+        "kind": "event",
+        "cut": "141/2",
+        "positiveCells": 4,
+        "positiveEdgeComponents": 1,
+        "closedComponents": 1,
+        "isolatedCutIntervals": [],
+        "initialExplicitEmpty": false,
+        "positivePrefixConnected": true
+      },
+      {
+        "kind": "event",
+        "cut": "713/10",
+        "positiveCells": 3,
+        "positiveEdgeComponents": 1,
+        "closedComponents": 1,
+        "isolatedCutIntervals": [],
+        "initialExplicitEmpty": false,
+        "positivePrefixConnected": true
+      },
+      {
+        "kind": "event",
+        "cut": "1558871/21820",
+        "positiveCells": 2,
+        "positiveEdgeComponents": 1,
+        "closedComponents": 1,
+        "isolatedCutIntervals": [],
+        "initialExplicitEmpty": false,
+        "positivePrefixConnected": true
+      },
+      {
+        "kind": "event",
+        "cut": "1449/20",
+        "positiveCells": 1,
+        "positiveEdgeComponents": 1,
+        "closedComponents": 1,
+        "isolatedCutIntervals": [],
+        "initialExplicitEmpty": false,
+        "positivePrefixConnected": true
+      },
+      {
+        "kind": "event",
+        "cut": "367/5",
+        "positiveCells": 0,
+        "positiveEdgeComponents": 0,
+        "closedComponents": 0,
+        "isolatedCutIntervals": [
+          [
+            "361/5",
+            "361/5"
+          ]
+        ],
+        "initialExplicitEmpty": true,
+        "positivePrefixConnected": false
+      },
+      {
+        "kind": "open-slab",
+        "cut": "2259/40",
+        "positiveCells": 29,
+        "positiveEdgeComponents": 1,
+        "closedComponents": 1,
+        "isolatedCutIntervals": [],
+        "initialExplicitEmpty": false,
+        "positivePrefixConnected": true
+      },
+      {
+        "kind": "open-slab",
+        "cut": "571/10",
+        "positiveCells": 28,
+        "positiveEdgeComponents": 1,
+        "closedComponents": 1,
+        "isolatedCutIntervals": [],
+        "initialExplicitEmpty": false,
+        "positivePrefixConnected": true
+      },
+      {
+        "kind": "open-slab",
+        "cut": "2321/40",
+        "positiveCells": 27,
+        "positiveEdgeComponents": 1,
+        "closedComponents": 1,
+        "isolatedCutIntervals": [],
+        "initialExplicitEmpty": false,
+        "positivePrefixConnected": true
+      },
+      {
+        "kind": "open-slab",
+        "cut": "235/4",
+        "positiveCells": 26,
+        "positiveEdgeComponents": 1,
+        "closedComponents": 1,
+        "isolatedCutIntervals": [],
+        "initialExplicitEmpty": false,
+        "positivePrefixConnected": true
+      },
+      {
+        "kind": "open-slab",
+        "cut": "475/8",
+        "positiveCells": 25,
+        "positiveEdgeComponents": 1,
+        "closedComponents": 1,
+        "isolatedCutIntervals": [],
+        "initialExplicitEmpty": false,
+        "positivePrefixConnected": true
+      },
+      {
+        "kind": "open-slab",
+        "cut": "1207/20",
+        "positiveCells": 24,
+        "positiveEdgeComponents": 1,
+        "closedComponents": 1,
+        "isolatedCutIntervals": [],
+        "initialExplicitEmpty": false,
+        "positivePrefixConnected": true
+      },
+      {
+        "kind": "open-slab",
+        "cut": "1219/20",
+        "positiveCells": 23,
+        "positiveEdgeComponents": 1,
+        "closedComponents": 1,
+        "isolatedCutIntervals": [],
+        "initialExplicitEmpty": false,
+        "positivePrefixConnected": true
+      },
+      {
+        "kind": "open-slab",
+        "cut": "617/10",
+        "positiveCells": 22,
+        "positiveEdgeComponents": 1,
+        "closedComponents": 1,
+        "isolatedCutIntervals": [],
+        "initialExplicitEmpty": false,
+        "positivePrefixConnected": true
+      },
+      {
+        "kind": "open-slab",
+        "cut": "2497/40",
+        "positiveCells": 21,
+        "positiveEdgeComponents": 1,
+        "closedComponents": 1,
+        "isolatedCutIntervals": [],
+        "initialExplicitEmpty": false,
+        "positivePrefixConnected": true
+      },
+      {
+        "kind": "open-slab",
+        "cut": "1259/20",
+        "positiveCells": 20,
+        "positiveEdgeComponents": 1,
+        "closedComponents": 1,
+        "isolatedCutIntervals": [],
+        "initialExplicitEmpty": false,
+        "positivePrefixConnected": true
+      },
+      {
+        "kind": "open-slab",
+        "cut": "319/5",
+        "positiveCells": 19,
+        "positiveEdgeComponents": 1,
+        "closedComponents": 1,
+        "isolatedCutIntervals": [],
+        "initialExplicitEmpty": false,
+        "positivePrefixConnected": true
+      },
+      {
+        "kind": "open-slab",
+        "cut": "2573/40",
+        "positiveCells": 18,
+        "positiveEdgeComponents": 1,
+        "closedComponents": 1,
+        "isolatedCutIntervals": [],
+        "initialExplicitEmpty": false,
+        "positivePrefixConnected": true
+      },
+      {
+        "kind": "open-slab",
+        "cut": "519/8",
+        "positiveCells": 17,
+        "positiveEdgeComponents": 1,
+        "closedComponents": 1,
+        "isolatedCutIntervals": [],
+        "initialExplicitEmpty": false,
+        "positivePrefixConnected": true
+      },
+      {
+        "kind": "open-slab",
+        "cut": "2623/40",
+        "positiveCells": 16,
+        "positiveEdgeComponents": 1,
+        "closedComponents": 1,
+        "isolatedCutIntervals": [],
+        "initialExplicitEmpty": false,
+        "positivePrefixConnected": true
+      },
+      {
+        "kind": "open-slab",
+        "cut": "2641/40",
+        "positiveCells": 15,
+        "positiveEdgeComponents": 1,
+        "closedComponents": 1,
+        "isolatedCutIntervals": [],
+        "initialExplicitEmpty": false,
+        "positivePrefixConnected": true
+      },
+      {
+        "kind": "open-slab",
+        "cut": "1331/20",
+        "positiveCells": 14,
+        "positiveEdgeComponents": 1,
+        "closedComponents": 1,
+        "isolatedCutIntervals": [],
+        "initialExplicitEmpty": false,
+        "positivePrefixConnected": true
+      },
+      {
+        "kind": "open-slab",
+        "cut": "62841/940",
+        "positiveCells": 13,
+        "positiveEdgeComponents": 1,
+        "closedComponents": 1,
+        "isolatedCutIntervals": [],
+        "initialExplicitEmpty": false,
+        "positivePrefixConnected": true
+      },
+      {
+        "kind": "open-slab",
+        "cut": "691533/10340",
+        "positiveCells": 11,
+        "positiveEdgeComponents": 1,
+        "closedComponents": 1,
+        "isolatedCutIntervals": [],
+        "initialExplicitEmpty": false,
+        "positivePrefixConnected": true
+      },
+      {
+        "kind": "open-slab",
+        "cut": "2947/44",
+        "positiveCells": 10,
+        "positiveEdgeComponents": 1,
+        "closedComponents": 1,
+        "isolatedCutIntervals": [],
+        "initialExplicitEmpty": false,
+        "positivePrefixConnected": true
+      },
+      {
+        "kind": "open-slab",
+        "cut": "20385/304",
+        "positiveCells": 9,
+        "positiveEdgeComponents": 1,
+        "closedComponents": 1,
+        "isolatedCutIntervals": [],
+        "initialExplicitEmpty": false,
+        "positivePrefixConnected": true
+      },
+      {
+        "kind": "open-slab",
+        "cut": "20423/304",
+        "positiveCells": 8,
+        "positiveEdgeComponents": 1,
+        "closedComponents": 1,
+        "isolatedCutIntervals": [],
+        "initialExplicitEmpty": false,
+        "positivePrefixConnected": true
+      },
+      {
+        "kind": "open-slab",
+        "cut": "68",
+        "positiveCells": 7,
+        "positiveEdgeComponents": 1,
+        "closedComponents": 1,
+        "isolatedCutIntervals": [],
+        "initialExplicitEmpty": false,
+        "positivePrefixConnected": true
+      },
+      {
+        "kind": "open-slab",
+        "cut": "555/8",
+        "positiveCells": 6,
+        "positiveEdgeComponents": 1,
+        "closedComponents": 1,
+        "isolatedCutIntervals": [],
+        "initialExplicitEmpty": false,
+        "positivePrefixConnected": true
+      },
+      {
+        "kind": "open-slab",
+        "cut": "2811/40",
+        "positiveCells": 5,
+        "positiveEdgeComponents": 1,
+        "closedComponents": 1,
+        "isolatedCutIntervals": [],
+        "initialExplicitEmpty": false,
+        "positivePrefixConnected": true
+      },
+      {
+        "kind": "open-slab",
+        "cut": "709/10",
+        "positiveCells": 4,
+        "positiveEdgeComponents": 1,
+        "closedComponents": 1,
+        "isolatedCutIntervals": [],
+        "initialExplicitEmpty": false,
+        "positivePrefixConnected": true
+      },
+      {
+        "kind": "open-slab",
+        "cut": "3114637/43640",
+        "positiveCells": 3,
+        "positiveEdgeComponents": 1,
+        "closedComponents": 1,
+        "isolatedCutIntervals": [],
+        "initialExplicitEmpty": false,
+        "positivePrefixConnected": true
+      },
+      {
+        "kind": "open-slab",
+        "cut": "313973/4364",
+        "positiveCells": 2,
+        "positiveEdgeComponents": 1,
+        "closedComponents": 1,
+        "isolatedCutIntervals": [],
+        "initialExplicitEmpty": false,
+        "positivePrefixConnected": true
+      },
+      {
+        "kind": "open-slab",
+        "cut": "2917/40",
+        "positiveCells": 1,
+        "positiveEdgeComponents": 1,
+        "closedComponents": 1,
+        "isolatedCutIntervals": [],
+        "initialExplicitEmpty": false,
+        "positivePrefixConnected": true
+      }
+    ],
+    "failureCount": 0,
+    "firstFailures": [],
+    "allPositivePrefixesEdgeConnectedAndNoIsolatedCutInk": true,
+    "topologyCertifiedBetweenAllEvents": true,
+    "initialEmptyExplicitRequired": true,
+    "pen": 12,
+    "axis": "x",
+    "direction": "decreasing",
+    "range": [
+      "1123/20",
+      "367/5"
+    ],
+    "sourceMacroHypothesis": "upper-right toward lower-left",
+    "initialAreaLimitZero": "bounded union height times positive cut width tends to0",
+    "fullOriginalPAtCompletion": true,
+    "capFreeAxisCandidate": true
+  },
+  "pen7HeadTail": {
+    "pen": 7,
+    "mask": 2,
+    "originalOwnerCount": 1,
+    "originalP": 2,
+    "wholeUnionKernelArea": "0",
+    "standaloneYSections": {
+      "pen": 1,
+      "axis": "y",
+      "directionHypothesis": "increasing",
+      "logicalMasks": 1,
+      "sourcePolygons": 2,
+      "eventCount": 29,
+      "openSlabCount": 28,
+      "allEventSectionsSingleInterval": true,
+      "allOpenSlabSectionsSingleInterval": true,
+      "wholeLogicalAxisMonotone": true,
+      "nonemptyProjectionInterval": [
+        "11",
+        "1077/20"
+      ],
+      "startCoordinate": "11",
+      "completionCoordinate": "1077/20",
+      "failureCount": 0,
+      "firstFailures": [],
+      "halfPlanePrefixGeometryEligible": true,
+      "initialCutMustExplicitlyBeEmptyAtProgressZero": true,
+      "cutForPositiveProgress": "start+(finish-start)*p",
+      "sourceDirectionApproved": false,
+      "sourceMicroClockApproved": false,
+      "nativeApproval": false,
+      "runtimeApplied": false
+    },
+    "standaloneYPrefixPriorHGapBeforeContact": "5/2",
+    "headSeam": "39/2",
+    "headSeamDerivedFrom": "maximum original ornamental P2 y, not a tuned threshold",
+    "headBounds": [
+      "35996/455",
+      "11",
+      "179/2",
+      "39/2"
+    ],
+    "headKernelArea": "1362654216569/39002440000",
+    "headKernelPriorHIntersectionArea": "947099/168350",
+    "dyadicSourceQAnchors": [
+      {
+        "t": "1/64",
+        "point": [
+          "343025/4096",
+          "62581/4096"
+        ],
+        "headKernelMargin": "1359481/655360",
+        "priorHMargin": "907/4096"
+      },
+      {
+        "t": "1/128",
+        "point": [
+          "1374193/16384",
+          "243957/16384"
+        ],
+        "headKernelMargin": "5381529/2621440",
+        "priorHMargin": "2063/16384"
+      },
+      {
+        "t": "1/256",
+        "point": [
+          "5500913/65536",
+          "963061/65536"
+        ],
+        "headKernelMargin": "1432435/720896",
+        "priorHMargin": "4111/65536"
+      },
+      {
+        "t": "1/512",
+        "point": [
+          "22011889/262144",
+          "3826677/262144"
+        ],
+        "headKernelMargin": "5617523/2883584",
+        "priorHMargin": "8207/262144"
+      },
+      {
+        "t": "1/1024",
+        "point": [
+          "88063985/1048576",
+          "15255541/1048576"
+        ],
+        "headKernelMargin": "22245235/11534336",
+        "priorHMargin": "16399/1048576"
+      },
+      {
+        "t": "1/2048",
+        "point": [
+          "352288753/4194304",
+          "60919797/4194304"
+        ],
+        "headKernelMargin": "88530803/46137344",
+        "priorHMargin": "32783/4194304"
+      },
+      {
+        "t": "1/4096",
+        "point": [
+          "1409220593/16777216",
+          "243474421/16777216"
+        ],
+        "headKernelMargin": "353222515/184549376",
+        "priorHMargin": "65551/16777216"
+      }
+    ],
+    "selectedAnchor": {
+      "t": "1/64",
+      "point": [
+        "343025/4096",
+        "62581/4096"
+      ],
+      "headKernelMargin": "1359481/655360",
+      "priorHMargin": "907/4096"
+    },
+    "headThenTailEligible": true,
+    "authoredHeadPhaseShare": "170/857",
+    "tailYRange": [
+      "39/2",
+      "1077/20"
+    ],
+    "sourceHWeight": 32,
+    "sourceCurveWeight": 49.819675,
+    "tailSeamSection": [
+      [
+        "35996/455",
+        "8521/100"
+      ]
+    ],
+    "sourceMicroClockApproved": false,
+    "nativeApproval": false
+  },
+  "originalPGuideWidthWeightsUnchanged": true,
+  "sourcePublisherMacroEvidenceOnly": true,
+  "sourceMicroClockApproved": false,
+  "candidateNativeApproved": false,
+  "runtimeApplied": false,
+  "engine": 0,
+  "server": 0,
+  "mathScope": "Only five new local\u7aea targets; helpers imported as pure AST functions without executing any old glyph proof."
+}
