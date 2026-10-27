@@ -1,0 +1,28 @@
+{
+  "schema": "hanja-native-terminal-review/v1",
+  "date": "2026-10-27",
+  "glyph": "媓",
+  "profile": "u5a93-4.json",
+  "profileSHA256": "84ab62915896f0e427fbefd3fad034b647a025737155415411f7742eb5444e8e",
+  "helperSHA256": "a63a3ec205657b650e34961bb02c004016b0567e2aeef422a3fa80a26a20b548",
+  "geometrySHA256": "36c733b72b0aeb002f7a02a51365c5206459a756828a8fef62224c81d4b04485",
+  "browser": "native in-app browser panel, tab9, http://127.0.0.1:59412/",
+  "displaySize": 520,
+  "changedScope": "Natural whole-playback termination now requests the existing done phase. The original clock value is preserved; no progress rounding or geometry edit.",
+  "reusedNativeRecord": "u5a93-3-native-review.json",
+  "reuseScope": "Source6 finite22, binding3 and corrected order18 visual observations only. No claim of all-progress or all-guard verification. The old terminal HOLD is preserved in that record.",
+  "freshObservations": [
+    {"label":"natural-start","mode":"reviewed-whole-natural","controllerProgress":0.0808500000079473,"errors":[],"stateBad":[],"observation":"First compound stroke visible; playback is active."},
+    {"label":"natural-terminal","mode":"reviewed-whole-natural-ended","controllerProgress":1,"errors":[],"stateBad":[],"ordinaryFullPens":[3,5,7,8,9,10,11,12],"specialFullPens":[1,2,4,6],"specialProgress":[1,1,1,1],"specialCoverageReady":[true,true,true,true],"observation":"Complete last horizontal head is present. The former cardinal-clip remainder is absent; ordinary pen12 is full."},
+    {"label":"exact-done","mode":"done","controllerProgress":1,"errors":[],"stateBad":[],"ordinaryFullPens":[3,5,7,8,9,10,11,12],"observation":"Same complete whole glyph, including the rightmost last-horizontal head, is visible in the explicit done state."}
+  ],
+  "result": "PASS-natural-terminal-state",
+  "naturalTerminalApproved": true,
+  "sourceMicroclockIdentityApproved": false,
+  "staticMembershipTablePending": true,
+  "actualAppUIApproved": false,
+  "runtimeApplied": false,
+  "privateSourceFilesSaved": 0,
+  "buildRuns": 0,
+  "fullProjectTypecheckRuns": 0
+}
