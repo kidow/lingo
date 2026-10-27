@@ -1,0 +1,58 @@
+{
+  "schema": "hanja-local-pen8-y-and-publisher-macro-selected-findings/v1",
+  "glyph": "菰",
+  "verifier": "verify-pen8-y-prefix-conditions.py",
+  "verifierSHA256": "021d9b5d65be18df82841c8269808d300c1a6b758f25f81c8d557ab429cec9fe",
+  "fixtureSHA256": "80df51355acb56c1b1d69fe5c67e866fb1d484f325e361d91a0b582e3ea11485",
+  "newMathCases": 1,
+  "successfulBatchExecutions": 1,
+  "previousSuccessfulMathReexecuted": false,
+  "pen8": {
+    "axis": "y",
+    "directionHypothesis": "increasing",
+    "eventCount": 33,
+    "openSlabCount": 32,
+    "axisMonotonicitySufficientConditionPassed": false,
+    "projection": ["587/20", "206/5"],
+    "failureCount": 8,
+    "firstFailures": [
+      {"kind": "event", "coordinate": "591/20", "disjointIntervals": [["1553/20", "1553/20"], ["5048/65", "28927/370"]]},
+      {"kind": "event", "coordinate": "349/10", "disjointIntervals": [["7067/110", "1607/20"], ["811/10", "26457/320"]]},
+      {"kind": "event", "coordinate": "353/10", "disjointIntervals": [["631/10", "17429/220"], ["5741/70", "26461/320"]]}
+    ],
+    "priorXSufficientConditionHOLDPreserved": true,
+    "allPossibleSourceBoundStrategiesRuledOut": false,
+    "route": "Keep pen8 separate from the proven single-section axis family. Investigate source-P connected-prefix/component or source-bound window strategy with its own exact conditions."
+  },
+  "publisherMacroEvidence": {
+    "path": "docs/hanja-official-media-compare-u83f0-2026-10-23/official-temporal-native-review.json",
+    "sha256": "08ab76a6600693b63663b7c6525314858112fa905b052df4c0009caf3c8d761c",
+    "nativeScreensReused": 36,
+    "newNativeScreens": 0,
+    "originalMacroDirectionsApprovedInRecord": true,
+    "originalMicrotimingApprovedInRecord": false,
+    "selectedDirections": [
+      {"pen": 8, "direction": "오른쪽 위에서 왼쪽 아래로 비스듬히 진행"},
+      {"pen": 9, "direction": "아래로 진행한 뒤 왼쪽 아래로 길게 진행"},
+      {"pen": 11, "direction": "오른쪽 아래 방향의 점"},
+      {"pen": 12, "direction": "오른쪽 아래로 길게 진행"}
+    ]
+  },
+  "directionProposals": [
+    {"pen": 8, "axis": "y", "sign": "increasing", "macroCompatible": true, "geometryEligible": false},
+    {"pen": 9, "axis": "y", "sign": "increasing", "macroCompatible": true, "geometryEligibleFromPriorProof": true, "wholeLogicalCutRequired": true},
+    {"pen": 11, "axis": "y", "sign": "increasing", "macroCompatible": true, "geometryEligibleFromPriorProof": true, "alternativeXIncreasingAlsoMacroCompatible": true},
+    {"pen": 12, "axis": "y", "sign": "increasing", "macroCompatible": true, "geometryEligibleFromPriorProof": true}
+  ],
+  "limits": [
+    "Macro compatibility selects a review hypothesis; it does not transfer publisher microclock to an authored linear clip clock.",
+    "No source P, Q, mask order, width or weight was changed.",
+    "No prefix adapter, shared renderer/helper, source mapping, native temporal approval or runtime registration was added."
+  ],
+  "sourceMicroClockApproved": false,
+  "candidateNativeApproved": false,
+  "runtimeApplied": false,
+  "engine": 0,
+  "server": 0,
+  "newNative": 0
+}
