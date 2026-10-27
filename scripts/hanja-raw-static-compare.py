@@ -605,6 +605,58 @@ def validate_local_recipe_whole(config,label,spec,path,config_path,case):
     require(cap['originalParentsReexecuted']==0 and cap['parentPolygonsGivenToCandidateVM']is False and cap['parentPolygonsOverwritten']is False and cap['compiledRevealPathsOrClocksDerived']is False and cap['privateMediaInputs']is False and cap['privateMediaFilesWritten']==cap['HTTPRequests']==cap['newServer']==cap['newBrowser']==0,'no parent-P injection/overwrite, new engine or private media allowed')
     require(all(v is False for v in recipe['approval'].values()) and all(v is False for v in cap['approval'].values()) and cap['nativeApproval']is False and cap['runtimeApplied']is False and recipe['nativeApproval']is False and recipe['runtimeApplied']is False,'local whole/reuse/order/direction/animation remain unapproved')
 
+REVIEWED_COMPILED12_U5A93=json.loads("{\"config\":\"docs/hanja-source-raw-compare-u5a93-reviewed-logical12-2026-10-27/config.json\",\"configSemanticSHA256\":\"4714ff867262490763d2120c14c8fd32818927d08928f5bd9bf83f1842a24b44\",\"fixture\":\"docs/hanja-source-original-u5a93-2026-10-26/fixtures.json\",\"manifest\":\"docs/hanja-source-order-u5a93-2026-10-27/reviewed-order-manifest.json\",\"mediaConfig\":\"docs/hanja-official-media-compare-u5a93-2026-10-27/config.json\",\"reviewedSnapshotSHA256\":\"36c733b72b0aeb002f7a02a51365c5206459a756828a8fef62224c81d4b04485\"}")
+
+def load_reviewed_compiled12(config,config_path):
+    case=REVIEWED_COMPILED12_U5A93;semantic={k:v for k,v in config.items()if k!='launcherSHA256'}
+    require(config_path==ROOT/case['config'] and digest(json.dumps(semantic,sort_keys=True,separators=(',',':'),ensure_ascii=False).encode())==case['configSemanticSHA256'],'exact reviewed logical12 config required')
+    require(config['schema']=='hanja-shared-reviewed-compiled-compare/v1' and config['kind']=='reviewed-compiled-logical-strokes' and config['glyph']=='媓' and config['catalogStrokes']==12 and config['sourceViewBox']=='0 0 100 100' and config['host']=='127.0.0.1' and config['defaultSource']=='selected' and list(config['sourceRoots'])==['selected'] and config['noPartialAnimation']is True and config['nativeApproval']is False and config['runtimeApplied']is False,'static reviewed logical12/viewBox100 contract required')
+    require(config['sharedServe']=={'path':SHARED,'SHA256':SHARED_SHA} and digest(pinned_path(SHARED).read_bytes())==SHARED_SHA,'unchanged shared static viewer required')
+    for file,pin in config['inputSHA256'].items():require(hexsha(pin) and digest(pinned_path(file).read_bytes())==pin,'reviewed compiled input changed: '+file)
+    fixture=json.loads(pinned_path(case['fixture']).read_bytes())['u5a93'];order=json.loads(pinned_path(case['manifest']).read_bytes());media=json.loads(pinned_path(case['mediaConfig']).read_bytes())
+    require(order['permutationZeroBased']==[0,1,2,3,4,5,6,7,8,10,9,11] and order['originalCompiledSHA256']==fixture['compiledSHA256']=='79aea820e2f76cc4fa9bbe75a4f65fb75bb62c261060b1aa4e2e3bf1e3d71752' and order['reviewedOrderSnapshotSHA256']==case['reviewedSnapshotSHA256']=='36c733b72b0aeb002f7a02a51365c5206459a756828a8fef62224c81d4b04485' and order['originalSourceIdentity']==fixture['identity'],'exact original and reviewed JS snapshot bindings required')
+    # JS whole-array snapshot is already pinned by immutable fixture/manifest bytes; never reserialize numeric geometry in Python.
+    original=fixture['strokes'];strokes=[original[i]for i in order['permutationZeroBased']]
+    require(len(original)==len(strokes)==12 and sum(map(len,strokes))==13 and all(strokes[i]is original[i]for i in[*range(9),11]) and order['reviewedOrderSourceGroups']==[fixture['sourceGroups'][i]for i in order['permutationZeroBased']],'whole stroke objects only permuted; first9/last/source groups unchanged')
+    require(all(type(p['outline'])is str and p['outline']for stroke in strokes for p in stroke),'original compiled outline strings required')
+    spec=config['sourceRoots']['selected'];require(spec=={'root':'u5a93','file':case['fixture'],'fixtureKey':'u5a93','proofKind':'reviewed-compiled-logical-strokes','logicalPens':12,'outlineParts':13,'originalSourceRawGroups':len(fixture['fullProof']['groups']),'reviewedOrderSnapshotSHA256':case['reviewedSnapshotSHA256']},'compiled logical pens are not original raw groups')
+    require(media['glyph']=='媓' and media['domesticClips']==12 and config['domestic']=={'glyph':'媓',**media['media']['svg'],'status':200,'privateMediaSaved':False,'clips':12},'exact original publisher RAM12 descriptor required')
+    return {'groups':strokes,'kind':'reviewed-compiled-logical-strokes'}
+
+def reviewed_compiled12_svg(proof,count=None,prefix=False):
+    import html
+    require(proof['kind']=='reviewed-compiled-logical-strokes' and len(proof['groups'])==12 and (count is None or type(count)is int and 1<=count<=12) and type(prefix)is bool,'strict logical12 selection required')
+    indexes=range(12)if count is None else range(count)if prefix else[count-1]
+    out=['<svg xmlns="http://www.w3.org/2000/svg" width="520" height="520" viewBox="0 0 100 100"><g fill="#222">']
+    for i in indexes:
+        out.append('<g data-reviewed-logical-pen="'+str(i+1)+'">')
+        for part in proof['groups'][i]:out.append('<path d="'+html.escape(part['outline'],quote=True)+'"/>')
+        out.append('</g>')
+    return ''.join(out)+'</g></svg>'
+
+def run_reviewed_compiled12(args,config,config_path):
+    proof=load_reviewed_compiled12(config,config_path)
+    def guards():
+        require(digest(config_path.read_bytes())==args.config_sha and digest(Path(__file__).resolve().read_bytes())==config['launcherSHA256'],'reviewed logical12 config/tool changed')
+        for file,pin in config['inputSHA256'].items():require(digest(pinned_path(file).read_bytes())==pin,'reviewed logical12 input changed: '+file)
+    guards()
+    if args.check_only:
+        print(json.dumps({'kind':config['kind'],'domesticPens':12,'reviewedLogicalPens':12,'originalSourceRawGroups':config['sourceRoots']['selected']['originalSourceRawGroups'],'outlineParts':13,'viewBox':'0 0 100 100','HTTP':0,'server':0,'engine':0,'nativeApproval':False}));return
+    module=importlib.util.spec_from_file_location('hanja_reviewed_compiled_shared',pinned_path(SHARED));shared=importlib.util.module_from_spec(module);module.loader.exec_module(shared)
+    # rawGroups is only the legacy selector's RAM transport count; neither data nor UI label claims original raw12.
+    shared.CONFIG={**config,'sourceRoots':{'selected':{**config['sourceRoots']['selected'],'rawGroups':12,'polygons':sum(p['outline'].count('M')for stroke in proof['groups']for p in stroke)}}};shared.HERE=config_path.parent;shared.ROOT=ROOT
+    shared.guards=guards;shared.load_sources=lambda:{'selected':proof};shared.source_svg=reviewed_compiled12_svg
+    original_page,original_selection=shared.page,shared.selection
+    def logical_page(*params):
+        return original_page(*params).replace('원selected raw ','검토후보 논리획 ').replace('원 raw','검토후보 논리획').replace('원raw','후보 논리획').replace('각 원번호','후보 논리획').replace('원source','후보')
+    def logical_selection(route,query):
+        require(route!='/checks','this case exposes reviewed logical pens, not legacy raw-check metadata')
+        return original_selection(route,query)
+    shared.page=logical_page;shared.selection=logical_selection
+    argv=sys.argv
+    try:sys.argv=[str(pinned_path(SHARED)),'--port',str(args.port)];shared.main()
+    finally:sys.argv=argv
+
 def new_public_whole_case(config):
     if type(config)is dict and type(config.get('sourceRoots'))is dict and list(config['sourceRoots'])==['m','u']:
         specs=config['sourceRoots']
@@ -921,6 +973,7 @@ def main():
     config_path=pinned_path(args.config);require(config_path.name=='config.json'and config_path.parent.parent==ROOT/'docs'and config_path.parent.name.startswith('hanja-source-raw-compare-'),'comparison config location required')
     config_bytes=config_path.read_bytes();require(len(config_bytes)<=65536 and digest(config_bytes)==args.config_sha,'config SHA changed')
     config=json.loads(config_bytes)
+    if config.get('kind')=='reviewed-compiled-logical-strokes':return run_reviewed_compiled12(args,config,config_path)
     new_public_whole=new_public_whole_case(config)or new_local_recipe_whole_case(config)
     original_u840d_1040_config=exact_u840d_k_1040_config(config,config_path)
     keys={'schema','glyph','catalogStrokes','sourceViewBox','defaultSource','sourceRoots','domestic','inputSHA256','holdSummary','launcherSHA256','sharedServe','noPartialAnimation','nativeApproval','runtimeApplied','guardMode','host','layoutMode'}
