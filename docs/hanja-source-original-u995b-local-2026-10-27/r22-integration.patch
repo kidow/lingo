@@ -1,0 +1,26 @@
+*** Begin Patch
+*** Update File: components/hanja/stroke-outlines.tsx
+@@
+ import {makeLocalU8587SourcePrefixContext,LOCAL_U8587_SOURCE_PREFIX_INPUT,localU8587SourcePrefixPolicy,commitLocalU8587SourcePrefix,type LocalU8587SourcePrefixPolicy} from '@/lib/hanja-stroke-source-prefix-u8587-local'
++import {makeLocalU995b22SourcePrefixContext,LOCAL_U995B22_SOURCE_PREFIX_INPUT,localU995b22SourcePrefixPolicy,commitLocalU995b22SourcePrefix,type LocalU995b22SourcePrefixPolicy} from '@/lib/hanja-stroke-source-prefix-u995b-22-local'
+@@
+  const u8587LocalPrefixFrame=id+'-u8587-local-prefix-frame-'+phase+'-'+count+'-'+String(manual)+'-'+String(elapsed)
++ const u995b22LocalPrefixContext=makeLocalU995b22SourcePrefixContext(LOCAL_U995B22_SOURCE_PREFIX_INPUT.fullProof,LOCAL_U995B22_SOURCE_PREFIX_INPUT.identity,strokes)
++ const u995b22LocalPrefixFrame=id+'-u995b-22-local-prefix-frame-'+phase+'-'+count+'-'+String(manual)+'-'+String(elapsed)
+@@
++      const u995b22LocalPrefixPolicy=localU995b22SourcePrefixPolicy(u995b22LocalPrefixContext,stroke)
++      if(u995b22LocalPrefixPolicy)return <U995b22LocalPrefixPreviewOutline key={stroke} policy={u995b22LocalPrefixPolicy} segments={segments} progress={Number.isFinite(progress)?Math.max(0,Math.min(1,progress)):NaN} frameId={u995b22LocalPrefixFrame} clipIds={segments.map((_,index)=>id+'-'+stroke+'-'+index)}/>
+       const u8587LocalPrefixPolicy=localU8587SourcePrefixPolicy(u8587LocalPrefixContext,stroke)
+@@
++function U995b22LocalPrefixPreviewOutline({policy,segments,progress,frameId,clipIds}:{policy:LocalU995b22SourcePrefixPolicy;segments:readonly HanjaOutlineSegment[];progress:number;frameId:string;clipIds:readonly string[]}){
++ const groups=useRef<(SVGGElement|null)[]>([]),inks=useRef<(SVGPathElement|null)[]>([]),rects=useRef<(SVGRectElement|null)[]>([]),clips=useRef<(SVGClipPathElement|null)[]>([])
++ useLayoutEffect(()=>{const result=commitLocalU995b22SourcePrefix(policy,segments,progress,clipIds,segments.map((_,i)=>({group:groups.current[i],ink:inks.current[i],rect:rects.current[i],clipPath:clips.current[i]})));const slot=groups.current[0]?.parentElement;slot?.setAttribute('data-u995b-22-local-preview-guard-status',result.status);slot?.setAttribute('data-u995b-22-local-preview-guard-error',result.status==='hidden'?result.error:'');return result.cleanup},[policy,segments,progress,frameId,clipIds.join('|')])
++ return <g data-outline-stroke={String(policy.pen)} data-u995b-22-local-prefix-frame={frameId} data-u995b-22-local-prefix-progress={String(progress)}>{segments.map((segment,index)=><g key={index} ref={node=>{groups.current[index]=node}} data-stroke-start-gate={policy.id} data-stroke-reveal-policy={policy.kind} data-stroke-reveal-progress={String(progress)} data-u995b-22-local-prefix-mask={String(index+1)} data-u995b-22-local-prefix-clip={clipIds[index]} data-u995b-22-local-prefix-fingerprint={policy.proofFingerprint} data-u995b-22-local-prefix-frame={frameId} data-u995b-22-local-prefix-source-guide={segment.revealPath??''} data-u995b-22-local-prefix-source-weight={String(segment.weight)} data-u995b-22-local-prefix-author-clock="source-author-common-axis-prefix" data-u995b-22-local-prefix-original-clock-equivalent="false">
++  <defs><clipPath ref={node=>{clips.current[index]=node}} id={clipIds[index]+'-u995b-22-local-prefix-clip'} clipPathUnits="userSpaceOnUse"><rect ref={node=>{rects.current[index]=node}} x={0} y={0} width={0} height={0}/></clipPath></defs>
++  <path ref={node=>{inks.current[index]=node}} data-u995b-22-local-prefix-ink="true" d={segment.outline} fillRule="nonzero" clipPath={progress===1?undefined:'url(#'+clipIds[index]+'-u995b-22-local-prefix-clip)'} visibility="hidden"/>
++ </g>)}</g>
++}
++
++
+ function U8587LocalPrefixPreviewOutline({policy,segments,progress,frameId,clipIds}:{policy:LocalU8587SourcePrefixPolicy;segments:readonly HanjaOutlineSegment[];progress:number;frameId:string;clipIds:readonly string[]}){
+*** End Patch
