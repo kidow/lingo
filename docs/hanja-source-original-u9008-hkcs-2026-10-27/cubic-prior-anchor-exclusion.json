@@ -1,0 +1,65 @@
+{
+  "schema": "hanja-u9008-cubic-prior-anchor-exclusion/v1",
+  "glyph": "逈",
+  "pen": 10,
+  "mask": 2,
+  "fixture": "docs/hanja-source-original-u9008-hkcs-2026-10-27/fixtures-draft.json",
+  "fixtureSHA256": "c9fce51a23da581bcd9b25bc7e2f5fbabd765b45c222926fafc2fcdaef92707f",
+  "compiledSHA256": "0ea0ea47896a94ac45a2ebb912d9c2c8f85610ee81d8609cd3706587036d881d",
+  "previousMaskBounds": [
+    "6",
+    "383/5",
+    "107/4",
+    "1851/20"
+  ],
+  "sourceCurveKind": "cdDrawBezier",
+  "sourceCAndOriginalPUnchanged": true,
+  "xDerivativeBernsteinCoefficients": [
+    "24",
+    "51/2",
+    "138"
+  ],
+  "xStrictlyIncreasingOnUnitInterval": true,
+  "separatingAnalysisParameter": "1/19",
+  "parameterIsRevealAnchor": false,
+  "CAtSeparatingParameter": [
+    "183634/6859",
+    "524968/6859"
+  ],
+  "priorYGapAtSeparator": "2157/34295",
+  "priorXGapAtSeparator": "623/27436",
+  "yDerivativeLowerBoundBeforeSeparator": "10254/361",
+  "priorContactExclusion": {
+    "beforeOrAtSeparator": "C.y(t)<=C.y(r)<prior minimumY",
+    "afterOrAtSeparator": "C.x(t)>=C.x(r)>prior maximumX",
+    "entireClosedParameterInterval": [
+      0,
+      1
+    ],
+    "anyOriginalCPointInCompletedPriorMask": false,
+    "anyOriginalCPointInTargetKernelAndCompletedPriorMask": false
+  },
+  "xPrefixInitialBoundary": {
+    "minX": "509/20",
+    "points": [
+      [
+        "509/20",
+        "1513/20"
+      ]
+    ],
+    "allOutsideCompletedPriorBounds": true,
+    "continuousPriorContactApproved": false
+  },
+  "decision": "HOLD-simple-C-anchor-and-global-X-prefix-contact; do not force or move original curve",
+  "limits": [
+    "Exact rational compiled-token bounding proof; prior bounds are from the unchanged verified source fixture.",
+    "This excludes anchors constrained to the original C against the completed previous mask; no statement about invented off-curve anchors or new authored phased policies.",
+    "Single-section X-prefix eligibility does not imply a connected handoff to prior ink."
+  ],
+  "newGeometry": false,
+  "policyAdopted": false,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "engine": 0,
+  "verifierSHA256": "27717a2fae4020738f1523d43c62004c2ae5ba82c37649c199e966f2a1d2bb20"
+}
