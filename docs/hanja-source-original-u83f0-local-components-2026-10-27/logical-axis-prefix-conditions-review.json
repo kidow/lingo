@@ -1,0 +1,101 @@
+{
+  "schema": "hanja-local-whole-logical-axis-prefix-selected-findings/v1",
+  "glyph": "菰",
+  "fixtureSHA256": "80df51355acb56c1b1d69fe5c67e866fb1d484f325e361d91a0b582e3ea11485",
+  "verifier": "verify-logical-axis-prefix-conditions.py",
+  "verifierSHA256": "db903056c1375705fd8133ee79dcc3ff5450c519012a3f249881af9abebdbd29",
+  "successfulBatchExecutions": 1,
+  "previousOnsetKernelMathReexecuted": false,
+  "method": "Exact all-original-P line sections at every vertex/intersection event and one rational midpoint per open event slab. No source coordinates, masks, Q or weights are changed.",
+  "results": [
+    {
+      "pen": 8,
+      "axis": "x",
+      "directionHypothesis": "decreasing",
+      "sourcePolygons": 3,
+      "eventCount": 34,
+      "openSlabCount": 33,
+      "axisMonotonicitySufficientConditionPassed": false,
+      "failureCount": 2,
+      "eventFailure": {
+        "coordinate": "1553/20",
+        "disjointIntervals": [["591/20", "591/20"], ["11231/380", "5558/155"]]
+      },
+      "openSlabFailure": {
+        "low": "1553/20",
+        "high": "3884161/50020",
+        "sample": "3884107/50020",
+        "disjointIntervals": [["73906953/2501000", "739099/25010"], ["28088263/950380", "27800819/775310"]]
+      },
+      "route": "HOLD this sufficient single-section X-prefix family. This does not rule out a different source-bound strategy or connected-prefix proof."
+    },
+    {
+      "pen": 9,
+      "axis": "y",
+      "directionHypothesis": "increasing",
+      "logicalMasks": 2,
+      "sourcePolygons": 3,
+      "eventCount": 28,
+      "openSlabCount": 27,
+      "axisMonotonicitySufficientConditionPassed": true,
+      "start": "184/5",
+      "finish": "929/10",
+      "failureCount": 0,
+      "route": "Geometry permits one whole-logical Y half-plane prefix across both unchanged mask P sets. Independent mask-local Y clocks are not justified by this proof."
+    },
+    {
+      "pen": 11,
+      "axis": "x",
+      "directionHypothesis": "increasing",
+      "sourcePolygons": 2,
+      "eventCount": 24,
+      "openSlabCount": 23,
+      "axisMonotonicitySufficientConditionPassed": true,
+      "start": "279/4",
+      "finish": "79",
+      "failureCount": 0
+    },
+    {
+      "pen": 11,
+      "axis": "y",
+      "directionHypothesis": "increasing",
+      "sourcePolygons": 2,
+      "eventCount": 24,
+      "openSlabCount": 23,
+      "axisMonotonicitySufficientConditionPassed": true,
+      "start": "305/4",
+      "finish": "1807/20",
+      "failureCount": 0,
+      "route": "A source-P cap-free axis prefix is geometrically available despite original-Q0 being outside prior ink. Direction choice still requires the existing macro-direction evidence and native review."
+    },
+    {
+      "pen": 12,
+      "axis": "y",
+      "directionHypothesis": "increasing",
+      "sourcePolygons": 2,
+      "eventCount": 23,
+      "openSlabCount": 22,
+      "axisMonotonicitySufficientConditionPassed": true,
+      "start": "186/5",
+      "finish": "937/10",
+      "failureCount": 0,
+      "route": "Geometry permits source-P whole-logical Y half-plane prefix; no claim of publisher microtime."
+    }
+  ],
+  "authorClockContractNotYetAdopted": {
+    "atZero": "Explicit empty shape, including a finite boundary segment if the source extremal section is nonzero.",
+    "positiveProgress": "cut=start+(finish-start)*p; clip entire original logical P union by the corresponding increasing/decreasing half-plane.",
+    "atOne": "Entire unchanged logical P union.",
+    "areaContinuity": "Finite polygon area of the exposed prefix tends to zero as p tends to zero from above; no radius7 cap is added.",
+    "clockEqualsOriginalQOrPublisherMicrotime": false,
+    "rendererOrAdapterImplemented": false
+  },
+  "POrQOrWidthOrWeightChanged": false,
+  "sourceDirectionApproved": false,
+  "sourceMicroClockApproved": false,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "engine": 0,
+  "server": 0,
+  "native": 0
+}
