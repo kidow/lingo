@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "glyph": "薪",
+  "date": "2026-10-27",
+  "source": {
+    "path": "docs/hanja-source-inventory-u85aa-additional-2026-10-27/sources.json",
+    "SHA256": "d3ac2cab4265ea40f84c4cb9badcc9f6e746988b9f48a911bfc38718522efb8f"
+  },
+  "helper": {
+    "path": "docs/hanja-actual-engine-capture-u85aa-simch-t106209-2026-10-27/capture-once.mjs",
+    "SHA256": "867395d36249ec36fb2e8cfda9362be8f96274f0e560bcea86901fbafaedd6d6"
+  },
+  "full5": {
+    "path": "docs/hanja-actual-engine-capture-u85aa-simch-t106209-2026-10-27/engine-whole-simch-kx_t106209.json",
+    "SHA256": "71d59d68e5f3fec2087c8892995ec991dda4fdfffcc7c4c89fa5e1719d53b80a"
+  },
+  "preflight": {
+    "completed": true,
+    "actualVMContexts": 0,
+    "makeGlyphCalls": 0,
+    "root": "simch-kx_t106209",
+    "records": [
+      "simch-kx_t106209",
+      "u8279-03",
+      "u65a4-02@4"
+    ],
+    "recordVersions": {
+      "simch-kx_t106209": 1,
+      "u8279-03": 11,
+      "u65a4-02@4": "4"
+    }
+  },
+  "actual": {
+    "sourcePath": "docs/hanja-source-inventory-u85aa-additional-2026-10-27/sources.json",
+    "sourceSHA256": "d3ac2cab4265ea40f84c4cb9badcc9f6e746988b9f48a911bfc38718522efb8f",
+    "actualProviderRoot": "simch-kx_t106209",
+    "rootVersion": 1,
+    "recordVersions": {
+      "simch-kx_t106209": 1,
+      "u8279-03": 11,
+      "u65a4-02@4": "4"
+    },
+    "actualVMContexts": 1,
+    "vendorEvaluations": 8,
+    "captureEvaluation": 1,
+    "makeGlyphCalls": 1,
+    "instrumentSHA256": "89aa7d85dbcd9edafecad81e53f2bef2ff03ba2bb6d4289f211fb114ba273f5e",
+    "raw": 16,
+    "calls": 17,
+    "polygons": 34,
+    "wholePolygonsSHA256": "f7891b64f42796dc9dace76444c2602f45d8253555250bc2b53d7be8291ce1e1",
+    "wholeAndTracePolygonsExactlySame": true,
+    "diagnostics": {
+      "genericGuardPassed": true,
+      "badRaw": [],
+      "finiteCalls": true,
+      "finiteP": true,
+      "wholeMatches": true,
+      "traceMatches": true,
+      "errors": []
+    },
+    "aliasInserted": false,
+    "sourceRowsChanged": false,
+    "newLocalComposite": false,
+    "partSubstitution": false,
+    "sourceProjection": 0,
+    "nativeApproval": false,
+    "runtimeApplied": false
+  },
+  "history": {
+    "preflightAttempts": 1,
+    "preflightEngineExecutions": 0,
+    "actualCaptureAttempts": 1,
+    "actualVMContexts": 1,
+    "totalMakeGlyphCalls": 1,
+    "repeatedCaptureAttempts": 0,
+    "discardedActualOutputs": 0,
+    "originalGuardFailures": 0
+  },
+  "guardScope": {
+    "activeCoordinateCounts": {
+      "1": 4,
+      "2": 6,
+      "3": 8,
+      "7": 8
+    },
+    "unsupportedTypesReject": true,
+    "type3LegacyRuleUnchanged": true,
+    "nonfiniteUnusedCoordinatesPreservedAsJSONNull": true
+  },
+  "reviewReadiness": {
+    "wholeStaticCandidate": true,
+    "rawCountDoesNotProveFormalStrokeCount": true,
+    "catalog17LogicalMappingConfirmed": false,
+    "sourceDirectionConfirmed": false,
+    "wholeShapeConfirmed": false,
+    "membershipConfirmed": false,
+    "componentReuseApproved": false,
+    "clockApproved": false,
+    "nativeApproval": false,
+    "runtimeApplied": false
+  },
+  "next": "Prepare one strict whole-only static comparison case/config against the existing publisher reference; observe grass/body whole shape before any logical grouping, directions, or local component reuse.",
+  "resources": {
+    "networkRequests": 0,
+    "serversStarted": 0,
+    "builds": 0,
+    "fullTypeChecks": 0,
+    "sharedFilesChanged": false,
+    "registryChanged": false
+  }
+}
