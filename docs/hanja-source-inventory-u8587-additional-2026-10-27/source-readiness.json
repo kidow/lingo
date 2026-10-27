@@ -1,0 +1,107 @@
+{
+  "schema": "hanja-public-source-only-readiness/v1",
+  "date": "2026-10-27",
+  "glyph": "薇",
+  "source": {
+    "path": "docs/hanja-source-inventory-u8587-additional-2026-10-27/sources.json",
+    "SHA256": "196e3c35de136226202de481b9342460974672eb62f905959c1ad09e43752a5b"
+  },
+  "deduplication": [
+    {
+      "root": "koseki-559040@1",
+      "dataSHA256": "3a9f0001b9add77ed2c80874d06e5599a8df2eafb4e94a1488db2293eb3d1cd5",
+      "rootRows": 14,
+      "originalReferences": [
+        "u8279-03",
+        "u5f73-g01@1"
+      ],
+      "exactDataMatchesCached": [],
+      "rootIsSingleWholeAlias": false,
+      "nativeShapeApproved": false
+    },
+    {
+      "root": "toki-01031290@2",
+      "dataSHA256": "612a6920a1eaeeb51b02b3d72840a9050e0c94fb15936e7391ec967304d91bb6",
+      "rootRows": 7,
+      "originalReferences": [
+        "u8279-03",
+        "u5c71-03",
+        "u5f73-01",
+        "u6535-02"
+      ],
+      "exactDataMatchesCached": [],
+      "rootIsSingleWholeAlias": false,
+      "nativeShapeApproved": false
+    },
+    {
+      "root": "simch-kx_t106021@1",
+      "dataSHA256": "61bc1221387af75b16776e9e8039c30186bfbd4fa98bf927f8492b0efa922963",
+      "rootRows": 14,
+      "originalReferences": [
+        "u8279-03",
+        "u5f73-01"
+      ],
+      "exactDataMatchesCached": [],
+      "rootIsSingleWholeAlias": false,
+      "nativeShapeApproved": false
+    }
+  ],
+  "comparedCachedPublicSources": [
+    {
+      "path": "docs/hanja-source-alternative-u8587-c11-2139-2026-10-26/sources.json",
+      "SHA256": "6457471c1ef2feef3ed32e487bbdee5985769bed8f97684cab1a384812a61279"
+    },
+    {
+      "path": "docs/hanja-source-alternative-u8587-g-2026-10-26/sources.json",
+      "SHA256": "e3f7fe02f3f495ae7bfdd7883d2ee223759030ea6e08d8f50864de0d834b7ddb"
+    },
+    {
+      "path": "docs/hanja-source-alternative-u8587-hkcs-2026-10-25/sources.json",
+      "SHA256": "228bed8d10710ae16e72d747f7bd218a59a2434fb43ad86ee00aa26f3ce6bdd3"
+    },
+    {
+      "path": "docs/hanja-source-alternative-u8587-t-2026-10-24/sources.json",
+      "SHA256": "97fae7897b8e8556c259410edfe6e3fde84f3c287c2945641015f93da23adcc2"
+    },
+    {
+      "path": "docs/hanja-source-alternative-u8587-twedu-2026-10-26/sources.json",
+      "SHA256": "181002b86a2ce30be21f5dd365363432d1b45320d6a5912d037d67ccf147d8f7"
+    },
+    {
+      "path": "docs/hanja-source-alternative-u8587-ue0103-2026-10-26/sources.json",
+      "SHA256": "f1349a7cf3dd74ea16092075c2b960d299fdd91d57f102cdb37302344bd5567d"
+    },
+    {
+      "path": "docs/hanja-source-inventory-u8587-2026-10-26/sources.json",
+      "SHA256": "a5efbc592839580525e9788d2e05ffcdbbf090ad618a998e41cb6ab269fc4fb3"
+    }
+  ],
+  "selectionOrder": [
+    "koseki-559040@1",
+    "simch-kx_t106021@1",
+    "toki-01031290@2"
+  ],
+  "selectionBasis": "Koseki and simch have explicit direct body rows and two authored references; toki has four references and nondefault parent transforms. This orders source closure preparation only, not shape correctness.",
+  "closureComplete": false,
+  "requiredNext": "Resolve and pin the exact public authored child closure before one fresh actual whole capture. Then ROOT must inspect whole structural membership including 彳; component names do not prove visible shape.",
+  "priorHoldsPreserved": true,
+  "priorTweduWholeReplayed": false,
+  "newHTTP": {
+    "discoveryPage": 1,
+    "rootJSON": 3,
+    "repeatRequests": 0
+  },
+  "engineRuns": 0,
+  "projectionRuns": 0,
+  "newNativeObservations": 0,
+  "nativeApproval": false,
+  "sourceMappingApproved": false,
+  "forwardApproved": false,
+  "runtimeApplied": false,
+  "limits": [
+    "All three exact root data strings differ from cached authored originals, but flattened or rendered equivalence has not been computed.",
+    "All three refer to the same published grass component name u8279-03; no whole geometry approval or failure is transferred.",
+    "A named u5f73 component is source metadata only; actual 彳 inclusion and reference-compatible structure require native whole review.",
+    "No source geometry, flags, coordinates, source versions or stroke order were modified."
+  ]
+}
