@@ -1,0 +1,134 @@
+{
+  "schema": "hanja-u9008-cubic-source-contact-foot-feasibility/v1",
+  "glyph": "逈",
+  "pen": 10,
+  "mask": 2,
+  "inputSHA256": {
+    "docs/hanja-source-original-u9008-hkcs-2026-10-27/fixtures-draft.json": "c9fce51a23da581bcd9b25bc7e2f5fbabd765b45c222926fafc2fcdaef92707f",
+    "docs/hanja-source-original-u83f0-local-components-2026-10-27/verify-baseline-onset-conditions.py": "35b0d7f372a2ed37052ebbbd1b116e951786fe80a5d70798c95659cfc85a63cf",
+    "docs/hanja-source-original-u83f0-local-components-2026-10-27/verify-logical-axis-prefix-conditions.py": "db903056c1375705fd8133ee79dcc3ff5450c519012a3f249881af9abebdbd29",
+    "docs/hanja-component-capture-u995b-2026-10-27/verify-compound-contact-facts.py": "bb3f78ad4a38857a699a0c3a48b42c0e241ee1a7b5ce51dbb3aa5e063a47d9d5",
+    "lib/hanja-stroke-contact-foot-u7d3d.ts": "63c0e90c46550b2d50eba6f4bc039905fda246cb00bed1469809b01b0dc1a872",
+    "lib/hanja-stroke-cardinal-contact-u9004.ts": "ad72bf6433cb243ac7550edd8a9dab46509572aa75deb3e320a85d6cef325466",
+    "lib/hanja-stroke-source-foot-u9004.ts": "a39b682b035ccfa0922a9eda69adb4405a56deb30bceb7ace96ec5f8a72671f8"
+  },
+  "compiledSHA256": "0ea0ea47896a94ac45a2ebb912d9c2c8f85610ee81d8609cd3706587036d881d",
+  "sourcePieces": {
+    "contactingPiece": 1,
+    "terminalTrianglePiece": 2,
+    "PCount": 2,
+    "P1PriorPositiveAreas": [
+      "41256073/229658400",
+      "0",
+      "0"
+    ],
+    "P2PriorPositiveAreas": [
+      "0",
+      "0",
+      "0"
+    ],
+    "bodyToTerminalPositiveArea": 0,
+    "bodyToTerminalPositiveEdgesSquared": [
+      "8593/200"
+    ]
+  },
+  "foot": {
+    "cutAxis": "x",
+    "cut": "137/5",
+    "selection": "First existing P1 vertex x strictly beyond completed prior maximum x.",
+    "priorMaxX": "107/4",
+    "region": "Exact original target union intersect x<=cut; P2 lies beyond cut. Auxiliary clip sector, not replacement source ink.",
+    "vertices": 4,
+    "convexTurns": [
+      "1249/880",
+      "595/176",
+      "4641/880",
+      "53/16"
+    ],
+    "convex": true,
+    "area": "589/176",
+    "priorPositiveContactAreas": [
+      "41256073/229658400",
+      "0",
+      "0"
+    ],
+    "triangles": 2,
+    "triangleAreas": [
+      "1249/1760",
+      "4641/1760"
+    ],
+    "rootTriangleOneBased": 2,
+    "rootPriorP": 1,
+    "rootPriorTriangle": 11,
+    "diagnosticSeed": [
+      "90363001/3422276",
+      "68547422101/889791760"
+    ],
+    "seedIsOnOriginalC": false,
+    "seedIsDiagnosticOnly": true,
+    "strictSeedMarginSquared": "310249/35948800",
+    "strictInsideFootKernelAndPriorP": true,
+    "positiveEdgeDualGraph": [
+      {
+        "a": 1,
+        "b": 2,
+        "positiveEdgeLengthSquared": [
+          "97961/24200"
+        ]
+      }
+    ],
+    "allTrianglesReachableFromStrictPriorRoot": true,
+    "BFSParentOneBased": {
+      "2": null,
+      "1": 2
+    }
+  },
+  "body": {
+    "modeHypothesis": "original-curve-x after complete foot",
+    "cut": "137/5",
+    "maxX": "187/2",
+    "eventCount": 21,
+    "openSlabCells": 20,
+    "eachOpenSlabSingleLinearSection": true,
+    "firstFootToBodyPositiveEdgeLength": "119/44",
+    "allInteriorCellJointsHavePositiveEdges": true,
+    "minimumInteriorJointLength": "3131/980",
+    "originalCDerivativeXBernstein": [
+      "24",
+      "51/2",
+      "138"
+    ],
+    "originalCStrictlyIncreasingX": true,
+    "originalCUnchanged": true,
+    "terminalP2AttachesBeforeFullCompletion": true
+  },
+  "authorClockProposalOnly": {
+    "footAreaRatio": "29450/3072993",
+    "sourceMaskWeightUnchanged": 63.837685,
+    "phaseRatioNotPublisherClock": true,
+    "whole10Mask1MustAlreadyBeCompleteOpaqueInSameFrame": true,
+    "wholePointForbiddenStill": true
+  },
+  "methodReuse": {
+    "existingPrivateFactoryAcceptsDifferentSource": false,
+    "u7d3dPositiveEdgeTriBFSConditionsSatisfiedForFoot": true,
+    "u9004OriginalCurveXBodyConditionsGeometrySatisfied": true,
+    "newSourceSpecificCertificatePolicyAndDOMAdapterStillRequired": true
+  },
+  "directionScope": {
+    "priorMask1SourceMacro": "up-right",
+    "bodySourceCAndIncreasingXPreserved": true,
+    "footTriangleGrowthCanExpandAroundContactSeed": "Includes original head/serif on both sides of seed; pure DR first-ink direction is not proved.",
+    "publisherMacroAndNaturalForwardApproval": false,
+    "nativeRequiredBeforeAdoption": true
+  },
+  "sourcePOrGuideChanged": false,
+  "sourceInkReplacementPathsCreated": false,
+  "auxiliaryTriangulationOnlyNotNewInk": true,
+  "policyAdopted": false,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "engine": 0,
+  "server": 0,
+  "verifierSHA256": "a8b3b6753a33f6176b835e4e2df4c6939b4a11a695a5e2977c2e15b3e6bbefa5"
+}
