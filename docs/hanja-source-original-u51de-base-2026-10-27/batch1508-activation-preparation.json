@@ -1,0 +1,267 @@
+{
+  "schema": "hanja-root-variant-activation-preparation-plan/v1",
+  "preparedOn": "2026-10-28",
+  "batchCandidate": 1508,
+  "batchReserved": false,
+  "glyph": "凞",
+  "grade": {
+    "id": "special-2",
+    "label": "특급II"
+  },
+  "variant": {
+    "catalogStrokes": 15,
+    "playbackStrokes": 16,
+    "form": "사전"
+  },
+  "status": "docs-only; corrected ROOT native review pending",
+  "liveCodeChanged": false,
+  "productionRegistrationPatchEmitted": false,
+  "nativeReview": {
+    "path": "docs/hanja-source-original-u51de-base-2026-10-27/native-source-preview-review.json",
+    "exists": false,
+    "SHA256": null,
+    "finalApprovalRequired": true,
+    "claim": "No PASS or native approval asserted by this preparation."
+  },
+  "observedActualResolver": {
+    "total": 5978,
+    "applied": 5922,
+    "remaining": 56,
+    "uniqueApplied": 5922,
+    "catalogTargetStrokes": 15,
+    "targetResolved": false,
+    "targetVariantResolved": false,
+    "targetRegularMatches": 0,
+    "targetVariantMatches": 0,
+    "registrySHA256": "b1bf05701389fc6dca0ca97dbf261302b8a03b77c1509b27f7c62623ba5c4f42",
+    "scope": "One actual resolver snapshot during preparation; rerun only if registration inputs change before activation."
+  },
+  "conditionalAfterROOTActivation": {
+    "applied": 5923,
+    "remaining": 55,
+    "claim": "Arithmetic expectation only; not applied or verified."
+  },
+  "source": {
+    "root": "u51de",
+    "locallyAuthoredRoot": false,
+    "mixedParts": false,
+    "originalPublicWhole": true,
+    "variantKWholeRejected": true,
+    "full5": "docs/hanja-goal-glyphwiki-batch1059-2026-10-13/engine-whole-u51de.json",
+    "fixture": "docs/hanja-source-original-u51de-base-2026-10-27/fixtures-draft.json",
+    "paths": 16,
+    "pathsSHA256": "ef916c454c93ba912ae8eed3cde816272cbb32d6f4070e799b6eff6dc45c4234",
+    "sourceStrokeIndices": [
+      1,
+      2,
+      20,
+      13,
+      14,
+      15,
+      17,
+      18,
+      12,
+      4,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "logicalStrokes": 16,
+    "masks": 23,
+    "polygons": 39,
+    "compiledSHA256": "c9ac1ef9b6c55526779f888cfd12f31622fad344ed20cbbf3dfa0dabee7caea1",
+    "normalization": "One path per original logical group, joining unchanged compiled mask outlines with one ASCII space. No geometry regeneration, flags/guide/width/weight alteration or inferred strokes.",
+    "sourceGapPreserved": 30.347296831843202,
+    "displayPolicies": {
+      "axis": 19,
+      "contactHead": 3,
+      "hook": 1,
+      "totalMasks": 23,
+      "internalClock": "Authored source-preserving clips/masks; no original publisher microclock identity claim."
+    }
+  },
+  "fixedInputSHA256": {
+    "docs/hanja-source-original-u51de-base-2026-10-27/fixtures-draft.json": "623a80e6bbd7363bfb171731d60f730d9f9c412ec07a94afd3eccd7a30ed1255",
+    "docs/hanja-official-media-compare-u51de-2026-10-27/native-clock-review.json": "546aea0545adb15ef3fbea741da903881d3b4573b086b2432bf9a1581b33a7c5",
+    "docs/hanja-goal-glyphwiki-batch1059-2026-10-13/engine-whole-u51de.json": "59adc1112c7e6456b67ecc86c6583f11475287bf71af5a8f0a6e429d5dddc91c",
+    "docs/hanja-goal-glyphwiki-batch1059-2026-10-13/sources.json": "609927ecbf374a856162de108ae6de7d4fdc86d9e7759724cb292f05bfec6516",
+    "docs/hanja-goal-glyphwiki-batch1059-2026-10-13/metadata.json": "86fda2c2d059a8468e6a77138f0398b602d8c45452727ba69eea5f331257b28c",
+    "docs/hanja-goal-glyphwiki-batch388-2026-10-09/review.json": "030f54f1e9dd5b9dc9477c069c370099231ba5156678af82fe17547b3a320a36",
+    "docs/hanja-actual-component-profiles-2026-10-22/u51de-base-catalog15-playback16-source-preview-1.json": "4481f19fa760ccf73d5c63fb8c2c78edb1fdcdd06cb720ca8faa713aa8f558f5",
+    "scripts/hanja-actual-component-review.mjs": "26aadd00e7392fcab85d7b13601b83b923e8e389fda24be135dad6395c364851",
+    "components/hanja/stroke-outlines.tsx": "abf736abcc1a3cddb5d505eec6b26125a3dc2c96b6ff5bcafccde733cdc05c02",
+    "lib/hanja-stroke-source-reveal-u51de-base.ts": "c7c5185d1b26e4e8c578d9dcb06f142e016c53245c6d3c636ca9db925eb04633",
+    "lib/hanja-stroke-source-reveal-u51de-base.test.ts": "672dd5c7cd09fc82a5da498d9ebb16ffa5ffdeeda837522fe15dcbfe1a910e19",
+    "lib/hanja-stroke-source-hook-u51de-base.ts": "ee67efb7e3645f27d10c47874680e25465169070fb1f8873e772f3547dd4d6c6",
+    "lib/hanja-stroke-source-hook-u51de-base.test.ts": "5dba6a11c8b4c89c7e9c2cd6e47c7eb1b0a245ee68f866b889cbc97092448502",
+    "lib/hanja-stroke-contact-head-u51de-base.ts": "58fdeffcd0c6944811ab31e943197147d82ce9270dbc9903c910a169b62d905f",
+    "lib/hanja-stroke-contact-head-u51de-base.test.ts": "d5bc5de335394bbfecf0b13513062517fb365e9be37b58e3cc5957d429966454",
+    "docs/hanja-source-original-u51de-base-2026-10-27/contact-head-prefix-3-10.json": "39ecc8281667bbdd06bc84d70a3c356f8f386d6275a11d4611dd160ce1dbb467",
+    "docs/hanja-source-original-u51de-base-2026-10-27/source-preview-H-integration.patch": "684769cd7c1fb1ce0a7191ec36ab4d12abf9ecf0694c8e4361f8505b79e1e3c1",
+    "docs/hanja-source-original-u51de-base-2026-10-27/source-reveal-r-integration.patch": "0d32e5c710ea1a2563356a9d3afee5fd44edde3e798144740b2f334ac96d07e1",
+    "lib/hanja-stroke-variants.ts": "b1bf05701389fc6dca0ca97dbf261302b8a03b77c1509b27f7c62623ba5c4f42"
+  },
+  "requiredFinalDependencies": [
+    {
+      "path": "docs/hanja-source-original-u51de-base-2026-10-27/native-source-preview-review.json",
+      "SHA256": null,
+      "reason": "Final ROOT-authored record must bind actual corrected finite/natural/completion observations to exact frozen profile, source modules, H and R. Never substitute a pending/failed record."
+    },
+    {
+      "path": "docs/hanja-actual-component-profiles-2026-10-22/u51de-base-catalog15-playback16-source-preview-1.json",
+      "SHA256": "4481f19fa760ccf73d5c63fb8c2c78edb1fdcdd06cb720ca8faa713aa8f558f5",
+      "condition": "Keep this exact historical profile; changed relevant inputs invalidate only affected previously observed evidence."
+    },
+    {
+      "path": "scripts/hanja-actual-component-review.mjs",
+      "SHA256": "26aadd00e7392fcab85d7b13601b83b923e8e389fda24be135dad6395c364851"
+    },
+    {
+      "path": "components/hanja/stroke-outlines.tsx",
+      "SHA256": "abf736abcc1a3cddb5d505eec6b26125a3dc2c96b6ff5bcafccde733cdc05c02"
+    },
+    {
+      "path": "public/hanja-strokes/glyphwiki/u51de.json",
+      "SHA256": null,
+      "reason": "Compute only after adding final native record path/hash and freezing immutable public capsule."
+    },
+    {
+      "path": "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch1508.json",
+      "SHA256": null,
+      "reason": "Bundle candidateSha256 and geometrySource must equal the frozen public capsule hash; no self-hash cycles."
+    }
+  ],
+  "nativeRecordRequirements": {
+    "finitePlan": {
+      "initial": 32,
+      "originalBoundary": 21,
+      "newPhaseBoundary": 15,
+      "midgrowth": 31,
+      "contactHeadMid": 4,
+      "whole": 1,
+      "total": 104
+    },
+    "naturalPens": [
+      2,
+      3,
+      6,
+      10,
+      12
+    ],
+    "completeSourceInk": 23,
+    "sourcePolicyOwners": 23,
+    "sameOwnerFrameAndPriorInk": true,
+    "sourceModuleClosure": 386,
+    "legacyContextNull": 340,
+    "activeContexts": 3,
+    "selectedPolicies": 23,
+    "unobservedOrFailedRunsRemainSeparate": true,
+    "approvalIsLimited": true,
+    "wholeAppAndAllTimeClaims": false
+  },
+  "plannedFiles": [
+    {
+      "role": "capsule",
+      "path": "public/hanja-strokes/glyphwiki/u51de.json",
+      "exists": false,
+      "createOnlyAfterFinalNativeRecord": true
+    },
+    {
+      "role": "bundle",
+      "path": "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch1508.json",
+      "exists": false,
+      "createOnlyAfterFinalNativeRecord": true
+    },
+    {
+      "role": "strictLoader",
+      "path": "lib/hanja-stroke-dictionary-glyphwiki-batch1508.ts",
+      "exists": false,
+      "createOnlyAfterFinalNativeRecord": true
+    },
+    {
+      "role": "focusedTests",
+      "path": "lib/hanja-stroke-dictionary-glyphwiki-batch1508.test.ts",
+      "exists": false,
+      "createOnlyAfterFinalNativeRecord": true
+    },
+    {
+      "role": "notice",
+      "path": "public/hanja-strokes/glyphwiki/NOTICE-51de.md",
+      "exists": false,
+      "createOnlyAfterFinalNativeRecord": true
+    },
+    {
+      "role": "mutableManifest",
+      "path": "docs/hanja-source-original-u51de-base-2026-10-27/activation-batch1508-draft.json",
+      "exists": false,
+      "createOnlyAfterFinalNativeRecord": true
+    },
+    {
+      "role": "rootRegistryPatchDocument",
+      "path": "docs/hanja-source-original-u51de-base-2026-10-27/registry-batch1508.patch",
+      "exists": false,
+      "createOnlyAfterFinalNativeRecord": true
+    }
+  ],
+  "rootOwnedSharedFile": {
+    "path": "lib/hanja-stroke-variants.ts",
+    "mutationAllowedNow": false,
+    "plannedChanges": [
+      "Import batch1508 typed-variant entries.",
+      "Append exactly once to HANJA_VARIANT_STROKES.",
+      "Add the matching strict allowed variant exception used by the existing1507 pattern."
+    ],
+    "mustRecheckCurrentContentsBeforePatch": true
+  },
+  "strictValidationToReuse": [
+    "Exact single-argument loader; ordinary reordered JSON clones only; reject extra fields, custom/null prototypes, symbols, array properties and accessors without invoking getters.",
+    "Deep-freeze fullProof, original segment identity and returned typed variant; preserve16 logical groups/23 masks/39 source polygons and exact source mapping.",
+    "Pin pathsSHA256, compiledSHA256, public capsule SHA, source proof/file hashes, native record SHA and immutable historical profile bytes.",
+    "catalog15 resolves to playback16; reject every other catalogue count, plain-string resolver use and duplicate registry glyphs.",
+    "Retain original Kage engine revision/hash metadata and fixed public archive/provider records. Never infer a latest GlyphWiki revision."
+  ],
+  "approvalAndHashSequence": [
+    "Wait for final ROOT native record and verify its actual limited approval scope and frozen input hashes.",
+    "Recheck proposed1508 paths and registry collision before creating any implementation file; batch number remains unreserved.",
+    "Freeze public capsule with final native metadata and historical registration/runtime=false snapshot, then compute its SHA.",
+    "Use capsule SHA in reviewed bundle and strict loader; keep loader registration/runtime=false until ROOT applies registry.",
+    "Prepare readonly registry patch and mutable activation manifest without mutating shared registry.",
+    "Run only focused batch tests and selected loader/test semantic verification; reuse unchanged geometry/source evidence.",
+    "ROOT applies three registry edits, flips only authorized runtime flags, verifies actual object resolver/duplicate count/correct catalogue constraint, and updates mutable manifest with actual hashes/counts.",
+    "Keep immutable public capsule preparation flags historical. ROOT owns the commit."
+  ],
+  "licensing": {
+    "geometryLicense": "LicenseRef-GlyphWiki",
+    "attribution": "GlyphWiki Project and contributors; fixed original u51de source records.",
+    "licenseURL": "https://glyphwiki.org/wiki/GlyphWiki:License@18",
+    "editableSource": "/hanja-strokes/glyphwiki/u51de.json",
+    "archiveURL": "https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/dump_newest_only.txt",
+    "archiveSHA256": "7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62",
+    "versionedDependencies": [
+      "u268dd-itaiji-001@3",
+      "u2ff0-u4e3f-u81e3@2",
+      "u81e3@3"
+    ],
+    "revisionRule": "Use exact sources.json archive/provider identities and hashes. Do not assign an unrecorded u51de@version.",
+    "examBodyApproved": false,
+    "sourceMicroclockIdentityApproved": false,
+    "privateDictionaryMediaIncluded": false
+  },
+  "focusedPreparationCheck": {
+    "plannedPathsAbsent": true,
+    "actualResolverSnapshotVerified": true,
+    "compiledShapeRecalculated": false,
+    "nativeApprovalAssumed": false
+  },
+  "registrationAuthorized": false,
+  "runtimeApplied": false,
+  "nativeApproval": false,
+  "buildRun": false,
+  "wholeProjectTypecheckRun": false,
+  "SSRRun": false,
+  "serverStarted": false,
+  "commitMade": false
+}

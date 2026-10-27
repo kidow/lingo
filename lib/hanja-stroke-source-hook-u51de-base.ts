@@ -10,7 +10,14 @@ export function makeReviewedU51deBaseHookContext(proof:unknown,identity:unknown,
 const POLICY=Object.freeze({id:'u51de-base-source-hook-12-3',kind:'source-body-then-up-u51de-base',pen:12,mask:3,segment:SEGMENT,predecessor:PRIOR,phaseShare:31/56,proofFingerprint:FINGERPRINT,previewOnly:true}as const)
 export type ReviewedU51deBaseHookPolicy=typeof POLICY
 export function reviewedU51deBaseHookPolicy(context:ReviewedU51deBaseHookContext|null,pen:number,mask:number):ReviewedU51deBaseHookPolicy|null{return context===CONTEXT&&pen===11&&mask===2?POLICY:null}
-function source(policy:ReviewedU51deBaseHookPolicy,segment:HanjaOutlineSegment){if(policy!==POLICY||segment!==SEGMENT)throw Error('Exact reviewed original hook policy/segment required')}
+/** JSON-cloned source data may cross the renderer boundary; policy branding and DOM receipts remain identity-bound. */
+function sameSource(a:unknown,b:unknown):boolean{
+ if(Object.is(a,b))return true
+ if(!a||!b||typeof a!=='object'||typeof b!=='object'||Array.isArray(a)!==Array.isArray(b)||Object.getPrototypeOf(a)!==Object.getPrototypeOf(b))return false
+ const ak=Reflect.ownKeys(a),bk=Reflect.ownKeys(b)
+ return ak.length===bk.length&&bk.every(k=>{const x=Object.getOwnPropertyDescriptor(a,k),y=Object.getOwnPropertyDescriptor(b,k);return!!x&&!!y&&'value'in x&&'value'in y&&x.enumerable===y.enumerable&&sameSource(x.value,y.value)})
+}
+function source(policy:ReviewedU51deBaseHookPolicy,segment:HanjaOutlineSegment){if(policy!==POLICY||!sameSource(segment,SEGMENT))throw Error('Exact reviewed original hook policy/source data required')}
 export type ReviewedU51deBaseHookRect=Readonly<{x:number;y:number;width:number;height:number}>
 export function sampleReviewedU51deBaseHookFrame(policy:ReviewedU51deBaseHookPolicy,segment:HanjaOutlineSegment,progress:number){
  source(policy,segment);if(!Number.isFinite(progress)||progress<0||progress>1)throw Error('Finite unit progress required')
