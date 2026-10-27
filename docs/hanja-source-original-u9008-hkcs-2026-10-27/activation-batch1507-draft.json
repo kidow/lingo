@@ -1,0 +1,88 @@
+{
+  "schema": "hanja-root-variant-activation-preparation/v1",
+  "batch": 1507,
+  "glyph": "逈",
+  "variant": {
+    "catalogStrokes": 9,
+    "playbackStrokes": 10,
+    "form": "사전"
+  },
+  "sourceAuthored": false,
+  "originalPublicWholeClaim": true,
+  "nativeReview": "docs/hanja-source-original-u9008-hkcs-2026-10-27/native-source-preview-review.json",
+  "nativeReviewSHA256": "9d38c547f8761113b91b837729bd9cb02c5c35be7b5220c86cdf31fe8c48b1b5",
+  "nativeProfile": "docs/hanja-actual-component-profiles-2026-10-22/u9008-hkcs-catalog9-playback10-source-preview-1.json",
+  "nativeProfileSHA256": "bb268c222e98e50bcb24c4f662ccce4aded09aadbe861b4c4ab6b1cdd744b8da",
+  "reviewedProductionComponentSHA256": "5f21a981e5f9621e07afb6621fdac5de8c3d649ac5b0effad0d0e854f28011b6",
+  "reviewedHarnessSHA256": "a34161f69ff96de6c3678511fe9c7d3b61a16ecd8da151adda3fbd06b0a38775",
+  "publicSource": "public/hanja-strokes/glyphwiki/u9008.json",
+  "publicSourceSHA256": "6cb156fa54278aac1fd273a9dd47c33d7746e006c8f52b81ad60d071e11fce22",
+  "pathsSHA256": "b3b175859ccf6db2ff9b3196b652e0b2f7cfb4fc81f734733cc2f0e2ee9c92a0",
+  "compiledSHA256": "0ea0ea47896a94ac45a2ebb912d9c2c8f85610ee81d8609cd3706587036d881d",
+  "registryPatch": "docs/hanja-source-original-u9008-hkcs-2026-10-27/registry-batch1507.patch",
+  "registryPatchSHA256": "1cf6e883347ff0a649857949fd7eccd2e1ae60ecaa34645bab291257e6c4b7b8",
+  "registryBeforeSHA256": "70b3fe7bc34d2b3790863fdecbfb5237c9eb0cd8edc31b8228b6ed435bb1b68d",
+  "expectedRegistryAfterPatchSHA256": "b1bf05701389fc6dca0ca97dbf261302b8a03b77c1509b27f7c62623ba5c4f42",
+  "newFilesSHA256": {
+    "public/hanja-strokes/glyphwiki/u9008.json": "6cb156fa54278aac1fd273a9dd47c33d7746e006c8f52b81ad60d071e11fce22",
+    "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch1507.json": "1f6e1babe47831bfe61d7c7b629438ae63eeb31d446f981f32d729a3c67b508b",
+    "lib/hanja-stroke-dictionary-glyphwiki-batch1507.ts": "eb5161f080f3193cd64c4ef52ffac1792c7f99ed46773a84d36510dd12126fc4",
+    "lib/hanja-stroke-dictionary-glyphwiki-batch1507.test.ts": "c03add9504084f2c8466c2e8252e9cf06e3ab5805385928cdb3fe02852aa8978",
+    "public/hanja-strokes/glyphwiki/NOTICE-9008.md": "1cf63450fc0643d715252150355b919e214c20cf8de7689ddd67ad6daf6188f3"
+  },
+  "countsBeforeFromROOT": {
+    "total": 5978,
+    "applied": 5921,
+    "remaining": 57
+  },
+  "expectedAfterROOTResolver": {
+    "total": 5978,
+    "applied": 5922,
+    "remaining": 56,
+    "targetMatches": 1,
+    "catalogStrokes": 9,
+    "playbackStrokes": 10
+  },
+  "registrationAuthorized": true,
+  "runtimeApplied": true,
+  "indexApplicationVerified": true,
+  "actualPostRegistryResolverChecked": true,
+  "registryAfterSHA256": "b1bf05701389fc6dca0ca97dbf261302b8a03b77c1509b27f7c62623ba5c4f42",
+  "actualPostRegistryResolver": {
+    "glyph": "逈",
+    "catalogStrokes": 9,
+    "playbackStrokes": 10,
+    "targetMatches": 1,
+    "variantMatches": 1,
+    "sourcePolicies": 6,
+    "sourcePolicyTargets": [[1, 1], [3, 3], [7, 1], [8, 1], [10, 1], [10, 2]],
+    "wrongCatalogCountsRejected": 49,
+    "registered": 5922,
+    "remaining": 56,
+    "remainingByGrade": {
+      "1급": 5,
+      "특급II": 7,
+      "특급": 44
+    },
+    "publicSourceSHA256Unchanged": true,
+    "actualAppUI": false
+  },
+  "focusedVerification": {
+    "preparedFocusedTests": 4,
+    "preparedPassed": 4,
+    "selectedVirtualLoaderTestDiagnostics": 0,
+    "postRegistrationActivationTailPassed": true,
+    "unchangedSuccessfulChecksReused": true
+  },
+  "sourcePreparationFlagsHistorical": true,
+  "examBodyApproved": false,
+  "sourceMicroclockIdentityApproved": false,
+  "allIntermediateFramesClaimed": false,
+  "freshAppUIVerified": false,
+  "buildRun": false,
+  "wholeProjectTypecheckRun": false,
+  "rootActionRequired": [
+    "Commit this Hanja unit with exact owned paths after the final current HEAD check.",
+    "Fresh application UI observation remains unclaimed; perform it separately if required by the current task."
+  ]
+}
