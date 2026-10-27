@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 1,
+  "glyph": "曙",
+  "source": {
+    "path": "docs/hanja-source-inventory-u66d9-lp-2026-10-27/public-records.json",
+    "SHA256": "615e05f156a565aa0eec8f85b22e7b77c62058858cc617634dc2e69060bd7235"
+  },
+  "newAliasChains": [
+    {
+      "wrapper": "lp_lps-00012954@1",
+      "wrapperVersion": "1",
+      "wrapperVersionType": "string",
+      "metadataRow": "0:-1:-1:-1",
+      "child": "lp_lpy-00012954",
+      "childVersion": 1,
+      "childVersionType": "number",
+      "childRelated": "U+3013",
+      "terminalLiteral": "u66d9-j",
+      "terminalCachedVersion": "2",
+      "currentTerminalOriginBindingRefetched": false,
+      "newDrawingRows": 0
+    },
+    {
+      "wrapper": "lp_lps-00128874@1",
+      "wrapperVersion": "1",
+      "wrapperVersionType": "string",
+      "metadataRow": "0:-1:-1:-1",
+      "child": "lp_lpy-00128874",
+      "childVersion": 1,
+      "childVersionType": "number",
+      "childRelated": "U+3013",
+      "terminalLiteral": "u66d9-k",
+      "terminalCachedVersion": 20,
+      "currentTerminalOriginBindingRefetched": false,
+      "newDrawingRows": 0
+    }
+  ],
+  "existingEvidenceSeparated": [
+    {
+      "root": "u66d9-k",
+      "evidenceKind": "Prior direct full/cumulative and filled-contact findings.",
+      "fact": "Reviewed middle horizontal separated from left 日, and default dot separated from lower 日. Existing exact evidence is reused; not recalculated or projected onto a distinct whole."
+    },
+    {
+      "root": "u66d9-j",
+      "evidenceKind": "Public authored-row source screening, not new native whole.",
+      "fact": "Reviewed source lacks a separate DR dot row required by the prior domestic stroke14 observation. Do not invent a dot or infer contact from count alone."
+    },
+    {
+      "root": "hkcs_m66d9",
+      "evidenceKind": "Direct new HK whole native observation.",
+      "fact": "Middle long horizontal visibly separated from the left 日 right vertical. Separate dot fine-contact/timing was not approved."
+    },
+    {
+      "root": "xotarios_u66d9-var-001",
+      "evidenceKind": "Direct new authored whole native observation.",
+      "fact": "Exterior 罒 verticals extend to the lower 者 floor, unlike the reference head-only outer verticals. No prior K/HK HOLD was transferred."
+    }
+  ],
+  "unreviewedButAlreadyCollected": [
+    {
+      "root": "dkw-14220@3",
+      "scope": "Same authored right body placement as prior K, different left 曰; no new native verdict."
+    },
+    {
+      "root": "zihai-084458@1",
+      "scope": "Different original four-curve body; not newly collected or natively reviewed here."
+    },
+    {
+      "root": "toikawa_hkrm-02088741@2",
+      "scope": "Existing direct body rows have no separate dot row; source-only, not native rejection transfer."
+    },
+    {
+      "root": "toikawa_hkrm-02088742@1",
+      "scope": "Existing direct body rows have no separate dot row; source-only, not native rejection transfer."
+    }
+  ],
+  "recommendation": {
+    "newIndependentWholeFound": false,
+    "captureNow": false,
+    "reason": "The two missed literal primary LP names resolve to already known J/K families; they do not provide independent authored drawing rows addressing both middle-bar attachment and separate-dot conditions.",
+    "scope": "This small inventory does not prove all public sources unavailable. No new engine, component movement, stroke extension, dot creation or local recipe is proposed."
+  },
+  "closureLimits": {
+    "metadataRowsPreserved": true,
+    "unversionedNamesNotReplacedByOtherFixedVersions": true,
+    "allTerminalCurrentOriginBindingsConfirmed": false,
+    "freshWholeCaptureAvailable": false
+  },
+  "approval": {
+    "whole": false,
+    "membership": false,
+    "direction": false,
+    "contact": false,
+    "sourceClock": false,
+    "componentReuse": false,
+    "native": false,
+    "runtimeApplied": false
+  },
+  "execution": {
+    "primaryPageRetrievals": 1,
+    "APIServiceResponses": 4,
+    "APISuccessful200Responses": 4,
+    "APICacheHits": 4,
+    "originFreshnessClaim": false,
+    "retryLoops": 0,
+    "engine": 0,
+    "server": 0,
+    "build": 0,
+    "fullTypeChecks": 0,
+    "sharedChanges": 0
+  }
+}
