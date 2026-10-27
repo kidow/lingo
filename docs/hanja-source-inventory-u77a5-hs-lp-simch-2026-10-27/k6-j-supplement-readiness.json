@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 1,
+  "glyph": "瞥",
+  "source": {
+    "path": "docs/hanja-source-inventory-u77a5-hs-lp-simch-2026-10-27/k6-j-supplement-public-records.json",
+    "SHA256": "4d543bd0153e51ee241622fb11106d961b315c07a966dfb2748da1c44735a6f8"
+  },
+  "roots": [
+    {
+      "requested": "u77a5-k@6",
+      "name": "u77a5-k",
+      "version": "6",
+      "versionType": "string",
+      "parentRows": [
+        "99:0:0:0:-1:200:222:u655d-03-var-006",
+        "99:0:0:0:100:200:190:u76ee-j"
+      ],
+      "upperChild": {
+        "requested": "u655d-03-var-006",
+        "name": "u655d-03-var-006",
+        "version": 4,
+        "versionType": "number",
+        "rows": 13,
+        "dependencies": [],
+        "dataSHA256": "489a773f8ceeb39184d0978cf2c7dbb6a24b5f8cf835c1cbb8c1f15f68a04c37"
+      },
+      "eyeLiteralReference": "u76ee-j",
+      "cachedEyeVersion": 2,
+      "cachedSnapshotSourceClosureAvailable": true,
+      "currentUnversionedEyeBindingConfirmed": false,
+      "freshCurrentClosureComplete": false,
+      "declaredExpandedDrawingRows": 19,
+      "drawingRowsAreNotFormalStrokeCount": true,
+      "originalUpperTransformPreserved": [
+        0,
+        -1,
+        200,
+        222
+      ],
+      "upperChildHasFreshPublicResponse": true
+    },
+    {
+      "requested": "u77a5-j",
+      "name": "u77a5-j",
+      "version": 3,
+      "versionType": "number",
+      "parentRows": [
+        "99:0:0:0:-1:200:222:u655d-03-var-007",
+        "99:0:0:0:100:200:190:u76ee-j"
+      ],
+      "upperChild": {
+        "requested": "u655d-03-var-007",
+        "name": "u655d-03-var-007",
+        "version": 1,
+        "versionType": "number",
+        "rows": 13,
+        "dependencies": [],
+        "dataSHA256": "f8d465562a1a5e0d8d5c4efee01abfd5a82af64da3f0258dc6b2464a67161fdd"
+      },
+      "eyeLiteralReference": "u76ee-j",
+      "cachedEyeVersion": 2,
+      "cachedSnapshotSourceClosureAvailable": true,
+      "currentUnversionedEyeBindingConfirmed": false,
+      "freshCurrentClosureComplete": false,
+      "declaredExpandedDrawingRows": 19,
+      "drawingRowsAreNotFormalStrokeCount": true,
+      "originalUpperTransformPreserved": [
+        0,
+        -1,
+        200,
+        222
+      ],
+      "upperChildHasFreshPublicResponse": true
+    }
+  ],
+  "sharedSourceConditions": {
+    "topOriginalRows": [
+      "1:0:32:61:14:61:44",
+      "2:0:7:44:20:33:36:13:52",
+      "2:7:8:73:18:94:26:106:40"
+    ],
+    "rightFrameOriginalRowOneBased": 6,
+    "rightFrameOriginalRow": "1:22:4:93:44:93:92",
+    "rightFrameEncodedType": 1,
+    "rightFrameStartFlag": 22,
+    "rightFrameEndFlag": 4,
+    "leftDiagonalEncodedDL": true,
+    "rightDiagonalEncodedDR": true,
+    "meaning": "Source row encodings only. These flags and primitive control points do not establish filled terminal shape, native per-stroke mapping, Korean sequence compatibility or source-clock direction."
+  },
+  "onlyUpperDifference": {
+    "rowOneBased": 12,
+    "k006": "2:32:7:165:40:148:84:106:96",
+    "j007": "2:0:7:165:42:148:84:106:96",
+    "fields": "startFlag32 versus0 and first point y40 versus42; all other twelve original upper rows are identical.",
+    "rootTransformsSame": true
+  },
+  "referenceLimits": [
+    "The fixed historical K@6 root itself is freshly confirmed; its authored upper child reference is unversioned, now observed as var006@4. This is not a claim that all children are historical version6-time snapshots.",
+    "The current unversioned J response is version3. No fixed or versionless archive substitutes for it.",
+    "Original shared eye u76ee-j numeric2 is cached only; no fresh current binding was fetched.",
+    "Both new upper leaves retain original frame end4 and share first DL/DR rows; neither supplies a new end0/no-hook original source condition. Do not infer filled geometry from the flag alone."
+  ],
+  "recommendation": {
+    "captureNow": false,
+    "reason": "The two newly resolved upper leaves do not provide the requested independent frame-ending remedy in source data. Preserve them as source evidence; a fresh whole/native test, if later explicitly chosen, would still be needed to determine filled terminal geometry. No previous HOLD is automatically transferred.",
+    "additionalRequestsPerformed": false
+  },
+  "approval": {
+    "whole": false,
+    "membership": false,
+    "direction": false,
+    "frameGeometry": false,
+    "sourceClock": false,
+    "componentReuse": false,
+    "native": false,
+    "runtimeApplied": false
+  },
+  "execution": {
+    "newHTTPRequests": 4,
+    "successfulResponses": 4,
+    "engine": 0,
+    "server": 0,
+    "build": 0,
+    "fullTypeChecks": 0,
+    "sharedChanges": 0
+  }
+}
