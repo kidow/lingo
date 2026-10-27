@@ -1,0 +1,30 @@
+*** Begin Patch
+*** Update File: scripts/hanja-raw-static-compare.py
+@@
+ def validate_exact_u5ac2_dictionary13(config,config_path):
++    if config_path==ROOT/U5AC2_LOCAL_LAYOUT_V2_INDIVIDUAL_CASE['config']:
++        require(config.get('glyph')=='嫂' and config.get('catalogStrokes')==12 and config.get('dictionaryPlaybackStrokes')==13 and config.get('domestic')==U5AC2_LOCAL_LAYOUT_V2_INDIVIDUAL_CASE['domestic'] and config.get('wholeOnly')is False,'exact authored 嫂 v2 individual catalog12/publisher13 required')
++        return
+@@
++U5AC2_LOCAL_LAYOUT_V2_INDIVIDUAL_CASE=json.loads("{\"glyph\":\"嫂\",\"catalogStrokes\":12,\"dictionaryPlaybackStrokes\":13,\"config\":\"docs/hanja-source-raw-compare-u5ac2-sou10-layout-v2-individual-2026-10-27/config.json\",\"root\":\"lingo-u5ac2-sou10-layout-v2\",\"localRecipe\":true,\"recipePath\":\"docs/hanja-component-recipe-u5ac2-sou10-layout-v2-2026-10-27/recipe.json\",\"recipeSHA256\":\"4c509ee2f22a34e5dd82790a26d4ccab7f968bf2e721a7de785877dfc0e5c7fa\",\"capturePath\":\"docs/hanja-component-capture-u5ac2-sou10-layout-v2-2026-10-27/capture.json\",\"captureSHA256\":\"9f55f46b0cfa0999f1abed9fcedb2a0861833bb5e2df65ae8b4f4c927cd19b4d\",\"fullPath\":\"docs/hanja-component-capture-u5ac2-sou10-layout-v2-2026-10-27/engine-whole-lingo-u5ac2-sou10-layout-v2.json\",\"fullSHA256\":\"2123ee9467437ca644eb162bc29d66b1839cfe73bfa46e2d2cbcd9c56368b2ca\",\"configSemanticSHA256\":\"33ab632f0930541e9c10fdc4e27b9f538a8649840327ace90ac194310aaf9a24\",\"domestic\":{\"url\":\"http://img.e-hanja.kr/hanjaSvg/aniSVG/5a00/5ac2.svg\",\"status\":200,\"bytes\":7231,\"sha256\":\"14a3854c144db993f43765aeafda9dcb8c63a3bcbf97a100db9e372ed9e3cd20\",\"clips\":13,\"glyph\":\"嫂\",\"privateMediaSaved\":false},\"local5ac2LayoutV2Individual\":true,\"individualStatic\":true,\"wholeConfig\":\"docs/hanja-source-raw-compare-u5ac2-sou10-layout-v2-whole-2026-10-27/config.json\",\"wholeConfigSHA256\":\"b60de8defd828eef507754d863977d785b5485fc2a1e7115f93ce38d6c2c7cbc\",\"wholeRecord\":\"docs/hanja-source-raw-compare-u5ac2-sou10-layout-v2-whole-2026-10-27/native-whole-review.json\",\"wholeRecordSHA256\":\"6aadc307b55c4acaa00e64d4369457806d561ec0293bebd0024db020eb7a2144\"}")
+ U5AC2_LOCAL_LAYOUT_V2_WHOLE_CASE=json.loads("{\"glyph\":\"嫂\",\"catalogStrokes\":12,\"dictionaryPlaybackStrokes\":13,\"config\":\"docs/hanja-source-raw-compare-u5ac2-sou10-layout-v2-whole-2026-10-27/config.json\",\"root\":\"lingo-u5ac2-sou10-layout-v2\",\"localRecipe\":true,\"recipePath\":\"docs/hanja-component-recipe-u5ac2-sou10-layout-v2-2026-10-27/recipe.json\",\"recipeSHA256\":\"4c509ee2f22a34e5dd82790a26d4ccab7f968bf2e721a7de785877dfc0e5c7fa\",\"capturePath\":\"docs/hanja-component-capture-u5ac2-sou10-layout-v2-2026-10-27/capture.json\",\"captureSHA256\":\"9f55f46b0cfa0999f1abed9fcedb2a0861833bb5e2df65ae8b4f4c927cd19b4d\",\"fullPath\":\"docs/hanja-component-capture-u5ac2-sou10-layout-v2-2026-10-27/engine-whole-lingo-u5ac2-sou10-layout-v2.json\",\"fullSHA256\":\"2123ee9467437ca644eb162bc29d66b1839cfe73bfa46e2d2cbcd9c56368b2ca\",\"configSemanticSHA256\":\"b803c9146b0d5f06eea52ddf7c2e28ac6f6e692fa06e98ce1ca103b817c472fc\",\"domestic\":{\"url\":\"http://img.e-hanja.kr/hanjaSvg/aniSVG/5a00/5ac2.svg\",\"status\":200,\"bytes\":7231,\"sha256\":\"14a3854c144db993f43765aeafda9dcb8c63a3bcbf97a100db9e372ed9e3cd20\",\"clips\":13,\"glyph\":\"嫂\",\"privateMediaSaved\":false},\"local5ac2LayoutV2\":true}")
+@@
++    if type(spec)is dict and spec.get('root')=='lingo-u5ac2-sou10-layout-v2' and config.get('wholeOnly')is False:
++        case=U5AC2_LOCAL_LAYOUT_V2_INDIVIDUAL_CASE
+     if type(spec)is dict and spec.get('root')=='lingo-u995b-no-extra-v1' and config.get('wholeOnly')is False:
+@@
++    if case.get('local5ac2LayoutV2Individual'):
++        semantic={k:v for k,v in config.items()if k!='launcherSHA256'}
++        require(config_path==ROOT/case['config'] and digest(json.dumps(semantic,sort_keys=True,separators=(',',':'),ensure_ascii=False).encode())==case['configSemanticSHA256'],'exact authored 嫂 v2 individual config required')
++        require(config['glyph']=='嫂' and config['catalogStrokes']==12 and config['dictionaryPlaybackStrokes']==config['domestic']['clips']==13 and config['kind']=='local-authored-component-recipe' and config['sourceRootWasAuthored']is True and config['wholeOnly']is False and config['noPartialAnimation']is True and config['layoutMode']=='whole-pair520-css-only','independent static domestic13/raw16 single or prefix only')
++        require(label=='selected' and list(config['sourceRoots'])==['selected'] and spec['root']==case['root']=='lingo-u5ac2-sou10-layout-v2' and path==pinned_path(spec['file']),'one unchanged fresh authored v2 source')
++        for p,h in config['inputSHA256'].items():require(digest(pinned_path(p).read_bytes())==h,'individual fixed input changed: '+p)
++        whole_path=pinned_path(case['wholeConfig']);require(digest(whole_path.read_bytes())==case['wholeConfigSHA256'],'fixed source whole config required');whole=json.loads(whole_path.read_bytes())
++        require(config['sourceRoots']==whole['sourceRoots'] and config['domestic']==whole['domestic'] and config['dictionaryPlaybackStrokes']==whole['dictionaryPlaybackStrokes']==13,'exact source16 and publisher13 preserved')
++        for p,h in whole['inputSHA256'].items():require(config['inputSHA256'].get(p)==h,'all whole source inputs retained')
++        require(digest(pinned_path(case['wholeRecord']).read_bytes())==case['wholeRecordSHA256'],'fixed fresh native whole observation required')
++        record=json.loads(pinned_path(case['wholeRecord']).read_bytes());require(record['approval']['wholeStaticCompatible']is True and record['approval']['formal13Membership']is False and record['approval']['direction']is False and record['approval']['animation']is False and record['nativeApproval']is False and record['runtimeApplied']is False,'whole-only PASS transfers no grouping or playback approval')
++        validate_new_public_whole(whole,label,whole['sourceRoots']['selected'],path,whole_path,U5AC2_LOCAL_LAYOUT_V2_WHOLE_CASE)
++        return
+     if case.get('local5ac2LayoutV2'):
+*** End Patch
