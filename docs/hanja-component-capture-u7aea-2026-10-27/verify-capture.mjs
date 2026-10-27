@@ -1,0 +1,27 @@
+import assert from 'node:assert/strict'
+import {readFileSync} from 'node:fs'
+import {createHash} from 'node:crypto'
+const repo=new URL('../../',import.meta.url),read=p=>readFileSync(new URL(p,repo)),sha=x=>createHash('sha256').update(x).digest('hex')
+const cap=JSON.parse(readFileSync(new URL('capture.json',import.meta.url)))
+assert.equal(sha(readFileSync(new URL('capture.json',import.meta.url))),'17448fe4e666995ca47bdc84223f65e1b9176115851655c50c011460e165d56a')
+for(const p of [cap.source,cap.helper,cap.full5])assert.equal(sha(read(p.path)),p.SHA256)
+const recipe=JSON.parse(read(cap.source.path)),f=JSON.parse(read(cap.full5.path))
+for(const [p,h]of Object.entries(recipe.sourceBinding.inputSHA256))assert.equal(sha(read(p)),h)
+const src=JSON.parse(read('docs/hanja-source-inventory-u7aea-additional-2026-10-27/sources.json')),original=src.records['simch-kx_t087217'],rows=original.data.split('$')
+assert.deepEqual(recipe.originalParentRows,rows)
+assert.equal(recipe.virtualRoot.data,rows.slice(0,5).join('$'));assert.equal(recipe.omittedOriginalRow,rows[5]);assert.equal(recipe.omittedParentRowOneBased,6)
+assert.deepEqual(recipe.originalChildren,{'u81e3-j@2':src.records['u81e3-j'],'u7acb-04':src.records['u7acb-04']})
+const old=JSON.parse(read(cap.freshRetainedComparison.parentFull5Path))
+assert.equal(sha(read(cap.freshRetainedComparison.parentFull5Path)),cap.freshRetainedComparison.parentFull5SHA256)
+assert.deepEqual(old.groups[16].raw.slice(0,9),rows[5].split(':').map(Number));assert(old.groups[16].raw.slice(9).every(v=>v===null))
+const binding=[];for(const [ri,row]of rows.entries()){const a=row.split(':');if(a[0]==='99'){const child=src.records[a[7].split('@')[0]];for(const [ci,cr]of child.data.split('$').entries())binding.push({flattenedRawOneBased:binding.length+1,rootRowOneBased:ri+1,originalRootRow:row,childReference:a[7],childRowOneBased:ci+1,originalChildRow:cr})}else binding.push({flattenedRawOneBased:binding.length+1,rootRowOneBased:ri+1,originalRootRow:row,childReference:null,childRowOneBased:null})}
+assert.deepEqual(binding,recipe.sourceBinding.flattenedOriginalRowBinding);assert.equal(binding.length,17)
+assert.equal(f.groups.length,16);assert.equal(f.trace.flat().length,16);assert.equal(f.groups.flatMap(g=>g.polygons).length,27)
+assert.deepEqual(f.groups,old.groups.slice(0,16));assert.deepEqual(f.trace,old.trace.slice(0,16))
+assert.deepEqual(f.groups.map(g=>g.polygons),f.trace.map(row=>row.flatMap(c=>c.polygons)))
+assert.equal(sha(JSON.stringify(f.groups.flatMap(g=>g.polygons))),cap.captureFacts.wholePolygonsSHA256)
+assert.equal(cap.captureFacts.actualVMContexts,1);assert.equal(cap.captureFacts.makeGlyphCalls,1);assert.equal(cap.captureFacts.actualProviderRoot,recipe.virtualRoot.name)
+assert.deepEqual(cap.usedReferences,[recipe.virtualRoot.name,'u81e3-j@2','u7acb-04'])
+assert.equal(cap.finiteEvidence.allActiveRawAndPCoordinatesFinite,true);assert.deepEqual(cap.finiteEvidence.nonfiniteGeometry,[])
+assert.equal(cap.locallyAuthoredRoot,true);assert.equal(cap.originalPublicRootClaim,false);assert.equal(cap.originalWhole,false);assert.equal(cap.nativeApproval,false);assert.equal(cap.runtimeApplied,false);assert(Object.values(cap.approval).every(v=>v===false))
+console.log(JSON.stringify({result:'PASS-local-recipe-and-fresh-capture-bindings-only',root:cap.root,omittedParentRootRow:6,omittedParentRaw:17,raw:16,calls:16,polygons:27,retainedFreshPExactlySame:true,engineReexecutedForVerification:false,nativeApproval:false,runtimeApplied:false}))
