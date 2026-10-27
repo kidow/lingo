@@ -1,0 +1,199 @@
+{
+  "schema": "hanja-original-MM-adapter-feasibility/v1",
+  "date": "2026-10-27",
+  "scope": "Preparation only; five original public graphics records; no shared code modifications.",
+  "candidates": [
+    {
+      "id": "u77a5",
+      "glyph": "瞥",
+      "sourcePath": "docs/hanja-source-original-u77a5-mm-2026-10-27/source-record.json",
+      "sourceSHA": "1e473bc435d03da4f2bbed7e73b9480aca91199d78e2df9997a668678d25069c",
+      "originalRecordSHA": "9ca8d951d390982370ae725bc6aab8e700e2098b3cc01629338c2fda247132df",
+      "paths": 16,
+      "medians": 16,
+      "catalog": {
+        "strokes": 16,
+        "grade": "1급"
+      },
+      "existingMMDirectories": [
+        "hanja-source-original-u77a5-mm-2026-10-27"
+      ]
+    },
+    {
+      "id": "u66d9",
+      "glyph": "曙",
+      "sourcePath": "docs/hanja-source-original-u66d9-mm-2026-10-27/source-record.json",
+      "sourceSHA": "27da1208929e772a0622cefea7d170e75127b5244b8f230795c2e87cf6d33e08",
+      "originalRecordSHA": "6f6f9a97e76c036a7b2cf26af50803f511244a69c423b6d5de565d9c857fb0aa",
+      "paths": 17,
+      "medians": 17,
+      "catalog": {
+        "strokes": 18,
+        "grade": "1급"
+      },
+      "existingMMDirectories": [
+        "hanja-source-original-u66d9-mm-2026-10-27"
+      ]
+    },
+    {
+      "id": "u85aa",
+      "glyph": "薪",
+      "sourcePath": "docs/hanja-source-original-u85aa-mm-2026-10-27/source-record.json",
+      "sourceSHA": "625581a61b44b8e1d23fd153a734f5c1fa0812128bb8aff4f5eaebebce5e95e0",
+      "originalRecordSHA": "7bd2cb8685c2af9b0b2db32954e31cb4bea6522b21bb05ef4e366451bcf1dc4c",
+      "paths": 16,
+      "medians": 16,
+      "catalog": {
+        "strokes": 17,
+        "grade": "1급"
+      },
+      "existingMMDirectories": [
+        "hanja-source-original-u85aa-mm-2026-10-27"
+      ]
+    },
+    {
+      "id": "u8517",
+      "glyph": "蔗",
+      "sourcePath": "docs/hanja-source-original-u8517-mm-2026-10-27/source-record.json",
+      "sourceSHA": "b1525a70500355aefea2296b3a3363de753774d18babc6ba03d621bc98bda516",
+      "originalRecordSHA": "34837db9bd9cfaef16c489486249fcba94d2ee28021bfb94d242ca1612a05e43",
+      "paths": 14,
+      "medians": 14,
+      "catalog": {
+        "strokes": 15,
+        "grade": "1급"
+      },
+      "existingMMDirectories": [
+        "hanja-source-original-u8517-mm-2026-10-27"
+      ]
+    },
+    {
+      "id": "u6715",
+      "glyph": "朕",
+      "sourcePath": "docs/hanja-source-original-u6715-mm-2026-10-27/source-record.json",
+      "sourceSHA": "082afaa6687f1310810cd8044ce6d7dc0b4288ed9f145859f860ce332505bcb5",
+      "originalRecordSHA": "8d4e7ef5d8eba31830d55efaa4fd5e585f340d078e7bc67fe0addb08d17de20b",
+      "paths": 10,
+      "medians": 10,
+      "catalog": {
+        "strokes": 10,
+        "grade": "1급"
+      },
+      "existingMMDirectories": [
+        "hanja-source-original-u6715-mm-2026-10-27",
+        "hanja-source-raw-compare-u6715-mm-whole-2026-10-27"
+      ]
+    }
+  ],
+  "upstreamCoordinateEvidence": {
+    "url": "https://raw.githubusercontent.com/skishore/makemeahanzi/bddc96d41bef78427ed0e034e9f7e31d71fd1b92/README.md",
+    "revision": "bddc96d41bef78427ed0e034e9f7e31d71fd1b92",
+    "readInThisTask": true,
+    "lineRange": [
+      98,
+      118
+    ],
+    "viewBox": "0 0 1024 1024",
+    "upperLeft": [
+      0,
+      900
+    ],
+    "lowerRight": [
+      1024,
+      -124
+    ],
+    "publishedTransform": "scale(1, -1) translate(0, -900)",
+    "existingAdapterTransform": "translate(0 900) scale(1 -1)",
+    "matrixEquivalent": [
+      1,
+      0,
+      0,
+      -1,
+      0,
+      900
+    ],
+    "basis": "SVG transform composition gives x unchanged and y=900-y. Display-only transform; original path and median values remain unchanged.",
+    "mediansNotRequiredForWholeDisplay": true,
+    "upstreamOrderTargetsPRCNotKoreanExam": true
+  },
+  "existingRoute": {
+    "launcher": "scripts/hanja-raw-static-compare.py",
+    "launcherActualSHA256": "eadddd2c099cf4850221cb155538fe734d3c6b04664ea76952ccb3b266093910",
+    "kind": "fixed-mm-original-filled-whole-u6715",
+    "adapter": "scripts/hanja-static-original-mm-u6715.py",
+    "adapterSHA256": "c3feaf6f3ccf95b127a964d267f9ca6dc48132f4fb2fcb61480f96c81d8b3fe9",
+    "sharedServe": {
+      "path": "docs/hanja-source-raw-compare-u8a29-2026-10-21/serve.py",
+      "SHA256": "ba91ba7f00bc2e4899ca4d3c69d03ab5cd6f8b0a9f888899eea49aa69a58665d"
+    },
+    "reusedFunctions": [
+      "run_mm_original_whole",
+      "read_original_mm",
+      "original_mm_svg",
+      "check_original_svg",
+      "whole_selection",
+      "whole_page",
+      "shared.domestic_svg",
+      "shared.main"
+    ],
+    "sourcePreservation": "Read source-record.json as-is. Validate originalRecordJSON SHA and parsed-record equality. Escape each original d string into one filled path. Render no median, stroke mapping or animation.",
+    "newToolRequiredForU6715": false,
+    "newSharedCaseRequiredForU6715": false
+  },
+  "u6715": {
+    "configPath": "docs/hanja-source-raw-compare-u6715-mm-whole-2026-10-27/config.json",
+    "configSHA256": "dcc63c73036025e424ff54002cb46bfbe6906a5a5c75b6110c6f13fba61b7745",
+    "configPinnedLauncherSHA256": "c4e41771fefff51dbabf65c7802344c303e1beee356e0c0ed6b0bfe1563d98a0",
+    "currentLauncherPinMatches": false,
+    "checkOnlyReadyWithCurrentConfig": false,
+    "checkOnlyNotRun": true,
+    "pinMismatchIsNotSourceFailure": true,
+    "executionRequirements": [
+      "Exact current launcher hash must be legitimately repinned in the config before any new execution.",
+      "Adapter, sharedServe, source and license pins must match; check-only performs no publisher fetch.",
+      "No new whole review is needed to repeat the same source/adapter/publisher observation."
+    ],
+    "existingNativeReview": {
+      "path": "docs/hanja-source-raw-compare-u6715-mm-whole-2026-10-27/native-whole-review.json",
+      "SHA256": "86c6eb1419ec8272ea8611c9e5afe0de58b118327b3d718230f0a1d78bf497b9",
+      "sameSourceAdapterAndPublisherPins": true,
+      "decision": {
+        "status": "HOLD-original-MM-structural-variant-mismatch",
+        "wholeCompatible": false,
+        "count10Approval": false,
+        "sourceMappingApproved": false,
+        "sourceCorrectionApproved": false,
+        "nativeAnimationApproved": false,
+        "runtimeApplied": false
+      },
+      "sourceObservationReused": true,
+      "launcherChangedSinceObservation": true,
+      "renderingEquivalenceOfNewLauncherNotClaimed": true
+    }
+  },
+  "otherFour": {
+    "existingMMWholeAdapterConfigsFound": false,
+    "sourceCountEqualityNotApproval": true,
+    "wholeShapeChecksPending": true,
+    "implementationNotPrepared": true,
+    "minimalFutureChange": "Use existing MM whole-only adapter contracts with exact per-glyph source/config pins; do not route MM strokes through Kage raw/trace conversion. Any extension of the current fixed-glyph adapter requires a separately scoped code change."
+  },
+  "decision": {
+    "newImplementation": false,
+    "newWholeApproval": false,
+    "sourceStrokeOrderApproved": false,
+    "runtimeApplied": false,
+    "existingU6715VisualHOLDPreserved": true
+  },
+  "workPerformed": {
+    "codeChanges": 0,
+    "newPrivateMediaReads": 0,
+    "newPrivateMediaSaved": 0,
+    "newPrivateMediaTransmitted": 0,
+    "newDictionaryFetch": 0,
+    "newServer": 0,
+    "newBrowser": 0,
+    "newSSR": 0,
+    "newCheckOnly": 0
+  }
+}
