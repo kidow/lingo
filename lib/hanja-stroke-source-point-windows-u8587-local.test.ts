@@ -3,7 +3,7 @@ import assert from 'node:assert/strict'
 import {readFileSync} from 'node:fs'
 import {createHash} from 'node:crypto'
 import fixture from '../docs/hanja-source-original-u8587-local-components-2026-10-27/fixtures-draft.json' with {type:'json'}
-import type {HanjaOutlineStrokes} from './hanja-stroke-outline.ts'
+import {outlineSegmentProgress,type HanjaOutlineStrokes} from './hanja-stroke-outline.ts'
 import {makeReviewedU8587LocalPointWindowContext as make,reviewedU8587LocalPointWindowPolicy as select,sampleReviewedU8587LocalPointWindowFrame as sample,commitReviewedU8587LocalPointWindow as commit,verifyReviewedU8587LocalPointWindowPriorDOM as priorDOM,REVIEWED_U8587_LOCAL_POINT_WINDOW_INPUT_SHA256 as pins,REVIEWED_U8587_LOCAL_POINT_WINDOWS as review} from './hanja-stroke-source-point-windows-u8587-local.ts'
 const f=fixture.u8587,s=f.strokes as HanjaOutlineStrokes,clone=<T,>(v:T):T=>JSON.parse(JSON.stringify(v)),sha=(v:string|Uint8Array)=>createHash('sha256').update(v).digest('hex')
 const ctx=()=>{const c=make(f.fullProof,f.identity,s);assert(c);return c}
@@ -37,16 +37,18 @@ class D{
  createElementNS(_ns:string,name:string){return new N(name,this)}
 }
 
-function dom(p:ReturnType<typeof policy>,progress:number,priorProgress=1){
+function dom(p:ReturnType<typeof policy>,requested:number){
+ const weights=s[12].map(m=>m.weight),total=weights.reduce((a,b)=>a+b,0),before=(weights[0]+weights[1])/total,span=weights[2]/total,logical=requested===1?1:before+span*requested,amounts=outlineSegmentProgress(s[12],logical),progress=amounts[2],priorProgress=amounts[1]
  const doc=new D(),owner=new N('svg',doc),outer=new N('g',doc);owner.setAttribute('viewBox','0 0 100 100');owner.append(outer);outer.setAttribute('data-stroke-outlines','true')
  for(let i=0;i<s.length;i++){const slot=new N('g',doc);slot.setAttribute('data-outline-stroke',String(i+1));outer.append(slot)}
- const slot=outer.children[p.pen-1],g=new N('g',doc),defs=new N('defs',doc),c=new N('clipPath',doc),r=new N('rect',doc),ink=new N('path',doc),id='test-'+(p.pen-1)+'-'+(p.mask-1),H=p.priorRequired?new N('path',doc):null
- for(let i=0;i<s[p.pen-1].length;i++){if(i===p.mask-1){slot.append(g)}else{const path=i===p.mask-2?H!:new N('path',doc);path.setAttribute('d',s[p.pen-1][i].outline);slot.append(path)}}g.append(defs);defs.append(c);c.append(r);g.append(ink)
- for(const n of[outer,...outer.children,g,defs,c,r,ink,...(H?[H]:[])])n.ownerSVGElement=owner
- g.setAttribute('data-stroke-start-gate',p.id);g.setAttribute('data-stroke-reveal-policy',p.kind);g.setAttribute('data-stroke-reveal-progress',String(progress));g.setAttribute(P+'clip',id);g.setAttribute(P+'fingerprint',p.proofFingerprint);g.setAttribute(P+'prior-progress',String(priorProgress))
+ const slot=outer.children[12],g=new N('g',doc),defs=new N('defs',doc),c=new N('clipPath',doc),r=new N('rect',doc),ink=new N('path',doc),id='test-12-2',H=new N('path',doc)
+ for(let i=0;i<(amounts[3]===0?3:4);i++){if(i===2)slot.append(g);else{const path=i===1?H:new N('path',doc);path.setAttribute('d',s[12][i].outline);slot.append(path)}}g.append(defs);defs.append(c);c.append(r);g.append(ink)
+ for(const n of[outer,...outer.children,...slot.children,g,defs,c,r,ink])n.ownerSVGElement=owner
+ g.setAttribute('data-stroke-start-gate',p.id);g.setAttribute('data-stroke-reveal-policy',p.kind);g.setAttribute('data-stroke-reveal-progress',String(progress));g.setAttribute(P+'clip',id);g.setAttribute(P+'fingerprint',p.proofFingerprint);g.setAttribute(P+'prior-progress',String(priorProgress));g.setAttribute(P+'logical-progress',String(logical))
  c.setAttribute('id',id+'-u8587-local-source-window-clip');c.setAttribute('clipPathUnits','userSpaceOnUse');ink.setAttribute('d',p.segment.outline);ink.setAttribute('visibility','hidden');for(const k of['x','y','width','height'])r.setAttribute(k,'999')
- return{doc,owner,outer,slot,g,defs,c,r,ink,id,H,nodes:{group:g,ink,rect:r,clipPath:c}as unknown as Parameters<typeof commit>[4]}
+ return{doc,owner,outer,slot,g,defs,c,r,ink,id,H,logical,progress,priorProgress,nodes:{group:g,ink,rect:r,clipPath:c}as unknown as Parameters<typeof commit>[4]}
 }
+const run=(p:ReturnType<typeof policy>,d:ReturnType<typeof dom>)=>commit(p,p.segment,d.progress,d.id,d.nodes,d.priorProgress,d.logical)
 test('local 薇 exact whole17 context and all untouched field/pin contract',()=>{
  assert(ctx());assert.equal(sha(JSON.stringify(s)),'3700d16a0661f86803707df324e76d2305f2b8e180baa38e6dbc1fefa860f67a');for(const[p,h]of Object.entries(pins))assert.equal(sha(readFileSync(new URL('../'+p,import.meta.url))),h,p)
  const reverse=(v:object)=>Object.fromEntries(Object.entries(v).reverse());assert(make(reverse(f.fullProof),reverse(f.identity),clone(s)));assert.equal((make as(...a:unknown[])=>unknown)(f.fullProof,f.identity),null);assert.equal((make as(...a:unknown[])=>unknown)(f.fullProof,f.identity,s,0),null)
@@ -62,50 +64,26 @@ test('only 13m3 own private source-Q sample anchors',()=>{
 test('new authored nested rectangle family preserves P/Q/bounds/width/weight and hides zero',()=>{
  for(const pen of[13]as const){const p=policy(pen);for(const q of[0,1e-9,.03,.5,1]){const a=sample(p,p.segment,q,1,true);assert.equal(a.outline,q===0?null:p.segment.outline);assert.equal(a.sourceGuide,p.segment.revealPath);assert.equal(a.sourceWidth,14);assert.equal(a.sourceT,p.sourceT);assert.equal(a.anchorIsOriginalQ0,false);assert.equal(a.originalClockEquivalent,false);assert.equal(a.originalPDirect,q===1);assert.equal(a.visible,q>0);assert.equal(a.phase,q===0?'empty':q===1?'full':'source-kernel-point-window');if(a.clip){const [ax,ay]=p.anchor,[x0,y0,x1,y1]=p.sourceBounds;assert.deepEqual(a.clip,{x:ax+(x0-ax)*q,y:ay+(y0-ay)*q,width:(x1-x0)*q,height:(y1-y0)*q});assert(a.clip.x<=ax&&a.clip.y<=ay&&a.clip.x+a.clip.width>=ax&&a.clip.y+a.clip.height>=ay)}}for(const q of[NaN,Infinity,-.1,1.01])assert.throws(()=>sample(p,p.segment,q,1,true));if(p.priorRequired){assert.throws(()=>sample(p,p.segment,.1,0,true));assert.throws(()=>sample(p,p.segment,.1,1,false));assert.doesNotThrow(()=>sample(p,p.segment,0,0,false))}}
 })
-test('DOM commit reads actual prior original P in same owner/current frame, not just progress metadata',()=>{
- for(const pen of[13]as const)for(const q of[0,1e-6,.03,.5,1]){const p=policy(pen),d=dom(p,q),v=commit(p,p.segment,q,d.id,d.nodes,1);assert.equal(v.status,q===0?'empty':q===1?'complete':'visible');assert.equal(d.ink.getAttribute('d'),p.segment.outline);assert.equal(d.ink.getAttribute('visibility'),q===0?'hidden':'visible');assert.equal(d.ink.getAttribute(P+'committed'),'true');assert.equal(d.ink.getAttribute('clip-path'),q===1?null:'url(#'+d.id+'-u8587-local-source-window-clip)');if(p.priorRequired)assert.equal(priorDOM(p,d.g as unknown as SVGGElement,q,1),true)}
+test('actual 3-child owner accepts zero and partial13m3 with future4 exactly zero; done requires4',()=>{
+ const p=policy(13);for(const q of[0,1e-6,.01,.5,.99999999,1]){const d=dom(p,q),r=run(p,d);assert.equal(d.slot.children.length,q===1?4:3);assert.equal(r.status,q===0?'empty':q===1?'complete':'visible');assert.equal(priorDOM(p,d.g as unknown as SVGGElement,d.progress,d.priorProgress,d.logical),true);assert.equal(d.ink.getAttribute(P+'committed'),'true')}
 })
-test('prior opacity/progress/source/owner/clip/geometry and rect CSS mutations fail closed',()=>{
- const mutations:((d:ReturnType<typeof dom>)=>void)[]=[d=>{d.H!.css.set('opacity','0')},d=>{d.H!.css.set('fillOpacity','.5')},d=>{d.H!.setAttribute('d','M0 0Z')},d=>{d.H!.setAttribute('clip-path','url(#fake)')},d=>{d.H!.ownerSVGElement=new N('svg',d.doc)},d=>{d.H!.isConnected=false},d=>{d.r.css.set('width','0px')},d=>{d.g.setAttribute(P+'prior-progress','0')}]
- for(const pen of[13]as const)for(const mutate of mutations){const p=policy(pen),d=dom(p,.5);mutate(d);const rejected=commit(p,p.segment,.5,d.id,d.nodes,1);assert.equal(rejected.status,'hidden');assert.equal(typeof rejected.error,'string');assert.equal(rejected.frame,null);assert.equal(d.ink.getAttribute('visibility'),'hidden');assert.equal(d.ink.getAttribute(P+'committed'),'false')}
+test('source projection rejects absent positive future, extra zero future, missing logical binding and forged current progress',()=>{
+ const p=policy(13);const missing=dom(p,1);missing.slot.children[3].remove();assert.equal(run(p,missing).status,'hidden');
+ const extra=dom(p,.1);extra.slot.append(new N('path',extra.doc));assert.equal(run(p,extra).status,'hidden');
+ const noBinding=dom(p,.1);noBinding.g.removeAttribute(P+'logical-progress');assert.equal(run(p,noBinding).status,'hidden');
+ const forged=dom(p,.1);assert.equal(commit(p,p.segment,forged.progress+.001,forged.id,forged.nodes,forged.priorProgress,forged.logical).status,'hidden');
+ const noInput=dom(p,.1);assert.equal(commit(p,p.segment,noInput.progress,noInput.id,noInput.nodes,1).status,'hidden');
 })
-test('prior completion is rechecked after rectangle attributes and final visibility commit',()=>{
- for(const pen of[13]as const)for(const stage of['rect','visibility']){const p=policy(pen),d=dom(p,.5);d.doc.onSet=(n,k,v)=>{if(stage==='rect'&&n===d.r&&k==='width'||stage==='visibility'&&n===d.ink&&k==='visibility'&&v==='visible')d.H!.css.set('opacity','0')};assert.equal(commit(p,p.segment,.5,d.id,d.nodes,1).status,'hidden');assert.equal(d.ink.getAttribute('visibility'),'hidden')}
+test('direct completed prior V must retain exact P, opaque unclipped same owner and frame',()=>{
+ const p=policy(13);const mutations:((d:ReturnType<typeof dom>)=>void)[]=[d=>d.H.css.set('opacity','0'),d=>d.H.css.set('fillOpacity','.5'),d=>d.H.setAttribute('d','M0 0Z'),d=>d.H.setAttribute('clip-path','url(#fake)'),d=>{d.H.ownerSVGElement=new N('svg',d.doc)},d=>{d.H.isConnected=false},d=>d.g.setAttribute(P+'prior-progress','0'),d=>d.H.remove()]
+ for(const mutate of mutations){const d=dom(p,.1);mutate(d);assert.equal(run(p,d).status,'hidden');assert.equal(d.ink.getAttribute('visibility'),'hidden')}
 })
-test('canonical CSS quantization accepts positive tiny source geometry and removes its no-paint probe',()=>{
- const p=policy(13),q=4.0684554116728366e-10,d=dom(p,q)
- d.doc.serializeGeometry=value=>String(Math.round(Number(value.replace('px',''))*1e6)/1e6)+'px'
- const result=commit(p,p.segment,q,d.id,d.nodes,1)
- assert.equal(result.status,'visible');assert.equal(result.error,null)
- const frame=sample(p,p.segment,q,1,true);assert(frame.clip)
- for(const[k,v]of Object.entries(frame.clip))assert.equal(d.r.getAttribute(k),String(v))
- assert.equal(d.doc.defaultView.getComputedStyle(d.r).getPropertyValue('width'),'0px');assert(d.r.getBBox().width>0)
- assert.equal(d.owner.children.length,1);assert.strictEqual(d.owner.children[0],d.outer)
+test('prior and source logical input are rechecked during rect and final visibility commit',()=>{
+ const p=policy(13);for(const stage of['rect','visibility']){const d=dom(p,.5);d.doc.onSet=(n,k,v)=>{if(stage==='rect'&&n===d.r&&k==='width'||stage==='visibility'&&n===d.ink&&k==='visibility'&&v==='visible')d.H.css.set('opacity','0')};assert.equal(run(p,d).status,'hidden')}
+ const d=dom(p,.5);d.doc.onSet=(n,k)=>{if(n===d.r&&k==='width')d.g.setAttribute(P+'logical-progress','1')};assert.equal(run(p,d).status,'hidden')
 })
-test('canonical comparison rejects stylesheet zero width when expected bbox remains positive',()=>{
- const p=policy(13),q=4.0684554116728366e-10,d=dom(p,q)
- d.doc.serializeGeometry=value=>String(Math.round(Number(value.replace('px',''))*1e6)/1e6)+'px'
- d.doc.globalGeometry=(n,k)=>n.localName==='rect'&&k==='width'?'0px':null
- assert.equal(d.r.style.getPropertyValue('width'),'')
- const result=commit(p,p.segment,q,d.id,d.nodes,1)
- assert.equal(result.status,'hidden');assert.equal(d.ink.getAttribute('visibility'),'hidden');assert.equal(d.r.getBBox().width,0)
- assert.equal(d.owner.children.length,1)
-})
-test('canonical probe mutation fails closed while nonnegative collapsed geometry keeps source progress',()=>{
- const p=policy(13),d=dom(p,.5)
- d.doc.onStyleRead=n=>{if(n.localName==='rect'&&n!==d.r)n.style.setProperty('width','7px','important')}
- assert.equal(commit(p,p.segment,.5,d.id,d.nodes,1).status,'hidden');assert.equal(d.owner.children.length,1)
- const tiny=dom(p,1e-100);assert.equal(commit(p,p.segment,1e-100,tiny.id,tiny.nodes,1).status,'visible');assert.equal(tiny.owner.children.length,1)
-})
-test('collapsed current-frame geometry accepts observationally equal CSS zero but rejects inline forgery and later mismatch',()=>{
- const p=policy(13),q=4.0684554116728366e-10,d=dom(p,q)
- d.doc.serializeGeometry=value=>String(Math.round(Number(value.replace('px',''))*1e6)/1e6)+'px'
- d.doc.canonicalBox=b=>b.width<1e-8||b.height<1e-8?{x:0,y:0,width:0,height:0}:b
- assert.equal(commit(p,p.segment,q,d.id,d.nodes,1).status,'visible');assert.equal(d.r.getBBox().width,0)
- const frame=sample(p,p.segment,q,1,true);assert(frame.clip);assert(frame.clip.width>0);assert.equal(d.r.getAttribute('width'),String(frame.clip.width));assert.equal(frame.progress,q)
- d.doc.globalGeometry=(n,k)=>n.localName==='rect'&&k==='width'?'0px':null
- assert.equal(commit(p,p.segment,q,d.id,d.nodes,1).status,'visible')
- d.r.style.setProperty('width','0px');assert.equal(commit(p,p.segment,q,d.id,d.nodes,1).status,'hidden');d.r.css.delete('width')
- d.g.setAttribute('data-stroke-reveal-progress','0.03');assert.equal(commit(p,p.segment,.03,d.id,d.nodes,1).status,'hidden')
- assert.equal(d.owner.children.length,1)
+test('current canonical positive tiny geometry allows CSS quantization but no bbox or inline forgery',()=>{
+ const p=policy(13),d=dom(p,1e-9);d.doc.serializeGeometry=v=>String(Math.round(Number(v.replace('px',''))*1e6)/1e6)+'px';assert.equal(run(p,d).status,'visible');assert.equal(d.owner.children.length,1);
+ const bad=dom(p,1e-9);bad.doc.serializeGeometry=v=>String(Math.round(Number(v.replace('px',''))*1e6)/1e6)+'px';bad.doc.globalGeometry=(n,k)=>n.localName==='rect'&&k==='width'?'0px':null;assert.equal(run(p,bad).status,'hidden');
+ d.r.style.setProperty('width','0px');assert.equal(run(p,d).status,'hidden')
 })

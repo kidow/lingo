@@ -1,5 +1,5 @@
 /** Local-authored 薇: one exact source-bound point window. No original-clock, app or native approval. */
-import type {HanjaOutlineSegment,HanjaOutlineStrokes} from './hanja-stroke-outline.ts'
+import {outlineSegmentProgress,type HanjaOutlineSegment,type HanjaOutlineStrokes} from './hanja-stroke-outline.ts'
 import fixture from '../docs/hanja-source-original-u8587-local-components-2026-10-27/fixtures-draft.json' with {type:'json'}
 const FIXED=fixture.u8587,STROKES=FIXED.strokes as HanjaOutlineStrokes
 const NS='http://www.w3.org/2000/svg',PREFIX='data-u8587-local-source-window-'
@@ -75,12 +75,18 @@ function canonicalRectGeometry(owner:SVGSVGElement,doc:Document,view:Window,shap
  }finally{host.remove()}
 }
 /** New authored clock only: a strict union-kernel anchor plus nested convex rectangles containing it gives a star-shaped connected P intersection. This does not establish source-Q forward timing. This mask3 policy requires the exact previous mask2 full opaque in this actual owner/frame. */
-export function commitReviewedU8587LocalPointWindow(policy:ReviewedU8587LocalPointWindowPolicy,segment:HanjaOutlineSegment,progress:number,clipId:string,nodes:ReviewedU8587LocalPointWindowNodes,priorProgress=0){
+function projectedOwnerCount(policy:ReviewedU8587LocalPointWindowPolicy,p:number,prior:number,logical:number,g:SVGGElement|null):number|null{
+ if(!g||!Number.isFinite(logical)||logical<0||logical>1||g.getAttribute(PREFIX+'logical-progress')!==String(logical))return null
+ const amounts=outlineSegmentProgress(STROKES[policy.pen-1],logical)
+ if(amounts.length!==4||amounts[0]!==1||amounts[1]!==1||amounts[2]!==p||amounts[1]!==prior)return null
+ return amounts[3]===0?3:4
+}
+export function commitReviewedU8587LocalPointWindow(policy:ReviewedU8587LocalPointWindowPolicy,segment:HanjaOutlineSegment,progress:number,clipId:string,nodes:ReviewedU8587LocalPointWindowNodes,priorProgress=0,logicalProgress=NaN){
  const {group:g,ink:p,rect:r,clipPath:c}=nodes
  const reset=()=>{p?.setAttribute('visibility','hidden');p?.setAttribute(PREFIX+'committed','false')}
  reset()
  try{
-  const f=sampleReviewedU8587LocalPointWindowFrame(policy,segment,progress,priorProgress,verifyReviewedU8587LocalPointWindowPriorDOM(policy,g,progress,priorProgress))
+  const f=sampleReviewedU8587LocalPointWindowFrame(policy,segment,progress,priorProgress,verifyReviewedU8587LocalPointWindowPriorDOM(policy,g,progress,priorProgress,logicalProgress))
   if(!g||!p||!r||!c||!/^[A-Za-z0-9_:.-]+$/.test(clipId)||!clipId.endsWith('-'+(policy.pen-1)+'-'+(policy.mask-1)))throw Error('Exact 薇 target nodes and id required')
   const owner=g.ownerSVGElement,doc=g.ownerDocument,view=doc.defaultView,defs=c.parentNode,pen=g.parentNode,outer=pen?.parentNode
   if(!owner||!view||view.document!==doc||!defs||!pen||!outer||defs.nodeType!==1||pen.nodeType!==1||outer.nodeType!==1)throw Error('Connected 薇 SVG owner tree required')
@@ -93,9 +99,9 @@ export function commitReviewedU8587LocalPointWindow(policy:ReviewedU8587LocalPoi
   while(n){if(seen.has(n))throw Error('Cyclic 薇 owner');seen.add(n);tree.push(n);if(n===owner)break;const parent:ParentNode|null=n.parentNode;n=parent&&parent.nodeType===1?parent as Element:null}
   if(n!==owner)throw Error('Disconnected 薇 SVG chain')
   const parents=new Map(tree.map(node=>[node,node.parentNode]))
-  const exact=(visibility:string,committed:boolean)=>g.localName==='g'&&p.localName==='path'&&r.localName==='rect'&&c.localName==='clipPath'&&d.localName==='defs'&&d.parentNode===g&&c.parentNode===d&&r.parentNode===c&&c.children.length===1&&c.children[0]===r&&p.parentNode===g&&g.children.length===2&&g.children[0]===d&&g.children[1]===p&&slot.children.length===STROKES[policy.pen-1].length&&slot.children[policy.mask-1]===g&&slot.parentNode===outlines&&slot.getAttribute('data-outline-stroke')===String(policy.pen)&&outlines.getAttribute('data-stroke-outlines')==='true'&&outlines.children.length===17&&outlines.children[policy.pen-1]===slot&&owner.getAttribute('viewBox')==='0 0 100 100'&&g.getAttribute('data-stroke-start-gate')===policy.id&&g.getAttribute('data-stroke-reveal-policy')===policy.kind&&g.getAttribute('data-stroke-reveal-progress')===String(progress)&&g.getAttribute(PREFIX+'clip')===clipId&&g.getAttribute(PREFIX+'fingerprint')===policy.proofFingerprint&&g.getAttribute(PREFIX+'prior-progress')===String(priorProgress)&&p.getAttribute('d')===segment.outline&&p.getAttribute('pathLength')===null&&p.getAttribute('stroke-dasharray')===null&&p.getAttribute('stroke-dashoffset')===null&&p.getAttribute('mask')===null&&p.getAttribute('visibility')===visibility&&p.getAttribute(PREFIX+'committed')===String(committed)&&p.getAttribute('clip-path')===(f.originalPDirect?null:'url(#'+key+')')&&c.getAttribute('id')===key&&c.getAttribute('clipPathUnits')==='userSpaceOnUse'&&Object.entries(shape).every(([k,v])=>r.getAttribute(k)===String(v))
+  const exact=(visibility:string,committed:boolean)=>g.localName==='g'&&p.localName==='path'&&r.localName==='rect'&&c.localName==='clipPath'&&d.localName==='defs'&&d.parentNode===g&&c.parentNode===d&&r.parentNode===c&&c.children.length===1&&c.children[0]===r&&p.parentNode===g&&g.children.length===2&&g.children[0]===d&&g.children[1]===p&&projectedOwnerCount(policy,progress,priorProgress,logicalProgress,g)===slot.children.length&&slot.children[policy.mask-1]===g&&slot.parentNode===outlines&&slot.getAttribute('data-outline-stroke')===String(policy.pen)&&outlines.getAttribute('data-stroke-outlines')==='true'&&outlines.children.length===17&&outlines.children[policy.pen-1]===slot&&owner.getAttribute('viewBox')==='0 0 100 100'&&g.getAttribute('data-stroke-start-gate')===policy.id&&g.getAttribute('data-stroke-reveal-policy')===policy.kind&&g.getAttribute('data-stroke-reveal-progress')===String(progress)&&g.getAttribute(PREFIX+'clip')===clipId&&g.getAttribute(PREFIX+'fingerprint')===policy.proofFingerprint&&g.getAttribute(PREFIX+'prior-progress')===String(priorProgress)&&p.getAttribute('d')===segment.outline&&p.getAttribute('pathLength')===null&&p.getAttribute('stroke-dasharray')===null&&p.getAttribute('stroke-dashoffset')===null&&p.getAttribute('mask')===null&&p.getAttribute('visibility')===visibility&&p.getAttribute(PREFIX+'committed')===String(committed)&&p.getAttribute('clip-path')===(f.originalPDirect?null:'url(#'+key+')')&&c.getAttribute('id')===key&&c.getAttribute('clipPathUnits')==='userSpaceOnUse'&&Object.entries(shape).every(([k,v])=>r.getAttribute(k)===String(v))
   const stable=(visibility:string,committed:boolean)=>{
-   if(progress>0&&policy.priorRequired&&!verifyReviewedU8587LocalPointWindowPriorDOM(policy,g,progress,priorProgress))return false
+   if(progress>0&&policy.priorRequired&&!verifyReviewedU8587LocalPointWindowPriorDOM(policy,g,progress,priorProgress,logicalProgress))return false
    if(!exact(visibility,committed)||owner.ownerDocument!==doc||doc.defaultView!==view||view.document!==doc)return false
    for(const node of tree){
     if(!node.isConnected||node.ownerDocument!==doc||(node!==owner&&(node as SVGElement).ownerSVGElement!==owner)||node.namespaceURI!==NS||node.parentNode!==parents.get(node)||['transform','filter','mask'].some(k=>node.getAttribute(k)!==null)||(node!==p&&node.getAttribute('clip-path')!==null))return false
@@ -119,14 +125,14 @@ export function commitReviewedU8587LocalPointWindow(policy:ReviewedU8587LocalPoi
  }catch(error){reset();return {status:'hidden' as const,error:error instanceof Error?error.message:'Invalid source point-window DOM binding',frame:null,cleanup:reset}}
 }
 
-export function verifyReviewedU8587LocalPointWindowPriorDOM(policy:ReviewedU8587LocalPointWindowPolicy,g:SVGGElement|null,p:number,priorProgress:number):boolean{
+export function verifyReviewedU8587LocalPointWindowPriorDOM(policy:ReviewedU8587LocalPointWindowPolicy,g:SVGGElement|null,p:number,priorProgress:number,logicalProgress=NaN):boolean{
  try{
   source(policy,policy.segment);if(!Number.isFinite(p)||p<0||p>1||!policy.priorRequired||!policy.priorSegment||priorProgress!==1||!g)return false
   const slot=g.parentNode,outer=slot?.parentNode,owner=g.ownerSVGElement,doc=g.ownerDocument,view=doc.defaultView
   if(!slot||!outer||slot.nodeType!==1||outer.nodeType!==1||!owner||!view||view.document!==doc)return false
   const pen=slot as SVGGElement,outlines=outer as SVGGElement,H=pen.children[policy.mask-2]as SVGPathElement|undefined,id=g.getAttribute(PREFIX+'clip')
   if(!H||!id||!/^[A-Za-z0-9_:.-]+$/.test(id)||!id.endsWith('-'+(policy.pen-1)+'-'+(policy.mask-1)))return false
-  const exact=()=>g.parentNode===pen&&pen.children.length===STROKES[policy.pen-1].length&&pen.children[policy.mask-2]===H&&pen.children[policy.mask-1]===g&&pen.getAttribute('data-outline-stroke')===String(policy.pen)&&pen.parentNode===outlines&&outlines.getAttribute('data-stroke-outlines')==='true'&&outlines.children.length===17&&outlines.children[policy.pen-1]===pen&&H.parentNode===pen&&H.localName==='path'&&H.getAttribute('d')===policy.priorSegment!.outline&&['pathLength','stroke-dasharray','stroke-dashoffset'].every(k=>H.getAttribute(k)===null)&&owner.getAttribute('viewBox')==='0 0 100 100'&&g.getAttribute('data-stroke-start-gate')===policy.id&&g.getAttribute('data-stroke-reveal-policy')===policy.kind&&g.getAttribute('data-stroke-reveal-progress')===String(p)&&g.getAttribute(PREFIX+'fingerprint')===policy.proofFingerprint&&g.getAttribute(PREFIX+'prior-progress')==='1'
+  const exact=()=>g.parentNode===pen&&projectedOwnerCount(policy,p,priorProgress,logicalProgress,g)===pen.children.length&&pen.children[policy.mask-2]===H&&pen.children[policy.mask-1]===g&&pen.getAttribute('data-outline-stroke')===String(policy.pen)&&pen.parentNode===outlines&&outlines.getAttribute('data-stroke-outlines')==='true'&&outlines.children.length===17&&outlines.children[policy.pen-1]===pen&&H.parentNode===pen&&H.localName==='path'&&H.getAttribute('d')===policy.priorSegment!.outline&&['pathLength','stroke-dasharray','stroke-dashoffset'].every(k=>H.getAttribute(k)===null)&&owner.getAttribute('viewBox')==='0 0 100 100'&&g.getAttribute('data-stroke-start-gate')===policy.id&&g.getAttribute('data-stroke-reveal-policy')===policy.kind&&g.getAttribute('data-stroke-reveal-progress')===String(p)&&g.getAttribute(PREFIX+'fingerprint')===policy.proofFingerprint&&g.getAttribute(PREFIX+'prior-progress')==='1'
   if(!exact())return false
   return opaqueTree([g,H],pen,owner,doc,view,exact)&&opaqueSourcePath(H,policy.priorSegment!.outline,doc,view)&&exact()
  }catch{return false}
