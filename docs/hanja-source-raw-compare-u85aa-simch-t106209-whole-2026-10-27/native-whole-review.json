@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "glyph": "薪",
+  "root": "simch-kx_t106209",
+  "rootVersion": 1,
+  "date": "2026-10-27",
+  "observer": "ROOT",
+  "evidenceOrigin": "ROOT directly observed the browser panel; this record is prepared from that observation, not a new replay by the recording subagent.",
+  "inputs": [
+    {
+      "path": "docs/hanja-source-raw-compare-u85aa-simch-t106209-whole-2026-10-27/config.json",
+      "SHA256": "90d5cf60200d145255d13100f8ba16f585f7bfad7eab29a0489fd62b63a12362"
+    },
+    {
+      "path": "scripts/hanja-raw-static-compare.py",
+      "SHA256": "541d85df4a4c04d0310f76d073b71a7d6db089f851e8746a61a8b02a346abc67"
+    },
+    {
+      "path": "docs/hanja-actual-engine-capture-u85aa-simch-t106209-2026-10-27/engine-whole-simch-kx_t106209.json",
+      "SHA256": "71d59d68e5f3fec2087c8892995ec991dda4fdfffcc7c4c89fa5e1719d53b80a"
+    },
+    {
+      "path": "docs/hanja-actual-engine-capture-u85aa-simch-t106209-2026-10-27/capture.json",
+      "SHA256": "06dcff3042c7e08bab740f430bde03c46d98730c401819adfe0befbafd9cc2d4"
+    },
+    {
+      "path": "docs/hanja-source-inventory-u85aa-additional-2026-10-27/sources.json",
+      "SHA256": "d3ac2cab4265ea40f84c4cb9badcc9f6e746988b9f48a911bfc38718522efb8f"
+    }
+  ],
+  "native": {
+    "tabId": "34",
+    "wholeObservations": 1,
+    "viewportsObserved": 2,
+    "layout": "whole-pair520-css-only",
+    "publisherClips": 17,
+    "originalDrawingRows": 16,
+    "entireWholePairObserved": true,
+    "individualStaticMappingReviewed": false,
+    "orderReviewed": false,
+    "directionReviewed": false
+  },
+  "observations": [
+    {
+      "area": "grass",
+      "publisher": "Left and right horizontal grass strokes are separated.",
+      "candidate": "A single connected horizontal grass stroke is present.",
+      "result": "Direct whole-shape mismatch observed on this new T whole."
+    },
+    {
+      "area": "upper-left 立",
+      "publisher": "A short vertical stroke protrudes above and joins the horizontal.",
+      "candidate": "An independent horizontal occupies that region; two upper horizontals appear in succession and the corresponding vertical protrusion is absent.",
+      "result": "Additional direct whole-shape mismatch; not inferred from source naming or a previous whole."
+    },
+    {
+      "area": "lower 木 and right 斤",
+      "publisherAndCandidate": "Both broad whole regions were visible and observed.",
+      "limits": "Broad whole visibility establishes no per-stroke membership, order, direction, or animation approval."
+    }
+  ],
+  "decision": {
+    "status": "HOLD-original-T-whole-macro-shape-mismatch",
+    "wholeShapeApproved": false,
+    "staticMembershipApproved": false,
+    "orderApproved": false,
+    "directionApproved": false,
+    "contactApproved": false,
+    "componentReuseApproved": false,
+    "clockApproved": false,
+    "runtimeApplied": false,
+    "priorWholeHoldTransferred": false,
+    "scope": "Only this exact original T whole and the pinned publisher reference were directly compared. No conclusion that every public source is unavailable, and no recipe or source correction is authorized by this observation."
+  },
+  "sourceIntegrity": {
+    "originalRowsChanged": false,
+    "originalFlagsChanged": false,
+    "sourcePolygonEdited": false,
+    "partCombinationChanged": false,
+    "localCompositeAuthored": false,
+    "sourceProjection": 0
+  },
+  "privateReference": {
+    "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/8500/85AA.svg",
+    "SHA256": "fdf6d30028411b1b15b768238c919dbd44569ada1bb422e2b81a4e68e629f247",
+    "bytes": 8838,
+    "clips": 17,
+    "successfulRAMFetches": 1,
+    "existingSHA256Verified": true,
+    "privateMediaFilesSaved": 0,
+    "sourceSVGOrImagesIncludedInRecord": false
+  },
+  "execution": {
+    "newEngineExecutionsForNativeReview": 0,
+    "newSourceProcessExecutions": 0,
+    "builds": 0,
+    "fullTypeChecks": 0
+  },
+  "cleanup": {
+    "reportedBy": "ROOT",
+    "serverPID": 73603,
+    "serverTerminated": true,
+    "tabId": "34",
+    "tabClosed": true,
+    "additionalServerStartedByRecorder": false
+  }
+}
