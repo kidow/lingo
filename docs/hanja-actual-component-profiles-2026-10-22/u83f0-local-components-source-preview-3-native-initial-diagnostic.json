@@ -1,0 +1,31 @@
+{
+  "schema": "hanja-native-preview-observer-diagnostic/v1",
+  "glyph": "菰",
+  "reviewedAt": "2026-10-27",
+  "profileSHA256": "0b55552abec57a59344ecedf4cc0b2284c8afb8b95886660cfa0f1e4362d73ba",
+  "launcherSHA256": "750dbfe1a195e7a4ceaea11558f46ca87b3512c7d48af008e5a897d5958344b3",
+  "observedScenes": 7,
+  "passedSampledScenes": [
+    {"pen":7,"requestedProgress":0},
+    {"pen":7,"requestedProgress":0.000001},
+    {"pen":8,"requestedProgress":0.000001},
+    {"pen":9,"requestedProgress":0.000001},
+    {"pen":11,"requestedProgress":0.000001},
+    {"pen":12,"requestedProgress":0.000001}
+  ],
+  "passedSampledStateErrorsBadAndGuardErrorsEmpty": true,
+  "passedSampledVisualObservation": "No baseline-sized new isolated ink chunk is visible in these initial positive frames.",
+  "heldSampledScene": {
+    "pen":10,
+    "requestedProgress":0.7542041783123979,
+    "guardError":"Finite noncollapsed browser-canonical rectangle required",
+    "reason":"The browser-canonical expected probe rectangle itself collapses at this sub-resolution progress. Requiring a strictly positive canonical bounding box is stronger than current-frame rendering equivalence and hides this valid zero-area browser frame."
+  },
+  "requiredCorrection": "Accept finite nonnegative expected canonical dimensions and require exact actual/probe current-frame geometry equality, retaining exact original attrs, inline checks and rejection of visible geometry changes. Do not snap progress or introduce a numerical tolerance.",
+  "completeStatusPreRead": true,
+  "result": "HOLD-one-point-canonical-collapse-condition",
+  "nativeAnimationApproval": false,
+  "runtimeApplied": false,
+  "serverStopped": true,
+  "privateMediaSaved": false
+}

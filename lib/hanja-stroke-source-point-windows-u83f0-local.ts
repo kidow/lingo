@@ -58,7 +58,7 @@ function cssSourcePath(doc:Document,value:string,outline:string):boolean{
  const expected=probe.style.getPropertyValue('d')
  return expected!==''&&value===expected
 }
-/** Canonical browser serialization is a guard only: it never changes source window coordinates. */
+/** Current-frame canonical render equivalence only, not stylesheet-origin purity. Collapsed nonnegative boxes are valid; source window coordinates never change. */
 function canonicalRectGeometry(owner:SVGSVGElement,doc:Document,view:Window,shape:Readonly<{x:number;y:number;width:number;height:number}>){
  const host=doc.createElementNS(NS,'g'),probe=doc.createElementNS(NS,'rect'),keys=['x','y','width','height']as const
  const neutral={display:'inline',visibility:'hidden',opacity:'0',fill:'none',stroke:'none',transform:'none',filter:'none','clip-path':'none','mask-image':'none',translate:'none',rotate:'none',scale:'none',animation:'none',transition:'none'}
@@ -75,7 +75,7 @@ function canonicalRectGeometry(owner:SVGSVGElement,doc:Document,view:Window,shap
    if(style.display==='none'||style.visibility!=='hidden'||Number(style.opacity)!==0||style.fill!=='none'||style.stroke!=='none'||style.transform!=='none'||style.filter!=='none'||style.clipPath!=='none'||!['','none'].includes(style.getPropertyValue('mask-image'))||['translate','rotate','scale'].some(k=>!['','none'].includes(style.getPropertyValue(k))))throw Error('Canonical rectangle probe must have no paint or effects')
   }
   const computed=view.getComputedStyle(probe),css=new Map(keys.map(k=>[k,computed.getPropertyValue(k)])),b=probe.getBBox(),bounds={x:b.x,y:b.y,width:b.width,height:b.height}
-  if([...css.values()].some(v=>!v.endsWith('px')||!Number.isFinite(Number(v.slice(0,-2))))||!Object.values(bounds).every(Number.isFinite)||(shape.width>0&&shape.height>0&&(bounds.width<=0||bounds.height<=0))||!exact())throw Error('Finite noncollapsed browser-canonical rectangle required')
+  if([...css.values()].some(v=>!v.endsWith('px')||!Number.isFinite(Number(v.slice(0,-2))))||!Object.values(bounds).every(Number.isFinite)||bounds.width<0||bounds.height<0||!exact())throw Error('Finite nonnegative browser-canonical rectangle required')
   return{css,bounds}
  }finally{host.remove()}
 }

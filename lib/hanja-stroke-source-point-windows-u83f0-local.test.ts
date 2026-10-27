@@ -22,11 +22,12 @@ class N{
  appendChild(n:N){this.append(n);return n}
  remove(){if(this.parentNode){this.parentNode.children.splice(this.parentNode.children.indexOf(this),1);this.parentNode=null}this.isConnected=false}
  geometryValue(k:string){return this.style.getPropertyPriority(k)==='important'?this.style.getPropertyValue(k):(this.ownerDocument.globalGeometry?.(this,k)??(this.style.getPropertyValue(k)||(this.getAttribute(k)??'0')+'px'))}
- getBBox(){const v=(k:string)=>Math.fround(Number(this.geometryValue(k).replace('px','')));return{x:v('x'),y:v('y'),width:v('width'),height:v('height')}}
+ getBBox(){const v=(k:string)=>Math.fround(Number(this.geometryValue(k).replace('px',''))),b={x:v('x'),y:v('y'),width:v('width'),height:v('height')};return this.ownerDocument.canonicalBox?.(b)??b}
 }
 class D{
  onStyleRead:((n:N)=>void)|null=null;onSet:((n:N,k:string,v:string)=>void)|null=null
  globalGeometry:((n:N,k:string)=>string|null)|null=null;serializeGeometry:((value:string)=>string)|null=null
+ canonicalBox:((b:Record<'x'|'y'|'width'|'height',number>)=>Record<'x'|'y'|'width'|'height',number>)|null=null
  defaultView={document:this,getComputedStyle:(n:N)=>{
   this.onStyleRead?.(n)
   const values:Record<string,string>={display:'inline',transform:'none',filter:'none',clipPath:n.getAttribute('clip-path')??'none',opacity:'1',mixBlendMode:'normal',stroke:'none',fillOpacity:'1',fillRule:'nonzero',fill:'rgb(66, 85, 255)',visibility:n.getAttribute('visibility')??'visible'}
@@ -81,7 +82,7 @@ test('canonical CSS quantization accepts positive tiny source geometry and remov
  assert.equal(d.doc.defaultView.getComputedStyle(d.r).getPropertyValue('width'),'0px');assert(d.r.getBBox().width>0)
  assert.equal(d.owner.children.length,1);assert.strictEqual(d.owner.children[0],d.outer)
 })
-test('canonical comparison rejects stylesheet zero width despite identical rounded CSS serialization',()=>{
+test('canonical comparison rejects stylesheet zero width when expected bbox remains positive',()=>{
  const p=policy(10),q=4.0684554116728366e-10,d=dom(p,q)
  d.doc.serializeGeometry=value=>String(Math.round(Number(value.replace('px',''))*1e6)/1e6)+'px'
  d.doc.globalGeometry=(n,k)=>n.localName==='rect'&&k==='width'?'0px':null
@@ -90,9 +91,21 @@ test('canonical comparison rejects stylesheet zero width despite identical round
  assert.equal(result.status,'hidden');assert.equal(d.ink.getAttribute('visibility'),'hidden');assert.equal(d.r.getBBox().width,0)
  assert.equal(d.owner.children.length,1)
 })
-test('canonical probe mutation and unrepresentable positive geometry fail closed with probe cleanup',()=>{
+test('canonical probe mutation fails closed while nonnegative collapsed geometry keeps source progress',()=>{
  const p=policy(10),d=dom(p,.5)
  d.doc.onStyleRead=n=>{if(n.localName==='rect'&&n!==d.r)n.style.setProperty('width','7px','important')}
  assert.equal(commit(p,p.segment,.5,d.id,d.nodes,1).status,'hidden');assert.equal(d.owner.children.length,1)
- const tiny=dom(p,1e-100);assert.equal(commit(p,p.segment,1e-100,tiny.id,tiny.nodes,1).status,'hidden');assert.equal(tiny.owner.children.length,1)
+ const tiny=dom(p,1e-100);assert.equal(commit(p,p.segment,1e-100,tiny.id,tiny.nodes,1).status,'visible');assert.equal(tiny.owner.children.length,1)
+})
+test('collapsed current-frame geometry accepts observationally equal CSS zero but rejects inline forgery and later mismatch',()=>{
+ const p=policy(10),q=4.0684554116728366e-10,d=dom(p,q)
+ d.doc.serializeGeometry=value=>String(Math.round(Number(value.replace('px',''))*1e6)/1e6)+'px'
+ d.doc.canonicalBox=b=>b.width<1e-8||b.height<1e-8?{x:0,y:0,width:0,height:0}:b
+ assert.equal(commit(p,p.segment,q,d.id,d.nodes,1).status,'visible');assert.equal(d.r.getBBox().width,0)
+ const frame=sample(p,p.segment,q,1,true);assert(frame.clip);assert(frame.clip.width>0);assert.equal(d.r.getAttribute('width'),String(frame.clip.width));assert.equal(frame.progress,q)
+ d.doc.globalGeometry=(n,k)=>n.localName==='rect'&&k==='width'?'0px':null
+ assert.equal(commit(p,p.segment,q,d.id,d.nodes,1).status,'visible')
+ d.r.style.setProperty('width','0px');assert.equal(commit(p,p.segment,q,d.id,d.nodes,1).status,'hidden');d.r.css.delete('width')
+ d.g.setAttribute('data-stroke-reveal-progress','0.03');assert.equal(commit(p,p.segment,.03,d.id,d.nodes,1).status,'hidden')
+ assert.equal(d.owner.children.length,1)
 })
