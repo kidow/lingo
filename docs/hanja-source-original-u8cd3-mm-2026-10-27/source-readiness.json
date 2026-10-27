@@ -1,0 +1,104 @@
+{
+  "schema": "hanja-MM-filled-single-source-readiness/v1",
+  "glyph": "賓",
+  "date": "2026-10-27",
+  "investigationTarget": "Whether a distinct public original filled roof/next-horizontal source exists for later 蠙 component investigation; no component chosen or recipe authored.",
+  "source": {
+    "path": "docs/hanja-source-original-u8cd3-mm-2026-10-27/source-record.json",
+    "SHA256": "aa25aa8f242aa274e9b84665fffced381319a45e83af1b4a2657a88b440ab09a",
+    "originalRecordSHA256": "470b80dca2dcfc9b8e0e0a519763d663fc0cfcd40ad52091be536a2c0e8bd9d7",
+    "revision": "bddc96d41bef78427ed0e034e9f7e31d71fd1b92",
+    "wholeCorpusSHA256": "a28c478b5178e98f67f510b2d52fde08a69dc664654ef43498253b9b764d46ee",
+    "wholeCorpusStreamedNotSaved": true,
+    "wholeCorpusPrinted": false,
+    "recordRetained": 1,
+    "fieldsPreserved": [
+      "character",
+      "strokes",
+      "medians"
+    ],
+    "fixedPublicHTTPRequests": 1,
+    "HTTPStatus": 200,
+    "retries": 0,
+    "fetchMethod": "Context-mode exact streaming HTTP; Firecrawl page extraction does not provide exact single-line corpus streaming. Entire fixed response hashed incrementally, only this exact raw JSON record retained."
+  },
+  "license": {
+    "kind": "Arphic Public License, original graphics.txt notice",
+    "originalNoticeCopy": {
+      "path": "public/hanja-strokes/MAKEMEAHANZI-COPYING.txt",
+      "SHA256": "df2e856c73d2ddf036ba95556e25a27163de5cae6ef80e9509a86ec8ece9f84f"
+    },
+    "completeLicenseCopy": {
+      "path": "public/hanja-strokes/ARPHICPL.txt",
+      "SHA256": "76430f0e943a5a088af54d44a58af187be53528fffdfe5ce6abdfc44d508f78f"
+    },
+    "existingProjectRule": "scripts/hanja-stroke-audit.ts MAKE_ME_A_HANZI_SOURCE binds this exact graphics.txt revision and corpus SHA; no dictionary.txt used.",
+    "freshUpstreamLicenseRequest": false
+  },
+  "focusedVerification": {
+    "result": "PASS",
+    "originalRecordJSONMatchesParsedRecord": true,
+    "rawRecordHashMatches": true,
+    "sourceHashMatchesExistingGeometrySource": true,
+    "filledPathCount": 14,
+    "medianCount": 14,
+    "mediansExactlyMatch": "docs/hanja-g3-batch3-2026-09-14/originals.json 賓",
+    "normalizedMediansExactlyMatch": "docs/hanja-g3-batch3-2026-09-14/candidate-paths.json 賓",
+    "historicalPathsSHA256": "d578b451b8c654ac6dcc28b1f99379e42ef1ec117749cc169e5f27b6b9ecff52",
+    "allOriginalFilledPathsClosed": true,
+    "originalFilledPathsOrCoordinatesEdited": false
+  },
+  "candidatePair": {
+    "sourceStrokeOneBased": [
+      3,
+      4
+    ],
+    "associationScope": "Indices linked by exact median/order identity to the historically approved 賓 whole centerlines; association does not approve filled shape or 蠙 use.",
+    "roofPath": {
+      "SHA256": "927a9f73a33e1ce52f9554a61035673e62bc3221ffda3a9479242161e6989190",
+      "subpaths": 1,
+      "commands": [
+        "M",
+        "Q",
+        "C",
+        "Z"
+      ]
+    },
+    "nextHorizontalPath": {
+      "SHA256": "56a4cc4fec2d863f6d3f0565b9ea85c6da35dce2c99d13c14087e2c2cf493c46",
+      "subpaths": 1,
+      "commands": [
+        "M",
+        "Q",
+        "L",
+        "Z"
+      ]
+    },
+    "distinctOriginalSourceFamily": true,
+    "KageFull5": false,
+    "KagePrimitiveFlagsOrParentRowsPresent": false,
+    "exactSameFilledGeometryAsHKOrBase8Claim": false,
+    "filledContactOrGapComputed": false,
+    "filledGapApproved": false,
+    "wholeKoreanFitApproved": false,
+    "sourceDirectionForFilledGeometryApproved": false,
+    "componentReuseApproved": false
+  },
+  "nextRequired": [
+    "Exact filled-path topology/contact analysis of original source strokes3 and4, retaining quadratic/cubic segments without polyline approximation claims.",
+    "If contact condition is acceptable, ROOT must directly compare original 賓 filled whole and the intended 蠙 reference scope; prior centerline video review authorizes 賓 whole centerlines only.",
+    "Any new parent transform or locally authored combination requires an explicit provenance-preserving recipe and independent whole/static/source-direction/actual-animation validation; no implicit fit or morphology reuse."
+  ],
+  "historicalReviewScope": {
+    "path": "docs/hanja-g3-batch3-2026-09-14/review.json",
+    "SHA256": "e6bd81790825055582c524a86e3769d7840fecc74b79308224a977a32931936d",
+    "status": "matched whole 賓 14 centerlines against publisher video; not strict filled native review",
+    "examBodyCertification": false
+  },
+  "engineRuns": 0,
+  "nativeObservation": 0,
+  "sourceCoordinatesChanged": false,
+  "recipeCreated": false,
+  "registrationChanged": false,
+  "runtimeApplied": false
+}
