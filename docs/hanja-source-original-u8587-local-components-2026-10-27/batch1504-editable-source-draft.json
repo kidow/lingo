@@ -4268,24 +4268,40 @@
       "docs/hanja-source-original-u8587-local-components-2026-10-27/fixtures-draft.json": "da117bf26e5d70e342e5ab5ae44767e002d663f80da72c7b123b1a1522707fd5",
       "docs/hanja-source-original-u8587-local-components-2026-10-27/verify-fixtures-draft.mjs": "a66266c5b3d2319bcce3751587dcbea04fe4020d3d110ba200a50cfe24ccaf99",
       "docs/hanja-source-alternative-u83f0-hkcs-2026-10-27/sources.json": "ae88468528e2d7b95517d6ce6aa463387079e98c19a93f759ce5e6bd3616777e",
-      "docs/hanja-actual-engine-capture-u8587-simch-2026-10-27/original-public-sources.json": "e4d36381564674bd5b4e42698231741e76866ccf768d3f88b8689344510d8da9"
+      "docs/hanja-actual-engine-capture-u8587-simch-2026-10-27/original-public-sources.json": "e4d36381564674bd5b4e42698231741e76866ccf768d3f88b8689344510d8da9",
+      "docs/hanja-actual-component-profiles-2026-10-22/u8587-local-components-source-preview-3-native-review.json": "9cfc3c5dd452c7789c12df38799b4fbaf9fb2d5207722b40e9a1bdb1d56b3ce3",
+      "docs/hanja-actual-component-profiles-2026-10-22/u8587-local-components-source-preview-3.json": "7f5dbc34f77dbc0e4da489ed37c46b373b46ecc2f844cf95345ef57c74f229e2",
+      "lib/hanja-stroke-source-prefix-u8587-local.ts": "1a6ffecb901c94c7e19d7da7175b72b4a9ea49ffe41303a1d638ac8987a591c2",
+      "lib/hanja-stroke-source-point-windows-u8587-local.ts": "ed459f486057c3c3da0cb4d6cad03e989422ec067b036a91258db40dbe73bde0",
+      "components/hanja/stroke-outlines.tsx": "e9b9abd326f209efce35a1da74a8c7d04830779294e16750344da1946dddf4e0"
     },
-    "nativeState": "HOLD-pending-final-candidate-review",
-    "nativeAnimationApproved": false,
-    "registrationAuthorized": false,
-    "runtimeApplied": false,
+    "nativeState": "PASS-finite-actual-component-native-and-focused-integration",
+    "nativeAnimationApproved": true,
+    "registrationAuthorized": true,
+    "runtimeApplied": true,
     "actualAppUIFreshlyVerified": false,
     "examBodyApproved": false,
     "sourceMicroclockIdentityApproved": false,
-    "allTimeProofClaimed": false
+    "allTimeProofClaimed": false,
+    "scopedActualComponentNativeReviewPassed": true,
+    "nativeAnimationReview": "docs/hanja-actual-component-profiles-2026-10-22/u8587-local-components-source-preview-3-native-review.json",
+    "nativeAnimationReviewSHA256": "9cfc3c5dd452c7789c12df38799b4fbaf9fb2d5207722b40e9a1bdb1d56b3ce3",
+    "reviewedEffectiveRAMComponentSHA256": "e9b9abd326f209efce35a1da74a8c7d04830779294e16750344da1946dddf4e0"
   },
   "publication": {
-    "publicGlyphWrittenByPreparer": false,
+    "publicGlyphWrittenByPreparer": true,
     "publishOnlyAfterROOTActivation": true,
-    "proposedPublicPath": "public/hanja-strokes/glyphwiki/u8587.json"
+    "proposedPublicPath": "public/hanja-strokes/glyphwiki/u8587.json",
+    "publishedAfterROOTActivationAuthorization": true
   },
   "limits": [
-    "명시적 local mixed-parts 薇 lingo-u8587-components-v1: 원 HK 草4 parent행과 simch-kx_t106021@1 몸통 parent행·고정child·변환을 그대로 조합한 별도 local root이며 공개 원래 whole이 아니다. 새 전체 capture의 원 P/Q·bounds·폭·weight를 보존한17논리획·22mask·45P이다. e-hanja 원문은 사전 출판사의 순서·macro 방향 참고이며 시험주관기관 공식 인증이 아니다. source-bound prefix/point reveal은 별도 author clock이며 원문 microclock 동일성·픽셀동일성·all-time·실제앱UI 검증을 주장하지 않는다. 이 배치는 미등록 준비 자료이며 candidate animation native 승인 및 최종activation은 별도 검토 대상이다.",
-    "The verifier proves source bindings only. Native candidate HOLD and its visual evidence are not overwritten by source-reference metadata."
-  ]
+    "명시적 local mixed-parts 薇 lingo-u8587-components-v1: 원 HK 草4 parent행과 simch-kx_t106021@1 몸통 parent행·고정child·변환을 그대로 조합한 별도 local root이며 공개 원래 whole이 아니다. 새 전체 capture의 원 P/Q·bounds·폭·weight를 보존한17논리획·22mask·45P이다. e-hanja 원문은 사전 출판사의 순서·macro 방향 참고이며 시험주관기관 공식 인증이 아니다. source-bound prefix/point reveal은 별도 author clock이며 원문 microclock 동일성·픽셀동일성·all-time·실제앱UI 검증을 주장하지 않는다. 이 배치는 고정된 실제 컴포넌트의 유한 프레임·선택 자연재생·전체 완료 검토와 집중 통합 검증 후 등록되었다. 과거 source/policy preview 플래그는 보존하고 외부 activation만 승인한다.",
+    "Finite candidate approval does not erase historical baseline/earlier-preview HOLD observations; unchanged source fixture and policy preview flags remain historical provenance."
+  ],
+  "historicalPreparationReview": {
+    "nativeState": "HOLD-pending-final-candidate-review",
+    "nativeAnimationApproved": false,
+    "registrationAuthorized": false,
+    "runtimeApplied": false
+  }
 }

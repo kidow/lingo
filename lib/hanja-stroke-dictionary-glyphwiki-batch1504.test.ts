@@ -8,7 +8,7 @@ import {makeReviewedU8587LocalPointWindowContext} from './hanja-stroke-source-po
 const read=(p:string)=>readFileSync(new URL('../'+p,import.meta.url)),json=(p:string)=>JSON.parse(read(p).toString()),hash=(v:string|Uint8Array)=>createHash('sha256').update(v).digest('hex')
 const fixture=json('docs/hanja-source-original-u8587-local-components-2026-10-27/fixtures-draft.json').u8587,bundle=json('public/hanja-strokes/dictionary-reviewed-glyphwiki-batch1504.json'),draft=json('docs/hanja-source-original-u8587-local-components-2026-10-27/batch1504-editable-source-draft.json')
 function reverse(value:unknown):unknown{return Array.isArray(value)?value.map(reverse):value&&typeof value==='object'?Object.fromEntries(Object.entries(value).reverse().map(([k,v])=>[k,reverse(v)])):value}
-test('1504 preparation preserves exact17logical/22mask/45P and source contexts without native approval',()=>{
+test('1504 activation preserves exact17logical/22mask/45P and both actual source contexts',()=>{
  const loaded=load(bundle);assert.strictEqual(loaded,expected);const outlines=loaded[0].outlines;assert(outlines)
  assert.deepEqual(outlines,fixture.strokes);assert.equal(hash(JSON.stringify(outlines)),'3700d16a0661f86803707df324e76d2305f2b8e180baa38e6dbc1fefa860f67a');assert.equal(outlines.length,17);assert.equal(outlines.flat().length,22);assert.equal(outlines.flat().reduce((n,s)=>n+(s.outline.match(/M/g)||[]).length,0),45)
  assert.deepEqual(input.fullProof,fixture.fullProof);assert.deepEqual(input.identity,fixture.identity);assert.deepEqual(input.strokes,outlines)
@@ -33,13 +33,13 @@ test('1504 editable draft preserves original mixed-parts recipe/fullProof/versio
  assert.deepEqual(draft.engineProof,fixture.fullProof);assert.deepEqual(draft.sourceIdentity,fixture.identity);assert.deepEqual(draft.outlines,fixture.strokes);assert.deepEqual(draft.sourceGroups,fixture.sourceGroups)
  assert.deepEqual(draft.localRoot,recipe.virtualRoot);assert.deepEqual(draft.sourceRecords,recipe.originalChildren);assert.deepEqual(draft.originalPublicRoots,recipe.originalPublicRoots);assert.deepEqual(draft.sourceParents,recipe.parentRows);assert.deepEqual(draft.sourceOrigins,recipe.sourceOrigins)
  for(const [key,value]of Object.entries(recipe.originalChildren)as[string,{version:string|number}][])assert.equal(typeof draft.sourceRecords[key].version,typeof value.version)
- assert.equal(draft.locallyAuthoredRoot,true);assert.equal(draft.mixedParts,true);assert.equal(draft.publicGlyphWikiRoot,false);assert.equal(draft.originalWhole,false);assert.equal(draft.publication.publicGlyphWrittenByPreparer,false)
+ assert.equal(draft.locallyAuthoredRoot,true);assert.equal(draft.mixedParts,true);assert.equal(draft.publicGlyphWikiRoot,false);assert.equal(draft.originalWhole,false);assert.equal(draft.publication.publicGlyphWrittenByPreparer,true);assert.deepEqual(json('public/hanja-strokes/glyphwiki/u8587.json'),draft)
  assert.equal(draft.sourcePreservation.sourcePOrQOrBoundsOrWidthOrWeightChanged,false);assert.equal(draft.sourcePreservation.policyPreviewFlagsPreserved,true)
 })
-test('1504 binds source-only evidence and explicitly preserves native HOLD and inactive preparation',()=>{
+test('1504 binds finite actual-component approval while preserving historical source preview limits',()=>{
  for(const [path,pin]of Object.entries(pins))assert.equal(hash(read(path)),pin,path)
  const media=json('docs/hanja-official-media-compare-u8587-2026-10-27/metadata.json').dictionary;assert.equal(expected[0].sourceReference.dictionarySvgUrl,media.url);assert.equal(expected[0].sourceReference.dictionarySvgSha256,media.sha256)
- assert.equal(nativeApproved,false);assert.equal(authorized,false);assert.equal(applied,false);assert.equal(draft.review.nativeState,'HOLD-pending-final-candidate-review');assert.equal(draft.review.nativeAnimationApproved,false);assert.equal(draft.review.runtimeApplied,false);assert.equal(draft.review.registrationAuthorized,false)
+ assert.equal(nativeApproved,true);assert.equal(authorized,true);assert.equal(applied,true);assert.equal(draft.review.nativeState,'PASS-finite-actual-component-native-and-focused-integration');assert.equal(draft.review.nativeAnimationApproved,true);assert.equal(draft.review.runtimeApplied,true);assert.equal(draft.review.registrationAuthorized,true);assert.equal(draft.historicalPreparationReview.nativeState,'HOLD-pending-final-candidate-review');assert.equal(draft.historicalPreparationReview.runtimeApplied,false);assert.equal(draft.review.reviewedEffectiveRAMComponentSHA256,hash(read('components/hanja/stroke-outlines.tsx')));assert.equal(expected[0].sourceReference.geometryReviewSha256,hash(read(draft.review.nativeAnimationReview)))
  assert.equal(draft.review.examBodyApproved,false);assert.equal(draft.review.actualAppUIFreshlyVerified,false);assert.equal(draft.review.sourceMicroclockIdentityApproved,false);assert.equal(fixture.runtimeApplied,false)
- const notice=read('public/hanja-strokes/glyphwiki/NOTICE-8587.md').toString();assert(notice.includes('HOLD')&&notice.includes('공개 원래 whole이 아니다')&&notice.includes('시험주관기관 공식 인증이 아니다'))
+ const notice=read('public/hanja-strokes/glyphwiki/NOTICE-8587.md').toString();assert(notice.includes('finite')&&notice.includes('공개 원래 whole이 아니다')&&notice.includes('시험주관기관 공식 인증이 아니다'))
 })
