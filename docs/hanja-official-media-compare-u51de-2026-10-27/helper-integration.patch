@@ -1,0 +1,15 @@
+*** Begin Patch
+*** Update File: scripts/hanja-official-media-compare.py
+@@
+         require(safe['glyph']=='逈' and safe['fetchFacts']['clips']==10 and safe['catalogStrokes']==9 and safe['bodyOutputOrFileSaved']is False and safe['logicalPensFromTimingApproved']is False and safe['catalogCountChanged']is False and config['svgRoot']==safe['svgRoot'] and config['timedPaths']==safe['timedPaths'], 'Unchanged 逈 original10 timings; no catalog9 correction or automatic logical-count inference')
++    elif path == ROOT/'docs/hanja-official-media-compare-u51de-2026-10-27/config.json':
++        require(config['glyph']=='凞' and config['sourceRoot']=='u51de' and config['domesticClips']==16 and config['allowedStrokes']==list(range(1,17)) and config['defaultStroke']==1 and config['metadataFile']=='docs/hanja-goal-glyphwiki-batch1059-2026-10-13/metadata.json', 'Exact 凞 base original16 clock-audit config required')
++        require(config['metadataSHA256']=='86fda2c2d059a8468e6a77138f0398b602d8c45452727ba69eea5f331257b28c' and metadata['glyph']=='凞' and metadata['candidate']['strokes']==15 and metadata['dictionary']['clips']==16, 'Preserve 凞 catalog15 and publisher16 separately')
++        require(config['media']['svg']=={'url':'http://img.e-hanja.kr/hanjaSvg/aniSVG/5100/51DE.svg','bytes':8022,'sha256':'584c8c831fe65098988320ec174f4c96f21caa11f06e785fe7768910f9ceb59c'}, 'Exact 凞 original media required')
++        safe_raw=pinned_path('docs/hanja-official-media-compare-u51de-2026-10-27/safe-source-metadata.json').read_bytes()
++        require(sha(safe_raw)=='f0f408bc7db6e68bb5ce51422bfefbc44c0ce0bda60cd7d38734b5de5a91a3da','Exact safe-only 凞 timing metadata required')
++        safe=json.loads(safe_raw)
++        require(safe['glyph']=='凞' and safe['sourceRoot']=='u51de' and safe['catalogStrokes']==15 and safe['publisherTimedPaths']==16 and safe['fetchFacts']['clips']==16 and safe['bodyOutputOrFileSaved']is False and safe['logicalPensFromTimingApproved']is False and safe['catalogCountChanged']is False and config['svgRoot']==safe['svgRoot'] and config['timedPaths']==safe['timedPaths'], 'Unchanged 凞 original16 timings; no k whole substitution, count correction or gap approval')
+     else:
+         require(metadata['glyph'] == config['glyph'] and metadata['candidate']['strokes'] == config['domesticClips'] == metadata['dictionary']['clips'], 'Domestic/catalog identity mismatch')
+*** End Patch
