@@ -1,0 +1,34 @@
+{
+  "schema": "hanja-actual-component-native-baseline-review/v1",
+  "glyph": "竪",
+  "reviewedAt": "2026-10-27",
+  "reviewer": "Codex root native browser panel",
+  "profileSHA256": "ce3071e0ccbcba6ad6708ba765bb069c8308f9b2de4d28f2593f90ddfd6a2e24",
+  "launcherSHA256": "965d32e622849ff97ec111ef72e3e447221b9b70d37519002114560864662246",
+  "fixtureSHA256": "9b6539a02fcad5e919ba79b193463f1e26556d434098f0154df0cb8a54a2c91e",
+  "compiledSHA256": "c59c97d44ce071358ae98d1e01b34d32447276e5ab736f88d59766262dc0f110",
+  "sourceRoot": "lingo-u7aea-no-extra-v1",
+  "view": "actual isolated StrokeOutlines; main520 image",
+  "observedScenes": 36,
+  "initialScenes": {"pens":[1,2,3,4,5,6,7,8,9,10,11,12,13],"progress":[0,0.000001],"count":26},
+  "compoundBoundaryScenes": [
+    {"pen":3,"requestedProgress":[0.6942322271117571,0.6942322272117571,0.6942322273117572]},
+    {"pen":6,"requestedProgress":[0.5047683691516545,0.5047683692516545,0.5047683693516545]},
+    {"pen":7,"requestedProgress":[0.3911039733635954,0.39110397346359543,0.39110397356359544]}
+  ],
+  "endpointScene": {"pen":13,"progress":1,"observation":"All13 logical strokes and16 masks are visible in the completed whole."},
+  "result": "HOLD-five-finite-onset-exposures",
+  "failures": [
+    {"pen":7,"mask":2,"observation":"After the horizontal-to-left-falling boundary, a finite wide cap/body chunk appears below the right end of the prior horizontal."},
+    {"pen":8,"mask":1,"observation":"At initial positive progress, a finite isolated upper short segment appears in the right-falling stroke."},
+    {"pen":9,"mask":1,"observation":"At initial positive progress, a finite broad stem/head block appears above the lower 立 horizontal."},
+    {"pen":11,"mask":1,"observation":"At initial positive progress, a finite triangular upper fragment appears in the lower-left curved stroke."},
+    {"pen":12,"mask":1,"observation":"At initial positive progress, a finite broad top fragment appears in the lower-right descending stroke."}
+  ],
+  "otherScenes": "No comparable large onset pop was observed in the sampled other initial states or pen3/6 boundary triples. This is not full animation approval.",
+  "stateCollectionLimit": "Native AX snapshots were collected with diffing; this record does not assert an all36 complete DOM-error audit or exact float roundtrip beyond the requested inputs.",
+  "sourceP_Q_WidthWeightsChanged": false,
+  "candidateAnimationApproved": false,
+  "runtimeApplied": false,
+  "privateMediaSaved": false
+}
