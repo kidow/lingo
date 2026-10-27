@@ -533,10 +533,12 @@ NEW_PUBLIC_WHOLES["u83f0-var-001"]=json.loads("{\"glyph\":\"菰\",\"catalogStrok
 
 LOCAL_COMPONENT_RECIPE_WHOLE=json.loads("{\"glyph\":\"菰\",\"catalogStrokes\":12,\"root\":\"lingo-u83f0-components-v1\",\"kind\":\"local-authored-component-recipe\",\"localRecipe\":true,\"config\":\"docs/hanja-source-raw-compare-u83f0-local-components-whole-2026-10-27/config.json\",\"configSemanticSHA256\":\"a2644ec01dcae6eb30ef2792a2b02b78b3e2957294fe205689e3e10866dd4eb2\",\"recipePath\":\"docs/hanja-component-recipe-u83f0-2026-10-27/recipe.json\",\"recipeSHA256\":\"9ec71fa63dc8b74d4b1e6d9ca87692b96bfafd52d399533fe48cbcb01c406c59\",\"capturePath\":\"docs/hanja-component-capture-u83f0-2026-10-27/capture.json\",\"captureSHA256\":\"71c0b7b88740d5ff71b8ed97f717d2131f2eeadaa0ff13a47f37907e47e17a99\",\"counts\":[14,16,34]}")
 
+LOCAL_COMPONENT_RECIPE_INDIVIDUAL=json.loads("{\"glyph\":\"菰\",\"catalogStrokes\":12,\"root\":\"lingo-u83f0-components-v1\",\"kind\":\"local-authored-component-recipe\",\"localRecipe\":true,\"config\":\"docs/hanja-source-raw-compare-u83f0-local-components-individual-2026-10-27/config.json\",\"configSemanticSHA256\":\"cba2c9e384891950c3fedf58ffc359665d9c60b10da1dbe9c0dfdb8559ed90fa\",\"recipePath\":\"docs/hanja-component-recipe-u83f0-2026-10-27/recipe.json\",\"recipeSHA256\":\"9ec71fa63dc8b74d4b1e6d9ca87692b96bfafd52d399533fe48cbcb01c406c59\",\"capturePath\":\"docs/hanja-component-capture-u83f0-2026-10-27/capture.json\",\"captureSHA256\":\"71c0b7b88740d5ff71b8ed97f717d2131f2eeadaa0ff13a47f37907e47e17a99\",\"counts\":[14,16,34],\"individualStatic\":true}")
+
 def new_local_recipe_whole_case(config):
     if type(config)is dict and config.get('glyph')=='菰' and type(config.get('sourceRoots'))is dict and list(config['sourceRoots'])==['selected']:
         spec=config['sourceRoots']['selected']
-        if type(spec)is dict and spec.get('root')==LOCAL_COMPONENT_RECIPE_WHOLE['root']:return LOCAL_COMPONENT_RECIPE_WHOLE
+        if type(spec)is dict and spec.get('root')==LOCAL_COMPONENT_RECIPE_WHOLE['root']:return LOCAL_COMPONENT_RECIPE_INDIVIDUAL if config.get('wholeOnly')is False else LOCAL_COMPONENT_RECIPE_WHOLE
     return None
 
 def local_component_differences(candidate,hk,var):
@@ -550,7 +552,7 @@ def local_component_differences(candidate,hk,var):
 def validate_local_recipe_whole(config,label,spec,path,config_path,case):
     semantic={k:v for k,v in config.items()if k!='launcherSHA256'}
     require(config_path==ROOT/case['config'] and digest(json.dumps(semantic,sort_keys=True,separators=(',',':'),ensure_ascii=False).encode())==case['configSemanticSHA256'],'exact LOCAL-AUTHORED 菰 comparison config required')
-    require(config['kind']==case['kind']=='local-authored-component-recipe' and config['sourceRootWasAuthored']is True and config['wholeOnly']is True and config['glyph']=='菰' and config['catalogStrokes']==config['domestic']['clips']==12 and config['holdSummary'].startswith(config['candidateDescription']) and 'not an original public GlyphWiki whole' in config['candidateDescription'],'clearly described local authored root, not a public/original whole, required')
+    require(config['kind']==case['kind']=='local-authored-component-recipe' and config['sourceRootWasAuthored']is True and config['wholeOnly']is(not case.get('individualStatic',False)) and config['glyph']=='菰' and config['catalogStrokes']==config['domestic']['clips']==12 and config['holdSummary'].startswith(config['candidateDescription']) and 'not an original public GlyphWiki whole' in config['candidateDescription'],'clearly described local authored root, not a public/original whole, required')
     require(label=='selected' and list(config['sourceRoots'])==['selected'] and spec['root']==case['root'] and path==pinned_path(spec['file']),'one exact local recipe source required')
     def pinned_json(info):
         p=pinned_path(info['path']);raw=p.read_bytes()
