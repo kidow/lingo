@@ -1,0 +1,221 @@
+{
+  "schema": "hanja-source-contact-head-prefix/v1",
+  "glyph": "凞",
+  "root": "u51de",
+  "inputs": {
+    "docs/hanja-source-original-u51de-base-2026-10-27/fixtures-draft.json": "623a80e6bbd7363bfb171731d60f730d9f9c412ec07a94afd3eccd7a30ed1255",
+    "docs/hanja-source-original-u51de-base-2026-10-27/contact-feasibility-3-6.json": "bb684f517de04c2a3c5632d6689950e88e54c3e3bdcf06bce9e5743a6291c60c",
+    "docs/hanja-source-original-u51de-base-2026-10-27/feasibility-initial-1-8.json": "0147e0711262d64634f465695abce31a06133511acef3229e42751950dc9b2ba",
+    "docs/hanja-source-original-u51de-base-2026-10-27/feasibility-initial-9-16.json": "e14a6864e878401867fd3735297cc050ab6c996972084e83ac8e24bcd0488e2e",
+    "docs/hanja-source-original-u51de-base-2026-10-27/verify-contact-feasibility-3-6.py": "fe82edd81e0895ca08b194e4a3e1256c6d89d6b3186fd31cdb28965a1e633454",
+    "docs/hanja-source-original-u83f0-local-components-2026-10-27/verify-baseline-onset-conditions.py": "35b0d7f372a2ed37052ebbbd1b116e951786fe80a5d70798c95659cfc85a63cf",
+    "docs/hanja-source-original-u7443-g-2026-10-26/verify-curve-union-start-kernels.py": "95286fc3de0d18ff96735263582095325f7d9afa00bbd2c3a0ea42e03caf2396"
+  },
+  "coordinateFrame": "Exact rational compiled source coordinates, screen y down.",
+  "scope": [
+    "3m2",
+    "10m2"
+  ],
+  "results": [
+    {
+      "pen": 3,
+      "mask": 2,
+      "reused": {
+        "strictKernelPriorIntersection": false,
+        "fullSourceTriangles": 20,
+        "allTriangleGraphConnected": true,
+        "downwardCentroidReachableCount": 7,
+        "axisEvents": 21,
+        "axisPositiveWidthBridges": true
+      },
+      "sourceGuide": "M29.68 33.015 Q29.68 59.58 23.18 69.93",
+      "direction": "coordinateYIncreasing / screen-down, then left",
+      "jointEventY": "6603/200",
+      "jointEventBasis": "Exact original Q start y; original P top y33 precedes Q start y33.015. Head is only this initial source strip, not all20 triangles.",
+      "headVertices": [
+        [
+          "643/20",
+          "33"
+        ],
+        [
+          "167177/5200",
+          "6603/200"
+        ],
+        [
+          "184621/6800",
+          "6603/200"
+        ],
+        [
+          "543/20",
+          "33"
+        ]
+      ],
+      "headArea": "82869/1105000",
+      "bodyArea": "600650399/4420000",
+      "originalArea": "4351/32",
+      "exactAreaPartition": true,
+      "headTriangleCount": 2,
+      "headOrder": [
+        0,
+        1
+      ],
+      "headGrowthSteps": [
+        {
+          "triangle": 0,
+          "sourceClipTriangle": [
+            [
+              "543/20",
+              "33"
+            ],
+            [
+              "643/20",
+              "33"
+            ],
+            [
+              "167177/5200",
+              "6603/200"
+            ]
+          ],
+          "positiveContactEdge": [
+            [
+              "543/20",
+              "33"
+            ],
+            [
+              "643/20",
+              "33"
+            ]
+          ],
+          "edgeMidpointSeed": [
+            "593/20",
+            "33"
+          ],
+          "priorOrCompletedHeadContact": true
+        },
+        {
+          "triangle": 1,
+          "sourceClipTriangle": [
+            [
+              "167177/5200",
+              "6603/200"
+            ],
+            [
+              "184621/6800",
+              "6603/200"
+            ],
+            [
+              "543/20",
+              "33"
+            ]
+          ],
+          "positiveContactEdge": [
+            [
+              "543/20",
+              "33"
+            ],
+            [
+              "167177/5200",
+              "6603/200"
+            ]
+          ],
+          "edgeMidpointSeed": [
+            "308357/10400",
+            "13203/400"
+          ],
+          "priorOrCompletedHeadContact": true
+        }
+      ],
+      "headBodyPositiveSharedEdges": [
+        [
+          [
+            "184621/6800",
+            "6603/200"
+          ],
+          [
+            "167177/5200",
+            "6603/200"
+          ]
+        ]
+      ],
+      "bodyFirstSectionWidth": "27621/5525",
+      "candidateConstruction": "At p0 paint no target ink. Grow each of two head triangles by homothety about the recorded midpoint on its positive shared contact edge. For each local 0<t<=1 the scaled base has positive length on prior/completed head. Complete head, then retain head and advance original-P coordinateYIncreasing half-plane from original Q-start y to original source maximum. Reuse exact single-interval/positive-width original axis proof for body.",
+      "proofScope": "Exact source clip partition, convex triangle contacts and monotone body connectivity; no timing or native visual approval. New display-clock phase allocation remains unassigned.",
+      "newAuthoredDisplayClockRequired": true,
+      "entire20TriangleBFSUsedAsHead": false,
+      "geometryCandidateFeasible": true,
+      "policyAdopted": false,
+      "nativeApproval": false
+    },
+    {
+      "pen": 10,
+      "mask": 2,
+      "sourcePolygons": 2,
+      "sourceVertexTriangles": 5,
+      "PAndPriorPositiveAreaContact": true,
+      "positiveIntersectionCellCount": 7,
+      "intersectionCellAreas": [
+        "159/55",
+        "6/55",
+        "2916/12733",
+        "363/1819",
+        "225/749",
+        "5094/1819",
+        "25/17"
+      ],
+      "cellAreaNote": "Triangle-pair cells; no nonoverlapping union area claimed.",
+      "positiveSharedSourceEdges": [],
+      "priorContactSourceTriangleRoots": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "targetStarKernelVertices": [
+        [
+          "181/2",
+          "241/22"
+        ],
+        [
+          "181/2",
+          "15"
+        ],
+        [
+          "169/2",
+          "99/5"
+        ],
+        [
+          "169/2",
+          "11"
+        ],
+        [
+          "175/2",
+          "17/2"
+        ]
+      ],
+      "targetStarKernelPositiveArea": true,
+      "strictKernelPriorInteriorSeedExists": true,
+      "strictKernelPriorSeedWitnesses": [
+        [
+          "171/2",
+          "189/17"
+        ],
+        [
+          "86",
+          "411/34"
+        ]
+      ],
+      "firstYSupportFailureDoesNotImplyNoPContact": true,
+      "sourceFlagsGuideAndPUnchanged": true,
+      "reuseAdopted": false,
+      "nativeApproval": false
+    }
+  ],
+  "oldFull20TriangulationAndKernelNotRecomputed": true,
+  "originalPGuideFlagsWeightsOrderChanged": false,
+  "newBridge": false,
+  "newAuthoredDisplayClockApproved": false,
+  "runtimeApplied": false,
+  "nativeApproval": false,
+  "registrationAuthorized": false
+}

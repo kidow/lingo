@@ -1,0 +1,85 @@
+{
+  "schema": "hanja-source-contact-head-prefix/v1",
+  "glyph": "凞",
+  "root": "u51de",
+  "pen": 6,
+  "mask": 2,
+  "inputs": {
+    "docs/hanja-source-original-u51de-base-2026-10-27/fixtures-draft.json": "623a80e6bbd7363bfb171731d60f730d9f9c412ec07a94afd3eccd7a30ed1255",
+    "docs/hanja-source-original-u51de-base-2026-10-27/contact-feasibility-3-6.json": "bb684f517de04c2a3c5632d6689950e88e54c3e3bdcf06bce9e5743a6291c60c"
+  },
+  "compiledSHA256": "c9ac1ef9b6c55526779f888cfd12f31622fad344ed20cbbf3dfa0dabee7caea1",
+  "sourcePreserved": {
+    "polygon0": "body",
+    "polygon1": "head",
+    "coloredWholeDOnce": true,
+    "rawOrderUnchanged": true,
+    "guideUnchanged": true,
+    "flagsUnchanged": true,
+    "weightUnchanged": true,
+    "newBridge": false
+  },
+  "contactSeed": {
+    "point": [
+      "2347/40",
+      "25933/908"
+    ],
+    "strictlyInsidePrior": true,
+    "strictlyInsideHead": true,
+    "strictlyInsideBody": true,
+    "authoredSupportPoint": true,
+    "publishedPenCenterlineClaim": false
+  },
+  "head": {
+    "sourcePolygonIndex": 1,
+    "strictlyConvex": true,
+    "area": "25",
+    "growth": "Homothety about the strict contact seed from scale0 to1. Convexity and an interior seed imply contained, nested connected prefixes. A sufficiently small initial prefix lies inside the completed opaque prior.",
+    "sourceVerticesUnchangedAtCompletion": true
+  },
+  "body": {
+    "sourcePolygonIndex": 0,
+    "area": "9801/80",
+    "topY": "57/2",
+    "bottomY": "1043/20",
+    "topEdge": [
+      [
+        "573/10",
+        "57/2"
+      ],
+      [
+        "314/5",
+        "57/2"
+      ]
+    ],
+    "topEdgeLength": "11/2",
+    "topEdgeFullyCoveredByCompletedHead": true,
+    "growth": "After head completion, grow a rectangle from the original body top toward increasing coordinateY (screen down), intersecting the unchanged whole target D. Body is convex; its top section shares a positive edge with the completed head."
+  },
+  "areas": {
+    "headBodyIntersection": "121/16",
+    "sourceUnion": "2799/20"
+  },
+  "authoredClock": {
+    "headPhase": "500/2799",
+    "headPhaseNumber": 0.17863522686673813,
+    "basis": "exact original head area divided by original head/body union area",
+    "adoptedForCandidate": true,
+    "originalPublisherClockClaim": false,
+    "outerWeightChanged": false
+  },
+  "proofVerification": {
+    "exactFractions": true,
+    "fixtureHashChecked": true,
+    "sourcePolygonCount": 2,
+    "headConvexityChecked": true,
+    "strictSeedCheckedAgainstAllThreePolygons": true,
+    "bodyTopEndpointsCheckedInConvexHead": true,
+    "exactIntersectionAndUnionAreaChecked": true,
+    "rootDerivationChecks": 1
+  },
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "registrationAuthorized": false,
+  "allIntermediateBrowserFramesClaimed": false
+}
