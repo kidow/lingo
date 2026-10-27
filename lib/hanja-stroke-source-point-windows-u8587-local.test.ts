@@ -3,7 +3,7 @@ import assert from 'node:assert/strict'
 import {readFileSync} from 'node:fs'
 import {createHash} from 'node:crypto'
 import fixture from '../docs/hanja-source-original-u8587-local-components-2026-10-27/fixtures-draft.json' with {type:'json'}
-import {outlineSegmentProgress,type HanjaOutlineStrokes} from './hanja-stroke-outline.ts'
+import {outlineSegmentProgress,outlineClip,type HanjaOutlineStrokes} from './hanja-stroke-outline.ts'
 import {makeReviewedU8587LocalPointWindowContext as make,reviewedU8587LocalPointWindowPolicy as select,sampleReviewedU8587LocalPointWindowFrame as sample,commitReviewedU8587LocalPointWindow as commit,verifyReviewedU8587LocalPointWindowPriorDOM as priorDOM,REVIEWED_U8587_LOCAL_POINT_WINDOW_INPUT_SHA256 as pins,REVIEWED_U8587_LOCAL_POINT_WINDOWS as review} from './hanja-stroke-source-point-windows-u8587-local.ts'
 const f=fixture.u8587,s=f.strokes as HanjaOutlineStrokes,clone=<T,>(v:T):T=>JSON.parse(JSON.stringify(v)),sha=(v:string|Uint8Array)=>createHash('sha256').update(v).digest('hex')
 const ctx=()=>{const c=make(f.fullProof,f.identity,s);assert(c);return c}
@@ -37,12 +37,12 @@ class D{
  createElementNS(_ns:string,name:string){return new N(name,this)}
 }
 
-function dom(p:ReturnType<typeof policy>,requested:number){
- const weights=s[12].map(m=>m.weight),total=weights.reduce((a,b)=>a+b,0),before=(weights[0]+weights[1])/total,span=weights[2]/total,logical=requested===1?1:before+span*requested,amounts=outlineSegmentProgress(s[12],logical),progress=amounts[2],priorProgress=amounts[1]
+function dom(p:ReturnType<typeof policy>,requested:number,logicalOverride?:number){
+ const weights=s[12].map(m=>m.weight),total=weights.reduce((a,b)=>a+b,0),before=(weights[0]+weights[1])/total,span=weights[2]/total,logical=logicalOverride??(requested===1?1:before+span*requested),amounts=outlineSegmentProgress(s[12],logical),progress=amounts[2],priorProgress=amounts[1]
  const doc=new D(),owner=new N('svg',doc),outer=new N('g',doc);owner.setAttribute('viewBox','0 0 100 100');owner.append(outer);outer.setAttribute('data-stroke-outlines','true')
  for(let i=0;i<s.length;i++){const slot=new N('g',doc);slot.setAttribute('data-outline-stroke',String(i+1));outer.append(slot)}
  const slot=outer.children[12],g=new N('g',doc),defs=new N('defs',doc),c=new N('clipPath',doc),r=new N('rect',doc),ink=new N('path',doc),id='test-12-2',H=new N('path',doc)
- for(let i=0;i<(amounts[3]===0?3:4);i++){if(i===2)slot.append(g);else{const path=i===1?H:new N('path',doc);path.setAttribute('d',s[12][i].outline);slot.append(path)}}g.append(defs);defs.append(c);c.append(r);g.append(ink)
+ for(let i=0;i<4;i++){if(i===2){slot.append(g);continue}if(amounts[i]===0)continue;const path=i===1?H:new N('path',doc);path.setAttribute('d',s[12][i].outline);if(amounts[i]===1)slot.append(path);else{const part=new N('g',doc),definition=new N('defs',doc),clip=new N('clipPath',doc),rect=new N('rect',doc);clip.setAttribute('id','test-12-'+i);path.setAttribute('clip-path','url(#test-12-'+i+')');for(const[k,v]of Object.entries(outlineClip(s[12][i],amounts[i])))rect.setAttribute(k,String(v));slot.append(part);part.append(definition);definition.append(clip);clip.append(rect);part.append(path)}}g.append(defs);defs.append(c);c.append(r);g.append(ink)
  for(const n of[outer,...outer.children,...slot.children,g,defs,c,r,ink])n.ownerSVGElement=owner
  g.setAttribute('data-stroke-start-gate',p.id);g.setAttribute('data-stroke-reveal-policy',p.kind);g.setAttribute('data-stroke-reveal-progress',String(progress));g.setAttribute(P+'clip',id);g.setAttribute(P+'fingerprint',p.proofFingerprint);g.setAttribute(P+'prior-progress',String(priorProgress));g.setAttribute(P+'logical-progress',String(logical))
  c.setAttribute('id',id+'-u8587-local-source-window-clip');c.setAttribute('clipPathUnits','userSpaceOnUse');ink.setAttribute('d',p.segment.outline);ink.setAttribute('visibility','hidden');for(const k of['x','y','width','height'])r.setAttribute(k,'999')
@@ -86,4 +86,10 @@ test('current canonical positive tiny geometry allows CSS quantization but no bb
  const p=policy(13),d=dom(p,1e-9);d.doc.serializeGeometry=v=>String(Math.round(Number(v.replace('px',''))*1e6)/1e6)+'px';assert.equal(run(p,d).status,'visible');assert.equal(d.owner.children.length,1);
  const bad=dom(p,1e-9);bad.doc.serializeGeometry=v=>String(Math.round(Number(v.replace('px',''))*1e6)/1e6)+'px';bad.doc.globalGeometry=(n,k)=>n.localName==='rect'&&k==='width'?'0px':null;assert.equal(run(p,bad).status,'hidden');
  d.r.style.setProperty('width','0px');assert.equal(run(p,d).status,'hidden')
+})
+test('before point starts: zero H, partial H, H/V boundary, partial V and lower-boundary derive exact target position',()=>{
+ const p=policy(13),weights=s[12].map(m=>m.weight),total=weights.reduce((a,b)=>a+b,0),h=weights[0]/total,start=(weights[0]+weights[1])/total;
+ for(const logical of[0,h/2,h-1e-10,h,h+1e-10,(h+start)/2,start-1e-10,start]){const d=dom(p,0,logical);assert.equal(d.progress,0);const amounts=outlineSegmentProgress(s[12],logical),index=amounts.slice(0,2).filter(v=>v>0).length;assert.strictEqual(d.slot.children[index],d.g);assert.equal(run(p,d).status,'empty');assert.equal(d.ink.getAttribute('visibility'),'hidden');assert.equal(d.ink.getAttribute(P+'committed'),'true')}
+ const bad=dom(p,0,h/2);bad.slot.children[0].children[1].setAttribute('d','M0 0Z');assert.equal(run(p,bad).status,'hidden');
+ const shifted=dom(p,0,0);shifted.slot.append(new N('path',shifted.doc));assert.equal(run(p,shifted).status,'hidden');
 })
