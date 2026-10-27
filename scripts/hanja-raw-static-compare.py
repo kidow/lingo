@@ -660,6 +660,8 @@ def run_reviewed_compiled12(args,config,config_path):
 NEW_PUBLIC_WHOLES["koseki-559040"]=json.loads("{\"glyph\":\"薇\",\"catalogStrokes\":17,\"config\":\"docs/hanja-source-raw-compare-u8587-koseki-559040-whole-2026-10-27/config.json\",\"independentCapture\":true,\"configSemanticSHA256\":\"011e36d71fd6270edca561c7d95692570af7df579a3aad143ec5a7c72ee57358\",\"sourcePath\":\"docs/hanja-actual-engine-capture-u8587-koseki-559040-2026-10-27/original-public-sources.json\",\"capturePath\":\"docs/hanja-actual-engine-capture-u8587-koseki-559040-2026-10-27/capture.json\",\"sourceKeys\":[\"koseki-559040\",\"u8279-03\",\"u5f73-g01@1\"],\"referenceKeys\":[\"koseki-559040\",\"u8279-03\",\"u5f73-g01@1\"],\"counts\":[18,19,39],\"rootVersion\":1,\"unusedTailNaN\":56}")
 NEW_PUBLIC_WHOLES["simch-kx_t087217"]=json.loads("{\"glyph\":\"竪\",\"catalogStrokes\":13,\"config\":\"docs/hanja-source-raw-compare-u7aea-simch-whole-2026-10-27/config.json\",\"independentCapture\":true,\"configSemanticSHA256\":\"9fc0ff31ab3089f8c09d57e621e5d6e8e59345aa68756351726321fdaf8d4c76\",\"sourcePath\":\"docs/hanja-source-inventory-u7aea-additional-2026-10-27/sources.json\",\"capturePath\":\"docs/hanja-actual-engine-capture-u7aea-simch-2026-10-27/capture.json\",\"sourceKeys\":[\"simch-kx_t087217\",\"u81e3-j\",\"u7acb-04\"],\"referenceKeys\":[\"simch-kx_t087217\",\"u81e3-j@2\",\"u7acb-04\"],\"counts\":[17,17,30],\"rootVersion\":1,\"unusedTailNaN\":58}")
 
+U7AEA_SIMCH_INDIVIDUAL_CASE=json.loads("{\"glyph\":\"竪\",\"catalogStrokes\":13,\"config\":\"docs/hanja-source-raw-compare-u7aea-simch-individual-2026-10-27/config.json\",\"independentCapture\":true,\"configSemanticSHA256\":\"ec922c3f395062cca614abd3d8bdfd99b015be9b8b161cb3826743a75fde380e\",\"sourcePath\":\"docs/hanja-source-inventory-u7aea-additional-2026-10-27/sources.json\",\"capturePath\":\"docs/hanja-actual-engine-capture-u7aea-simch-2026-10-27/capture.json\",\"sourceKeys\":[\"simch-kx_t087217\",\"u81e3-j\",\"u7acb-04\"],\"referenceKeys\":[\"simch-kx_t087217\",\"u81e3-j@2\",\"u7acb-04\"],\"counts\":[17,17,30],\"rootVersion\":1,\"unusedTailNaN\":58,\"individualStatic\":true}")
+
 def new_public_whole_case(config):
     if type(config)is dict and type(config.get('sourceRoots'))is dict and list(config['sourceRoots'])==['m','u']:
         specs=config['sourceRoots']
@@ -669,6 +671,8 @@ def new_public_whole_case(config):
     if type(config)is not dict or type(config.get('sourceRoots'))is not dict or list(config['sourceRoots'])!=['selected']:return None
     spec=config['sourceRoots']['selected']
     case=NEW_PUBLIC_WHOLES.get(spec.get('root'))if type(spec)is dict else None
+    if case and spec.get('root')=='simch-kx_t087217' and config.get('wholeOnly')is False:
+        case=U7AEA_SIMCH_INDIVIDUAL_CASE
     if case and spec.get('root')=='hkcs_m8b92' and config.get('wholeOnly')is False:
         case={**case,'config':"docs/hanja-source-raw-compare-u8b92-hkcs-individual-2026-10-26/config.json",'individualStatic':True}
     elif case and spec.get('root')=='hkcs_m8609' and config.get('wholeOnly')is False:
@@ -727,7 +731,7 @@ def validate_new_public_whole(config,label,spec,path,config_path,case):
     if case.get('independentCapture'):
         semantic={k:v for k,v in config.items()if k!='launcherSHA256'}
         require(config_path==ROOT/case['config'] and digest(json.dumps(semantic,sort_keys=True,separators=(',',':'),ensure_ascii=False).encode())==case['configSemanticSHA256'],'exact independent whole config required')
-        require(label=='selected' and list(config['sourceRoots'])==['selected'] and config['wholeOnly']is True and config['layoutMode']=='whole-pair520-css-only' and config['glyph']==case['glyph'] and config['catalogStrokes']==case['catalogStrokes'],'one exact whole-only context required')
+        require(label=='selected' and list(config['sourceRoots'])==['selected'] and config['wholeOnly']is(False if case.get('individualStatic')else True) and config['layoutMode']=='whole-pair520-css-only' and config['glyph']==case['glyph'] and config['catalogStrokes']==case['catalogStrokes'],'one exact whole-only context required')
         for p,h in config['inputSHA256'].items():require(digest(pinned_path(p).read_bytes())==h,'independent whole input changed: '+p)
         cap=json.loads(pinned_path(case['capturePath']).read_bytes());source=json.loads(pinned_path(case['sourcePath']).read_bytes());proof=json.loads(path.read_bytes())
         require(path==pinned_path(spec['file']) and digest(path.read_bytes())==spec['fileSHA256'] and sorted(proof)==FIVE and spec['proofKind']=='actual-full5-direct','exact original full5 required')
