@@ -1,0 +1,131 @@
+{
+  "schema": "hanja-focused-public-type3-compatibility/v1",
+  "date": "2026-10-27",
+  "glyph": "薇",
+  "verifier": {
+    "path": "docs/hanja-public-type3-compatibility-u8587-2026-10-27/verify-type3-compatibility.mjs",
+    "SHA256": "2efc98e1efee9aea7be53f51790a15b7d28cbd6866a5dc88a7916ed442d863c9"
+  },
+  "inputs": [
+    {
+      "root": "simch-kx_t106021",
+      "version": 1,
+      "source": {
+        "path": "docs/hanja-actual-engine-capture-u8587-simch-2026-10-27/original-public-sources.json",
+        "SHA256": "e4d36381564674bd5b4e42698231741e76866ccf768d3f88b8689344510d8da9"
+      },
+      "capture": {
+        "path": "docs/hanja-actual-engine-capture-u8587-simch-2026-10-27/capture.json",
+        "SHA256": "494910126b15e9806f78b95be07d7f5be3f24965d60322bd9c2d58910616b552"
+      },
+      "full5": {
+        "path": "docs/hanja-actual-engine-capture-u8587-simch-2026-10-27/engine-whole-simch-kx_t106021.json",
+        "SHA256": "d5fcd97bf13150e66a3a82b7c4febd1daa57e803b484f1bb224638ed1e090948"
+      },
+      "rawIndex": 13,
+      "sourceRowOneBased": 10,
+      "totalEngine": 2
+    },
+    {
+      "root": "toki-01031290",
+      "version": 2,
+      "source": {
+        "path": "docs/hanja-actual-engine-capture-u8587-toki-2026-10-27/original-public-sources.json",
+        "SHA256": "ee4b4b7aa479bc3949c2d809623f0af8f432241d167ceedc83c4db1f094c6a11"
+      },
+      "capture": {
+        "path": "docs/hanja-actual-engine-capture-u8587-toki-2026-10-27/capture.json",
+        "SHA256": "10248c1c63fa450a99a498d8125439f94a3bc4a2739abea0135df1f73181f7d4"
+      },
+      "full5": {
+        "path": "docs/hanja-actual-engine-capture-u8587-toki-2026-10-27/engine-whole-toki-01031290.json",
+        "SHA256": "1d0795c664b3efec9494237338d6d01846ed7d9455993394641a62342828ad67"
+      },
+      "rawIndex": 9,
+      "sourceRowOneBased": 5,
+      "totalEngine": 1
+    }
+  ],
+  "publicEngine": {
+    "revision": "49232bac0348fe815f4200d4116ab7917e0db47f",
+    "file": "kagedf.js",
+    "SHA256": "e6d7cb5eeacda24705306302fd85a01c78f2adcdfdba43d1cac1d3616b6bf847",
+    "case3SHA256": "18919533c12ef3b156c60dac742b2a5171ff7ecf4b0083004d7e7dc5600377b7",
+    "originalSignatureArgumentOrderVerified": true,
+    "case3UsesOnlyThreeCoordinatePairs": true,
+    "x4y4NotConsumedByCase3": true
+  },
+  "results": [
+    {
+      "root": "simch-kx_t106021",
+      "version": 1,
+      "originalRowOneBased": 10,
+      "originalRow": "3:22:5:108:128:108:161:129:161",
+      "expandedRawOneBased": 14,
+      "activeCoordinateIndices": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "activeCoordinatePairs": 3,
+      "serializedUnusedTail": [
+        null,
+        null
+      ],
+      "allActiveCoordinatesFinite": true,
+      "allActualCallsAndPFinite": true,
+      "wholeTraceExact": true,
+      "genericGuardFalsePreserved": true,
+      "unsupportedTypesOtherThanPinned3Rejected": true,
+      "totalActualEngineRuns": 2,
+      "nativeApproval": false,
+      "runtimeApplied": false
+    },
+    {
+      "root": "toki-01031290",
+      "version": 2,
+      "originalRowOneBased": 5,
+      "originalRow": "3:32:5:106:115:106:160:133:160",
+      "expandedRawOneBased": 10,
+      "activeCoordinateIndices": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "activeCoordinatePairs": 3,
+      "serializedUnusedTail": [
+        null,
+        null
+      ],
+      "allActiveCoordinatesFinite": true,
+      "allActualCallsAndPFinite": true,
+      "wholeTraceExact": true,
+      "genericGuardFalsePreserved": true,
+      "unsupportedTypesOtherThanPinned3Rejected": true,
+      "totalActualEngineRuns": 1,
+      "nativeApproval": false,
+      "runtimeApplied": false
+    }
+  ],
+  "scope": "Only two exact pinned whole captures, their one exact authored type3 row each, and original Kage case3. This is not a global generic-guard extension or renderer modification.",
+  "status": "PASS-focused-compatibility;original-generic-guard-FAIL-preserved",
+  "sourceGeometryModified": false,
+  "unusedTailValuesNormalized": false,
+  "engineRunsByVerifier": 0,
+  "newNativeObservations": 0,
+  "nativeApproval": false,
+  "sourceMappingApproved": false,
+  "forwardApproved": false,
+  "runtimeApplied": false,
+  "limits": [
+    "Native whole structural comparison is still pending.",
+    "Original generic unsupportedRawType3 failures remain unchanged.",
+    "No all-time animation, membership, direction or runtime approval is supplied."
+  ]
+}

@@ -1,0 +1,168 @@
+{
+  "schema": "hanja-single-public-whole-diagnostic-capture/v1",
+  "date": "2026-10-27",
+  "glyph": "薇",
+  "root": "simch-kx_t106021",
+  "rootVersion": 1,
+  "source": {
+    "path": "docs/hanja-actual-engine-capture-u8587-simch-2026-10-27/original-public-sources.json",
+    "SHA256": "e4d36381564674bd5b4e42698231741e76866ccf768d3f88b8689344510d8da9"
+  },
+  "helper": {
+    "path": "docs/hanja-actual-engine-capture-u8587-simch-2026-10-27/capture-once.mjs",
+    "SHA256": "9df23529d01ef8ee816b8611e1ecfd450503b781daca4f6751315c40c117e517"
+  },
+  "actualFull5": {
+    "path": "docs/hanja-actual-engine-capture-u8587-simch-2026-10-27/engine-whole-simch-kx_t106021.json",
+    "SHA256": "d5fcd97bf13150e66a3a82b7c4febd1daa57e803b484f1bb224638ed1e090948"
+  },
+  "captureFacts": {
+    "actualVMContexts": 1,
+    "vendorEvaluations": 8,
+    "captureEvaluation": 1,
+    "makeGlyphCalls": 1,
+    "actualProviderRoot": "simch-kx_t106021",
+    "aliasInserted": false,
+    "actualSearchDataMatchedOriginalRecords": true,
+    "wholePolygonsSHA256": "5333fa1e0fd2860653f994c87a3c5c7e0a10ff8c7ea86cf6f0984351fc6f7417",
+    "wholeAndTracePolygonsExactlySame": true,
+    "instrumentSHA256": "e6cc6290fd8940c164eef7a75df31715346eeb8964e85f5d56a36d845ba0672d",
+    "raw": 18,
+    "calls": 21,
+    "polygons": 43,
+    "nativeApproval": false,
+    "runtimeApplied": false,
+    "newHeaderFromExecutedCodeBytesOnly": true,
+    "oldHeaderOrBodyCombined": false,
+    "sourceProjection": 0
+  },
+  "finiteEvidence": {
+    "nonfiniteGeometry": [
+      {
+        "group": 13,
+        "unsupportedRawType": "3"
+      }
+    ],
+    "unusedTailKinds": {
+      "NaN": 54
+    },
+    "allActiveRawAndPCoordinatesFinite": false,
+    "unusedTailNeverCoerced": true
+  },
+  "type3Diagnostic": {
+    "status": "Original generic guard remains FAIL-unsupportedRawType3; no false PASS substitution",
+    "publicKagedfSHA256": "e6d7cb5eeacda24705306302fd85a01c78f2adcdfdba43d1cac1d3616b6bf847",
+    "case3ExcerptSHA256": "18919533c12ef3b156c60dac742b2a5171ff7ecf4b0083004d7e7dc5600377b7",
+    "case3CoordinatePairs": 3,
+    "case3ReferencesX4Y4": false,
+    "raws": [
+      {
+        "originalRootRowOneBased": 10,
+        "originalRootRow": "3:22:5:108:128:108:161:129:161",
+        "originalRootRowCoordinateArity": 6,
+        "expandedRawIndexZeroBased": 13,
+        "expandedRawOneBased": 14,
+        "activeRawCoordinateIndices": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "activeCoordinates": [
+          108,
+          128,
+          108,
+          161,
+          129,
+          161
+        ],
+        "activeCoordinatesFinite": true,
+        "serializedUnusedTail": [
+          null,
+          null
+        ],
+        "actualCalls": [
+          {
+            "kind": "cdDrawLine",
+            "args": [
+              108,
+              128,
+              108,
+              151,
+              22,
+              1
+            ]
+          },
+          {
+            "kind": "cdDrawCurve",
+            "args": [
+              108,
+              151,
+              108,
+              161,
+              118,
+              161,
+              1,
+              1
+            ]
+          },
+          {
+            "kind": "cdDrawLine",
+            "args": [
+              118,
+              161,
+              129,
+              161,
+              6,
+              5
+            ]
+          }
+        ],
+        "actualCallArgumentsFinite": true
+      }
+    ],
+    "allActualCallArgumentsFinite": true,
+    "allActualPolygonCoordinatesFinite": true,
+    "claim": "Pinned public case3 consumes x1/y1..x3/y3 only. Supplementary arity facts distinguish unsupported raw guard from actual nonfinite P/call output; no source data or NaN normalization.",
+    "guardApprovalChanged": false
+  },
+  "usedReferences": [
+    "simch-kx_t106021",
+    "u8279-03",
+    "u5f73-01"
+  ],
+  "executionHistory": {
+    "nodeParseFailureBeforeAnyVM": 1,
+    "firstActualEngineRun": {
+      "VM": 1,
+      "make": 1,
+      "status": "guardFAIL-unsupported-type3",
+      "outputLostAtOriginalAssertion": true
+    },
+    "authorizedAdditionalDiagnosticRun": {
+      "VM": 1,
+      "make": 1,
+      "outputPreserved": true
+    },
+    "totalActualVM": 2,
+    "totalActualMake": 2,
+    "retryLoop": false
+  },
+  "sourceRowsFlagsTransformsReferenceKeysAndVersionTypesUnchanged": true,
+  "newHTTPRequests": 0,
+  "privateMediaInputs": 0,
+  "previousKosekiEngineReplays": 0,
+  "projectionRuns": 0,
+  "nativeApproval": false,
+  "sourceMappingApproved": false,
+  "forwardApproved": false,
+  "runtimeApplied": false,
+  "limits": [
+    "Generic finite guard is not marked passed; unsupported type3 is preserved verbatim.",
+    "Actual original whole only; no compiled animation, native membership or runtime approval.",
+    "ROOT must review whole geometry and guard extension before further use.",
+    "Named components do not prove visible 彳 or reference-compatible shape."
+  ]
+}
