@@ -1,0 +1,107 @@
+{
+  "schema": "hanja-original-MM-exact-Bernstein-gap-proof/v1",
+  "glyph": "賓",
+  "date": "2026-10-27",
+  "inputs": {
+    "sourceRecordSHA256": "aa25aa8f242aa274e9b84665fffced381319a45e83af1b4a2657a88b440ab09a",
+    "originalRecordSHA256": "470b80dca2dcfc9b8e0e0a519763d663fc0cfcd40ad52091be536a2c0e8bd9d7",
+    "verifierSHA256": "d27d78f23926c635a736ccf15c886bccffbbea6412d471823b948d8b711a10f8",
+    "sourceStrokeOneBased": [
+      3,
+      4
+    ],
+    "originalPathSHA256": [
+      "927a9f73a33e1ce52f9554a61035673e62bc3221ffda3a9479242161e6989190",
+      "56a4cc4fec2d863f6d3f0565b9ea85c6da35dce2c99d13c14087e2c2cf493c46"
+    ]
+  },
+  "verificationExecutionHistory": {
+    "priorAttempt": "All geometry assertions completed; JSON serialization failed because the segment loop shadowed source-bytes variable b. Only source hash serialization reference was corrected.",
+    "priorCompleteResultOutputs": 0,
+    "finalResultExecution": 1,
+    "geometryInputsOrAlgorithmChangedForRetry": false
+  },
+  "coordinateSystem": "Original Make Me a Hanzi source coordinates exactly; no normalization, reflection, scale or component parent transform.",
+  "segments": {
+    "source3": 14,
+    "source4": 11,
+    "source3Commands": [
+      "M",
+      "Q",
+      "Q",
+      "Q",
+      "Q",
+      "Q",
+      "Q",
+      "Q",
+      "Q",
+      "Q",
+      "Q",
+      "Q",
+      "Q",
+      "Q",
+      "C",
+      "Z"
+    ],
+    "source4Commands": [
+      "M",
+      "Q",
+      "Q",
+      "Q",
+      "Q",
+      "Q",
+      "Q",
+      "Q",
+      "Q",
+      "Q",
+      "Q",
+      "L",
+      "Z"
+    ],
+    "zeroLengthClosingEdgesPreservedAsAlreadyCoveredEndpoints": [
+      1,
+      1
+    ]
+  },
+  "initialGlobalAxisGap": "-58",
+  "method": "Exact rational Bernstein control-hull rectangles and exact midpoint de Casteljau subdivision; no sampled polyline or curve replacement.",
+  "boundaryCertificate": {
+    "originalSegmentPairs": 154,
+    "binaryTreeNodes": 158,
+    "strictSeparatedLeafPairs": 156,
+    "unresolvedLeafPairs": 0,
+    "maximumSubdivisionDepth": 1,
+    "leafPartitionSHA256": "0af425dba1f26fe3d13c87e90415c36e029809436c47fc2cceb5fe178901f7ea",
+    "minimumLeafLInfinityGapLowerBound": "2",
+    "EuclideanGapAtLeastThisValue": "2",
+    "allOriginalParameterIntervalsCovered": true
+  },
+  "filledRegionCertificate": {
+    "anchorSource3": [
+      "270",
+      "671"
+    ],
+    "otherControlMinX": "316",
+    "source3AnchorStrictXOutsideGap": "46",
+    "anchorSource4": [
+      "476",
+      "617"
+    ],
+    "otherControlMinY": "624",
+    "source4AnchorStrictYOutsideGap": "7",
+    "argument": "Each entire connected boundary is disjoint from the other, and its displayed anchor lies outside the other total control-hull box, hence has winding number zero. Winding number is constant along a disjoint connected boundary. An overlapping bounded open filled cell would have a boundary on one original curve while the other winding is nonzero there, contradicting zero winding on both boundaries. Thus the compact filled supports are disjoint; their minimum separation is attained on the boundaries and is at least the certified boundary lower bound. This applies to both nonzero and evenodd fill rules.",
+    "filledSupportStrictlyDisjoint": true,
+    "positiveAreaIntersection": false,
+    "boundaryContact": false,
+    "gapLowerBound": "2"
+  },
+  "originalQ_C_OrCoordinatesChanged": false,
+  "curveApproximationUsed": false,
+  "fullIntersectionAreaNumericallyEstimated": false,
+  "sourceDirectionOrWholeFitApproved": false,
+  "historicalCenterlineApprovalTransferred": false,
+  "componentReuseOrHanja8819UseApproved": false,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "engineRuns": 0
+}
