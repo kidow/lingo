@@ -11,22 +11,27 @@ const policy=(pen:5|6|7|10)=>{const p=select(ctx(),pen-1,pen===7?0:1);assert(p);
 const NS='http://www.w3.org/2000/svg',P='data-u83f0-local-source-window-'
 class N{
  nodeType=1;namespaceURI=NS;isConnected=true;parentNode:N|null=null;children:N[]=[]
- ownerSVGElement:N|null=null;attrs=new Map<string,string>();css=new Map<string,string>()
- style={setProperty:(k:string,v:string)=>{this.css.set(k,v)},getPropertyValue:(k:string)=>this.css.get(k)??''}
+ ownerSVGElement:N|null=null;attrs=new Map<string,string>();css=new Map<string,string>();priorities=new Map<string,string>()
+ style={setProperty:(k:string,v:string,priority='')=>{this.css.set(k,v);this.priorities.set(k,priority)},getPropertyValue:(k:string)=>this.css.get(k)??'',getPropertyPriority:(k:string)=>this.priorities.get(k)??''}
  localName:string;ownerDocument:D
  constructor(localName:string,ownerDocument:D){this.localName=localName;this.ownerDocument=ownerDocument}
  getAttribute(k:string){return this.attrs.get(k)??null}
  setAttribute(k:string,v:string){this.attrs.set(k,v);this.ownerDocument.onSet?.(this,k,v)}
  removeAttribute(k:string){this.attrs.delete(k)}
- append(n:N){this.children.push(n);n.parentNode=this}
+ append(n:N){this.children.push(n);n.parentNode=this;const owner=this.localName==='svg'?this:this.ownerSVGElement;const assign=(v:N)=>{v.ownerSVGElement=owner;v.isConnected=this.isConnected;for(const child of v.children)assign(child)};assign(n)}
+ appendChild(n:N){this.append(n);return n}
+ remove(){if(this.parentNode){this.parentNode.children.splice(this.parentNode.children.indexOf(this),1);this.parentNode=null}this.isConnected=false}
+ geometryValue(k:string){return this.style.getPropertyPriority(k)==='important'?this.style.getPropertyValue(k):(this.ownerDocument.globalGeometry?.(this,k)??(this.style.getPropertyValue(k)||(this.getAttribute(k)??'0')+'px'))}
+ getBBox(){const v=(k:string)=>Math.fround(Number(this.geometryValue(k).replace('px','')));return{x:v('x'),y:v('y'),width:v('width'),height:v('height')}}
 }
 class D{
  onStyleRead:((n:N)=>void)|null=null;onSet:((n:N,k:string,v:string)=>void)|null=null
+ globalGeometry:((n:N,k:string)=>string|null)|null=null;serializeGeometry:((value:string)=>string)|null=null
  defaultView={document:this,getComputedStyle:(n:N)=>{
   this.onStyleRead?.(n)
   const values:Record<string,string>={display:'inline',transform:'none',filter:'none',clipPath:n.getAttribute('clip-path')??'none',opacity:'1',mixBlendMode:'normal',stroke:'none',fillOpacity:'1',fillRule:'nonzero',fill:'rgb(66, 85, 255)',visibility:n.getAttribute('visibility')??'visible'}
   for(const[k,v]of n.css)values[k]=v
-  return {...values,getPropertyValue:(k:string)=>n.css.get(k)??(['x','y','width','height'].includes(k)&&n.localName==='rect'?(n.getAttribute(k)??'0')+'px':['mask-image','translate','rotate','scale'].includes(k)?'none':'')}
+  return {...values,getPropertyValue:(k:string)=>['x','y','width','height'].includes(k)&&n.localName==='rect'?(this.serializeGeometry?.(n.geometryValue(k))??n.geometryValue(k)):n.css.get(k)??(['mask-image','translate','rotate','scale'].includes(k)?'none':'')}
  }}
  createElementNS(_ns:string,name:string){return new N(name,this)}
 }
@@ -65,4 +70,29 @@ test('prior opacity/progress/source/owner/clip/geometry and rect CSS mutations f
 })
 test('prior completion is rechecked after rectangle attributes and final visibility commit',()=>{
  for(const pen of[5,6,10]as const)for(const stage of['rect','visibility']){const p=policy(pen),d=dom(p,.5);d.doc.onSet=(n,k,v)=>{if(stage==='rect'&&n===d.r&&k==='width'||stage==='visibility'&&n===d.ink&&k==='visibility'&&v==='visible')d.H!.css.set('opacity','0')};assert.equal(commit(p,p.segment,.5,d.id,d.nodes,1).status,'hidden');assert.equal(d.ink.getAttribute('visibility'),'hidden')}
+})
+test('canonical CSS quantization accepts positive tiny source geometry and removes its no-paint probe',()=>{
+ const p=policy(10),q=4.0684554116728366e-10,d=dom(p,q)
+ d.doc.serializeGeometry=value=>String(Math.round(Number(value.replace('px',''))*1e6)/1e6)+'px'
+ const result=commit(p,p.segment,q,d.id,d.nodes,1)
+ assert.equal(result.status,'visible');assert.equal(result.error,null)
+ const frame=sample(p,p.segment,q,1,true);assert(frame.clip)
+ for(const[k,v]of Object.entries(frame.clip))assert.equal(d.r.getAttribute(k),String(v))
+ assert.equal(d.doc.defaultView.getComputedStyle(d.r).getPropertyValue('width'),'0px');assert(d.r.getBBox().width>0)
+ assert.equal(d.owner.children.length,1);assert.strictEqual(d.owner.children[0],d.outer)
+})
+test('canonical comparison rejects stylesheet zero width despite identical rounded CSS serialization',()=>{
+ const p=policy(10),q=4.0684554116728366e-10,d=dom(p,q)
+ d.doc.serializeGeometry=value=>String(Math.round(Number(value.replace('px',''))*1e6)/1e6)+'px'
+ d.doc.globalGeometry=(n,k)=>n.localName==='rect'&&k==='width'?'0px':null
+ assert.equal(d.r.style.getPropertyValue('width'),'')
+ const result=commit(p,p.segment,q,d.id,d.nodes,1)
+ assert.equal(result.status,'hidden');assert.equal(d.ink.getAttribute('visibility'),'hidden');assert.equal(d.r.getBBox().width,0)
+ assert.equal(d.owner.children.length,1)
+})
+test('canonical probe mutation and unrepresentable positive geometry fail closed with probe cleanup',()=>{
+ const p=policy(10),d=dom(p,.5)
+ d.doc.onStyleRead=n=>{if(n.localName==='rect'&&n!==d.r)n.style.setProperty('width','7px','important')}
+ assert.equal(commit(p,p.segment,.5,d.id,d.nodes,1).status,'hidden');assert.equal(d.owner.children.length,1)
+ const tiny=dom(p,1e-100);assert.equal(commit(p,p.segment,1e-100,tiny.id,tiny.nodes,1).status,'hidden');assert.equal(tiny.owner.children.length,1)
 })

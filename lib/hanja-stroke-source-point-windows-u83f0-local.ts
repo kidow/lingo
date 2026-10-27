@@ -58,6 +58,27 @@ function cssSourcePath(doc:Document,value:string,outline:string):boolean{
  const expected=probe.style.getPropertyValue('d')
  return expected!==''&&value===expected
 }
+/** Canonical browser serialization is a guard only: it never changes source window coordinates. */
+function canonicalRectGeometry(owner:SVGSVGElement,doc:Document,view:Window,shape:Readonly<{x:number;y:number;width:number;height:number}>){
+ const host=doc.createElementNS(NS,'g'),probe=doc.createElementNS(NS,'rect'),keys=['x','y','width','height']as const
+ const neutral={display:'inline',visibility:'hidden',opacity:'0',fill:'none',stroke:'none',transform:'none',filter:'none','clip-path':'none','mask-image':'none',translate:'none',rotate:'none',scale:'none',animation:'none',transition:'none'}
+ for(const node of[host,probe])for(const[k,v]of Object.entries(neutral))node.style.setProperty(k,v,'important')
+ for(const k of keys){probe.setAttribute(k,String(shape[k]));probe.style.setProperty(k,String(shape[k])+'px','important')}
+ const inline=new Map(keys.map(k=>[k,probe.style.getPropertyValue(k)]))
+ host.appendChild(probe)
+ try{
+  owner.appendChild(host)
+  const exact=()=>host.parentNode===owner&&probe.parentNode===host&&host.children.length===1&&host.children[0]===probe&&host.ownerSVGElement===owner&&probe.ownerSVGElement===owner&&host.ownerDocument===doc&&probe.ownerDocument===doc&&host.isConnected&&probe.isConnected&&doc.defaultView===view&&view.document===doc&&keys.every(k=>probe.getAttribute(k)===String(shape[k])&&probe.style.getPropertyPriority(k)==='important'&&inline.get(k)!==''&&probe.style.getPropertyValue(k)===inline.get(k))
+  if(!exact())throw Error('Connected isolated canonical SVG rectangle required')
+  for(const node of[host,probe]){
+   const style=view.getComputedStyle(node)
+   if(style.display==='none'||style.visibility!=='hidden'||Number(style.opacity)!==0||style.fill!=='none'||style.stroke!=='none'||style.transform!=='none'||style.filter!=='none'||style.clipPath!=='none'||!['','none'].includes(style.getPropertyValue('mask-image'))||['translate','rotate','scale'].some(k=>!['','none'].includes(style.getPropertyValue(k))))throw Error('Canonical rectangle probe must have no paint or effects')
+  }
+  const computed=view.getComputedStyle(probe),css=new Map(keys.map(k=>[k,computed.getPropertyValue(k)])),b=probe.getBBox(),bounds={x:b.x,y:b.y,width:b.width,height:b.height}
+  if([...css.values()].some(v=>!v.endsWith('px')||!Number.isFinite(Number(v.slice(0,-2))))||!Object.values(bounds).every(Number.isFinite)||(shape.width>0&&shape.height>0&&(bounds.width<=0||bounds.height<=0))||!exact())throw Error('Finite noncollapsed browser-canonical rectangle required')
+  return{css,bounds}
+ }finally{host.remove()}
+}
 /** New authored clock only: a strict union-kernel anchor plus nested convex rectangles containing it gives a star-shaped connected P intersection. This does not establish source-Q forward timing. Three mask2 policies additionally require the exact previous mask full opaque in this actual owner/frame. */
 export function commitReviewedU83f0LocalPointWindow(policy:ReviewedU83f0LocalPointWindowPolicy,segment:HanjaOutlineSegment,progress:number,clipId:string,nodes:ReviewedU83f0LocalPointWindowNodes,priorProgress=0){
  const {group:g,ink:p,rect:r,clipPath:c}=nodes
@@ -72,8 +93,7 @@ export function commitReviewedU83f0LocalPointWindow(policy:ReviewedU83f0LocalPoi
   const shape=f.clip??{x:policy.anchor[0],y:policy.anchor[1],width:0,height:0}
   for(const [k,v]of Object.entries(shape))r.setAttribute(k,String(v))
   if(f.originalPDirect)p.removeAttribute('clip-path');else p.setAttribute('clip-path','url(#'+key+')')
-  const expectedCSS=new Map<string,string>()
-  for(const [k,v]of Object.entries(shape)){const probe=doc.createElementNS(NS,'rect');probe.style.setProperty(k,String(v)+'px');expectedCSS.set(k,probe.style.getPropertyValue(k))}
+  const canonical=canonicalRectGeometry(owner,doc,view,shape),expectedCSS=canonical.css
   const tree:Element[]=[g,p,d,c,r],seen=new Set<Element>();let n:Element|null=slot
   while(n){if(seen.has(n))throw Error('Cyclic 菰 owner');seen.add(n);tree.push(n);if(n===owner)break;const parent:ParentNode|null=n.parentNode;n=parent&&parent.nodeType===1?parent as Element:null}
   if(n!==owner)throw Error('Disconnected 菰 SVG chain')
@@ -88,7 +108,9 @@ export function commitReviewedU83f0LocalPointWindow(policy:ReviewedU83f0LocalPoi
     if(s.display==='none'||s.transform!=='none'||s.filter!=='none'||(node!==p&&s.clipPath!=='none')||!['','none'].includes(s.getPropertyValue('mask-image'))||Number(s.opacity)!==1||s.mixBlendMode!=='normal'||['translate','rotate','scale'].some(k=>!['','none'].includes(s.getPropertyValue(k))))return false
    }
    const rs=view.getComputedStyle(r)
-   if([...expectedCSS].some(([k,v])=>v===''||rs.getPropertyValue(k)!==v))return false
+   if([...expectedCSS].some(([k,v])=>r.style.getPropertyValue(k)!==''||rs.getPropertyValue(k)!==v))return false
+   const actualBox=r.getBBox()
+   if(!(['x','y','width','height']as const).every(k=>Number.isFinite(actualBox[k])&&actualBox[k]===canonical.bounds[k]))return false
    const paint=view.getComputedStyle(p)
    if(paint.stroke!=='none'||Number(paint.fillOpacity)!==1||paint.fillRule!=='nonzero'||!opaqueRGB(paint.fill)||paint.visibility!==visibility||!cssSourcePath(doc,paint.getPropertyValue('d').trim(),segment.outline))return false
    return exact(visibility,committed)&&tree.every(node=>node.isConnected&&node.ownerDocument===doc&&node.parentNode===parents.get(node)&&(node===owner||(node as SVGElement).ownerSVGElement===owner))
