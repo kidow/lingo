@@ -1,0 +1,32 @@
+*** Begin Patch
+*** Update File: components/hanja/stroke-outlines.tsx
+@@
++import {makeReviewedU9008HkcsSourceRevealContext,REVIEWED_U9008_HKCS_SOURCE_REVEAL_INPUT,reviewedU9008HkcsSourceRevealPolicy,commitReviewedU9008HkcsSourceReveal,type ReviewedU9008HkcsSourceRevealPolicy} from '@/lib/hanja-stroke-source-reveal-u9008-hkcs'
++import {makeReviewedU9008HkcsContactFootContext,reviewedU9008HkcsContactFootPolicy,commitReviewedU9008HkcsContactFoot,type ReviewedU9008HkcsContactFootPolicy} from '@/lib/hanja-stroke-contact-foot-u9008-hkcs'
+ import {makeLocalU5ac2RevealContext,LOCAL_U5AC2_REVEAL_INPUT,localU5ac2RevealPolicy,commitLocalU5ac2Reveal,type LocalU5ac2RevealPolicy} from '@/lib/hanja-stroke-source-reveal-u5ac2-local'
+@@
+   const u5ac2LocalRevealFrame=id+'-u5ac2-local-reveal-frame-'+phase+'-'+count+'-'+String(manual)+'-'+String(elapsed)
++  const u9008HkcsSourceRevealContext=makeReviewedU9008HkcsSourceRevealContext(REVIEWED_U9008_HKCS_SOURCE_REVEAL_INPUT.fullProof,REVIEWED_U9008_HKCS_SOURCE_REVEAL_INPUT.identity,strokes)
++  const u9008HkcsContactFootContext=makeReviewedU9008HkcsContactFootContext(REVIEWED_U9008_HKCS_SOURCE_REVEAL_INPUT.fullProof,REVIEWED_U9008_HKCS_SOURCE_REVEAL_INPUT.identity,strokes)
++  const u9008HkcsRevealFrame=id+'-u9008-hkcs-source-frame-'+phase+'-'+count+'-'+String(manual)+'-'+String(elapsed)
+@@
++        const u9008HkcsFootPolicy=reviewedU9008HkcsContactFootPolicy(u9008HkcsContactFootContext,stroke,index)
++        if(u9008HkcsFootPolicy)return <U9008HkcsContactFootOutline key={index} policy={u9008HkcsFootPolicy} progress={Number.isFinite(progress)?progress>=1?1:p:NaN} priorProgress={index>0?amounts[index-1]:0} clipId={id+'-'+stroke+'-'+index} logicalProgress={Number.isFinite(progress)?Math.max(0,Math.min(1,progress)):NaN} frameId={u9008HkcsRevealFrame}/>
++        const u9008HkcsSourcePolicy=reviewedU9008HkcsSourceRevealPolicy(u9008HkcsSourceRevealContext,stroke,index)
++        if(u9008HkcsSourcePolicy)return <U9008HkcsSourceRevealOutline key={index} policy={u9008HkcsSourcePolicy} segment={segment} progress={Number.isFinite(progress)?progress>=1?1:p:NaN} priorProgress={index>0?amounts[index-1]:0} clipId={id+'-'+stroke+'-'+index} logicalProgress={Number.isFinite(progress)?Math.max(0,Math.min(1,progress)):NaN} frameId={u9008HkcsRevealFrame}/>
+         const u5ac2LocalRevealPolicy=localU5ac2RevealPolicy(u5ac2LocalRevealContext,stroke,index)
+@@
+ }
++
++function U9008HkcsSourceRevealOutline({policy,segment,progress,priorProgress,logicalProgress,clipId,frameId}:{policy:ReviewedU9008HkcsSourceRevealPolicy;segment:HanjaOutlineSegment;progress:number;priorProgress:number;logicalProgress:number;clipId:string;frameId:string}){
++ const group=useRef<SVGGElement>(null),ink=useRef<SVGPathElement>(null),rect=useRef<SVGRectElement>(null),clipPath=useRef<SVGClipPathElement>(null)
++ useLayoutEffect(()=>{const result=commitReviewedU9008HkcsSourceReveal(policy,segment,progress,clipId,{group:group.current,ink:ink.current,rect:rect.current,clipPath:clipPath.current},priorProgress,logicalProgress,frameId);group.current?.setAttribute('data-u9008-hkcs-source-reveal-preview-guard-status',result.status);group.current?.setAttribute('data-u9008-hkcs-source-reveal-preview-guard-error',result.error??'');return result.cleanup},[policy,segment,progress,priorProgress,logicalProgress,clipId,frameId])
++ return <g ref={group} data-stroke-start-gate={policy.id} data-stroke-reveal-policy={policy.kind} data-stroke-reveal-progress={String(progress)} data-u9008-hkcs-source-reveal-clip={clipId} data-u9008-hkcs-source-reveal-fingerprint={policy.proofFingerprint} data-u9008-hkcs-source-reveal-prior-progress={String(priorProgress)} data-u9008-hkcs-source-reveal-logical-progress={String(logicalProgress)} data-u9008-hkcs-source-reveal-frame={frameId}><defs><clipPath ref={clipPath} id={clipId+'-u9008-hkcs-source-reveal-clip'} clipPathUnits="userSpaceOnUse"><rect ref={rect} x={policy.anchor[0]} y={policy.anchor[1]} width="0" height="0"/></clipPath></defs><path ref={ink} d={segment.outline} visibility="hidden"/></g>
++}
++function U9008HkcsContactFootOutline({policy,progress,priorProgress,logicalProgress,clipId,frameId}:{policy:ReviewedU9008HkcsContactFootPolicy;progress:number;priorProgress:number;logicalProgress:number;clipId:string;frameId:string}){
++ const group=useRef<SVGGElement>(null),ink=useRef<SVGPathElement>(null),foot=useRef<SVGPathElement>(null),body=useRef<SVGRectElement>(null),mask=useRef<SVGMaskElement>(null),measurement=useRef<SVGPathElement>(null)
++ useLayoutEffect(()=>{const result=commitReviewedU9008HkcsContactFoot(policy,progress,clipId,{group:group.current,ink:ink.current,foot:foot.current,body:body.current,mask:mask.current,measurement:measurement.current},priorProgress,logicalProgress,frameId);group.current?.setAttribute('data-u9008-hkcs-contact-foot-preview-guard-status',result.status);group.current?.setAttribute('data-u9008-hkcs-contact-foot-preview-guard-error',result.error??'');return result.cleanup},[policy,progress,priorProgress,logicalProgress,clipId,frameId])
++ return <g ref={group} data-stroke-start-gate={policy.id} data-stroke-reveal-policy={policy.kind} data-stroke-reveal-progress={String(progress)} data-u9008-hkcs-contact-foot-context="u9008-hkcs-original-10-contact-foot" data-u9008-hkcs-contact-foot-clip={clipId} data-u9008-hkcs-contact-foot-fingerprint={policy.proofFingerprint} data-u9008-hkcs-contact-foot-prior-progress={String(priorProgress)} data-u9008-hkcs-contact-foot-logical-progress={String(logicalProgress)} data-u9008-hkcs-contact-foot-frame={frameId}><defs><path ref={measurement} id={clipId+'-u9008-foot-measure'} d={policy.segment.revealPath??undefined} fill="none" stroke="none" visibility="hidden"/><mask ref={mask} id={clipId+'-u9008-foot-mask'} maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse" x="0" y="0" width="100" height="100" style={{maskType:'luminance'}}><path ref={foot} id={clipId+'-u9008-foot-foot'} d="" fill="white" stroke="none" fillRule="nonzero" visibility="hidden"/><rect ref={body} id={clipId+'-u9008-foot-body'} x={policy.segment.bounds[0]} y={policy.segment.bounds[1]} width="0" height={policy.segment.bounds[3]-policy.segment.bounds[1]} fill="white" stroke="none" fillRule="nonzero" visibility="hidden"/></mask></defs><path ref={ink} d={policy.segment.outline} mask={'url(#'+clipId+'-u9008-foot-mask)'} visibility="hidden"/></g>
++}
+*** End of File
+*** End Patch

@@ -81,14 +81,22 @@ function canonicalRectGeometry(owner:SVGSVGElement,doc:Document,view:Window,shap
  }finally{host.remove()}
 }
 /** New authored clock only: a strict union-kernel anchor plus nested convex rectangles containing it gives a star-shaped connected P intersection. This does not establish source-Q forward timing. This mask3 policy requires the exact previous mask2 full opaque in this actual owner/frame. */
+/** Source/owner projection only. The peer contact-foot's actual auxiliary paint is guarded by its own private policy. */
+function exactContactFootProjection(node:Element|undefined,id:string,amount:number,logical:number,frameId:string,owner:SVGSVGElement|null,doc:Document):boolean{
+ if(!node||node.localName!=='g'||!node.isConnected||node.ownerDocument!==doc||(node as SVGElement).ownerSVGElement!==owner||node.children.length!==2)return false
+ const prefix='data-u9008-hkcs-contact-foot-',segment=STROKES[9][1],defs=node.children[0],ink=node.children[1],measurement=defs?.children[0],mask=defs?.children[1],foot=mask?.children[0],body=mask?.children[1]
+ return node.getAttribute('data-stroke-start-gate')==='u9008-hkcs-contact-foot-10-2'&&node.getAttribute('data-stroke-reveal-policy')==='source-contact-foot-cubic-x-u9008-hkcs'&&node.getAttribute('data-stroke-reveal-progress')===String(amount)&&node.getAttribute(prefix+'context')==='u9008-hkcs-original-10-contact-foot'&&node.getAttribute(prefix+'clip')===id&&node.getAttribute(prefix+'fingerprint')==='87cf861aa60f1832f4731d18ff111a4a2d1877aab3a4f36d0b240d22fe1d7bad'&&node.getAttribute(prefix+'prior-progress')===String(outlineSegmentProgress(STROKES[9],logical)[0])&&node.getAttribute(prefix+'logical-progress')===String(logical)&&node.getAttribute(prefix+'frame')===frameId&&defs?.localName==='defs'&&defs.children.length===2&&measurement?.localName==='path'&&measurement.id===id+'-u9008-foot-measure'&&measurement.getAttribute('d')===segment.revealPath&&measurement.getAttribute('fill')==='none'&&measurement.getAttribute('stroke')==='none'&&measurement.getAttribute('visibility')==='hidden'&&mask?.localName==='mask'&&mask.id===id+'-u9008-foot-mask'&&mask.children.length===2&&[['maskUnits','userSpaceOnUse'],['maskContentUnits','userSpaceOnUse'],['x','0'],['y','0'],['width','100'],['height','100']].every(([k,v])=>mask.getAttribute(k)===v)&&foot?.localName==='path'&&foot.id===id+'-u9008-foot-foot'&&foot.getAttribute('fill')==='white'&&body?.localName==='rect'&&body.id===id+'-u9008-foot-body'&&body.getAttribute('fill')==='white'&&ink.localName==='path'&&ink.getAttribute('d')===segment.outline&&[null,'url(#'+id+'-u9008-foot-mask)'].includes(ink.getAttribute('mask'))&&!ink.hasAttribute('clip-path')
+}
 function projectedOwnerCount(policy:ReviewedU9008HkcsSourceRevealPolicy,p:number,prior:number,logical:number,g:SVGGElement|null,frameId:string):number|null{
  if(!g||!frameId||g.getAttribute(PREFIX+'frame')!==frameId||!Number.isFinite(logical)||logical<0||logical>1||g.getAttribute(PREFIX+'logical-progress')!==String(logical))return null
  const segments=STROKES[policy.pen-1],amounts=outlineSegmentProgress(segments,logical),target=policy.mask-1,slot=g.parentNode as SVGGElement|null,id=g.getAttribute(PREFIX+'clip')
  if(!slot||!id||!id.endsWith('-'+(policy.pen-1)+'-'+target)||amounts.length!==segments.length||amounts[target]!==p||(target?amounts[target-1]:0)!==prior)return null
- const indices=amounts.map((v,i)=>i===target||v>0?i:-1).filter(i=>i>=0)
+ const footId=id.slice(0,id.lastIndexOf('-')+1)+'1',footPeer=policy.pen===10&&policy.mask===1&&exactContactFootProjection(slot.children[1],footId,amounts[1],logical,frameId,g.ownerSVGElement,g.ownerDocument)
+ const indices=amounts.map((v,i)=>i===target||footPeer&&i===1||v>0?i:-1).filter(i=>i>=0)
  if(slot.children.length!==indices.length||slot.children[indices.indexOf(target)]!==g)return null
  for(let position=0;position<indices.length;position++){
   const i=indices[position];if(i===target)continue
+  if(footPeer&&i===1){if(!exactContactFootProjection(slot.children[position],footId,amounts[1],logical,frameId,g.ownerSVGElement,g.ownerDocument))return null;continue}
   const node:Element=slot.children[position],segment=segments[i],owner=g.ownerSVGElement
   if(!node||!node.isConnected||node.ownerDocument!==g.ownerDocument||(node as SVGElement).ownerSVGElement!==owner||node.parentNode!==slot)return null
   if(amounts[i]===1){if(node.localName!=='path'||node.getAttribute('d')!==segment.outline||['clip-path','mask','pathLength','stroke-dasharray','stroke-dashoffset'].some(k=>node.getAttribute(k)!==null))return null}
