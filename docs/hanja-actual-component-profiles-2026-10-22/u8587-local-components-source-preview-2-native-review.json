@@ -1,0 +1,42 @@
+{
+  "schema": "hanja-actual-component-native-review/v1",
+  "glyph": "薇",
+  "date": "2026-10-27",
+  "reviewer": "Codex ROOT native browser panel",
+  "profile": "docs/hanja-actual-component-profiles-2026-10-22/u8587-local-components-source-preview-2.json",
+  "profileSHA256": "6e552f0e6c9b1231d3a44a3090a58998e4a1ac8e4f168cfbfe5c5d330903e7c6",
+  "harnessSHA256": "bac04e0ea58b4311673c27201792f50697559c3fcdf6bcd010a9c00b94931d95",
+  "effectiveRAMComponentSHA256": "e9b9abd326f209efce35a1da74a8c7d04830779294e16750344da1946dddf4e0",
+  "pointModuleSHA256": "4b6e48fd1f46363d1ca69995f58b9cd1ae3733b7d184a6b650f0ae287f8fca25",
+  "productionComponentUnchangedSHA256": "cad462b4ebfa4aba4f186a1b1cfa0ef9ee0c3b1db4f1d84bf9deb86b93724bfe",
+  "reusedPrefixScenes": { "count": 36, "record": "u8587-local-components-source-preview-1-native-review.json", "condition": "Exact unchanged prefix module and materialized prefix JSX; not replayed" },
+  "pointObservations": {
+    "pen": 13,
+    "mask": 3,
+    "globalStart": 0.6740803754772878,
+    "globalFinish": 0.857406074418266,
+    "localSamplesRequested": [0,0.000001,0.25,0.5,0.75,1],
+    "theseSixScenes": "PASS: error/bad/guard arrays empty and no old curve-cap jump",
+    "additionalGlobalSamples": [0.6740803753772878,0.857406074318266,0.857406074518266,0.9,0.95,1],
+    "additionalFivePasses": "Upper boundary before/after and three terminal samples have empty error/bad/guard arrays; original terminal progressively rises up-right",
+    "remainingFailure": {
+      "requestedGlobal": 0.6740803753772878,
+      "actualLogicalProgressAttribute": "0.6740803753772868",
+      "actualMaskProgressAttribute": "0",
+      "actualPriorProgressAttribute": "0.9999999996645961",
+      "guardError": "Changed 薇 source/coordinates/rectangle",
+      "actualPenChildren": ["completed original H path","partial original V g containing defs and clipped path","hidden source-point g"],
+      "currentCurveVisible": false,
+      "scope": "Guard rejects the empty target immediately before the curve starts; does not establish a new geometry or direction defect"
+    },
+    "manualScenes": 12,
+    "additionalDOMDiagnostic": "One repeat of failed progress for public DOM metadata only, no extra screenshot approval"
+  },
+  "decision": "HOLD: derive all prior/future generic-mask presence and target slot from the exact current logical clock. Require completed opaque prior V only for positive current curve ink.",
+  "displaySize": 520,
+  "naturalPlaybackReviewed": false,
+  "screenshotsSaved": false,
+  "runtimeApplied": false,
+  "registered": false,
+  "countsUnchanged": { "applied": 5918, "remaining": 60 }
+}
