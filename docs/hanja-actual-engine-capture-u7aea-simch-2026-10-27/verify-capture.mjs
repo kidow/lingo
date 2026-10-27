@@ -1,0 +1,21 @@
+import assert from 'node:assert/strict'
+import {readFileSync} from 'node:fs'
+import {createHash} from 'node:crypto'
+const repo=new URL('../../',import.meta.url),read=p=>readFileSync(new URL(p,repo)),sha=x=>createHash('sha256').update(x).digest('hex')
+const c=JSON.parse(readFileSync(new URL('capture.json',import.meta.url)))
+assert.equal(sha(readFileSync(new URL('capture.json',import.meta.url))),'5409aa4f275f293a6ff24863571318cc972358f8b88d53bf89da13a6b810a61d')
+assert.equal(sha(read(c.source.path)),c.source.SHA256);assert.equal(sha(read(c.helper.path)),c.helper.SHA256);assert.equal(sha(read(c.helper.protocolSource)),c.helper.protocolSourceSHA256)
+assert.equal(sha(read(c.full5.path)),c.full5.SHA256)
+const f=JSON.parse(read(c.full5.path)),s=JSON.parse(read(c.source.path))
+for(const [n,r]of Object.entries(c.source.selectedOriginalRecords))assert.deepEqual(s.records[n],r)
+assert.deepEqual(Object.keys(f).sort(),c.full5.keys)
+assert.equal(f.groups.length,17);assert.equal(f.trace.flat().length,17);assert.equal(f.groups.flatMap(g=>g.polygons).length,30)
+assert.deepEqual(f.groups.map(g=>g.polygons),f.trace.map(row=>row.flatMap(call=>call.polygons)))
+assert.equal(sha(JSON.stringify(f.groups.flatMap(g=>g.polygons))),c.captureFacts.wholePolygonsSHA256)
+assert.deepEqual(f.engineHashes,c.engine.actualLoadedHashes);assert.equal(Object.keys(f.engineHashes).length,8)
+assert.equal(c.captureFacts.makeGlyphCalls,1);assert.equal(c.captureFacts.actualVMContexts,1);assert.equal(c.finiteEvidence.allActiveRawAndPCoordinatesFinite,true)
+assert.deepEqual(c.usedReferences,['simch-kx_t087217','u81e3-j@2','u7acb-04'])
+assert.equal(c.source.selectedOriginalRecords['u81e3-j'].version,'2')
+assert.equal(c.aliasInserted,false);assert.equal(c.sourceCoordinatesChanged,false);assert.equal(c.nativeApproval,false);assert.equal(c.runtimeApplied,false)
+assert(Object.values(c.approval).every(v=>v===false))
+console.log(JSON.stringify({result:'PASS-exact-capture-bindings-only',root:c.source.selectedFixedName,raw:17,calls:17,polygons:30,engineReexecuted:false,nativeApproval:false,runtimeApplied:false}))
