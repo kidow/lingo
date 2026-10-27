@@ -13,8 +13,11 @@ function calls(name:string){const out:ts.CallExpression[]=[];function walk(node:
 function jsx(name:string){const out:ts.JsxSelfClosingElement[]=[];function walk(node:ts.Node){if(ts.isJsxSelfClosingElement(node)&&node.tagName.getText(ast)===name)out.push(node);ts.forEachChild(node,walk)}walk(ast);assert.equal(out.length,1);return out[0]}
 function prop(node:ts.JsxSelfClosingElement,name:string){const p=node.attributes.properties.find(p=>ts.isJsxAttribute(p)&&p.name.getText(ast)===name);assert(p&&ts.isJsxAttribute(p)&&p.initializer&&ts.isJsxExpression(p.initializer)&&p.initializer.expression);return p.initializer.expression.getText(ast)}
 test('菰 production component is exactly the ROOT-reviewed actual-component RAM source',()=>{
- assert.equal(hash(source),'e753fbe759cbb66cb1ba6c107e164908e9d19a4a6b736645fa385a0e0dd832e5')
- assert(source.endsWith(delta.append));let original=source.slice(0,-delta.append.length)
+ assert.equal(hash(source),'cad462b4ebfa4aba4f186a1b1cfa0ef9ee0c3b1db4f1d84bf9deb86b93724bfe')
+ const next=JSON.parse(read('docs/hanja-source-original-u7aea-local-2026-10-27/preview-component-delta.json'));assert(source.endsWith(next.append));let reviewed=source.slice(0,-next.append.length)
+ for(const change of [...next.replacements].reverse()){assert.equal(reviewed.split(change.new).length,2);reviewed=reviewed.replace(change.new,()=>change.old)}
+ assert.equal(hash(reviewed),'e753fbe759cbb66cb1ba6c107e164908e9d19a4a6b736645fa385a0e0dd832e5')
+ assert(reviewed.endsWith(delta.append));let original=reviewed.slice(0,-delta.append.length)
  for(const change of [...delta.replacements].reverse()){assert.equal(original.split(change.new).length,2);original=original.replace(change.new,change.old)}
  assert.equal(hash(original),'00cdc93c5df5c48719ca0065dced3f68204abc88c1e1bc6e5ffd3a789b5fca75')
 })

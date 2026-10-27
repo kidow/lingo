@@ -1,5 +1,7 @@
 import {makeReviewedU83f0LocalPointWindowContext,reviewedU83f0LocalPointWindowPolicy,commitReviewedU83f0LocalPointWindow,type ReviewedU83f0LocalPointWindowPolicy} from '@/lib/hanja-stroke-source-point-windows-u83f0-local'
 import {makeLocalU83f0SourcePrefixContext,LOCAL_U83F0_SOURCE_PREFIX_INPUT,localU83f0SourcePrefixPolicy,commitLocalU83f0SourcePrefix,type LocalU83f0SourcePrefixPolicy} from '@/lib/hanja-stroke-source-prefix-u83f0-local'
+import {makeReviewedU7aeaLocalHeadTailContext,reviewedU7aeaLocalHeadTailPolicy,commitReviewedU7aeaLocalHeadTail,type ReviewedU7aeaLocalHeadTailPolicy} from '@/lib/hanja-stroke-source-head-tail-u7aea-local'
+import {makeLocalU7aeaSourcePrefixContext,LOCAL_U7AEA_SOURCE_PREFIX_INPUT,localU7aeaSourcePrefixPolicy,commitLocalU7aeaSourcePrefix,type LocalU7aeaSourcePrefixPolicy} from '@/lib/hanja-stroke-source-prefix-u7aea-local'
 import {makeReviewedU5a93StartsContext,REVIEWED_U5A93_STARTS_INPUT,reviewedU5a93StartsPolicy,commitReviewedU5a93Starts,type ReviewedU5a93StartsPolicy} from '@/lib/hanja-stroke-source-starts-u5a93'
 import {makeReviewedU5a93FirstPrefixContext,REVIEWED_U5A93_FIRST_PREFIX_INPUT,reviewedU5a93FirstPrefixPolicy,commitReviewedU5a93FirstPrefix,type ReviewedU5a93FirstPrefixPolicy} from '@/lib/hanja-stroke-source-prefix-u5a93-first'
 import {makeReviewedU83f0KSourceWindow10Context,REVIEWED_U83F0_K_SOURCE_WINDOW10_INPUT,reviewedU83f0KSourceWindow10Policy,commitReviewedU83f0KSourceWindow10,type ReviewedU83f0KSourceWindow10Policy} from '@/lib/hanja-stroke-source-window-u83f0-k-10'
@@ -661,6 +663,9 @@ export function StrokeOutlines({ strokes, clock, phase, count, manual }: {
  const u83f0LocalPointContext=makeReviewedU83f0LocalPointWindowContext(LOCAL_U83F0_SOURCE_PREFIX_INPUT.fullProof,LOCAL_U83F0_SOURCE_PREFIX_INPUT.identity,strokes)
  const u83f0LocalPrefixContext=makeLocalU83f0SourcePrefixContext(LOCAL_U83F0_SOURCE_PREFIX_INPUT.fullProof,LOCAL_U83F0_SOURCE_PREFIX_INPUT.identity,strokes)
  const u83f0LocalPrefixFrame=id+'-u83f0-local-prefix-frame-'+phase+'-'+count+'-'+String(manual)+'-'+String(elapsed)
+ const u7aeaLocalPointContext=makeReviewedU7aeaLocalHeadTailContext(LOCAL_U7AEA_SOURCE_PREFIX_INPUT.fullProof,LOCAL_U7AEA_SOURCE_PREFIX_INPUT.identity,strokes)
+ const u7aeaLocalPrefixContext=makeLocalU7aeaSourcePrefixContext(LOCAL_U7AEA_SOURCE_PREFIX_INPUT.fullProof,LOCAL_U7AEA_SOURCE_PREFIX_INPUT.identity,strokes)
+ const u7aeaLocalPrefixFrame=id+'-u7aea-local-prefix-frame-'+phase+'-'+count+'-'+String(manual)+'-'+String(elapsed)
  const u5a93FirstPreviewFrame=id+'-first-prefix-frame-'+phase+'-'+count+'-'+String(manual)+'-'+String(elapsed)
  const u83f0KPreviewContext=makeReviewedU83f0KSourceWindow10Context(REVIEWED_U83F0_K_SOURCE_WINDOW10_INPUT.fullProof,REVIEWED_U83F0_K_SOURCE_WINDOW10_INPUT.identity,strokes)
  const u83f0KPreviewFrame=id+'-preview-frame-'+phase+'-'+count+'-'+String(manual)+'-'+String(elapsed)
@@ -746,6 +751,8 @@ export function StrokeOutlines({ strokes, clock, phase, count, manual }: {
         : (elapsed - stroke * (STROKE_DURATION + STROKE_GAP)) / STROKE_DURATION
       const u83f0LocalPrefixPolicy=localU83f0SourcePrefixPolicy(u83f0LocalPrefixContext,stroke)
       if(u83f0LocalPrefixPolicy)return <U83f0LocalPrefixPreviewOutline key={stroke} policy={u83f0LocalPrefixPolicy} segments={segments} progress={Number.isFinite(progress)?Math.max(0,Math.min(1,progress)):NaN} frameId={u83f0LocalPrefixFrame} clipIds={segments.map((_,index)=>id+'-'+stroke+'-'+index)}/>
+      const u7aeaLocalPrefixPolicy=localU7aeaSourcePrefixPolicy(u7aeaLocalPrefixContext,stroke)
+      if(u7aeaLocalPrefixPolicy)return <U7aeaLocalPrefixPreviewOutline key={stroke} policy={u7aeaLocalPrefixPolicy} segments={segments} progress={Number.isFinite(progress)?Math.max(0,Math.min(1,progress)):NaN} frameId={u7aeaLocalPrefixFrame} clipIds={segments.map((_,index)=>id+'-'+stroke+'-'+index)}/>
       const amounts = outlineSegmentProgress(segments, progress)
       const u5a93FirstPreviewPolicy=reviewedU5a93FirstPrefixPolicy(u5a93FirstPreviewContext,stroke)
       if(u5a93FirstPreviewPolicy)return <U5a93FirstPreviewOutline key={stroke} policy={u5a93FirstPreviewPolicy} segments={segments} progress={Number.isFinite(progress)?Math.max(0,Math.min(1,progress)):NaN} frameId={u5a93FirstPreviewFrame} clipIds={[id+'-0-0',id+'-0-1']}/>
@@ -759,6 +766,8 @@ export function StrokeOutlines({ strokes, clock, phase, count, manual }: {
       if(u840dHkcsLogical7Policy)return <g key={stroke} data-outline-stroke={stroke+1}><U840dHkcsLogical7Outline policy={u840dHkcsLogical7Policy} segments={segments} progress={Number.isFinite(progress)?Math.max(0,Math.min(1,progress)):NaN} clipId={id+'-'+stroke+'-u840d'}/></g>
       return <g key={stroke} data-outline-stroke={stroke + 1} data-u83f0-k-source-window10-owner={u83f0KPreviewContext&&stroke===9?id+'-'+stroke+'-1-owner':undefined} data-u8609-fold-owner={u8609SourceContexts&&[5,13].includes(stroke)?id+'-u8609-fold-'+(stroke+1):undefined} data-u8609-fold-pen={u8609SourceContexts&&[5,13].includes(stroke)?String(stroke+1):undefined} data-u8b92-prior14-owner={u8b92HkcsContext&&stroke===13?id+'-u8b92-prior14':undefined} data-u8b92-prior14-pen={u8b92HkcsContext&&stroke===13?'14':undefined}>{segments.map((segment, index) => {
         const p = amounts[index]
+        const u7aeaLocalPointPolicy=reviewedU7aeaLocalHeadTailPolicy(u7aeaLocalPointContext,stroke,index)
+        if(u7aeaLocalPointPolicy)return <U7aeaLocalHeadTailOutline key={index} policy={u7aeaLocalPointPolicy} segment={segment} progress={Number.isFinite(progress)?progress>=1?1:p:NaN} priorProgress={index>0?amounts[index-1]:0} clipId={id+'-'+stroke+'-'+index} frameId={u7aeaLocalPrefixFrame}/>
         const u83f0LocalPointPolicy=reviewedU83f0LocalPointWindowPolicy(u83f0LocalPointContext,stroke,index)
         if(u83f0LocalPointPolicy)return <U83f0LocalPointWindowOutline key={index} policy={u83f0LocalPointPolicy} segment={segment} progress={Number.isFinite(progress)?progress>=1?1:p:NaN} priorProgress={index>0?amounts[index-1]:0} clipId={id+'-'+stroke+'-'+index} frameId={u83f0LocalPrefixFrame}/>
         const u7443GWindowPolicy=reviewedU7443GSourceWindowPolicy(u7443GContext,stroke,index)
@@ -11667,4 +11676,19 @@ function U83f0LocalPointWindowOutline({policy,segment,progress,priorProgress,cli
  const group=useRef<SVGGElement>(null),ink=useRef<SVGPathElement>(null),rect=useRef<SVGRectElement>(null),clip=useRef<SVGClipPathElement>(null)
  useLayoutEffect(()=>{const result=commitReviewedU83f0LocalPointWindow(policy,segment,progress,clipId,{group:group.current,ink:ink.current,rect:rect.current,clipPath:clip.current},priorProgress);group.current?.setAttribute('data-u83f0-local-preview-guard-status',result.status);group.current?.setAttribute('data-u83f0-local-preview-guard-error',result.error??'');return result.cleanup},[policy,segment,progress,priorProgress,clipId,frameId])
  return <g ref={group} data-stroke-start-gate={policy.id} data-stroke-reveal-policy={policy.kind} data-stroke-reveal-progress={String(progress)} data-u83f0-local-source-window-clip={clipId} data-u83f0-local-source-window-fingerprint={policy.proofFingerprint} data-u83f0-local-source-window-prior-progress={String(priorProgress)}><defs><clipPath ref={clip} id={clipId+'-u83f0-local-source-window-clip'} clipPathUnits="userSpaceOnUse"><rect ref={rect} x={policy.anchor[0]} y={policy.anchor[1]} width="0" height="0"/></clipPath></defs><path ref={ink} d={segment.outline} visibility="hidden"/></g>
+}
+
+function U7aeaLocalPrefixPreviewOutline({policy,segments,progress,frameId,clipIds}:{policy:LocalU7aeaSourcePrefixPolicy;segments:readonly HanjaOutlineSegment[];progress:number;frameId:string;clipIds:readonly string[]}){
+ const groups=useRef<(SVGGElement|null)[]>([]),inks=useRef<(SVGPathElement|null)[]>([]),rects=useRef<(SVGRectElement|null)[]>([]),clips=useRef<(SVGClipPathElement|null)[]>([])
+ useLayoutEffect(()=>{const result=commitLocalU7aeaSourcePrefix(policy,segments,progress,clipIds,segments.map((_,i)=>({group:groups.current[i],ink:inks.current[i],rect:rects.current[i],clipPath:clips.current[i]})));const slot=groups.current[0]?.parentElement;slot?.setAttribute('data-u7aea-local-preview-guard-status',result.status);slot?.setAttribute('data-u7aea-local-preview-guard-error',result.status==='hidden'?result.error:'');return result.cleanup},[policy,segments,progress,frameId,clipIds.join('|')])
+ return <g data-outline-stroke={String(policy.pen)} data-u7aea-local-prefix-frame={frameId} data-u7aea-local-prefix-progress={String(progress)}>{segments.map((segment,index)=><g key={index} ref={node=>{groups.current[index]=node}} data-stroke-start-gate={policy.id} data-stroke-reveal-policy={policy.kind} data-stroke-reveal-progress={String(progress)} data-u7aea-local-prefix-mask={String(index+1)} data-u7aea-local-prefix-clip={clipIds[index]} data-u7aea-local-prefix-fingerprint={policy.proofFingerprint} data-u7aea-local-prefix-frame={frameId} data-u7aea-local-prefix-source-guide={segment.revealPath??''} data-u7aea-local-prefix-source-weight={String(segment.weight)} data-u7aea-local-prefix-author-clock="source-author-common-axis-prefix" data-u7aea-local-prefix-original-clock-equivalent="false">
+  <defs><clipPath ref={node=>{clips.current[index]=node}} id={clipIds[index]+'-u7aea-local-prefix-clip'} clipPathUnits="userSpaceOnUse"><rect ref={node=>{rects.current[index]=node}} x={0} y={0} width={0} height={0}/></clipPath></defs>
+  <path ref={node=>{inks.current[index]=node}} data-u7aea-local-prefix-ink="true" d={segment.outline} fillRule="nonzero" clipPath={progress===1?undefined:'url(#'+clipIds[index]+'-u7aea-local-prefix-clip)'} visibility="hidden"/>
+ </g>)}</g>
+}
+
+function U7aeaLocalHeadTailOutline({policy,segment,progress,priorProgress,clipId,frameId}:{policy:ReviewedU7aeaLocalHeadTailPolicy;segment:HanjaOutlineSegment;progress:number;priorProgress:number;clipId:string;frameId:string}){
+ const group=useRef<SVGGElement>(null),ink=useRef<SVGPathElement>(null),rect=useRef<SVGRectElement>(null),clip=useRef<SVGClipPathElement>(null)
+ useLayoutEffect(()=>{const result=commitReviewedU7aeaLocalHeadTail(policy,segment,progress,clipId,{group:group.current,ink:ink.current,rect:rect.current,clipPath:clip.current},priorProgress);group.current?.setAttribute('data-u7aea-local-preview-guard-status',result.status);group.current?.setAttribute('data-u7aea-local-preview-guard-error',result.error??'');return result.cleanup},[policy,segment,progress,priorProgress,clipId,frameId])
+ return <g ref={group} data-stroke-start-gate={policy.id} data-stroke-reveal-policy={policy.kind} data-stroke-reveal-progress={String(progress)} data-u7aea-local-head-tail-clip={clipId} data-u7aea-local-head-tail-fingerprint={policy.proofFingerprint} data-u7aea-local-head-tail-prior-progress={String(priorProgress)}><defs><clipPath ref={clip} id={clipId+'-u7aea-local-head-tail-clip'} clipPathUnits="userSpaceOnUse"><rect ref={rect} x={policy.anchor[0]} y={policy.anchor[1]} width="0" height="0"/></clipPath></defs><path ref={ink} d={segment.outline} visibility="hidden"/></g>
 }
