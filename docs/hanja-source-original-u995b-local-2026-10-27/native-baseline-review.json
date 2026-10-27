@@ -1,0 +1,40 @@
+{
+  "schema": "hanja-native-baseline-review/v1",
+  "glyph": "饛",
+  "date": "2026-10-27",
+  "root": "lingo-u995b-no-extra-v1",
+  "browser": "Codex in-app browser",
+  "tab": "41",
+  "profile": "docs/hanja-actual-component-profiles-2026-10-22/u995b-local-no-extra-baseline-1.json",
+  "profileSHA256": "999f3645d7439540e70babee02ed2502485c02a8d16088c95be9e735891d716b",
+  "helperSHA256": "47e8cef719fe0981153a6f364843def894e3749bc86c80ed5775a5d0441ebe0e",
+  "rendererSHA256": "e9b9abd326f209efce35a1da74a8c7d04830779294e16750344da1946dddf4e0",
+  "fixtureSHA256": "43c5479209823cc8d6a908098a56cb3ff18eb2d273f4e274c9011f821a4319b0",
+  "displaySize": 520,
+  "mainFrames": 58,
+  "initialFrames": {"pens": [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23], "progress": [0,0.000001], "count": 46},
+  "compoundFrames": [
+    {"pen":4,"boundary":0.46843853820598,"offsets":[-1e-10,0,1e-10]},
+    {"pen":15,"boundary":0.7578107926781584,"offsets":[-1e-10,0,1e-10]},
+    {"pen":19,"boundary":0.7941805908668362,"offsets":[-1e-10,0,1e-10]}
+  ],
+  "additionalFrames": [{"pen":19,"progress":0.9},{"pen":19,"progress":1},{"pen":23,"progress":1}],
+  "errors": [],
+  "badChecks": [],
+  "observations": {
+    "initialFiniteJumpPens": [1,2,14,18,19,20,21,22,23],
+    "initialJumpMayTouchPriorInk": true,
+    "pen15Mask2": "Finite roof-hook head appears immediately after boundary; correction required.",
+    "pen19Mask2": "Finite bottom knob appears immediately after boundary. At .9 the terminal extends left; at 1 original terminal is complete. Both masks are Q curves.",
+    "pen4Mask2": "No conspicuous finite jump at the three sampled boundary frames. This is limited visual evidence, not approval of all progress values.",
+    "wholeComplete": "Broad completed shape intact; no newly missing structure observed.",
+    "auxiliary": "One pen1 compact9 grid inspected at 150px; not counted among 58 main frames. Old sample grid remained below main frame and was not used as current-pen evidence."
+  },
+  "result": "hold-for-source-preserving-reveal-corrections",
+  "originalClockIdentityApproved": false,
+  "nativeAnimationApproved": false,
+  "actualAppUIApproved": false,
+  "registered": false,
+  "buildRun": false,
+  "fullTypeCheckRun": false
+}
