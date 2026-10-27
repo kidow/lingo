@@ -9,7 +9,7 @@ const ROOT=resolve(dirname(fileURLToPath(import.meta.url)),'..'),req=createRequi
 const args=process.argv.slice(2),option=n=>{const i=args.indexOf(n);assert(i>=0&&i+1<args.length,'Missing '+n);return args[i+1];};
 if(args.includes('--help')){console.log('node scripts/hanja-actual-component-review.mjs --profile docs/hanja-actual-component-profiles-2026-10-22/u928d.json --profile-sha HEX [--check-new | --port PORT]');process.exit(0);}
 const profilePath=option('--profile'),profileSHA=option('--profile-sha');
-assert(/^docs\/hanja-actual-component-profiles-2026-10-22\/u[0-9a-f-]+\.json$/.test(profilePath)||profilePath==='docs/hanja-actual-component-profiles-2026-10-22/u83f0-local-components-baseline-1.json'||profilePath==='docs/hanja-actual-component-profiles-2026-10-22/u83f0-local-components-source-preview-1.json'||profilePath==='docs/hanja-actual-component-profiles-2026-10-22/u83f0-local-components-source-preview-2.json'||profilePath==='docs/hanja-actual-component-profiles-2026-10-22/u7aea-local-no-extra-baseline-1.json'||profilePath==="docs/hanja-actual-component-profiles-2026-10-22/u83f0-k-1.json"||profilePath==='docs/hanja-actual-component-profiles-2026-10-22/u7e86-contact-foot.json'||['docs/hanja-actual-component-profiles-2026-10-22/u84d1-hkcs-1.json','docs/hanja-actual-component-profiles-2026-10-22/u84d1-hkcs-2.json','docs/hanja-actual-component-profiles-2026-10-22/u5ebe-ue0102-1.json','docs/hanja-actual-component-profiles-2026-10-22/u8adb-ue0101-1.json','docs/hanja-actual-component-profiles-2026-10-22/u8adb-ue0101-2.json','docs/hanja-actual-component-profiles-2026-10-22/u6b0c-var-001-2.json','docs/hanja-actual-component-profiles-2026-10-22/u6b0c-var-001-1.json','docs/hanja-actual-component-profiles-2026-10-22/u82d4-k-1.json','docs/hanja-actual-component-profiles-2026-10-22/u82d4-k-2.json','docs/hanja-actual-component-profiles-2026-10-22/u8438-k-1.json','docs/hanja-actual-component-profiles-2026-10-22/u8438-k-2.json','docs/hanja-actual-component-profiles-2026-10-22/u85a9-hkcs-1.json','docs/hanja-actual-component-profiles-2026-10-22/u9ad3-hkcs-1.json','docs/hanja-actual-component-profiles-2026-10-22/u85a9-hkcs-2.json','docs/hanja-actual-component-profiles-2026-10-22/u85a9-hkcs-3.json','docs/hanja-actual-component-profiles-2026-10-22/u7626-hkcs-1.json','docs/hanja-actual-component-profiles-2026-10-22/u7626-hkcs-2.json','docs/hanja-actual-component-profiles-2026-10-22/u9ad3-hkcs-2.json'].includes(profilePath));assert(/^[0-9a-f]{64}$/.test(profileSHA));
+assert(/^docs\/hanja-actual-component-profiles-2026-10-22\/u[0-9a-f-]+\.json$/.test(profilePath)||profilePath==='docs/hanja-actual-component-profiles-2026-10-22/u83f0-local-components-baseline-1.json'||profilePath==='docs/hanja-actual-component-profiles-2026-10-22/u83f0-local-components-source-preview-1.json'||profilePath==='docs/hanja-actual-component-profiles-2026-10-22/u83f0-local-components-source-preview-2.json'||profilePath==='docs/hanja-actual-component-profiles-2026-10-22/u83f0-local-components-source-preview-3.json'||profilePath==='docs/hanja-actual-component-profiles-2026-10-22/u7aea-local-no-extra-baseline-1.json'||profilePath==="docs/hanja-actual-component-profiles-2026-10-22/u83f0-k-1.json"||profilePath==='docs/hanja-actual-component-profiles-2026-10-22/u7e86-contact-foot.json'||['docs/hanja-actual-component-profiles-2026-10-22/u84d1-hkcs-1.json','docs/hanja-actual-component-profiles-2026-10-22/u84d1-hkcs-2.json','docs/hanja-actual-component-profiles-2026-10-22/u5ebe-ue0102-1.json','docs/hanja-actual-component-profiles-2026-10-22/u8adb-ue0101-1.json','docs/hanja-actual-component-profiles-2026-10-22/u8adb-ue0101-2.json','docs/hanja-actual-component-profiles-2026-10-22/u6b0c-var-001-2.json','docs/hanja-actual-component-profiles-2026-10-22/u6b0c-var-001-1.json','docs/hanja-actual-component-profiles-2026-10-22/u82d4-k-1.json','docs/hanja-actual-component-profiles-2026-10-22/u82d4-k-2.json','docs/hanja-actual-component-profiles-2026-10-22/u8438-k-1.json','docs/hanja-actual-component-profiles-2026-10-22/u8438-k-2.json','docs/hanja-actual-component-profiles-2026-10-22/u85a9-hkcs-1.json','docs/hanja-actual-component-profiles-2026-10-22/u9ad3-hkcs-1.json','docs/hanja-actual-component-profiles-2026-10-22/u85a9-hkcs-2.json','docs/hanja-actual-component-profiles-2026-10-22/u85a9-hkcs-3.json','docs/hanja-actual-component-profiles-2026-10-22/u7626-hkcs-1.json','docs/hanja-actual-component-profiles-2026-10-22/u7626-hkcs-2.json','docs/hanja-actual-component-profiles-2026-10-22/u9ad3-hkcs-2.json'].includes(profilePath));assert(/^[0-9a-f]{64}$/.test(profileSHA));
 const bytes=fs.readFileSync(resolve(ROOT,profilePath));assert.equal(sha(bytes),profileSHA,'Profile changed');const C=JSON.parse(bytes);
 assert.equal(C.schema,'hanja-actual-component-profile/v1');assert(["source-reviewed-starts-u5a93","source-preview-starts-u5a93","source-preview-first-prefix-u5a93","source-preview-window-u83f0-k-10","source-point-window-u655d","source-point-window-u7c67-18","source-point-window-u7443-g","growing-u85c7-hkcs-caps","growing-u6145-hkcs-caps","growing-u8609-hkcs-caps","growing-u5e6a-hkcs-caps","growing-u8b92-hkcs-caps","growing-u8627-caps","source-logical3-u705d-hkcs-m","source-logical3-u6fe9-hkcs-m","growing-u5aa4g-caps","growing-u59b5g-caps","growing-u56acg-caps","growing-u8543t-caps","source-logical7-u840d-hkcs","growing-u5767-hkcs-caps","growing-u4e77g-caps","growing-u585a-caps","growing-u83bd-t-caps","growing-u61b8-hkcs-caps","growing-u5ebe-caps","growing-u846f-hkcs-caps","growing-u85ff-koseki-368300-caps","growing-u7228-caps","growing-u596b-k-caps","growing-u902d-caps","growing-u5dd1-caps","growing-u6b0c-var-001-caps","growing-u6583-caps", "growing-u703c-caps","growing-u6f0c-caps","growing-u82d4-k-caps","growing-u8adb-ue0101-caps","growing-u6970-caps","growing-u7681-j-caps","growing-u8910-caps","growing-u83f1-caps","growing-u7626-hkcs-caps","growing-u9ad3-hkcs-caps","growing-u85a9-hkcs-caps","growing-u9f08-caps","growing-u8438-k-caps","growing-u84d1-hkcs-caps","growing-u7049-caps","growing-u95e5-caps","growing-u852d-k-caps","growing-u8aed-k-caps","growing-u9d25-caps","growing-u6d8f-caps","growing-u8fe8-caps","growing-u6f11-caps","growing-u6f7e-caps","growing-u7e81-caps","growing-u9436-caps","growing-u66c1-caps","growing-u64c4-k-caps","growing-u704c-ue0102-caps","growing-u7006-caps","growing-u9ae7-caps","growing-u8407-ue0102-caps","growing-u8596-ue0100-caps","growing-u9088-k-caps","growing-u9004-caps","growing-u8646-k-caps","growing-u7e9a-caps","growing-u7e91-caps","growing-u64ce-ue0102-caps","growing-u8ff2-k-caps","growing-u7e2d-caps","growing-u99fe-caps","growing-u6f5a-caps","growing-u6f5d-caps","growing-u67b2-caps","growing-u802d-k-caps","growing-u78ce-k-caps","growing-u6fbe-k-caps","growing-u6e3c-k-caps","growing-u98e1-k-caps",'growing-u7d7f-k-caps','growing-u6f62-k-caps','growing-u6fae-k-caps','growing-u6726-vs2-caps','growing-u7bd2-caps','growing-u890a-vs1-caps','growing-u890a-caps','growing-u7e7e-caps','growing-u8927-caps','growing-u7367-caps','growing-u7d8c-caps','growing-u6705-caps','growing-u995f-caps','growing-u61f0-caps','growing-u7e58-caps','growing-u7c67-caps','growing-u727c-caps','growing-u785c-caps','growing-u6f90-caps','growing-u7cbb-caps','contact-foot-x-u90b0','contact-foot-axis-u7d3d','source-foot-x-u9e80','source-foot','plain-outline','mixed-u84b2','source-foot-x-u7d70','contact-foot-x-u7e1d','contact-foot-x-u7e86','contact-foot-x-u73b9','contact-foot-x-u795b','contact-foot-x-u686d','contact-foot-x-u96ae','contact-foot-x-u7a67','source-cap-u85af','cardinal-contact-prefix-u68b4','mixed-u7d8e','source-reuse-u7dc5','growing-u51d7-caps','growing-u6f68-caps','growing-u6e4c-caps','growing-u568c-caps','growing-u61e0-caps','growing-u85fb-k-caps','growing-u8810-caps','growing-u97d4-caps','growing-u61e5-caps' ,'growing-u906d-k-caps','growing-u9b4b-caps','growing-u7043-caps','growing-u7050-caps','growing-u7e36-caps','growing-u84eb-caps','growing-u93a1-caps','growing-u7e10-caps','growing-u5b76-caps','mixed-u8629','growing-u9654-caps','growing-u5092-caps'].includes(C.kind));assert.equal(C.actualAppUI,false);assert.equal(C.runtimeApplied,false);
 assert.equal(sha(fs.readFileSync(fileURLToPath(import.meta.url))),C.adapterSHA256,'Adapter changed');
@@ -35,7 +35,7 @@ function plainU7aeaLocalNoExtraBaselineFixture(config,fixture){
 }
 
 function plainU83f0LocalComponentsBaselineFixture(config,fixture){
- const sourcePreview=config.previewComponentAdapter==='u83f0-local-source-preview-1';if(sourcePreview)assert(['docs/hanja-actual-component-profiles-2026-10-22/u83f0-local-components-source-preview-1.json','docs/hanja-actual-component-profiles-2026-10-22/u83f0-local-components-source-preview-2.json'].includes(profilePath));else assert.equal(profilePath,'docs/hanja-actual-component-profiles-2026-10-22/u83f0-local-components-baseline-1.json');
+ const sourcePreview=config.previewComponentAdapter==='u83f0-local-source-preview-1';if(sourcePreview)assert(['docs/hanja-actual-component-profiles-2026-10-22/u83f0-local-components-source-preview-1.json','docs/hanja-actual-component-profiles-2026-10-22/u83f0-local-components-source-preview-2.json','docs/hanja-actual-component-profiles-2026-10-22/u83f0-local-components-source-preview-3.json'].includes(profilePath));else assert.equal(profilePath,'docs/hanja-actual-component-profiles-2026-10-22/u83f0-local-components-baseline-1.json');
  if(sourcePreview){assert.deepEqual(config.previewTargets.map(t=>t.id),['u83f0-local-point-window-5-2','u83f0-local-point-window-6-2','u83f0-local-point-window-7-1','u83f0-local-source-prefix-8','u83f0-local-source-prefix-9','u83f0-local-point-window-10-2','u83f0-local-source-prefix-11','u83f0-local-source-prefix-12']);}
  assert.deepEqual([config.kind,config.glyph,config.root,config.fixtureKey],['plain-outline','菰','lingo-u83f0-components-v1','u83f0.strokes']);
  assert.deepEqual(config.attrs,{});assert.deepEqual(config.targets,[]);assert.equal(config.target,null);
@@ -590,6 +590,7 @@ import {D,G} from '/timing.mjs';
 const F=await(await fetch('/fixture.json')).json(),C=F.profile,{strokes}=F,A=C.attrs;let T=C.targets?.[0]||C.target||{pen:1};
 const U83f0LocalPrefixRuntime=C.previewComponentAdapter==='u83f0-local-source-preview-1'?await import('@/lib/hanja-stroke-source-prefix-u83f0-local'):null;
 const U83f0LocalPointRuntime=C.previewComponentAdapter==='u83f0-local-source-preview-1'?await import('@/lib/hanja-stroke-source-point-windows-u83f0-local'):null;
+const U83f0LocalOutlineRuntime=C.previewComponentAdapter==='u83f0-local-source-preview-1'?await import('@/lib/hanja-stroke-outline'):null;
 const U705dHkcsMRuntime=C.kind==='source-logical3-u705d-hkcs-m'?await Promise.all([import('@/lib/hanja-stroke-start-caps-u705d-hkcs-m'),import('@/lib/hanja-stroke-cardinal-contact-u705d-hkcs-m'),import('@/lib/hanja-stroke-logical3-u705d-hkcs-m')]):null;
 const U6fe9HkcsMRuntime=C.kind==='source-logical3-u6fe9-hkcs-m'?await import('@/lib/hanja-stroke-logical3-u6fe9-hkcs-m'):null;
 const U840dHkcsRuntime=C.kind==='source-logical7-u840d-hkcs'?await import('@/lib/hanja-stroke-logical7-u840d-hkcs'):null;
@@ -652,6 +653,37 @@ const oldError=console.error;console.error=(...x)=>{errors.push(x.map(String).jo
 const number=(n,k)=>{const v=n?.getAttribute(k);return v===null||v===undefined||v.trim()===''?null:Number(v);};
 const attributes=n=>n?Object.fromEntries([...n.attributes].map(a=>[a.name,a.value])):null;
 
+
+const u83f0LocalSourceRenderInputs=new WeakMap();
+function u83f0LocalExpectedMaskProgress(svg,pen,mask){
+ const input=u83f0LocalSourceRenderInputs.get(svg);if(!input)return null;
+ const frame=Object.freeze({phase:input.phase,count:input.count,manual:input.manual,elapsed:Number(input.clock.current?.[0]?.currentTime??0)});
+ const logical=frame.phase==='idle'||frame.phase==='done'?1:frame.manual?(pen-1<frame.count?1:0):(frame.elapsed-(pen-1)*(D+G))/D;
+ if(!Number.isFinite(logical))return null;
+ const amounts=U83f0LocalOutlineRuntime.outlineSegmentProgress(strokes[pen-1],logical);
+ return Object.freeze({frame,logicalProgress:logical,maskProgress:amounts[mask-1],actualRenderInputBound:true});
+}
+
+function u83f0LocalCanonicalRectGeometry(owner,doc,view,shape){
+ const host=doc.createElementNS('http://www.w3.org/2000/svg','g'),probe=doc.createElementNS('http://www.w3.org/2000/svg','rect'),keys=['x','y','width','height']
+ const neutral={display:'inline',visibility:'hidden',opacity:'0',fill:'none',stroke:'none',transform:'none',filter:'none','clip-path':'none','mask-image':'none',translate:'none',rotate:'none',scale:'none',animation:'none',transition:'none'}
+ for(const node of[host,probe])for(const[k,v]of Object.entries(neutral))node.style.setProperty(k,v,'important')
+ for(const k of keys){probe.setAttribute(k,String(shape[k]));probe.style.setProperty(k,String(shape[k])+'px','important')}
+ const inline=new Map(keys.map(k=>[k,probe.style.getPropertyValue(k)]))
+ host.appendChild(probe)
+ try{
+  owner.appendChild(host)
+  const exact=()=>host.parentNode===owner&&probe.parentNode===host&&host.children.length===1&&host.children[0]===probe&&host.ownerSVGElement===owner&&probe.ownerSVGElement===owner&&host.ownerDocument===doc&&probe.ownerDocument===doc&&host.isConnected&&probe.isConnected&&doc.defaultView===view&&view.document===doc&&keys.every(k=>probe.getAttribute(k)===String(shape[k])&&probe.style.getPropertyPriority(k)==='important'&&inline.get(k)!==''&&probe.style.getPropertyValue(k)===inline.get(k))
+  if(!exact())throw Error('Connected isolated canonical SVG rectangle required')
+  for(const node of[host,probe]){
+   const style=view.getComputedStyle(node)
+   if(style.display==='none'||style.visibility!=='hidden'||Number(style.opacity)!==0||style.fill!=='none'||style.stroke!=='none'||style.transform!=='none'||style.filter!=='none'||style.clipPath!=='none'||!['','none'].includes(style.getPropertyValue('mask-image'))||['translate','rotate','scale'].some(k=>!['','none'].includes(style.getPropertyValue(k))))throw Error('Canonical rectangle probe must have no paint or effects')
+  }
+  const computed=view.getComputedStyle(probe),css=new Map(keys.map(k=>[k,computed.getPropertyValue(k)])),b=probe.getBBox(),bounds={x:b.x,y:b.y,width:b.width,height:b.height}
+  if([...css.values()].some(v=>!v.endsWith('px')||!Number.isFinite(Number(v.slice(0,-2))))||!Object.values(bounds).every(Number.isFinite)||(shape.width>0&&shape.height>0&&(bounds.width<=0||bounds.height<=0))||!exact())throw Error('Finite noncollapsed browser-canonical rectangle required')
+  return{css,bounds}
+ }finally{host.remove()}
+}
 function u83f0LocalSourcePreviewState(host){
  const base=plainState(host,true),targets=[],guardErrors=[],bad=[...base.bad],svg=host?.querySelector('svg');
  const fail=(id,message)=>{guardErrors.push(id+':'+message);bad.push(id+':'+message);};
@@ -659,14 +691,15 @@ function u83f0LocalSourcePreviewState(host){
  const pointCtx=U83f0LocalPointRuntime.makeReviewedU83f0LocalPointWindowContext(U83f0LocalPrefixRuntime.LOCAL_U83F0_SOURCE_PREFIX_INPUT.fullProof,U83f0LocalPrefixRuntime.LOCAL_U83F0_SOURCE_PREFIX_INPUT.identity,strokes);
  function inspect(policy,segment,g,frame,clipId,suffix,prefix){
   const ink=g?.children[1],clip=g?.children[0]?.children[0],rect=clip?.children[0],paint=ink?getComputedStyle(ink):null,error=g?.getAttribute('data-u83f0-local-preview-guard-error')??g?.parentElement?.getAttribute('data-u83f0-local-preview-guard-error')??'';
-  const shape=frame.clip??{x:policy.anchor[0],y:policy.anchor[1],width:0,height:0},expectedVisibility=frame.visible?'visible':'hidden',checks={
+  const shape=frame.clip??{x:policy.anchor[0],y:policy.anchor[1],width:0,height:0},canonical=u83f0LocalCanonicalRectGeometry(svg,document,document.defaultView,shape),actualBox=rect?.getBBox(),expectedVisibility=frame.visible?'visible':'hidden',checks={
    group:!!g&&g.isConnected&&g.ownerSVGElement===svg,originalP:ink?.getAttribute('d')===segment.outline,
    committed:ink?.getAttribute(prefix+'committed')==='true',visible:ink?.getAttribute('visibility')===expectedVisibility&&paint?.visibility===expectedVisibility,
    noRoundCap:!ink?.hasAttribute('mask')&&!ink?.hasAttribute('pathLength')&&!ink?.hasAttribute('stroke-dasharray'),
    clip:ink?.getAttribute('clip-path')===(frame.originalPDirect?null:'url(#'+clipId+suffix+')'),
    resource:clip?.id===clipId+suffix&&clip?.getAttribute('clipPathUnits')==='userSpaceOnUse',
    rect:!!rect&&Object.entries(shape).every(([k,v])=>rect.getAttribute(k)===String(v)),
-   rectCSS:!!rect&&Object.entries(shape).every(([k,v])=>{const probe=document.createElementNS('http://www.w3.org/2000/svg','rect');probe.style.setProperty(k,String(v)+'px');return getComputedStyle(rect).getPropertyValue(k)===probe.style.getPropertyValue(k);}),
+   rectCSS:!!rect&&Object.keys(shape).every(k=>getComputedStyle(rect).getPropertyValue(k)===canonical.css.get(k)),
+   rectBBox:!!actualBox&&Object.keys(shape).every(k=>Number.isFinite(actualBox[k])&&actualBox[k]===canonical.bounds[k]),
    opaquePaint:!!paint&&Number(paint.opacity)===1&&Number(paint.fillOpacity)===1&&paint.stroke==='none'&&paint.fillRule==='nonzero',guardError:error===''
   };
   if(error)guardErrors.push(policy.id+':'+error);
@@ -683,7 +716,17 @@ function u83f0LocalSourcePreviewState(host){
  }
  for(const[pen,mask]of [[5,2],[6,2],[7,1],[10,2]]){
   try{
-   const policy=U83f0LocalPointRuntime.reviewedU83f0LocalPointWindowPolicy(pointCtx,pen-1,mask-1),slot=host.querySelector('[data-outline-stroke="'+pen+'"]'),g=slot?.children[mask-1];if(!policy||!g)throw Error('Missing point source context/owner');
+   const policy=U83f0LocalPointRuntime.reviewedU83f0LocalPointWindowPolicy(pointCtx,pen-1,mask-1),slot=host.querySelector('[data-outline-stroke="'+pen+'"]'),g=slot?.children[mask-1];if(!policy||!pointCtx||!slot)throw Error('Missing strict point source context/logical owner');
+   if(!g){
+    const expected=u83f0LocalExpectedMaskProgress(svg,pen,mask);
+    if(!expected||expected.maskProgress!==0)throw Error('Positive or unknown source mask progress requires exact current owner');
+    const sourceInk=[...slot.querySelectorAll('path')].filter(n=>!n.closest('defs')&&n.getAttribute('d')===policy.segment.outline),zeroHidden=sourceInk.every(n=>n.getAttribute('visibility')==='hidden'&&getComputedStyle(n).visibility==='hidden');
+    if(!zeroHidden)throw Error('Absent zero owner has visible original source ink');
+    const shifted=slot.querySelector('[data-stroke-start-gate="'+policy.id+'"]');
+    if(shifted&&shifted.getAttribute('data-stroke-reveal-progress')!=='0')throw Error('Shifted owner is not exactly empty');
+    targets.push({id:policy.id,pen,mask,progress:0,phase:'empty-unemitted-at-expected-index',visible:false,positiveOwnerApproved:false,expectedFrozen:expected,zeroInkNodes:sourceInk.length,deferredZeroGuardError:shifted?.getAttribute('data-u83f0-local-preview-guard-error')??null,checks:{strictPointContext:true,actualRenderInputBound:true,expectedProgressExactlyZero:true,sourceInkHidden:true}});
+    continue;
+   }
    const p=Number(g.getAttribute('data-stroke-reveal-progress')),prior=Number(g.getAttribute('data-u83f0-local-source-window-prior-progress')),opaque=U83f0LocalPointRuntime.verifyReviewedU83f0LocalPointWindowPriorDOM(policy,g,p,prior);
    const frame=U83f0LocalPointRuntime.sampleReviewedU83f0LocalPointWindowFrame(policy,strokes[pen-1][mask-1],p,prior,opaque),id=g.getAttribute('data-u83f0-local-source-window-clip');
    inspect(policy,policy.segment,g,frame,id,'-u83f0-local-source-window-clip','data-u83f0-local-source-window-');
@@ -5337,7 +5380,7 @@ function setMainSize(size){if(size!==520&&size!==1040)throw Error('main size 520
 function setupU61f0(){const controls=document.querySelector('#controls');if(controls.dataset.u61f0Setup==='true')return;controls.dataset.u61f0Setup='true';for(const t of C.targets.filter(t=>t.kind==='growing-u61f0-caps')){for(const p of[0,1e-6,.01,.03,.1,.95,.9999,.99999999,1])button(t.id+' local '+p,()=>{T=t;local(p);});for(const delta of[-1e-10,0,1e-10])button(t.id+' rho7 local '+delta,()=>u51d7Rho(t,delta));button(t.id+' full-round residual',()=>u61f0Coverage(t));}for(const t of C.targets.filter(t=>t.kind==='source-foot-x-u61f0')){for(const p of[0,1e-6,.01,.03,.1,.25,.5,.75,.95,.9999,.99999999,1])button(t.id+' local '+p,()=>{T=t;local(p);});for(const p of[t.phaseShare-1e-10,t.phaseShare,t.phaseShare+1e-10])button(t.id+' foot/body '+p,()=>{T=t;local(p);});button(t.id+' coverage exact original-P',()=>{T=t;pen=t.pen;zinFootCoverage('u61f0-foot');});}for(const item of C.pairProgress)for(const delta of[-1e-10,0,1e-10])button('pen'+item.pen+' source before mask'+item.nextMask+' '+delta,()=>{pen=item.pen;show(item.boundary+delta);});button('현재획 ordinary full-round residual',()=>u61f0Coverage());}
 
 function Probe(){useEffect(()=>{ready=true;setup();if(C.kind==='growing-u61f0-caps')setupU61f0();report();},[]);return null;}
-const svg=(phase='idle',count=0,manual=false,c=clock,size=520)=>e('svg',{width:size,height:size,viewBox:'0 0 100 100','aria-label':C.glyph+' actual StrokeOutlines'},e(StrokeOutlines,{strokes,clock:c,phase,count,manual}));
+const svg=(phase='idle',count=0,manual=false,c=clock,size=520)=>e('svg',{width:size,height:size,viewBox:'0 0 100 100','aria-label':C.glyph+' actual StrokeOutlines',...(C.previewComponentAdapter==='u83f0-local-source-preview-1'?{ref:node=>{if(node)u83f0LocalSourceRenderInputs.set(node,Object.freeze({phase,count,manual,clock:c}));}}:{})},e(StrokeOutlines,{strokes,clock:c,phase,count,manual}));
 const view=(phase='idle',count=0,manual=false)=>e(Fragment,null,svg(phase,count,manual,clock,mainSize),e(Probe));
 const root=hydrateRoot(document.querySelector('#root'),view(),{identifierPrefix:'hc-',onRecoverableError:e=>errors.push(String(e))});
 function show(p){if(!Number.isFinite(p)||p<0||p>1)throw Error('global0..1');generation++;mode='current-pen';controller=p;clock={current:[{currentTime:(pen-1)*(D+G)+p*D,playState:'running',pending:false}]};root.render(view('playing',pen,false));}
@@ -5463,7 +5506,7 @@ if(C.kind==='source-point-window-u7443-g'||C.kind==='growing-u85c7-hkcs-caps'||C
 
 function localU83f0SourcePreviewComponent(original){
  if(C.previewComponentAdapter!=='u83f0-local-source-preview-1')return original;
- assert(['docs/hanja-actual-component-profiles-2026-10-22/u83f0-local-components-source-preview-1.json','docs/hanja-actual-component-profiles-2026-10-22/u83f0-local-components-source-preview-2.json'].includes(profilePath));assert.equal(C.kind,'plain-outline');assert.equal(C.root,'lingo-u83f0-components-v1');
+ assert(['docs/hanja-actual-component-profiles-2026-10-22/u83f0-local-components-source-preview-1.json','docs/hanja-actual-component-profiles-2026-10-22/u83f0-local-components-source-preview-2.json','docs/hanja-actual-component-profiles-2026-10-22/u83f0-local-components-source-preview-3.json'].includes(profilePath));assert.equal(C.kind,'plain-outline');assert.equal(C.root,'lingo-u83f0-components-v1');
  assert.equal(sha(original),'00cdc93c5df5c48719ca0065dced3f68204abc88c1e1bc6e5ffd3a789b5fca75');
  assert.equal(C.previewComponentDelta,'docs/hanja-source-original-u83f0-local-components-2026-10-27/preview-component-delta.json');
  const delta=JSON.parse(read(C.previewComponentDelta));assert.equal(delta.baseSHA256,sha(original));assert.equal(delta.scope.previewComponentAdapter,C.previewComponentAdapter);

@@ -33,22 +33,27 @@ test('菰 one explicit author clock preserves exact masks and monotonically expa
 })
 class N{
  nodeType=1;namespaceURI=NS;isConnected=true;parentNode:N|null=null;children:N[]=[]
- ownerSVGElement:N|null=null;attrs=new Map<string,string>();css=new Map<string,string>()
- style={setProperty:(k:string,v:string)=>{this.css.set(k,v)},getPropertyValue:(k:string)=>this.css.get(k)??''}
+ ownerSVGElement:N|null=null;attrs=new Map<string,string>();css=new Map<string,string>();priorities=new Map<string,string>()
+ style={setProperty:(k:string,v:string,priority='')=>{this.css.set(k,v);this.priorities.set(k,priority)},getPropertyValue:(k:string)=>this.css.get(k)??'',getPropertyPriority:(k:string)=>this.priorities.get(k)??''}
  localName:string;ownerDocument:D
  constructor(localName:string,ownerDocument:D){this.localName=localName;this.ownerDocument=ownerDocument}
  getAttribute(k:string){return this.attrs.get(k)??null}
  setAttribute(k:string,v:string){this.attrs.set(k,v);this.ownerDocument.onSet?.(this,k,v)}
  removeAttribute(k:string){this.attrs.delete(k)}
- append(n:N){this.children.push(n);n.parentNode=this}
+ append(n:N){this.children.push(n);n.parentNode=this;const owner=this.localName==='svg'?this:this.ownerSVGElement;const assign=(v:N)=>{v.ownerSVGElement=owner;v.isConnected=this.isConnected;for(const child of v.children)assign(child)};assign(n)}
+ appendChild(n:N){this.append(n);return n}
+ remove(){if(this.parentNode){this.parentNode.children.splice(this.parentNode.children.indexOf(this),1);this.parentNode=null}this.isConnected=false}
+ geometryValue(k:string){return this.style.getPropertyPriority(k)==='important'?this.style.getPropertyValue(k):(this.ownerDocument.globalGeometry?.(this,k)??(this.style.getPropertyValue(k)||(this.getAttribute(k)??'0')+'px'))}
+ getBBox(){const v=(k:string)=>Math.fround(Number(this.geometryValue(k).replace('px','')));return{x:v('x'),y:v('y'),width:v('width'),height:v('height')}}
 }
 class D{
  onStyleRead:((n:N)=>void)|null=null;onSet:((n:N,k:string,v:string)=>void)|null=null
+ globalGeometry:((n:N,k:string)=>string|null)|null=null;serializeGeometry:((value:string)=>string)|null=null
  defaultView={document:this,getComputedStyle:(n:N)=>{
   this.onStyleRead?.(n)
   const values:Record<string,string>={display:'inline',transform:'none',filter:'none',clipPath:n.getAttribute('clip-path')??'none',opacity:'1',mixBlendMode:'normal',stroke:'none',fillOpacity:'1',fillRule:'nonzero',fill:'rgb(66, 85, 255)',visibility:n.getAttribute('visibility')??'visible'}
   for(const[k,v]of n.css)values[k]=v
-  return {...values,getPropertyValue:(k:string)=>n.css.get(k)??(['x','y','width','height'].includes(k)&&n.localName==='rect'?(n.getAttribute(k)??'0')+'px':['mask-image','translate','rotate','scale'].includes(k)?'none':'')}
+  return {...values,getPropertyValue:(k:string)=>['x','y','width','height'].includes(k)&&n.localName==='rect'?(this.serializeGeometry?.(n.geometryValue(k))??n.geometryValue(k)):n.css.get(k)??(['mask-image','translate','rotate','scale'].includes(k)?'none':'')}
  }}
  createElementNS(_ns:string,name:string){return new N(name,this)}
 }
@@ -71,6 +76,12 @@ test('菰 altered second mask/frame/owner/CSS and mid-commit mutation fail close
  const changes:Array<(d:ReturnType<typeof dom>)=>void>=[d=>d.owner.setAttribute('viewBox','0 0 200 200'),d=>d.slot.children.reverse(),d=>d.items[1].g.setAttribute('data-stroke-reveal-progress','.2'),d=>d.items[1].ink.setAttribute('d',s[8][1].outline+' '),d=>d.items[1].ink.css.set('d','path("M0 0Z")'),d=>d.slot.css.set('opacity','.6'),d=>d.items[0].g.setAttribute('transform','translate(1)'),d=>d.items[1].g.setAttribute(P+'fingerprint','wrong'),d=>d.items[1].c.setAttribute('clipPathUnits','objectBoundingBox')]
  for(const change of changes){const d=dom(.03);change(d);const r=commitLocalU83f0SourcePrefix(d.p,s[8],.03,d.ids,d.nodes);assert.equal(r.status,'hidden');assert(d.items.every(n=>n.ink.getAttribute('visibility')==='hidden'))}
  const d=dom(.03);let once=false;d.doc.onSet=(n,k)=>{if(!once&&n===d.items[0].ink&&k===P+'phase'){once=true;d.items[1].r.css.set('height','0px')}};assert.equal(commitLocalU83f0SourcePrefix(d.p,s[8],.03,d.ids,d.nodes).status,'hidden');assert(d.items.every(n=>n.ink.getAttribute('visibility')==='hidden'))
+})
+test('菰 canonical CSS serialization accepts browser rounding while preserving exact inline source geometry',()=>{
+ for(const pen of [8,9,11,12]){const d=dom(1e-6,pen);d.doc.serializeGeometry=value=>Number.parseFloat(value).toPrecision(6)+'px';const r=commitLocalU83f0SourcePrefix(d.p,s[pen-1],1e-6,d.ids,d.nodes);assert.notEqual(r.status,'hidden',r.status==='hidden'?r.error:'');assert.equal(d.owner.children.length,1);const frame=sampleLocalU83f0SourcePrefixFrame(d.p,s[pen-1],1e-6);for(const n of d.items)for(const[k,v]of Object.entries(frame.clip)){assert.equal(n.r.getAttribute(k),String(v));assert.equal(n.r.style.getPropertyValue(k),String(v)+'px')}r.cleanup()}
+})
+test('菰 canonical bbox rejects forged zero geometry even when computed strings coincide',()=>{
+ const d=dom(.03);d.doc.serializeGeometry=()=> '0px';d.doc.globalGeometry=(n,k)=>n.localName==='rect'&&k==='width'?'0px':null;const r=commitLocalU83f0SourcePrefix(d.p,s[8],.03,d.ids,d.nodes);assert.equal(r.status,'hidden');assert(d.items.every(n=>n.ink.getAttribute('visibility')==='hidden'));assert.equal(d.owner.children.length,1)
 })
 test('菰 fixture and source proof pins remain exact; authored-local preview cannot claim runtime',()=>{
  for(const[path,pin]of Object.entries(LOCAL_U83F0_SOURCE_PREFIX_INPUT_SHA256))assert.equal(createHash('sha256').update(readFileSync(new URL('../'+path,import.meta.url))).digest('hex'),pin)
