@@ -1,0 +1,39 @@
+{
+  "schema":"hanja-native-source-policy-finite-review/v1",
+  "glyph":"竪",
+  "reviewedAt":"2026-10-27",
+  "reviewer":"Codex root native browser panel",
+  "profileSHA256":"abf9b129a62474e9cbc9533efaed9d495a2b03d37297fd6f43d07a749f6e8753",
+  "launcherSHA256":"01df22a9d6b7ef7e5e0f926777069fbf38adac643e81ddf9f5bd904fccbf5077",
+  "effectiveRAMComponentSHA256":"cad462b4ebfa4aba4f186a1b1cfa0ef9ee0c3b1db4f1d84bf9deb86b93724bfe",
+  "compiledSHA256":"c59c97d44ce071358ae98d1e01b34d32447276e5ab736f88d59766262dc0f110",
+  "manualNativeScenes":33,
+  "manualProgressByPen":{
+    "7":[0.3911039733635954,0.39110397346359543,0.39110397356359544,0.45,0.5118884827115403,0.5118884828115403,0.5118884829115403,0.75,1],
+    "8":[0,0.000001,0.1,0.5,0.75,1],
+    "9":[0,0.000001,0.1,0.5,0.75,1],
+    "11":[0,0.000001,0.1,0.5,0.75,1],
+    "12":[0,0.000001,0.1,0.5,0.75,1]
+  },
+  "all33RequestedControllerProgressExactlyMatched":true,
+  "all33FullStatusErrorsBadGuardErrorsEmpty":true,
+  "manualResult":"PASS-finite-five-source-policy-review",
+  "observations":[
+    "No baseline-sized finite onset fragment appears at the reviewed initial or source7 transition states.",
+    "Source7 head growth stays connected to its completed horizontal; the head-to-tail boundary triple shows no new detached portion, followed by the descending-left body.",
+    "Source8 and11 grow down-right, source9 grows downward, and source12 grows down-left. Each reviewed completion shows its unchanged original filled P."
+  ],
+  "doneWhole":{"nativeObserved":true,"all13StrokesComplete":true,"errorsBadGuardErrorsEmpty":true},
+  "naturalControllerDiagnostic":{
+    "action":"natural8, wait8.5seconds, pause",
+    "observedPen":12,
+    "observedProgress":1,
+    "statusErrorsBadGuardErrorsEmpty":true,
+    "visualObservation":"The bottom13th horizontal is absent; this playback controller stopped before the full13-stroke sequence.",
+    "scope":"Later confirmed to be the intended selected-stroke-only playback: selecting12 naturally stops at12. This is not a renderer defect or a failed whole-sequence test. The final review separately selects13 and verifies its natural completion."
+  },
+  "result":"PASS-manual33-and-done-whole; natural-selected12-sample-only",
+  "nativeAnimationApproval":false,
+  "runtimeApplied":false,
+  "privateMediaSaved":false
+}
