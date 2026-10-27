@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 1,
+  "glyph": "薪",
+  "scope": "Public source-input and already saved actual-engine data comparison only; no new engine execution or source modification.",
+  "inputs": [
+    {
+      "path": "docs/hanja-source-inventory-u85aa-additional-2026-10-27/sources.json",
+      "SHA256": "d3ac2cab4265ea40f84c4cb9badcc9f6e746988b9f48a911bfc38718522efb8f"
+    },
+    {
+      "path": "docs/hanja-source-inventory-u85aa-additional-2026-10-27/source-readiness.json",
+      "SHA256": "6e1dcf2f500613427d29434488eff19c457bc45c29b47d0d0d3503969347001f"
+    },
+    {
+      "path": "docs/hanja-goal-glyphwiki-batch1124-2026-10-14/sources.json",
+      "SHA256": "00504ea8be74f9e9b01bba0be2ef83939a3b27c2773127f7c41b48b9d64f7385"
+    },
+    {
+      "path": "docs/hanja-goal-glyphwiki-batch1124-2026-10-14/engine-whole-u85aa.json",
+      "SHA256": "dd6631d0ab8691b5ff0924a08b04ce27d3aa983b83cbd433f14535f8a649c6cb"
+    },
+    {
+      "path": "docs/hanja-actual-engine-capture-u85aa-k-2026-10-26/engine-whole-u85aa-k.json",
+      "SHA256": "c45a71d2f41eff2d871f31c5de4b435acff37defd1d5a4b390d2a48218580c8a"
+    },
+    {
+      "path": "docs/hanja-actual-engine-capture-u85aa-k-2026-10-26/capture.json",
+      "SHA256": "f71e777240bf9ddb51ec9b6ca6794cd87551e3b45b5820f72d695460f13c3cf2"
+    },
+    {
+      "path": "docs/hanja-goal-glyphwiki-batch40-2026-09-22/sources.json",
+      "SHA256": "ae52db33416c40783739d74d9c7114bd91774211dea76b61825cc024352b9476"
+    }
+  ],
+  "parserEvidence": {
+    "revision": "49232bac0348fe815f4200d4116ab7917e0db47f",
+    "kageJS_SHA256": "c36a60ff9ae7d392740d8aad62e823553dc25c991eba40482fcbc8a1a1db6d78",
+    "matchesSavedEngineHash": true,
+    "getEachStrokesLines": [
+      55,
+      92
+    ],
+    "getEachStrokesOfBuhinLines": [
+      94,
+      133
+    ],
+    "condition": "For the compared component rows sx=sy=0. Source getEachStrokesOfBuhin only reads sx2/sy2 inside the nonzero sx/sy branch; omitted trailing fields and literal zeros do not change this input. Original names/versions/related metadata are preserved separately, never rewritten.",
+    "executed": false
+  },
+  "comparison": {
+    "kp": {
+      "newRoot": "simch-kx_kp0e5d6",
+      "newRootVersion": 1,
+      "existingActualRoot": "u85aa",
+      "existingActualRootVersionAbsent": true,
+      "sourceTreeSemanticIdentity": true,
+      "newSemanticSHA256": "c2c74ef539f8f48fb768d6488af495efc111b8770657b736bd10995bf4562172",
+      "existingSemanticSHA256": "c2c74ef539f8f48fb768d6488af495efc111b8770657b736bd10995bf4562172",
+      "method": "Recursively compare original row order. Drawing rows retain exactly eleven Math.floor parser values, with absent nonfinite fields represented distinctly. Component rows retain six active numeric fields plus complete child subtree. Literal child names/metadata are not geometry; trailing sx2/sy2 are ignored ONLY when original sx=sy=0, proven by pinned parser. Other stretch cases are rejected by this comparison.",
+      "wholeNotJustBodyIdentity": true,
+      "existingActualRawCount": 16,
+      "existingActualCallCount": 17,
+      "existingActualPolygonCount": 33,
+      "existingTracePolygonsEqualGroupPolygons": true,
+      "newRootActuallyCaptured": false,
+      "conclusion": "Existing saved whole actual trace/P covers the same active authored input for screening. A fresh KP engine invocation would repeat equivalent input; do not claim the new fixed-version name was actually executed or separately natively approved."
+    },
+    "currentKBodyComparison": {
+      "existingDefaultBodyRawIndicesOneBased": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "currentKBodyRawIndicesOneBased": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "zeroBasedBodyIndicesWithRawDifference": [
+        11
+      ],
+      "zeroBasedBodyIndicesWithTraceDifference": [
+        11
+      ],
+      "zeroBasedBodyIndicesWithPolygonDifference": [],
+      "polygonIdentityAll13": true,
+      "rawAndCallIdentityAll13": false,
+      "difference": "Body index11 has right horizontal source flag 0 versus2 and corresponding draw call argument difference. Original filled polygons happen to be exactly identical in these two saved whole captures; this does not permit altering flags."
+    },
+    "t": {
+      "newRoot": "simch-kx_t106209",
+      "version": 1,
+      "sourceTreeSemanticSHA256": "b8d837fc98735600bf5edce044dd68a28d6afe1c4bc8810dd00ed231a702cd5f",
+      "sameAsKPOrExistingDefault": false,
+      "directBodyFirstOriginalRow": "1:0:0:26:63:91:63",
+      "kpBodyFirstOriginalRow": "1:0:32:55:13:55:42",
+      "distinction": "T writes nine left-body drawing rows directly and references u65a4-02@4. Its first body row is horizontal, unlike the existing default/KP vertical row. This is original source structure evidence, not a native stroke-order determination.",
+      "actualNewTraceOrPAvailable": false,
+      "existingCapturedGeometryTransfer": false
+    }
+  },
+  "recommendation": {
+    "kpFreshEngine": false,
+    "kpAction": "Reuse already captured default whole evidence for source screening; do not re-run unchanged input or transfer native/clock/runtime approval.",
+    "tFreshEngineCandidate": true,
+    "tMaximumSuggestedFreshWholeCaptures": 1,
+    "tAction": "Only T lacks actual whole trace/P coverage among these two. If continuing this source, capture its unchanged original whole once and compare shape before any direction/membership or grass-reuse proposal.",
+    "sharedGrass": "Both new roots preserve u8279-03 single-horizontal grass data; no shape rejection or approval is inferred from the component name or another whole.",
+    "localComponentRecipePrepared": false
+  },
+  "limits": {
+    "declared16DrawingRowsAreNotCatalog17Mapping": true,
+    "publicSourceMetadataNotExamCertification": true,
+    "globalNeighborAdjustmentsNotAssumedPartInvariant": true,
+    "newEngineExecutions": 0,
+    "newHTTPRequests": 0,
+    "newNativeReviews": 0,
+    "sourceRowsChanged": false,
+    "geometryChanged": false,
+    "componentReuseApproved": false,
+    "wholeApproved": false,
+    "orderApproved": false,
+    "directionApproved": false,
+    "clockApproved": false,
+    "runtimeApplied": false,
+    "builds": 0,
+    "fullTypeChecks": 0,
+    "serversStarted": 0
+  }
+}
