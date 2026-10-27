@@ -1,0 +1,6 @@
+*** Begin Patch
+*** Update File: scripts/hanja-actual-component-review.mjs
+@@
+  routes.set('/timing.mjs',{type:'text/javascript',body:'export const D='+timing.STROKE_DURATION+',G='+timing.STROKE_GAP+';'});routes.set('/browser.js',{type:'text/javascript',body:BROWSER});
++ if(correctedU9008HkcsSourcePreview){const fixtureResource=routes.get('/fixture.json'),payload=JSON.parse(fixtureResource.body);assert(!Object.hasOwn(payload.profile,'sharedVersion')&&!Object.hasOwn(payload.profile,'root'));payload.profile.sharedVersion=C.sharedVersion;payload.profile.root=C.root;fixtureResource.body=JSON.stringify(payload);}
+*** End Patch
