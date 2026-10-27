@@ -1,0 +1,228 @@
+{
+  "schema": "hanja-sao-mask12-head-then-body-prefix/v1",
+  "glyph": "嫂",
+  "date": "2026-10-27",
+  "inputs": {
+    "docs/hanja-source-original-u5ac2-sou10-layout-v2-2026-10-27/fixtures-draft.json": "6cc0ae1b2facfd2c10ad102c4acf5936781ff0f845052e712aaad71ad489dccf",
+    "docs/hanja-source-original-u83f0-local-components-2026-10-27/verify-baseline-onset-conditions.py": "35b0d7f372a2ed37052ebbbd1b116e951786fe80a5d70798c95659cfc85a63cf",
+    "docs/hanja-source-original-u83f0-local-components-2026-10-27/verify-logical-axis-prefix-conditions.py": "db903056c1375705fd8133ee79dcc3ff5450c519012a3f249881af9abebdbd29",
+    "docs/hanja-source-original-u83f0-local-components-2026-10-27/verify-pen8-connected-x-prefix.py": "afa23cad9a8825a2d839a4c5128607b21b2b84d377f05bdbbab0b1c8bec076b0",
+    "docs/hanja-source-original-u7443-g-2026-10-26/verify-curve-union-start-kernels.py": "95286fc3de0d18ff96735263582095325f7d9afa00bbd2c3a0ea42e03caf2396",
+    "docs/hanja-source-original-u8587-local-components-2026-10-27/verify-5-6-connected-prefix.py": "2058aa876fbe98a0f99cbfd3e9d9b30c88e16f4065bf9aff24f6043afb359b66",
+    "docs/hanja-official-media-compare-u5ac2-2026-10-27/native-clock-review.json": "bdcfd0d79492f5ba3c69c4b77366112da707c0f6d188775390ffcb30c0e07a44",
+    "docs/hanja-source-original-u5ac2-sou10-layout-v2-2026-10-27/native-baseline-review.json": "4c01b39c3e21d4deef8c2467b7ccfccad9757a8ea9f4119dd0ad1d990f6c62f4",
+    "docs/hanja-source-original-u5ac2-sou10-layout-v2-2026-10-27/12-mask2-source-triangle-clips.json": "58dad689be1108f7d3c443b37c95111e8efbb91c18c2c8967708bbac938de3e7"
+  },
+  "verifierSHA256": "11660dd2b6c6d77b12d47d4d95b5830d6368f3848d4e50ba5e61340589d9045a",
+  "pen": 12,
+  "mask": 2,
+  "sourceRawOneBased": 15,
+  "headProofReused": {
+    "sourcePolygonOneBased": 2,
+    "triangles": [
+      [
+        [
+          "799/10",
+          "68"
+        ],
+        [
+          "799/10",
+          "62"
+        ],
+        [
+          "829/10",
+          "119/2"
+        ]
+      ],
+      [
+        [
+          "799/10",
+          "68"
+        ],
+        [
+          "829/10",
+          "119/2"
+        ],
+        [
+          "442/5",
+          "64"
+        ]
+      ],
+      [
+        [
+          "442/5",
+          "64"
+        ],
+        [
+          "859/10",
+          "131/2"
+        ],
+        [
+          "799/10",
+          "68"
+        ]
+      ]
+    ],
+    "order": [
+      {
+        "triangle": 1,
+        "seed": [
+          "6994/85",
+          "63"
+        ],
+        "priorTriangle": null,
+        "strictPriorRoot": {
+          "point": [
+            "6994/85",
+            "63"
+          ],
+          "strictTriangleAndPriorLInfinityMargin": "21/46",
+          "positiveBoxRadius": "21/184",
+          "positiveBoxArea": "441/8464"
+        },
+        "projection": "15598683/544000"
+      },
+      {
+        "triangle": 2,
+        "seed": [
+          "1683/20",
+          "66"
+        ],
+        "priorTriangle": 1,
+        "sharedPositiveEdge": [
+          [
+            "799/10",
+            "68"
+          ],
+          [
+            "442/5",
+            "64"
+          ]
+        ],
+        "projection": "1130199/32000"
+      },
+      {
+        "triangle": 0,
+        "seed": [
+          "407/5",
+          "255/4"
+        ],
+        "priorTriangle": 1,
+        "sharedPositiveEdge": [
+          [
+            "799/10",
+            "68"
+          ],
+          [
+            "829/10",
+            "119/2"
+          ]
+        ],
+        "projection": "2967099/32000"
+      }
+    ],
+    "weights": [
+      "2/9",
+      "241/324",
+      "11/324"
+    ],
+    "strictRootSeed": {
+      "point": [
+        "6994/85",
+        "63"
+      ],
+      "strictTriangleAndPriorLInfinityMargin": "21/46",
+      "positiveBoxRadius": "21/184",
+      "positiveBoxArea": "441/8464"
+    },
+    "headPhaseShare": "5400/36577",
+    "recomputed": false
+  },
+  "bodyP1ConnectedXPrefix": {
+    "pen": 12,
+    "sourceMasks": 2,
+    "sourceP": 1,
+    "axis": "x",
+    "direction": "decreasing",
+    "analysisTransform": "identity",
+    "eventCount": 22,
+    "convexSlabCells": 21,
+    "cutChecks": 43,
+    "noninitialCutChecks": 42,
+    "maxClosedComponents": 1,
+    "maxPositiveEdgeComponents": 1,
+    "noninitialIsolatedCutInkCases": 0,
+    "failureCount": 0,
+    "firstFailures": [],
+    "connectedPrefixSufficientConditionPassed": true,
+    "nativeFailureObserved": true,
+    "areaContinuity": {
+      "sourceProjectionRange": [
+        "731/20",
+        "853/10"
+      ],
+      "crossAxisSpan": "663/20",
+      "areaBoundCoefficient": "25857/16",
+      "bound": "area(prefix(p)) <= coefficient*p, p→0+",
+      "zeroExplicitEmptyRequired": true
+    },
+    "publisherMacro": [
+      "right",
+      "down-left"
+    ],
+    "sourceMicroclockApproved": false,
+    "policyAdopted": false,
+    "sourcePolygonOneBased": 1,
+    "mask": 2
+  },
+  "firstBodySupport": [
+    {
+      "endpoints": [
+        [
+          "853/10",
+          "647/10"
+        ],
+        [
+          "853/10",
+          "647/10"
+        ]
+      ],
+      "strictlyInsideCompletedOriginalHead": true,
+      "strictLInfinityMargin": "29/40"
+    }
+  ],
+  "bodyStartsStrictlyInsideCompletedHead": true,
+  "sufficientGeometryConditionsPassed": true,
+  "paintContract": {
+    "singleOriginalWholeMaskD": true,
+    "sourceDNotSplitOrStitched": true,
+    "clipUnionOnly": true,
+    "phase1OnlyOriginalHeadP2ClipTriangles": true,
+    "phase1BodyOutsideOriginalHeadHasEmptyPaint": true,
+    "phase2FullHeadUnionBodyP1WithXGreaterEqualCut": true,
+    "noOtherBodyInkOutsideSelectedHalfPlane": true,
+    "completedHeadRequiredBeforeBodyPositiveProgress": true,
+    "initialZeroExplicitlyEmpty": true,
+    "completionDirectOriginalWholeD": true,
+    "sourceQWeightsWidthUnchanged": true,
+    "priorCompletedHExactOpaqueSameDOMRequired": true
+  },
+  "directionContract": {
+    "publisherMacro": [
+      "right",
+      "down-left"
+    ],
+    "sourceQStrictXDecreaseYIncrease": true,
+    "headIsOriginalBrushCapNotSeparateStroke": true,
+    "bodyPrefixXDecrease": true,
+    "noEntireBodyTriangleBFSAdopted": true,
+    "originalMicroclockEquivalent": false,
+    "freshNativeForwardDirectionRequired": true
+  },
+  "policyImplemented": false,
+  "engineRuns": 0,
+  "compilerRuns": 0,
+  "SSR": 0,
+  "nativeApproval": false,
+  "runtimeApplied": false
+}
