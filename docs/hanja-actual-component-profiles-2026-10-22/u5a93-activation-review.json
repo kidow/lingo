@@ -1,0 +1,109 @@
+{
+  "schema": "hanja-activation-review-v1",
+  "glyph": "媓",
+  "batch": 1501,
+  "sourceFixture": {
+    "path": "docs/hanja-source-original-u5a93-2026-10-26/fixtures.json",
+    "SHA256": "a7ad43dd32a18ac22628c77d942fc53ab26d3642bcabce108248a74babf79733"
+  },
+  "actualFull5": {
+    "path": "docs/hanja-goal-glyphwiki-batch1039-2026-10-13/engine-whole-u5a93.json",
+    "SHA256": "689e2d502a5cf1bf337192a939dc0efad1f877c476e0d980bc404d9ddf5c25f8"
+  },
+  "nativeEvidence": [
+    {
+      "path": "docs/hanja-official-media-compare-u5a93-2026-10-27/native-controlled-direction-review.json",
+      "SHA256": "99e7f7ed69c21f9bb8726ae9a6f968a3b3872b91e96828bd2641fba4b7956f29"
+    },
+    {
+      "path": "docs/hanja-actual-component-profiles-2026-10-22/u5a93-1-native-review.json",
+      "SHA256": "52f5e68ab15b78107aa9179e3717ec4b666cb74c2754d33ac227d2cfb07402c3"
+    },
+    {
+      "path": "docs/hanja-actual-component-profiles-2026-10-22/u5a93-2-native-review.json",
+      "SHA256": "f822db5cdc5fa88d751e38b1023a6008f02fd97a8f24e98a4e6cb10bcd407da2"
+    },
+    {
+      "path": "docs/hanja-actual-component-profiles-2026-10-22/u5a93-3-native-review.json",
+      "SHA256": "d3eb77a2adf114187d3379d5e5f14560679058426e725c6aa9ff6f693d61e5d1"
+    },
+    {
+      "path": "docs/hanja-actual-component-profiles-2026-10-22/u5a93-4-native-review.json",
+      "SHA256": "198b4463d929930579bca9b1657a5021e5919f5cf42dc4022a93b6dc368c978f"
+    },
+    {
+      "path": "docs/hanja-source-raw-compare-u5a93-reviewed-logical12-2026-10-27/native-membership-review.json",
+      "SHA256": "4ba72534839e10eac8748e4d3f932cc2028c11622ef2f1eb42c2ce0f136f8913"
+    }
+  ],
+  "orderManifest": {
+    "path": "docs/hanja-source-order-u5a93-2026-10-27/reviewed-order-manifest.json",
+    "SHA256": "cf5e7ac9d4381bc120362f613c2f51d5e48ae4051a51253f5a35021b7f24b0a9"
+  },
+  "historicalInputSHA256": "79aea820e2f76cc4fa9bbe75a4f65fb75bb62c261060b1aa4e2e3bf1e3d71752",
+  "reviewedOrderSnapshotSHA256": "36c733b72b0aeb002f7a02a51365c5206459a756828a8fef62224c81d4b04485",
+  "logicalOrderPermutationZeroBased": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    10,
+    9,
+    11
+  ],
+  "inputSHA256": {
+    "components/hanja/stroke-outlines.tsx": "00cdc93c5df5c48719ca0065dced3f68204abc88c1e1bc6e5ffd3a789b5fca75",
+    "lib/hanja-stroke-source-prefix-u5a93-first.ts": "617908642e6f10010ba284949072b80e08a31d9afe7ed414bc6e5a68c8547d76",
+    "lib/hanja-stroke-source-starts-u5a93.ts": "817e363440c600d68dba45d7b2ec0396798ee4441ef7095f64838289c82dc6f3",
+    "lib/hanja-stroke-outline.ts": "fb5e309e567de18fdeb19efdc200cd73cc8bce68934554be8d884b5b6e10ff44"
+  },
+  "approval": {
+    "registrationAuthorized": true,
+    "authorizedBy": "ROOT task instruction after directly observed publisher36, reviewed starts and terminal, and static logical12 membership",
+    "runtimeApplied": true,
+    "nativeActualProductComponentReuse": true,
+    "actualAppUIFreshlyVerified": false,
+    "sourceMicroclockIdentityApproved": false,
+    "exactPixelOrGlyphEquivalenceApproved": false,
+    "examBodyApproved": false,
+    "allTimeProofClaimed": false
+  },
+  "preparationHistory": {
+    "fixturePreviewFlagsPreserved": true,
+    "policyPreviewFlagsPreserved": true,
+    "newEngineRuns": 0,
+    "newNativeReviewsByPreparer": 0,
+    "newBuildRuns": 0,
+    "fullProjectTypechecks": 0
+  },
+  "limits": [
+    "Source36 record retains historical candidate10/11 HOLD; corrected order is separately bound to candidate3 finite review and new static12 membership.",
+    "Source original order and geometry are preserved in fixture; runtime receives only exact reviewed permutation.",
+    "Existing actual product component review is reused; no new application UI autoplay or writing test is claimed.",
+    "ROOT registered the reviewed payload in the existing resolver; one actual resolver check confirmed 媓 twelve strokes and both production factory bindings. This is not a new browser UI test."
+  ],
+  "actualResolverVerification": {
+    "date": "2026-10-27",
+    "runs": 1,
+    "total": 5978,
+    "applied": 5916,
+    "missing": 62,
+    "remainingByGrade": {
+      "g1": 8,
+      "special-2": 9,
+      "special": 45
+    },
+    "glyph": "媓",
+    "grade": "special",
+    "resolvedLogicalStrokes": 12,
+    "startsFactoryBinding": true,
+    "firstPrefixFactoryBinding": true,
+    "buildRuns": 0,
+    "fullProjectTypechecks": 0
+  }
+}
