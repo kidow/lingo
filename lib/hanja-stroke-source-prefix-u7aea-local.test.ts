@@ -33,22 +33,28 @@ test('竪 one explicit author clock preserves exact masks and monotonically expa
 })
 class N{
  nodeType=1;namespaceURI=NS;isConnected=true;parentNode:N|null=null;children:N[]=[]
- ownerSVGElement:N|null=null;attrs=new Map<string,string>();css=new Map<string,string>()
- style={setProperty:(k:string,v:string)=>{this.css.set(k,v)},getPropertyValue:(k:string)=>this.css.get(k)??''}
+ ownerSVGElement:N|null=null;attrs=new Map<string,string>();css=new Map<string,string>();priorities=new Map<string,string>()
+ style={setProperty:(k:string,v:string,priority='')=>{this.css.set(k,v);this.priorities.set(k,priority)},getPropertyValue:(k:string)=>this.css.get(k)??'',getPropertyPriority:(k:string)=>this.priorities.get(k)??''}
  localName:string;ownerDocument:D
  constructor(localName:string,ownerDocument:D){this.localName=localName;this.ownerDocument=ownerDocument}
  getAttribute(k:string){return this.attrs.get(k)??null}
  setAttribute(k:string,v:string){this.attrs.set(k,v);this.ownerDocument.onSet?.(this,k,v)}
  removeAttribute(k:string){this.attrs.delete(k)}
- append(n:N){this.children.push(n);n.parentNode=this}
+ append(n:N){this.children.push(n);n.parentNode=this;const owner=this.localName==='svg'?this:this.ownerSVGElement;const assign=(v:N)=>{v.ownerSVGElement=owner;v.isConnected=this.isConnected;for(const child of v.children)assign(child)};assign(n)}
+ appendChild(n:N){this.append(n);return n}
+ remove(){if(this.parentNode){this.parentNode.children.splice(this.parentNode.children.indexOf(this),1);this.parentNode=null}this.isConnected=false}
+ geometryValue(k:string){return this.style.getPropertyPriority(k)==='important'?this.style.getPropertyValue(k):(this.ownerDocument.globalGeometry?.(this,k)??(this.style.getPropertyValue(k)||(this.getAttribute(k)??'0')+'px'))}
+ getBBox(){const v=(k:string)=>Math.fround(Number(this.geometryValue(k).replace('px',''))),b={x:v('x'),y:v('y'),width:v('width'),height:v('height')};return this.ownerDocument.canonicalBox?.(b)??b}
 }
 class D{
  onStyleRead:((n:N)=>void)|null=null;onSet:((n:N,k:string,v:string)=>void)|null=null
+ globalGeometry:((n:N,k:string)=>string|null)|null=null;serializeGeometry:((value:string)=>string)|null=null
+ canonicalBox:((b:Record<'x'|'y'|'width'|'height',number>)=>Record<'x'|'y'|'width'|'height',number>)|null=null
  defaultView={document:this,getComputedStyle:(n:N)=>{
   this.onStyleRead?.(n)
   const values:Record<string,string>={display:'inline',transform:'none',filter:'none',clipPath:n.getAttribute('clip-path')??'none',opacity:'1',mixBlendMode:'normal',stroke:'none',fillOpacity:'1',fillRule:'nonzero',fill:'rgb(66, 85, 255)',visibility:n.getAttribute('visibility')??'visible'}
   for(const[k,v]of n.css)values[k]=v
-  return {...values,getPropertyValue:(k:string)=>n.css.get(k)??(['x','y','width','height'].includes(k)&&n.localName==='rect'?(n.getAttribute(k)??'0')+'px':['mask-image','translate','rotate','scale'].includes(k)?'none':'')}
+  return {...values,getPropertyValue:(k:string)=>['x','y','width','height'].includes(k)&&n.localName==='rect'?(this.serializeGeometry?.(n.geometryValue(k))??n.geometryValue(k)):n.css.get(k)??(['mask-image','translate','rotate','scale'].includes(k)?'none':'')}
  }}
  createElementNS(_ns:string,name:string){return new N(name,this)}
 }
@@ -75,4 +81,11 @@ test('竪 altered source/frame/owner/CSS and mid-commit mutation fail closed for
 test('竪 fixture and source proof pins remain exact; authored-local preview cannot claim runtime',()=>{
  for(const[path,pin]of Object.entries(LOCAL_U7AEA_SOURCE_PREFIX_INPUT_SHA256))assert.equal(createHash('sha256').update(readFileSync(new URL('../'+path,import.meta.url))).digest('hex'),pin)
  assert.equal(LOCAL_U7AEA_SOURCE_PREFIX_SOURCE.localAuthoredRoot,true);assert.equal(LOCAL_U7AEA_SOURCE_PREFIX_SOURCE.originalPublicWhole,false);assert.equal(LOCAL_U7AEA_SOURCE_PREFIX_SOURCE.nativeForwardApproval,false);assert.equal(LOCAL_U7AEA_SOURCE_PREFIX_SOURCE.runtimeApplied,false)
+})
+test('canonical prefix CSS serialization preserves all exact clips without an arbitrary tolerance',()=>{
+ for(const pen of[8,9,11,12]){const q=4e-10,d=dom(q,pen);d.doc.serializeGeometry=v=>String(Math.round(Number(v.replace('px',''))*1e6)/1e6)+'px';const r=commitLocalU7aeaSourcePrefix(d.p,s[pen-1],q,d.ids,d.nodes);assert.equal(r.status,'visible');const f=sampleLocalU7aeaSourcePrefixFrame(d.p,s[pen-1],q);for(const n of d.items)for(const[k,v]of Object.entries(f.clip))assert.equal(n.r.getAttribute(k),String(v));assert.equal(f.progress,q);assert.equal(d.owner.children.length,1)}
+})
+test('canonical prefix comparison rejects changed actual bbox and corrupted no-paint probe',()=>{
+ const d=dom(.03);d.doc.globalGeometry=(n,k)=>n===d.items[0].r&&k==='width'?'0px':null;assert.equal(commitLocalU7aeaSourcePrefix(d.p,s[8],.03,d.ids,d.nodes).status,'hidden');assert.equal(d.owner.children.length,1)
+ const e=dom(.03);e.doc.onStyleRead=n=>{if(n.localName==='rect'&&n!==e.items[0].r)n.style.setProperty('height','7px','important')};assert.equal(commitLocalU7aeaSourcePrefix(e.p,s[8],.03,e.ids,e.nodes).status,'hidden');assert.equal(e.owner.children.length,1)
 })

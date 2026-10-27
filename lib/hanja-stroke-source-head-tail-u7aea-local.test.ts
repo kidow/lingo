@@ -11,22 +11,28 @@ const policy=(pen:7)=>{const p=select(ctx(),pen-1,1);assert(p);return p}
 const NS='http://www.w3.org/2000/svg',P='data-u7aea-local-head-tail-'
 class N{
  nodeType=1;namespaceURI=NS;isConnected=true;parentNode:N|null=null;children:N[]=[]
- ownerSVGElement:N|null=null;attrs=new Map<string,string>();css=new Map<string,string>()
- style={setProperty:(k:string,v:string)=>{this.css.set(k,v)},getPropertyValue:(k:string)=>this.css.get(k)??''}
+ ownerSVGElement:N|null=null;attrs=new Map<string,string>();css=new Map<string,string>();priorities=new Map<string,string>()
+ style={setProperty:(k:string,v:string,priority='')=>{this.css.set(k,v);this.priorities.set(k,priority)},getPropertyValue:(k:string)=>this.css.get(k)??'',getPropertyPriority:(k:string)=>this.priorities.get(k)??''}
  localName:string;ownerDocument:D
  constructor(localName:string,ownerDocument:D){this.localName=localName;this.ownerDocument=ownerDocument}
  getAttribute(k:string){return this.attrs.get(k)??null}
  setAttribute(k:string,v:string){this.attrs.set(k,v);this.ownerDocument.onSet?.(this,k,v)}
  removeAttribute(k:string){this.attrs.delete(k)}
- append(n:N){this.children.push(n);n.parentNode=this}
+ append(n:N){this.children.push(n);n.parentNode=this;const owner=this.localName==='svg'?this:this.ownerSVGElement;const assign=(v:N)=>{v.ownerSVGElement=owner;v.isConnected=this.isConnected;for(const child of v.children)assign(child)};assign(n)}
+ appendChild(n:N){this.append(n);return n}
+ remove(){if(this.parentNode){this.parentNode.children.splice(this.parentNode.children.indexOf(this),1);this.parentNode=null}this.isConnected=false}
+ geometryValue(k:string){return this.style.getPropertyPriority(k)==='important'?this.style.getPropertyValue(k):(this.ownerDocument.globalGeometry?.(this,k)??(this.style.getPropertyValue(k)||(this.getAttribute(k)??'0')+'px'))}
+ getBBox(){const v=(k:string)=>Math.fround(Number(this.geometryValue(k).replace('px',''))),b={x:v('x'),y:v('y'),width:v('width'),height:v('height')};return this.ownerDocument.canonicalBox?.(b)??b}
 }
 class D{
  onStyleRead:((n:N)=>void)|null=null;onSet:((n:N,k:string,v:string)=>void)|null=null
+ globalGeometry:((n:N,k:string)=>string|null)|null=null;serializeGeometry:((value:string)=>string)|null=null
+ canonicalBox:((b:Record<'x'|'y'|'width'|'height',number>)=>Record<'x'|'y'|'width'|'height',number>)|null=null
  defaultView={document:this,getComputedStyle:(n:N)=>{
   this.onStyleRead?.(n)
   const values:Record<string,string>={display:'inline',transform:'none',filter:'none',clipPath:n.getAttribute('clip-path')??'none',opacity:'1',mixBlendMode:'normal',stroke:'none',fillOpacity:'1',fillRule:'nonzero',fill:'rgb(66, 85, 255)',visibility:n.getAttribute('visibility')??'visible'}
   for(const[k,v]of n.css)values[k]=v
-  return {...values,getPropertyValue:(k:string)=>n.css.get(k)??(['x','y','width','height'].includes(k)&&n.localName==='rect'?(n.getAttribute(k)??'0')+'px':['mask-image','translate','rotate','scale'].includes(k)?'none':'')}
+  return {...values,getPropertyValue:(k:string)=>['x','y','width','height'].includes(k)&&n.localName==='rect'?(this.serializeGeometry?.(n.geometryValue(k))??n.geometryValue(k)):n.css.get(k)??(['mask-image','translate','rotate','scale'].includes(k)?'none':'')}
  }}
  createElementNS(_ns:string,name:string){return new N(name,this)}
 }
@@ -69,4 +75,15 @@ test('prior opacity/progress/source/owner/clip/geometry and rect CSS mutations f
 })
 test('prior completion is rechecked after rectangle attributes and final visibility commit',()=>{
  for(const pen of[7]as const)for(const stage of['rect','visibility']){const p=policy(pen),d=dom(p,.5);d.doc.onSet=(n,k,v)=>{if(stage==='rect'&&n===d.r&&k==='width'||stage==='visibility'&&n===d.ink&&k==='visibility'&&v==='visible')d.H!.css.set('opacity','0')};assert.equal(commit(p,p.segment,.5,d.id,d.nodes,1).status,'hidden');assert.equal(d.ink.getAttribute('visibility'),'hidden')}
+})
+test('canonical head geometry keeps subepsilon attributes and accepts finite collapsed probe equivalence',()=>{
+ const p=policy(7),q=1e-10,d=dom(p,q)
+ d.doc.serializeGeometry=v=>String(Math.round(Number(v.replace('px',''))*1e6)/1e6)+'px'
+ d.doc.canonicalBox=b=>b.width<1e-8||b.height<1e-8?{x:0,y:0,width:0,height:0}:b
+ const r=commit(p,p.segment,q,d.id,d.nodes,1);assert.equal(r.status,'visible');const f=sample(p,p.segment,q,1,true);assert(f.clip);assert(f.clip.width>0);assert.equal(d.r.getAttribute('width'),String(f.clip.width));assert.equal(f.progress,q);assert.equal(d.r.getBBox().width,0);assert.equal(d.owner.children.length,1)
+ d.r.style.setProperty('width','0px');assert.equal(commit(p,p.segment,q,d.id,d.nodes,1).status,'hidden');assert.equal(d.owner.children.length,1)
+})
+test('canonical head guard rejects actual/probe bbox difference and isolated probe mutation',()=>{
+ const p=policy(7),q=.03,d=dom(p,q);d.doc.globalGeometry=(n,k)=>n===d.r&&k==='width'?'0px':null;assert.equal(commit(p,p.segment,q,d.id,d.nodes,1).status,'hidden');assert.equal(d.owner.children.length,1)
+ const e=dom(p,.03);e.doc.onStyleRead=n=>{if(n.localName==='rect'&&n!==e.r)n.style.setProperty('width','7px','important')};assert.equal(commit(p,p.segment,.03,e.id,e.nodes,1).status,'hidden');assert.equal(e.owner.children.length,1)
 })
