@@ -1257,6 +1257,18 @@ def main():
         mm_spec=importlib.util.spec_from_file_location('hanja_fixed_mm_u66d9',mm_path)
         mm_adapter=importlib.util.module_from_spec(mm_spec);mm_spec.loader.exec_module(mm_adapter)
         return mm_adapter.run_mm_original_whole(args,config,config_path)
+    if config.get('kind')=='fixed-mm-original-filled-whole-u8517':
+        mm_path=pinned_path('scripts/hanja-static-original-mm-u8517.py')
+        require(digest(mm_path.read_bytes())=='6d4d3aa4fb3b8aa377dbc6f5453d4195bd36e4f3ae821ce071276325ef408ef4','fixed original MM 蔗 source adapter changed')
+        mm_spec=importlib.util.spec_from_file_location('hanja_fixed_mm_u8517',mm_path)
+        mm_adapter=importlib.util.module_from_spec(mm_spec);mm_spec.loader.exec_module(mm_adapter)
+        return mm_adapter.run_mm_original_whole(args,config,config_path)
+    if config.get('kind')=='fixed-mm-original-filled-whole-u85aa':
+        mm_path=pinned_path('scripts/hanja-static-original-mm-u85aa.py')
+        require(digest(mm_path.read_bytes())=='6bcae9634f3639c91424e692403d5e4f72ecb9d10ce7ddc6650c4349d5e4909b','fixed original MM 薪 source adapter changed')
+        mm_spec=importlib.util.spec_from_file_location('hanja_fixed_mm_u85aa',mm_path)
+        mm_adapter=importlib.util.module_from_spec(mm_spec);mm_spec.loader.exec_module(mm_adapter)
+        return mm_adapter.run_mm_original_whole(args,config,config_path)
     if config.get('kind')=='fixed-mm-original-filled-whole-u850c':
         mm_path=pinned_path('scripts/hanja-static-original-mm-u850c.py')
         require(digest(mm_path.read_bytes())=='9c0f4a24cb43eec0869abf67674bde4362a0bbb7acfbc960fe1858859c7124de','fixed original MM 蔌 source adapter changed')
