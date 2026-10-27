@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "glyph": "曙",
+  "root": "zihai-084458",
+  "rootVersion": "1",
+  "date": "2026-10-27",
+  "observer": "ROOT",
+  "evidenceOrigin": "ROOT directly observed one whole comparison in the browser panel; recorder did not replay it.",
+  "inputs": [
+    {
+      "path": "docs/hanja-source-raw-compare-u66d9-zihai-whole-2026-10-27/config.json",
+      "SHA256": "d5a2d731fab3b86322f4c25eee5e7834b1e36f92634008ba57abce1329323d7a"
+    },
+    {
+      "path": "docs/hanja-actual-engine-capture-u66d9-zihai-2026-10-27/engine-whole-zihai-084458.json",
+      "SHA256": "ef1bb04b161ac56f22ced56d230d61ba303bb63db00ba06040a1feb682f0afed"
+    },
+    {
+      "path": "docs/hanja-actual-engine-capture-u66d9-zihai-2026-10-27/capture.json",
+      "SHA256": "9f6a4f66c34a0b001fadfc7e776ce08e21a20d17fc5e1e40eed124bc1d8de0c1"
+    },
+    {
+      "path": "docs/hanja-actual-engine-capture-u66d9-zihai-2026-10-27/sources.json",
+      "SHA256": "5da3ef7728cbb3b0ae414ef68cd4faae6f91846370c0d3731a72897377c361ae"
+    }
+  ],
+  "launcherAtNativeReview": {
+    "path": "scripts/hanja-raw-static-compare.py",
+    "SHA256": "991ab53f74eb7484313c51a552feb7c55a048109afc33013328e9293ceefd2b7",
+    "frozenNativeVersionVerifiedBeforeRecording": true,
+    "sharedLauncherMayReceiveSubsequentIndependentCases": true
+  },
+  "native": {
+    "tabId": "36",
+    "wholeObservations": 1,
+    "viewportsObserved": 1,
+    "layout": "whole-pair520-css-only",
+    "publisherClips": 18,
+    "originalDrawingRows": 20,
+    "originalCalls": 20,
+    "originalPolygons": 29,
+    "entireWholePairObserved": true,
+    "individualStrokeMappingReviewed": false,
+    "orderReviewed": false,
+    "directionReviewed": false
+  },
+  "observations": [
+    {
+      "area": "middle below 罒",
+      "publisher": "A central vertical and horizontal form a 十-like structure, with a long lower-left diagonal and a separate small downward-right region.",
+      "candidate": "Two crossing X-like curve layers appear, without that central vertical.",
+      "result": "Direct fresh whole middle-structure mismatch."
+    },
+    {
+      "area": "left 日 / upper 罒 / lower 日",
+      "publisherAndCandidate": "Broad regions were visible.",
+      "limits": "Their broad visibility is not detailed membership, contact, order or direction approval."
+    }
+  ],
+  "decision": {
+    "status": "HOLD-new-zihai-whole-middle-structure-mismatch",
+    "basis": "Direct whole visual difference observed by ROOT, not drawing-row count, number of source curves, or inference from prior rejected roots.",
+    "wholeShapeApproved": false,
+    "membershipApproved": false,
+    "orderApproved": false,
+    "directionApproved": false,
+    "contactApproved": false,
+    "componentReuseApproved": false,
+    "clockApproved": false,
+    "runtimeApplied": false,
+    "priorWholeHoldTransferred": false,
+    "scope": "Only this exact original zihai whole is held against the pinned publisher reference. No source edits, changed component mixture, global source-unavailability claim or altered stroke order is authorized."
+  },
+  "sourceIntegrity": {
+    "sourceRecords": 5,
+    "originalRowsChanged": false,
+    "parentCoordinatesChanged": false,
+    "flagsChanged": false,
+    "polygonsEdited": false,
+    "localCompositeAuthored": false,
+    "sourceProjection": 0
+  },
+  "privateReference": {
+    "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/6600/66D9.svg",
+    "SHA256": "45d0dff9820c84a9766132af56a97abb4e081b89d0e4a829e2356aa068e28d90",
+    "bytes": 8681,
+    "clips": 18,
+    "successfulRAMFetches": 1,
+    "existingSHA256Verified": true,
+    "privateMediaFilesSaved": 0,
+    "sourceSVGOrImagesIncludedInRecord": false
+  },
+  "execution": {
+    "newEngineExecutionsForNativeReview": 0,
+    "newAPISourceRequests": 0,
+    "builds": 0,
+    "fullTypeChecks": 0
+  },
+  "cleanup": {
+    "reportedBy": "ROOT",
+    "serverPID": 98520,
+    "signal": "SIGTERM",
+    "ownedPIDAndPortConfirmedBeforeTermination": true,
+    "serverTerminated": true,
+    "tabId": "36",
+    "tabClosed": true,
+    "tabCloseToolSucceeded": true,
+    "additionalServerStartedByRecorder": false
+  }
+}
