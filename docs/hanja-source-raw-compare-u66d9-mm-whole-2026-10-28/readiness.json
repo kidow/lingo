@@ -1,0 +1,134 @@
+{
+  "schema": "hanja-original-MM-exact-whole-readiness/v1",
+  "glyph": "曙",
+  "date": "2026-10-28",
+  "source": {
+    "path": "docs/hanja-source-original-u66d9-mm-2026-10-27/source-record.json",
+    "SHA256": "27da1208929e772a0622cefea7d170e75127b5244b8f230795c2e87cf6d33e08",
+    "originalRecordSHA256": "6f6f9a97e76c036a7b2cf26af50803f511244a69c423b6d5de565d9c857fb0aa",
+    "revision": "bddc96d41bef78427ed0e034e9f7e31d71fd1b92",
+    "wholeCorpusSHA256": "a28c478b5178e98f67f510b2d52fde08a69dc664654ef43498253b9b764d46ee"
+  },
+  "publisherReference": {
+    "path": "docs/hanja-source-raw-compare-u66d9-hkcs-whole-2026-10-26/config.json",
+    "SHA256": "688fb5e3897ec19d059df5852afa8b982c2d5318a9415a583174b83951c45db2"
+  },
+  "domestic": {
+    "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/6600/66D9.svg",
+    "bytes": 8681,
+    "sha256": "45d0dff9820c84a9766132af56a97abb4e081b89d0e4a829e2356aa068e28d90",
+    "clips": 18,
+    "glyph": "曙",
+    "privateMediaSaved": false,
+    "status": 200
+  },
+  "counts": {
+    "catalog": 18,
+    "publisher": 18,
+    "originalMMFilledPaths": 17,
+    "originalMediansRetained": 17,
+    "countDifferencePresent": true,
+    "countEqualityIsNotApproval": true,
+    "countDifferenceIsNotWholeRejection": true
+  },
+  "coordinate": {
+    "viewBox": "0 0 1024 1024",
+    "displayTransform": "translate(0 900) scale(1 -1)",
+    "publishedEquivalent": "scale(1, -1) translate(0, -900)",
+    "upstreamURL": "https://raw.githubusercontent.com/skishore/makemeahanzi/bddc96d41bef78427ed0e034e9f7e31d71fd1b92/README.md",
+    "newFetch": false,
+    "originalPathStringsChanged": false,
+    "originalMediansChanged": false,
+    "mediansRendered": false
+  },
+  "frozenInputs": {
+    "config": {
+      "path": "docs/hanja-source-raw-compare-u66d9-mm-whole-2026-10-28/config.json",
+      "SHA256": "0e85b79bc203ae37cddeece3414c92ec04519e7aedd3f67892abc197c26efdfa"
+    },
+    "adapter": {
+      "path": "scripts/hanja-static-original-mm-u66d9.py",
+      "SHA256": "d1063a32d9d611987fd1beb3bc79d900e02d70527adfdfaf8540141fa6248ad1"
+    },
+    "core": {
+      "path": "scripts/hanja-static-original-mm-u6715.py",
+      "SHA256": "26f1f172a54fd35483a2db80dd56cdfb43cb58d1a7396d669de12784a1d81562"
+    },
+    "sharedServe": {
+      "path": "docs/hanja-source-raw-compare-u8a29-2026-10-21/serve.py",
+      "SHA256": "ba91ba7f00bc2e4899ca4d3c69d03ab5cd6f8b0a9f888899eea49aa69a58665d"
+    },
+    "helper": {
+      "path": "scripts/hanja-raw-static-compare.py",
+      "beforeSHA256": "6a8e5c9acd69ea2b7d0d342532f97699d41aafcba75c08d3efcb65d1cc5076cb",
+      "afterSHA256": "a37df348025f91c3bfc4ae703b4c096f118c6a372acaa431bb0edf16a589a4a9"
+    },
+    "patch": {
+      "path": "docs/hanja-source-raw-compare-u66d9-mm-whole-2026-10-28/helper-integration.patch",
+      "SHA256": "edcb42ad68004ac5fa794ce6729083695701f25e05e542d9acfaf802296d85d2"
+    }
+  },
+  "reusedFunctions": [
+    "run_mm_original_whole",
+    "read_original_mm",
+    "original_mm_svg",
+    "check_original_svg",
+    "whole_selection",
+    "whole_page",
+    "shared.domestic_svg",
+    "shared.main"
+  ],
+  "rendererCopies": 0,
+  "XMLCheckerCopies": 0,
+  "routeCopies": 0,
+  "priorWholeEvidence": [
+    {
+      "path": "docs/hanja-source-inventory-u66d9-lp-2026-10-27/source-readiness.json",
+      "SHA256": "238859359484814b9c256645049ba8cd537cbaecb9e78f6c3dc9b147a032d1b3"
+    },
+    {
+      "path": "docs/hanja-source-raw-compare-u66d9-hkcs-whole-2026-10-26/native-whole-review.json",
+      "SHA256": "62010e5372c635282a4ab2aa4b8d5d54a7dfb69b30680d7b6967131b5b607a13"
+    },
+    {
+      "path": "docs/hanja-source-raw-compare-u66d9-xotarios-whole-2026-10-26/native-whole-review.json",
+      "SHA256": "670bbfe634bc8b851b61e44ab8ed6d96f73353e36b8315d2e1bce959ab6f149e"
+    },
+    {
+      "path": "docs/hanja-source-raw-compare-u66d9-zihai-whole-2026-10-27/native-whole-review.json",
+      "SHA256": "d76c52e9c0610ec2d81f5027487512a3d39bb1425d76ac4421345795a535685d"
+    }
+  ],
+  "priorWholeHoldTransferred": false,
+  "nextNativeQuestions": [
+    "Does the unchanged complete MM whole match the retained domestic whole, including the middle region below 罒?",
+    "Does its complete structure match independently of17-versus18 count or earlier rejected public roots?"
+  ],
+  "execution": {
+    "helperPatchApplied": false,
+    "checkOnlyExecuted": false,
+    "checkOnlyReason": "ROOT must first apply the exact six-line branch document; config pins the future helper bytes.",
+    "afterApplyCheckOnlyCommand": "python3 scripts/hanja-raw-static-compare.py --config docs/hanja-source-raw-compare-u66d9-mm-whole-2026-10-28/config.json --config-sha 0e85b79bc203ae37cddeece3414c92ec04519e7aedd3f67892abc197c26efdfa --check-only",
+    "HTTP": 0,
+    "server": 0,
+    "browser": 0,
+    "SSR": 0,
+    "engine": 0,
+    "projection": 0
+  },
+  "approval": {
+    "wholeShapeReviewed": false,
+    "wholeCompatible": false,
+    "domesticStrokeOrderApproved": false,
+    "sourceMappingApproved": false,
+    "nativeApproval": false,
+    "runtimeApplied": false
+  },
+  "privacy": {
+    "privateMediaRead": false,
+    "privateSVGBodySaved": false,
+    "privateCSSBodySaved": false,
+    "privateImagesSaved": false,
+    "privateMediaTransmitted": false
+  }
+}

@@ -1251,6 +1251,12 @@ def main():
     config_path=pinned_path(args.config);require(config_path.name=='config.json'and config_path.parent.parent==ROOT/'docs'and config_path.parent.name.startswith('hanja-source-raw-compare-'),'comparison config location required')
     config_bytes=config_path.read_bytes();require(len(config_bytes)<=65536 and digest(config_bytes)==args.config_sha,'config SHA changed')
     config=json.loads(config_bytes)
+    if config.get('kind')=='fixed-mm-original-filled-whole-u66d9':
+        mm_path=pinned_path('scripts/hanja-static-original-mm-u66d9.py')
+        require(digest(mm_path.read_bytes())=='d1063a32d9d611987fd1beb3bc79d900e02d70527adfdfaf8540141fa6248ad1','fixed original MM 曙 source adapter changed')
+        mm_spec=importlib.util.spec_from_file_location('hanja_fixed_mm_u66d9',mm_path)
+        mm_adapter=importlib.util.module_from_spec(mm_spec);mm_spec.loader.exec_module(mm_adapter)
+        return mm_adapter.run_mm_original_whole(args,config,config_path)
     if config.get('kind')=='fixed-mm-original-filled-whole-u850c':
         mm_path=pinned_path('scripts/hanja-static-original-mm-u850c.py')
         require(digest(mm_path.read_bytes())=='9c0f4a24cb43eec0869abf67674bde4362a0bbb7acfbc960fe1858859c7124de','fixed original MM 蔌 source adapter changed')
