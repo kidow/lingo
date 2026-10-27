@@ -1,0 +1,67 @@
+{
+  "schema": "hanja-local-u8587-pen13-terminal-selected-findings/v1",
+  "glyph": "薇",
+  "pen": 13,
+  "mask": 4,
+  "verifier": "verify-pen13-terminal-feasibility.py",
+  "verifierSHA256": "d996c3ef3543ca7fe414293403cafd587dd96633a9988a37d6cc0ae743a75711",
+  "fixtureSHA256": "da117bf26e5d70e342e5ab5ae44767e002d663f80da72c7b123b1a1522707fd5",
+  "newMathExecutions": 1,
+  "primitiveCompilerRunsByProof": 0,
+  "unchangedGuide": {
+    "primitive": "cdDrawLine",
+    "start": [59, 80.5],
+    "end": [64.5, 80.5],
+    "compiledDirection": "right"
+  },
+  "unchangedFilledP": {
+    "polygons": 3,
+    "bounds": [59, 65, 67.5, 83.5],
+    "allPolygonsConvex": true,
+    "bodyRectangle": [59, 77.5, 64.5, 83.5],
+    "originalUpwardQuadVertices": [[64.5,77.5],[61.5,77.5],[64.5,65],[65.5,65]],
+    "upwardQuadBodySharedEdge": [[61.5,77.5],[64.5,77.5]],
+    "roundCapBodySharedEdge": [[64.5,77.5],[64.5,83.5]]
+  },
+  "existingRightClipFeasibility": {
+    "cut": "59+(17/2)*p",
+    "allPositivePrefixesConnected": true,
+    "conditionalOnPriorCurveFullOpaque": true,
+    "allPositivePrefixesHaveStrictPriorInkContact": true,
+    "contactWitnessFamily": "(59+min(cut-59,1)/2,80.5), cut>59",
+    "upwardQuadFirstPositiveAreaAfter": "5/17",
+    "minimumYFor5Over17To11Over17": "155/2-(25/6)*(cut-123/2)",
+    "topY65ReachedAt": "11/17",
+    "upwardQuadFullyRevealedAt": "13/17",
+    "newInkAreaUpperBound": "(629/4)*p",
+    "originalPOnly": true,
+    "actualPriorDOMObservedByProof": false,
+    "noNewRendererNeededForThisFeasibilityClaim": true
+  },
+  "visibilityKernel": {
+    "kernelArea": "522/25",
+    "unionBoundaryEdges": 10,
+    "originalGuideQ0StrictKernel": false,
+    "originalGuideQ0MinimumMargin": "-89/62",
+    "kernelIntersectCompletedPriorCapArea": "1256989/367380",
+    "strictIntersectionPositiveArea": true,
+    "existenceWitnessOnly": ["14970703/244920", "59656789/734760"],
+    "witnessStrictLInfinityMargin": "19835/48984",
+    "newAuthorAnchorAdopted": false
+  },
+  "source13HOLD": {
+    "preserved": true,
+    "publisherMacro": "right, then down, then obliquely up-right",
+    "reason": "The original filled P includes an upward terminal even though its last primitive guide is horizontal. Geometry permits gradual exposure, but candidate macro-shape/direction compatibility still needs ROOT actual baseline observation.",
+    "sourceGuideEndpointReinterpretedAsUpRight": false,
+    "originalMicroclockEquivalent": false,
+    "nativeMacroCompatibilityApproved": false
+  },
+  "newGeometryOrGuide": false,
+  "newImplementation": false,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "engine": 0,
+  "server": 0,
+  "newNative": 0
+}
