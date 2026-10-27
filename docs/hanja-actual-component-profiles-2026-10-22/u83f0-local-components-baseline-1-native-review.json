@@ -1,0 +1,42 @@
+{
+  "schema": "hanja-native-baseline-review/v1",
+  "date": "2026-10-27",
+  "glyph": "菰",
+  "sourceRoot": "lingo-u83f0-components-v1",
+  "locallyAuthoredRoot": true,
+  "profileSHA256": "a699c6563abdac2b32ff5f0d250c46d9803df7a180938f8adaf100bb1c4c78bf",
+  "helperSHA256": "7bb143ab7d07206571231511f7f6383aa1b3dd4f9e20933328a3f1f46c6748ee",
+  "compiledSHA256": "efbf229cb5e874b17bb812b380408f71dccd6734a2653eda26d207cbaab50606",
+  "browser": "native in-app browser panel, tab14, http://127.0.0.1:59412/",
+  "displaySize": 520,
+  "finiteObservationCount": 36,
+  "initialSamples": {"pens":[1,2,3,4,5,6,7,8,9,10,11,12],"requestedProgress":[0,0.000001],"count":24},
+  "initialVisibleJumpPens": [7,8,11,12],
+  "initialObservations": {
+    "7": "A distinct block at the left end of the rising cross stroke appears at epsilon; it is absent at zero.",
+    "8": "A large isolated upper-right head fragment appears at epsilon; it is absent at zero.",
+    "11": "A finite triangular upper fragment of the lower dot appears at epsilon.",
+    "12": "A thin but finite vertical head fragment appears below the upper-right end at epsilon.",
+    "otherPens": "No comparable large new fragment was seen at these two initial samples for pens1 through6,9,10. This does not approve their whole playback."
+  },
+  "boundarySamples": [
+    {"pen":5,"requested":[0.6038709908041106,0.6038709909041106,0.6038709910041106],"actualController":[0.6038709908041106,0.6038709909041106,0.6038709910041106],"observation":"A substantial diagonal head wedge appears immediately after the first horizontal finishes."},
+    {"pen":6,"requested":[0.8485725178259205,0.8485725179259205,0.8485725180259205],"actualController":[0.8485725178259205,0.8485725179259205,0.8485725180259205],"observation":"The rounded lower hook region gains a finite block immediately after the first vertical mask."},
+    {"pen":9,"requested":[0.49038457191365803,0.49038457201365804,0.49038457211365805],"actualController":[0.490384571913658,0.4903845720136581,0.4903845721136581],"observation":"The lower curve fragment extends suddenly at the nominal boundary and afterward. The actual controller floats are preserved without snapping."},
+    {"pen":10,"requested":[0.7542041781123979,0.7542041782123979,0.7542041783123979],"actualController":[0.7542041781123979,0.7542041782123979,0.7542041783123979],"observation":"A finite lower rising-stroke lump appears immediately after the vertical finishes."}
+  ],
+  "boundaryCount": 12,
+  "allObservedErrors": [],
+  "allObservedStateBad": [],
+  "domAtFinalBoundaryAfter": {"roundLinecapPathCount":1,"strokeWidth":"14","strokeDasharray":"4.0684554116728366e-10 2","strokeDashoffset":"0"},
+  "riskMasksOneBased": [[5,2],[6,2],[7,1],[8,1],[9,2],[10,2],[11,1],[12,1]],
+  "result": "HOLD-eight-curve-onset-fragments",
+  "next": "Group the eight observed onset failures; use exact source geometry to prove applicable remedies before adopting any start policy. The already verified pen10 dyadic input conditions can be reused only with exact bindings.",
+  "causalScope": "The final observed round-cap mask is consistent with a nonzero initial cap. No proof for every mask or every playback instant is inferred solely from this observation.",
+  "nativeAnimationApproved": false,
+  "runtimeApplied": false,
+  "privateSourceFilesSaved": 0,
+  "newEngineRuns": 0,
+  "buildRuns": 0,
+  "fullProjectTypecheckRuns": 0
+}
