@@ -1,0 +1,68 @@
+{
+  "schema": "hanja-root-variant-activation-preparation/v1",
+  "batch": 1508,
+  "glyph": "凞",
+  "variant": {
+    "catalogStrokes": 15,
+    "playbackStrokes": 16,
+    "form": "사전"
+  },
+  "sourceAuthored": false,
+  "originalPublicWholeClaim": true,
+  "nativeReview": "docs/hanja-source-original-u51de-base-2026-10-27/native-source-preview-review.json",
+  "nativeReviewSHA256": "fb54048129ab54663732e7a154a6bab350a7169c661eccb4440c7202886c1b40",
+  "nativeProfile": "docs/hanja-actual-component-profiles-2026-10-22/u51de-base-catalog15-playback16-source-preview-1.json",
+  "nativeProfileSHA256": "4481f19fa760ccf73d5c63fb8c2c78edb1fdcdd06cb720ca8faa713aa8f558f5",
+  "reviewedProductionComponentSHA256": "abf736abcc1a3cddb5d505eec6b26125a3dc2c96b6ff5bcafccde733cdc05c02",
+  "reviewedHarnessSHA256": "26aadd00e7392fcab85d7b13601b83b923e8e389fda24be135dad6395c364851",
+  "publicSource": "public/hanja-strokes/glyphwiki/u51de.json",
+  "publicSourceSHA256": "4cd3efb5480a81a8a189b62e929cffc5437deccb171818e873d735cd5b56a32e",
+  "pathsSHA256": "ef916c454c93ba912ae8eed3cde816272cbb32d6f4070e799b6eff6dc45c4234",
+  "compiledSHA256": "c9ac1ef9b6c55526779f888cfd12f31622fad344ed20cbbf3dfa0dabee7caea1",
+  "registryPatch": "docs/hanja-source-original-u51de-base-2026-10-27/registry-batch1508.patch",
+  "registryPatchSHA256": "d7ee52dbc13e8b00d46769967e7a50ef19b1cfad69326a1915178368fdcd1943",
+  "registryBeforeSHA256": "b1bf05701389fc6dca0ca97dbf261302b8a03b77c1509b27f7c62623ba5c4f42",
+  "expectedRegistryAfterPatchSHA256": "f98d1a13ccc54c5c532621ad834d4476a407c4d1512111caa9ff10ca4db526f1",
+  "newFilesSHA256": {
+    "public/hanja-strokes/glyphwiki/u51de.json": "4cd3efb5480a81a8a189b62e929cffc5437deccb171818e873d735cd5b56a32e",
+    "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch1508.json": "092a56986d60079ee144f2afd8df107f56ba165cf9d5da4ed3dba457308f026b",
+    "lib/hanja-stroke-dictionary-glyphwiki-batch1508.ts": "6b6f32efa311e9a5310987a533fca8d603168346e2b8efb48e8c19e365b13f7b",
+    "lib/hanja-stroke-dictionary-glyphwiki-batch1508.test.ts": "cf1377604d2f7aa61d2c5bb4c0850f88c43d96032525b6e4275427146f74aaed",
+    "public/hanja-strokes/glyphwiki/NOTICE-51de.md": "0297d4e13132230d6d8b27cf64b15623161d7cf5951602111e17dbe11d08f6a9",
+    "docs/hanja-source-original-u51de-base-2026-10-27/registry-batch1508.patch": "d7ee52dbc13e8b00d46769967e7a50ef19b1cfad69326a1915178368fdcd1943"
+  },
+  "countsBeforeFromROOT": {
+    "total": 5978,
+    "applied": 5922,
+    "remaining": 56
+  },
+  "expectedAfterROOTResolver": {
+    "total": 5978,
+    "applied": 5923,
+    "remaining": 55,
+    "ordinaryDictionaryEntry": null,
+    "catalog15": true,
+    "playback16": true
+  },
+  "registrationAuthorized": true,
+  "runtimeApplied": true,
+  "indexApplicationVerified": true,
+  "actualPostRegistryResolverChecked": true,
+  "actualRegistrySHA256": "f98d1a13ccc54c5c532621ad834d4476a407c4d1512111caa9ff10ca4db526f1",
+  "actualPostRegistryResolver": {"total": 5978, "applied": 5923, "remaining": 55, "catalog15": true, "playback16": true, "ordinaryDictionaryEntry": null, "registeredEntries": 1, "wrongCatalogCountsRejected": 49},
+  "postRegistrationFocusedTests": {"passed": 6, "failed": 0, "loaderSemanticErrors": 0, "testSemanticErrors": 0, "scope": "New loader and test only. Existing imported-module diagnostics were outside this selected-file validation scope."},
+  "sourcePreparationFlagsHistorical": true,
+  "examBodyApproved": false,
+  "sourceMicroclockIdentityApproved": false,
+  "allIntermediateFramesClaimed": false,
+  "freshAppUIVerified": false,
+  "buildRun": false,
+  "wholeProjectTypecheckRun": false,
+  "rootActionsCompleted": [
+    "Review new1508 immutable source and strict loader.",
+    "Apply the separate three-hunk registry patch only after review.",
+    "Flip only loader authorization/runtime flags after actual ROOT registry application.",
+    "Run actual catalogue-object resolver/uniqueness/wrong-count checks and update this mutable manifest.",
+    "Keep public preparation flags historical and commit only reviewed 한능검 files."
+  ]
+}
