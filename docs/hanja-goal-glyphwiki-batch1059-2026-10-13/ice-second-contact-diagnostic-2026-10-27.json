@@ -1,0 +1,98 @@
+{
+  "schema": "hanja-original-contact-source-diagnostic/v1",
+  "date": "2026-10-27",
+  "glyph": "凞",
+  "catalogStrokes": 15,
+  "dictionaryPlaybackStrokes": 16,
+  "status": "HOLD-full-prefix-and-native-unverified",
+  "scope": "Original ice compound raw indices 1 then 2, zero-based. Exact polygon-local contact only; no stroke-order or complete animation approval.",
+  "coordinateConvention": "Original Kage coordinates divided by 2, without modifying source polygons or guide controls. Fractions preserve the JSON decimal values, including binary-number serialization tails.",
+  "sourceArchiveSHA256": "7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62",
+  "dictionaryReference": {
+    "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/5100/51DE.svg",
+    "bytes": 8022,
+    "SHA256": "584c8c831fe65098988320ec174f4c96f21caa11f06e785fe7768910f9ceb59c",
+    "newFetches": 0,
+    "examBodyApproval": false
+  },
+  "cases": [
+    {
+      "root": "u51de-k",
+      "file": "engine-whole-u51de-k.json",
+      "SHA256": "b8b6e72a2d0fa910dc00d49d3384c534724edec1f565cf1742bb9492f1c491b0",
+      "originalEndpointGap": 28.708924940512823,
+      "nextQStartNormalized": ["253/20", "10364040000000001/200000000000000"],
+      "nextQStartInsidePriorPolygon": true,
+      "nextQStartInsideOwnPolygon": false,
+      "priorInteriorBoundaryDistanceSquaredAtNextQStart": "5740240974399985624720000000009/2550400000000000000000000000000",
+      "commonInteriorDisk": {
+        "center": ["51/4", "2069/40"],
+        "radius": "1/8",
+        "priorPolygonBoundaryDistanceSquared": "6765201/2550400",
+        "ownPolygonBoundaryDistanceSquared": "410881/22894400",
+        "distanceSquaredToPriorQAtHalf": "5858727759999995534800000000001/640000000000000000000000000000",
+        "conditionalRoundGuideDiskLimitSquared": "3025/64"
+      },
+      "nextQXDerivativeBernsteinControls": ["493/40", "783/40"]
+    },
+    {
+      "root": "u51de",
+      "file": "engine-whole-u51de.json",
+      "SHA256": "59adc1112c7e6456b67ecc86c6583f11475287bf71af5a8f0a6e429d5dddc91c",
+      "originalEndpointGap": 30.347296831843202,
+      "nextQStartNormalized": ["1189/100", "10381/200"],
+      "nextQStartInsidePriorPolygon": true,
+      "nextQStartInsideOwnPolygon": false,
+      "priorInteriorBoundaryDistanceSquaredAtNextQStart": "173106649/70760000",
+      "commonInteriorDisk": {
+        "center": ["12", "259/5"],
+        "radius": "1/8",
+        "priorPolygonBoundaryDistanceSquared": "2047761/707600",
+        "ownPolygonBoundaryDistanceSquared": "94249/5732000",
+        "distanceSquaredToPriorQAtHalf": "3141113/320000",
+        "conditionalRoundGuideDiskLimitSquared": "3025/64"
+      },
+      "nextQXDerivativeBernsteinControls": ["2159/200", "3429/200"]
+    }
+  ],
+  "verifiedSourceConditions": {
+    "fullProofKeys": ["defaults", "engineHashes", "engineRevision", "groups", "trace"],
+    "priorRawIndex": 1,
+    "nextRawIndex": 2,
+    "originalPolygonsHavePositiveAreaOverlap": true,
+    "bothCommonDisksStrictlyInsideBothOriginalPolygons": true,
+    "bothNextQStartsHavePriorPolygonBoundaryDistanceSquaredAboveOne": true,
+    "bothNextGuidesStrictlyIncreaseX": true,
+    "notASourcePolygonDisjointnessCase": true,
+    "gapFromBaseIsNotGapFromKWhole": true
+  },
+  "conditionalDisplayContract": {
+    "condition": "A future exact-source implementation must keep the completed prior original Q with normalized round radius 7 and the original prior polygon. Under that explicit condition, each common radius-1/8 disk is also covered by the completed prior guide because its squared center distance is below (7-1/8)^2.",
+    "existingActualCompletedMaskVerified": false,
+    "reason": "The preserved strict-native-adapter compileProgressive rejects this candidate. Its imported legacy renderer is not an executed 凞 implementation; no existing actual mask or runtime behavior is claimed.",
+    "initialCandidateOnly": "With an unchanged growing cap bounded by radius d and guide displacement at most d, d<=1/2 lies inside the radius-1 disk about the next Q start, which the prior polygon contains. This is a conditional initial-arc bound, not a complete prefix result."
+  },
+  "remainingRequiredGates": [
+    "Choose and directly verify the complete original whole and dictionary16 logical mapping; separate catalog15 from playback16 without changing the catalog.",
+    "Bind an actual same-frame completed prior mask and its exact round-guide radius before reusing the conditional guide containment fact.",
+    "Run the existing source-foot factory on this exact whole if that display route is chosen: full original union, slab intervals, triangulation and positive-edge BFS are not certified by the local disk.",
+    "Verify native start, transition, intermediate exposure and full completion. Do not repeat an unchanged failed animation as evidence of repair."
+  ],
+  "preservation": {
+    "sourcePolygonsChanged": false,
+    "guideControlsChanged": false,
+    "widthOrClockChanged": false,
+    "newConnectorCreated": false,
+    "engineExecuted": false,
+    "projectionExecuted": false,
+    "browserOrServerStarted": false,
+    "runtimeApplied": false
+  },
+  "approvals": {
+    "fullPrefixProved": false,
+    "footPolicyApproved": false,
+    "nativeAnimationApproved": false,
+    "examBodyApproved": false,
+    "runtimeRegistrationAuthorized": false
+  }
+}
