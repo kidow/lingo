@@ -1,0 +1,125 @@
+{
+  "schema": "hanja-existing-source-whole-proof-readiness/v1",
+  "date": "2026-10-28",
+  "glyph": "怰",
+  "codePoint": "U+6030",
+  "catalogStrokes": 8,
+  "scope": "Existing batch126 original public source, proof4 and separate trace only; no new source or geometry.",
+  "inputs": {
+    "docs/hanja-goal-glyphwiki-batch126-2026-09-27/README.md": "989088095694b02d09a9cdfb344cc069d8e73dcd3527a5770f4ac1def7a05805",
+    "docs/hanja-goal-glyphwiki-batch126-2026-09-27/sources.json": "01f3431dc7e3a855ec307611faae5be360873b69e67a022c9f41c02986083016",
+    "docs/hanja-goal-glyphwiki-batch126-2026-09-27/alternative-sources.json": "1fff62458690e73d426485e8ecb84991c1232b0b501aa6c3b58db014d097f41d",
+    "docs/hanja-goal-glyphwiki-batch126-2026-09-27/engine-proof.json": "fef26dbd710dac54ff97f9040e0636f5e3f45fd0687ee47f46f8ae5e444e2242",
+    "docs/hanja-goal-glyphwiki-batch126-2026-09-27/draw-trace.json": "98731d24ca0671b759673c24437cdfe84c0f0628d5830ebf99598c4f98f80412",
+    "docs/hanja-goal-glyphwiki-batch126-2026-09-27/findings.json": "8fade38dddfc8e1a3b89b9f301fca9e62b85d900e9551f601ed634d63881ebc1",
+    "docs/hanja-goal-glyphwiki-batch126-2026-09-27/verify.mjs": "da56d14645abc7edb2940c4c60fcd0236c57de2178a641d8ea5f3131cf52c426"
+  },
+  "existingReview": {
+    "path": "docs/hanja-goal-glyphwiki-batch126-2026-09-27/findings.json",
+    "domesticStrokesCompared": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "cumulativeAndFinalReviewed": true,
+    "progressiveReviewed": false,
+    "status": "held",
+    "wholeCompatibilityPASSRecorded": false,
+    "wholeIssueStillOpen": "Default mincho sixth stroke attaches to the upper horizontal unlike the observed domestic gap. The batch explicitly requires reassessment with any replacement whole.",
+    "continuousTurnIssues": [
+      {
+        "logicalStroke": 6,
+        "firstPrimitiveEnd": [
+          106.66,
+          97
+        ],
+        "nextPrimitiveStart": [
+          86.52,
+          82
+        ]
+      },
+      {
+        "logicalStroke": 7,
+        "firstPrimitiveEnd": [
+          91.82,
+          174
+        ],
+        "nextPrimitiveStart": [
+          72.74,
+          177
+        ]
+      }
+    ],
+    "overlappingFilledOutlinesDoNotDocumentTraversal": true,
+    "notMerelyARevealImplementationGap": true
+  },
+  "localSource": {
+    "root": "u6030",
+    "archiveRevision": "a7dd7f3d911936770fa742e8c37d16bee7e2173c",
+    "archiveSHA256": "7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62",
+    "retainedRecords": [
+      "u6030",
+      "u5fc4-01",
+      "u5fc4",
+      "u7384-02"
+    ],
+    "missingRecords": [],
+    "documentedLatestAlias": "u6030@16 -> u6030-j@2",
+    "documentedLatestU7384RowsUnchanged": true,
+    "documentedKoreanWholeVariantAbsent": true
+  },
+  "existingProofBinding": {
+    "proofPath": "docs/hanja-goal-glyphwiki-batch126-2026-09-27/engine-proof.json",
+    "proofKeys": [
+      "engineRevision",
+      "hashes",
+      "groups",
+      "defaults"
+    ],
+    "tracePath": "docs/hanja-goal-glyphwiki-batch126-2026-09-27/draw-trace.json",
+    "engineRevision": "49232bac0348fe815f4200d4116ab7917e0db47f",
+    "engineHashFileCount": 8,
+    "groups": 10,
+    "traceRows": 10,
+    "traceCalls": 10,
+    "polygons": 23,
+    "allOriginalGroupPolygonsExactlyEqualCorrespondingFlattenedTrace": true,
+    "exactEqualityCheckRuns": 1,
+    "noEngineOrIntersectionRecomputation": true,
+    "actualFull5FilePresent": false,
+    "minimalBaselineAdapterContract": "A narrow legacy-proof4 plus separately pinned trace reader can expose the existing pair without changing geometry: require exact two file hashes, engine8/defaults/header,10 original groups/trace rows and per-group ordered polygon equality. Preserve old field name hashes, or explicitly label any metadata-only schema alias; do not claim a fresh actual-full5 capture.",
+    "newNetworkNeededToBindExistingBaseline": false,
+    "newWholeCompatibilityFromThisBinding": false
+  },
+  "nextAction": {
+    "readyForNativeAdoption": false,
+    "existingWholeShouldNotBeReapprovedByTemporalMaskAlone": true,
+    "requiredNewEvidence": "A genuinely compatible complete licensed fixed source documenting the two compound turns and domestic separation, followed by whole, membership, all8directions and progressive review.",
+    "sourceDiscoveryOption": "Inspect independently fixed public whole families such as HKCS only after their exact source is obtained; no compatible root is asserted by this plan.",
+    "MMFixedCorpusAlternative": "The separately recorded complete9574-record MM scan found U+6030 absent. This is limited to that fixed MM revision.",
+    "newPathsOrJoinsPermittedByPlan": false
+  },
+  "workPerformed": {
+    "newPublicFetch": 0,
+    "newPrivateMediaRead": 0,
+    "newGeometryGenerated": 0,
+    "newEngine": 0,
+    "newRenderer": 0,
+    "newServer": 0,
+    "newBrowser": 0,
+    "newBuild": 0,
+    "newCommit": 0
+  },
+  "approval": {
+    "wholeCompatible": false,
+    "continuousTraversalApproved": false,
+    "reusableRevealPolicyApproved": false,
+    "nativeApproval": false,
+    "runtimeApplied": false
+  }
+}
