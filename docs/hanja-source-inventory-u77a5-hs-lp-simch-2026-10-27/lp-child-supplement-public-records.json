@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 1,
+  "glyph": "瞥",
+  "date": "2026-10-27",
+  "scope": "Three previously unexecuted public LP child requests only. Original C source files unchanged; original record fields/version types/U+3013 retained.",
+  "priorEvidence": [
+    {
+      "path": "docs/hanja-source-inventory-u77a5-hs-lp-simch-2026-10-27/public-records.json",
+      "SHA256": "c4cc92c1ed96d77551a7678abb902900565fd69d69253fd038a2c6a1d36082e7"
+    },
+    {
+      "path": "docs/hanja-source-inventory-u77a5-hs-lp-simch-2026-10-27/source-screening.json",
+      "SHA256": "d96ca3946ab93fafa33e1ee022e98930b057a4d22add169515c0ce2cb7bb2b20"
+    }
+  ],
+  "priorUnexecutedFirecrawlFailures": [
+    {
+      "requested": "lp_lpy-00017254@1",
+      "url": "https://glyphwiki.org/api/glyph?name=lp_lpy-00017254%401",
+      "status": null,
+      "requestExecuted": false,
+      "error": "Rate limit exceeded. Consumed (req/min): 12, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 31s, resets at Tue Oct 27 2026 04:22:33 GMT+0000 (Coordinated Universal Time)"
+    },
+    {
+      "requested": "lp_lpy-00106360",
+      "url": "https://glyphwiki.org/api/glyph?name=lp_lpy-00106360",
+      "status": null,
+      "requestExecuted": false,
+      "error": "Rate limit exceeded. Consumed (req/min): 14, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 31s, resets at Tue Oct 27 2026 04:22:33 GMT+0000 (Coordinated Universal Time)"
+    },
+    {
+      "requested": "lp_lpy-00127707",
+      "url": "https://glyphwiki.org/api/glyph?name=lp_lpy-00127707",
+      "status": null,
+      "requestExecuted": false,
+      "error": "Rate limit exceeded. Consumed (req/min): 11, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 31s, resets at Tue Oct 27 2026 04:22:33 GMT+0000 (Coordinated Universal Time)"
+    }
+  ],
+  "initialWebToolAttempts": [
+    {
+      "requested": "lp_lpy-00017254@1",
+      "url": "https://glyphwiki.org/json?name=lp_lpy-00017254%401",
+      "tool": "web.open",
+      "result": "URL is not accessible via this tool.",
+      "responseBodyObtained": false,
+      "remoteHTTPStatusKnown": false,
+      "serverRequestExecutionKnown": false
+    },
+    {
+      "requested": "lp_lpy-00106360",
+      "url": "https://glyphwiki.org/json?name=lp_lpy-00106360",
+      "tool": "web.open",
+      "result": "URL is not accessible via this tool.",
+      "responseBodyObtained": false,
+      "remoteHTTPStatusKnown": false,
+      "serverRequestExecutionKnown": false
+    },
+    {
+      "requested": "lp_lpy-00127707",
+      "url": "https://glyphwiki.org/json?name=lp_lpy-00127707",
+      "tool": "web.open",
+      "result": "URL is not accessible via this tool.",
+      "responseBodyObtained": false,
+      "remoteHTTPStatusKnown": false,
+      "serverRequestExecutionKnown": false
+    }
+  ],
+  "successfulPublicRequests": [
+    {
+      "requested": "lp_lpy-00017254@1",
+      "url": "https://glyphwiki.org/api/glyph?name=lp_lpy-00017254%401",
+      "status": 200,
+      "scrapeId": "01a17b9f-50d0-778d-ab92-6e75dce5b844",
+      "originalResponseJSON": "{\"version\":\"1\",\"name\":\"lp_lpy-00017254\",\"related\":\"U+3013\",\"data\":\"99:0:0:0:0:200:200:u77a5-k@6\"}",
+      "record": {
+        "version": "1",
+        "name": "lp_lpy-00017254",
+        "related": "U+3013",
+        "data": "99:0:0:0:0:200:200:u77a5-k@6"
+      }
+    },
+    {
+      "requested": "lp_lpy-00106360",
+      "url": "https://glyphwiki.org/api/glyph?name=lp_lpy-00106360",
+      "status": 200,
+      "scrapeId": "01a17b9f-73b2-76aa-be59-7f9e915a77a9",
+      "originalResponseJSON": "{\"related\":\"U+3013\",\"data\":\"99:0:0:0:0:200:200:u77a5-g\",\"version\":1,\"name\":\"lp_lpy-00106360\"}",
+      "record": {
+        "related": "U+3013",
+        "data": "99:0:0:0:0:200:200:u77a5-g",
+        "version": 1,
+        "name": "lp_lpy-00106360"
+      }
+    },
+    {
+      "requested": "lp_lpy-00127707",
+      "url": "https://glyphwiki.org/api/glyph?name=lp_lpy-00127707",
+      "status": 200,
+      "scrapeId": "01a17b9f-7298-718f-b243-c745e9715b97",
+      "originalResponseJSON": "{\"version\":1,\"name\":\"lp_lpy-00127707\",\"data\":\"99:0:0:0:0:200:200:u77a5-j\",\"related\":\"U+3013\"}",
+      "record": {
+        "version": 1,
+        "name": "lp_lpy-00127707",
+        "data": "99:0:0:0:0:200:200:u77a5-j",
+        "related": "U+3013"
+      }
+    }
+  ],
+  "transport": "Firecrawl returned original JSON fenced in markdown from /api/glyph; originalResponseJSON preserves returned JSON text, not HTTP raw-byte serialization.",
+  "newFirecrawlScrapeCalls": 3,
+  "successfulOriginalResponses": 3,
+  "newIndependentDrawingRows": 0,
+  "engineExecutions": 0,
+  "privateInputs": 0,
+  "sourceRowsChanged": false,
+  "geometryChanged": false
+}

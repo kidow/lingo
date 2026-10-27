@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "glyph": "瞥",
+  "source": {
+    "path": "docs/hanja-source-inventory-u77a5-hs-lp-simch-2026-10-27/lp-child-supplement-public-records.json",
+    "SHA256": "a3589ff5c9aa03c1c3ede2b2ca340a51d7724ef659aad872bec2627d3aea5e3f"
+  },
+  "results": [
+    {
+      "requested": "lp_lpy-00017254@1",
+      "name": "lp_lpy-00017254",
+      "version": "1",
+      "versionType": "string",
+      "related": "U+3013",
+      "originalRootRow": "99:0:0:0:0:200:200:u77a5-k@6",
+      "classification": "Whole alias to exact u77a5-k@6; no new drawing data.",
+      "requiredChild": "u77a5-k@6",
+      "exactChildResponseAvailableInScannedCache": false,
+      "cachedK8NotSubstituted": true,
+      "closureComplete": false,
+      "frameAndDirectionCondition": "Unknown at exact k@6. Cached k@8 and other archives do not establish its original frame or direction."
+    },
+    {
+      "requested": "lp_lpy-00106360",
+      "name": "lp_lpy-00106360",
+      "version": 1,
+      "versionType": "number",
+      "related": "U+3013",
+      "originalRootRow": "99:0:0:0:0:200:200:u77a5-g",
+      "classification": "Whole alias to unversioned u77a5-g; no new drawing data.",
+      "requiredChild": "u77a5-g",
+      "cachedSnapshotRootVersion": "5",
+      "currentUnversionedChildBindingConfirmed": false,
+      "cachedReferenceKeys": [
+        "u77a5-g",
+        "u655d-03-var-004@4",
+        "u655d-g@7",
+        "u76ee-j"
+      ],
+      "missingInScannedCachedClosure": [
+        "u6535-02"
+      ],
+      "closureComplete": false,
+      "cachedSourcePins": [
+        {
+          "path": "docs/hanja-source-inventory-u77a5-2026-10-26/public-records.json",
+          "SHA256": "bb4b3167b0623fdc6af90caa1572b4c9de5d8a48cbe8679050b069dead88f6b8"
+        },
+        {
+          "path": "docs/hanja-source-inventory-u77a5-2026-10-26/supplement-public-records.json",
+          "SHA256": "05f3c6b9ec535aa43955d2e48839d5b4abb9203eb267f455dcd0d595f66f4e9d"
+        }
+      ],
+      "cachedOriginalRows": {
+        "upperFirst": "2:7:8:18:24:34:41:42:65",
+        "rightFrame": "1:22:4:99:79:99:179"
+      },
+      "frameAndDirectionCondition": "Cached g@7 rows encode first DR diagonal and frame endFlag4. This does not supply a fresh compatible upper-DL/no-hook result or an actual filled-terminal/native comparison."
+    },
+    {
+      "requested": "lp_lpy-00127707",
+      "name": "lp_lpy-00127707",
+      "version": 1,
+      "versionType": "number",
+      "related": "U+3013",
+      "originalRootRow": "99:0:0:0:0:200:200:u77a5-j",
+      "classification": "Whole alias to unversioned u77a5-j; no new drawing data.",
+      "requiredChild": "u77a5-j",
+      "exactChildResponseAvailableInScannedCache": false,
+      "closureComplete": false,
+      "frameAndDirectionCondition": "Unknown. No other j-named or versionless archive is substituted."
+    }
+  ],
+  "recommendation": "Do not capture any LP alias based on these three responses. They reveal existing whole references, not new independent geometry. Prioritize independent source candidates already closed, or a separately authorized exact missing-child retrieval; no further requests performed in this unit.",
+  "history": {
+    "priorFirecrawlFailuresWereUnexecuted": true,
+    "newWebToolInaccessibilityErrors": 3,
+    "newFirecrawlSuccesses": 3,
+    "retryLoops": 0,
+    "furtherChildRequests": 0
+  },
+  "approval": {
+    "whole": false,
+    "membership": false,
+    "direction": false,
+    "frameGeometry": false,
+    "sourceClock": false,
+    "componentReuse": false,
+    "native": false,
+    "runtimeApplied": false
+  },
+  "execution": {
+    "engine": 0,
+    "server": 0,
+    "build": 0,
+    "fullTypeChecks": 0,
+    "sharedChanges": 0
+  }
+}
