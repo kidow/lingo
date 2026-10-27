@@ -1,0 +1,485 @@
+{
+  "schema": "hanja-local-u995b-exact-compound-contact-facts/v1",
+  "glyph": "饛",
+  "date": "2026-10-27",
+  "inputs": {
+    "full5SHA256": "23b1486cda54e965465732a5bcb15b6421c40617a8ab5d3beba37a8943e12d5d",
+    "captureSHA256": "8dd8b4dae17bc81a41b9257824dd9d12b42de1e1f1f6e604fb72a913e0959740",
+    "recipeSHA256": "eaefeb0fc260ffd31857297168753b0e2803d8f50b9c8d8a1a3342a8aff107b8",
+    "verifierSHA256": "bb3f78ad4a38857a699a0c3a48b42c0e241ee1a7b5ce51dbb3aa5e063a47d9d5"
+  },
+  "coordinateSystem": "Original captured200-unit Kage coordinates; normalized100 facts only as explicit/2 conversion.",
+  "originalRawGroups": 25,
+  "originalPolygons": 46,
+  "scope": "ROOT-provided provisional source pair references4 and15; raw/call/P facts only, no count-based grouping approval.",
+  "cases": [
+    {
+      "referencePenProvidedByROOT": 4,
+      "temporaryRawOneBased": [
+        5,
+        6
+      ],
+      "originalSourceBinding": [
+        {
+          "record": "u2967f-01",
+          "sourceRowOneBased": 5,
+          "literal": "1:2:2:36:79:83:79",
+          "affine": [
+            "33/40",
+            "0",
+            "1",
+            "0"
+          ],
+          "chain": [
+            {
+              "record": "lingo-u995b-no-extra-v1",
+              "rowOneBased": 1,
+              "literal": "99:0:0:0:0:165:200:u2967f-01",
+              "child": "u2967f-01"
+            }
+          ],
+          "rawOneBased": 5,
+          "actualPrimitiveFlags": [
+            1,
+            2,
+            2
+          ],
+          "originalPrimitiveFlags": [
+            1,
+            2,
+            2
+          ],
+          "actualCallKind": "cdDrawLine",
+          "originalCoordsExactlyMapToActual": true
+        },
+        {
+          "record": "u2967f-01",
+          "sourceRowOneBased": 6,
+          "literal": "1:22:23:83:79:83:123",
+          "affine": [
+            "33/40",
+            "0",
+            "1",
+            "0"
+          ],
+          "chain": [
+            {
+              "record": "lingo-u995b-no-extra-v1",
+              "rowOneBased": 1,
+              "literal": "99:0:0:0:0:165:200:u2967f-01",
+              "child": "u2967f-01"
+            }
+          ],
+          "rawOneBased": 6,
+          "actualPrimitiveFlags": [
+            1,
+            22,
+            223
+          ],
+          "originalPrimitiveFlags": [
+            1,
+            22,
+            23
+          ],
+          "actualCallKind": "cdDrawLine",
+          "originalCoordsExactlyMapToActual": true
+        }
+      ],
+      "guideJoint": [
+        "2739/40",
+        "79"
+      ],
+      "guideJointExactlyShared": true,
+      "macroGuideDirection": [
+        "R",
+        "D"
+      ],
+      "polygonPositiveContactGraph": [
+        {
+          "a": [
+            5,
+            1
+          ],
+          "b": [
+            6,
+            1
+          ],
+          "exactPositiveIntersectionArea": "12",
+          "positiveAreaContact": true
+        },
+        {
+          "a": [
+            5,
+            1
+          ],
+          "b": [
+            6,
+            2
+          ],
+          "exactPositiveIntersectionArea": "20",
+          "positiveAreaContact": true
+        },
+        {
+          "a": [
+            6,
+            1
+          ],
+          "b": [
+            6,
+            2
+          ],
+          "exactPositiveIntersectionArea": "36",
+          "positiveAreaContact": true
+        }
+      ],
+      "allThreeOriginalPolygonsPositiveAreaConnected": true,
+      "allPolygonsAccountedFor": 3,
+      "individualContourKernels": [
+        {
+          "raw": 6,
+          "polygon": 1,
+          "visibilityKernelArea": "612",
+          "Q0InClosedIndividualPolygonKernel": true,
+          "unionKernelClaim": false
+        },
+        {
+          "raw": 6,
+          "polygon": 2,
+          "visibilityKernelArea": "221/2",
+          "Q0InClosedIndividualPolygonKernel": true,
+          "unionKernelClaim": false
+        }
+      ],
+      "secondGuideDyadicSourceT": [
+        {
+          "t": "0",
+          "point": [
+            "2739/40",
+            "79"
+          ]
+        },
+        {
+          "t": "1/8",
+          "point": [
+            "2739/40",
+            "169/2"
+          ]
+        },
+        {
+          "t": "1/4",
+          "point": [
+            "2739/40",
+            "90"
+          ]
+        },
+        {
+          "t": "1/2",
+          "point": [
+            "2739/40",
+            "101"
+          ]
+        },
+        {
+          "t": "1",
+          "point": [
+            "2739/40",
+            "123"
+          ]
+        }
+      ],
+      "initialRoundCapCondition": {
+        "compiledNormalization": "Original200->100 by/2; existing compiler revealWidth14 means original radius14. Condition confirmed by fixture owner; no fixture read or modification.",
+        "originalRadius": "14",
+        "Q0": [
+          "2739/40",
+          "79"
+        ],
+        "newInkWitnessBox": [
+          [
+            "6839/100",
+            "7399/100"
+          ],
+          [
+            "6841/100",
+            "7399/100"
+          ],
+          [
+            "6841/100",
+            "7401/100"
+          ],
+          [
+            "6839/100",
+            "7401/100"
+          ]
+        ],
+        "witnessInsideOriginalSecondCallPolygon": [
+          6,
+          2
+        ],
+        "strictInside": true,
+        "outsideEveryEarlierCompletedRawPByStrictAABB": true,
+        "minimumPriorAABBGap": "299/100",
+        "maximumSquaredDistanceToQ0": "1004293/40000",
+        "strictInsideRoundDisk": true,
+        "positiveNewInkAreaLowerBound": "1/2500",
+        "mathematicalPotentialExposure": true,
+        "actualBrowserFailureObserved": false,
+        "authorClockOrNewGateSelected": false
+      }
+    },
+    {
+      "referencePenProvidedByROOT": 15,
+      "temporaryRawOneBased": [
+        16,
+        17
+      ],
+      "originalSourceBinding": [
+        {
+          "record": "u5196-03@4",
+          "sourceRowOneBased": 2,
+          "literal": "1:0:2:32:31:176:31",
+          "affine": [
+            "3/5",
+            "75",
+            "15543/20000",
+            "38"
+          ],
+          "chain": [
+            {
+              "record": "lingo-u995b-no-extra-v1",
+              "rowOneBased": 2,
+              "literal": "99:0:0:75:0:195:200:lingo-u995b-meng-v1",
+              "child": "lingo-u995b-meng-v1"
+            },
+            {
+              "record": "lingo-u995b-meng-v1",
+              "rowOneBased": 2,
+              "literal": "99:0:0:0:38:200:195:lingo-u995b-mound-v1",
+              "child": "lingo-u995b-mound-v1"
+            },
+            {
+              "record": "lingo-u995b-mound-v1",
+              "rowOneBased": 1,
+              "literal": "99:0:0:0:0:200:198:u5196-03@4",
+              "child": "u5196-03@4"
+            }
+          ],
+          "rawOneBased": 16,
+          "actualPrimitiveFlags": [
+            1,
+            0,
+            2
+          ],
+          "originalPrimitiveFlags": [
+            1,
+            0,
+            2
+          ],
+          "actualCallKind": "cdDrawLine",
+          "originalCoordsExactlyMapToActual": true
+        },
+        {
+          "record": "u5196-03@4",
+          "sourceRowOneBased": 3,
+          "literal": "2:22:7:176:31:170:43:156:63",
+          "affine": [
+            "3/5",
+            "75",
+            "15543/20000",
+            "38"
+          ],
+          "chain": [
+            {
+              "record": "lingo-u995b-no-extra-v1",
+              "rowOneBased": 2,
+              "literal": "99:0:0:75:0:195:200:lingo-u995b-meng-v1",
+              "child": "lingo-u995b-meng-v1"
+            },
+            {
+              "record": "lingo-u995b-meng-v1",
+              "rowOneBased": 2,
+              "literal": "99:0:0:0:38:200:195:lingo-u995b-mound-v1",
+              "child": "lingo-u995b-mound-v1"
+            },
+            {
+              "record": "lingo-u995b-mound-v1",
+              "rowOneBased": 1,
+              "literal": "99:0:0:0:0:200:198:u5196-03@4",
+              "child": "u5196-03@4"
+            }
+          ],
+          "rawOneBased": 17,
+          "actualPrimitiveFlags": [
+            2,
+            22,
+            7
+          ],
+          "originalPrimitiveFlags": [
+            2,
+            22,
+            7
+          ],
+          "actualCallKind": "cdDrawCurve",
+          "originalCoordsExactlyMapToActual": true
+        }
+      ],
+      "guideJoint": [
+        "903/5",
+        "1241833/20000"
+      ],
+      "guideJointExactlyShared": true,
+      "macroGuideDirection": [
+        "R",
+        "DL"
+      ],
+      "polygonPositiveContactGraph": [
+        {
+          "a": [
+            16,
+            1
+          ],
+          "b": [
+            17,
+            1
+          ],
+          "exactPositiveIntersectionArea": "336844277/18137400",
+          "positiveAreaContact": true
+        },
+        {
+          "a": [
+            16,
+            1
+          ],
+          "b": [
+            17,
+            2
+          ],
+          "exactPositiveIntersectionArea": "24",
+          "positiveAreaContact": true
+        },
+        {
+          "a": [
+            17,
+            1
+          ],
+          "b": [
+            17,
+            2
+          ],
+          "exactPositiveIntersectionArea": "1420301/17000",
+          "positiveAreaContact": true
+        }
+      ],
+      "allThreeOriginalPolygonsPositiveAreaConnected": true,
+      "allPolygonsAccountedFor": 3,
+      "individualContourKernels": [
+        {
+          "raw": 17,
+          "polygon": 1,
+          "visibilityKernelArea": "765816427797429/6121246112000",
+          "Q0InClosedIndividualPolygonKernel": true,
+          "unionKernelClaim": false
+        },
+        {
+          "raw": 17,
+          "polygon": 2,
+          "visibilityKernelArea": "162",
+          "Q0InClosedIndividualPolygonKernel": true,
+          "unionKernelClaim": false
+        }
+      ],
+      "secondGuideDyadicSourceT": [
+        {
+          "t": "0",
+          "point": [
+            "903/5",
+            "1241833/20000"
+          ]
+        },
+        {
+          "t": "1/8",
+          "point": [
+            "1437/8",
+            "10323239/160000"
+          ]
+        },
+        {
+          "t": "1/4",
+          "point": [
+            "357/2",
+            "107429/1600"
+          ]
+        },
+        {
+          "t": "1/2",
+          "point": [
+            "879/5",
+            "291887/4000"
+          ]
+        },
+        {
+          "t": "1",
+          "point": [
+            "843/5",
+            "1739209/20000"
+          ]
+        }
+      ],
+      "initialRoundCapCondition": {
+        "compiledNormalization": "Original200->100 by/2; existing compiler revealWidth14 means original radius14. Condition confirmed by fixture owner; no fixture read or modification.",
+        "originalRadius": "14",
+        "Q0": [
+          "903/5",
+          "1241833/20000"
+        ],
+        "newInkWitnessBox": [
+          [
+            "18059/100",
+            "5699/100"
+          ],
+          [
+            "18061/100",
+            "5699/100"
+          ],
+          [
+            "18061/100",
+            "5701/100"
+          ],
+          [
+            "18059/100",
+            "5701/100"
+          ]
+        ],
+        "witnessInsideOriginalSecondCallPolygon": [
+          17,
+          2
+        ],
+        "strictInside": true,
+        "outsideEveryEarlierCompletedRawPByStrictAABB": true,
+        "minimumPriorAABBGap": "299/100",
+        "maximumSquaredDistanceToQ0": "10410773089/400000000",
+        "strictInsideRoundDisk": true,
+        "positiveNewInkAreaLowerBound": "1/2500",
+        "mathematicalPotentialExposure": true,
+        "actualBrowserFailureObserved": false,
+        "authorClockOrNewGateSelected": false
+      }
+    }
+  ],
+  "method": "Exact Fraction source-affine/actual-call binding, simple-positive original polygons, exact ear partitions and triangle clipping for intersection areas; positive-area polygon adjacency certifies connected union.",
+  "sourceCoordinatesOrPChanged": false,
+  "sourceEndFlagsHundredsAdjustmentPreserved": true,
+  "oldProofReexecuted": false,
+  "formalLogicalGroupingApproved": false,
+  "sourceMicroclockIdentityApproved": false,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "engineRuns": 0,
+  "executionHistory": {
+    "initialAttempt": "Stopped during unnecessary prior-contour positive/simple validation; target contact calculation had run but no complete output was produced.",
+    "correction": "Prior AABB exclusion now uses all finite original straight vertices, without a positivity/simple-contour precondition. Strict target polygon validation and original geometry remain unchanged.",
+    "completeResultExecutions": 1,
+    "totalBatchAttempts": 2,
+    "geometryEdited": false
+  }
+}
