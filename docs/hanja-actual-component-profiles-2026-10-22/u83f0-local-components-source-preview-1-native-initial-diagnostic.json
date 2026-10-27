@@ -1,0 +1,21 @@
+{
+  "schema": "hanja-native-preview-observer-diagnostic/v1",
+  "glyph": "菰",
+  "reviewedAt": "2026-10-27",
+  "profileSHA256": "c2e2d786c25a3337ac01aae8ca7a60d2cdeb97fa2b935de0a7a0640d8ee95687",
+  "launcherSHA256": "755b76f95c9d774b970a8f7ea8e17fdf4449ca5f356d40d9927ca7a57dfc9ee5",
+  "effectiveRAMComponentSHA256": "e753fbe759cbb66cb1ba6c107e164908e9d19a4a6b736645fa385a0e0dd832e5",
+  "observedScenes": [{"pen":7,"requestedProgress":0},{"pen":7,"requestedProgress":0.000001}],
+  "nativeObservation": "The prior completed 子 strokes remain visible, and no baseline-sized isolated rising-stroke chunk appears in the sampled initial positive pen7 frame.",
+  "completeStatusPreRead": true,
+  "statusErrors": [],
+  "statusBadIncluded": ["main:noSpecialPolicy","main:7m1:guide","main:7m1:width","main:7m1:round","main:7m1:normalizedLength","main:9m1:bounds"],
+  "statusMissing": ["new source-preview observer fields","new policy guard errors"],
+  "result": "HOLD-browser-observer-bridge-not-enabled",
+  "diagnosisScope": "Renderer preview exists, but the browser status path still treats the new policies as generic masks. Correct the profile-to-browser observer bridge before resuming the finite matrix.",
+  "fullGuardPassClaimed": false,
+  "nativeAnimationApproval": false,
+  "runtimeApplied": false,
+  "serverStopped": true,
+  "privateMediaSaved": false
+}
