@@ -1,0 +1,688 @@
+{
+  "schema": "hanja-source-contact-feasibility/v1",
+  "glyph": "凞",
+  "root": "u51de",
+  "scope": [
+    "3m2",
+    "6m2"
+  ],
+  "inputs": {
+    "docs/hanja-source-original-u51de-base-2026-10-27/fixtures-draft.json": "623a80e6bbd7363bfb171731d60f730d9f9c412ec07a94afd3eccd7a30ed1255",
+    "docs/hanja-source-original-u51de-base-2026-10-27/feasibility-initial-1-8.json": "0147e0711262d64634f465695abce31a06133511acef3229e42751950dc9b2ba",
+    "docs/hanja-source-original-u83f0-local-components-2026-10-27/verify-baseline-onset-conditions.py": "35b0d7f372a2ed37052ebbbd1b116e951786fe80a5d70798c95659cfc85a63cf",
+    "docs/hanja-source-original-u7443-g-2026-10-26/verify-curve-union-start-kernels.py": "95286fc3de0d18ff96735263582095325f7d9afa00bbd2c3a0ea42e03caf2396"
+  },
+  "reusedAxisAnalysis": "13 successful axis alternatives reused; none recalculated here.",
+  "coordinateFrame": "Exact rational compiled 100-unit polygons.",
+  "results": [
+    {
+      "pen": 3,
+      "mask": 2,
+      "sourceMacro": "D then DL",
+      "sourceSegmentSHA256": "183c31259935b7fdd3f22ef0fbe8d5803bc5afc037f53a706fdf2bbda1b23e59",
+      "priorPolygons": 3,
+      "targetPolygons": 1,
+      "priorContactHasPositiveArea": true,
+      "positiveIntersectionTrianglePairCells": 6,
+      "maxIntersectionCellArea": "195/56",
+      "intersectionAreaNote": "Cell areas overlap if original source polygons overlap; no union area claimed.",
+      "positiveSharedSourceEdges": [
+        [
+          [
+            "543/20",
+            "33"
+          ],
+          [
+            "643/20",
+            "33"
+          ]
+        ],
+        [
+          [
+            "543/20",
+            "33"
+          ],
+          [
+            "643/20",
+            "33"
+          ]
+        ]
+      ],
+      "targetStarKernelVertices": 8,
+      "targetStarKernelHasPositiveArea": true,
+      "strictKernelAndPriorSeedExists": false,
+      "strictKernelAndPriorSeedWitnesses": [],
+      "seedConclusion": "No strict star-kernel/prior intersection: exact kernel clipped against every prior source triangle, not inferred from dyadic sample failure.",
+      "triangulation": {
+        "sourceVerticesOnly": true,
+        "areaPreservedPerPolygon": true,
+        "targetTriangleCount": 20,
+        "priorContactRootTriangles": [
+          0,
+          1
+        ],
+        "positiveEdgeOrAreaAdjacency": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            6,
+            5
+          ],
+          [
+            6,
+            19
+          ],
+          [
+            7,
+            8
+          ],
+          [
+            8,
+            7
+          ],
+          [
+            8,
+            9
+          ],
+          [
+            9,
+            8
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            10,
+            9
+          ],
+          [
+            10,
+            11
+          ],
+          [
+            11,
+            10
+          ],
+          [
+            11,
+            12
+          ],
+          [
+            12,
+            11
+          ],
+          [
+            12,
+            13
+          ],
+          [
+            13,
+            12
+          ],
+          [
+            13,
+            14
+          ],
+          [
+            14,
+            13
+          ],
+          [
+            14,
+            15
+          ],
+          [
+            15,
+            14
+          ],
+          [
+            15,
+            16
+          ],
+          [
+            16,
+            15
+          ],
+          [
+            16,
+            17
+          ],
+          [
+            17,
+            16
+          ],
+          [
+            17,
+            18
+          ],
+          [
+            18,
+            17
+          ],
+          [
+            18,
+            19
+          ],
+          [
+            19,
+            6
+          ],
+          [
+            19,
+            18
+          ]
+        ],
+        "allTrianglesReachableFromPriorContact": true,
+        "downwardCentroidRestrictedReachable": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "allTrianglesReachableUnderDownwardCentroidRestriction": false,
+        "note": "Exact source-vertex clip partition and positive shared-edge/area adjacency only. Centroid monotonicity is a diagnostic sufficient graph restriction, not proof of a complete continuous temporal sweep or macro compatibility.",
+        "triangles": [
+          [
+            [
+              "543/20",
+              "33"
+            ],
+            [
+              "643/20",
+              "33"
+            ],
+            [
+              "639/20",
+              "191/5"
+            ]
+          ],
+          [
+            [
+              "543/20",
+              "33"
+            ],
+            [
+              "639/20",
+              "191/5"
+            ],
+            [
+              "633/20",
+              "431/10"
+            ]
+          ],
+          [
+            [
+              "543/20",
+              "33"
+            ],
+            [
+              "633/20",
+              "431/10"
+            ],
+            [
+              "623/20",
+              "953/20"
+            ]
+          ],
+          [
+            [
+              "543/20",
+              "33"
+            ],
+            [
+              "623/20",
+              "953/20"
+            ],
+            [
+              "611/20",
+              "519/10"
+            ]
+          ],
+          [
+            [
+              "543/20",
+              "33"
+            ],
+            [
+              "611/20",
+              "519/10"
+            ],
+            [
+              "119/4",
+              "279/5"
+            ]
+          ],
+          [
+            [
+              "543/20",
+              "33"
+            ],
+            [
+              "119/4",
+              "279/5"
+            ],
+            [
+              "577/20",
+              "297/5"
+            ]
+          ],
+          [
+            [
+              "543/20",
+              "33"
+            ],
+            [
+              "577/20",
+              "297/5"
+            ],
+            [
+              "139/5",
+              "1253/20"
+            ]
+          ],
+          [
+            [
+              "139/5",
+              "1253/20"
+            ],
+            [
+              "531/20",
+              "131/2"
+            ],
+            [
+              "251/10",
+              "68"
+            ]
+          ],
+          [
+            [
+              "139/5",
+              "1253/20"
+            ],
+            [
+              "251/10",
+              "68"
+            ],
+            [
+              "469/20",
+              "701/10"
+            ]
+          ],
+          [
+            [
+              "139/5",
+              "1253/20"
+            ],
+            [
+              "469/20",
+              "701/10"
+            ],
+            [
+              "457/20",
+              "697/10"
+            ]
+          ],
+          [
+            [
+              "139/5",
+              "1253/20"
+            ],
+            [
+              "457/20",
+              "697/10"
+            ],
+            [
+              "237/10",
+              "1347/20"
+            ]
+          ],
+          [
+            [
+              "139/5",
+              "1253/20"
+            ],
+            [
+              "237/10",
+              "1347/20"
+            ],
+            [
+              "489/20",
+              "647/10"
+            ]
+          ],
+          [
+            [
+              "139/5",
+              "1253/20"
+            ],
+            [
+              "489/20",
+              "647/10"
+            ],
+            [
+              "503/20",
+              "1237/20"
+            ]
+          ],
+          [
+            [
+              "139/5",
+              "1253/20"
+            ],
+            [
+              "503/20",
+              "1237/20"
+            ],
+            [
+              "103/4",
+              "1173/20"
+            ]
+          ],
+          [
+            [
+              "139/5",
+              "1253/20"
+            ],
+            [
+              "103/4",
+              "1173/20"
+            ],
+            [
+              "263/10",
+              "276/5"
+            ]
+          ],
+          [
+            [
+              "139/5",
+              "1253/20"
+            ],
+            [
+              "263/10",
+              "276/5"
+            ],
+            [
+              "267/10",
+              "257/5"
+            ]
+          ],
+          [
+            [
+              "139/5",
+              "1253/20"
+            ],
+            [
+              "267/10",
+              "257/5"
+            ],
+            [
+              "27",
+              "473/10"
+            ]
+          ],
+          [
+            [
+              "139/5",
+              "1253/20"
+            ],
+            [
+              "27",
+              "473/10"
+            ],
+            [
+              "543/20",
+              "857/20"
+            ]
+          ],
+          [
+            [
+              "139/5",
+              "1253/20"
+            ],
+            [
+              "543/20",
+              "857/20"
+            ],
+            [
+              "136/5",
+              "381/10"
+            ]
+          ],
+          [
+            [
+              "139/5",
+              "1253/20"
+            ],
+            [
+              "136/5",
+              "381/10"
+            ],
+            [
+              "543/20",
+              "33"
+            ]
+          ]
+        ]
+      },
+      "reuseCondition": "Retain original P/Q/flags/weights/raw order. Any contact-root clip partition needs explicit ordered positive-edge frontier and source-macro-compatible temporal proof plus native review. No bridge may be added.",
+      "nativeApproval": false,
+      "runtimeApplied": false
+    },
+    {
+      "pen": 6,
+      "mask": 2,
+      "sourceMacro": "R then D",
+      "sourceSegmentSHA256": "5f9b1f99e02e0df53c0a94da5713ebeaee10a359fc3cbd68a250b4b05af70304",
+      "priorPolygons": 1,
+      "targetPolygons": 2,
+      "priorContactHasPositiveArea": true,
+      "positiveIntersectionTrianglePairCells": 7,
+      "maxIntersectionCellArea": "1002287/378624",
+      "intersectionAreaNote": "Cell areas overlap if original source polygons overlap; no union area claimed.",
+      "positiveSharedSourceEdges": [],
+      "targetStarKernelVertices": 5,
+      "targetStarKernelHasPositiveArea": true,
+      "strictKernelAndPriorSeedExists": true,
+      "strictKernelAndPriorSeedWitnesses": [
+        [
+          "3493/60",
+          "37565/1362"
+        ],
+        [
+          "2347/40",
+          "25933/908"
+        ]
+      ],
+      "seedConclusion": "Strict source seed exists.",
+      "triangulation": {
+        "sourceVerticesOnly": true,
+        "areaPreservedPerPolygon": true,
+        "targetTriangleCount": 5,
+        "priorContactRootTriangles": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "positiveEdgeOrAreaAdjacency": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            0
+          ],
+          [
+            4,
+            3
+          ]
+        ],
+        "allTrianglesReachableFromPriorContact": true,
+        "downwardCentroidRestrictedReachable": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "allTrianglesReachableUnderDownwardCentroidRestriction": true,
+        "note": "Exact source-vertex clip partition and positive shared-edge/area adjacency only. Centroid monotonicity is a diagnostic sufficient graph restriction, not proof of a complete continuous temporal sweep or macro compatibility.",
+        "triangles": [
+          [
+            [
+              "573/10",
+              "57/2"
+            ],
+            [
+              "314/5",
+              "57/2"
+            ],
+            [
+              "314/5",
+              "247/5"
+            ]
+          ],
+          [
+            [
+              "314/5",
+              "247/5"
+            ],
+            [
+              "573/10",
+              "1043/20"
+            ],
+            [
+              "573/10",
+              "57/2"
+            ]
+          ],
+          [
+            [
+              "573/10",
+              "57/2"
+            ],
+            [
+              "573/10",
+              "55/2"
+            ],
+            [
+              "1201/20",
+              "25"
+            ]
+          ],
+          [
+            [
+              "573/10",
+              "57/2"
+            ],
+            [
+              "1201/20",
+              "25"
+            ],
+            [
+              "653/10",
+              "59/2"
+            ]
+          ],
+          [
+            [
+              "653/10",
+              "59/2"
+            ],
+            [
+              "314/5",
+              "125/4"
+            ],
+            [
+              "573/10",
+              "57/2"
+            ]
+          ]
+        ]
+      },
+      "reuseCondition": "Retain original P/Q/flags/weights/raw order. Any contact-root clip partition needs explicit ordered positive-edge frontier and source-macro-compatible temporal proof plus native review. No bridge may be added.",
+      "nativeApproval": false,
+      "runtimeApplied": false
+    }
+  ],
+  "geometryModified": false,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "registrationAuthorized": false
+}

@@ -1,0 +1,1753 @@
+{
+  "schema": "hanja-source-initial-feasibility/v1",
+  "glyph": "凞",
+  "root": "u51de",
+  "scope": {
+    "logicalPens": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "masks": 11
+  },
+  "inputs": {
+    "docs/hanja-source-original-u51de-base-2026-10-27/fixtures-draft.json": "623a80e6bbd7363bfb171731d60f730d9f9c412ec07a94afd3eccd7a30ed1255",
+    "docs/hanja-goal-glyphwiki-batch1059-2026-10-13/engine-whole-u51de.json": "59adc1112c7e6456b67ecc86c6583f11475287bf71af5a8f0a6e429d5dddc91c",
+    "docs/hanja-source-original-u83f0-local-components-2026-10-27/verify-baseline-onset-conditions.py": "35b0d7f372a2ed37052ebbbd1b116e951786fe80a5d70798c95659cfc85a63cf",
+    "docs/hanja-source-original-u83f0-local-components-2026-10-27/verify-logical-axis-prefix-conditions.py": "db903056c1375705fd8133ee79dcc3ff5450c519012a3f249881af9abebdbd29",
+    "docs/hanja-source-original-u7443-g-2026-10-26/verify-curve-union-start-kernels.py": "95286fc3de0d18ff96735263582095325f7d9afa00bbd2c3a0ea42e03caf2396",
+    "docs/hanja-official-media-compare-u51de-2026-10-27/native-clock-review.json": "546aea0545adb15ef3fbea741da903881d3b4573b086b2432bf9a1581b33a7c5"
+  },
+  "compiledSHA256": "c9ac1ef9b6c55526779f888cfd12f31622fad344ed20cbbf3dfa0dabee7caea1",
+  "sourceClockMacros": [
+    "DR dot",
+    "short DR/downstem then UR",
+    "D then DL",
+    "R",
+    "D",
+    "R then D",
+    "R",
+    "D"
+  ],
+  "clockAndMembership": "Previously verified evidence reused; no new approval or replay performed.",
+  "coordinateFrame": "Exact rational compiled 100-unit source polygons and unchanged source guides.",
+  "conditions": "Axis monotonicity and positive-width bridges are sufficient source-only prefix checks. Dyadic guide anchors are finite witnesses only; they do not certify an entire source window or native temporal behavior. A failed sufficient test is not proof that no correction exists.",
+  "masks": [
+    {
+      "pen": 1,
+      "mask": 1,
+      "sourceRaw": 1,
+      "sourceCall": 1,
+      "sourceKind": "cdDrawCurve",
+      "sourceArgs": [
+        19.335,
+        19.28,
+        32.035,
+        26.39,
+        37.75,
+        39.82,
+        7,
+        8
+      ],
+      "sourceSegmentSHA256": "c199918f4bf45bafe9de3ef1e75659b3969658e84e5b5db6d502c4ede8d7c954",
+      "originalWeight": 13.793149,
+      "originalGuide": "M9.6675 9.64 Q16.0175 13.195 18.875 19.91",
+      "originalRevealWidth": 14,
+      "originalSourceFlags": [
+        7,
+        8
+      ],
+      "axisConditions": [
+        {
+          "pen": 1,
+          "axis": "x",
+          "directionHypothesis": "increasing",
+          "logicalMasks": 1,
+          "sourcePolygons": 2,
+          "eventCount": 23,
+          "openSlabCount": 22,
+          "allEventSectionsSingleInterval": true,
+          "allOpenSlabSectionsSingleInterval": true,
+          "wholeLogicalAxisMonotone": true,
+          "nonemptyProjectionInterval": [
+            "197/20",
+            "21"
+          ],
+          "startCoordinate": "197/20",
+          "completionCoordinate": "21",
+          "failureCount": 0,
+          "firstFailures": [],
+          "halfPlanePrefixGeometryEligible": true,
+          "initialCutMustExplicitlyBeEmptyAtProgressZero": true,
+          "cutForPositiveProgress": "start+(finish-start)*p",
+          "sourceDirectionApproved": false,
+          "sourceMicroClockApproved": false,
+          "nativeApproval": false,
+          "runtimeApplied": false,
+          "positiveWidthInteriorEventBridges": true,
+          "zeroWidthBridgeEvents": [],
+          "connectedPositivePrefixSufficient": true,
+          "guideControlDeltas": [
+            "127/20",
+            "1143/400"
+          ],
+          "guideAxisDirectionSufficient": true,
+          "firstSupportIntervals": [
+            [
+              "41/4",
+              "41/4"
+            ]
+          ],
+          "firstSupportMidpointsStrictPriorInterior": null,
+          "policyReuseApproved": false
+        },
+        {
+          "pen": 1,
+          "axis": "y",
+          "directionHypothesis": "increasing",
+          "logicalMasks": 1,
+          "sourcePolygons": 2,
+          "eventCount": 23,
+          "openSlabCount": 22,
+          "allEventSectionsSingleInterval": true,
+          "allOpenSlabSectionsSingleInterval": true,
+          "wholeLogicalAxisMonotone": true,
+          "nonemptyProjectionInterval": [
+            "189/20",
+            "85/4"
+          ],
+          "startCoordinate": "189/20",
+          "completionCoordinate": "85/4",
+          "failureCount": 0,
+          "firstFailures": [],
+          "halfPlanePrefixGeometryEligible": true,
+          "initialCutMustExplicitlyBeEmptyAtProgressZero": true,
+          "cutForPositiveProgress": "start+(finish-start)*p",
+          "sourceDirectionApproved": false,
+          "sourceMicroClockApproved": false,
+          "nativeApproval": false,
+          "runtimeApplied": false,
+          "positiveWidthInteriorEventBridges": true,
+          "zeroWidthBridgeEvents": [],
+          "connectedPositivePrefixSufficient": true,
+          "guideControlDeltas": [
+            "711/200",
+            "1343/200"
+          ],
+          "guideAxisDirectionSufficient": true,
+          "firstSupportIntervals": [
+            [
+              "103/10",
+              "103/10"
+            ]
+          ],
+          "firstSupportMidpointsStrictPriorInterior": null,
+          "policyReuseApproved": false
+        }
+      ],
+      "kernelVertexCount": 10,
+      "kernelBoundaryCount": 25,
+      "seedChecks": [
+        {
+          "t": "0",
+          "point": [
+            "3867/400",
+            "241/25"
+          ],
+          "strictTargetKernelMarginL1": "-28231/9200",
+          "strictTargetKernel": false,
+          "strictSameLogicalPriorInterior": null
+        },
+        {
+          "t": "1/64",
+          "point": [
+            "3232591/327680",
+            "998591/102400"
+          ],
+          "strictTargetKernelMarginL1": "-110216559/37683200",
+          "strictTargetKernel": false,
+          "strictSameLogicalPriorInterior": null
+        },
+        {
+          "t": "1/32",
+          "point": [
+            "4120971/409600",
+            "252551/25600"
+          ],
+          "strictTargetKernelMarginL1": "-5243107/1884160",
+          "strictTargetKernel": false,
+          "strictSameLogicalPriorInterior": null
+        },
+        {
+          "t": "1/16",
+          "point": [
+            "213967/20480",
+            "64619/6400"
+          ],
+          "strictTargetKernelMarginL1": "-5896431/2355200",
+          "strictTargetKernel": false,
+          "strictSameLogicalPriorInterior": null
+        },
+        {
+          "t": "1/8",
+          "point": [
+            "286731/25600",
+            "677/64"
+          ],
+          "strictTargetKernelMarginL1": "-1157231/588800",
+          "strictTargetKernel": false,
+          "strictSameLogicalPriorInterior": null
+        },
+        {
+          "t": "1/4",
+          "point": [
+            "16159/1280",
+            "2323/200"
+          ],
+          "strictTargetKernelMarginL1": "-142719/147200",
+          "strictTargetKernel": false,
+          "strictSameLogicalPriorInterior": null
+        }
+      ],
+      "sourceAnchorWitnessExists": false,
+      "nativeObservation": "HOLD: initial exposure or compound premature cap; root owns detailed observation",
+      "policyReuseApproved": false,
+      "nativeApproval": false,
+      "runtimeApplied": false
+    },
+    {
+      "pen": 2,
+      "mask": 1,
+      "sourceRaw": 2,
+      "sourceCall": 1,
+      "sourceKind": "cdDrawCurve",
+      "sourceArgs": [
+        14.255,
+        88.8,
+        30.765,
+        107.76,
+        28.225,
+        133.83,
+        7,
+        8
+      ],
+      "sourceSegmentSHA256": "300ce7b286ae394e741c9009cb7f47d6f69178d687ac5ea49fb340f4356ba3dc",
+      "originalWeight": 23.573618,
+      "originalGuide": "M7.1275 44.4 Q15.3825 53.88 14.1125 66.915",
+      "originalRevealWidth": 14,
+      "originalSourceFlags": [
+        7,
+        8
+      ],
+      "axisConditions": [
+        {
+          "pen": 1,
+          "axis": "y",
+          "directionHypothesis": "increasing",
+          "logicalMasks": 1,
+          "sourcePolygons": 2,
+          "eventCount": 25,
+          "openSlabCount": 24,
+          "allEventSectionsSingleInterval": true,
+          "allOpenSlabSectionsSingleInterval": true,
+          "wholeLogicalAxisMonotone": true,
+          "nonemptyProjectionInterval": [
+            "889/20",
+            "342/5"
+          ],
+          "startCoordinate": "889/20",
+          "completionCoordinate": "342/5",
+          "failureCount": 0,
+          "firstFailures": [],
+          "halfPlanePrefixGeometryEligible": true,
+          "initialCutMustExplicitlyBeEmptyAtProgressZero": true,
+          "cutForPositiveProgress": "start+(finish-start)*p",
+          "sourceDirectionApproved": false,
+          "sourceMicroClockApproved": false,
+          "nativeApproval": false,
+          "runtimeApplied": false,
+          "positiveWidthInteriorEventBridges": true,
+          "zeroWidthBridgeEvents": [],
+          "connectedPositivePrefixSufficient": true,
+          "guideControlDeltas": [
+            "237/25",
+            "2607/200"
+          ],
+          "guideAxisDirectionSufficient": true,
+          "firstSupportIntervals": [
+            [
+              "31/4",
+              "31/4"
+            ]
+          ],
+          "firstSupportMidpointsStrictPriorInterior": null,
+          "policyReuseApproved": false
+        }
+      ],
+      "kernelVertexCount": 8,
+      "kernelBoundaryCount": 25,
+      "seedChecks": [
+        {
+          "t": "0",
+          "point": [
+            "2851/400",
+            "222/5"
+          ],
+          "strictTargetKernelMarginL1": "-117289/18800",
+          "strictTargetKernel": false,
+          "strictSameLogicalPriorInterior": null
+        },
+        {
+          "t": "1/64",
+          "point": [
+            "6048271/819200",
+            "36615879/819200"
+          ],
+          "strictTargetKernelMarginL1": "-46032227/7700480",
+          "strictTargetKernel": false,
+          "strictSameLogicalPriorInterior": null
+        },
+        {
+          "t": "1/32",
+          "point": [
+            "1563471/204800",
+            "368607/8192"
+          ],
+          "strictTargetKernelMarginL1": "-55065519/9625600",
+          "strictTargetKernel": false,
+          "strictSameLogicalPriorInterior": null
+        },
+        {
+          "t": "1/16",
+          "point": [
+            "83171/10240",
+            "2334663/51200"
+          ],
+          "strictTargetKernelMarginL1": "-12556687/2406400",
+          "strictTargetKernel": false,
+          "strictSameLogicalPriorInterior": null
+        },
+        {
+          "t": "1/8",
+          "point": [
+            "115743/12800",
+            "599367/12800"
+          ],
+          "strictTargetKernelMarginL1": "-512403/120320",
+          "strictTargetKernel": false,
+          "strictSameLogicalPriorInterior": null
+        },
+        {
+          "t": "1/4",
+          "point": [
+            "34111/3200",
+            "157959/3200"
+          ],
+          "strictTargetKernelMarginL1": "-75923/30080",
+          "strictTargetKernel": false,
+          "strictSameLogicalPriorInterior": null
+        }
+      ],
+      "sourceAnchorWitnessExists": false,
+      "nativeObservation": "HOLD: initial exposure or compound premature cap; root owns detailed observation",
+      "policyReuseApproved": false,
+      "nativeApproval": false,
+      "runtimeApplied": false
+    },
+    {
+      "pen": 2,
+      "mask": 2,
+      "sourceRaw": 3,
+      "sourceCall": 1,
+      "sourceKind": "cdDrawCurve",
+      "sourceArgs": [
+        23.78,
+        103.81,
+        34.575,
+        85.64,
+        51.72,
+        38.24,
+        2,
+        7
+      ],
+      "sourceSegmentSHA256": "0a26865ab0015b294947804d14869d386865be696bf6f97bde51e32303f2760f",
+      "originalWeight": 35.6373,
+      "originalGuide": "M11.89 51.905 Q17.2875 42.82 25.86 19.12",
+      "originalRevealWidth": 14,
+      "originalSourceFlags": [
+        2,
+        7
+      ],
+      "axisConditions": [
+        {
+          "pen": 1,
+          "axis": "x",
+          "directionHypothesis": "increasing",
+          "logicalMasks": 1,
+          "sourcePolygons": 1,
+          "eventCount": 22,
+          "openSlabCount": 21,
+          "allEventSectionsSingleInterval": true,
+          "allOpenSlabSectionsSingleInterval": true,
+          "wholeLogicalAxisMonotone": true,
+          "nonemptyProjectionInterval": [
+            "93/10",
+            "105/4"
+          ],
+          "startCoordinate": "93/10",
+          "completionCoordinate": "105/4",
+          "failureCount": 0,
+          "firstFailures": [],
+          "halfPlanePrefixGeometryEligible": true,
+          "initialCutMustExplicitlyBeEmptyAtProgressZero": true,
+          "cutForPositiveProgress": "start+(finish-start)*p",
+          "sourceDirectionApproved": false,
+          "sourceMicroClockApproved": false,
+          "nativeApproval": false,
+          "runtimeApplied": false,
+          "positiveWidthInteriorEventBridges": true,
+          "zeroWidthBridgeEvents": [],
+          "connectedPositivePrefixSufficient": true,
+          "guideControlDeltas": [
+            "2159/400",
+            "3429/400"
+          ],
+          "guideAxisDirectionSufficient": true,
+          "firstSupportIntervals": [
+            [
+              "1007/20",
+              "1007/20"
+            ]
+          ],
+          "firstSupportMidpointsStrictPriorInterior": [
+            false
+          ],
+          "policyReuseApproved": false
+        },
+        {
+          "pen": 1,
+          "axis": "y",
+          "directionHypothesis": "decreasing",
+          "logicalMasks": 1,
+          "sourcePolygons": 1,
+          "eventCount": 22,
+          "openSlabCount": 21,
+          "allEventSectionsSingleInterval": true,
+          "allOpenSlabSectionsSingleInterval": true,
+          "wholeLogicalAxisMonotone": true,
+          "nonemptyProjectionInterval": [
+            "379/20",
+            "267/5"
+          ],
+          "startCoordinate": "267/5",
+          "completionCoordinate": "379/20",
+          "failureCount": 0,
+          "firstFailures": [],
+          "halfPlanePrefixGeometryEligible": true,
+          "initialCutMustExplicitlyBeEmptyAtProgressZero": true,
+          "cutForPositiveProgress": "start+(finish-start)*p",
+          "sourceDirectionApproved": false,
+          "sourceMicroClockApproved": false,
+          "nativeApproval": false,
+          "runtimeApplied": false,
+          "positiveWidthInteriorEventBridges": true,
+          "zeroWidthBridgeEvents": [],
+          "connectedPositivePrefixSufficient": true,
+          "guideControlDeltas": [
+            "-1817/200",
+            "-237/10"
+          ],
+          "guideAxisDirectionSufficient": true,
+          "firstSupportIntervals": [
+            [
+              "289/20",
+              "289/20"
+            ]
+          ],
+          "firstSupportMidpointsStrictPriorInterior": [
+            true
+          ],
+          "policyReuseApproved": false
+        }
+      ],
+      "kernelVertexCount": 12,
+      "kernelBoundaryCount": 22,
+      "seedChecks": [
+        {
+          "t": "0",
+          "point": [
+            "1189/100",
+            "10381/200"
+          ],
+          "strictTargetKernelMarginL1": "-87/6560",
+          "strictTargetKernel": false,
+          "strictSameLogicalPriorInterior": true
+        },
+        {
+          "t": "1/64",
+          "point": [
+            "9879099/819200",
+            "42285077/819200"
+          ],
+          "strictTargetKernelMarginL1": "7735527/33587200",
+          "strictTargetKernel": true,
+          "strictSameLogicalPriorInterior": true
+        },
+        {
+          "t": "1/32",
+          "point": [
+            "500959/40960",
+            "10510933/204800"
+          ],
+          "strictTargetKernelMarginL1": "4021599/8396800",
+          "strictTargetKernel": true,
+          "strictSameLogicalPriorInterior": true
+        },
+        {
+          "t": "1/16",
+          "point": [
+            "643947/51200",
+            "2596469/51200"
+          ],
+          "strictTargetKernelMarginL1": "416223/419840",
+          "strictTargetKernel": true,
+          "strictSameLogicalPriorInterior": true
+        },
+        {
+          "t": "1/8",
+          "point": [
+            "170099/12800",
+            "632389/12800"
+          ],
+          "strictTargetKernelMarginL1": "606067/390400",
+          "strictTargetKernel": true,
+          "strictSameLogicalPriorInterior": false
+        },
+        {
+          "t": "1/4",
+          "point": [
+            "47319/3200",
+            "148637/3200"
+          ],
+          "strictTargetKernelMarginL1": "3969/2440",
+          "strictTargetKernel": true,
+          "strictSameLogicalPriorInterior": false
+        }
+      ],
+      "sourceAnchorWitnessExists": true,
+      "nativeObservation": "HOLD: initial exposure or compound premature cap; root owns detailed observation",
+      "policyReuseApproved": false,
+      "nativeApproval": false,
+      "runtimeApplied": false
+    },
+    {
+      "pen": 3,
+      "mask": 1,
+      "sourceRaw": 20,
+      "sourceCall": 1,
+      "sourceKind": "cdDrawLine",
+      "sourceArgs": [
+        59.36,
+        19.8,
+        59.36,
+        66.03,
+        2000,
+        1
+      ],
+      "sourceSegmentSHA256": "6c148ecc8ada0be45c045a53cf66dce64985cf7a1658ea91a84639d614fddf70",
+      "originalWeight": 23.115,
+      "originalGuide": null,
+      "originalRevealWidth": null,
+      "originalSourceFlags": [
+        2000,
+        1
+      ],
+      "axisConditions": [
+        {
+          "pen": 1,
+          "axis": "y",
+          "directionHypothesis": "increasing",
+          "logicalMasks": 1,
+          "sourcePolygons": 3,
+          "eventCount": 8,
+          "openSlabCount": 7,
+          "allEventSectionsSingleInterval": true,
+          "allOpenSlabSectionsSingleInterval": true,
+          "wholeLogicalAxisMonotone": true,
+          "nonemptyProjectionInterval": [
+            "47/5",
+            "71/2"
+          ],
+          "startCoordinate": "47/5",
+          "completionCoordinate": "71/2",
+          "failureCount": 0,
+          "firstFailures": [],
+          "halfPlanePrefixGeometryEligible": true,
+          "initialCutMustExplicitlyBeEmptyAtProgressZero": true,
+          "cutForPositiveProgress": "start+(finish-start)*p",
+          "sourceDirectionApproved": false,
+          "sourceMicroClockApproved": false,
+          "nativeApproval": false,
+          "runtimeApplied": false,
+          "positiveWidthInteriorEventBridges": true,
+          "zeroWidthBridgeEvents": [],
+          "connectedPositivePrefixSufficient": true,
+          "guideControlDeltas": [
+            "4623/200"
+          ],
+          "guideAxisDirectionSufficient": true,
+          "firstSupportIntervals": [
+            [
+              "543/20",
+              "543/20"
+            ]
+          ],
+          "firstSupportMidpointsStrictPriorInterior": null,
+          "policyReuseApproved": false
+        }
+      ],
+      "kernelVertexCount": 4,
+      "kernelBoundaryCount": 9,
+      "seedChecks": [
+        {
+          "t": "0",
+          "point": [
+            "742/25",
+            "99/10"
+          ],
+          "strictTargetKernelMarginL1": "-1/200",
+          "strictTargetKernel": false,
+          "strictSameLogicalPriorInterior": null
+        },
+        {
+          "t": "1/64",
+          "point": [
+            "742/25",
+            "131343/12800"
+          ],
+          "strictTargetKernelMarginL1": "7577/25600",
+          "strictTargetKernel": true,
+          "strictSameLogicalPriorInterior": null
+        },
+        {
+          "t": "1/32",
+          "point": [
+            "742/25",
+            "67983/6400"
+          ],
+          "strictTargetKernelMarginL1": "7641/12800",
+          "strictTargetKernel": true,
+          "strictSameLogicalPriorInterior": null
+        },
+        {
+          "t": "1/16",
+          "point": [
+            "742/25",
+            "36303/3200"
+          ],
+          "strictTargetKernelMarginL1": "7673/6400",
+          "strictTargetKernel": true,
+          "strictSameLogicalPriorInterior": null
+        },
+        {
+          "t": "1/8",
+          "point": [
+            "742/25",
+            "20463/1600"
+          ],
+          "strictTargetKernelMarginL1": "1047/1600",
+          "strictTargetKernel": true,
+          "strictSameLogicalPriorInterior": null
+        },
+        {
+          "t": "1/4",
+          "point": [
+            "742/25",
+            "12543/800"
+          ],
+          "strictTargetKernelMarginL1": "-4317/4000",
+          "strictTargetKernel": false,
+          "strictSameLogicalPriorInterior": null
+        }
+      ],
+      "sourceAnchorWitnessExists": true,
+      "nativeObservation": "HOLD: initial exposure or compound premature cap; root owns detailed observation",
+      "policyReuseApproved": false,
+      "nativeApproval": false,
+      "runtimeApplied": false
+    },
+    {
+      "pen": 3,
+      "mask": 2,
+      "sourceRaw": 20,
+      "sourceCall": 2,
+      "sourceKind": "cdDrawCurve",
+      "sourceArgs": [
+        59.36,
+        66.03,
+        59.36,
+        119.16,
+        46.36,
+        139.86,
+        2001,
+        7
+      ],
+      "sourceSegmentSHA256": "183c31259935b7fdd3f22ef0fbe8d5803bc5afc037f53a706fdf2bbda1b23e59",
+      "originalWeight": 37.482892,
+      "originalGuide": "M29.68 33.015 Q29.68 59.58 23.18 69.93",
+      "originalRevealWidth": 14,
+      "originalSourceFlags": [
+        2001,
+        7
+      ],
+      "axisConditions": [
+        {
+          "pen": 1,
+          "axis": "x",
+          "directionHypothesis": "decreasing",
+          "logicalMasks": 1,
+          "sourcePolygons": 1,
+          "eventCount": 21,
+          "openSlabCount": 20,
+          "allEventSectionsSingleInterval": false,
+          "allOpenSlabSectionsSingleInterval": false,
+          "wholeLogicalAxisMonotone": false,
+          "nonemptyProjectionInterval": [
+            "457/20",
+            "643/20"
+          ],
+          "startCoordinate": "643/20",
+          "completionCoordinate": "457/20",
+          "failureCount": 2,
+          "firstFailures": [
+            {
+              "kind": "event",
+              "value": "543/20",
+              "intervals": [
+                [
+                  "33",
+                  "33"
+                ],
+                [
+                  "857/20",
+                  "16033/250"
+                ]
+              ]
+            },
+            {
+              "kind": "open-slab",
+              "low": "543/20",
+              "high": "136/5",
+              "sample": "1087/40",
+              "intervals": [
+                [
+                  "33",
+                  "711/20"
+                ],
+                [
+                  "1619/40",
+                  "2563/40"
+                ]
+              ]
+            }
+          ],
+          "halfPlanePrefixGeometryEligible": false,
+          "initialCutMustExplicitlyBeEmptyAtProgressZero": true,
+          "cutForPositiveProgress": "start+(finish-start)*p",
+          "sourceDirectionApproved": false,
+          "sourceMicroClockApproved": false,
+          "nativeApproval": false,
+          "runtimeApplied": false,
+          "positiveWidthInteriorEventBridges": true,
+          "zeroWidthBridgeEvents": [],
+          "connectedPositivePrefixSufficient": false,
+          "guideControlDeltas": [
+            "0",
+            "-13/2"
+          ],
+          "guideAxisDirectionSufficient": true,
+          "firstSupportIntervals": [
+            [
+              "33",
+              "33"
+            ]
+          ],
+          "firstSupportMidpointsStrictPriorInterior": [
+            false
+          ],
+          "policyReuseApproved": false
+        },
+        {
+          "pen": 1,
+          "axis": "y",
+          "directionHypothesis": "increasing",
+          "logicalMasks": 1,
+          "sourcePolygons": 1,
+          "eventCount": 21,
+          "openSlabCount": 20,
+          "allEventSectionsSingleInterval": true,
+          "allOpenSlabSectionsSingleInterval": true,
+          "wholeLogicalAxisMonotone": true,
+          "nonemptyProjectionInterval": [
+            "33",
+            "701/10"
+          ],
+          "startCoordinate": "33",
+          "completionCoordinate": "701/10",
+          "failureCount": 0,
+          "firstFailures": [],
+          "halfPlanePrefixGeometryEligible": true,
+          "initialCutMustExplicitlyBeEmptyAtProgressZero": true,
+          "cutForPositiveProgress": "start+(finish-start)*p",
+          "sourceDirectionApproved": false,
+          "sourceMicroClockApproved": false,
+          "nativeApproval": false,
+          "runtimeApplied": false,
+          "positiveWidthInteriorEventBridges": true,
+          "zeroWidthBridgeEvents": [],
+          "connectedPositivePrefixSufficient": true,
+          "guideControlDeltas": [
+            "5313/200",
+            "207/20"
+          ],
+          "guideAxisDirectionSufficient": true,
+          "firstSupportIntervals": [
+            [
+              "543/20",
+              "643/20"
+            ]
+          ],
+          "firstSupportMidpointsStrictPriorInterior": [
+            false
+          ],
+          "policyReuseApproved": false
+        }
+      ],
+      "kernelVertexCount": 8,
+      "kernelBoundaryCount": 22,
+      "seedChecks": [
+        {
+          "t": "0",
+          "point": [
+            "742/25",
+            "6603/200"
+          ],
+          "strictTargetKernelMarginL1": "-60527/12800",
+          "strictTargetKernel": false,
+          "strictSameLogicalPriorInterior": true
+        },
+        {
+          "t": "1/64",
+          "point": [
+            "6078139/204800",
+            "27722709/819200"
+          ],
+          "strictTargetKernelMarginL1": "-47294747/10485760",
+          "strictTargetKernel": false,
+          "strictSameLogicalPriorInterior": true
+        },
+        {
+          "t": "1/32",
+          "point": [
+            "1519291/51200",
+            "7098261/204800"
+          ],
+          "strictTargetKernelMarginL1": "-11263067/2621440",
+          "strictTargetKernel": false,
+          "strictSameLogicalPriorInterior": true
+        },
+        {
+          "t": "1/16",
+          "point": [
+            "379579/12800",
+            "1857141/51200"
+          ],
+          "strictTargetKernelMarginL1": "-12720871/3276800",
+          "strictTargetKernel": false,
+          "strictSameLogicalPriorInterior": false
+        },
+        {
+          "t": "1/8",
+          "point": [
+            "94651/3200",
+            "504357/12800"
+          ],
+          "strictTargetKernelMarginL1": "-2544823/819200",
+          "strictTargetKernel": false,
+          "strictSameLogicalPriorInterior": false
+        },
+        {
+          "t": "1/4",
+          "point": [
+            "23419/800",
+            "144909/3200"
+          ],
+          "strictTargetKernelMarginL1": "-72419/40960",
+          "strictTargetKernel": false,
+          "strictSameLogicalPriorInterior": false
+        }
+      ],
+      "sourceAnchorWitnessExists": false,
+      "nativeObservation": "HOLD: initial exposure or compound premature cap; root owns detailed observation",
+      "policyReuseApproved": false,
+      "nativeApproval": false,
+      "runtimeApplied": false
+    },
+    {
+      "pen": 4,
+      "mask": 1,
+      "sourceRaw": 13,
+      "sourceCall": 1,
+      "sourceKind": "cdDrawLine",
+      "sourceArgs": [
+        74.7312,
+        27.39,
+        128.6214,
+        27.39,
+        2,
+        0
+      ],
+      "sourceSegmentSHA256": "ff791ef174d6d8416784f1f5b0806aa0798de5802f5c6ca281686f798c14d90b",
+      "originalWeight": 26.9451,
+      "originalGuide": null,
+      "originalRevealWidth": null,
+      "originalSourceFlags": [
+        2,
+        0
+      ],
+      "axisConditions": [
+        {
+          "pen": 1,
+          "axis": "x",
+          "directionHypothesis": "increasing",
+          "logicalMasks": 1,
+          "sourcePolygons": 2,
+          "eventCount": 5,
+          "openSlabCount": 4,
+          "allEventSectionsSingleInterval": true,
+          "allOpenSlabSectionsSingleInterval": true,
+          "wholeLogicalAxisMonotone": true,
+          "nonemptyProjectionInterval": [
+            "747/20",
+            "643/10"
+          ],
+          "startCoordinate": "747/20",
+          "completionCoordinate": "643/10",
+          "failureCount": 0,
+          "firstFailures": [],
+          "halfPlanePrefixGeometryEligible": true,
+          "initialCutMustExplicitlyBeEmptyAtProgressZero": true,
+          "cutForPositiveProgress": "start+(finish-start)*p",
+          "sourceDirectionApproved": false,
+          "sourceMicroClockApproved": false,
+          "nativeApproval": false,
+          "runtimeApplied": false,
+          "positiveWidthInteriorEventBridges": true,
+          "zeroWidthBridgeEvents": [],
+          "connectedPositivePrefixSufficient": true,
+          "guideControlDeltas": [
+            "269451/10000"
+          ],
+          "guideAxisDirectionSufficient": true,
+          "firstSupportIntervals": [
+            [
+              "253/20",
+              "293/20"
+            ]
+          ],
+          "firstSupportMidpointsStrictPriorInterior": null,
+          "policyReuseApproved": false
+        }
+      ],
+      "kernelVertexCount": 4,
+      "kernelBoundaryCount": 6,
+      "seedChecks": [
+        {
+          "t": "0",
+          "point": [
+            "46707/1250",
+            "2739/200"
+          ],
+          "strictTargetKernelMarginL1": "-74447/10000",
+          "strictTargetKernel": false,
+          "strictSameLogicalPriorInterior": null
+        },
+        {
+          "t": "1/64",
+          "point": [
+            "4836687/128000",
+            "2739/200"
+          ],
+          "strictTargetKernelMarginL1": "-1851953/256000",
+          "strictTargetKernel": false,
+          "strictSameLogicalPriorInterior": null
+        },
+        {
+          "t": "1/32",
+          "point": [
+            "12226443/320000",
+            "2739/200"
+          ],
+          "strictTargetKernelMarginL1": "-4495157/640000",
+          "strictTargetKernel": false,
+          "strictSameLogicalPriorInterior": null
+        },
+        {
+          "t": "1/16",
+          "point": [
+            "6247947/160000",
+            "2739/200"
+          ],
+          "strictTargetKernelMarginL1": "-2112853/320000",
+          "strictTargetKernel": false,
+          "strictSameLogicalPriorInterior": null
+        },
+        {
+          "t": "1/8",
+          "point": [
+            "3258699/80000",
+            "2739/200"
+          ],
+          "strictTargetKernelMarginL1": "-921701/160000",
+          "strictTargetKernel": false,
+          "strictSameLogicalPriorInterior": null
+        },
+        {
+          "t": "1/4",
+          "point": [
+            "70563/1600",
+            "2739/200"
+          ],
+          "strictTargetKernelMarginL1": "-2609/640",
+          "strictTargetKernel": false,
+          "strictSameLogicalPriorInterior": null
+        }
+      ],
+      "sourceAnchorWitnessExists": false,
+      "nativeObservation": "initial reviewed by root; no native approval granted",
+      "policyReuseApproved": false,
+      "nativeApproval": false,
+      "runtimeApplied": false
+    },
+    {
+      "pen": 5,
+      "mask": 1,
+      "sourceRaw": 14,
+      "sourceCall": 1,
+      "sourceKind": "cdDrawLine",
+      "sourceArgs": [
+        99.29339999999999,
+        27.39,
+        99.29339999999999,
+        57.06,
+        32,
+        32
+      ],
+      "sourceSegmentSHA256": "b1d69a150f778b7c1fbaeb0964b332804e5d3f38baca5437388a65056fdc8304",
+      "originalWeight": 14.835,
+      "originalGuide": null,
+      "originalRevealWidth": null,
+      "originalSourceFlags": [
+        32,
+        32
+      ],
+      "axisConditions": [
+        {
+          "pen": 1,
+          "axis": "y",
+          "directionHypothesis": "increasing",
+          "logicalMasks": 1,
+          "sourcePolygons": 1,
+          "eventCount": 2,
+          "openSlabCount": 1,
+          "allEventSectionsSingleInterval": true,
+          "allOpenSlabSectionsSingleInterval": true,
+          "wholeLogicalAxisMonotone": true,
+          "nonemptyProjectionInterval": [
+            "253/20",
+            "59/2"
+          ],
+          "startCoordinate": "253/20",
+          "completionCoordinate": "59/2",
+          "failureCount": 0,
+          "firstFailures": [],
+          "halfPlanePrefixGeometryEligible": true,
+          "initialCutMustExplicitlyBeEmptyAtProgressZero": true,
+          "cutForPositiveProgress": "start+(finish-start)*p",
+          "sourceDirectionApproved": false,
+          "sourceMicroClockApproved": false,
+          "nativeApproval": false,
+          "runtimeApplied": false,
+          "positiveWidthInteriorEventBridges": true,
+          "zeroWidthBridgeEvents": [],
+          "connectedPositivePrefixSufficient": true,
+          "guideControlDeltas": [
+            "2967/200"
+          ],
+          "guideAxisDirectionSufficient": true,
+          "firstSupportIntervals": [
+            [
+              "233/5",
+              "263/5"
+            ]
+          ],
+          "firstSupportMidpointsStrictPriorInterior": null,
+          "policyReuseApproved": false
+        }
+      ],
+      "kernelVertexCount": 4,
+      "kernelBoundaryCount": 4,
+      "seedChecks": [
+        {
+          "t": "0",
+          "point": [
+            "9929339999999999/200000000000000",
+            "2739/200"
+          ],
+          "strictTargetKernelMarginL1": "209/200",
+          "strictTargetKernel": true,
+          "strictSameLogicalPriorInterior": null
+        },
+        {
+          "t": "1/64",
+          "point": [
+            "9929339999999999/200000000000000",
+            "178263/12800"
+          ],
+          "strictTargetKernelMarginL1": "16343/12800",
+          "strictTargetKernel": true,
+          "strictSameLogicalPriorInterior": null
+        },
+        {
+          "t": "1/32",
+          "point": [
+            "9929339999999999/200000000000000",
+            "18123/1280"
+          ],
+          "strictTargetKernelMarginL1": "1931/1280",
+          "strictTargetKernel": true,
+          "strictSameLogicalPriorInterior": null
+        },
+        {
+          "t": "1/16",
+          "point": [
+            "9929339999999999/200000000000000",
+            "46791/3200"
+          ],
+          "strictTargetKernelMarginL1": "6311/3200",
+          "strictTargetKernel": true,
+          "strictSameLogicalPriorInterior": null
+        },
+        {
+          "t": "1/8",
+          "point": [
+            "9929339999999999/200000000000000",
+            "24879/1600"
+          ],
+          "strictTargetKernelMarginL1": "4639/1600",
+          "strictTargetKernel": true,
+          "strictSameLogicalPriorInterior": null
+        },
+        {
+          "t": "1/4",
+          "point": [
+            "9929339999999999/200000000000000",
+            "13923/800"
+          ],
+          "strictTargetKernelMarginL1": "590660000000001/200000000000000",
+          "strictTargetKernel": true,
+          "strictSameLogicalPriorInterior": null
+        }
+      ],
+      "sourceAnchorWitnessExists": true,
+      "nativeObservation": "initial reviewed by root; no native approval granted",
+      "policyReuseApproved": false,
+      "nativeApproval": false,
+      "runtimeApplied": false
+    },
+    {
+      "pen": 6,
+      "mask": 1,
+      "sourceRaw": 15,
+      "sourceCall": 1,
+      "sourceKind": "cdDrawLine",
+      "sourceArgs": [
+        74.7312,
+        57.06,
+        120.18960000000001,
+        57.06,
+        2,
+        2
+      ],
+      "sourceSegmentSHA256": "a83808b1df2035f68f4d82da3ea2321a5cd31968fa144e9ecb40ec1ac57bf125",
+      "originalWeight": 22.7292,
+      "originalGuide": null,
+      "originalRevealWidth": null,
+      "originalSourceFlags": [
+        2,
+        2
+      ],
+      "axisConditions": [
+        {
+          "pen": 1,
+          "axis": "x",
+          "directionHypothesis": "increasing",
+          "logicalMasks": 1,
+          "sourcePolygons": 1,
+          "eventCount": 2,
+          "openSlabCount": 1,
+          "allEventSectionsSingleInterval": true,
+          "allOpenSlabSectionsSingleInterval": true,
+          "wholeLogicalAxisMonotone": true,
+          "nonemptyProjectionInterval": [
+            "747/20",
+            "1201/20"
+          ],
+          "startCoordinate": "747/20",
+          "completionCoordinate": "1201/20",
+          "failureCount": 0,
+          "firstFailures": [],
+          "halfPlanePrefixGeometryEligible": true,
+          "initialCutMustExplicitlyBeEmptyAtProgressZero": true,
+          "cutForPositiveProgress": "start+(finish-start)*p",
+          "sourceDirectionApproved": false,
+          "sourceMicroClockApproved": false,
+          "nativeApproval": false,
+          "runtimeApplied": false,
+          "positiveWidthInteriorEventBridges": true,
+          "zeroWidthBridgeEvents": [],
+          "connectedPositivePrefixSufficient": true,
+          "guideControlDeltas": [
+            "4545840000000001/200000000000000"
+          ],
+          "guideAxisDirectionSufficient": true,
+          "firstSupportIntervals": [
+            [
+              "55/2",
+              "59/2"
+            ]
+          ],
+          "firstSupportMidpointsStrictPriorInterior": null,
+          "policyReuseApproved": false
+        }
+      ],
+      "kernelVertexCount": 4,
+      "kernelBoundaryCount": 4,
+      "seedChecks": [
+        {
+          "t": "0",
+          "point": [
+            "46707/1250",
+            "2853/100"
+          ],
+          "strictTargetKernelMarginL1": "39/2500",
+          "strictTargetKernel": true,
+          "strictSameLogicalPriorInterior": null
+        },
+        {
+          "t": "1/64",
+          "point": [
+            "482825520000000001/12800000000000000",
+            "2853/100"
+          ],
+          "strictTargetKernelMarginL1": "4745520000000001/12800000000000000",
+          "strictTargetKernel": true,
+          "strictSameLogicalPriorInterior": null
+        },
+        {
+          "t": "1/32",
+          "point": [
+            "243685680000000001/6400000000000000",
+            "2853/100"
+          ],
+          "strictTargetKernelMarginL1": "4645680000000001/6400000000000000",
+          "strictTargetKernel": true,
+          "strictSameLogicalPriorInterior": null
+        },
+        {
+          "t": "1/16",
+          "point": [
+            "124115760000000001/3200000000000000",
+            "2853/100"
+          ],
+          "strictTargetKernelMarginL1": "97/100",
+          "strictTargetKernel": true,
+          "strictSameLogicalPriorInterior": null
+        },
+        {
+          "t": "1/8",
+          "point": [
+            "64330800000000001/1600000000000000",
+            "2853/100"
+          ],
+          "strictTargetKernelMarginL1": "97/100",
+          "strictTargetKernel": true,
+          "strictSameLogicalPriorInterior": null
+        },
+        {
+          "t": "1/4",
+          "point": [
+            "34438320000000001/800000000000000",
+            "2853/100"
+          ],
+          "strictTargetKernelMarginL1": "97/100",
+          "strictTargetKernel": true,
+          "strictSameLogicalPriorInterior": null
+        }
+      ],
+      "sourceAnchorWitnessExists": true,
+      "nativeObservation": "initial reviewed by root; no native approval granted",
+      "policyReuseApproved": false,
+      "nativeApproval": false,
+      "runtimeApplied": false
+    },
+    {
+      "pen": 6,
+      "mask": 2,
+      "sourceRaw": 16,
+      "sourceCall": 1,
+      "sourceKind": "cdDrawLine",
+      "sourceArgs": [
+        120.18960000000001,
+        57.06,
+        120.18960000000001,
+        90.87,
+        1022,
+        23
+      ],
+      "sourceSegmentSHA256": "5f9b1f99e02e0df53c0a94da5713ebeaee10a359fc3cbd68a250b4b05af70304",
+      "originalWeight": 16.905,
+      "originalGuide": null,
+      "originalRevealWidth": null,
+      "originalSourceFlags": [
+        1022,
+        23
+      ],
+      "axisConditions": [
+        {
+          "pen": 1,
+          "axis": "y",
+          "directionHypothesis": "increasing",
+          "logicalMasks": 1,
+          "sourcePolygons": 2,
+          "eventCount": 7,
+          "openSlabCount": 6,
+          "allEventSectionsSingleInterval": true,
+          "allOpenSlabSectionsSingleInterval": true,
+          "wholeLogicalAxisMonotone": true,
+          "nonemptyProjectionInterval": [
+            "25",
+            "1043/20"
+          ],
+          "startCoordinate": "25",
+          "completionCoordinate": "1043/20",
+          "failureCount": 0,
+          "firstFailures": [],
+          "halfPlanePrefixGeometryEligible": true,
+          "initialCutMustExplicitlyBeEmptyAtProgressZero": true,
+          "cutForPositiveProgress": "start+(finish-start)*p",
+          "sourceDirectionApproved": false,
+          "sourceMicroClockApproved": false,
+          "nativeApproval": false,
+          "runtimeApplied": false,
+          "positiveWidthInteriorEventBridges": true,
+          "zeroWidthBridgeEvents": [],
+          "connectedPositivePrefixSufficient": true,
+          "guideControlDeltas": [
+            "3381/200"
+          ],
+          "guideAxisDirectionSufficient": true,
+          "firstSupportIntervals": [
+            [
+              "1201/20",
+              "1201/20"
+            ]
+          ],
+          "firstSupportMidpointsStrictPriorInterior": [
+            false
+          ],
+          "policyReuseApproved": false
+        }
+      ],
+      "kernelVertexCount": 5,
+      "kernelBoundaryCount": 7,
+      "seedChecks": [
+        {
+          "t": "0",
+          "point": [
+            "12018960000000001/200000000000000",
+            "2853/100"
+          ],
+          "strictTargetKernelMarginL1": "785560000000001/420000000000000",
+          "strictTargetKernel": true,
+          "strictSameLogicalPriorInterior": false
+        },
+        {
+          "t": "1/64",
+          "point": [
+            "12018960000000001/200000000000000",
+            "73713/2560"
+          ],
+          "strictTargetKernelMarginL1": "843670937500001/420000000000000",
+          "strictTargetKernel": true,
+          "strictSameLogicalPriorInterior": false
+        },
+        {
+          "t": "1/32",
+          "point": [
+            "12018960000000001/200000000000000",
+            "185973/6400"
+          ],
+          "strictTargetKernelMarginL1": "901781875000001/420000000000000",
+          "strictTargetKernel": true,
+          "strictSameLogicalPriorInterior": false
+        },
+        {
+          "t": "1/16",
+          "point": [
+            "12018960000000001/200000000000000",
+            "94677/3200"
+          ],
+          "strictTargetKernelMarginL1": "7114154999999993/3400000000000000",
+          "strictTargetKernel": true,
+          "strictSameLogicalPriorInterior": false
+        },
+        {
+          "t": "1/8",
+          "point": [
+            "12018960000000001/200000000000000",
+            "49029/1600"
+          ],
+          "strictTargetKernelMarginL1": "5001029999999993/3400000000000000",
+          "strictTargetKernel": true,
+          "strictSameLogicalPriorInterior": false
+        },
+        {
+          "t": "1/4",
+          "point": [
+            "12018960000000001/200000000000000",
+            "5241/160"
+          ],
+          "strictTargetKernelMarginL1": "774779999999993/3400000000000000",
+          "strictTargetKernel": true,
+          "strictSameLogicalPriorInterior": false
+        }
+      ],
+      "sourceAnchorWitnessExists": false,
+      "nativeObservation": "initial reviewed by root; no native approval granted",
+      "policyReuseApproved": false,
+      "nativeApproval": false,
+      "runtimeApplied": false
+    },
+    {
+      "pen": 7,
+      "mask": 1,
+      "sourceRaw": 17,
+      "sourceCall": 1,
+      "sourceKind": "cdDrawLine",
+      "sourceArgs": [
+        74.7312,
+        90.87,
+        120.18960000000001,
+        90.87,
+        2,
+        2
+      ],
+      "sourceSegmentSHA256": "4980081f349144f6541baa3cfd98dc1047c545d948d7df92b41a1b40d7b918ee",
+      "originalWeight": 22.7292,
+      "originalGuide": null,
+      "originalRevealWidth": null,
+      "originalSourceFlags": [
+        2,
+        2
+      ],
+      "axisConditions": [
+        {
+          "pen": 1,
+          "axis": "x",
+          "directionHypothesis": "increasing",
+          "logicalMasks": 1,
+          "sourcePolygons": 1,
+          "eventCount": 2,
+          "openSlabCount": 1,
+          "allEventSectionsSingleInterval": true,
+          "allOpenSlabSectionsSingleInterval": true,
+          "wholeLogicalAxisMonotone": true,
+          "nonemptyProjectionInterval": [
+            "747/20",
+            "1201/20"
+          ],
+          "startCoordinate": "747/20",
+          "completionCoordinate": "1201/20",
+          "failureCount": 0,
+          "firstFailures": [],
+          "halfPlanePrefixGeometryEligible": true,
+          "initialCutMustExplicitlyBeEmptyAtProgressZero": true,
+          "cutForPositiveProgress": "start+(finish-start)*p",
+          "sourceDirectionApproved": false,
+          "sourceMicroClockApproved": false,
+          "nativeApproval": false,
+          "runtimeApplied": false,
+          "positiveWidthInteriorEventBridges": true,
+          "zeroWidthBridgeEvents": [],
+          "connectedPositivePrefixSufficient": true,
+          "guideControlDeltas": [
+            "4545840000000001/200000000000000"
+          ],
+          "guideAxisDirectionSufficient": true,
+          "firstSupportIntervals": [
+            [
+              "222/5",
+              "232/5"
+            ]
+          ],
+          "firstSupportMidpointsStrictPriorInterior": null,
+          "policyReuseApproved": false
+        }
+      ],
+      "kernelVertexCount": 4,
+      "kernelBoundaryCount": 4,
+      "seedChecks": [
+        {
+          "t": "0",
+          "point": [
+            "46707/1250",
+            "9087/200"
+          ],
+          "strictTargetKernelMarginL1": "39/2500",
+          "strictTargetKernel": true,
+          "strictSameLogicalPriorInterior": null
+        },
+        {
+          "t": "1/64",
+          "point": [
+            "482825520000000001/12800000000000000",
+            "9087/200"
+          ],
+          "strictTargetKernelMarginL1": "4745520000000001/12800000000000000",
+          "strictTargetKernel": true,
+          "strictSameLogicalPriorInterior": null
+        },
+        {
+          "t": "1/32",
+          "point": [
+            "243685680000000001/6400000000000000",
+            "9087/200"
+          ],
+          "strictTargetKernelMarginL1": "4645680000000001/6400000000000000",
+          "strictTargetKernel": true,
+          "strictSameLogicalPriorInterior": null
+        },
+        {
+          "t": "1/16",
+          "point": [
+            "124115760000000001/3200000000000000",
+            "9087/200"
+          ],
+          "strictTargetKernelMarginL1": "193/200",
+          "strictTargetKernel": true,
+          "strictSameLogicalPriorInterior": null
+        },
+        {
+          "t": "1/8",
+          "point": [
+            "64330800000000001/1600000000000000",
+            "9087/200"
+          ],
+          "strictTargetKernelMarginL1": "193/200",
+          "strictTargetKernel": true,
+          "strictSameLogicalPriorInterior": null
+        },
+        {
+          "t": "1/4",
+          "point": [
+            "34438320000000001/800000000000000",
+            "9087/200"
+          ],
+          "strictTargetKernelMarginL1": "193/200",
+          "strictTargetKernel": true,
+          "strictSameLogicalPriorInterior": null
+        }
+      ],
+      "sourceAnchorWitnessExists": true,
+      "nativeObservation": "initial reviewed by root; no native approval granted",
+      "policyReuseApproved": false,
+      "nativeApproval": false,
+      "runtimeApplied": false
+    },
+    {
+      "pen": 8,
+      "mask": 1,
+      "sourceRaw": 18,
+      "sourceCall": 1,
+      "sourceKind": "cdDrawLine",
+      "sourceArgs": [
+        99.29339999999999,
+        90.87,
+        99.29339999999999,
+        123.3,
+        32,
+        32
+      ],
+      "sourceSegmentSHA256": "168982804df88c72e9b6aaa1094305b3ce4ee69b4a7d7ce3c011240b8b8adba3",
+      "originalWeight": 16.215,
+      "originalGuide": null,
+      "originalRevealWidth": null,
+      "originalSourceFlags": [
+        32,
+        32
+      ],
+      "axisConditions": [
+        {
+          "pen": 1,
+          "axis": "y",
+          "directionHypothesis": "increasing",
+          "logicalMasks": 1,
+          "sourcePolygons": 1,
+          "eventCount": 2,
+          "openSlabCount": 1,
+          "allEventSectionsSingleInterval": true,
+          "allOpenSlabSectionsSingleInterval": true,
+          "wholeLogicalAxisMonotone": true,
+          "nonemptyProjectionInterval": [
+            "222/5",
+            "1253/20"
+          ],
+          "startCoordinate": "222/5",
+          "completionCoordinate": "1253/20",
+          "failureCount": 0,
+          "firstFailures": [],
+          "halfPlanePrefixGeometryEligible": true,
+          "initialCutMustExplicitlyBeEmptyAtProgressZero": true,
+          "cutForPositiveProgress": "start+(finish-start)*p",
+          "sourceDirectionApproved": false,
+          "sourceMicroClockApproved": false,
+          "nativeApproval": false,
+          "runtimeApplied": false,
+          "positiveWidthInteriorEventBridges": true,
+          "zeroWidthBridgeEvents": [],
+          "connectedPositivePrefixSufficient": true,
+          "guideControlDeltas": [
+            "3243/200"
+          ],
+          "guideAxisDirectionSufficient": true,
+          "firstSupportIntervals": [
+            [
+              "233/5",
+              "263/5"
+            ]
+          ],
+          "firstSupportMidpointsStrictPriorInterior": null,
+          "policyReuseApproved": false
+        }
+      ],
+      "kernelVertexCount": 4,
+      "kernelBoundaryCount": 4,
+      "seedChecks": [
+        {
+          "t": "0",
+          "point": [
+            "9929339999999999/200000000000000",
+            "9087/200"
+          ],
+          "strictTargetKernelMarginL1": "207/200",
+          "strictTargetKernel": true,
+          "strictSameLogicalPriorInterior": null
+        },
+        {
+          "t": "1/64",
+          "point": [
+            "9929339999999999/200000000000000",
+            "584811/12800"
+          ],
+          "strictTargetKernelMarginL1": "16491/12800",
+          "strictTargetKernel": true,
+          "strictSameLogicalPriorInterior": null
+        },
+        {
+          "t": "1/32",
+          "point": [
+            "9929339999999999/200000000000000",
+            "294027/6400"
+          ],
+          "strictTargetKernelMarginL1": "9867/6400",
+          "strictTargetKernel": true,
+          "strictSameLogicalPriorInterior": null
+        },
+        {
+          "t": "1/16",
+          "point": [
+            "9929339999999999/200000000000000",
+            "29727/640"
+          ],
+          "strictTargetKernelMarginL1": "1311/640",
+          "strictTargetKernel": true,
+          "strictSameLogicalPriorInterior": null
+        },
+        {
+          "t": "1/8",
+          "point": [
+            "9929339999999999/200000000000000",
+            "75939/1600"
+          ],
+          "strictTargetKernelMarginL1": "590660000000001/200000000000000",
+          "strictTargetKernel": true,
+          "strictSameLogicalPriorInterior": null
+        },
+        {
+          "t": "1/4",
+          "point": [
+            "9929339999999999/200000000000000",
+            "39591/800"
+          ],
+          "strictTargetKernelMarginL1": "590660000000001/200000000000000",
+          "strictTargetKernel": true,
+          "strictSameLogicalPriorInterior": null
+        }
+      ],
+      "sourceAnchorWitnessExists": true,
+      "nativeObservation": "initial reviewed by root; no native approval granted",
+      "policyReuseApproved": false,
+      "nativeApproval": false,
+      "runtimeApplied": false
+    }
+  ],
+  "summary": {
+    "axisAlternatives": 14,
+    "axisMonotoneAlternatives": 13,
+    "connectedPrefixAlternatives": 13,
+    "guideDirectionCompatibleAlternatives": 14,
+    "masksWithSourceAnchorWitness": 6,
+    "nativeHoldMasks": [
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        1
+      ],
+      [
+        3,
+        2
+      ]
+    ]
+  },
+  "preservation": "No P/Q/guide/flags/weights changed. Base u51de only; variant-k excluded.",
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "registrationAuthorized": false
+}
