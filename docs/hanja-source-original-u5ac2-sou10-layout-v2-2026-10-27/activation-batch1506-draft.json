@@ -1,0 +1,90 @@
+{
+  "schema": "hanja-root-variant-activation-preparation/v1",
+  "batch": 1506,
+  "glyph": "嫂",
+  "variant": {
+    "catalogStrokes": 12,
+    "playbackStrokes": 13,
+    "form": "사전"
+  },
+  "sourceAuthored": true,
+  "originalPublicWholeClaim": false,
+  "nativeReview": "docs/hanja-source-original-u5ac2-sou10-layout-v2-2026-10-27/native-source-preview-review.json",
+  "nativeReviewSHA256": "e0818f3cab3da6e1d53ceba86ae0ac4a6c0af646f40086584fb9555ebf6c021e",
+  "nativeProfile": "docs/hanja-actual-component-profiles-2026-10-22/u5ac2-sou10-layout-v2-source-preview-1.json",
+  "nativeProfileSHA256": "3f85533fef02278a7a41a3fa0b8b63915818ed99d9fa8ed1542e138f3ec0d383",
+  "reviewedProductionComponentSHA256": "50c208aee36e67d097211b206b345aafd86500291e207838737d8c1c31dde219",
+  "reviewedHarnessSHA256": "296417a97ef851c077a3055352ab0a13bf5f210d83f99811691f470267c909e0",
+  "publicSource": "public/hanja-strokes/glyphwiki/u5ac2.json",
+  "publicSourceSHA256": "487c9bed80b9d5f9e2c2e6bb2ae991ebde4069b07cd0f0fe5ecb37cc0ce074cc",
+  "pathsSHA256": "4f7584f9d5103fee844c2cdb5a0cbc91c083d4e8be0b3f1bd118dbce2275aa1c",
+  "compiledSHA256": "5e97d491dc632136822abac0459dd60608770c578a81b76f61733277e1dbfc10",
+  "registryPatch": "docs/hanja-source-original-u5ac2-sou10-layout-v2-2026-10-27/registry-batch1506.patch",
+  "registryPatchSHA256": "b3621b0992ef93379860ba61e9d4fbbffdd4c235d022b1525ff734c3f64399fe",
+  "registryBeforeSHA256": "14e8db86eaf2972f7df04b8a12ab4f085e4236dc44de472491da33522684ff9f",
+  "expectedRegistryAfterPatchSHA256": "70b3fe7bc34d2b3790863fdecbfb5237c9eb0cd8edc31b8228b6ed435bb1b68d",
+  "newFilesSHA256": {
+    "public/hanja-strokes/glyphwiki/u5ac2.json": "487c9bed80b9d5f9e2c2e6bb2ae991ebde4069b07cd0f0fe5ecb37cc0ce074cc",
+    "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch1506.json": "b73b8b133beee8d32ae2efa93c96f82de759197b49c03f04a97fdbf8d0a90b62",
+    "lib/hanja-stroke-dictionary-glyphwiki-batch1506.ts": "0e8916ab14d4077fe7c9147c541c07269959bc7e9d7e6e876196eca44e1fabf5",
+    "lib/hanja-stroke-dictionary-glyphwiki-batch1506.test.ts": "e6ed30ed3a43b680e17e2e5454ee64d2d7365aba468473befeaf78d7d24c5174",
+    "public/hanja-strokes/glyphwiki/NOTICE-5ac2.md": "4782062dc2b83650f4f9d4238461b39392a2534a086a1788175e3c2863e88782"
+  },
+  "countsBeforeFromROOT": {
+    "total": 5978,
+    "applied": 5920,
+    "remaining": 58
+  },
+  "expectedAfterROOTResolver": {
+    "total": 5978,
+    "applied": 5921,
+    "remaining": 57,
+    "targetMatches": 1,
+    "catalogStrokes": 12,
+    "playbackStrokes": 13
+  },
+  "registrationAuthorized": true,
+  "runtimeApplied": true,
+  "indexApplicationVerified": true,
+  "actualPostRegistryResolverChecked": true,
+  "registryAfterSHA256": "70b3fe7bc34d2b3790863fdecbfb5237c9eb0cd8edc31b8228b6ed435bb1b68d",
+  "actualPostRegistryResolver": {
+    "glyph": "嫂",
+    "catalogStrokes": 12,
+    "playbackStrokes": 13,
+    "targetMatches": 1,
+    "variantMatches": 1,
+    "sourcePolicies": 6,
+    "wrongCatalogCountsRejected": 49,
+    "registered": 5921,
+    "remaining": 57,
+    "remainingByGrade": {
+      "1급": 5,
+      "특급II": 8,
+      "특급": 44
+    },
+    "publicSourceSHA256Unchanged": true,
+    "actualAppUI": false
+  },
+  "focusedVerification": {
+    "initialFocusedTests": 4,
+    "initialPassed": 3,
+    "correctedSourceGatePassed": true,
+    "sourceGateFix": "Count SVG M commands without assuming a following space; source geometry was unchanged.",
+    "postRegistrationActivationTailPassed": true,
+    "selectedVirtualLoaderTestDiagnostics": 0,
+    "changedActualTestDiagnostics": 0,
+    "unchangedSuccessfulChecksReused": true
+  },
+  "sourcePreparationFlagsHistorical": true,
+  "examBodyApproved": false,
+  "sourceMicroclockIdentityApproved": false,
+  "allIntermediateFramesClaimed": false,
+  "freshAppUIVerified": false,
+  "buildRun": false,
+  "wholeProjectTypecheckRun": false,
+  "rootActionRequired": [
+    "Commit this Hanja unit with exact owned paths after the final current HEAD check.",
+    "Fresh application UI observation remains unclaimed; perform it separately if required by the current task."
+  ]
+}
