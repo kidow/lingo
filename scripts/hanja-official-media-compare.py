@@ -139,6 +139,14 @@ def load_config(name, expected_sha):
         require(sha(safe_raw)=='bbe619129ced4ae23fbe0d29e24a31f039bed64f97bf65fae756839831dd03de','Exact safe-only 嫂 timing audit metadata required')
         safe=json.loads(safe_raw)
         require(safe['glyph']=='嫂' and safe['bodyOutputOrFileSaved']is False and safe['logicalPensFromTimingApproved']is False and config['svgRoot']==safe['svgRoot'] and config['timedPaths']==safe['timedPaths'], 'Unchanged original 嫂 root/timing pins required; no logical count inference')
+    elif path == ROOT/'docs/hanja-official-media-compare-u9008-2026-10-27/config.json':
+        require(config['glyph']=='逈' and config['sourceRoot']=='u9008-hkcs' and config['domesticClips']==10 and config['allowedStrokes']==list(range(1,11)) and config['defaultStroke']==1 and config['metadataFile']=='docs/hanja-goal-glyphwiki-batch394-2026-10-09/metadata.json', 'Exact 逈 original10 clock-audit config required')
+        require(config['metadataSHA256']=='027107f51a3362ab0edd69f1a3b1db15238b0d60ab2e7bd82c4a018aca2af722' and metadata['glyph']=='逈' and metadata['candidate']['strokes']==9 and 'clips'not in metadata['dictionary'], 'Preserve 逈 catalog9 and historical metadata without fabricated clip field')
+        require(config['media']['svg']=={'url':'http://img.e-hanja.kr/hanjaSvg/aniSVG/9000/9008.svg','bytes':5204,'sha256':'d5e6ab0e623a06634a3ca3dfabee6158f17217e38262dcdebe1a7da321f29eec'}, 'Exact 逈 original media required')
+        safe_raw=pinned_path('docs/hanja-official-media-compare-u9008-2026-10-27/safe-source-metadata.json').read_bytes()
+        require(sha(safe_raw)=='a8bf92f0a2b03c9a97f075057258b07c7e1bc114d0f0a1f4262772301995f3e2','Exact safe-only 逈 timing audit metadata required')
+        safe=json.loads(safe_raw)
+        require(safe['glyph']=='逈' and safe['fetchFacts']['clips']==10 and safe['catalogStrokes']==9 and safe['bodyOutputOrFileSaved']is False and safe['logicalPensFromTimingApproved']is False and safe['catalogCountChanged']is False and config['svgRoot']==safe['svgRoot'] and config['timedPaths']==safe['timedPaths'], 'Unchanged 逈 original10 timings; no catalog9 correction or automatic logical-count inference')
     else:
         require(metadata['glyph'] == config['glyph'] and metadata['candidate']['strokes'] == config['domesticClips'] == metadata['dictionary']['clips'], 'Domestic/catalog identity mismatch')
     require({k:metadata['dictionary'][k] for k in ['url','bytes','sha256']} == config['media']['svg'], 'Original dictionary pin mismatch')
