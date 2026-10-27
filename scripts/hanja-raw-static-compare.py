@@ -531,6 +531,78 @@ NEW_PUBLIC_WHOLES["hkcs_u705d"]=json.loads("{\"glyph\":\"灝\",\"catalogStrokes\
 NEW_PUBLIC_WHOLES["hkcs_m83f0"]=json.loads("{\"glyph\":\"菰\",\"catalogStrokes\":12,\"config\":\"docs/hanja-source-raw-compare-u83f0-hkcs-whole-2026-10-27/config.json\",\"authoredWhole\":\"hkcs-u83f0\",\"sourcePath\":\"docs/hanja-source-alternative-u83f0-hkcs-2026-10-27/sources.json\",\"capturePath\":\"docs/hanja-actual-engine-capture-u83f0-hkcs-2026-10-27/capture.json\",\"rootVersion\":2,\"rootVersionType\":\"number\",\"records\":5,\"counts\":[14,16,34],\"configSemanticSHA256\":\"a8e232e07893b1f7efdd1c29a15b2c3d3281007926d8edfb09696bb0d34a376d\",\"u83f0Whole\":true,\"unusedTailNaN\":40}")
 NEW_PUBLIC_WHOLES["u83f0-var-001"]=json.loads("{\"glyph\":\"菰\",\"catalogStrokes\":12,\"config\":\"docs/hanja-source-raw-compare-u83f0-var-001-whole-2026-10-27/config.json\",\"authoredWhole\":\"var-001-u83f0\",\"sourcePath\":\"docs/hanja-source-alternative-u83f0-var-001-2026-10-27/sources.json\",\"capturePath\":\"docs/hanja-actual-engine-capture-u83f0-var-001-2026-10-27/capture.json\",\"rootVersion\":3,\"rootVersionType\":\"number\",\"records\":6,\"counts\":[13,15,32],\"configSemanticSHA256\":\"7411c6500c0b596b57553aebeccc68b16879ae6e4aad055c579ba666f1436118\",\"u83f0Whole\":true,\"unusedTailNaN\":36}")
 
+LOCAL_COMPONENT_RECIPE_WHOLE=json.loads("{\"glyph\":\"菰\",\"catalogStrokes\":12,\"root\":\"lingo-u83f0-components-v1\",\"kind\":\"local-authored-component-recipe\",\"localRecipe\":true,\"config\":\"docs/hanja-source-raw-compare-u83f0-local-components-whole-2026-10-27/config.json\",\"configSemanticSHA256\":\"a2644ec01dcae6eb30ef2792a2b02b78b3e2957294fe205689e3e10866dd4eb2\",\"recipePath\":\"docs/hanja-component-recipe-u83f0-2026-10-27/recipe.json\",\"recipeSHA256\":\"9ec71fa63dc8b74d4b1e6d9ca87692b96bfafd52d399533fe48cbcb01c406c59\",\"capturePath\":\"docs/hanja-component-capture-u83f0-2026-10-27/capture.json\",\"captureSHA256\":\"71c0b7b88740d5ff71b8ed97f717d2131f2eeadaa0ff13a47f37907e47e17a99\",\"counts\":[14,16,34]}")
+
+def new_local_recipe_whole_case(config):
+    if type(config)is dict and config.get('glyph')=='菰' and type(config.get('sourceRoots'))is dict and list(config['sourceRoots'])==['selected']:
+        spec=config['sourceRoots']['selected']
+        if type(spec)is dict and spec.get('root')==LOCAL_COMPONENT_RECIPE_WHOLE['root']:return LOCAL_COMPONENT_RECIPE_WHOLE
+    return None
+
+def local_component_differences(candidate,hk,var):
+    differences=[]
+    for start,parent_start,count,parent in[(0,0,4,hk),(4,3,10,var)]:
+        for offset in range(count):
+            ci,pi=start+offset,parent_start+offset
+            if candidate['groups'][ci]!=parent['groups'][pi] or candidate['trace'][ci]!=parent['trace'][pi]:differences.append(ci)
+    return differences
+
+def validate_local_recipe_whole(config,label,spec,path,config_path,case):
+    semantic={k:v for k,v in config.items()if k!='launcherSHA256'}
+    require(config_path==ROOT/case['config'] and digest(json.dumps(semantic,sort_keys=True,separators=(',',':'),ensure_ascii=False).encode())==case['configSemanticSHA256'],'exact LOCAL-AUTHORED 菰 comparison config required')
+    require(config['kind']==case['kind']=='local-authored-component-recipe' and config['sourceRootWasAuthored']is True and config['wholeOnly']is True and config['glyph']=='菰' and config['catalogStrokes']==config['domestic']['clips']==12 and config['holdSummary'].startswith(config['candidateDescription']) and 'not an original public GlyphWiki whole' in config['candidateDescription'],'clearly described local authored root, not a public/original whole, required')
+    require(label=='selected' and list(config['sourceRoots'])==['selected'] and spec['root']==case['root'] and path==pinned_path(spec['file']),'one exact local recipe source required')
+    def pinned_json(info):
+        p=pinned_path(info['path']);raw=p.read_bytes()
+        require(config['inputSHA256'].get(info['path'])==info['SHA256'] and digest(raw)==info['SHA256'],'exact local recipe input pin required')
+        return json.loads(raw)
+    recipe=pinned_json({'path':case['recipePath'],'SHA256':case['recipeSHA256']});cap=pinned_json({'path':case['capturePath'],'SHA256':case['captureSHA256']})
+    require(recipe['recipeId']==case['root'] and recipe['locallyAuthoredRoot']is True and recipe['mixedParts']is True and recipe['publicGlyphWikiRoot']is False and recipe['originalWhole']is False,'recipe must remain explicitly authored/mixed, not public or original')
+    root=recipe['virtualRoot'];require(root['name']==case['root'] and root['version']=='local-recipe-v1' and root['isPublicGlyphWikiRecord']is False,'original locally authored recipe root metadata required')
+    source_flags=recipe['sourceFacts']
+    require(all(source_flags[k]is True for k in['literalSelectedRowsConcatenatedWithoutFieldEdits','originalChildRecordsUnchanged','originalReferenceKeysAndVersionTypesPreserved','originalU3013AliasMetadataPreserved','newLocalRootCompositionCreated']) and all(source_flags[k]is False for k in['originalParentWholeSourcesModified','originalParentCapturesModified','additionalAliasInserted','sourceCoordinateEdits','sourceFlagEdits','generatedPolygonsOrRevealPaths']),'unchanged borrowed rows/children and explicit composition required')
+    require(len(recipe['parentRows'])==2 and [r['role']for r in recipe['parentRows']]==['grass4','body'],'exact grass/body recipe roles required')
+    parents={}
+    for row in recipe['parentRows']:
+        parent=pinned_json(row['parentSource']);require(parent['root']==row['parentRoot'] and type(parent['rootVersion'])is int and parent['rootVersion']==row['parentVersion'] and row['parentVersionType']=='number' and row['fieldEdits']is False and row['parentRowOneBased']==row['parentRowZeroBased']+1,'unchanged exact parent/root/version/row required')
+        literal=parent['records'][row['parentRoot']]['data'].split('$')[row['parentRowZeroBased']]
+        require(literal==row['originalRow'] and literal.split(':')[7]==row['referencedOriginalKey'],'borrowed parent row must remain byte-literal')
+        parents[row['parentSource']['path']]=parent
+    require(root['data']=='$'.join(row['originalRow']for row in recipe['parentRows']),'only exact two root rows may be concatenated')
+    children=recipe['originalChildren'];require(len(children)==5 and set(children)==set(recipe['originalChildOrigins']),'exact five original children required')
+    for name,child in children.items():
+        origin=recipe['originalChildOrigins'][name];require(origin['path']in parents and config['inputSHA256'][origin['path']]==origin['SHA256'] and origin['recordKey']==name and type(child['version'])is int and child['version']==origin['version'] and origin['versionType']=='number' and child==parents[origin['path']]['records'][name],'original child fields/reference/version types required')
+    records={root['name']:root,**children};seen=set()
+    def visit(name,chain=()):
+        require(name not in chain and name in records,'complete original child-reference closure required')
+        if name in seen:return
+        seen.add(name)
+        for row in records[name]['data'].split('$'):
+            a=row.split(':')
+            if a[0]=='99':visit(a[7],(*chain,name))
+    visit(root['name']);require(seen==set(records),'no omitted or inserted child/alias required')
+    alias=children['u74dc-ue0104'];require(alias['related']=='U+3013' and alias['data']=='99:0:0:0:0:200:200:u74dc-t' and alias['version']==1,'original U3013 metadata alias must remain unchanged')
+    require(cap['root']==root['name'] and cap['locallyAuthoredRoot']is True and cap['recipeCandidateAuthored']is True and cap['mixedParts']is True and cap['originalPublicRootClaim']is False and cap['originalWhole']is False,'capture must identify the local authored whole truthfully')
+    require(cap['inputs']['recipe']=={'path':case['recipePath'],'SHA256':case['recipeSHA256']} and cap['localSourceProvenance']['root']==root and type(cap['localSourceProvenance']['originalChildRecords'])is int and cap['localSourceProvenance']['originalChildRecords']==len(children) and cap['localSourceProvenance']['originalChildFieldsUnchanged']is True and cap['localSourceProvenance']['originalChildOrigins']==recipe['originalChildOrigins'],'capture must bind the exact recipe and original records')
+    pinned_json(cap['inputs']['readinessAtRecipePreparation'])
+    require(digest(pinned_path(cap['helper']['path']).read_bytes())==cap['helper']['SHA256']==config['inputSHA256'].get(cap['helper']['path']),'unchanged actual local capture helper required')
+    proof=pinned_json(cap['full5']);require(path==pinned_path(cap['full5']['path']) and spec['fileSHA256']==cap['full5']['SHA256'] and sorted(proof)==FIVE,'exact executed local full5 required')
+    f=cap['captureFacts'];require((f['actualVMContexts'],f['vendorEvaluations'],f['captureEvaluation'],f['makeGlyphCalls'])==(1,8,1,1) and f['actualProviderRoot']==root['name'] and f['recipeCandidateAuthored']is True and f['mixedParts']is True and f['originalPublicRootClaim']is False and f['originalChildDataChanged']is False and f['localRootRowsChangedFromRecipe']is False and f['newLocalMixedWholeCreated']is True,'single actual local-source execution provenance required')
+    require(proof['engineRevision']==cap['engine']['revision']=='49232bac0348fe815f4200d4116ab7917e0db47f' and proof['engineHashes']==cap['engine']['actualLoadedHashes'] and len(proof['engineHashes'])==8 and cap['engine']['headerFromActualLoadedCodeBytesOnly']is True,'executed engine8 local header required')
+    groups,trace=proof['groups'],proof['trace'];require((len(groups),sum(map(len,trace)),sum(len(g['polygons'])for g in groups))==tuple(case['counts']) and len(trace)==len(groups)==14 and [g['polygons']for g in groups]==[[p for c in row for p in c['polygons']]for row in trace] and [len(g['polygons'])for g in groups]==spec['polygonCounts'],'exact local14/16/34 groups/trace/P required')
+    require(cap['finiteEvidence']['allActiveRawAndPCoordinatesFinite']is True and cap['finiteEvidence']['nonfiniteGeometry']==[] and cap['finiteEvidence']['unusedTailNeverCoerced']is True and cap['metadataRows']==[],'original finite local geometry with untouched unused tails required')
+    actual_parents={}
+    require(len(cap['inputs']['originalParentActualCaptures'])==2,'two unchanged actual parent captures required')
+    for parent in cap['inputs']['originalParentActualCaptures']:
+        metadata=pinned_json(parent['metadata']);whole=pinned_json(parent['full5'])
+        require(parent['root']==metadata['source']['root'] and metadata['full5']['path']==parent['full5']['path'] and metadata['full5']['SHA256']==parent['full5']['SHA256'] and metadata['source']['path']in parents and metadata['source']['SHA256']==config['inputSHA256'][metadata['source']['path']] and whole['engineHashes']==proof['engineHashes'] and whole['engineRevision']==proof['engineRevision'] and whole['defaults']==proof['defaults'],'exact parent source/capture/engine defaults required')
+        actual_parents[parent['root']]=whole
+    require(set(actual_parents)=={'hkcs_m83f0','u83f0-var-001'} and local_component_differences(proof,actual_parents['hkcs_m83f0'],actual_parents['u83f0-var-001'])==[],'recomputed exact parent raw/flags/Q-call/P equality required')
+    require(cap['parserEvidence']['mappingVerified']is True and cap['parserEvidence']['adjustmentRowIdentity']==list(range(14)) and set(cap['parserEvidence']['usedReferences'])==seen and [p['matchingOriginalKeys']for p in cap['parserEvidence']['topPartParses']]==[[r['referencedOriginalKey']]for r in recipe['parentRows']],'actual parser reference/mapping evidence required')
+    cmp=cap['comparison'];require(cmp['performed']is True and cmp['mappingVerified']is True and cmp['allPartsExactlyEqual']is True and cmp['anyPartDifferent']is False and cmp['reuseApproved']is False and cmp['oldPOverwritten']is False,'comparison fact must not imply part-reuse approval')
+    require(cap['originalParentsReexecuted']==0 and cap['parentPolygonsGivenToCandidateVM']is False and cap['parentPolygonsOverwritten']is False and cap['compiledRevealPathsOrClocksDerived']is False and cap['privateMediaInputs']is False and cap['privateMediaFilesWritten']==cap['HTTPRequests']==cap['newServer']==cap['newBrowser']==0,'no parent-P injection/overwrite, new engine or private media allowed')
+    require(all(v is False for v in recipe['approval'].values()) and all(v is False for v in cap['approval'].values()) and cap['nativeApproval']is False and cap['runtimeApplied']is False and recipe['nativeApproval']is False and recipe['runtimeApplied']is False,'local whole/reuse/order/direction/animation remain unapproved')
+
 def new_public_whole_case(config):
     if type(config)is dict and type(config.get('sourceRoots'))is dict and list(config['sourceRoots'])==['m','u']:
         specs=config['sourceRoots']
@@ -595,6 +667,7 @@ NEW_PUBLIC_WHOLES['twedu-a03578-001']={'glyph':'薇','catalogStrokes':17,'config
 NEW_PUBLIC_WHOLES["hkcs_m9008"]=json.loads("{\"glyph\":\"逈\",\"catalogStrokes\":9,\"dictionaryPlaybackStrokes\":10,\"config\":\"docs/hanja-source-raw-compare-u9008-hkcs-whole-2026-10-26/config.json\",\"authoredWhole\":\"hkcs\",\"sourcePath\":\"docs/hanja-source-alternative-u9008-hkcs-2026-10-26/sources.json\",\"capturePath\":\"docs/hanja-actual-engine-capture-u9008-hkcs-2026-10-26/capture.json\",\"rootVersion\":\"1\",\"records\":3,\"counts\":[14,15,27],\"configSemanticSHA256\":\"2f45ef5245e51c4bfd614e576c93fabc6c139037e87c631ec33e821d44f4282c\",\"u9008Dictionary10\":true}")
 NEW_PUBLIC_WHOLES["u9008-t"]=json.loads("{\"glyph\":\"逈\",\"catalogStrokes\":9,\"dictionaryPlaybackStrokes\":10,\"config\":\"docs/hanja-source-raw-compare-u9008-t-whole-2026-10-26/config.json\",\"authoredWhole\":\"t\",\"sourcePath\":\"docs/hanja-source-alternative-u9008-t-2026-10-26/sources.json\",\"capturePath\":\"docs/hanja-actual-engine-capture-u9008-t-2026-10-26/capture.json\",\"rootVersion\":\"3\",\"records\":3,\"counts\":[15,16,29],\"configSemanticSHA256\":\"742419873c7d11a82a6b7ed2608e8c3c891ea749593d6d06a2f09dd19a845f96\",\"u9008Dictionary10\":true}")
 def validate_new_public_whole(config,label,spec,path,config_path,case):
+    if case.get('localRecipe'):return validate_local_recipe_whole(config,label,spec,path,config_path,case)
     if case.get('authoredWhole'):
         semantic={k:v for k,v in config.items()if k!='launcherSHA256'}
         require(config_path==ROOT/case['config'] and digest(json.dumps(semantic,sort_keys=True,separators=(',',':'),ensure_ascii=False).encode())==case['configSemanticSHA256'],'exact independent 薇 authored whole config required')
@@ -846,10 +919,11 @@ def main():
     config_path=pinned_path(args.config);require(config_path.name=='config.json'and config_path.parent.parent==ROOT/'docs'and config_path.parent.name.startswith('hanja-source-raw-compare-'),'comparison config location required')
     config_bytes=config_path.read_bytes();require(len(config_bytes)<=65536 and digest(config_bytes)==args.config_sha,'config SHA changed')
     config=json.loads(config_bytes)
-    new_public_whole=new_public_whole_case(config)
+    new_public_whole=new_public_whole_case(config)or new_local_recipe_whole_case(config)
     original_u840d_1040_config=exact_u840d_k_1040_config(config,config_path)
     keys={'schema','glyph','catalogStrokes','sourceViewBox','defaultSource','sourceRoots','domestic','inputSHA256','holdSummary','launcherSHA256','sharedServe','noPartialAnimation','nativeApproval','runtimeApplied','guardMode','host','layoutMode'}
     if new_public_whole:keys.add('wholeOnly')
+    if new_public_whole and new_public_whole.get('localRecipe'):keys.update({'kind','sourceRootWasAuthored','candidateDescription'})
     original_hkcs_m7626_config=(type(config)is dict and config.get('glyph')=='瘦' and type(config.get('sourceRoots'))is dict and list(config['sourceRoots'])==['selected'] and type(config['sourceRoots']['selected'])is dict and config['sourceRoots']['selected'].get('root')=='hkcs_m7626')
     if original_hkcs_m7626_config:keys.add('dictionaryPlaybackStrokes')
     original_u83f1_family_config=(type(config)is dict and config.get('glyph')=='菱' and 'dictionaryPlaybackStrokes'in config)
