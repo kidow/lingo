@@ -56,7 +56,12 @@ def kernel(P):
 whole=[]
 for pen in [8,9,11]:
  a=ns['audit'](pen,1,'increasing');assert a['wholeLogicalAxisMonotone'];P=[p for m in fixture['strokes'][pen-1]for p in polygons(m['outline'])];initial=[p for poly in P for p in poly if p[1]==a['startCoordinate']]
- a.update({'initialExtremalPoints':sorted(set(initial)),'initialAreaLimitZero':'bounded union width times positive cut height tends to0','fullOriginalPAtCompletion':True,'capFreeAxisCandidate':True,'originalMasksRemainOne':len(fixture['strokes'][pen-1])==1,'sourceGuideYIncreasing':True});whole.append(a)
+ widths=[sum(b-a for a,b in merge([v for p in P for v in section(p,1,y)]))for y in event_values(P,1)[1:-1]];assert widths and min(widths)>0
+ m=fixture['strokes'][pen-1][0];qv=[F(x)for x in re.findall(r'[-+]?(?:\d*\.\d+|\d+)(?:[eE][-+]?\d+)?',m.get('revealPath',''))]
+ if qv:assert len(qv)==6 and qv[1]<qv[3]<qv[5]
+ else:
+  assert m['direction']=='down';raw=fixture['sourceGroups'][pen-1][0];args=fixture['fullProof']['trace'][raw][0]['args'];assert args[1]<args[3]
+ a.update({'minimumInteriorEventSectionWidth':min(widths),'initialExtremalPoints':sorted(set(initial)),'initialAreaLimitZero':'bounded union width times positive cut height tends to0','fullOriginalPAtCompletion':True,'capFreeAxisCandidate':True,'originalMasksRemainOne':len(fixture['strokes'][pen-1])==1,'sourceGuideYIncreasing':True});whole.append(a)
 y12=ns['audit'](12,1,'increasing');x12=ns['audit'](12,0,'decreasing');assert not y12['wholeLogicalAxisMonotone']and not x12['wholeLogicalAxisMonotone']
 P12=[p for m in fixture['strokes'][11]for p in polygons(m['outline'])];conn12=connected_right(P12)
 conn12.update({'pen':12,'axis':'x','direction':'decreasing','range':[min(p[0]for q in P12 for p in q),max(p[0]for q in P12 for p in q)],'sourceMacroHypothesis':'upper-right toward lower-left','initialAreaLimitZero':'bounded union height times positive cut width tends to0','fullOriginalPAtCompletion':True,'capFreeAxisCandidate':not conn12['failureCount']})
@@ -72,7 +77,18 @@ for power in range(1,13):
  if km>0 and hm>0:anchors.append({'t':t,'point':A,'headKernelMargin':km,'priorHMargin':hm})
 all7=kernel(P7)[1];start=min(y for p in P7 for x,y in p);finish=max(y for p in P7 for x,y in p);hmax=max(y for p in H for x,y in p)
 headBounds=[min(x for p in head for x,y in p),min(y for p in head for x,y in p),max(x for p in head for x,y in p),max(y for p in head for x,y in p)]
-result7={'pen':7,'mask':2,'originalOwnerCount':1,'originalP':len(P7),'wholeUnionKernelArea':area(all7)if all7 else F(0),'standaloneYSections':y7,'standaloneYPrefixPriorHGapBeforeContact':max(F(0),min(y for p in H for x,y in p)-start),'headSeam':seam,'headSeamDerivedFrom':'maximum original ornamental P2 y, not a tuned threshold','headBounds':headBounds,'headKernelArea':area(K)if K else F(0),'headKernelPriorHIntersectionArea':area(KH)if KH else F(0),'dyadicSourceQAnchors':anchors,'selectedAnchor':anchors[0]if anchors else None,'headThenTailEligible':bool(anchors)and y7['wholeLogicalAxisMonotone'],'authoredHeadPhaseShare':(seam-start)/(finish-start),'tailYRange':[seam,finish],'sourceHWeight':fixture['strokes'][6][0]['weight'],'sourceCurveWeight':fixture['strokes'][6][1]['weight'],'tailSeamSection':merge([v for p in P7 for v in section(p,1,seam)]),'sourceMicroClockApproved':False,'nativeApproval':False}
+y7widths=[sum(b-a for a,b in merge([v for p in P7 for v in section(p,1,y)]))for y in event_values(P7,1)[1:-1]];assert min(y7widths)>0
+assert q[0]>q[2]>q[4] and q[1]<q[3]<q[5]
+anchor=anchors[0]if anchors else None
+safe=None
+if anchor:
+ A=anchor['point'];extent=max(abs(A[0]-headBounds[0]),abs(headBounds[2]-A[0]),abs(A[1]-headBounds[1]),abs(headBounds[3]-A[1]));safe=((seam-start)/(finish-start))*anchor['priorHMargin']/extent
+assert conn12['allPositivePrefixesEdgeConnectedAndNoIsolatedCutInk']
+q12=[F(x)for x in re.findall(r'[-+]?(?:\d*\.\d+|\d+)(?:[eE][-+]?\d+)?',fixture['strokes'][11][0]['revealPath'])];assert q12[0]>q12[2]>q12[4]and q12[1]<q12[3]<q12[5]
+macro=json.loads((R/'docs/hanja-official-media-compare-u7aea-2026-10-27/native-direction-review.json').read_text());expected={7:'right, then down-left',8:'upper-left to lower-right',9:'top to bottom',11:'upper-left to lower-right',12:'upper-right to lower-left'};assert macro['observedNativeScenes']==39
+for row in macro['directions']:
+ if row['pen']in expected:assert row['direction']==expected[row['pen']]
+result7={'pen':7,'mask':2,'originalOwnerCount':1,'originalP':len(P7),'wholeUnionKernelArea':area(all7)if all7 else F(0),'standaloneYSections':y7,'standaloneYPrefixPriorHGapBeforeContact':max(F(0),min(y for p in H for x,y in p)-start),'headSeam':seam,'headSeamDerivedFrom':'maximum original ornamental P2 y, not a tuned threshold','headBounds':headBounds,'headKernelArea':area(K)if K else F(0),'headKernelPriorHIntersectionArea':area(KH)if KH else F(0),'dyadicSourceQAnchors':anchors,'selectedAnchor':anchors[0]if anchors else None,'headThenTailEligible':bool(anchors)and y7['wholeLogicalAxisMonotone'],'minimumInteriorEventSectionWidth':min(y7widths),'strictPriorHSafeLogicalMaskProgressUpperBound':safe,'initialAreaAndDiameterLimitZero':'Head rectangle shrinks to selected source-Q point strictly inside prior H; both area and diameter tend to0. Tail starts with full head and positive-width seam.','authoredHeadPhaseShare':(seam-start)/(finish-start),'tailYRange':[seam,finish],'sourceHWeight':fixture['strokes'][6][0]['weight'],'sourceCurveWeight':fixture['strokes'][6][1]['weight'],'tailSeamSection':merge([v for p in P7 for v in section(p,1,seam)]),'sourceMicroClockApproved':False,'nativeApproval':False}
 def enc(v):
  if isinstance(v,F):return str(v)
  if isinstance(v,dict):return {k:enc(x)for k,x in v.items()}
