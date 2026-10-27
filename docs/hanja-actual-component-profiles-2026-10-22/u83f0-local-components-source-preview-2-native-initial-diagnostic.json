@@ -1,0 +1,26 @@
+{
+  "schema": "hanja-native-preview-observer-diagnostic/v1",
+  "glyph": "菰",
+  "reviewedAt": "2026-10-27",
+  "profileSHA256": "dc8b780f7c96a4d498132edcc869c71928221d57ae2b15f91b2010edc230fa39",
+  "launcherSHA256": "3551072cfbc57891b8860579e15ca3a0b85e00204ebb3fcc0255fa07623a20b7",
+  "observedScenes": [{"pen":7,"requestedProgress":0},{"pen":7,"requestedProgress":0.000001},{"pen":10,"requestedProgress":0.7542041783123979}],
+  "completeStatusPreRead": true,
+  "bridgeEnabled": true,
+  "statusErrors": [],
+  "futureZeroOwnerIssue": "At pen7 zero/epsilon, observer reports point10m2 missing source context/owner despite that future mask having zero progress. Renderer scope and actual global strict point context must be distinguished from absence of an inactive mask node.",
+  "positivePen10Issue": {
+    "actualMaskProgress": "4.0684554116728366e-10",
+    "guardError": "Changed 菰 source/coordinates/rectangle",
+    "visibility": "hidden",
+    "rectAttributes": {"x":"62.064023436070336","y":"88.57749999773083","width":"6.489186381618176e-9","height":"4.068455411672837e-9"},
+    "computedCSS": {"x":"62.064px","y":"88.5775px","width":"0px","height":"0px"},
+    "rectInlineStyleAttributePresent": false,
+    "observation": "The exact source rectangle attributes and browser computed geometry serialization differ. A strict guard must account for browser canonical geometry without arbitrary tolerance or permitting CSS replacement."
+  },
+  "result": "HOLD-zero-owner-observer-and-computed-geometry-guard",
+  "nativeAnimationApproval": false,
+  "runtimeApplied": false,
+  "serverStopped": true,
+  "privateMediaSaved": false
+}
