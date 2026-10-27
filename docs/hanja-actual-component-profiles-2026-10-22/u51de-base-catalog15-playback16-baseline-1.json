@@ -47,7 +47,7 @@
     1,
     1
   ],
-  "adapterSHA256": "b9c0ebf261e1c8bbc147a21d36fc1cb4f1179a2afc94f9a564a1c2ac133c674a",
+  "adapterSHA256": "e8bd2068497486eb76150d54eed23300c41731d47b4deb2f4368f1a5e6a16f89",
   "fixture": "docs/hanja-source-original-u51de-base-2026-10-27/fixtures-draft.json",
   "geometrySHA256": "c9ac1ef9b6c55526779f888cfd12f31622fad344ed20cbbf3dfa0dabee7caea1",
   "target": null,
@@ -152,7 +152,7 @@
     "All7 original-weight internal boundaries before/at/after ±1e-10.",
     "Pen2 original down-Q→UR-Q gap remains; pen3 falling terminal and pen12 original terminal UP require actual observation, not inference."
   ],
-  "expectedResourceClosureModules": 378,
+  "expectedResourceClosureModules": 381,
   "sharedVersion": "u51de-base-catalog15-playback16-baseline-1",
   "sharedWindowPending": true,
   "profileFinalized": false,
@@ -168,7 +168,7 @@
   "sourceProjection": 0,
   "inputSHA256": {
     "docs/hanja-actual-component-profiles-2026-10-22/u5a93-2-native-review.json": "f822db5cdc5fa88d751e38b1023a6008f02fd97a8f24e98a4e6cb10bcd407da2",
-    "components/hanja/stroke-outlines.tsx": "50c208aee36e67d097211b206b345aafd86500291e207838737d8c1c31dde219",
+    "components/hanja/stroke-outlines.tsx": "5f21a981e5f9621e07afb6621fdac5de8c3d649ac5b0effad0d0e854f28011b6",
     "lib/hanja-stroke-start-caps-u6fe9-hkcs-m.ts": "7a5523e73bf9fc049620173ecd7a2d41e92ed23f51e4f3d219d9be67a400a10a",
     "lib/hanja-stroke-outline.ts": "fb5e309e567de18fdeb19efdc200cd73cc8bce68934554be8d884b5b6e10ff44",
     "lib/hanja-stroke-logical3-u6fe9-hkcs-m.ts": "3c6e6e390b8774de3ceace5a22e6e72ce0b0d946bc1d780d488ea13c3f7104af",
@@ -497,7 +497,7 @@
     "lib/hanja-stroke-start-caps-u705d-hkcs-m.ts": "8fee4151d5e15b414498be666171588187fe4311bd70186ccbc6187149d315f1",
     "lib/hanja-stroke-cardinal-contact-u705d-hkcs-m.ts": "4ec2a615cdb035a46c2d08ae702badeddd76610e08b5744a1cd8230f8ed6b5ae",
     "lib/hanja-stroke-logical3-u705d-hkcs-m.ts": "a40c483ee79ef249dddc0c9d80beba21c35109757f819e0ff690e9fddd6476e7",
-    "scripts/hanja-actual-component-review.mjs": "b9c0ebf261e1c8bbc147a21d36fc1cb4f1179a2afc94f9a564a1c2ac133c674a",
+    "scripts/hanja-actual-component-review.mjs": "e8bd2068497486eb76150d54eed23300c41731d47b4deb2f4368f1a5e6a16f89",
     "lib/hanja-stroke-start-caps-u8627.ts": "bc29153c786a591d91198c6e91d1f9da645391fc4de22c6f16947478463ecc0a",
     "lib/hanja-stroke-source-foot-u8627.ts": "b8b7176a0e0e39c01cb740f111b5b036ca6a9d9082c51bc304d2057e561d1bae",
     "lib/hanja-stroke-original-left-terminal-u8627.ts": "94a0f0c4e86d1b73437afaa1936c0d2f8fac7718fe05fc68eee5c2d17e39dd94",
@@ -849,7 +849,11 @@
     "docs/hanja-goal-glyphwiki-batch388-2026-10-09/review.json": "030f54f1e9dd5b9dc9477c069c370099231ba5156678af82fe17547b3a320a36",
     "docs/hanja-official-media-compare-u51de-2026-10-27/native-clock-review.json": "546aea0545adb15ef3fbea741da903881d3b4573b086b2432bf9a1581b33a7c5",
     "docs/hanja-official-media-compare-u51de-2026-10-27/config.json": "9afa8d858df9cf4cb07e114b063132226a2350e51ef59264002427a8401f297c",
-    "docs/hanja-official-media-compare-u51de-2026-10-27/safe-source-metadata.json": "f0f408bc7db6e68bb5ce51422bfefbc44c0ce0bda60cd7d38734b5de5a91a3da"
+    "docs/hanja-official-media-compare-u51de-2026-10-27/safe-source-metadata.json": "f0f408bc7db6e68bb5ce51422bfefbc44c0ce0bda60cd7d38734b5de5a91a3da",
+    "lib/hanja-stroke-source-reveal-u5ac2-local.ts": "ba07a3fb7da907f02078924eb60224c7d8e457fa09ff985bc92e21e324e66646",
+    "lib/hanja-stroke-source-reveal-u9008-hkcs.ts": "882c2c9fdf1d69ca3d23c2aa21e04da209526c0dce2765b9b89e9c72e69a213a",
+    "lib/hanja-stroke-contact-foot-u9008-hkcs.ts": "e78a7ac253d456d9920bbf75c18da6b8dde187fa4ed3fdf10451017e44d2b0db",
+    "docs/hanja-source-original-u5ac2-sou10-layout-v2-2026-10-27/fixtures-draft.json": "6cc0ae1b2facfd2c10ad102c4acf5936781ff0f845052e712aaad71ad489dccf"
   },
   "fixtureKey": "u51de.strokes",
   "baseSharedVersion": "u5ac2-sou10-layout-v2-baseline-1",
@@ -900,8 +904,18 @@
     "SSRPerformed": false,
     "closureFinalized": false,
     "RAMOnlyPatchPrepared": true,
-    "genericContextNullChecksPlanned": 337,
-    "actualHLeasePending": true
+    "genericContextNullChecksPlanned": 340,
+    "actualHLeasePending": true,
+    "pendingExactSourceRevealCompatibilityPatch": {
+      "path": "docs/hanja-source-original-u51de-base-2026-10-27/baseline-H-source-reveal-compatibility.patch",
+      "sha256": "a280c53c59ca8ba7028cf2af1e5e6af686ab124af1ab5a168c856a75979d1459",
+      "baseH": "e8bd2068497486eb76150d54eed23300c41731d47b4deb2f4368f1a5e6a16f89",
+      "futureH": "8808c4adac4a1a560426991071ec72edc39f434478681f63ef53b918b54bfa2c",
+      "applied": false,
+      "scope": "Only exact 凞 profile with actualR5f: all340 contexts reject and idle23 original masks remain. Existing C/D and old baseline guards preserved.",
+      "profileCurrentlyPinsActualH": true,
+      "afterApplyBothHPinsRequireFutureHash": true
+    }
   },
   "staticMembershipEvidenceReused": {
     "record": "docs/hanja-goal-glyphwiki-batch388-2026-10-09/review.json",
@@ -918,7 +932,7 @@
     "sourceSVG_SHA256": "584c8c831fe65098988320ec174f4c96f21caa11f06e785fe7768910f9ceb59c",
     "microClockEquivalent": false
   },
-  "originalComponentSHA256": "50c208aee36e67d097211b206b345aafd86500291e207838737d8c1c31dde219",
+  "originalComponentSHA256": "5f21a981e5f9621e07afb6621fdac5de8c3d649ac5b0effad0d0e854f28011b6",
   "variantCandidate": {
     "catalogStrokes": 15,
     "playbackStrokes": 16,
