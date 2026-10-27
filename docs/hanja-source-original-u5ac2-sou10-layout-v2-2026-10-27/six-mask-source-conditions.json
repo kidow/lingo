@@ -1,0 +1,452 @@
+{
+  "schema": "hanja-local-sao-six-mask-source-conditions/v1",
+  "glyph": "嫂",
+  "date": "2026-10-27",
+  "inputs": {
+    "docs/hanja-source-original-u5ac2-sou10-layout-v2-2026-10-27/fixtures-draft.json": "6cc0ae1b2facfd2c10ad102c4acf5936781ff0f845052e712aaad71ad489dccf",
+    "docs/hanja-source-original-u83f0-local-components-2026-10-27/verify-baseline-onset-conditions.py": "35b0d7f372a2ed37052ebbbd1b116e951786fe80a5d70798c95659cfc85a63cf",
+    "docs/hanja-source-original-u83f0-local-components-2026-10-27/verify-logical-axis-prefix-conditions.py": "db903056c1375705fd8133ee79dcc3ff5450c519012a3f249881af9abebdbd29",
+    "docs/hanja-source-original-u83f0-local-components-2026-10-27/verify-pen8-connected-x-prefix.py": "afa23cad9a8825a2d839a4c5128607b21b2b84d377f05bdbbab0b1c8bec076b0",
+    "docs/hanja-source-original-u7443-g-2026-10-26/verify-curve-union-start-kernels.py": "95286fc3de0d18ff96735263582095325f7d9afa00bbd2c3a0ea42e03caf2396",
+    "docs/hanja-source-original-u8587-local-components-2026-10-27/verify-5-6-connected-prefix.py": "2058aa876fbe98a0f99cbfd3e9d9b30c88e16f4065bf9aff24f6043afb359b66",
+    "docs/hanja-official-media-compare-u5ac2-2026-10-27/native-clock-review.json": "bdcfd0d79492f5ba3c69c4b77366112da707c0f6d188775390ffcb30c0e07a44",
+    "docs/hanja-source-original-u5ac2-sou10-layout-v2-2026-10-27/native-baseline-review.json": "4c01b39c3e21d4deef8c2467b7ccfccad9757a8ea9f4119dd0ad1d990f6c62f4"
+  },
+  "verifierSHA256": "3be1abad73ebc3167d28844d80cf40cd8addc214c34be75f1dbb9dfa2373d787",
+  "normalizedSourceCoordinates": "Exact compiled100 P from unchanged captured200 P /2; proof-axis transforms only, no geometry edit.",
+  "newBatchExecutions": 1,
+  "axisMaskCases": [
+    {
+      "pen": 1,
+      "sourceMasks": 2,
+      "sourceP": 2,
+      "axis": "y",
+      "direction": "increasing",
+      "analysisTransform": "(-originalY,originalX), proof axes only",
+      "eventCount": 7,
+      "convexSlabCells": 6,
+      "cutChecks": 13,
+      "noninitialCutChecks": 12,
+      "maxClosedComponents": 1,
+      "maxPositiveEdgeComponents": 1,
+      "noninitialIsolatedCutInkCases": 0,
+      "failureCount": 0,
+      "firstFailures": [],
+      "connectedPrefixSufficientConditionPassed": true,
+      "nativeFailureObserved": true,
+      "areaContinuity": {
+        "sourceProjectionRange": [
+          "-1369/20",
+          "-139/20"
+        ],
+        "crossAxisSpan": "89/5",
+        "areaBoundCoefficient": "10947/10",
+        "bound": "area(prefix(p)) <= coefficient*p, p→0+",
+        "zeroExplicitEmptyRequired": true
+      },
+      "publisherMacro": [
+        "down-left",
+        "down-right"
+      ],
+      "sourceMicroclockApproved": false,
+      "policyAdopted": false,
+      "mask": 1,
+      "targetMaskCount": 1,
+      "scope": "Only this original mask P; other masks remain separate and use their own original clocks until explicit policy/native review"
+    },
+    {
+      "pen": 2,
+      "sourceMasks": 1,
+      "sourceP": 2,
+      "axis": "y",
+      "direction": "increasing",
+      "analysisTransform": "(-originalY,originalX), proof axes only",
+      "eventCount": 28,
+      "convexSlabCells": 27,
+      "cutChecks": 55,
+      "noninitialCutChecks": 54,
+      "maxClosedComponents": 1,
+      "maxPositiveEdgeComponents": 1,
+      "noninitialIsolatedCutInkCases": 0,
+      "failureCount": 0,
+      "firstFailures": [],
+      "connectedPrefixSufficientConditionPassed": true,
+      "nativeFailureObserved": true,
+      "areaContinuity": {
+        "sourceProjectionRange": [
+          "-1887/20",
+          "-27"
+        ],
+        "crossAxisSpan": "169/5",
+        "areaBoundCoefficient": "227643/100",
+        "bound": "area(prefix(p)) <= coefficient*p, p→0+",
+        "zeroExplicitEmptyRequired": true
+      },
+      "publisherMacro": [
+        "down",
+        "down-left"
+      ],
+      "sourceMicroclockApproved": false,
+      "policyAdopted": false,
+      "mask": 1,
+      "targetMaskCount": 1,
+      "scope": "Only this original mask P; other masks remain separate and use their own original clocks until explicit policy/native review"
+    },
+    {
+      "pen": 4,
+      "sourceMasks": 1,
+      "sourceP": 3,
+      "axis": "x",
+      "direction": "decreasing",
+      "analysisTransform": "identity",
+      "eventCount": 31,
+      "convexSlabCells": 31,
+      "cutChecks": 61,
+      "noninitialCutChecks": 60,
+      "maxClosedComponents": 1,
+      "maxPositiveEdgeComponents": 1,
+      "noninitialIsolatedCutInkCases": 0,
+      "failureCount": 0,
+      "firstFailures": [],
+      "connectedPrefixSufficientConditionPassed": true,
+      "nativeFailureObserved": true,
+      "areaContinuity": {
+        "sourceProjectionRange": [
+          "437/10",
+          "1203/20"
+        ],
+        "crossAxisSpan": "177/20",
+        "areaBoundCoefficient": "58233/400",
+        "bound": "area(prefix(p)) <= coefficient*p, p→0+",
+        "zeroExplicitEmptyRequired": true
+      },
+      "publisherMacro": [
+        "short-down-left"
+      ],
+      "sourceMicroclockApproved": false,
+      "policyAdopted": false,
+      "mask": 1,
+      "targetMaskCount": 1,
+      "scope": "Only this original mask P; other masks remain separate and use their own original clocks until explicit policy/native review"
+    },
+    {
+      "pen": 13,
+      "sourceMasks": 1,
+      "sourceP": 2,
+      "axis": "y",
+      "direction": "increasing",
+      "analysisTransform": "(-originalY,originalX), proof axes only",
+      "eventCount": 23,
+      "convexSlabCells": 22,
+      "cutChecks": 45,
+      "noninitialCutChecks": 44,
+      "maxClosedComponents": 1,
+      "maxPositiveEdgeComponents": 1,
+      "noninitialIsolatedCutInkCases": 0,
+      "failureCount": 0,
+      "firstFailures": [],
+      "connectedPrefixSufficientConditionPassed": true,
+      "nativeFailureObserved": true,
+      "areaContinuity": {
+        "sourceProjectionRange": [
+          "-471/5",
+          "-253/4"
+        ],
+        "crossAxisSpan": "449/10",
+        "areaBoundCoefficient": "277931/200",
+        "bound": "area(prefix(p)) <= coefficient*p, p→0+",
+        "zeroExplicitEmptyRequired": true
+      },
+      "publisherMacro": [
+        "down-right"
+      ],
+      "sourceMicroclockApproved": false,
+      "policyAdopted": false,
+      "mask": 1,
+      "targetMaskCount": 1,
+      "scope": "Only this original mask P; other masks remain separate and use their own original clocks until explicit policy/native review"
+    }
+  ],
+  "compoundPointCases": [
+    {
+      "pen": 1,
+      "mask": 2,
+      "sourceP": 2,
+      "sourceGuide": "M13.7 59 Q28.9 64.5 36.5 78",
+      "originalWidth": 14,
+      "publisherMacro": [
+        "down-left",
+        "down-right"
+      ],
+      "unionKernelArea": "6450066177451/230334082000",
+      "sourceDyadics": [
+        {
+          "sourceT": "0",
+          "point": [
+            "137/10",
+            "59"
+          ],
+          "strictUnionTargetKernel": false,
+          "minimumKernelMargin": "-1082/175",
+          "strictInsidePreviousMaskP": true,
+          "priorPAndMargin": [
+            [
+              1,
+              "11799/5780"
+            ]
+          ],
+          "positiveBoxRadiusLInfinity": "0",
+          "positiveBoxArea": "0",
+          "strictKernelAndPreviousMaskBox": false
+        },
+        {
+          "sourceT": "1/128",
+          "point": [
+            "570861/40960",
+            "121009/2048"
+          ],
+          "strictUnionTargetKernel": false,
+          "minimumKernelMargin": "-8682917/1433600",
+          "strictInsidePreviousMaskP": true,
+          "priorPAndMargin": [
+            [
+              1,
+              "13352493/5918720"
+            ]
+          ],
+          "positiveBoxRadiusLInfinity": "0",
+          "positiveBoxArea": "0",
+          "strictKernelAndPreviousMaskBox": false
+        },
+        {
+          "sourceT": "1/64",
+          "point": [
+            "145133/10240",
+            "30297/512"
+          ],
+          "strictUnionTargetKernel": false,
+          "minimumKernelMargin": "-2125861/358400",
+          "strictInsidePreviousMaskP": true,
+          "priorPAndMargin": [
+            [
+              1,
+              "3654749/1479680"
+            ]
+          ],
+          "positiveBoxRadiusLInfinity": "0",
+          "positiveBoxArea": "0",
+          "strictKernelAndPreviousMaskBox": false
+        },
+        {
+          "sourceT": "1/32",
+          "point": [
+            "7497/512",
+            "7597/128"
+          ],
+          "strictUnionTargetKernel": false,
+          "minimumKernelMargin": "-14551/2560",
+          "strictInsidePreviousMaskP": true,
+          "priorPAndMargin": [
+            [
+              1,
+              "796895/345856"
+            ]
+          ],
+          "positiveBoxRadiusLInfinity": "0",
+          "positiveBoxArea": "0",
+          "strictKernelAndPreviousMaskBox": false
+        },
+        {
+          "sourceT": "1/16",
+          "point": [
+            "1993/128",
+            "1911/32"
+          ],
+          "strictUnionTargetKernel": false,
+          "minimumKernelMargin": "-23297/4480",
+          "strictInsidePreviousMaskP": true,
+          "priorPAndMargin": [
+            [
+              1,
+              "126219/86464"
+            ]
+          ],
+          "positiveBoxRadiusLInfinity": "0",
+          "positiveBoxArea": "0",
+          "strictKernelAndPreviousMaskBox": false
+        },
+        {
+          "sourceT": "1/8",
+          "point": [
+            "2781/160",
+            "121/2"
+          ],
+          "strictUnionTargetKernel": false,
+          "minimumKernelMargin": "-23957/5600",
+          "strictInsidePreviousMaskP": false,
+          "priorPAndMargin": [],
+          "positiveBoxRadiusLInfinity": "0",
+          "positiveBoxArea": "0",
+          "strictKernelAndPreviousMaskBox": false
+        },
+        {
+          "sourceT": "1/4",
+          "point": [
+            "833/40",
+            "249/4"
+          ],
+          "strictUnionTargetKernel": false,
+          "minimumKernelMargin": "-523/200",
+          "strictInsidePreviousMaskP": false,
+          "priorPAndMargin": [],
+          "positiveBoxRadiusLInfinity": "0",
+          "positiveBoxArea": "0",
+          "strictKernelAndPreviousMaskBox": false
+        }
+      ],
+      "firstProvenDyadic": null,
+      "priorDOMMustBeExactOpaqueSameOwnerCompletedMask": true,
+      "newAuthoredClockRequired": true,
+      "Q0ClockEquivalenceApproved": false,
+      "policyAdopted": false,
+      "nativeFailureObserved": true
+    },
+    {
+      "pen": 12,
+      "mask": 2,
+      "sourceP": 2,
+      "sourceGuide": "M82.9025 63 Q63.7225 90 36.665 94",
+      "originalWidth": 14,
+      "publisherMacro": [
+        "right",
+        "down-left"
+      ],
+      "unionKernelArea": "0",
+      "sourceDyadics": [
+        {
+          "sourceT": "0",
+          "point": [
+            "33161/400",
+            "63"
+          ],
+          "strictUnionTargetKernel": false,
+          "minimumKernelMargin": "-696109/54000",
+          "strictInsidePreviousMaskP": false,
+          "priorPAndMargin": [],
+          "positiveBoxRadiusLInfinity": "0",
+          "positiveBoxArea": "0",
+          "strictKernelAndPreviousMaskBox": false
+        },
+        {
+          "sourceT": "1/128",
+          "point": [
+            "541342641/6553600",
+            "1039081/16384"
+          ],
+          "strictUnionTargetKernel": false,
+          "minimumKernelMargin": "-11179450129/884736000",
+          "strictInsidePreviousMaskP": true,
+          "priorPAndMargin": [
+            [
+              1,
+              "1950799/6553600"
+            ]
+          ],
+          "positiveBoxRadiusLInfinity": "0",
+          "positiveBoxArea": "0",
+          "strictKernelAndPreviousMaskBox": false
+        },
+        {
+          "sourceT": "1/64",
+          "point": [
+            "134842289/1638400",
+            "261481/4096"
+          ],
+          "strictUnionTargetKernel": false,
+          "minimumKernelMargin": "-2738989841/221184000",
+          "strictInsidePreviousMaskP": true,
+          "priorPAndMargin": [
+            [
+              1,
+              "663/4096"
+            ]
+          ],
+          "positiveBoxRadiusLInfinity": "0",
+          "positiveBoxArea": "0",
+          "strictKernelAndPreviousMaskBox": false
+        },
+        {
+          "sourceT": "1/32",
+          "point": [
+            "6692541/81920",
+            "66217/1024"
+          ],
+          "strictUnionTargetKernel": false,
+          "minimumKernelMargin": "-131441309/11059200",
+          "strictInsidePreviousMaskP": false,
+          "priorPAndMargin": [],
+          "positiveBoxRadiusLInfinity": "0",
+          "positiveBoxArea": "0",
+          "strictKernelAndPreviousMaskBox": false
+        },
+        {
+          "sourceT": "1/16",
+          "point": [
+            "8240561/102400",
+            "16969/256"
+          ],
+          "strictUnionTargetKernel": false,
+          "minimumKernelMargin": "-150926609/13824000",
+          "strictInsidePreviousMaskP": false,
+          "priorPAndMargin": [],
+          "positiveBoxRadiusLInfinity": "0",
+          "positiveBoxArea": "0",
+          "strictKernelAndPreviousMaskBox": false
+        },
+        {
+          "sourceT": "1/8",
+          "point": [
+            "1996401/25600",
+            "4441/64"
+          ],
+          "strictUnionTargetKernel": false,
+          "minimumKernelMargin": "-31439569/3456000",
+          "strictInsidePreviousMaskP": false,
+          "priorPAndMargin": [],
+          "positiveBoxRadiusLInfinity": "0",
+          "positiveBoxArea": "0",
+          "strictKernelAndPreviousMaskBox": false
+        },
+        {
+          "sourceT": "1/4",
+          "point": [
+            "466049/6400",
+            "1201/16"
+          ],
+          "strictUnionTargetKernel": false,
+          "minimumKernelMargin": "-45311/6400",
+          "strictInsidePreviousMaskP": false,
+          "priorPAndMargin": [],
+          "positiveBoxRadiusLInfinity": "0",
+          "positiveBoxArea": "0",
+          "strictKernelAndPreviousMaskBox": false
+        }
+      ],
+      "firstProvenDyadic": null,
+      "priorDOMMustBeExactOpaqueSameOwnerCompletedMask": true,
+      "newAuthoredClockRequired": true,
+      "Q0ClockEquivalenceApproved": false,
+      "policyAdopted": false,
+      "nativeFailureObserved": true
+    }
+  ],
+  "sourcePGuideWeightsEdited": false,
+  "pastGlyphProofBodiesExecuted": false,
+  "rendererOrPolicyImplemented": false,
+  "authorClockNotPublisherMicroclock": true,
+  "engineRuns": 0,
+  "compilerRuns": 0,
+  "SSR": 0,
+  "nativeApproval": false,
+  "runtimeApplied": false
+}

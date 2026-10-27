@@ -1,0 +1,195 @@
+{
+  "schema": "hanja-local-authored-playback-baseline-native-review/v1",
+  "glyph": "嫂",
+  "root": "lingo-u5ac2-sou10-layout-v2",
+  "date": "2026-10-27",
+  "observer": "ROOT browser panel",
+  "evidenceOrigin": "ROOT actual tab52 finite baseline observations, no child replay",
+  "profile": {
+    "path": "docs/hanja-actual-component-profiles-2026-10-22/u5ac2-sou10-layout-v2-baseline-1.json",
+    "SHA256": "222fff99d6d6626bbc104fa06e2458ff803be2f7f00253626514ce83913cac4b"
+  },
+  "inputs": {
+    "H": {
+      "path": "scripts/hanja-actual-component-review.mjs",
+      "SHA256": "de558366f8550fa7186b81f770f25be9690efd0efc5f0b933447f0b9f4e0e9bc"
+    },
+    "R": {
+      "path": "components/hanja/stroke-outlines.tsx",
+      "SHA256": "df67214c6d6d9e75b28fa1177e801170da5dc0605d89e621323a5cac5b0e9abb"
+    },
+    "fixture": {
+      "path": "docs/hanja-source-original-u5ac2-sou10-layout-v2-2026-10-27/fixtures-draft.json",
+      "SHA256": "6cc0ae1b2facfd2c10ad102c4acf5936781ff0f845052e712aaad71ad489dccf"
+    },
+    "compiledSHA256": "5e97d491dc632136822abac0459dd60608770c578a81b76f61733277e1dbfc10",
+    "registrySHA256": "cc8fdceb3b621188ba14f8e3e2cf91b1d82119e426f318742ca38ec1a49883b6"
+  },
+  "observations": {
+    "tab": 52,
+    "initial": {
+      "pens": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "progress": [
+        0,
+        0.000001
+      ],
+      "scenes": 26
+    },
+    "transitions": [
+      {
+        "pen": 1,
+        "nextMask": 2,
+        "boundary": 0.6705304921117733,
+        "offsets": [
+          -1e-10,
+          0,
+          1e-10
+        ]
+      },
+      {
+        "pen": 8,
+        "nextMask": 2,
+        "boundary": 0.30357708135485917,
+        "offsets": [
+          -1e-10,
+          0,
+          1e-10
+        ]
+      },
+      {
+        "pen": 12,
+        "nextMask": 2,
+        "boundary": 0.4327587380123435,
+        "offsets": [
+          -1e-10,
+          0,
+          1e-10
+        ]
+      }
+    ],
+    "transitionScenes": 9,
+    "complete": {
+      "pen": 13,
+      "progress": 1,
+      "scenes": 1
+    },
+    "plannedFiniteScenes": 35,
+    "freshFiniteScenes": 36,
+    "errorsAllEmpty": true,
+    "guardPassDoesNotApproveVisibleInk": true,
+    "confirmedFailures": [
+      {
+        "pen": 1,
+        "mask": 1,
+        "kind": "initial-positive-broad-cap"
+      },
+      {
+        "pen": 2,
+        "mask": 1,
+        "kind": "initial-positive-broad-cap"
+      },
+      {
+        "pen": 4,
+        "mask": 1,
+        "kind": "initial-positive-broad-cap"
+      },
+      {
+        "pen": 13,
+        "mask": 1,
+        "kind": "initial-positive-broad-cap"
+      },
+      {
+        "pen": 1,
+        "mask": 2,
+        "kind": "short-down-right-tongue-pops",
+        "boundary": 0.6705304921117733,
+        "offset": 1e-10
+      },
+      {
+        "pen": 12,
+        "mask": 2,
+        "kind": "broad-down-left-cap-under-horizontal-pops",
+        "boundary": 0.4327587380123435,
+        "offset": 1e-10
+      }
+    ],
+    "otherFiniteObservations": {
+      "initialPensWithoutBroadJump": [
+        3,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "tinyLinesAtPens": [
+        8,
+        9,
+        10,
+        12
+      ],
+      "tinyLinesNotCertifiedByThisObservation": true,
+      "pen8Mask2BoundaryNoBroadJump": true
+    },
+    "completedWholePASS": {
+      "femaleHeadToJiuWhiteGapRetained": true,
+      "openJiuStructureRetained": true,
+      "centralVAboveLowerYouHGapRetained": true
+    }
+  },
+  "SSRHistory": {
+    "initialInputPinFailure": {
+      "stage": "profile inputSHA256 harness entry remained462 before loading",
+      "SSR": 0,
+      "correctedByROOT": true
+    },
+    "checkNewSSR": 1,
+    "actualServerStartupSSR": 1,
+    "totalActualSSR": 2,
+    "profileCheckNewSSRRecordMaintainedSeparately": true
+  },
+  "decision": "HOLD-six-source-mask-visibility-corrections-needed",
+  "approval": {
+    "staticMembershipReused": true,
+    "baselineForwardApproved": false,
+    "sourceClockEquivalent": false,
+    "catalogChanged": false,
+    "variantRegistered": false,
+    "allIntermediateFrames": false,
+    "officialExam13Authority": false
+  },
+  "cleanup": {
+    "ownedPID": 30441,
+    "port": 59412,
+    "killExit0": true,
+    "tab52Closed": true,
+    "rootOwnedServersRemaining": 0,
+    "confirmedByROOT": true
+  },
+  "sourcePGuideWeightsChanged": false,
+  "engineRuns": 0,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "limits": [
+    "Finite baseline36 actual scenes, not all-time or natural-playback approval.",
+    "Selected failures concern visible broad initial cap/tongue; errors[] did not identify these visual failures.",
+    "Original public source P, Q guides and weights remain unchanged. Six source-only correction conditions require independent proof before policy/native review."
+  ]
+}
