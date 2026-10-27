@@ -1,0 +1,87 @@
+{
+  "schema": "hanja-public-exact-positive-contact-witness/v1",
+  "glyph": "蠙",
+  "date": "2026-10-27",
+  "root": "u8819",
+  "rootVersion": 8,
+  "inputs": {
+    "full5SHA256": "c5a11328f07be0af249228fa9ace41a3e4e4bc0d5f2aae3f86f4785f8d40f790",
+    "captureSHA256": "c6f180e8937b0ad3ff99b96258a0eeb8c3a0de69c17af4ce8e7def4968666380",
+    "sourceSHA256": "6fe01aac85abf041b7112cd3710bd826c16388636a3dfed30c2ae182334d6450",
+    "verifierSHA256": "4471efceefe98cbfe38e4b4837117162b69c6f2b3ecd4b56fbf4f21fbf6fc9f7"
+  },
+  "sourceBinding": {
+    "parentRow": "99:0:0:-6:-1:204:200:ufa64-02-var-001",
+    "leaf": "ufa64-02-var-001",
+    "leafVersion": 1,
+    "originalLeafRowsOneBased": [
+      4,
+      5
+    ],
+    "rawOneBased": [
+      11,
+      12
+    ],
+    "actualCalls": [
+      "cdDrawCurve",
+      "cdDrawLine"
+    ],
+    "polygonsPerCall": [
+      2,
+      2
+    ],
+    "originalFlags": [
+      [
+        2,
+        22,
+        7
+      ],
+      [
+        1,
+        0,
+        0
+      ]
+    ],
+    "originalRowsAndParentTransformPreserved": true,
+    "exactRationalParentToActualCallArguments": true
+  },
+  "witness": {
+    "hookCallPolygonOneBased": 1,
+    "horizontalCallPolygonOneBased": 2,
+    "box": [
+      [
+        "17099/100",
+        "4949/100"
+      ],
+      [
+        "17101/100",
+        "4949/100"
+      ],
+      [
+        "17101/100",
+        "4951/100"
+      ],
+      [
+        "17099/100",
+        "4951/100"
+      ]
+    ],
+    "strictContainedInBothOriginalPositiveContours": true,
+    "areaLowerBound": "1/2500",
+    "normalized100AreaLowerBound": "1/10000",
+    "exactFullIntersectionAreaComputed": false
+  },
+  "classification": "HOLD-positive-filled-contact-persists-in-new-independent-whole",
+  "positiveContact": true,
+  "strictGap": false,
+  "method": "Exact Fraction simple positive contour validation; all witness corners strictly inside both P, no box edge intersects either source boundary. Positive box is contained in original polygons; neither centerline nor raster inference.",
+  "originalPChanged": false,
+  "oldContactMathReexecuted": false,
+  "engineReexecutedForProof": false,
+  "wholeKoreanFitApproved": false,
+  "groupingApproved": false,
+  "directionApproved": false,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "nativeWholeRecommendedForThisRemedy": false
+}
