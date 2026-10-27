@@ -1,0 +1,62 @@
+{
+  "schema": "hanja-local-pen8-connected-right-prefix-selected-findings/v1",
+  "glyph": "菰",
+  "pen": 8,
+  "verifier": "verify-pen8-connected-x-prefix.py",
+  "verifierSHA256": "afa23cad9a8825a2d839a4c5128607b21b2b84d377f05bdbbab0b1c8bec076b0",
+  "fixtureSHA256": "80df51355acb56c1b1d69fe5c67e866fb1d484f325e361d91a0b582e3ea11485",
+  "successfulNewConnectivityExecutions": 1,
+  "sourcePolygons": 3,
+  "eventCount": 34,
+  "convexUnionSlabCells": 34,
+  "eventAndOpenSlabCutChecks": 67,
+  "noninitialCutChecks": 66,
+  "positiveAreaClosedComponentMaximum": 1,
+  "positiveSharedEdgeComponentMaximum": 1,
+  "noninitialIsolatedCutInkCases": 0,
+  "failureCount": 0,
+  "allPositivePrefixesEdgeConnectedWithNoIsolatedCutInk": true,
+  "proof": [
+    "The exact original-P union is decomposed into positive-area convex cells at every x vertex/intersection event; each cell uses original source edge lines.",
+    "Clipping each convex cell by x>=cut cannot add a false bridge across a concave source-P gap.",
+    "Every noninitial event and open-slab sample prefix is one positive-shared-edge component; weaker point-contact components were checked separately.",
+    "Original source line intervals absent from positive-area clipped cell closures are checked explicitly and none occurs for a noninitial prefix.",
+    "Cell-edge contact incidence changes only at enumerated vertex/intersection events. Thus connectedness holds throughout every open slab, not only at its midpoint."
+  ],
+  "nearZeroAreaContinuity": {
+    "focusedNewCheckExecutions": 1,
+    "properOriginalPolygonSelfCrossings": 0,
+    "xBounds": ["463/10", "827/10"],
+    "yBounds": ["587/20", "206/5"],
+    "start": "827/10",
+    "finish": "463/10",
+    "positiveProgressCut": "827/10-(182/5)*p",
+    "prefixAreaUpperBound": "(21567/50)*p",
+    "areaTendsToZeroAtPositiveProgressLimit": true,
+    "zeroProgressMustExplicitlyRenderEmpty": true,
+    "newRoundDiskOrCapAdded": false
+  },
+  "priorSingleSectionAxisResults": {
+    "XMonotonicitySufficientConditionHOLDPreserved": true,
+    "YMonotonicitySufficientConditionHOLDPreserved": true,
+    "reasonForDifferentResult": "Separated pieces on a cut scanline are connected through the already revealed right-side P region. Single-section monotonicity was stronger than necessary."
+  },
+  "macroDirection": {
+    "existingPublisherRecord": "docs/hanja-official-media-compare-u83f0-2026-10-23/official-temporal-native-review.json",
+    "existingPublisherRecordSHA256": "08ab76a6600693b63663b7c6525314858112fa905b052df4c0009caf3c8d761c",
+    "observedDirection": "오른쪽 위에서 왼쪽 아래로 비스듬히 진행",
+    "proposedFamily": "Whole-logical source-P X-decreasing half-plane prefix",
+    "macroCompatible": true,
+    "publisherMicroclockEquivalent": false
+  },
+  "sourcePOrQOrWidthOrWeightChanged": false,
+  "previousAxisOrOnsetMathReexecuted": false,
+  "comparablePen10ProofExecuted": false,
+  "newAdapterOrRendererImplemented": false,
+  "candidateNativeApproved": false,
+  "sourceMicroClockApproved": false,
+  "runtimeApplied": false,
+  "engine": 0,
+  "server": 0,
+  "newNative": 0
+}
