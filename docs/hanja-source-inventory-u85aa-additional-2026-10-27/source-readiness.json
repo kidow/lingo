@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 1,
+  "glyph": "薪",
+  "sourceFile": {
+    "path": "docs/hanja-source-inventory-u85aa-additional-2026-10-27/sources.json",
+    "SHA256": "d3ac2cab4265ea40f84c4cb9badcc9f6e746988b9f48a911bfc38718522efb8f"
+  },
+  "candidates": [
+    {
+      "root": "simch-kx_kp0e5d6",
+      "version": 1,
+      "referenceKeys": [
+        "simch-kx_kp0e5d6",
+        "u8279-03",
+        "u65b0-j@2",
+        "u4eb2-01",
+        "u65a4-02@4"
+      ],
+      "closed": true,
+      "missingReferences": [],
+      "declaredExpandedDrawingRows": 16,
+      "drawingRowsAreNotFormalStrokeCount": true,
+      "rootDataSHA256": "59d23f5ae3269bc92cc57fbdce0b4e3a78a34ad25255758e6f4803e2ac8f47bf",
+      "exactExistingDataMatches": [],
+      "wholeAlias": false
+    },
+    {
+      "root": "simch-kx_t106209",
+      "version": 1,
+      "referenceKeys": [
+        "simch-kx_t106209",
+        "u8279-03",
+        "u65a4-02@4"
+      ],
+      "closed": true,
+      "missingReferences": [],
+      "declaredExpandedDrawingRows": 16,
+      "drawingRowsAreNotFormalStrokeCount": true,
+      "rootDataSHA256": "7b6ce299475c670493beb0a69084a18ab0bd413be475e44a12c016f83028fc28",
+      "exactExistingDataMatches": [],
+      "wholeAlias": false
+    }
+  ],
+  "priority": [
+    "simch-kx_kp0e5d6",
+    "simch-kx_t106209"
+  ],
+  "publicSourceFacts": {
+    "sharedGrassLiteralParentRow": "99:0:0:0:3:200:160:u8279-03:0:0:0",
+    "grassVersion": 11,
+    "grassFirstOriginalRow": "1:0:0:13:39:187:39",
+    "kpBodyParentRow": "99:0:0:0:44:200:197:u65b0-j@2:0:0:0",
+    "kpBodyFirstLeafRow": "1:0:32:55:13:55:42",
+    "kpFirstBodyPrimitiveEncodedVertical": true,
+    "kpVsExistingK": {
+      "sameRootBodyParentTransform": true,
+      "existingKBodyReference": "u65b0-j",
+      "existingCurrentBodyVersion": 8,
+      "newFixedBodyVersion": "2",
+      "sameLeftLeafData": true,
+      "newRightLeafVersion": "4",
+      "existingCurrentRightLeafVersion": 5,
+      "rightLeafThirdOriginalRowNew": "1:0:0:108:84:188:84",
+      "rightLeafThirdOriginalRowExisting": "1:2:0:108:84:188:84",
+      "delta": "Third right-leaf row second field 0 versus 2; not an identical versioned body closure. An older versionless archival leaf has identical data to the fixed version4; no new version is assigned to that archive."
+    },
+    "tBody": "Nine directly authored drawing rows plus literal u65a4-02@4 child, rather than a u65b0-j alias."
+  },
+  "deduplication": {
+    "scope": "Literal original root data compared with the already collected public records only.",
+    "rootDataMatches": [
+      {
+        "root": "simch-kx_kp0e5d6",
+        "matches": []
+      },
+      {
+        "root": "simch-kx_t106209",
+        "matches": []
+      }
+    ],
+    "geometricEquivalenceClaim": false
+  },
+  "reviewConditions": [
+    "Sixteen expanded drawing rows per root are source facts, not proof of seventeen catalog logical strokes or a proposed merge.",
+    "Original grass row metadata does not demonstrate whole incompatibility; prior native HOLD applies to its reviewed whole only.",
+    "A vertical encoded first body row does not prove filled-ink separation from grass, order/direction compatibility, or native visual membership.",
+    "Compare existing archived whole/body evidence before requesting any fresh engine capture. Identical leaves do not establish identical transformed or globally adjusted Kage polygons.",
+    "Potential local grass component reuse is an investigation route only; no recipe, replacement, coordinate/flag edit or mixing approval is made here."
+  ],
+  "approvals": {
+    "sourceClosureComplete": true,
+    "wholeShape": false,
+    "strokeMembership": false,
+    "order": false,
+    "direction": false,
+    "filledPolygonContact": false,
+    "componentReuse": false,
+    "animationClock": false,
+    "native": false,
+    "runtimeApplied": false
+  },
+  "execution": {
+    "newHTTPRequests": 4,
+    "repeatedHTTPRequests": 0,
+    "engineExecutions": 0,
+    "nativeReviews": 0,
+    "builds": 0,
+    "fullTypeChecks": 0,
+    "serversStarted": 0
+  }
+}
