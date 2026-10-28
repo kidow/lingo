@@ -1,0 +1,19 @@
+{
+  "schema": "hanja-exact-client-policy-injection-check/v1",
+  "date": "2026-10-28",
+  "glyph": "鷖",
+  "cause": "Preparation changed a single-quoted policy spelling but the actual resource-injection condition used double quotes, leaving the old Kuo/Yan policy literal in the Yi branch. Exact Yi context therefore skipped all five client projection fields.",
+  "fixPatch": {"path":"docs/hanja-authored-terminal-experiments-2026-10-28/u9dd6-width22-client-policy-injection-fix.patch","SHA256":"4039b82da406a93b91ed8bf0595c01cfb19d5d36c3fb68aa08559450d72cef42"},
+  "helperPreSHA256": "0d8b4205d7498ffbc26c472f0dc4f26372d1d39d20c081640ddce547570a6cc2",
+  "helperPostSHA256": "6d5088c2a6dfa0a1192dcc84f7a0d0472f785bcb6d28d92483123018b46fc11d",
+  "changedScope": "Only the Yi resource-injection policy literal; no renderer, geometry, other root guard or mask policy changed.",
+  "branchRAMCheck": {"status":"PASS","actualProfileConditionBefore":false,"actualProfileConditionAfter":true,"projectedFields":["root","sharedVersion","temporalPolicy","curveTargets","pairProgress"],"curveTargets":14,"pairProgress":10},
+  "pendingOverridePinsUpdated": true,
+  "actualProfileEditedByPreparationAgent": false,
+  "actualHelperEditedByPreparationAgent": false,
+  "SSR": 0,
+  "DOM": 0,
+  "server": 0,
+  "nativeApproval": false,
+  "observationScope": "Earlier pen18 compact images remain observations, but strict client payload verification and gate/aggregate controls require the corrected root restart. This RAM branch test grants no native approval."
+}

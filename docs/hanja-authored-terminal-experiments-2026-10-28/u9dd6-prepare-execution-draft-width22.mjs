@@ -1,0 +1,35 @@
+import assert from 'node:assert/strict'
+import fs from 'node:fs'
+import crypto from 'node:crypto'
+import {outlineStartClip} from '../../lib/hanja-stroke-outline.ts'
+const base=new URL('../../',import.meta.url),DIR='docs/hanja-authored-terminal-experiments-2026-10-28/',sha=b=>crypto.createHash('sha256').update(b).digest('hex'),read=p=>fs.readFileSync(new URL(p,base)),pin=(p,h)=>{const b=read(p);assert.equal(sha(b),h,p);return JSON.parse(b)}
+const OLD=DIR+'u9dd6-fixtures-execution-draft.json',GEN=DIR+'u9dd6-prepare-execution-draft.mjs',CHECK=DIR+'u9dd6-execution-draft-check.json',REPORT=DIR+'u9dd6-fullround-coverage-preflight.json',SELF=DIR+'u9dd6-prepare-execution-draft-width22.mjs'
+const original=pin(OLD,'525a2ae0ab69d992e0f86cc5424d6d8e3d1901c84fe600de2bcb57af2d1ef097')
+assert.equal(sha(read(GEN)),'62ce8dc1a17c49899f9b3bbfe9e44a93e97d4a34c17f1d1e9ca62cc4c31193a0')
+const priorCheck=pin(CHECK,'ece2f815b3f070d4ade7652ae61223f2b104c01d3714938abf7f6b6a7ec112df'),preflight=JSON.parse(read(REPORT))
+assert.equal(preflight.fixture.path,OLD);assert.equal(preflight.fixture.SHA256,sha(read(OLD)))
+const certificate=preflight.curves.find(x=>x.pen===18&&x.mask===3);assert(certificate);assert(certificate.radius7OutlierWitnesses.some(x=>x.globalLowerDistance100>7));assert.equal(certificate.conservativeCoverage.radius100,11);assert.equal(certificate.conservativeCoverage.proof.covered,true)
+const before=original.strokes[17][2],sourceFact=priorCheck.facts.find(x=>x.logical===18&&x.raw===22&&x.primitive===1)
+assert.equal(before.revealWidth,14);assert.equal(before.revealStartGate.padding,7);assert.equal(sha(before.outline),certificate.outlineSHA256);assert.equal(sha(before.revealPath),certificate.guideSHA256)
+const nums=before.revealPath.match(/[+-]?(?:\d+(?:\.\d*)?|\.\d+)(?:e[+-]?\d+)?/gi).map(Number);assert.deepEqual(before.revealPath.match(/[A-Za-z]/g),['M','L','Q']);assert.equal(nums.length,8)
+const oldPad=nums.slice(0,2),first=nums.slice(2,4),control=nums.slice(4,6),end=nums.slice(6,8),unit=before.revealStartGate.unit
+assert.deepEqual([first,control,end],sourceFact.sourceControlPoints100);assert(Math.abs(Math.hypot(...unit)-1)<1e-10)
+for(let i=0;i<2;i++)assert(Math.abs(oldPad[i]-(first[i]-7*unit[i]))<1e-10)
+const padding=11,width=22,numericUpperMargin=1e-9,controlPolygonLength=Math.hypot(control[0]-first[0],control[1]-first[1])+Math.hypot(end[0]-control[0],end[1]-control[1])
+assert.equal(before.weight,7+controlPolygonLength+numericUpperMargin)
+const newPad=first.map((v,i)=>v-padding*unit[i]),path='M'+newPad.join(' ')+before.revealPath.slice(before.revealPath.indexOf(' L')),weight=padding+controlPolygonLength+numericUpperMargin
+assert.equal(path.slice(path.indexOf(' L')),before.revealPath.slice(before.revealPath.indexOf(' L')));assert.deepEqual(path.match(/[A-Za-z]/g),['M','L','Q']);assert.equal((path.match(/M/g)||[]).length,1)
+const fixture=JSON.parse(JSON.stringify(original));fixture.variantId='u9dd6-terminal0-padded-source-start-gate-width22-18m3-draft'
+const changed=fixture.strokes[17][2];changed.revealPath=path;changed.revealWidth=width;changed.weight=weight;changed.revealStartGate.padding=padding;changed.revealStartGate.until=padding/weight
+for(let p=0;p<22;p++)for(let m=0;m<original.strokes[p].length;m++)if(p!==17||m!==2)assert.deepEqual(fixture.strokes[p][m],original.strokes[p][m])
+for(const key of['outline','bounds','direction'])assert.deepEqual(changed[key],before[key]);for(const key of['unit','minProjection','firstProjection','bounds'])assert.deepEqual(changed.revealStartGate[key],before.revealStartGate[key])
+assert.deepEqual(Object.keys(changed).sort(),Object.keys(before).sort());assert.deepEqual(Object.keys(changed.revealStartGate).sort(),Object.keys(before.revealStartGate).sort())
+assert.deepEqual(fixture.logicalRawGroupsZeroBased,original.logicalRawGroupsZeroBased);assert.equal(fixture.strokes.length,22);assert.equal(fixture.strokes.flat().length,32);assert.equal(fixture.strokes.flat().reduce((n,s)=>n+(s.outline.match(/M/g)||[]).length,0),57)
+assert.equal(fixture.strokes.flat().filter(s=>s.revealStartGate).length,14);assert(Object.values(fixture.approval).every(x=>x===false))
+const alignmentError=Math.max(...newPad.map((v,i)=>Math.abs(oldPad[i]-(v+4*unit[i]))));assert(alignmentError<1e-10);assert(certificate.conservativeCoverage.proof.maximumAcceptedUpperDistance100+1e-10<11)
+assert(changed.revealStartGate.until>0&&changed.revealStartGate.until<1);assert.equal(typeof outlineStartClip(changed,changed.revealStartGate.until/2),'string');assert.equal(outlineStartClip(changed,changed.revealStartGate.until),undefined)
+fixture.inputSHA256={...original.inputSHA256,...Object.fromEntries([OLD,GEN,CHECK,REPORT,SELF].map(p=>[p,sha(read(p))]))}
+fixture.policyStatus='Unapproved author fullround coverage revision only:18m3 width22/pad11; other31 segments and all57 filled polygons/sourceQ controls unchanged. Radius11 whole-P sufficiency reuses fixed fan certificate and longer collinear source-start prefix. No minimum-width, publisher microclock, actual renderer or native approval.'
+const check={schema:'hanja-authored-terminal-single-radius-revision-check/v1',status:'PASS-limited-code-and-reused-math-only',candidate:'u9dd6',glyph:'鷖',sourceFixture:{path:OLD,SHA256:sha(read(OLD))},sourceGenerator:{path:GEN,SHA256:sha(read(GEN))},sourceCheck:{path:CHECK,SHA256:sha(read(CHECK))},coveragePreflight:{path:REPORT,SHA256:sha(read(REPORT)),target:[18,3],radius7ActualVertexOutliers:certificate.radius7OutlierWitnesses,radius11SufficientCertificate:certificate.conservativeCoverage,minimumRadiusClaimed:false},inputSHA256:fixture.inputSHA256,counts:{logical:22,masks:32,polygons:57,curves:14,otherSegmentsUnchanged:31,otherLogicalPensUnchanged:21},changedLogicalPen:18,changedMask:3,before:{width:14,padding:7,weight:before.weight,until:before.revealStartGate.until,paddedStart:oldPad},after:{width,padding,weight,until:changed.revealStartGate.until,paddedStart:newPad},sourceControlPoints100:[first,control,end],sourceQAndLAfterFirstPointLexicallyUnchanged:true,allFilledOutlinesUnchanged:true,maskOrderingUnchanged:true,normalizationAppliedAgain:false,guidePrefixExtension:{sameUnit:true,extraLength100:4,alignmentError100:alignmentError,geometricErrorAllowance100:1e-10,coverageReuse:'The new padded L extends the old collinear prefix; the original Q remains exactly unchanged. The previous radius11 fan coverage bound plus1e-10 stays strictly below11.'},weightPolicy:{padding,controlPolygonLength,numericUpperMargin,formula:'11 + original Q control-polygon length +1e-9',until:'11/weight',originalMicroclockApproved:false},logical18EarlierBoundaryFractionsChangeBecauseTotalWeightChanged:true,requiredFreshNative:['18m3 foot fullround residual','18m3 early/start-release','pen18 compound boundaries and compact growth','pen18 replay speed/spacing and completion'],nativeApproval:false,runtimeApplied:false}
+export{fixture,check}
+console.log(JSON.stringify({logical:22,masks:32,polygons:57,changed:[18,3],otherSegmentsUnchanged:31,width,padding,nativeApproval:false}))
