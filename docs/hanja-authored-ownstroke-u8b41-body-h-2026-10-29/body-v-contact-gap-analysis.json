@@ -1,0 +1,154 @@
+{
+  "schema": "hanja-public-original-contact-gap-math/v1",
+  "glyph": "譁",
+  "date": "2026-10-29",
+  "scope": "Only public original P/Q. Existing H-only candidate unchanged. No new geometry or native approval in this record.",
+  "inputSHA256": {
+    "docs/hanja-goal-glyphwiki-batch1032-2026-10-13/engine-whole-u8b41-ue0103.json": "774ae3a6caa83ad1e5bbba7f88386a414e8d1ef249c555c2cd4f29c14f279d86",
+    "docs/hanja-authored-ownstroke-u8b41-body-h-2026-10-29/fixtures-draft.json": "a7c2777f1292cbc0616cd8a3916c3561257ff641ad32e389e8661321e9f2b5a7",
+    "docs/hanja-authored-ownstroke-u8b41-body-h-2026-10-29/materialize-draft.py": "ee3243c0c779c56d56dc3d87953409f943b5a20b2ea49d7d7d49eb0e56294909"
+  },
+  "roleIdentification": {
+    "upperBodyHorizontal": {
+      "sourceRaw": 13,
+      "logicalHypothesis": 12
+    },
+    "grassRightVertical": {
+      "sourceRaw": 12,
+      "logicalHypothesis": 11
+    },
+    "bodyVerticals": [
+      {
+        "sourceRaw": 14,
+        "logicalHypothesis": 14
+      },
+      {
+        "sourceRaw": 15,
+        "logicalHypothesis": 15
+      }
+    ],
+    "lowerBodyHorizontal": {
+      "sourceRaw": 17,
+      "logicalHypothesis": 16
+    }
+  },
+  "publicBounds": {
+    "raw13": {
+      "minX": "384/5",
+      "minY": "57",
+      "maxX": "1791/10",
+      "maxY": "70",
+      "shaftY": [
+        "66",
+        "70"
+      ]
+    },
+    "raw14": {
+      "minX": "462/5",
+      "minY": "77",
+      "maxX": "537/5",
+      "maxY": "124"
+    },
+    "raw15": {
+      "minX": "754/5",
+      "minY": "77",
+      "maxX": "829/5",
+      "maxY": "124"
+    },
+    "raw17": {
+      "minX": "388/5",
+      "minY": "120",
+      "maxX": "1791/10",
+      "maxY": "134",
+      "shaftY": [
+        "130",
+        "134"
+      ]
+    }
+  },
+  "fourGaps": [
+    {
+      "sourceRaw": [
+        13,
+        14
+      ],
+      "logicalHypothesis": [
+        12,
+        14
+      ],
+      "exactSquaredFilledDistance": "49",
+      "distanceApprox": 7,
+      "allPrimitiveIntersectionAreas": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "strictFilledSeparation": true
+    },
+    {
+      "sourceRaw": [
+        13,
+        15
+      ],
+      "logicalHypothesis": [
+        12,
+        15
+      ],
+      "exactSquaredFilledDistance": "49",
+      "distanceApprox": 7,
+      "allPrimitiveIntersectionAreas": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "strictFilledSeparation": true
+    },
+    {
+      "sourceRaw": [
+        17,
+        14
+      ],
+      "logicalHypothesis": [
+        16,
+        14
+      ],
+      "exactSquaredFilledDistance": "36",
+      "distanceApprox": 6,
+      "allPrimitiveIntersectionAreas": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "strictFilledSeparation": true
+    },
+    {
+      "sourceRaw": [
+        17,
+        15
+      ],
+      "logicalHypothesis": [
+        16,
+        15
+      ],
+      "exactSquaredFilledDistance": "3969/200",
+      "distanceApprox": 4.4547727214752495,
+      "allPrimitiveIntersectionAreas": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "strictFilledSeparation": true
+    }
+  ],
+  "method": "Exact Fraction convex primitive clipping plus minimum rational squared vertex-to-edge distances; all four original positive-area intersections absent. The lower right H serif makes its exact distance smaller than naive shaft Y separation.",
+  "theseFourOriginalGroupsUnchangedInHOnlyCandidate": true,
+  "wholeApproved": false,
+  "newCorrectionInThisRecord": false,
+  "privateCoordinatesUsed": false,
+  "serverStarts": 0,
+  "runtimeApplied": false
+}

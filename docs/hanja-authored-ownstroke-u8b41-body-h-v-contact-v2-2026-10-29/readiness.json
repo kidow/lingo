@@ -1,0 +1,252 @@
+{
+  "schema": "hanja-unapproved-ownstroke-contact-v2-readiness/v1",
+  "glyph": "譁",
+  "date": "2026-10-29",
+  "status": "READY-FOR-ROOT-STATIC-REVIEW-NOT-APPROVED",
+  "configSHA256": "3a547ab977e333a7b6d8a0df0ce82750c9e83c07fde5d9c029c199cfb1f9b509",
+  "inputSHA256": {
+    "docs/hanja-authored-ownstroke-u8b41-body-h-v-contact-v2-2026-10-29/recipe.json": "d15204309119c24f032bed0ea74dc8c583514e547c23ca41e8bb05ce270aeebe",
+    "docs/hanja-authored-ownstroke-u8b41-body-h-v-contact-v2-2026-10-29/fixtures-draft.json": "d544cef89dea80d3e251b0562c32ad0fac85eb60b45ff06c7cb42925c3ac37a2",
+    "docs/hanja-authored-ownstroke-u8b41-body-h-v-contact-v2-2026-10-29/materialize-draft.py": "7717ce833eb1b4231bb3387517ee9b87759a73c8c498738e116589c2777c149b",
+    "docs/hanja-authored-ownstroke-u8b41-body-h-v-contact-v2-2026-10-29/compare.py": "d1ef2f83add3b18b35967044ca379386ba7dd50da8c27ab42e7f06ad9f60ed76",
+    "docs/hanja-authored-ownstroke-u8b41-body-h-v-contact-v2-2026-10-29/config.json": "3a547ab977e333a7b6d8a0df0ce82750c9e83c07fde5d9c029c199cfb1f9b509"
+  },
+  "priorHOnlyDraftPreserved": {
+    "path": "docs/hanja-authored-ownstroke-u8b41-body-h-2026-10-29/fixtures-draft.json",
+    "SHA256": "a7c2777f1292cbc0616cd8a3916c3561257ff641ad32e389e8661321e9f2b5a7",
+    "status": "HOLD-extra-four-bodyV-gaps",
+    "gapReport": "docs/hanja-authored-ownstroke-u8b41-body-h-2026-10-29/body-v-contact-gap-analysis.json"
+  },
+  "affines": {
+    "raw16RetainedPositiveX": [
+      "224/163",
+      "0",
+      "0",
+      "1",
+      "-21472/815",
+      "0"
+    ],
+    "raw14And15NewPositiveY": [
+      "1",
+      "0",
+      "0",
+      "62/47",
+      "0",
+      "-1531/47"
+    ],
+    "inverseY": [
+      "1",
+      "0",
+      "0",
+      "47/62",
+      "0",
+      "1531/62"
+    ],
+    "positiveDeterminant": "62/47",
+    "inverseIdentityPassed": true,
+    "sourcePAndGuideSameTransform": true,
+    "flagsUnchanged": true,
+    "newVOnlyXAndWidthAndDownDirectionPreserved": true,
+    "other17OriginalRawGroupsAndTraceExact": true,
+    "rawGroups": 20,
+    "polygons": 36
+  },
+  "targets": {
+    "sourceOnlyPublicBounds": true,
+    "oldFilledVY": [
+      "77",
+      "124"
+    ],
+    "newFilledVY": [
+      "69",
+      "131"
+    ],
+    "upperHShaftY": [
+      "66",
+      "70"
+    ],
+    "lowerHShaftY": [
+      "130",
+      "134"
+    ],
+    "boundingYOverlap": "1",
+    "privateCoordinateFit": false,
+    "officialCoordinatesOrMicroclockClaim": false
+  },
+  "contactGraph": {
+    "newPositivePairs": [
+      {
+        "raw": [
+          14,
+          13
+        ],
+        "exactUnionArea": "141/62"
+      },
+      {
+        "raw": [
+          14,
+          17
+        ],
+        "exactUnionArea": "47/62"
+      },
+      {
+        "raw": [
+          15,
+          13
+        ],
+        "exactUnionArea": "141/62"
+      },
+      {
+        "raw": [
+          15,
+          17
+        ],
+        "exactUnionArea": "47/62"
+      }
+    ],
+    "onlyOnePrimitivePairPositiveForEachNewContact": true,
+    "existingPairwiseAreasRetained": [
+      {
+        "raw": [
+          14,
+          16
+        ],
+        "area": "48"
+      },
+      {
+        "raw": [
+          15,
+          20
+        ],
+        "area": "48"
+      }
+    ],
+    "otherNewPairs": [],
+    "earlierRaw16To18CentralCrossingAccepted": false,
+    "newFourContactPairsNativeApproved": false
+  },
+  "hypothesis": {
+    "mapping": [
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ],
+      [
+        5
+      ],
+      [
+        6,
+        7
+      ],
+      [
+        8
+      ],
+      [
+        9
+      ],
+      [
+        10
+      ],
+      [
+        11
+      ],
+      [
+        12
+      ],
+      [
+        13
+      ],
+      [
+        16,
+        20
+      ],
+      [
+        14
+      ],
+      [
+        15
+      ],
+      [
+        17
+      ],
+      [
+        19
+      ],
+      [
+        18
+      ]
+    ],
+    "approved": false,
+    "sourceOrderIdentity": false
+  },
+  "checks": {
+    "actualCheckOnlyPassed": true,
+    "wholePanels": 4,
+    "comparisonPanels": 2,
+    "actualWholePageAndComparisonSelectionExecuted": true,
+    "exactAffineSourceAndContactGraphPassed": true,
+    "sharedCodeChanged": false,
+    "networkFetches": 0,
+    "serverStarts": 0,
+    "build": false
+  },
+  "requiredNativeReview": [
+    {
+      "route": "/whole",
+      "purpose": "Original20, authoredHV20 and unapproved18role full shapes"
+    },
+    {
+      "route": "/compare?source=hypothesis&domestic=13&raw=13&dview=single&rview=single",
+      "purpose": "Unapproved role/contact current13"
+    },
+    {
+      "route": "/compare?source=hypothesis&domestic=14&raw=14&dview=single&rview=single",
+      "purpose": "Unapproved role/contact current14"
+    },
+    {
+      "route": "/compare?source=hypothesis&domestic=15&raw=15&dview=single&rview=single",
+      "purpose": "Unapproved role/contact current15"
+    },
+    {
+      "route": "/compare?source=hypothesis&domestic=18&raw=18&dview=single&rview=single",
+      "purpose": "Unapproved role/contact current18"
+    },
+    {
+      "route": "/compare?source=hypothesis&domestic=13&raw=13&dview=prefix&rview=prefix",
+      "purpose": "Unapproved prefix13"
+    },
+    {
+      "route": "/compare?source=hypothesis&domestic=14&raw=14&dview=prefix&rview=prefix",
+      "purpose": "Unapproved prefix14"
+    },
+    {
+      "route": "/compare?source=hypothesis&domestic=15&raw=15&dview=prefix&rview=prefix",
+      "purpose": "Unapproved prefix15"
+    },
+    {
+      "route": "/compare?source=hypothesis&domestic=16&raw=16&dview=prefix&rview=prefix",
+      "purpose": "Unapproved prefix16"
+    },
+    {
+      "route": "/compare?source=hypothesis&domestic=18&raw=18&dview=prefix&rview=prefix",
+      "purpose": "Unapproved prefix18"
+    }
+  ],
+  "approval": {
+    "whole": false,
+    "centralVCrossing": false,
+    "fourVContacts": false,
+    "mapping": false,
+    "temporal": false,
+    "native": false,
+    "runtime": false
+  }
+}
