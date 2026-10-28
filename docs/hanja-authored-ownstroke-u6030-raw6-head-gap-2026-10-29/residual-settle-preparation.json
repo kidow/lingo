@@ -1,0 +1,30 @@
+{
+  "schema": "hanja-residual-commit-settlement-fix/v1",
+  "glyph": "怰",
+  "date": "2026-10-29",
+  "cause": "Fixed twoRAF collection may run before the clock→elapsed React commit; only helper metadata progress remains stale. ProductR compact/gate/aggregate/natural checks PASS independently.",
+  "H": {
+    "before": "29f24961e570f17d03844c8e9b9aaaf4817c134db2052703f3d35efdc42c323d",
+    "after": "d2f7a3bf338008cc9f7e90bcc3f3d0e41b07afd154b17fc1d094bcc41d3422ea",
+    "patchSHA256": "5fb76c22c3eec498411ea31a5087313c35f6074b39926d581c1ad779f5233460"
+  },
+  "profile": {
+    "path": "docs/hanja-authored-ownstroke-u6030-raw6-head-gap-2026-10-29/actual-profile-mixed-guide-start.json",
+    "beforeSHA256": "2e4067717b14b4829280ead296807d5fbc83cac011e32f295f6187d927af8ea6",
+    "afterSHA256": "b619fd5355cc4d1bc4664a517268599c657ed32f8862fc528edb87349a38e5ac",
+    "patchSHA256": "61377f62f64f1fd42694fcb3e2708b63e8ca2c1bf9d3740070f18115b58b5424"
+  },
+  "changes": "Own residual capture only: keep initial2RAF, then existing generic bounded source-frame wait pattern max2500ms/120attempts with pen/generation cancellation. All source-state guards remain required.",
+  "focusedChecks": {
+    "delayedCommitSettles": true,
+    "readyNoExtraWait": true,
+    "changedSelectionRejected": true,
+    "timeoutRejected": true,
+    "guardsNotIgnored": true
+  },
+  "RUnchanged": "40130fedc1b2375399ddc94022062cb4b1f173f20d34face4b98e3703a8cc569",
+  "helperUnchanged": "29ce138dbd351d758ff65be2c4c492318b4560d2968dd7c305efd51530ef41d1",
+  "actualLiveFilesWritten": false,
+  "SSRRun": false,
+  "sourceGeometryChanged": false
+}
