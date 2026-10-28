@@ -1,0 +1,101 @@
+{
+  "schema": "hanja-public-whole-affine-cross-contact-candidate/v2",
+  "glyph": "纘",
+  "date": "2026-10-29",
+  "priorFixture": {
+    "path": "docs/hanja-authored-ownstroke-u7e98-hook-separated-2026-10-29/fixtures-draft.json",
+    "SHA256": "a8475b569494c09daa311fed1c7585e211cb364d75758c7032ce022b65ded57b"
+  },
+  "priorNativeHOLD": {
+    "path": "docs/hanja-authored-ownstroke-u7e98-hook-separated-2026-10-29/native-logical-mapping-review.json",
+    "SHA256": "14f785467a2ae0f32bde23fa7c3d1712a8031bd1ffb1e68ef452a58bf6e0f4fd"
+  },
+  "changedRawOneBased": [
+    13,
+    16
+  ],
+  "matricesExact": {
+    "13": [
+      "387/622",
+      "0",
+      "0",
+      "1",
+      "110779/3110",
+      "0"
+    ],
+    "16": [
+      "2239/2799",
+      "0",
+      "0",
+      "220/343",
+      "392266/13995",
+      "369/49"
+    ]
+  },
+  "construction": {
+    "raw13": "Preserve source guide startX94.28; shrink all raw13 X so wholeP minX78.8 exceeds raw5 maxX77.8 by1.",
+    "raw16": "Preserve source guide start(140.095,21); shrink wholeX so minX128.9 exceeds raw12 maxX127.9 by1; shrink wholeY so maxY43 is1 above raw19 completeP minY44. All bounds public source, not private fitting."
+  },
+  "contactGraphs": [
+    {
+      "raw": 13,
+      "before": [
+        5,
+        11,
+        12
+      ],
+      "after": [
+        11,
+        12
+      ],
+      "new": [],
+      "removed": [
+        5
+      ]
+    },
+    {
+      "raw": 16,
+      "before": [
+        12,
+        17
+      ],
+      "after": [
+        17
+      ],
+      "new": [],
+      "removed": [
+        12
+      ]
+    }
+  ],
+  "rejectedIntermediate": {
+    "raw16XOnly": {
+      "newContact": [
+        19
+      ],
+      "reason": "Root direct domesticprefix16 confirms lowerH gap. X-only candidate rejected before native."
+    }
+  },
+  "raw21CorrectionPreserved": true,
+  "other28V1RawAndTraceExact": true,
+  "originalRawMetadataAndFlagsPreserved": true,
+  "counts": {
+    "raw": 30,
+    "calls": 31,
+    "P": 62
+  },
+  "authorFontProportionChanged": true,
+  "wholeGeometryOfficial": false,
+  "newGuideBridge": false,
+  "clock75AndUnchangedRolesReused": true,
+  "nextNativeScope": [
+    "whole original/v2 candidate",
+    "current11 and13",
+    "prefix11 and13",
+    "prefix16 verify ownlowerH gap afterYshrink"
+  ],
+  "nativeApproval": false,
+  "sourceMappingApproved": false,
+  "nativeTemporalApproved": false,
+  "runtimeApplied": false
+}
