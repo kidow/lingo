@@ -1,0 +1,52 @@
+{
+  "schema": "hanja-generated-fixture-route-fix-check/v1",
+  "glyph": "臝",
+  "status": "prepared-not-applied",
+  "preH": "9783b579285aad1ef74777d0d06f7b92af93c4ea269cadd758d441563d5c5585",
+  "expectedPostH": "cdf17aa136f170e96adc6bb2998fedfc5bb8133231bddbd330c5bfa95d77ef5f",
+  "patch": {
+    "path": "docs/hanja-authored-component-u81dd-u51e1-2026-10-28/actual-H-width18-generated-route-fix.patch",
+    "SHA256": "69181778afd65c4e9ddb4e2e4dfaf51017a9122a38f85cc4bec76cfd406d964b",
+    "hunks": 1,
+    "nativeApplied": false
+  },
+  "failure": {
+    "cause": "The main patch generator matched startsWith(routes.set) but the actual H line begins with a space. It silently omitted the payload injection.",
+    "priorPayloadClaimCorrection": "The earlier 5-field test executed a separate authored spread expression, not the generated H route. It did not establish actual generated payload inclusion; that integration claim is withdrawn.",
+    "rootObserved": "ROOT actual SSR386/mount passed but 8 gate/aggregate controls were absent. No accepted corrected-payload native review occurred before this fix."
+  },
+  "actualGeneratedRouteCheck": {
+    "profile": {
+      "path": "docs/hanja-authored-component-u81dd-u51e1-2026-10-28/actual-profile-width18-start.json",
+      "SHA256": "3a2199dbabd5eca647abba7949f766e1af57ac78e37fa03ffc9e44ad9cd4c080"
+    },
+    "method": "Execute the entire new routes.set(/fixture.json) source line with the actual ROOT profile and frozen source strokes, parse its JSON body, compare five fields directly to C.",
+    "sourceLineIncludedExactlyOnce": true,
+    "passed": true,
+    "fields": [
+      "root",
+      "sharedVersion",
+      "temporalPolicy",
+      "curveTargets",
+      "pairProgress"
+    ],
+    "glyph": "臝",
+    "pens": 21,
+    "curves": 8,
+    "boundaries": 7,
+    "sourceAffineFieldsPreserved": true
+  },
+  "sourceAndRendererChanged": false,
+  "syntaxServerDiagnostics": 0,
+  "exactInverse": true,
+  "author": {
+    "SSR": 0,
+    "server": 0,
+    "browser": 0,
+    "sharedWrites": 0,
+    "build": 0,
+    "globalTypeCheck": 0
+  },
+  "nativeApproval": false,
+  "runtimeApplied": false
+}

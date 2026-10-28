@@ -1,0 +1,123 @@
+{
+  "schema": "hanja-exact-H-preparation/v1",
+  "glyph": "臝",
+  "status": "initial-H-applied-by-ROOT-generated-route-fix-prepared",
+  "preH": "6d5088c2a6dfa0a1192dcc84f7a0d0472f785bcb6d28d92483123018b46fc11d",
+  "expectedPostH": "9783b579285aad1ef74777d0d06f7b92af93c4ea269cadd758d441563d5c5585",
+  "patch": {
+    "path": "docs/hanja-authored-component-u81dd-u51e1-2026-10-28/actual-H-integration-width18.patch",
+    "SHA256": "53e2fa35e2d96be72bc6a09905a6910657a3de25657e8abfa5ea5228a0064784",
+    "hunks": 33,
+    "forwardOriginalBlockCursorCheck": true,
+    "nativeApplyExecuted": false
+  },
+  "fixture": {
+    "path": "docs/hanja-authored-component-u81dd-u51e1-2026-10-28/fixtures-execution-draft-width18.json",
+    "SHA256": "75356968513ca5e2701d5a624ffaa98e55559afd0e489d5cbf9831fe722d8fb4",
+    "strokesSHA256": "8fd60782964799cd983c7ca9eb4d861a6e88c718776e65641b8654beb23592a0"
+  },
+  "profileOverrides": {
+    "path": "docs/hanja-authored-component-u81dd-u51e1-2026-10-28/profile-overrides-width18.pending.json",
+    "SHA256": "45f0ef75a64b1c24847a8e62e231e6c4f32c5b4b08634aed118de9e561ab5a82"
+  },
+  "mixedParts": true,
+  "originalRoot": false,
+  "isOriginalEngineCapture": false,
+  "counts": {
+    "logical": 21,
+    "segments": 28,
+    "subpaths": 41,
+    "curves": 8,
+    "boundaries": 7
+  },
+  "maskScopes": {
+    "kageDefault": {
+      "width": 14,
+      "padding": 7,
+      "curves": 4
+    },
+    "kageSpecial": {
+      "pen": 8,
+      "mask": 3,
+      "width": 18,
+      "padding": 9
+    },
+    "fanAffine": {
+      "pens": [
+        19,
+        20,
+        21
+      ],
+      "width": 20,
+      "padding": 10,
+      "curves": 3
+    }
+  },
+  "approval": {
+    "native": false,
+    "runtime": false,
+    "temporal": false
+  },
+  "author": {
+    "SSR": 0,
+    "server": 0,
+    "browser": 0,
+    "build": 0,
+    "globalTypeCheck": 0,
+    "sharedWrites": 0
+  },
+  "verification": {
+    "syntaxServerDiagnostics": 0,
+    "syntaxClientDiagnostics": 0,
+    "forwardOriginalBlockCursorCheck": true,
+    "exactInverseToPreH": true,
+    "bareBlankContextLines": 0,
+    "unchangedExistingServerGuards": 161,
+    "changedExistingServerFunctions": [
+      "resources"
+    ],
+    "exactFixtureGuardPassed": true,
+    "fixtureGuardNegativeCases": 4,
+    "controls": {
+      "buttons": 18,
+      "gateReleaseButtons": 8,
+      "initial": 42,
+      "boundary": 21,
+      "ending": 63,
+      "oldKuoABDiagnosticsPresent": false
+    },
+    "mixedCurveRoutes": 8,
+    "unknownAffineRejected": true,
+    "payload": {
+      "isolatedSpreadExpressionOnly": true,
+      "actualGeneratedRouteWasNotTested": true,
+      "integrationPassClaimWithdrawn": true,
+      "reason": "Initial generator skipped the actual leading-space routes.set line."
+    },
+    "rootPenMaskWidthChecks": 356,
+    "scopePreserved": [
+      "Kuo16.2=16/8 only exact Kuo root",
+      "Yi18.3=22/11 only exact Yi root",
+      "Luo8.3=18/9 only exact mixed Luo root",
+      "Yang/default KAGE14/7",
+      "Fan3 original-D source-affine20/10"
+    ],
+    "nativeApplyExecuted": false,
+    "actualDOM": false,
+    "focusedHarnessCorrections": [
+      "Context runner initially used Bun execPath with Node flags; no child tests ran. Explicit node used next.",
+      "Gate button assertion label corrected from start-gate release3 to actual start-release3; prior successful exact guard/4 negative cases reused.",
+      "Width expression harness sliced const requiredPadding only after duplicate-identifier parse error; actual 356 cases then passed."
+    ]
+  },
+  "commitSuggested": "docs(hanja): prepare Luo mixed-source width18 native review",
+  "observationScope": "No browser/SSR/server or actual transform/visibility approval by child. Root must apply exact sorted patch and inspect current actual renderer/mixed affine owner DOM, finite start/boundary/ending/residual. Pure routing/metadata does not establish visual success.",
+  "followupCorrection": {
+    "path": "docs/hanja-authored-component-u81dd-u51e1-2026-10-28/generated-route-fix-check.json",
+    "SHA256": "dfb7b399e1751bc9fe352e52e51ed92db4573cfc18b8c4a4d74fdd2ce0dc2d2e",
+    "expectedCorrectedH": "cdf17aa136f170e96adc6bb2998fedfc5bb8133231bddbd330c5bfa95d77ef5f",
+    "originalPatchPreserved": true,
+    "actualGeneratedRouteVerified": true,
+    "nativeAfterFixPending": true
+  }
+}

@@ -1,0 +1,1327 @@
+{
+  "schema": "hanja-mixed-public-source-execution-draft-check/v1",
+  "date": "2026-10-28",
+  "status": "PASS-limited-source-and-transform-code-only",
+  "inputSHA256": {
+    "docs/hanja-authored-component-u81dd-u51e1-2026-10-28/recipe-v2-dot-separated.json": "7c000a640192336b7c4abedc6cd7aa0ab350dc0e7fdfbefe435cb9d13fc0c53d",
+    "docs/hanja-authored-component-u81dd-u51e1-2026-10-28/native-direct-mapping-review.json": "2db35841a230810d3ed12f7a8d9c47ba92e1e8f9f39722b89c30cc3ab79b5e42",
+    "docs/hanja-source-original-u51e1-hanzi-writer-2026-10-28/source-record.json": "bf7eb962cade8ac5a157fae0dd63443bff3a05c3df05ba46081469410b9413ac",
+    "docs/hanja-source-original-u51e1-hanzi-writer-2026-10-28/upstream-code-license-capsule.json": "8001cd9fc7be4568158431637f087bb76730ac182165e1fe1c105319c7e79969",
+    "docs/hanja-goal-glyphwiki-batch530-2026-10-11/engine-proof.json": "5a1b0e13a70d35987f60603a526ca8b8ea6ed72a9e442ff63954edd23e8ae072",
+    "docs/hanja-goal-glyphwiki-batch530-2026-10-11/draw-trace.json": "ede3d1753a067f45986a6b79a1cce12eb23e18f6352886765f444e6eacf755bb",
+    "docs/hanja-source-raw-compare-u81dd-u51e1-dot-separated-2026-10-28/native-static-review.json": "3a9787dfb697d26f9fb29d0498b0bef541feb8c67eff1c004e9ef47009fb9bf3",
+    "lib/hanja-stroke-outline.ts": "b4d289d1911c4d43934dfad39c4cfbe22a246303bb7012114d16786688c36c40",
+    "components/hanja/stroke-outlines.tsx": "cb4d80f57dbd8ad9815b5b90128ece5171a678a3b1c24e94956c2ac9fff91f88",
+    "docs/hanja-authored-mm-u5b7d-components-2026-10-28/reveal-start-gate-v3-check.json": "9d59920490e39f24ad48f6fdc6da4c448f67317f0ec198ce9b1a860f310ed1ac",
+    "docs/hanja-authored-donor-u97b9-u7f96-2026-10-28/prepare-execution-draft.mjs": "e8bef330ac9b0d1fb207c2d6a1320cbf1d4712afb79398ad32dfa0334b14a2ab"
+  },
+  "logicalPens": 21,
+  "segments": 28,
+  "KAGEBodyLogicalPens": 18,
+  "KAGEBodySourceRawGroups": 21,
+  "KAGEBodySourceCalls": 25,
+  "KAGECurveMasks": 5,
+  "FanSourcePaths": 3,
+  "FanMedianMasks": 3,
+  "facts": [
+    {
+      "logical": 1,
+      "raw": 0,
+      "primitive": 0,
+      "kind": "cdDrawLine",
+      "sourceCallArgs": [
+        100,
+        14,
+        100,
+        31,
+        0,
+        32
+      ],
+      "sourceControlPoints100": [
+        [
+          50.0,
+          7.0
+        ],
+        [
+          50.0,
+          15.5
+        ]
+      ],
+      "sourceFlags": [
+        0,
+        32
+      ],
+      "sourcePolygonsSHA256": "30cff7ed86e4003d37feab4b7a3e5a7668d16cc7d0c54ef243a3fe975fe793a9",
+      "normalizationApplications": 1,
+      "normalization": "x/2,y/2 only",
+      "polygonTraversalReversedWithoutPointChange": 0
+    },
+    {
+      "logical": 2,
+      "raw": 1,
+      "primitive": 0,
+      "kind": "cdDrawLine",
+      "sourceCallArgs": [
+        31,
+        31,
+        184,
+        31,
+        2,
+        0
+      ],
+      "sourceControlPoints100": [
+        [
+          15.5,
+          15.5
+        ],
+        [
+          92.0,
+          15.5
+        ]
+      ],
+      "sourceFlags": [
+        2,
+        0
+      ],
+      "sourcePolygonsSHA256": "a38e9ea0489120cba671105a74c1c30bd4d904424a2fad51ed18960128564332",
+      "normalizationApplications": 1,
+      "normalization": "x/2,y/2 only",
+      "polygonTraversalReversedWithoutPointChange": 0
+    },
+    {
+      "logical": 3,
+      "raw": 2,
+      "primitive": 0,
+      "kind": "cdDrawLine",
+      "sourceCallArgs": [
+        31,
+        31,
+        31,
+        38,
+        12,
+        1
+      ],
+      "sourceControlPoints100": [
+        [
+          15.5,
+          15.5
+        ],
+        [
+          15.5,
+          19.0
+        ]
+      ],
+      "sourceFlags": [
+        12,
+        1
+      ],
+      "sourcePolygonsSHA256": "4d5b0d447ef5d9ac5d4d8c07e4e8c66e221afc610f39f07a5292e5ac43890801",
+      "normalizationApplications": 1,
+      "normalization": "x/2,y/2 only",
+      "polygonTraversalReversedWithoutPointChange": 1
+    },
+    {
+      "logical": 3,
+      "raw": 2,
+      "primitive": 1,
+      "kind": "cdDrawCurve",
+      "sourceCallArgs": [
+        31,
+        38,
+        31,
+        48,
+        41,
+        48,
+        1,
+        5001
+      ],
+      "sourceControlPoints100": [
+        [
+          15.5,
+          19.0
+        ],
+        [
+          15.5,
+          24.0
+        ],
+        [
+          20.5,
+          24.0
+        ]
+      ],
+      "sourceFlags": [
+        1,
+        5001
+      ],
+      "sourcePolygonsSHA256": "3b271da35537690dadc171070e819b66763176e3f4b83406394ddc856bdaf603",
+      "normalizationApplications": 1,
+      "normalization": "x/2,y/2 only",
+      "polygonTraversalReversedWithoutPointChange": 0,
+      "policy": {
+        "padding": 7,
+        "width": 14,
+        "weightMethod": "padding7 + source Bezier control-polygon upper bound +1e-9",
+        "sourceMicroclockEquivalent": false,
+        "coverageApproved": false
+      }
+    },
+    {
+      "logical": 3,
+      "raw": 2,
+      "primitive": 2,
+      "kind": "cdDrawLine",
+      "sourceCallArgs": [
+        41,
+        48,
+        172,
+        48,
+        5006,
+        5000
+      ],
+      "sourceControlPoints100": [
+        [
+          20.5,
+          24.0
+        ],
+        [
+          86.0,
+          24.0
+        ]
+      ],
+      "sourceFlags": [
+        5006,
+        5000
+      ],
+      "sourcePolygonsSHA256": "a171e245a294bb8b991f11b0a60a2f1829bdfe99c048392c91e40489e34be27a",
+      "normalizationApplications": 1,
+      "normalization": "x/2,y/2 only",
+      "polygonTraversalReversedWithoutPointChange": 0
+    },
+    {
+      "logical": 4,
+      "raw": 3,
+      "primitive": 0,
+      "kind": "cdDrawLine",
+      "sourceCallArgs": [
+        43,
+        64,
+        43,
+        80,
+        12,
+        313
+      ],
+      "sourceControlPoints100": [
+        [
+          21.5,
+          32.0
+        ],
+        [
+          21.5,
+          40.0
+        ]
+      ],
+      "sourceFlags": [
+        12,
+        313
+      ],
+      "sourcePolygonsSHA256": "d59bcdf9865af3aef4d112463e04fab252b723fe65f0dde3f9aaf5da6a9b80d9",
+      "normalizationApplications": 1,
+      "normalization": "x/2,y/2 only",
+      "polygonTraversalReversedWithoutPointChange": 0
+    },
+    {
+      "logical": 5,
+      "raw": 4,
+      "primitive": 0,
+      "kind": "cdDrawLine",
+      "sourceCallArgs": [
+        43,
+        64,
+        161,
+        64,
+        2,
+        2
+      ],
+      "sourceControlPoints100": [
+        [
+          21.5,
+          32.0
+        ],
+        [
+          80.5,
+          32.0
+        ]
+      ],
+      "sourceFlags": [
+        2,
+        2
+      ],
+      "sourcePolygonsSHA256": "e58a6d815ad98971894d4bfa61d49f4680baba075f77db0fbeb1bc42429b7526",
+      "normalizationApplications": 1,
+      "normalization": "x/2,y/2 only",
+      "polygonTraversalReversedWithoutPointChange": 0
+    },
+    {
+      "logical": 5,
+      "raw": 5,
+      "primitive": 0,
+      "kind": "cdDrawLine",
+      "sourceCallArgs": [
+        161,
+        64,
+        161,
+        80,
+        22,
+        323
+      ],
+      "sourceControlPoints100": [
+        [
+          80.5,
+          32.0
+        ],
+        [
+          80.5,
+          40.0
+        ]
+      ],
+      "sourceFlags": [
+        22,
+        323
+      ],
+      "sourcePolygonsSHA256": "198e0f7e5d1fac41a1303e80e021230f042b47b762bb7958f18a758860b1dbcc",
+      "normalizationApplications": 1,
+      "normalization": "x/2,y/2 only",
+      "polygonTraversalReversedWithoutPointChange": 0
+    },
+    {
+      "logical": 6,
+      "raw": 6,
+      "primitive": 0,
+      "kind": "cdDrawLine",
+      "sourceCallArgs": [
+        43,
+        80,
+        161,
+        80,
+        2,
+        2
+      ],
+      "sourceControlPoints100": [
+        [
+          21.5,
+          40.0
+        ],
+        [
+          80.5,
+          40.0
+        ]
+      ],
+      "sourceFlags": [
+        2,
+        2
+      ],
+      "sourcePolygonsSHA256": "5d5a08ceee9ac96b8e290beae6673afdca22433b10afb131acdffddec151a514",
+      "normalizationApplications": 1,
+      "normalization": "x/2,y/2 only",
+      "polygonTraversalReversedWithoutPointChange": 0
+    },
+    {
+      "logical": 7,
+      "raw": 7,
+      "primitive": 0,
+      "kind": "cdDrawLine",
+      "sourceCallArgs": [
+        25.44,
+        96.68,
+        25.44,
+        150.26,
+        12,
+        1
+      ],
+      "sourceControlPoints100": [
+        [
+          12.72,
+          48.34
+        ],
+        [
+          12.72,
+          75.13
+        ]
+      ],
+      "sourceFlags": [
+        12,
+        1
+      ],
+      "sourcePolygonsSHA256": "4e47781f58a2d4fb45f952f02b83a9fe8a960cb6eb30b29c3f5f2828fd47ebec",
+      "normalizationApplications": 1,
+      "normalization": "x/2,y/2 only",
+      "polygonTraversalReversedWithoutPointChange": 1
+    },
+    {
+      "logical": 7,
+      "raw": 7,
+      "primitive": 1,
+      "kind": "cdDrawCurve",
+      "sourceCallArgs": [
+        25.44,
+        150.26,
+        25.44,
+        181.61,
+        11.84,
+        190.16,
+        1,
+        7
+      ],
+      "sourceControlPoints100": [
+        [
+          12.72,
+          75.13
+        ],
+        [
+          12.72,
+          90.805
+        ],
+        [
+          5.92,
+          95.08
+        ]
+      ],
+      "sourceFlags": [
+        1,
+        7
+      ],
+      "sourcePolygonsSHA256": "b30abad9a930f84b715fe09104f18e3acd02b02f16e5719912176444bc3ed146",
+      "normalizationApplications": 1,
+      "normalization": "x/2,y/2 only",
+      "polygonTraversalReversedWithoutPointChange": 0,
+      "policy": {
+        "padding": 7,
+        "width": 14,
+        "weightMethod": "padding7 + source Bezier control-polygon upper bound +1e-9",
+        "sourceMicroclockEquivalent": false,
+        "coverageApproved": false
+      }
+    },
+    {
+      "logical": 8,
+      "raw": 8,
+      "primitive": 0,
+      "kind": "cdDrawLine",
+      "sourceCallArgs": [
+        25.44,
+        96.68,
+        59.44,
+        96.68,
+        2,
+        2
+      ],
+      "sourceControlPoints100": [
+        [
+          12.72,
+          48.34
+        ],
+        [
+          29.72,
+          48.34
+        ]
+      ],
+      "sourceFlags": [
+        2,
+        2
+      ],
+      "sourcePolygonsSHA256": "1351d2303be9d333d326ad9973c7cba617a6edc6076a739a60e3f60fff121586",
+      "normalizationApplications": 1,
+      "normalization": "x/2,y/2 only",
+      "polygonTraversalReversedWithoutPointChange": 0
+    },
+    {
+      "logical": 8,
+      "raw": 9,
+      "primitive": 0,
+      "kind": "cdDrawLine",
+      "sourceCallArgs": [
+        59.44,
+        96.68,
+        59.44,
+        176.17000000000002,
+        1022,
+        1
+      ],
+      "sourceControlPoints100": [
+        [
+          29.72,
+          48.34
+        ],
+        [
+          29.72,
+          88.08500000000001
+        ]
+      ],
+      "sourceFlags": [
+        1022,
+        1
+      ],
+      "sourcePolygonsSHA256": "088ef65a7d62f36d9d2f2846db5a33eac67cd6332be3b9d0f0e44adbccdd9849",
+      "normalizationApplications": 1,
+      "normalization": "x/2,y/2 only",
+      "polygonTraversalReversedWithoutPointChange": 1
+    },
+    {
+      "logical": 8,
+      "raw": 9,
+      "primitive": 1,
+      "kind": "cdDrawCurve",
+      "sourceCallArgs": [
+        59.44,
+        176.17000000000002,
+        59.44,
+        186.17000000000002,
+        50.69,
+        186.17000000000002,
+        1001,
+        214
+      ],
+      "sourceControlPoints100": [
+        [
+          29.72,
+          88.08500000000001
+        ],
+        [
+          29.72,
+          93.08500000000001
+        ],
+        [
+          25.345,
+          93.08500000000001
+        ]
+      ],
+      "sourceFlags": [
+        1001,
+        214
+      ],
+      "sourcePolygonsSHA256": "bc90e10e2fe835d508974f8d61dab2b8f68640e843ac3934920ac67d0ca4cde0",
+      "normalizationApplications": 1,
+      "normalization": "x/2,y/2 only",
+      "polygonTraversalReversedWithoutPointChange": 1,
+      "policy": {
+        "padding": 7,
+        "width": 14,
+        "weightMethod": "padding7 + source Bezier control-polygon upper bound +1e-9",
+        "sourceMicroclockEquivalent": false,
+        "coverageApproved": false
+      }
+    },
+    {
+      "logical": 9,
+      "raw": 10,
+      "primitive": 0,
+      "kind": "cdDrawLine",
+      "sourceCallArgs": [
+        25.44,
+        121.19,
+        59.44,
+        121.19,
+        2,
+        2
+      ],
+      "sourceControlPoints100": [
+        [
+          12.72,
+          60.595
+        ],
+        [
+          29.72,
+          60.595
+        ]
+      ],
+      "sourceFlags": [
+        2,
+        2
+      ],
+      "sourcePolygonsSHA256": "3b9979f7836dd27c11a29e86f205876e7a30122ab495577b0dc3fde6159314eb",
+      "normalizationApplications": 1,
+      "normalization": "x/2,y/2 only",
+      "polygonTraversalReversedWithoutPointChange": 0
+    },
+    {
+      "logical": 10,
+      "raw": 11,
+      "primitive": 0,
+      "kind": "cdDrawLine",
+      "sourceCallArgs": [
+        25.44,
+        146.84,
+        59.44,
+        146.84,
+        2,
+        2
+      ],
+      "sourceControlPoints100": [
+        [
+          12.72,
+          73.42
+        ],
+        [
+          29.72,
+          73.42
+        ]
+      ],
+      "sourceFlags": [
+        2,
+        2
+      ],
+      "sourcePolygonsSHA256": "0ae0cd70076b55815410ac9eb2667bf530a3521c3ab8c754eb33ab500342088b",
+      "normalizationApplications": 1,
+      "normalization": "x/2,y/2 only",
+      "polygonTraversalReversedWithoutPointChange": 0
+    },
+    {
+      "logical": 11,
+      "raw": 12,
+      "primitive": 0,
+      "kind": "cdDrawLine",
+      "sourceCallArgs": [
+        79.5,
+        100.24,
+        79.5,
+        133.28,
+        2012,
+        313
+      ],
+      "sourceControlPoints100": [
+        [
+          39.75,
+          50.12
+        ],
+        [
+          39.75,
+          66.64
+        ]
+      ],
+      "sourceFlags": [
+        2012,
+        313
+      ],
+      "sourcePolygonsSHA256": "14a5c7248cf40ba0c72b1999ccddd2882fbb6f131ab79094c0b4f2fda93baa6f",
+      "normalizationApplications": 1,
+      "normalization": "x/2,y/2 only",
+      "polygonTraversalReversedWithoutPointChange": 0
+    },
+    {
+      "logical": 12,
+      "raw": 13,
+      "primitive": 0,
+      "kind": "cdDrawLine",
+      "sourceCallArgs": [
+        79.5,
+        100.24,
+        126.3,
+        100.24,
+        2,
+        2
+      ],
+      "sourceControlPoints100": [
+        [
+          39.75,
+          50.12
+        ],
+        [
+          63.15,
+          50.12
+        ]
+      ],
+      "sourceFlags": [
+        2,
+        2
+      ],
+      "sourcePolygonsSHA256": "ad20a304c9f378e8c6f31a6318e06438ebe90329a864e178ee79b1c336681f28",
+      "normalizationApplications": 1,
+      "normalization": "x/2,y/2 only",
+      "polygonTraversalReversedWithoutPointChange": 0
+    },
+    {
+      "logical": 12,
+      "raw": 14,
+      "primitive": 0,
+      "kind": "cdDrawLine",
+      "sourceCallArgs": [
+        126.3,
+        100.24,
+        126.3,
+        133.28,
+        1022,
+        323
+      ],
+      "sourceControlPoints100": [
+        [
+          63.15,
+          50.12
+        ],
+        [
+          63.15,
+          66.64
+        ]
+      ],
+      "sourceFlags": [
+        1022,
+        323
+      ],
+      "sourcePolygonsSHA256": "d5d3a88929edc59af0206048e06354382721d7ce7fcde202d5108543560205a7",
+      "normalizationApplications": 1,
+      "normalization": "x/2,y/2 only",
+      "polygonTraversalReversedWithoutPointChange": 0
+    },
+    {
+      "logical": 13,
+      "raw": 15,
+      "primitive": 0,
+      "kind": "cdDrawLine",
+      "sourceCallArgs": [
+        79.5,
+        117.03999999999999,
+        126.3,
+        117.03999999999999,
+        2,
+        2
+      ],
+      "sourceControlPoints100": [
+        [
+          39.75,
+          58.519999999999996
+        ],
+        [
+          63.15,
+          58.519999999999996
+        ]
+      ],
+      "sourceFlags": [
+        2,
+        2
+      ],
+      "sourcePolygonsSHA256": "1c824e53c400d92b1f2ba47d094cb0d90a53d59a24075f06dc2cfa4d4bf03670",
+      "normalizationApplications": 1,
+      "normalization": "x/2,y/2 only",
+      "polygonTraversalReversedWithoutPointChange": 0
+    },
+    {
+      "logical": 14,
+      "raw": 16,
+      "primitive": 0,
+      "kind": "cdDrawLine",
+      "sourceCallArgs": [
+        79.5,
+        133.28,
+        126.3,
+        133.28,
+        2,
+        2
+      ],
+      "sourceControlPoints100": [
+        [
+          39.75,
+          66.64
+        ],
+        [
+          63.15,
+          66.64
+        ]
+      ],
+      "sourceFlags": [
+        2,
+        2
+      ],
+      "sourcePolygonsSHA256": "3ed51cd44768234b33145523054a0a02bc6113e1cfd2b003ca6957f27cf46f7c",
+      "normalizationApplications": 1,
+      "normalization": "x/2,y/2 only",
+      "polygonTraversalReversedWithoutPointChange": 0
+    },
+    {
+      "logical": 15,
+      "raw": 17,
+      "primitive": 0,
+      "kind": "cdDrawLine",
+      "sourceCallArgs": [
+        69.1,
+        148.95999999999998,
+        134.1,
+        148.95999999999998,
+        0,
+        100
+      ],
+      "sourceControlPoints100": [
+        [
+          34.55,
+          74.47999999999999
+        ],
+        [
+          67.05,
+          74.47999999999999
+        ]
+      ],
+      "sourceFlags": [
+        0,
+        100
+      ],
+      "sourcePolygonsSHA256": "c34f15d6479ec91e1bed52877c03c548c6bd3e5d4718578db9d81e81e05331a6",
+      "normalizationApplications": 1,
+      "normalization": "x/2,y/2 only",
+      "polygonTraversalReversedWithoutPointChange": 0
+    },
+    {
+      "logical": 16,
+      "raw": 18,
+      "primitive": 0,
+      "kind": "cdDrawLine",
+      "sourceCallArgs": [
+        102.9,
+        100.24,
+        102.9,
+        188.16,
+        2032,
+        0
+      ],
+      "sourceControlPoints100": [
+        [
+          51.45,
+          50.12
+        ],
+        [
+          51.45,
+          94.08
+        ]
+      ],
+      "sourceFlags": [
+        2032,
+        0
+      ],
+      "sourcePolygonsSHA256": "bf777df52e4303eecc521d73c1e30a289005fea3482aebf5669d322d3ef682f1",
+      "normalizationApplications": 1,
+      "normalization": "x/2,y/2 only",
+      "polygonTraversalReversedWithoutPointChange": 0
+    },
+    {
+      "logical": 17,
+      "raw": 19,
+      "primitive": 0,
+      "kind": "cdDrawCurve",
+      "sourceCallArgs": [
+        100.95,
+        148.95999999999998,
+        91.85,
+        170.24,
+        67.8,
+        184.8,
+        132,
+        7
+      ],
+      "sourceControlPoints100": [
+        [
+          50.475,
+          74.47999999999999
+        ],
+        [
+          45.925,
+          85.12
+        ],
+        [
+          33.9,
+          92.4
+        ]
+      ],
+      "sourceFlags": [
+        132,
+        7
+      ],
+      "sourcePolygonsSHA256": "7cf569d7d847e8cf29fb20ea9ccaf233e661e8d35a0334cf6e5fb348b8428c76",
+      "normalizationApplications": 1,
+      "normalization": "x/2,y/2 only",
+      "polygonTraversalReversedWithoutPointChange": 0,
+      "policy": {
+        "padding": 7,
+        "width": 14,
+        "weightMethod": "padding7 + source Bezier control-polygon upper bound +1e-9",
+        "sourceMicroclockEquivalent": false,
+        "coverageApproved": false
+      }
+    },
+    {
+      "logical": 18,
+      "raw": 20,
+      "primitive": 0,
+      "kind": "cdDrawCurve",
+      "sourceCallArgs": [
+        102.9,
+        155.68,
+        119.15,
+        162.4,
+        128.9,
+        173.04000000000002,
+        7,
+        8
+      ],
+      "sourceControlPoints100": [
+        [
+          51.45,
+          77.84
+        ],
+        [
+          59.575,
+          81.2
+        ],
+        [
+          64.45,
+          86.52000000000001
+        ]
+      ],
+      "sourceFlags": [
+        7,
+        8
+      ],
+      "sourcePolygonsSHA256": "6da8f14dfb959530398887ce33816599cec4f84fd0c824c637405d8778ba7ccd",
+      "normalizationApplications": 1,
+      "normalization": "x/2,y/2 only",
+      "polygonTraversalReversedWithoutPointChange": 0,
+      "policy": {
+        "padding": 7,
+        "width": 14,
+        "weightMethod": "padding7 + source Bezier control-polygon upper bound +1e-9",
+        "sourceMicroclockEquivalent": false,
+        "coverageApproved": false
+      }
+    },
+    {
+      "logical": 19,
+      "source": "HanziWriter original凡 whole",
+      "sourcePathOneBased": 1,
+      "sourceOriginalD": "M 393 463 Q 394 482 395 500 Q 398 629 411 670 C 417 696 417 696 392 708 Q 343 735 316 721 Q 303 714 311 699 Q 347 645 342 488 Q 338 442 329 390 Q 286 206 143 84 Q 127 68 112 54 Q 99 41 114 40 Q 129 41 165 63 Q 231 105 277 162 Q 361 259 390 431 Q 390 435 391 438 L 393 463 Z",
+      "sourceOriginalDSHA256": "b15890a5de95c82f67eae2e4b41a6da4a6d4774cdd1c04aaf6311c323bd25052",
+      "sourceOriginalMedian": [
+        [
+          322,
+          708
+        ],
+        [
+          344,
+          697
+        ],
+        [
+          363,
+          677
+        ],
+        [
+          370,
+          625
+        ],
+        [
+          363,
+          427
+        ],
+        [
+          335,
+          315
+        ],
+        [
+          286,
+          214
+        ],
+        [
+          246,
+          160
+        ],
+        [
+          208,
+          118
+        ],
+        [
+          117,
+          48
+        ]
+      ],
+      "normalizationApplications": 1,
+      "normalizationMatrixExact": [
+        "1/10",
+        "0",
+        "0",
+        "-1/10",
+        "0",
+        "90"
+      ],
+      "placedOutlineMatrixExact": [
+        "199/5960",
+        "0",
+        "0",
+        "-493/7610",
+        "377533/5960",
+        "737697/7610"
+      ],
+      "maskOnlyTransformExact": [
+        "199/596",
+        "0",
+        "0",
+        "493/761",
+        "377533/5960",
+        "293997/7610"
+      ],
+      "sourceCommandSequence": [
+        "M",
+        "Q",
+        "Q",
+        "C",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "L",
+        "Z"
+      ],
+      "placedCommandSequence": [
+        "M",
+        "Q",
+        "Q",
+        "C",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "L",
+        "Z"
+      ],
+      "sourceCommandsAndBezierControlsNotFlattened": true,
+      "maskCoordinates": "Unplaced source-normalized100; same affine as placed outline via revealTransform",
+      "paddingOriginalMM": 100,
+      "widthOriginalMM": 200,
+      "paddingSourceNormalized100": 10,
+      "widthSourceNormalized100": 20,
+      "polylineLengthSourceNormalized100": 76.91302366667942,
+      "displayWeight": 86.91302366667942,
+      "originalOrPublisherTimingEquivalent": false,
+      "sourceSpaceStartGateBounds": [
+        9.9,
+        16.5,
+        41.7,
+        86.0
+      ],
+      "placedBounds": [
+        66.65,
+        49.32220762155059,
+        77.26778523489934,
+        94.34651773981604
+      ],
+      "fullGuideCoverageApproved": false
+    },
+    {
+      "logical": 20,
+      "source": "HanziWriter original凡 whole",
+      "sourcePathOneBased": 2,
+      "sourceOriginalD": "M 411 670 Q 426 673 560 714 Q 575 721 583 717 Q 589 711 577 528 Q 553 194 580 140 Q 580 100 674 60 Q 749 33 845 43 Q 908 49 971 78 Q 993 85 986 111 Q 973 159 967 225 Q 964 261 957 267 Q 948 273 944 260 Q 899 149 863 126 Q 841 113 792 109 Q 728 108 691 119 Q 654 131 639 151 Q 606 196 623 388 Q 633 538 659 636 Q 669 681 708 714 Q 724 735 705 750 Q 680 769 624 788 Q 602 794 580 780 Q 498 723 392 708 C 363 703 382 662 411 670 Z",
+      "sourceOriginalDSHA256": "1bb7b1169cce0f45a8fdbcbb5698ffe734e2e0f6d954d5f6b453a733509ebd23",
+      "sourceOriginalMedian": [
+        [
+          401,
+          705
+        ],
+        [
+          422,
+          693
+        ],
+        [
+          517,
+          720
+        ],
+        [
+          574,
+          745
+        ],
+        [
+          604,
+          750
+        ],
+        [
+          632,
+          732
+        ],
+        [
+          639,
+          720
+        ],
+        [
+          620,
+          638
+        ],
+        [
+          607,
+          541
+        ],
+        [
+          591,
+          314
+        ],
+        [
+          596,
+          190
+        ],
+        [
+          611,
+          137
+        ],
+        [
+          628,
+          118
+        ],
+        [
+          675,
+          92
+        ],
+        [
+          758,
+          75
+        ],
+        [
+          833,
+          78
+        ],
+        [
+          885,
+          91
+        ],
+        [
+          930,
+          118
+        ],
+        [
+          953,
+          260
+        ]
+      ],
+      "normalizationApplications": 1,
+      "normalizationMatrixExact": [
+        "1/10",
+        "0",
+        "0",
+        "-1/10",
+        "0",
+        "90"
+      ],
+      "placedOutlineMatrixExact": [
+        "199/5960",
+        "0",
+        "0",
+        "-493/7610",
+        "377533/5960",
+        "737697/7610"
+      ],
+      "maskOnlyTransformExact": [
+        "199/596",
+        "0",
+        "0",
+        "493/761",
+        "377533/5960",
+        "293997/7610"
+      ],
+      "sourceCommandSequence": [
+        "M",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "C",
+        "Z"
+      ],
+      "placedCommandSequence": [
+        "M",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "C",
+        "Z"
+      ],
+      "sourceCommandsAndBezierControlsNotFlattened": true,
+      "maskCoordinates": "Unplaced source-normalized100; same affine as placed outline via revealTransform",
+      "paddingOriginalMM": 100,
+      "widthOriginalMM": 200,
+      "paddingSourceNormalized100": 10,
+      "widthSourceNormalized100": 20,
+      "polylineLengthSourceNormalized100": 134.0488775230964,
+      "displayWeight": 144.0488775230964,
+      "originalOrPublisherTimingEquivalent": false,
+      "sourceSpaceStartGateBounds": [
+        36.3,
+        10.6,
+        99.3,
+        86.7
+      ],
+      "placedBounds": [
+        75.46476510067114,
+        45.5,
+        96.5,
+        94.8
+      ],
+      "fullGuideCoverageApproved": false
+    },
+    {
+      "logical": 21,
+      "source": "HanziWriter original凡 whole",
+      "sourcePathOneBased": 3,
+      "sourceOriginalD": "M 391 438 Q 397 431 411 420 Q 442 392 478 360 Q 490 348 503 349 Q 513 349 517 361 Q 521 374 514 399 Q 505 433 407 462 Q 398 463 393 463 C 367 464 370 460 391 438 Z",
+      "sourceOriginalDSHA256": "34f285b53be57f4035f94fe23aac6974355cb5a30d5155afc02155f678aef534",
+      "sourceOriginalMedian": [
+        [
+          400,
+          456
+        ],
+        [
+          408,
+          445
+        ],
+        [
+          480,
+          398
+        ],
+        [
+          503,
+          364
+        ]
+      ],
+      "normalizationApplications": 1,
+      "normalizationMatrixExact": [
+        "1/10",
+        "0",
+        "0",
+        "-1/10",
+        "0",
+        "90"
+      ],
+      "placedOutlineMatrixExact": [
+        "199/8940",
+        "0",
+        "0",
+        "-493/11415",
+        "889395153540493/12799002542080",
+        "2012933/22830"
+      ],
+      "maskOnlyTransformExact": [
+        "199/894",
+        "0",
+        "0",
+        "986/2283",
+        "889395153540493/12799002542080",
+        "1125533/22830"
+      ],
+      "sourceCommandSequence": [
+        "M",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "C",
+        "Z"
+      ],
+      "placedCommandSequence": [
+        "M",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "C",
+        "Z"
+      ],
+      "sourceCommandsAndBezierControlsNotFlattened": true,
+      "maskCoordinates": "Unplaced source-normalized100; same affine as placed outline via revealTransform",
+      "paddingOriginalMM": 100,
+      "widthOriginalMM": 200,
+      "paddingSourceNormalized100": 10,
+      "widthSourceNormalized100": 20,
+      "polylineLengthSourceNormalized100": 14.063277838274693,
+      "displayWeight": 24.063277838274693,
+      "originalOrPublisherTimingEquivalent": false,
+      "sourceSpaceStartGateBounds": [
+        36.7,
+        43.6,
+        52.1,
+        55.2
+      ],
+      "placedBounds": [
+        77.65865080362367,
+        68.13092422251424,
+        81.08661500944022,
+        73.14082347787998
+      ],
+      "fullGuideCoverageApproved": false
+    }
+  ],
+  "codeFacts": {
+    "retainedKAGEPAndQAndFlagsPreserved": true,
+    "sourceGeometryRepaintedOrInferred": false,
+    "donorOriginalDAndMedianEdited": false,
+    "BezierFlattened": false,
+    "placedAndMaskFramesExactlyEqual": true,
+    "existingSourceRoleMappingRecordPinned": true,
+    "revealWidthOrTimingApproved": false
+  },
+  "remainingRisks": [
+    "Legacy cardinal and same-call multi-P decorations may reveal abruptly; all actual starts/compound boundaries need ROOT observation.",
+    "KAGE curve width14/padding7 is an author proposal; full-guide polygon coverage and actualR residuals are not yet approved.",
+    "Fan local width20/padding10 derives from original MM/HanziWriter source-space width200/radius100 policy, not publisher timing; anisotropic source affine scales the mask footprint.",
+    "Fan start gates and final full-guide coverage require numerical/native checks; exact coordinate binding alone is not sufficient.",
+    "Mixed font weight, slopes and spacing remain disclosed; direct static role support is not actualR playback approval."
+  ],
+  "nativeApproval": false,
+  "runtimeApplied": false
+}

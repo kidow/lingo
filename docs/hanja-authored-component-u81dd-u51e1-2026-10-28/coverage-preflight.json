@@ -1,0 +1,209 @@
+{
+  "schema": "hanja-public-mixed-filled-coverage-preflight/v1",
+  "date": "2026-10-28",
+  "glyph": "臝",
+  "scope": "Full round guide only: dash and source-start clip removed. This is bounded numerical source coverage, not animation, temporal, raster or runtime approval.",
+  "inputSHA256": {
+    "docs/hanja-authored-component-u81dd-u51e1-2026-10-28/fixtures-execution-draft.json": "9121df7c77ee46f82f0080639b7c99553b82b58463bc45ae15eb18d77cf0b87e",
+    "docs/hanja-authored-component-u81dd-u51e1-2026-10-28/execution-draft-check.json": "c5ff5fd8f7ffabc911fa9a3b8de2a13f4b633592c7bea66bb9e3593a6580bbc8",
+    "docs/hanja-authored-component-u81dd-u51e1-2026-10-28/coverage-preflight.py": "b11ec7c430d57ea00325e7ea0ba13b99bc852624a6874d5cd597c870bd2282a6"
+  },
+  "numerics": {
+    "margin": 1e-08,
+    "triangleDepthLimit": 16,
+    "triangleNodeLimit": 60000,
+    "QOutsideControlBoxDepthLimit": 20,
+    "MMBoundarySamplesPerCurve": 257,
+    "formalIntervalProof": false
+  },
+  "counts": {
+    "masks": 8,
+    "pass": 7,
+    "outlier": 1,
+    "unproved": 0
+  },
+  "units": [
+    {
+      "pen": 3,
+      "mask": 2,
+      "source": "KAGE P/Q",
+      "radiusInGuideFrame": 7.0,
+      "revealWidth": 14,
+      "revealTransform": null,
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "coverage": {
+        "covered": true,
+        "nodes": 23,
+        "maxDepth": 0,
+        "maxAcceptedUpperDistance": 5.227276208924889
+      },
+      "coverageRegion": "Original P fan superset; concave exterior may make result unresolved",
+      "outliers": [],
+      "outlierWitnessCount": 0,
+      "nativeApproval": false
+    },
+    {
+      "pen": 7,
+      "mask": 2,
+      "source": "KAGE P/Q",
+      "radiusInGuideFrame": 7.0,
+      "revealWidth": 14,
+      "revealTransform": null,
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "coverage": {
+        "covered": true,
+        "nodes": 184,
+        "maxDepth": 2,
+        "maxAcceptedUpperDistance": 6.995747633042016
+      },
+      "coverageRegion": "Original P fan superset; concave exterior may make result unresolved",
+      "outliers": [],
+      "outlierWitnessCount": 0,
+      "nativeApproval": false
+    },
+    {
+      "pen": 8,
+      "mask": 3,
+      "source": "KAGE P/Q",
+      "radiusInGuideFrame": 7.0,
+      "revealWidth": 14,
+      "revealTransform": null,
+      "status": "OUTLIER-CONFIRMED",
+      "coverage": {
+        "covered": false,
+        "nodes": 36,
+        "maxDepth": 16,
+        "reason": "bounded conservative region unresolved; not insufficient-width proof"
+      },
+      "coverageRegion": "Original P fan superset; concave exterior may make result unresolved",
+      "outliers": [
+        {
+          "originalFilledVertex": [
+            17.6,
+            91.7
+          ],
+          "distanceLower": 7.7449999899999975,
+          "distanceUpper": 7.8678618442369705,
+          "necessaryWidthGreaterThan": 15.489999979999995
+        },
+        {
+          "originalFilledVertex": [
+            17.6,
+            90.3
+          ],
+          "distanceLower": 7.7449999899999975,
+          "distanceUpper": 8.230507274767456,
+          "necessaryWidthGreaterThan": 15.489999979999995
+        }
+      ],
+      "outlierWitnessCount": 2,
+      "nativeApproval": false
+    },
+    {
+      "pen": 17,
+      "mask": 1,
+      "source": "KAGE P/Q",
+      "radiusInGuideFrame": 7.0,
+      "revealWidth": 14,
+      "revealTransform": null,
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "coverage": {
+        "covered": true,
+        "nodes": 225,
+        "maxDepth": 2,
+        "maxAcceptedUpperDistance": 6.95493187809321
+      },
+      "coverageRegion": "Original P fan superset; concave exterior may make result unresolved",
+      "outliers": [],
+      "outlierWitnessCount": 0,
+      "nativeApproval": false
+    },
+    {
+      "pen": 18,
+      "mask": 1,
+      "source": "KAGE P/Q",
+      "radiusInGuideFrame": 7.0,
+      "revealWidth": 14,
+      "revealTransform": null,
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "coverage": {
+        "covered": true,
+        "nodes": 63,
+        "maxDepth": 1,
+        "maxAcceptedUpperDistance": 6.989032934928393
+      },
+      "coverageRegion": "Original P fan superset; concave exterior may make result unresolved",
+      "outliers": [],
+      "outlierWitnessCount": 0,
+      "nativeApproval": false
+    },
+    {
+      "pen": 19,
+      "mask": 1,
+      "source": "HanziWriter original凡 filled D / source-affine median mask",
+      "radiusInGuideFrame": 10.0,
+      "revealWidth": 20,
+      "revealTransform": "matrix(0.33389261744966442 0 0 0.64783180026281206 63.344463087248322 38.632982917214193)",
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "coverage": {
+        "covered": true,
+        "nodes": 351,
+        "maxDepth": 3,
+        "maxAcceptedUpperDistance": 9.93447953611155
+      },
+      "coverageRegion": "Exact simple endpoint-chord polygon ear triangles plus every original Q/C control convex hull. Replacing each curve by its chord can only change filled winding inside that curve hull; this union conservatively covers the original filled region. No product/source path flattening.",
+      "outliers": [],
+      "outlierWitnessCount": 0,
+      "nativeApproval": false
+    },
+    {
+      "pen": 20,
+      "mask": 1,
+      "source": "HanziWriter original凡 filled D / source-affine median mask",
+      "radiusInGuideFrame": 10.0,
+      "revealWidth": 20,
+      "revealTransform": "matrix(0.33389261744966442 0 0 0.64783180026281206 63.344463087248322 38.632982917214193)",
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "coverage": {
+        "covered": true,
+        "nodes": 333,
+        "maxDepth": 3,
+        "maxAcceptedUpperDistance": 9.946034078746045
+      },
+      "coverageRegion": "Exact simple endpoint-chord polygon ear triangles plus every original Q/C control convex hull. Replacing each curve by its chord can only change filled winding inside that curve hull; this union conservatively covers the original filled region. No product/source path flattening.",
+      "outliers": [],
+      "outlierWitnessCount": 0,
+      "nativeApproval": false
+    },
+    {
+      "pen": 21,
+      "mask": 1,
+      "source": "HanziWriter original凡 filled D / source-affine median mask",
+      "radiusInGuideFrame": 10.0,
+      "revealWidth": 20,
+      "revealTransform": "matrix(0.22259507829977629 0 0 0.43188786684187475 69.489411430021875 49.300613228208498)",
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "coverage": {
+        "covered": true,
+        "nodes": 27,
+        "maxDepth": 1,
+        "maxAcceptedUpperDistance": 9.372802144677973
+      },
+      "coverageRegion": "Exact simple endpoint-chord polygon ear triangles plus every original Q/C control convex hull. Replacing each curve by its chord can only change filled winding inside that curve hull; this union conservatively covers the original filled region. No product/source path flattening.",
+      "outliers": [],
+      "outlierWitnessCount": 0,
+      "nativeApproval": false
+    }
+  ],
+  "limits": [
+    "KAGE fan regions include possible concave exterior; unresolved does not prove width insufficient.",
+    "Only actual source P vertices or unchanged D boundary samples with a global guide-distance lower bound count as outliers.",
+    "MM preflight uses the source-local mask frame; exact existing source-affine binding transports containment to placed outlines.",
+    "A full-round coverage pass does not approve start gate, acute join, compound transition, completion switch, native residual or replay.",
+    "No widths, padding, source geometry, renderer or registration were changed."
+  ],
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "serverStarts": 0,
+  "buildRun": false
+}

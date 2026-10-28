@@ -1,0 +1,50 @@
+{
+  "schema": "hanja-scoped-full-guide-width-candidate/v1",
+  "date": "2026-10-28",
+  "glyph": "臝",
+  "pen": 8,
+  "mask": 3,
+  "sourceFixtureSHA256": "9121df7c77ee46f82f0080639b7c99553b82b58463bc45ae15eb18d77cf0b87e",
+  "previousPreflight": {
+    "path": "docs/hanja-authored-component-u81dd-u51e1-2026-10-28/coverage-preflight.json",
+    "SHA256": "bed308993f50544b382edc7e095b9405663f32928c52e06a88dcdafa0b690a93",
+    "unchangedSevenPassesReused": true
+  },
+  "width16InsufficientWitness": {
+    "originalFilledVertex": [
+      17.6,
+      90.3
+    ],
+    "globalGuideDistanceLower": 8.130084937280687,
+    "globalGuideDistanceUpper": 8.230507274767456,
+    "radius": 8,
+    "confirmed": true
+  },
+  "width18FullGuideSufficient": {
+    "radius": 9,
+    "coverage": {
+      "covered": true,
+      "nodes": 34,
+      "maxDepth": 2,
+      "maxAcceptedUpperDistance": 8.838487646111343
+    },
+    "sourcePolygonsUnchanged": true,
+    "sourceQUnchanged": true,
+    "existingGuidePadding": 7,
+    "proposedPadding": 9,
+    "padding9GuideContainsOldPadding7Guide": true,
+    "scope": "Full round guide with dash/start clip removed. Extending the same backward start line7→9 only adds guide points, so r9 coverage proof also holds for pad9."
+  },
+  "proposal": {
+    "width": 18,
+    "padding": 9,
+    "newWeightFormula": "9 + unchanged Q control-polygon length +1e-9",
+    "newGateUntilFormula": "9/newWeight",
+    "startGateReleaseNativeApproved": false,
+    "actualRResidualApproved": false
+  },
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "fixtureChanged": false,
+  "otherMasksRechecked": false
+}
