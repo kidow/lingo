@@ -1,0 +1,22 @@
+#!/usr/bin/env python3
+"""Exact 薅 source adapter; reuse original MM renderer, XML checks and RAM publisher routes."""
+import sys
+sys.dont_write_bytecode = True
+import hashlib, importlib.util, json
+from pathlib import Path
+ROOT = Path(__file__).resolve().parent.parent
+CONFIG_FILE = 'docs/hanja-source-raw-compare-u8585-mm-whole-2026-10-28/config.json'
+ADAPTER_FILE = 'scripts/hanja-static-original-mm-u8585.py'
+EXPECTED = json.loads("{\"schema\":\"hanja-fixed-MM-original-filled-whole/v1\",\"kind\":\"fixed-mm-original-filled-whole-u8585\",\"glyph\":\"薅\",\"catalogStrokes\":17,\"originalFilledStrokes\":16,\"dictionaryPlaybackStrokes\":17,\"source\":{\"path\":\"docs/hanja-source-original-u8585-mm-2026-10-27/source-record.json\",\"SHA256\":\"d42a05908e4ab8bd99ca1adfcebb1cff70b17454763ecc2071eee24a3852b23d\",\"originalRecordSHA256\":\"60fd6ad48494ffba1cc58f319b39d38e281cab31fbb3e375efb7f24671bdfe5d\",\"revision\":\"bddc96d41bef78427ed0e034e9f7e31d71fd1b92\",\"wholeCorpusSHA256\":\"a28c478b5178e98f67f510b2d52fde08a69dc664654ef43498253b9b764d46ee\"},\"domestic\":{\"url\":\"http://img.e-hanja.kr/hanjaSvg/aniSVG/8500/8585.svg\",\"status\":200,\"bytes\":8395,\"sha256\":\"d3f88058fcc45bc6ff82256e9d132c3519883d88a3e33e05ea0e1ce3340a84ac\",\"clips\":17,\"glyph\":\"薅\",\"privateMediaSaved\":false},\"license\":{\"kind\":\"Arphic Public License, original graphics.txt notice\",\"originalNoticeCopy\":{\"path\":\"public/hanja-strokes/MAKEMEAHANZI-COPYING.txt\",\"SHA256\":\"df2e856c73d2ddf036ba95556e25a27163de5cae6ef80e9509a86ec8ece9f84f\"},\"completeLicenseCopy\":{\"path\":\"public/hanja-strokes/ARPHICPL.txt\",\"SHA256\":\"76430f0e943a5a088af54d44a58af187be53528fffdfe5ce6abdfc44d508f78f\"},\"existingProjectRule\":\"scripts/hanja-stroke-audit.ts MAKE_ME_A_HANZI_SOURCE binds this exact graphics.txt revision and corpus SHA; no dictionary.txt used.\",\"freshUpstreamLicenseRequest\":false},\"sharedServe\":{\"path\":\"docs/hanja-source-raw-compare-u8a29-2026-10-21/serve.py\",\"SHA256\":\"ba91ba7f00bc2e4899ca4d3c69d03ab5cd6f8b0a9f888899eea49aa69a58665d\"},\"inputSHA256\":{\"docs/hanja-source-original-u8585-mm-2026-10-27/source-record.json\":\"d42a05908e4ab8bd99ca1adfcebb1cff70b17454763ecc2071eee24a3852b23d\",\"docs/hanja-goal-glyphwiki-batch1027-2026-10-13/metadata.json\":\"44be9c4d31794fd5d515611a17a5da5ecce0a4f05c486759ed0c1b5f92133964\",\"docs/hanja-source-raw-compare-u8585-mm-whole-2026-10-28/publisher-reference.json\":\"7969848b71852090ee4d9b56685b81304941b53773b1f83dbb6e5db5ea6ca505\",\"public/hanja-strokes/MAKEMEAHANZI-COPYING.txt\":\"df2e856c73d2ddf036ba95556e25a27163de5cae6ef80e9509a86ec8ece9f84f\",\"public/hanja-strokes/ARPHICPL.txt\":\"76430f0e943a5a088af54d44a58af187be53528fffdfe5ce6abdfc44d508f78f\",\"scripts/hanja-static-original-mm-u6715.py\":\"26f1f172a54fd35483a2db80dd56cdfb43cb58d1a7396d669de12784a1d81562\"},\"sourceViewBox\":\"0 0 1024 1024\",\"sourceTransform\":\"translate(0 900) scale(1 -1)\",\"wholeOnly\":true,\"noPartialAnimation\":true,\"host\":\"127.0.0.1\",\"filledGeometryApproved\":false,\"domesticStrokeOrderApproved\":false,\"filledGapApproved\":false,\"nativeApproval\":false,\"runtimeApplied\":false,\"publisherReference\":{\"path\":\"docs/hanja-source-raw-compare-u8585-mm-whole-2026-10-28/publisher-reference.json\",\"SHA256\":\"7969848b71852090ee4d9b56685b81304941b53773b1f83dbb6e5db5ea6ca505\"},\"countDifferencePresent\":true,\"countEqualityIsNotApproval\":true,\"coreAdapter\":{\"path\":\"scripts/hanja-static-original-mm-u6715.py\",\"SHA256\":\"26f1f172a54fd35483a2db80dd56cdfb43cb58d1a7396d669de12784a1d81562\"}}")
+
+def run_mm_original_whole(args, config, config_path):
+    core_path = ROOT / EXPECTED['coreAdapter']['path']
+    if hashlib.sha256(core_path.read_bytes()).hexdigest() != EXPECTED['coreAdapter']['SHA256']:
+        raise ValueError('exact reviewed MM core bytes required')
+    spec = importlib.util.spec_from_file_location('hanja_exact_mm_u8585_core', core_path)
+    core = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(core)
+    core.EXPECTED = EXPECTED
+    core.CONFIG_FILE = CONFIG_FILE
+    core.ADAPTER_FILE = ADAPTER_FILE
+    return core.run_mm_original_whole(args, config, config_path)

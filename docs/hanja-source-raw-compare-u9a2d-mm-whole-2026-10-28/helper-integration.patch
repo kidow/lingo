@@ -1,0 +1,12 @@
+*** Begin Patch
+*** Update File: scripts/hanja-raw-static-compare.py
+@@
+-    if config.get('kind')=='fixed-mm-original-filled-whole-u77a5':
++    if config.get('kind')=='fixed-mm-original-filled-whole-u9a2d':
++        mm_path=pinned_path('scripts/hanja-static-original-mm-u9a2d.py')
++        require(digest(mm_path.read_bytes())=='7fe96bba46e8e048286bb6de5f354295ed726f023479f1df01e8c0346667e854','fixed original MM 騭 source adapter changed')
++        mm_spec=importlib.util.spec_from_file_location('hanja_fixed_mm_u9a2d',mm_path)
++        mm_adapter=importlib.util.module_from_spec(mm_spec);mm_spec.loader.exec_module(mm_adapter)
++        return mm_adapter.run_mm_original_whole(args,config,config_path)
++    if config.get('kind')=='fixed-mm-original-filled-whole-u77a5':
+*** End Patch

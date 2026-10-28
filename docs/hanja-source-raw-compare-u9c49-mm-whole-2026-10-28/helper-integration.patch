@@ -1,0 +1,17 @@
+*** Begin Patch
+*** Update File: scripts/hanja-raw-static-compare.py
+@@
++    if config.get('kind')=='fixed-mm-original-filled-whole-u9c49':
++        mm_path=pinned_path('scripts/hanja-static-original-mm-u9c49.py')
++        require(digest(mm_path.read_bytes())=='b00e57034f3c25eaa489b25b1be7a2ffd0f06efef6938b2d298226db28664643','fixed original MM 鱉 source adapter changed')
++        mm_spec=importlib.util.spec_from_file_location('hanja_fixed_mm_u9c49',mm_path)
++        mm_adapter=importlib.util.module_from_spec(mm_spec);mm_spec.loader.exec_module(mm_adapter)
++        return mm_adapter.run_mm_original_whole(args,config,config_path)
++    if config.get('kind')=='fixed-mm-original-filled-whole-u91c1':
++        mm_path=pinned_path('scripts/hanja-static-original-mm-u91c1.py')
++        require(digest(mm_path.read_bytes())=='834f1fa225197444dfb9c99a6ee224bcf48f3ebc798d3d980a6482e2ded2e3ac','fixed original MM 釁 source adapter changed')
++        mm_spec=importlib.util.spec_from_file_location('hanja_fixed_mm_u91c1',mm_path)
++        mm_adapter=importlib.util.module_from_spec(mm_spec);mm_spec.loader.exec_module(mm_adapter)
++        return mm_adapter.run_mm_original_whole(args,config,config_path)
+     if config.get('kind')=='fixed-mm-original-filled-whole-u850c':
+*** End Patch
