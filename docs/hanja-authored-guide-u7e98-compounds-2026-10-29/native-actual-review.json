@@ -1,0 +1,57 @@
+{
+  "glyph": "纘",
+  "reviewedAt": "2026-10-29",
+  "status": "pass-bounded-actual-component-review",
+  "reviewer": "ROOT",
+  "nativeBrowserPanel": true,
+  "actualHelperSHA256": "444cf4bb0e05d3d20e748efa091cababd31d30507ad87c20b26abe296763af2e",
+  "profileSHA256": "71eff3e3f948af6d29fc904086a6871151282e70e200f4fd82799da04b43086a",
+  "rendererSHA256": "55db76b01618110165dd5f22d512428550512feb180757814b734e80ffa304d1",
+  "fixtureSHA256": "b6889acd4fdf6234ae8ad4000d088057dd8fb3b1216cd1e71ad10c329e3c8d98",
+  "geometrySHA256": "aa241350799c5b55d739505e9c873cf2e820b1f65f6ae0c428d79a4dc9575f0f",
+  "reusedEvidence": {
+    "record": "native-actual-partial-review.json",
+    "reason": "Renderer, both product helpers, fixture and exact binding unchanged. H changes only residual export lookup, exact target DOM settling and board column selection.",
+    "compact9All25Pens": 225,
+    "customFramesPen1Pen2Pen12": 50,
+    "gateReleaseFrames": 36,
+    "freshPen1PolygonInitialClipReviewed": true
+  },
+  "freshChecks": {
+    "isolatedSSR": 1,
+    "CJS": 390,
+    "ESM": 390,
+    "actualFullRoundResiduals": 12,
+    "allResidualsVisuallyBlank": true,
+    "aggregateFrames": 146,
+    "initialFrames": 50,
+    "boundaryFrames": 21,
+    "endingFrames": 75,
+    "aggregateSamples": 146,
+    "aggregateColumns": 3,
+    "aggregateSamplePx": 240,
+    "wholeStates520px": 29,
+    "wholeStateLabels": "idle/done/selected-zero and exact prefix0..25",
+    "formerFailurePoints520px": [[1,0.625],[2,0.5],[2,0.625],[12,0.375],[12,0.5]],
+    "natural8secondPens": [1,2,12],
+    "naturalStartAndProgress1EndObserved": true,
+    "settledBad": [],
+    "errors": [],
+    "detachedFuturePiecesObserved": false,
+    "missingOrUnexpectedConnectionsObserved": false
+  },
+  "observations": [
+    "All12 actual full-round residual SVGs appeared blank in three overlapping browser-panel screenshots.",
+    "All146 samples were inspected in overlapping native screenshots after React settled. An immediate transient progress mismatch cleared without any code or criteria change; final bad/errors were empty.",
+    "All29 state views were inspected at520px using each current SVG bounding box. Earlier partial crops were superseded by full views.",
+    "Pens1/2/12 natural playback began with the expected current ink and reached progress1 without missing or prematurely detached pieces. Finite checks do not assert every possible intermediate frame."
+  ],
+  "sourceLimits": [
+    "Authored positive placements and exact custom reveal guides retain their documented provenance; this is not an official whole-glyph engine claim.",
+    "Original source-clock and static mapping approvals remain separately pinned.",
+    "Private source bodies, rendered screenshots, credentials and learning records were not saved or transmitted."
+  ],
+  "nativeApproval": true,
+  "actualAppUI": false,
+  "runtimeApplied": false
+}
