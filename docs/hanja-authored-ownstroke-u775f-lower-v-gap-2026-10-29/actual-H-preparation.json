@@ -1,0 +1,84 @@
+{
+  "schema": "hanja-isolated-source-H-preparation/v1",
+  "glyph": "睟",
+  "before": {
+    "path": "scripts/hanja-actual-component-review.mjs",
+    "SHA256": "f88c7cd2386413e1aaeb5c943b5da0be4519a2fcac174f929cd4e2e442e9cb45"
+  },
+  "after": {
+    "path": "scripts/hanja-actual-component-review.mjs",
+    "SHA256": "f7d4d3fb61e6618f26f18301de6d05630de831aaf7c19027fde4ec3c77313fc1"
+  },
+  "patch": {
+    "path": "docs/hanja-authored-ownstroke-u775f-lower-v-gap-2026-10-29/actual-H-integration.patch",
+    "SHA256": "661a9f9e348e03de9fc3456f7ae09cd0c98497a1d430322775d66a7ae9114de8",
+    "ascendingHunks": 15,
+    "forwardInverseExact": true
+  },
+  "profile": {
+    "path": "docs/hanja-authored-ownstroke-u775f-lower-v-gap-2026-10-29/actual-profile-start.json",
+    "SHA256": "e3439444aec97d779baadeebd93d108e62940365638ed79470f6cd19b2944703",
+    "renderer": {
+      "path": "components/hanja/stroke-outlines.tsx",
+      "SHA256": "55db76b01618110165dd5f22d512428550512feb180757814b734e80ffa304d1"
+    },
+    "aggregate": {
+      "path": "lib/hanja-strokes.ts",
+      "SHA256": "c1ac8213b5fbd7a4a39152e60cb0ee0931c15077af01b00674e3827b6e17fae6"
+    },
+    "expectedClosure": 390,
+    "flags": {
+      "profileFinalized": true,
+      "executionEnabled": true,
+      "sharedWindowPending": false,
+      "nativeApproval": false,
+      "runtimeApplied": false
+    }
+  },
+  "checks": {
+    "syntax": true,
+    "RAM": {
+      "sourcePositive": true,
+      "missingNegative4": true,
+      "width16SubstitutionRejected": true,
+      "wholeActualRoute": true,
+      "controlsGenerated": 27,
+      "gates4": true,
+      "aggregate68": true,
+      "fullroundControl": true,
+      "closure390": true,
+      "missingLeafRejected": true
+    },
+    "Su4GuardByteUnchanged": true,
+    "sourcePinsCheckedExcludingPlannedH": 1023,
+    "SSR": 0,
+    "server": 0,
+    "sharedWrites": 0,
+    "rendererChanged": false,
+    "build": false,
+    "fullTypecheck": false
+  },
+  "nativePlan": {
+    "compact13": true,
+    "curveGates4": true,
+    "curveFullRoundResidual4": true,
+    "initial26": true,
+    "boundary3": true,
+    "ending39": true,
+    "aggregate68": true,
+    "states17": true,
+    "natural": [
+      2,
+      8,
+      10,
+      13
+    ],
+    "whole520": true,
+    "endingSamplesNormalizedToActualSharedControls": [
+      0.9999,
+      0.99999999,
+      1
+    ]
+  },
+  "startup": "node scripts/hanja-actual-component-review.mjs --profile docs/hanja-authored-ownstroke-u775f-lower-v-gap-2026-10-29/actual-profile-start.json --profile-sha e3439444aec97d779baadeebd93d108e62940365638ed79470f6cd19b2944703 --port 0"
+}
