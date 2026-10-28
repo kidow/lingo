@@ -1,0 +1,60 @@
+{
+  "schema": "hanja-approved-registration-preparation/v1",
+  "glyph": "鱉",
+  "batch": 1525,
+  "status": "approved-finite-native-bundle-and-registry-patches-prepared-not-applied",
+  "finalNativeReview": {
+    "path": "docs/hanja-authored-ownstroke-u9c49-point-separated-2026-10-29/native-final-review.json",
+    "SHA256": "40b8dce741f6b59f86dce12a34d0151b6db6738bc4cdffd0f1349d5651623c9b"
+  },
+  "fixture": {
+    "path": "docs/hanja-authored-ownstroke-u9c49-point-separated-2026-10-29/fixtures-execution-draft.json",
+    "SHA256": "a6ee0275e1579d6a7c9ba72717b986c8cea246c95429564756d438d5d043135a",
+    "geometrySHA256": "1fd6e47d42849bff951ae055220015761120f7389b36f4f4a4bca1992ab5a5f0",
+    "rootKey": "strokes"
+  },
+  "expectedRegistryBefore": "17b31737feae20285c38fd6e711b3b7a599bddeae455aba3bbbfd9e0ec3c2b8a",
+  "batchFiles": [
+    {
+      "path": "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch1525.json",
+      "SHA256": "bbd222f876c2c8be7345274a02ffadb331f838ed0e5a009b3ef030dc8756c743"
+    },
+    {
+      "path": "lib/hanja-stroke-dictionary-glyphwiki-batch1525.ts",
+      "SHA256": "12fae0c1627a87c9eab5d6021d7df3585a2cf8e9037226617e59945141084f0d"
+    },
+    {
+      "path": "lib/hanja-stroke-dictionary-glyphwiki-batch1525.test.ts",
+      "SHA256": "7628ee9f8280a0717864f5a2a69403190cb8395ff2e77274e08432f183b1a225"
+    }
+  ],
+  "bundlePatch": {
+    "path": "docs/hanja-authored-ownstroke-u9c49-point-separated-2026-10-29/batch1525-approved-bundle.patch",
+    "SHA256": "dc8bf14aabea17a395ff48c59bc36fca974fa79baf1da073f30e690e46877874"
+  },
+  "registryPatch": {
+    "path": "docs/hanja-authored-ownstroke-u9c49-point-separated-2026-10-29/batch1525-approved-registry.patch",
+    "SHA256": "ae99e85b8193969e88a9847874abd5b091dff44a808113a3899d2abf0d9cdd93"
+  },
+  "NOTICE": {
+    "path": "docs/hanja-authored-ownstroke-u9c49-point-separated-2026-10-29/batch1525-NOTICE.md",
+    "SHA256": "a2bd99226a512df758664076d294e9114b13186f1e61bac6632593cd23f12511"
+  },
+  "counts": {
+    "catalogPens": 22,
+    "originalWorkbookCount": 23,
+    "sourceRaw": 25,
+    "sourceCalls": 26,
+    "sourceFilledP": 48,
+    "logicalMasks": 26,
+    "curves": 14,
+    "cardinals": 12
+  },
+  "catalogCorrectionPreserved": true,
+  "sharedHOrRegistryModifiedByChild": false,
+  "actualTestsExecutedByChild": 0,
+  "buildRun": false,
+  "registrationAuthorized": true,
+  "runtimeApplied": false,
+  "activationFollowup": "ROOT applies bundle and registry, runs three focused tests and resolver/count, then changes loader runtime flag and sourceInput.runtimeApplied together to true; nativeAtReviewfalse remains historical."
+}
