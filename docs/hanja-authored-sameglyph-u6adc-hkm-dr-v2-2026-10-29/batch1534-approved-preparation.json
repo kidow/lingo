@@ -1,0 +1,56 @@
+{
+  "schema": "hanja-approved-registration-preparation/v1",
+  "glyph": "櫜",
+  "batch": 1534,
+  "status": "ready-for-ROOT-production-apply-focused3-andcommit",
+  "native": {
+    "path": "docs/hanja-authored-sameglyph-u6adc-hkm-dr-v2-2026-10-29/native-actual-review.json",
+    "SHA256": "16af53034bf51c61495c067bf6bca885561682e78a430113c3ac76c9747e6022",
+    "status": "pass-bounded-actual-sameglyph-mixed-review"
+  },
+  "newFiles": {
+    "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch1534.json": "73e1fa11aa9b8202cae12358eaee1ee4dd97b1432781b743225a3300c4672f20",
+    "lib/hanja-stroke-dictionary-glyphwiki-batch1534.ts": "ca8dae8717235749987ddde3d678ff07f727f2494e56129e531daaf0f55eb5e1",
+    "lib/hanja-stroke-dictionary-glyphwiki-batch1534.test.ts": "75c21514bdc6827a11a167b819ea57a0fae38afd3c741d7d67019353e84a13ec"
+  },
+  "registry": {
+    "path": "lib/hanja-strokes.ts",
+    "beforeSHA256": "d35a5fd69ab7a1939f8d470fe989d13a77582425d5b7240be92c77964fb6cf8e",
+    "afterSHA256": "9dd814f96730aa34bed16354609b7bce89d7607dc12b4ec1d2598d091689aaef",
+    "anchorBatch": 1531
+  },
+  "patches": {
+    "bundle": {
+      "path": "docs/hanja-authored-sameglyph-u6adc-hkm-dr-v2-2026-10-29/batch1534-approved-bundle.patch",
+      "SHA256": "e9305ba433e2bbaec9a979c98fb9885823ec0a5fd8070ec42e394b5a61878a06"
+    },
+    "registry": {
+      "path": "docs/hanja-authored-sameglyph-u6adc-hkm-dr-v2-2026-10-29/batch1534-approved-registry.patch",
+      "SHA256": "681898bb40c1c49eb9249c2b8f90dd588f41cb89250e1d7262537f0b0c68f2b3"
+    }
+  },
+  "NOTICE": {
+    "path": "docs/hanja-authored-sameglyph-u6adc-hkm-dr-v2-2026-10-29/batch1534-NOTICE.md",
+    "SHA256": "1d4805db3a97b38d7a33364b095c62971905042bcdb1d5c230329ded23566aad"
+  },
+  "RAMValidation": {
+    "syntax": true,
+    "result": {
+      "loader": true,
+      "keyOrder": true,
+      "changedRejected": true,
+      "getterCalls": 0,
+      "deepFreeze": true,
+      "sourceFinalNativePinned": true,
+      "productionWritten": false
+    },
+    "liveResolverDeferredToActualProductionTest": true,
+    "historicalSharedHAndRNotPermanentLivePins": true,
+    "noPlaceholderNativeApproval": true
+  },
+  "focusedCommand": "node --test lib/hanja-stroke-dictionary-glyphwiki-batch1534.test.ts",
+  "expectedFocusedTests": 3,
+  "noBuild": true,
+  "noFullTypecheck": true,
+  "actualProductionFilesWritten": false
+}
