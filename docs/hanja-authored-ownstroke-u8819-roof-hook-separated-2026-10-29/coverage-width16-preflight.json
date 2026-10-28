@@ -1,0 +1,64 @@
+{
+  "schema": "hanja-public-source-curve-coverage-preflight/v1",
+  "date": "2026-10-29",
+  "glyph": "蠙",
+  "scope": "원P/Q 불변 논리11mask2만 width16/pad8 fullround 검증. 나머지8곡선 성공은 입력불변으로 재사용. 시작gate·전환·원문시간·실제재생 승인은 별개.",
+  "inputSHA256": {
+    "docs/hanja-authored-ownstroke-u8819-roof-hook-separated-2026-10-29/prepare-execution-width16-draft.mjs": "e7de51d36f8e3cfd74fb359a399c31432d550ea08a7c9fa11bfd041465661cfb",
+    "docs/hanja-authored-ownstroke-u8819-roof-hook-separated-2026-10-29/fixtures-execution-draft.json": "278f211fc2f9d0d48f83e1e0e8dbcb372c3ca1f46babf7ad9bc5705a5c2d386c",
+    "docs/hanja-authored-ownstroke-u8819-roof-hook-separated-2026-10-29/execution-width16-draft-check.json": "526ce00539e218ddc58bc14d3a6ebeb45c3a9511ed4c1dee4f7a2fe093b16946",
+    "docs/hanja-authored-ownstroke-u8819-roof-hook-separated-2026-10-29/coverage-width16-preflight.mjs": "04e9eb95fa9e12ddb9ef05e23b35d66a1808eb1e98696cfe7aceb6210f508381"
+  },
+  "method": "양의 ear 삼각분할 및 원Q4097점·원 padded선분까지 실제거리 상계 + 삼각반지름 1-Lipschitz. 원P/Q flatten0. vertex 실패는 전체Bezier control-hull 재귀 하계로 별도 확인. 수치미확정은 폭부족 증거가 아님.",
+  "numerics": {
+    "margin": 1e-8,
+    "formalIntervalProof": false,
+    "depthLimit": 16,
+    "nodeLimitPerMask": 60000,
+    "BezierEvaluationsPerMask": 4097
+  },
+  "counts": {
+    "curveMasks": 1,
+    "pass": 1,
+    "unproved": 0,
+    "outlier": 0
+  },
+  "units": [
+    {
+      "logical": 11,
+      "mask": 2,
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "radius": 8,
+      "width": 16,
+      "padding": 8,
+      "nodes": 42,
+      "maxDepth": 3,
+      "maxAcceptedUpperDistance": 7.942219046836775,
+      "sourceOutlinePreserved": true,
+      "sourceBezierGuidePreserved": true,
+      "curveDegree": 2,
+      "nativeApproval": false
+    }
+  ],
+  "reusedSuccessfulUnits": {
+    "path": "docs/hanja-authored-ownstroke-u8819-roof-hook-separated-2026-10-29/coverage-ear-preflight.json",
+    "SHA256": "afee93de75b26b13204e34875b9cca8ce301449a356764d15406ff799d1dac3a",
+    "logicalMasks": [
+      "5:1",
+      "6:1",
+      "8:1",
+      "9:2",
+      "12:1",
+      "13:1",
+      "19:1",
+      "20:1"
+    ],
+    "rerun": false
+  },
+  "cardinalMasks": 15,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "sharedFilesChanged": false,
+  "serverStarts": 0,
+  "buildRun": false
+}
