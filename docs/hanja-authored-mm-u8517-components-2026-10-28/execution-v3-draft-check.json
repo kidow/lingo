@@ -1,0 +1,1253 @@
+{
+  "schema": "hanja-authored-MM-execution-source-check/v1",
+  "date": "2026-10-28",
+  "glyph": "蔗",
+  "status": "PASS-source-normalization-affine-and-start-gate-code-only",
+  "inputSHA256": {
+    "docs/hanja-authored-mm-u8517-components-2026-10-28/recipe-point5-contact-point13-v3.json": "7c1b0830f3c320b1586e78be5f488abe108efb3a2e6c0abb932a7ab2ce86edc9",
+    "docs/hanja-official-media-compare-u8517-2026-10-28/native-clock-review.json": "c2eb041bb7e1b313264cc379483e59acc8e9d45a837774af4eae50bd81f57631",
+    "docs/hanja-authored-mm-u8517-components-2026-10-28/native-static-v3-review.json": "3855c090b71032c587ed5424321cd7f3ed5adcacb27bc4343ec3ceb1654eb43d",
+    "lib/hanja-stroke-outline.ts": "b4d289d1911c4d43934dfad39c4cfbe22a246303bb7012114d16786688c36c40",
+    "components/hanja/stroke-outlines.tsx": "cb4d80f57dbd8ad9815b5b90128ece5171a678a3b1c24e94956c2ac9fff91f88",
+    "docs/hanja-source-original-u8517-mm-2026-10-27/source-record.json": "b1525a70500355aefea2296b3a3363de753774d18babc6ba03d621bc98bda516",
+    "public/hanja-strokes/MAKEMEAHANZI-COPYING.txt": "df2e856c73d2ddf036ba95556e25a27163de5cae6ef80e9509a86ec8ece9f84f",
+    "public/hanja-strokes/ARPHICPL.txt": "76430f0e943a5a088af54d44a58af187be53528fffdfe5ce6abdfc44d508f78f",
+    "docs/hanja-authored-donor-u5b7d-u5341-mm-2026-10-28/donor-source-record.json": "ef9a8cc552dde368f0b7cfaf00960f994b9c05a9b42742ec26d18ffe89071336",
+    "docs/hanja-authored-mm-u8517-components-2026-10-28/prepare-execution-v3-draft.mjs": "3ff152289371411763b46655187dddcacf40871c7ac0128955542ecd33868b8a"
+  },
+  "logicalPens": 15,
+  "segments": 15,
+  "bodySourcePathsIdentityPreserved": 9,
+  "placedGrassPaths": 4,
+  "distinctPublicSourcePathsForCoverage": 13,
+  "sourceCommandAndControlPointsPreserved": true,
+  "BezierFlattened": false,
+  "sourceOriginalDAndMedianEdited": false,
+  "exactControlAndMedianFrameBinding": true,
+  "maskSourceWidthOriginalMM": 200,
+  "maskSourcePaddingOriginalMM": 100,
+  "sourceNormalizedWidth100": 20,
+  "sourceNormalizedPadding100": 10,
+  "medianPolylineWeight": "10 + exact source-normalized polyline length; display policy only",
+  "gateTests": "actual outlineStartClip at0,1e-6,until-1e-8,until; no NaN/Infinity",
+  "bodyObservedDirections": [
+    "left horizontal right",
+    "left vertical down",
+    "right horizontal right",
+    "right vertical down",
+    "straight downward short point without oblique course",
+    "horizontal right",
+    "down curving left",
+    "horizontal right",
+    "vertical down",
+    "vertical down",
+    "horizontal right",
+    "down-left point",
+    "mostly downward slightly-left point",
+    "down-right point",
+    "down-right point"
+  ],
+  "trace": [
+    {
+      "logical": 1,
+      "source": "donor",
+      "sourcePathOneBased": 1,
+      "originalDSHA256": "81ef7695c19106ecf3f327f40c96ff027336bd5cd7bbf6feb59e05f6c167d14b",
+      "originalMedianSHA256": "bf349a3ff4cf80c7d3a1a31d0a049f140176a2d27baf730d0dab97fff84e1414",
+      "sourceMatrixExact": [
+        "1859/6584",
+        "-184555/14412376",
+        "0",
+        "115/176",
+        "1298521/6584",
+        "741496858/1801547"
+      ],
+      "placedOutlineMatrixExact": [
+        "1859/65840",
+        "36911/28824752",
+        "0",
+        "-23/352",
+        "1298521/65840",
+        "439947721/9007735"
+      ],
+      "maskOnlyTransformExact": [
+        "1859/6584",
+        "184555/14412376",
+        "0",
+        "115/176",
+        "1298521/65840",
+        "-718148107/72061880"
+      ],
+      "sourceCommandSequence": [
+        "M",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "L",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "L",
+        "Z"
+      ],
+      "placedCommandSequence": [
+        "M",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "L",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "L",
+        "Z"
+      ],
+      "controlPairs": 29,
+      "normalizationApplications": 1,
+      "BezierFlattened": false,
+      "sourceGeometryEdited": false,
+      "sourceMedianEdited": false,
+      "placedAndMaskFramesExactlyEquivalent": true,
+      "exactControlPointRoundTrips": true,
+      "medianFirstDeltaSourceNormalized100": [
+        6.799999999999999,
+        2
+      ],
+      "medianOverallDeltaSourceNormalized100": [
+        82.3,
+        -3.3999999999999986
+      ],
+      "maskPolylineLengthSourceNormalized100": 83.59167769064152,
+      "displayWeight": 93.59167769064152,
+      "upstreamMicroclockEquivalent": false
+    },
+    {
+      "logical": 2,
+      "source": "donor",
+      "sourcePathOneBased": 2,
+      "originalDSHA256": "5d2d698df61b4c3ba2e5dd1efd456e4a1eadd894f20e51615ec9cbaee3a3cffe",
+      "originalMedianSHA256": "7950a4789cacf0a66067bc081a9ce013fc7c5ce020d7379ca53d7fddc89503b7",
+      "sourceMatrixExact": [
+        "103/139",
+        "0",
+        "-4755/117316",
+        "42/211",
+        "6918337/117316",
+        "133683/211"
+      ],
+      "placedOutlineMatrixExact": [
+        "103/1390",
+        "0",
+        "-951/234632",
+        "-21/1055",
+        "6918337/1173160",
+        "56217/2110"
+      ],
+      "maskOnlyTransformExact": [
+        "103/139",
+        "0",
+        "4755/117316",
+        "42/211",
+        "2638837/1173160",
+        "18417/2110"
+      ],
+      "sourceCommandSequence": [
+        "M",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "L",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "L",
+        "Z"
+      ],
+      "placedCommandSequence": [
+        "M",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "L",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "L",
+        "Z"
+      ],
+      "controlPairs": 27,
+      "normalizationApplications": 1,
+      "BezierFlattened": false,
+      "sourceGeometryEdited": false,
+      "sourceMedianEdited": false,
+      "placedAndMaskFramesExactlyEquivalent": true,
+      "exactControlPointRoundTrips": true,
+      "medianFirstDeltaSourceNormalized100": [
+        2.799999999999997,
+        0.7999999999999989
+      ],
+      "medianOverallDeltaSourceNormalized100": [
+        5.100000000000001,
+        84.39999999999999
+      ],
+      "maskPolylineLengthSourceNormalized100": 88.1772536035266,
+      "displayWeight": 98.1772536035266,
+      "upstreamMicroclockEquivalent": false
+    },
+    {
+      "logical": 3,
+      "source": "donor",
+      "sourcePathOneBased": 1,
+      "originalDSHA256": "81ef7695c19106ecf3f327f40c96ff027336bd5cd7bbf6feb59e05f6c167d14b",
+      "originalMedianSHA256": "bf349a3ff4cf80c7d3a1a31d0a049f140176a2d27baf730d0dab97fff84e1414",
+      "sourceMatrixExact": [
+        "2403/6584",
+        "-124715/14412376",
+        "0",
+        "115/176",
+        "798051/1646",
+        "3070139997/7206188"
+      ],
+      "placedOutlineMatrixExact": [
+        "2403/65840",
+        "24943/28824752",
+        "0",
+        "-23/352",
+        "798051/16460",
+        "3415429203/72061880"
+      ],
+      "maskOnlyTransformExact": [
+        "2403/6584",
+        "124715/14412376",
+        "0",
+        "115/176",
+        "798051/16460",
+        "-102787584/9007735"
+      ],
+      "sourceCommandSequence": [
+        "M",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "L",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "L",
+        "Z"
+      ],
+      "placedCommandSequence": [
+        "M",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "L",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "L",
+        "Z"
+      ],
+      "controlPairs": 29,
+      "normalizationApplications": 1,
+      "BezierFlattened": false,
+      "sourceGeometryEdited": false,
+      "sourceMedianEdited": false,
+      "placedAndMaskFramesExactlyEquivalent": true,
+      "exactControlPointRoundTrips": true,
+      "medianFirstDeltaSourceNormalized100": [
+        6.799999999999999,
+        2
+      ],
+      "medianOverallDeltaSourceNormalized100": [
+        82.3,
+        -3.3999999999999986
+      ],
+      "maskPolylineLengthSourceNormalized100": 83.59167769064152,
+      "displayWeight": 93.59167769064152,
+      "upstreamMicroclockEquivalent": false
+    },
+    {
+      "logical": 4,
+      "source": "donor",
+      "sourcePathOneBased": 2,
+      "originalDSHA256": "5d2d698df61b4c3ba2e5dd1efd456e4a1eadd894f20e51615ec9cbaee3a3cffe",
+      "originalMedianSHA256": "7950a4789cacf0a66067bc081a9ce013fc7c5ce020d7379ca53d7fddc89503b7",
+      "sourceMatrixExact": [
+        "121/139",
+        "0",
+        "5379/58658",
+        "203/844",
+        "8779977/58658",
+        "549391/844"
+      ],
+      "placedOutlineMatrixExact": [
+        "121/1390",
+        "0",
+        "5379/586580",
+        "-203/8440",
+        "8779977/586580",
+        "210209/8440"
+      ],
+      "maskOnlyTransformExact": [
+        "121/139",
+        "0",
+        "-5379/58658",
+        "203/844",
+        "13621077/586580",
+        "27509/8440"
+      ],
+      "sourceCommandSequence": [
+        "M",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "L",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "L",
+        "Z"
+      ],
+      "placedCommandSequence": [
+        "M",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "L",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "L",
+        "Z"
+      ],
+      "controlPairs": 27,
+      "normalizationApplications": 1,
+      "BezierFlattened": false,
+      "sourceGeometryEdited": false,
+      "sourceMedianEdited": false,
+      "placedAndMaskFramesExactlyEquivalent": true,
+      "exactControlPointRoundTrips": true,
+      "medianFirstDeltaSourceNormalized100": [
+        2.799999999999997,
+        0.7999999999999989
+      ],
+      "medianOverallDeltaSourceNormalized100": [
+        5.100000000000001,
+        84.39999999999999
+      ],
+      "maskPolylineLengthSourceNormalized100": 88.1772536035266,
+      "displayWeight": 98.1772536035266,
+      "upstreamMicroclockEquivalent": false
+    },
+    {
+      "logical": 5,
+      "source": "recipient",
+      "sourcePathOneBased": 4,
+      "originalDSHA256": "4823ffb9ea99a1fef455d38a3841e3a77e251119f27e9861ecff8850776afd39",
+      "originalMedianSHA256": "a3fda391a14be698e0e97be2d5570a7104c2a92f3d6408465a72f1b1ea43bfcc",
+      "sourceMatrixExact": [
+        "253/549",
+        "-299/549",
+        "299/549",
+        "253/549",
+        "-68537/1098",
+        "334113571/549000"
+      ],
+      "placedOutlineMatrixExact": [
+        "253/5490",
+        "299/5490",
+        "299/5490",
+        "-253/5490",
+        "-68537/10980",
+        "159986429/5490000"
+      ],
+      "maskOnlyTransformExact": [
+        "253/549",
+        "299/549",
+        "-299/549",
+        "253/549",
+        "469663/10980",
+        "-67713571/5490000"
+      ],
+      "sourceCommandSequence": [
+        "M",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Z"
+      ],
+      "placedCommandSequence": [
+        "M",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Z"
+      ],
+      "controlPairs": 17,
+      "normalizationApplications": 1,
+      "BezierFlattened": false,
+      "sourceGeometryEdited": false,
+      "sourceMedianEdited": false,
+      "placedAndMaskFramesExactlyEquivalent": true,
+      "exactControlPointRoundTrips": true,
+      "medianFirstDeltaSourceNormalized100": [
+        6,
+        3.799999999999997
+      ],
+      "medianOverallDeltaSourceNormalized100": [
+        7.800000000000004,
+        6.599999999999998
+      ],
+      "maskPolylineLengthSourceNormalized100": 10.43077575724453,
+      "displayWeight": 20.430775757244533,
+      "upstreamMicroclockEquivalent": false
+    },
+    {
+      "logical": 6,
+      "source": "recipient",
+      "sourcePathOneBased": 5,
+      "originalDSHA256": "1e315614948105e2fd2ad909bdd124d5ebbc154f7840513332d6147e8467a39d",
+      "originalMedianSHA256": "985b35403a3248ce8271f01e9cd0d9e1361497bcd7fe947875bc3d581c2a52ce",
+      "sourceMatrixExact": [
+        "1",
+        "0",
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      "placedOutlineMatrixExact": [
+        "1/10",
+        "0",
+        "0",
+        "-1/10",
+        "0",
+        "90"
+      ],
+      "maskOnlyTransformExact": [
+        "1",
+        "0",
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      "sourceCommandSequence": [
+        "M",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "C",
+        "Z"
+      ],
+      "placedCommandSequence": [
+        "M",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "C",
+        "Z"
+      ],
+      "controlPairs": 20,
+      "normalizationApplications": 1,
+      "BezierFlattened": false,
+      "sourceGeometryEdited": false,
+      "sourceMedianEdited": false,
+      "placedAndMaskFramesExactlyEquivalent": true,
+      "exactControlPointRoundTrips": true,
+      "medianFirstDeltaSourceNormalized100": [
+        3.200000000000003,
+        1.1000000000000014
+      ],
+      "medianOverallDeltaSourceNormalized100": [
+        40.2,
+        -3.1000000000000014
+      ],
+      "maskPolylineLengthSourceNormalized100": 40.73806981548326,
+      "displayWeight": 50.73806981548326,
+      "upstreamMicroclockEquivalent": false
+    },
+    {
+      "logical": 7,
+      "source": "recipient",
+      "sourcePathOneBased": 6,
+      "originalDSHA256": "808a4bb8d5120894f37593e2d4cf6bbccb9a19827ccd8491627e39754d3af0d9",
+      "originalMedianSHA256": "76b68bc67ad51b90af9b6391ff516a1d8de63e4cc0549e0f3750abc7ac68e0af",
+      "sourceMatrixExact": [
+        "1",
+        "0",
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      "placedOutlineMatrixExact": [
+        "1/10",
+        "0",
+        "0",
+        "-1/10",
+        "0",
+        "90"
+      ],
+      "maskOnlyTransformExact": [
+        "1",
+        "0",
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      "sourceCommandSequence": [
+        "M",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "C",
+        "Z"
+      ],
+      "placedCommandSequence": [
+        "M",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "C",
+        "Z"
+      ],
+      "controlPairs": 26,
+      "normalizationApplications": 1,
+      "BezierFlattened": false,
+      "sourceGeometryEdited": false,
+      "sourceMedianEdited": false,
+      "placedAndMaskFramesExactlyEquivalent": true,
+      "exactControlPointRoundTrips": true,
+      "medianFirstDeltaSourceNormalized100": [
+        1.5,
+        1.3000000000000043
+      ],
+      "medianOverallDeltaSourceNormalized100": [
+        -17.7,
+        55.1
+      ],
+      "maskPolylineLengthSourceNormalized100": 61.57757289349884,
+      "displayWeight": 71.57757289349884,
+      "upstreamMicroclockEquivalent": false
+    },
+    {
+      "logical": 8,
+      "source": "recipient",
+      "sourcePathOneBased": 7,
+      "originalDSHA256": "9fd05312b5f28db7fdeaf1534b91ca5dd17ac05b78767b3bf033ba084ec3eb5d",
+      "originalMedianSHA256": "c333f715d21e9d0542c9e748e608721f98077b838ac148b602098515fb3700fb",
+      "sourceMatrixExact": [
+        "1",
+        "0",
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      "placedOutlineMatrixExact": [
+        "1/10",
+        "0",
+        "0",
+        "-1/10",
+        "0",
+        "90"
+      ],
+      "maskOnlyTransformExact": [
+        "1",
+        "0",
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      "sourceCommandSequence": [
+        "M",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "L",
+        "Q",
+        "L",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "L",
+        "Q",
+        "L",
+        "Z"
+      ],
+      "placedCommandSequence": [
+        "M",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "L",
+        "Q",
+        "L",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "L",
+        "Q",
+        "L",
+        "Z"
+      ],
+      "controlPairs": 27,
+      "normalizationApplications": 1,
+      "BezierFlattened": false,
+      "sourceGeometryEdited": false,
+      "sourceMedianEdited": false,
+      "placedAndMaskFramesExactlyEquivalent": true,
+      "exactControlPointRoundTrips": true,
+      "medianFirstDeltaSourceNormalized100": [
+        3.3999999999999986,
+        0.7999999999999972
+      ],
+      "medianOverallDeltaSourceNormalized100": [
+        49.7,
+        -2.200000000000003
+      ],
+      "maskPolylineLengthSourceNormalized100": 50.24200352579861,
+      "displayWeight": 60.24200352579861,
+      "upstreamMicroclockEquivalent": false
+    },
+    {
+      "logical": 9,
+      "source": "recipient",
+      "sourcePathOneBased": 8,
+      "originalDSHA256": "078293f58fe6ab4d87591d2a4c476892d3c471c3727dd485f107e48ce9151a34",
+      "originalMedianSHA256": "6c5a50c0be567ab54607221810ac7c85ac5742fcaac125e403af0290342a446d",
+      "sourceMatrixExact": [
+        "1",
+        "0",
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      "placedOutlineMatrixExact": [
+        "1/10",
+        "0",
+        "0",
+        "-1/10",
+        "0",
+        "90"
+      ],
+      "maskOnlyTransformExact": [
+        "1",
+        "0",
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      "sourceCommandSequence": [
+        "M",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "L",
+        "Q",
+        "Q",
+        "Q",
+        "L",
+        "Q",
+        "Q",
+        "L",
+        "Z"
+      ],
+      "placedCommandSequence": [
+        "M",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "L",
+        "Q",
+        "Q",
+        "Q",
+        "L",
+        "Q",
+        "Q",
+        "L",
+        "Z"
+      ],
+      "controlPairs": 26,
+      "normalizationApplications": 1,
+      "BezierFlattened": false,
+      "sourceGeometryEdited": false,
+      "sourceMedianEdited": false,
+      "placedAndMaskFramesExactlyEquivalent": true,
+      "exactControlPointRoundTrips": true,
+      "medianFirstDeltaSourceNormalized100": [
+        1.7999999999999972,
+        0.6999999999999957
+      ],
+      "medianOverallDeltaSourceNormalized100": [
+        5.399999999999999,
+        25.700000000000003
+      ],
+      "maskPolylineLengthSourceNormalized100": 27.760605944505144,
+      "displayWeight": 37.760605944505144,
+      "upstreamMicroclockEquivalent": false
+    },
+    {
+      "logical": 10,
+      "source": "recipient",
+      "sourcePathOneBased": 9,
+      "originalDSHA256": "b98f2d83aa84337645e8e3fee3b290d225c9d910e7d96895585722b400dda0cf",
+      "originalMedianSHA256": "8c9e03305fa484f0757a066617dcf5bbf04b8a47f33284daa15cf16a360afb39",
+      "sourceMatrixExact": [
+        "1",
+        "0",
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      "placedOutlineMatrixExact": [
+        "1/10",
+        "0",
+        "0",
+        "-1/10",
+        "0",
+        "90"
+      ],
+      "maskOnlyTransformExact": [
+        "1",
+        "0",
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      "sourceCommandSequence": [
+        "M",
+        "Q",
+        "L",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "L",
+        "Q",
+        "C",
+        "Z"
+      ],
+      "placedCommandSequence": [
+        "M",
+        "Q",
+        "L",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "L",
+        "Q",
+        "C",
+        "Z"
+      ],
+      "controlPairs": 24,
+      "normalizationApplications": 1,
+      "BezierFlattened": false,
+      "sourceGeometryEdited": false,
+      "sourceMedianEdited": false,
+      "placedAndMaskFramesExactlyEquivalent": true,
+      "exactControlPointRoundTrips": true,
+      "medianFirstDeltaSourceNormalized100": [
+        3.200000000000003,
+        3.9000000000000057
+      ],
+      "medianOverallDeltaSourceNormalized100": [
+        -1.3999999999999986,
+        22.800000000000004
+      ],
+      "maskPolylineLengthSourceNormalized100": 24.926109369363417,
+      "displayWeight": 34.92610936936342,
+      "upstreamMicroclockEquivalent": false
+    },
+    {
+      "logical": 11,
+      "source": "recipient",
+      "sourcePathOneBased": 10,
+      "originalDSHA256": "a42ba8ba87f4bcdbd02808a59f34cfb9a639a24020db4b9c847ba605f03ea05a",
+      "originalMedianSHA256": "96c6b2a8c684c0ef63687b99c81b1eaf26a519fa1c6eedc0417f9bcd66c06aee",
+      "sourceMatrixExact": [
+        "1",
+        "0",
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      "placedOutlineMatrixExact": [
+        "1/10",
+        "0",
+        "0",
+        "-1/10",
+        "0",
+        "90"
+      ],
+      "maskOnlyTransformExact": [
+        "1",
+        "0",
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      "sourceCommandSequence": [
+        "M",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "L",
+        "Q",
+        "Q",
+        "C",
+        "Z"
+      ],
+      "placedCommandSequence": [
+        "M",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "L",
+        "Q",
+        "Q",
+        "C",
+        "Z"
+      ],
+      "controlPairs": 19,
+      "normalizationApplications": 1,
+      "BezierFlattened": false,
+      "sourceGeometryEdited": false,
+      "sourceMedianEdited": false,
+      "placedAndMaskFramesExactlyEquivalent": true,
+      "exactControlPointRoundTrips": true,
+      "medianFirstDeltaSourceNormalized100": [
+        2,
+        -1.2000000000000028
+      ],
+      "medianOverallDeltaSourceNormalized100": [
+        15.600000000000001,
+        -1.5
+      ],
+      "maskPolylineLengthSourceNormalized100": 16.159526075247445,
+      "displayWeight": 26.159526075247445,
+      "upstreamMicroclockEquivalent": false
+    },
+    {
+      "logical": 12,
+      "source": "recipient",
+      "sourcePathOneBased": 11,
+      "originalDSHA256": "e0b38493b93366ad5d7c325778fe38fd23a7e4b0a313229e5ea856d8c11f7fb0",
+      "originalMedianSHA256": "0ff7a3641a384addf32a6427e081e36ed80973754ff4130cf96752b7f61abd61",
+      "sourceMatrixExact": [
+        "1",
+        "0",
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      "placedOutlineMatrixExact": [
+        "1/10",
+        "0",
+        "0",
+        "-1/10",
+        "0",
+        "90"
+      ],
+      "maskOnlyTransformExact": [
+        "1",
+        "0",
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      "sourceCommandSequence": [
+        "M",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Z"
+      ],
+      "placedCommandSequence": [
+        "M",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Z"
+      ],
+      "controlPairs": 17,
+      "normalizationApplications": 1,
+      "BezierFlattened": false,
+      "sourceGeometryEdited": false,
+      "sourceMedianEdited": false,
+      "placedAndMaskFramesExactlyEquivalent": true,
+      "exactControlPointRoundTrips": true,
+      "medianFirstDeltaSourceNormalized100": [
+        -1.5999999999999943,
+        6.199999999999989
+      ],
+      "medianOverallDeltaSourceNormalized100": [
+        -5.699999999999996,
+        15
+      ],
+      "maskPolylineLengthSourceNormalized100": 16.11136815690665,
+      "displayWeight": 26.11136815690665,
+      "upstreamMicroclockEquivalent": false
+    },
+    {
+      "logical": 13,
+      "source": "recipient",
+      "sourcePathOneBased": 12,
+      "originalDSHA256": "573175155315cfbd23565a581be2277dd99392730ee4f6b764b1706401e0e5e8",
+      "originalMedianSHA256": "044d86208d1478ac15e0ef8eb85efc8ed1020962f5e19ca5cae13c30ae594585",
+      "sourceMatrixExact": [
+        "1137815/1622879",
+        "-1166676/1622879",
+        "1166676/1622879",
+        "1137815/1622879",
+        "313434431/3245758",
+        "579109596/1622879"
+      ],
+      "placedOutlineMatrixExact": [
+        "227563/3245758",
+        "583338/8114395",
+        "583338/8114395",
+        "-227563/3245758",
+        "313434431/32457580",
+        "440740752/8114395"
+      ],
+      "maskOnlyTransformExact": [
+        "1137815/1622879",
+        "1166676/1622879",
+        "-1166676/1622879",
+        "1137815/1622879",
+        "2413451231/32457580",
+        "-71275998/8114395"
+      ],
+      "sourceCommandSequence": [
+        "M",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "L",
+        "Q",
+        "Q",
+        "Q",
+        "Z"
+      ],
+      "placedCommandSequence": [
+        "M",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "L",
+        "Q",
+        "Q",
+        "Q",
+        "Z"
+      ],
+      "controlPairs": 16,
+      "normalizationApplications": 1,
+      "BezierFlattened": false,
+      "sourceGeometryEdited": false,
+      "sourceMedianEdited": false,
+      "placedAndMaskFramesExactlyEquivalent": true,
+      "exactControlPointRoundTrips": true,
+      "medianFirstDeltaSourceNormalized100": [
+        3.3999999999999986,
+        6.599999999999994
+      ],
+      "medianOverallDeltaSourceNormalized100": [
+        4.299999999999997,
+        10.200000000000003
+      ],
+      "maskPolylineLengthSourceNormalized100": 11.135079540364131,
+      "displayWeight": 21.13507954036413,
+      "upstreamMicroclockEquivalent": false
+    },
+    {
+      "logical": 14,
+      "source": "recipient",
+      "sourcePathOneBased": 13,
+      "originalDSHA256": "d73fe9468287d4c251338d852d7473625bb03d505fd9b1b5cd7a2c1a71f48114",
+      "originalMedianSHA256": "ee8a88b576b13df5fb1cb18920cc4c35e594517d3f2a5eddec5d0ff76470c205",
+      "sourceMatrixExact": [
+        "1",
+        "0",
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      "placedOutlineMatrixExact": [
+        "1/10",
+        "0",
+        "0",
+        "-1/10",
+        "0",
+        "90"
+      ],
+      "maskOnlyTransformExact": [
+        "1",
+        "0",
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      "sourceCommandSequence": [
+        "M",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "L",
+        "Q",
+        "Q",
+        "Q",
+        "Z"
+      ],
+      "placedCommandSequence": [
+        "M",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "L",
+        "Q",
+        "Q",
+        "Q",
+        "Z"
+      ],
+      "controlPairs": 16,
+      "normalizationApplications": 1,
+      "BezierFlattened": false,
+      "sourceGeometryEdited": false,
+      "sourceMedianEdited": false,
+      "placedAndMaskFramesExactlyEquivalent": true,
+      "exactControlPointRoundTrips": true,
+      "medianFirstDeltaSourceNormalized100": [
+        5.100000000000001,
+        7.299999999999997
+      ],
+      "medianOverallDeltaSourceNormalized100": [
+        6.300000000000004,
+        10.5
+      ],
+      "maskPolylineLengthSourceNormalized100": 12.322656242484289,
+      "displayWeight": 22.32265624248429,
+      "upstreamMicroclockEquivalent": false
+    },
+    {
+      "logical": 15,
+      "source": "recipient",
+      "sourcePathOneBased": 14,
+      "originalDSHA256": "5f5f894eaf3de3754518b2d877cb009f0dade27e625781b090ec2b65cc0ebcec",
+      "originalMedianSHA256": "4ef5095076f46df693016308db43ee8e591e5c2815172fec010497a306e03eb0",
+      "sourceMatrixExact": [
+        "1",
+        "0",
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      "placedOutlineMatrixExact": [
+        "1/10",
+        "0",
+        "0",
+        "-1/10",
+        "0",
+        "90"
+      ],
+      "maskOnlyTransformExact": [
+        "1",
+        "0",
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      "sourceCommandSequence": [
+        "M",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Z"
+      ],
+      "placedCommandSequence": [
+        "M",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Q",
+        "Z"
+      ],
+      "controlPairs": 17,
+      "normalizationApplications": 1,
+      "BezierFlattened": false,
+      "sourceGeometryEdited": false,
+      "sourceMedianEdited": false,
+      "placedAndMaskFramesExactlyEquivalent": true,
+      "exactControlPointRoundTrips": true,
+      "medianFirstDeltaSourceNormalized100": [
+        9,
+        8.700000000000003
+      ],
+      "medianOverallDeltaSourceNormalized100": [
+        11.400000000000006,
+        15.299999999999997
+      ],
+      "maskPolylineLengthSourceNormalized100": 19.588146230329297,
+      "displayWeight": 29.588146230329297,
+      "upstreamMicroclockEquivalent": false
+    }
+  ],
+  "remainingNativeRisks": [
+    "Fullround guide coverage is a separate source-local preflight; source-affine equivalence alone is insufficient.",
+    "Original source median first tangent, growth, start gate release, completion and actualR replay remain unreviewed.",
+    "The grass uses independently placed original十 donor paths; no private geometry, source original-whole or font-identity claim.",
+    "Original D and median records remain byte-identical. Point5 and13 have explicit positive affine placements; body9 stays identity. Filled weight/serifs/slopes differ from domestic font."
+  ],
+  "nativeApproval": false,
+  "runtimeApplied": false
+}

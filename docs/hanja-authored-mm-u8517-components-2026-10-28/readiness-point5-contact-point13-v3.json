@@ -1,0 +1,144 @@
+{
+  "schema": "hanja-authored-MM-component-readiness/v1",
+  "date": "2026-10-28",
+  "glyph": "蔗",
+  "variantId": "authored15-u8517-point5-H6-contact-point13-downleft-v3",
+  "status": "two-public-source-corrections-pending-ROOT-fresh-static",
+  "locallyAuthoredRoot": true,
+  "mixedParts": true,
+  "originalWhole": false,
+  "originalMMWhole": false,
+  "previousRecipe": {
+    "path": "docs/hanja-authored-mm-u8517-components-2026-10-28/recipe-point5-down-v2.json",
+    "SHA256": "c9a8ce1441bb7d47eff26847b13a00cae63431b3e1379430677272d9d1071c1d"
+  },
+  "previousV2StaticReview": {
+    "path": "docs/hanja-authored-mm-u8517-components-2026-10-28/native-static-point5-down-v2-review.json",
+    "SHA256": "751e893d653f4815114327572b2465bbd61d62513f7bf1f4a93a86b9afbd859d"
+  },
+  "preparationScript": {
+    "path": "docs/hanja-authored-mm-u8517-components-2026-10-28/prepare-point5-contact-point13-v3.mjs",
+    "SHA256": "4201ae4ef6f8cc836a9103eb2786aca8945a9b95cc5c36af2ccdc72f7bfc1caf"
+  },
+  "codeFacts": {
+    "point5V2LinearAndXTranslationPreserved": true,
+    "point5OnlyYTranslation": true,
+    "point5H6ActualCurvedContoursSharedInteriorWitness": true,
+    "point13SameOriginalPath12": true,
+    "point13PositiveRotationNotGlyphMirror": true,
+    "sourceDAndAllMedianPointsEdited": false,
+    "other13PartsUnchanged": true,
+    "grass4MatricesUnchanged": true
+  },
+  "point5Contact": {
+    "sourceFrame": "Original public MM Y-up coordinates",
+    "pointOriginalSourcePathOneBased": 4,
+    "horizontalOriginalSourcePathOneBased": 5,
+    "pointOriginalDSHA256": "4823ffb9ea99a1fef455d38a3841e3a77e251119f27e9861ecff8850776afd39",
+    "horizontalOriginalDSHA256": "1e315614948105e2fd2ad909bdd124d5ebbc154f7840513332d6147e8467a39d",
+    "witnessXExact": "570449/1098",
+    "originalPointBottomAtWitnessX": 578.7881280044686,
+    "originalH6TopAtWitnessX": 566.6672732627923,
+    "originalActualCurveGap": 12.12085474167634,
+    "authorPenetration": 2,
+    "translationYExact": "-14121/1000",
+    "translationY": -14.121,
+    "rounding": "Downward to1/1000 originalMMunit after actual contour gap+2",
+    "strictInteriorWitnessExact": [
+      "570449/1098",
+      "565667/1000"
+    ],
+    "strictInteriorWitness": [
+      519.5346083788706,
+      565.667
+    ],
+    "nonzeroWinding": {
+      "point": 1,
+      "horizontal": 1
+    },
+    "positiveBoundaryClearanceLower": {
+      "point": 0.8844253087614867,
+      "horizontal": 0.5414960837499699
+    },
+    "clearanceMethod": "deCasteljau convex-control-box subdivision, depth24; every box separated from witness by>0.01 with numeric margin1e-8. Actual contour ray crossings establish nonzero winding. Bounded numerical source certificate, not formal interval/raster proof.",
+    "actualSharedInteriorConfirmed": true,
+    "controlBBoxContactUsed": false,
+    "nativeOrRasterContactApproved": false
+  },
+  "point13Direction": {
+    "matrix": [
+      0.7011089551346712,
+      -0.7188927825179819,
+      0.7188927825179819,
+      0.7011089551346712,
+      96.56740613440682,
+      356.8408957168094
+    ],
+    "matrixExact": [
+      "1137815/1622879",
+      "-1166676/1622879",
+      "1166676/1622879",
+      "1137815/1622879",
+      "313434431/3245758",
+      "579109596/1622879"
+    ],
+    "sourceOriginalMMPathOneBased": 12,
+    "sourceMedianNetExact": [
+      "43",
+      "-102"
+    ],
+    "targetDirectionExact": [
+      "-43",
+      "-102"
+    ],
+    "actualTransformedMedianNetExact": [
+      "-70074907/1622879",
+      "-166224198/1622879"
+    ],
+    "positiveSimilarity": true,
+    "negativeDeterminantGlyphMirror": false,
+    "originalControlBoundsExact": [
+      "433",
+      "5",
+      "517",
+      "138"
+    ],
+    "transformedControlBoundsExact": [
+      "1424634535/3245758",
+      "5",
+      "1658835565/3245758",
+      "138"
+    ],
+    "controlBoundsTopBottomAndCenterPreserved": true,
+    "originalDAndFullMedianEdited": false,
+    "nativePlacementApproved": false,
+    "rule": "Target direction is the original public median net withX negated. Use positive complex rotation and one uniform scale to retain this point original control-bbox height; restore its own public bbox center. Every original D and median point receives that one matrix."
+  },
+  "limits": [
+    "Actual public source shared interior is not native raster contact or whole compatibility approval.",
+    "Point13 preserves its own public control-bbox height and center, not private publisher coordinates.",
+    "Other13 parts reuse unchanged bytes and prior finite static role observations; H11 shorter-span limitation remains unchanged.",
+    "ROOT must freshly view changed5/prefix6, changed13 and whole; source animation and runtime remain unapproved."
+  ],
+  "approval": {
+    "point5Contact": false,
+    "point13Direction": false,
+    "placement": false,
+    "whole": false,
+    "sourceMapping": false,
+    "timing": false,
+    "native": false,
+    "runtime": false
+  },
+  "execution": {
+    "engine": 0,
+    "server": 0,
+    "sharedHOrR": 0,
+    "registration": 0,
+    "build": 0
+  },
+  "recipe": {
+    "path": "docs/hanja-authored-mm-u8517-components-2026-10-28/recipe-point5-contact-point13-v3.json",
+    "SHA256": "7c1b0830f3c320b1586e78be5f488abe108efb3a2e6c0abb932a7ab2ce86edc9"
+  }
+}

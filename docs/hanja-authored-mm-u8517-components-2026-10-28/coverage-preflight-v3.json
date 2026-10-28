@@ -1,0 +1,344 @@
+{
+  "schema": "hanja-public-MM-source-affine-coverage-preflight/v1",
+  "date": "2026-10-28",
+  "glyph": "蔗",
+  "scope": "Full round unplaced source guide only; source-start clip/dash removed. Exact existing affine equivalence transports containment to each placed mask. No source/renderer/native approval.",
+  "inputSHA256": {
+    "docs/hanja-authored-mm-u8517-components-2026-10-28/fixtures-reveal-v3-start-draft.json": "76fef5524f66d150ab05d5a0e2486bcd2ea886bfc857946c5b51e31721912ae4",
+    "docs/hanja-authored-mm-u8517-components-2026-10-28/execution-v3-draft-check.json": "e6c05a2141278938fc4a9c36e25f0cbe07cc809afc7fb1fe05b7785a2b8b3728",
+    "docs/hanja-authored-mm-u8517-components-2026-10-28/recipe-point5-contact-point13-v3.json": "7c1b0830f3c320b1586e78be5f488abe108efb3a2e6c0abb932a7ab2ce86edc9",
+    "docs/hanja-authored-mm-u8517-components-2026-10-28/coverage-preflight-v3.mjs": "a919491fbe759266d2bb32f22c735e7fb927712ccc74ab054ba1aeea181f8a5a",
+    "docs/hanja-authored-mm-u850c-components-2026-10-28/coverage-preflight.json": "a9c8a85a99724f42262dcd5097ba78d78e9c6e0d3f0e731352f9602b5fdd1fee"
+  },
+  "method": "Exact rational simple endpoint-polygon ear triangles plus convex hull of every original quadratic/cubic control polygon. The chord replacement changes winding only within that curve hull, so the union conservatively covers original filled D. Triangle distance bound uses distance to actual source polyline plus triangle radius; no product/source path flattening.",
+  "numerics": {
+    "margin": 1e-8,
+    "triangleDepthLimit": 16,
+    "triangleNodeLimit": 60000,
+    "boundarySamplesPerSourceSegment": 257,
+    "formalIntervalProof": false
+  },
+  "counts": {
+    "distinctOriginalPaths": 13,
+    "logicalMasks": 15,
+    "reusedDonorProofs": 2,
+    "newlyCheckedRecipientPaths": 11,
+    "pass": 13,
+    "outlier": 0,
+    "unproved": 0
+  },
+  "units": [
+    {
+      "key": "donor:1",
+      "source": "donor",
+      "index": 0,
+      "logicalMasks": [
+        1,
+        3
+      ],
+      "sourceOriginalDSHA256": "81ef7695c19106ecf3f327f40c96ff027336bd5cd7bbf6feb59e05f6c167d14b",
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "radiusInUnplacedSource100": 10,
+      "widthInUnplacedSource100": 20,
+      "coverage": {
+        "covered": true,
+        "nodes": 306,
+        "maxDepth": 3,
+        "maxAcceptedUpperDistance": 9.942254992441853
+      },
+      "outliers": [],
+      "outlierBoundarySegments": 0,
+      "positiveAffineContainmentReusedForTheseMasks": true,
+      "nativeApproval": false,
+      "reusedUnchangedSourceCoverage": {
+        "path": "docs/hanja-authored-mm-u850c-components-2026-10-28/coverage-preflight.json",
+        "SHA256": "a9c8a85a99724f42262dcd5097ba78d78e9c6e0d3f0e731352f9602b5fdd1fee",
+        "sameOriginalDonorRecord": true,
+        "sameUnplacedNormalizationWidthPadding": true,
+        "positiveAffineTransportOnly": true
+      }
+    },
+    {
+      "key": "donor:2",
+      "source": "donor",
+      "index": 1,
+      "logicalMasks": [
+        2,
+        4
+      ],
+      "sourceOriginalDSHA256": "5d2d698df61b4c3ba2e5dd1efd456e4a1eadd894f20e51615ec9cbaee3a3cffe",
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "radiusInUnplacedSource100": 10,
+      "widthInUnplacedSource100": 20,
+      "coverage": {
+        "covered": true,
+        "nodes": 234,
+        "maxDepth": 3,
+        "maxAcceptedUpperDistance": 9.99028809661879
+      },
+      "outliers": [],
+      "outlierBoundarySegments": 0,
+      "positiveAffineContainmentReusedForTheseMasks": true,
+      "nativeApproval": false,
+      "reusedUnchangedSourceCoverage": {
+        "path": "docs/hanja-authored-mm-u850c-components-2026-10-28/coverage-preflight.json",
+        "SHA256": "a9c8a85a99724f42262dcd5097ba78d78e9c6e0d3f0e731352f9602b5fdd1fee",
+        "sameOriginalDonorRecord": true,
+        "sameUnplacedNormalizationWidthPadding": true,
+        "positiveAffineTransportOnly": true
+      }
+    },
+    {
+      "key": "recipient:4",
+      "source": "recipient",
+      "index": 3,
+      "logicalMasks": [
+        5
+      ],
+      "sourceOriginalDSHA256": "4823ffb9ea99a1fef455d38a3841e3a77e251119f27e9861ecff8850776afd39",
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "radiusInUnplacedSource100": 10,
+      "widthInUnplacedSource100": 20,
+      "coverage": {
+        "covered": true,
+        "nodes": 14,
+        "maxDepth": 0,
+        "maxAcceptedUpperDistance": 7.500929085425262
+      },
+      "outliers": [],
+      "outlierBoundarySegments": 0,
+      "positiveAffineContainmentReusedForTheseMasks": true,
+      "nativeApproval": false
+    },
+    {
+      "key": "recipient:5",
+      "source": "recipient",
+      "index": 4,
+      "logicalMasks": [
+        6
+      ],
+      "sourceOriginalDSHA256": "1e315614948105e2fd2ad909bdd124d5ebbc154f7840513332d6147e8467a39d",
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "radiusInUnplacedSource100": 10,
+      "widthInUnplacedSource100": 20,
+      "coverage": {
+        "covered": true,
+        "nodes": 153,
+        "maxDepth": 2,
+        "maxAcceptedUpperDistance": 9.827050366484979
+      },
+      "outliers": [],
+      "outlierBoundarySegments": 0,
+      "positiveAffineContainmentReusedForTheseMasks": true,
+      "nativeApproval": false
+    },
+    {
+      "key": "recipient:6",
+      "source": "recipient",
+      "index": 5,
+      "logicalMasks": [
+        7
+      ],
+      "sourceOriginalDSHA256": "808a4bb8d5120894f37593e2d4cf6bbccb9a19827ccd8491627e39754d3af0d9",
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "radiusInUnplacedSource100": 10,
+      "widthInUnplacedSource100": 20,
+      "coverage": {
+        "covered": true,
+        "nodes": 151,
+        "maxDepth": 3,
+        "maxAcceptedUpperDistance": 9.889766281624466
+      },
+      "outliers": [],
+      "outlierBoundarySegments": 0,
+      "positiveAffineContainmentReusedForTheseMasks": true,
+      "nativeApproval": false
+    },
+    {
+      "key": "recipient:7",
+      "source": "recipient",
+      "index": 6,
+      "logicalMasks": [
+        8
+      ],
+      "sourceOriginalDSHA256": "9fd05312b5f28db7fdeaf1534b91ca5dd17ac05b78767b3bf033ba084ec3eb5d",
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "radiusInUnplacedSource100": 10,
+      "widthInUnplacedSource100": 20,
+      "coverage": {
+        "covered": true,
+        "nodes": 72,
+        "maxDepth": 2,
+        "maxAcceptedUpperDistance": 9.99248974129705
+      },
+      "outliers": [],
+      "outlierBoundarySegments": 0,
+      "positiveAffineContainmentReusedForTheseMasks": true,
+      "nativeApproval": false
+    },
+    {
+      "key": "recipient:8",
+      "source": "recipient",
+      "index": 7,
+      "logicalMasks": [
+        9
+      ],
+      "sourceOriginalDSHA256": "078293f58fe6ab4d87591d2a4c476892d3c471c3727dd485f107e48ce9151a34",
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "radiusInUnplacedSource100": 10,
+      "widthInUnplacedSource100": 20,
+      "coverage": {
+        "covered": true,
+        "nodes": 43,
+        "maxDepth": 1,
+        "maxAcceptedUpperDistance": 8.522866229324954
+      },
+      "outliers": [],
+      "outlierBoundarySegments": 0,
+      "positiveAffineContainmentReusedForTheseMasks": true,
+      "nativeApproval": false
+    },
+    {
+      "key": "recipient:9",
+      "source": "recipient",
+      "index": 8,
+      "logicalMasks": [
+        10
+      ],
+      "sourceOriginalDSHA256": "b98f2d83aa84337645e8e3fee3b290d225c9d910e7d96895585722b400dda0cf",
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "radiusInUnplacedSource100": 10,
+      "widthInUnplacedSource100": 20,
+      "coverage": {
+        "covered": true,
+        "nodes": 41,
+        "maxDepth": 1,
+        "maxAcceptedUpperDistance": 9.634300702389906
+      },
+      "outliers": [],
+      "outlierBoundarySegments": 0,
+      "positiveAffineContainmentReusedForTheseMasks": true,
+      "nativeApproval": false
+    },
+    {
+      "key": "recipient:10",
+      "source": "recipient",
+      "index": 9,
+      "logicalMasks": [
+        11
+      ],
+      "sourceOriginalDSHA256": "a42ba8ba87f4bcdbd02808a59f34cfb9a639a24020db4b9c847ba605f03ea05a",
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "radiusInUnplacedSource100": 10,
+      "widthInUnplacedSource100": 20,
+      "coverage": {
+        "covered": true,
+        "nodes": 32,
+        "maxDepth": 1,
+        "maxAcceptedUpperDistance": 9.915275836342385
+      },
+      "outliers": [],
+      "outlierBoundarySegments": 0,
+      "positiveAffineContainmentReusedForTheseMasks": true,
+      "nativeApproval": false
+    },
+    {
+      "key": "recipient:11",
+      "source": "recipient",
+      "index": 10,
+      "logicalMasks": [
+        12
+      ],
+      "sourceOriginalDSHA256": "e0b38493b93366ad5d7c325778fe38fd23a7e4b0a313229e5ea856d8c11f7fb0",
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "radiusInUnplacedSource100": 10,
+      "widthInUnplacedSource100": 20,
+      "coverage": {
+        "covered": true,
+        "nodes": 30,
+        "maxDepth": 1,
+        "maxAcceptedUpperDistance": 9.219395428993113
+      },
+      "outliers": [],
+      "outlierBoundarySegments": 0,
+      "positiveAffineContainmentReusedForTheseMasks": true,
+      "nativeApproval": false
+    },
+    {
+      "key": "recipient:12",
+      "source": "recipient",
+      "index": 11,
+      "logicalMasks": [
+        13
+      ],
+      "sourceOriginalDSHA256": "573175155315cfbd23565a581be2277dd99392730ee4f6b764b1706401e0e5e8",
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "radiusInUnplacedSource100": 10,
+      "widthInUnplacedSource100": 20,
+      "coverage": {
+        "covered": true,
+        "nodes": 13,
+        "maxDepth": 0,
+        "maxAcceptedUpperDistance": 8.386528217080258
+      },
+      "outliers": [],
+      "outlierBoundarySegments": 0,
+      "positiveAffineContainmentReusedForTheseMasks": true,
+      "nativeApproval": false
+    },
+    {
+      "key": "recipient:13",
+      "source": "recipient",
+      "index": 12,
+      "logicalMasks": [
+        14
+      ],
+      "sourceOriginalDSHA256": "d73fe9468287d4c251338d852d7473625bb03d505fd9b1b5cd7a2c1a71f48114",
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "radiusInUnplacedSource100": 10,
+      "widthInUnplacedSource100": 20,
+      "coverage": {
+        "covered": true,
+        "nodes": 13,
+        "maxDepth": 0,
+        "maxAcceptedUpperDistance": 9.13906648903097
+      },
+      "outliers": [],
+      "outlierBoundarySegments": 0,
+      "positiveAffineContainmentReusedForTheseMasks": true,
+      "nativeApproval": false
+    },
+    {
+      "key": "recipient:14",
+      "source": "recipient",
+      "index": 13,
+      "logicalMasks": [
+        15
+      ],
+      "sourceOriginalDSHA256": "5f5f894eaf3de3754518b2d877cb009f0dade27e625781b090ec2b65cc0ebcec",
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "radiusInUnplacedSource100": 10,
+      "widthInUnplacedSource100": 20,
+      "coverage": {
+        "covered": true,
+        "nodes": 34,
+        "maxDepth": 1,
+        "maxAcceptedUpperDistance": 9.200221566628658
+      },
+      "outliers": [],
+      "outlierBoundarySegments": 0,
+      "positiveAffineContainmentReusedForTheseMasks": true,
+      "nativeApproval": false
+    }
+  ],
+  "limits": [
+    "Unresolved conservative regions do not prove width insufficient. Only actual unchanged contour samples with global polyline-distance lower bounds are counterexamples.",
+    "Common donorH/V source coverage may be reused for their separate positive affine placements; font identity, contact and timing approval do not follow.",
+    "Head0+, start gate release, polyline joins, ending and actualR replay remain for direct ROOT review."
+  ],
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "sharedFilesChanged": false,
+  "serverStarts": 0,
+  "buildRun": false
+}
