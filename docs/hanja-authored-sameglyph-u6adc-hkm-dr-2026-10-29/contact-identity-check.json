@@ -1,0 +1,93 @@
+{
+  "schema": "hanja-exact-public-polygon-contact-check/v1",
+  "glyph": "櫜",
+  "candidate": "raw19 replaced by HKm raw15 at identity",
+  "inputs": {
+    "recipient": {
+      "path": "docs/hanja-goal-glyphwiki-batch438-2026-10-09/engine-proof.json",
+      "sha256": "e0ddc60691b7d6e4050407cc2d08fccd414ba5e8cb2c5a83ff04ec21d9cdfece",
+      "root": "default existing capture",
+      "raw": 23,
+      "P": 38
+    },
+    "donor": {
+      "path": "docs/hanja-official-media-compare-u6adc-2026-10-29/captured-hkm-engine-proof.json",
+      "sha256": "2d7be08884f0091076badb7c6e8c87be20105c1e7d3c524d707fdfa745df687a",
+      "root": "hkcs_m6adc@1",
+      "raw": 23,
+      "P": 38
+    }
+  },
+  "result": {
+    "beforeContacts": [
+      9,
+      18
+    ],
+    "afterContacts": [
+      17,
+      18
+    ],
+    "lostContacts": [
+      9
+    ],
+    "newContacts": [
+      17
+    ],
+    "candidateContacts": [
+      {
+        "targetRaw": 9,
+        "before": true,
+        "after": false,
+        "candidatePpairAreas": []
+      },
+      {
+        "targetRaw": 17,
+        "before": false,
+        "after": true,
+        "candidatePpairAreas": [
+          {
+            "donorP": 1,
+            "targetP": 1,
+            "intersectionArea": "639050481/89501050"
+          },
+          {
+            "donorP": 2,
+            "targetP": 1,
+            "intersectionArea": "236746875549/8037143000"
+          }
+        ]
+      },
+      {
+        "targetRaw": 18,
+        "before": true,
+        "after": true,
+        "candidatePpairAreas": [
+          {
+            "donorP": 1,
+            "targetP": 1,
+            "intersectionArea": "3469/350"
+          }
+        ]
+      }
+    ],
+    "donorPSimple": [
+      true,
+      true
+    ]
+  },
+  "method": {
+    "coordinates": "Fraction of exact saved decimal text",
+    "intersection": "Existing verified-public-contact.py simple polygon ear decomposition plus convex triangle clipping",
+    "reusedCodePath": "docs/hanja-authored-ownstroke-u6030-raw6-head-gap-2026-10-29/verify-public-contact.py",
+    "reusedCodeSHA256": "2e10934196e91fb93140e31d3313ec0f1cca7f35e87cb4b0de05b6b0c88cacac",
+    "polygonPairAreasAreNotUnionArea": true,
+    "contactUsesClosedEdgesAndWindingMembership": true,
+    "realCodeStatus": 0,
+    "allDonorPPolygonsSimple": true
+  },
+  "decision": {
+    "staticWholeApproval": false,
+    "hold": "새 raw17 양의 겹침과 raw9 접촉 소실이 확인됨. 불필요 접촉 없음 조건 미확정. 새 보정·좌표 추정·whole PASS 없음."
+  },
+  "allOther22RawAndTracePreserved": true
+}
