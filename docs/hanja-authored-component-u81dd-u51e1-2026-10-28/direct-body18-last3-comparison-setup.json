@@ -1,0 +1,199 @@
+{
+  "schema": "hanja-pending-direct-original-clock-source-comparison/v1",
+  "date": "2026-10-28",
+  "glyph": "臝",
+  "status": "pending-ROOT-direct-source-mapping-review",
+  "originalClockHelper": {
+    "path": "scripts/hanja-official-media-compare.py",
+    "SHA256": "79466260c1f28f2f0c2492e75b74b6f70eac0749adb4100a2101b59dd9f24a30"
+  },
+  "originalClockConfig": {
+    "path": "docs/hanja-official-media-compare-u81dd-2026-10-28/config.json",
+    "SHA256": "b9627e91d9b0160ef449ed77e206ebd13377756c8d839a914cc57b18ee864e1f"
+  },
+  "staticV2Adapter": {
+    "path": "docs/hanja-authored-component-u81dd-u51e1-2026-10-28/static-whole-adapter-v2-dot-separated.py",
+    "SHA256": "181f8397e530f51f82d6ce9dd294dc099c4266f986d7f16897011174bd874c0c"
+  },
+  "staticV2Config": {
+    "path": "docs/hanja-source-raw-compare-u81dd-u51e1-dot-separated-2026-10-28/config.json",
+    "SHA256": "01501a6526fdd9f1d275c6dfa699ff65a7585bbeb8acf456259a6f78762a0799"
+  },
+  "staticSharedServe": {
+    "path": "docs/hanja-source-raw-compare-u8a29-2026-10-21/serve.py",
+    "SHA256": "ba91ba7f00bc2e4899ca4d3c69d03ab5cd6f8b0a9f888899eea49aa69a58665d"
+  },
+  "recipe": {
+    "path": "docs/hanja-authored-component-u81dd-u51e1-2026-10-28/recipe-v2-dot-separated.json",
+    "SHA256": "7c000a640192336b7c4abedc6cd7aa0ab350dc0e7fdfbefe435cb9d13fc0c53d"
+  },
+  "sourceGroupingEvidence": {
+    "retainedSourceOrderRawZeroBasedInclusive": [
+      0,
+      20
+    ],
+    "hypothesis18GroupsZeroBased": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4,
+        5
+      ],
+      [
+        6
+      ],
+      [
+        7
+      ],
+      [
+        8,
+        9
+      ],
+      [
+        10
+      ],
+      [
+        11
+      ],
+      [
+        12
+      ],
+      [
+        13,
+        14
+      ],
+      [
+        15
+      ],
+      [
+        16
+      ],
+      [
+        17
+      ],
+      [
+        18
+      ],
+      [
+        19
+      ],
+      [
+        20
+      ]
+    ],
+    "construction": "Preserve original raw order; concatenate adjacent rows only when final source-call endpoint exactly equals next first source-call point. Exact endpoint equality is code fact, not proof of a Korean logical boundary.",
+    "exactMerges": [
+      {
+        "previousRaw": 4,
+        "nextRaw": 5,
+        "exactSharedEndpoint": [
+          161,
+          64
+        ]
+      },
+      {
+        "previousRaw": 8,
+        "nextRaw": 9,
+        "exactSharedEndpoint": [
+          59.44,
+          96.68
+        ]
+      },
+      {
+        "previousRaw": 13,
+        "nextRaw": 14,
+        "exactSharedEndpoint": [
+          126.3,
+          100.24
+        ]
+      }
+    ],
+    "allOriginalGroupsPreservedExactlyOnce": true,
+    "sourceOrDomesticMappingApproved": false,
+    "existingIndividualBodyPensApproved": 0,
+    "existingWholeHold": {
+      "path": "docs/hanja-goal-glyphwiki-batch530-2026-10-11/README.md",
+      "SHA256": "427f40d3e73286498afa5a419413827aa5e4b476f03412ca4ccc6a30cb8daae9"
+    }
+  },
+  "lastThreeHypotheses": [
+    {
+      "proposedDomestic": 19,
+      "source": "independent public凡 original path1",
+      "sourceMedianOriginalFirst": [
+        322,
+        708
+      ],
+      "sourceMedianOriginalLast": [
+        117,
+        48
+      ],
+      "mappingApproved": false,
+      "sourceShapeOrDirectionApprovalInherited": false
+    },
+    {
+      "proposedDomestic": 20,
+      "source": "independent public凡 original path2",
+      "sourceMedianOriginalFirst": [
+        401,
+        705
+      ],
+      "sourceMedianOriginalLast": [
+        953,
+        260
+      ],
+      "mappingApproved": false,
+      "sourceShapeOrDirectionApprovalInherited": false
+    },
+    {
+      "proposedDomestic": 21,
+      "source": "independent public凡 original path3",
+      "sourceMedianOriginalFirst": [
+        400,
+        456
+      ],
+      "sourceMedianOriginalLast": [
+        503,
+        364
+      ],
+      "mappingApproved": false,
+      "sourceShapeOrDirectionApprovalInherited": false
+    }
+  ],
+  "freshLastThreeClockEvidence": {
+    "path": "docs/hanja-official-media-compare-u81dd-2026-10-28/native-last-three-clock-review.json",
+    "SHA256": "f648556e45cc72f72a49c16a35cabf12a661d004231bb2148ecdbf0a5cf2405a"
+  },
+  "plan": {
+    "first18": "ROOT selects each original domestic1..18 and directly observes original clock start/direction/turn/completion against static hypothesis single and prefix scenes; record mismatches without forcing a raw merge.",
+    "last3": "ROOT directly compares already identified domestic19/20/21 roles with independent public凡3 original medians and placed filled paths; no mapping by radical name or count.",
+    "sourcePanel": "Static original public source display only. It has no authored playback or publisher timing.",
+    "originalClock": "Existing exact original-media helper and config are reused without source byte/control changes.",
+    "newNetworkOrServerDuringPreparation": 0
+  },
+  "approvals": {
+    "body18Mapping": false,
+    "sourceThreeMapping": false,
+    "whole": false,
+    "direction": false,
+    "timing": false,
+    "native": false,
+    "runtime": false
+  },
+  "execution": {
+    "serverStarts": 0,
+    "sharedHOrRChanged": 0,
+    "registryChanged": 0,
+    "build": 0
+  }
+}
