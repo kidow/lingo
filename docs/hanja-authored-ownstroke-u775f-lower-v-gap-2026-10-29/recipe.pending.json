@@ -1,0 +1,128 @@
+{
+  "schema": "hanja-public-whole-positive-affine-hypothesis/v1",
+  "glyph": "睟",
+  "date": "2026-10-29",
+  "status": "math-ready-native-static-pending",
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "originalWhole": false,
+  "isOriginalEngineCapture": false,
+  "originalEngineRecomputed": false,
+  "privateCoordinatesUsed": false,
+  "source": {
+    "path": "docs/hanja-goal-glyphwiki-batch670-2026-10-11/engine-whole-u775f-ue0100.json",
+    "SHA256": "347565d7f33cc24a018723c688cc272049ffc4b3255eb9dd25f33c340636d047",
+    "rawRows": 14,
+    "drawingCalls": 14,
+    "filledP": 25
+  },
+  "trigger": {
+    "path": "docs/hanja-source-raw-compare-u775f-original-2026-10-29/native-contact-review.json",
+    "SHA256": "6ba48dc46ca64f8a78eeea551199d0d885bbddcbfc1b8e5fb9715312074460c4",
+    "fact": "Root directly saw domestic sweep10 and lowerV13 separate, but original public raw11/raw14 touch. These limited role correspondences do not approve full14-to13 mapping."
+  },
+  "candidate": {
+    "changedRawOneBased": 14,
+    "matrixExact": [
+      "1",
+      "0",
+      "0",
+      "13/14",
+      "0",
+      "69/7"
+    ],
+    "determinantExact": "13/14",
+    "anchor": {
+      "publicGuideIntersectionY": "138",
+      "fixed": true
+    },
+    "sourceAnchorDerivation": "Keep raw13 H guide y=138. Set raw14 filled minimumY to raw11 global filled maximumY+1, so scale=(138-118.5)/(138-117)=13/14 and translate=69/7.",
+    "sourceFilledBounds": [
+      "614/5",
+      "117",
+      "689/5",
+      "949/5"
+    ],
+    "candidateFilledBounds": [
+      "614/5",
+      "237/2",
+      "689/5",
+      "1861/10"
+    ],
+    "raw11GlobalMaxY": "235/2",
+    "guaranteedGlobalYGap": "1",
+    "guide": {
+      "source": [
+        128.8375,
+        118,
+        128.8375,
+        186.8
+      ],
+      "candidateExact": [
+        "10307/80",
+        "836/7",
+        "10307/80",
+        "6416/35"
+      ],
+      "operation": "Apply the same positive Y affine to the entire raw14 filledP and all guide coordinates; retain original flags and call kind."
+    },
+    "horizontalThickness": "X coordinates and X span15 remain exactly unchanged; no per-point horizontal reshape.",
+    "other13Raw": "Exact source bytes/data preserved; no sourceP omission/newP/bridge."
+  },
+  "contactMath": {
+    "method": "Fraction exact original polygon coordinates; original utility functiondefs via AST; simple polygon ears and convex clipping for pairwise intersection area, closed-set contact for every raw pair. Areas below are pairwise P-intersection sums, not claimed union measures.",
+    "utility": {
+      "path": "docs/hanja-authored-ownstroke-u6030-raw6-head-gap-2026-10-29/verify-contact-strip-growth.py",
+      "SHA256": "945d1d0f0297b056cd6e10049ee01a38271c1989e6676b528532656f411252ea"
+    },
+    "beforeNeighbors": [
+      11,
+      13
+    ],
+    "afterNeighbors": [
+      13
+    ],
+    "removed": [
+      11
+    ],
+    "added": [],
+    "allOtherRawCompared": 13,
+    "raw11": {
+      "beforeContact": true,
+      "beforePositivePolygonPairAreaSum": "533169/3667600",
+      "afterContact": false,
+      "afterPositivePolygonPairAreaSum": "0"
+    },
+    "raw13": {
+      "beforeContact": true,
+      "beforePositivePolygonPairAreaSum": "48",
+      "afterContact": true,
+      "afterPositivePolygonPairAreaSum": "48"
+    },
+    "rawsWithoutContactBeforeOrAfter": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      12
+    ]
+  },
+  "limitations": [
+    "This is an explicit author placement based only on public source bounds, not a domestic coordinate fit.",
+    "Bottom endpoint moves upward from189.8 to186.1; root must inspect whole proportion, current13 and prefix after placing the candidate.",
+    "Full logical mapping, source direction correspondence, temporal display, early gates and actualR are not approved by this math.",
+    "Original whole-contact HOLD and all previous source records remain preserved."
+  ],
+  "requiredRootViews": [
+    "whole original/candidate/domestic",
+    "raw14 current vs domestic13",
+    "prefix including lowerH/raw13 and raw14",
+    "upper sweep raw11 gap and lower horizontal contact"
+  ]
+}
