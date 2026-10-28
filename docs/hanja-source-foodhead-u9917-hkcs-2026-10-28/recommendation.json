@@ -1,0 +1,160 @@
+{
+  "schema": "hanja-public-foodhead-focused-remediation-assessment/v1",
+  "date": "2026-10-28",
+  "glyph": "餗",
+  "status": "HOLD-original-local-gap-confirmed-no-geometry-change",
+  "inputSHA256": {
+    "docs/hanja-source-raw-compare-u9917-hkcs-whole-2026-10-26/native-whole-review.json": "f3b17b34cb4d6ca8c040d6810b009285eea80539ecdcf0ca6dbafe7499b2bab3",
+    "docs/hanja-source-alternative-u9917-hkcs-2026-10-26/source-readiness.json": "580d4ac54d984558ec979ebe67f2a80202098cd5f2b414c0eb0ab5c5b2c6dd46",
+    "docs/hanja-source-static-seam-u9959-hkcs-2026-10-28/investigation.json": "4abf357e8f43062b2f1baa485ec9dafd7191690aecd73d46c3615690454f32f3",
+    "docs/hanja-source-static-seam-u9959-hkcs-2026-10-28/native-review.json": "16ba9892879e1ff5374a8b8d97eca32c7c1e7417db5ab441099df8a27c074e52",
+    "docs/hanja-actual-engine-capture-u9917-hkcs-2026-10-26/engine-whole-hkcs_m9917.json": "97bc730e03d4141f754b251af5e5baa1703a16975e02c9347af3d3f385ccd3b9",
+    "docs/hanja-source-alternative-u9917-hkcs-2026-10-26/sources.json": "9d938b644c44643935f83e3f7c0915f93e2cf063c7ea1c0c9142b0c0f63d2656",
+    "docs/hanja-goal-glyphwiki-batch662-2026-10-11/progressive-review.json": "6e97d1ca517542ffa65546e243d381995e88d207b9021e28b3782992e206ffc4"
+  },
+  "existingFacts": {
+    "latestDirectWholeHold": "White seam independently observed in 餗; not merely transferred from 饙.",
+    "sameFood10RawWithFan": "Final captured parameters/P/Q/trace/header/defaults match 饙 HKCS exactly, per pinned prior direct review.",
+    "positiveIntersectionAreaReused": "343/9400",
+    "globalDisconnectionClaim": false,
+    "pairCompoundPriorNative": "Same visible wedge persisted in the exact original two-P compound for 饙 at520 and1040; no successful composition fix."
+  },
+  "newFocusedCodeFacts": {
+    "frame": "Original public source200 units; off0 polygon edges; no private reference coordinates.",
+    "pair": [
+      "raw1P1",
+      "raw3P1"
+    ],
+    "horizontalOriginalRectangleBounds": [
+      "393/10",
+      "56",
+      "357/5",
+      "60"
+    ],
+    "descendingRightOriginalEdge": [
+      [
+        41.1,
+        53.9
+      ],
+      [
+        36.4,
+        60.2
+      ]
+    ],
+    "intersectionAtHorizontalLeftExact": [
+      "393/10",
+      "26467/470"
+    ],
+    "sectionY": "57",
+    "firstThreeRawPolygonIntervals": [
+      {
+        "raw": 1,
+        "polygon": 1,
+        "intervals": [
+          [
+            "9437/320",
+            "12218/315"
+          ]
+        ]
+      },
+      {
+        "raw": 1,
+        "polygon": 2,
+        "intervals": []
+      },
+      {
+        "raw": 1,
+        "polygon": 3,
+        "intervals": []
+      },
+      {
+        "raw": 2,
+        "polygon": 1,
+        "intervals": []
+      },
+      {
+        "raw": 2,
+        "polygon": 2,
+        "intervals": [
+          [
+            "22709/290",
+            "15142/175"
+          ]
+        ]
+      },
+      {
+        "raw": 3,
+        "polygon": 1,
+        "intervals": [
+          [
+            "393/10",
+            "357/5"
+          ]
+        ]
+      },
+      {
+        "raw": 3,
+        "polygon": 2,
+        "intervals": [
+          [
+            "2533/45",
+            "317/5"
+          ]
+        ]
+      }
+    ],
+    "descendingRightAtSection": "12218/315",
+    "horizontalLeftAtSection": "393/10",
+    "openGapWidth": "323/630",
+    "witness": [
+      "9839/252",
+      "57"
+    ],
+    "witnessCoveredByWhole29OriginalPolygons": false,
+    "method": "Convert exact public tenth-unit vertices to integers; intersect each off0 straight edge with horizontal y57 using rational BigInt arithmetic and half-open vertex rules. All29 polygons checked. No engine/intersection-area re-computation or point edits.",
+    "interpretation": "A shallow positive-area top contact coexists with a local unfilled interval lower in the horizontal band. Opaque nonzero union of unchanged original P cannot fill this interval. This establishes a local source gap, not a complete pixel/antialiasing explanation or an approved reference contour."
+  },
+  "sourceEditBoundary": {
+    "originalFoodComponent": "hkcs_m98e0-p01-s00@3",
+    "headCurveOriginalRow1": "2:0:7:60:16:43:54:14:82",
+    "horizontalOriginalRow3": "1:0:0:42:58:78:58",
+    "actualHorizontalCall": {
+      "kind": "cdDrawLine",
+      "args": [
+        39.38,
+        58,
+        71.42,
+        58,
+        0,
+        200
+      ]
+    },
+    "noProposedFlagValueOrCoordinate": true,
+    "reason": "No existing approved exact cap correction was found for this source pair. A cap parameter cannot be chosen as correct from the gap witness alone."
+  },
+  "recommendation": {
+    "priority": 1,
+    "action": "Keep runtime null. Seek a compatible fixed original food-head source or a separately justified, explicitly authored source-cap correction; do not repeat unchanged compound paint as the fix.",
+    "minimumFocusedConditions": [
+      "Public source/provenance and exact KAGE primitive change must identify why only this head contact changes; do not guess a bridge or copy publisher outline coordinates.",
+      "Fresh generated P and trace must show which polygons changed; preserve all non-target source geometry and logical order.",
+      "The correction must eliminate the documented open gap over the relevant head band, rather than only increase a positive contact area already known to exist.",
+      "Check retained lower food horizontals remain separate from the right 束 sweep; old non-HKCS roots were held for a different contact at logical9/15. Do not silently reuse those roots.",
+      "Root must directly compare corrected whole/current/prefix against publisher and then independently review actual start/transition/complete playback. Math/source-state checks do not substitute native approval."
+    ],
+    "notSufficient": [
+      "Changing SVG fill-rule or merging unchanged two P",
+      "Merging all polygons despite opposite winding cancellation witnesses",
+      "Positive contact area alone",
+      "Mask-local merge across distinct logical1/3 strokes",
+      "A guessed new bridge, point shift, or automatic radical order inference"
+    ]
+  },
+  "runtimeApplied": false,
+  "geometryEdited": false,
+  "sourceOriginalModified": false,
+  "privateMediaRead": false,
+  "externalGeometryProcessing": false,
+  "serverStarted": false,
+  "newNativeApproval": false
+}
