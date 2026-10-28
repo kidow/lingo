@@ -1,0 +1,151 @@
+{
+  "schema": "hanja-two-compound-guide-prototype-readiness/v1",
+  "glyph": "纘",
+  "date": "2026-10-29",
+  "status": "READY-FOR-ROOT-FINITE-BROWSER-PROTOTYPE-ONLY",
+  "affectedPens": [
+    1,
+    2
+  ],
+  "sourceRiskHold": {
+    "path": "docs/hanja-authored-ownstroke-u7e98-cross-contact-v2-2026-10-29/native-actual-risk-hold-review.json",
+    "SHA256": "dd6db2d3de9976d69a6f46d83d904a0de86f9c2184bfd0644eef60b37552cbfa"
+  },
+  "sourceGeometrySHA256": "aa241350799c5b55d739505e9c873cf2e820b1f65f6ae0c428d79a4dc9575f0f",
+  "sourcePCount": 62,
+  "filledPChanged": 0,
+  "coveredSourcePInTwoCompounds": 11,
+  "other51PNotRegenerated": true,
+  "mixedGuideSources": true,
+  "filledGeometryMixed": false,
+  "donor": {
+    "glyph": "玄",
+    "strokes": [
+      3,
+      4
+    ],
+    "kind": "Previously verified textbook-corrected continuous centerlines, each1M5L; no donor filledP reused.",
+    "verificationSource": "vivasam-high-2022",
+    "geometryCorrection": "vivasam-g3ii-b10-a-1706-v1",
+    "pathsSHA256": "9c2d79be9d2bdce01ea299eb437b930c5a92101dd3d4e5cff7c84841f7f14725",
+    "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+    "license": "Arphic Public License",
+    "existingNotices": [
+      "public/hanja-strokes/ARPHICPL.txt",
+      "public/hanja-strokes/COPYING.txt"
+    ]
+  },
+  "plans": [
+    {
+      "pen": 1,
+      "donorStroke": 3,
+      "matrixExact": [
+        "154954536570733/907385747627520",
+        "29898414850561/51850614150144",
+        "-32259685437953369/123404461677342720",
+        "6392031950353891/7051683524419584",
+        "1911153487280399093/77127788548339200",
+        "-42405277742594219/881460440552448"
+      ],
+      "determinantExact": "10772638934965153/35258417622097920",
+      "sourceStartEndAndStrictPositiveContactSeed": true,
+      "firstThreeEdgesAllDL": true,
+      "firstFourEdgesAllDL": true,
+      "fourthCornerDelta100": [
+        -0.35100644918363705,
+        2.035256765949619
+      ],
+      "lastEdgeDirection": "DR",
+      "width": 24,
+      "padding": 12,
+      "fullRoundCoverage": {
+        "status": "PASS-CONSERVATIVE-COVERAGE",
+        "method": "Exact positive-ear triangulation; centroid-distance to original5segment placed donor polyline plus triangle radius, 1-Lipschitz; exact squared radical inequality.",
+        "nodes": 51,
+        "depth": 1,
+        "unproved": 0
+      }
+    },
+    {
+      "pen": 2,
+      "donorStroke": 4,
+      "matrixExact": [
+        "29785951542213/56755426699400",
+        "53480707115397/567554266994000",
+        "-9928650514071/154658537755865",
+        "4132232011965353/4639756132675950",
+        "2749785569187838/773292688779325",
+        "-1252034956383357733/46397561326759500"
+      ],
+      "determinantExact": "585790380330189/1237268302046920",
+      "sourceStartEndAndStrictPositiveContactSeed": true,
+      "firstThreeEdgesAllDL": true,
+      "firstFourEdgesAllDL": false,
+      "fourthCornerDelta100": [
+        0.42209682101783114,
+        1.5192126047684318
+      ],
+      "lastEdgeDirection": "right-up",
+      "width": 24,
+      "padding": 12,
+      "fullRoundCoverage": {
+        "status": "PASS-CONSERVATIVE-COVERAGE",
+        "method": "Exact positive-ear triangulation; centroid-distance to original5segment placed donor polyline plus triangle radius, 1-Lipschitz; exact squared radical inequality.",
+        "nodes": 119,
+        "depth": 4,
+        "unproved": 0
+      }
+    }
+  ],
+  "prototype": {
+    "file": "prototype.html",
+    "dataSHA256": "8a9bde108ea7ab839c172ad4d918daf2d7d96a85754f9366d29ca86441f70f89",
+    "publicSourceOutlineEqualityCheck": "PASS-exact concatenated source5P and6P; previous completed pen1 retained inpen2",
+    "currentGateClip": "Precomputed actual outlineStartClip helper; each panel uses its own frame table",
+    "finiteSamplesPerPen": 203,
+    "defaultProgress": 0.625,
+    "zoom": "Public prefix boundingbox+4; coordinates retained in100units, pixelzoom differs from actualR",
+    "playback": "203 finite samples only, no all-real-progress claim",
+    "actualR": false,
+    "actualBrowserReviewed": false,
+    "rootMustReview": [
+      "pen1 sourcefailure .625 then early .01/.03/.1 andending",
+      "pen2 sourcefailure .625 andtiny4thcorner/right-up H, then early/ending",
+      "Recheck that current prefix remains connected; fullround coverage alone does not prove this"
+    ]
+  },
+  "focusedCodeChecks": {
+    "syntax": "PASS",
+    "frozenDataHash": "PASS",
+    "sourceOutlinesExact": 2,
+    "sourcePInTwoCompounds": 11,
+    "finiteFramesEach": 203,
+    "ownGateClips": true,
+    "actualR": false,
+    "nativeApproval": false,
+    "HTTP": 0,
+    "server": 0
+  },
+  "firstMathAttempt": {
+    "status": "blocked-pen2-by-self-imposed-four-DL-edges",
+    "reason": "Original donor4 has a small right/down fourth corner. No positive placement met four-DL filter. Final candidate preserves all5 donor segments and explicitly records initial3DL, smallright/downcorner, finalright/upH; no native direction approval."
+  },
+  "inputSHA256": {
+    "docs/hanja-authored-guide-u7e98-compounds-2026-10-29/prepare-donor-guides.py": "a39dcfc894a9829a8929ad626342cec7ae3d2858d94be5bfce08e5887eee7fc7",
+    "docs/hanja-authored-guide-u7e98-compounds-2026-10-29/donor-guide-math.json": "9262444e338d4016355198daa0e1f263bc3d2acd97e3ec3da727ce7ece56f7eb",
+    "docs/hanja-authored-guide-u7e98-compounds-2026-10-29/prototype-data.json": "8a9bde108ea7ab839c172ad4d918daf2d7d96a85754f9366d29ca86441f70f89",
+    "docs/hanja-authored-guide-u7e98-compounds-2026-10-29/prototype.html": "aac6525149423080cdd7947bdf88d352b88351fc4af899d5488bb2402f2581d4"
+  },
+  "pen12": {
+    "status": "Not changed; pending exact Vdown→risingHright investigation",
+    "roleReversed": false
+  },
+  "newSourceEngine": 0,
+  "newPrivateFetch": 0,
+  "newServer": 0,
+  "sharedChanges": false,
+  "newRHelperIntegrated": false,
+  "allRealProgressConnectivityProof": false,
+  "nativeApproval": false,
+  "runtimeApplied": false
+}

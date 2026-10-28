@@ -1,0 +1,14 @@
+{
+  "glyph":"纘",
+  "reviewedAt":"2026-10-29",
+  "status":"pen1-bounded-pass-pen2-hold-futureH",
+  "htmlSha256":"aac6525149423080cdd7947bdf88d352b88351fc4af899d5488bb2402f2581d4",
+  "checks":{"nativeBrowserPanel":true,"bothPanelsAt520px":true,"observedProgress":[0,0.1,0.375,0.5,0.625,0.75,0.95,1]},
+  "observations":[
+    {"pen":1,"status":"pass-in-reviewed-finite-frames","finding":"No detached future DR fragment observed; completed DL and DR remain connected."},
+    {"pen":2,"status":"hold","progress":0.5,"finding":"A detached low H fragment appears to the right of the incomplete DL tip. A global continuous donor mask still exposes future H prematurely."}
+  ],
+  "next":"Keep pen1 continuous candidate; independently prove recipient pen2 DL-only then strict contact-seed left-head/right-H phases without changing filledP or looping widths.",
+  "limits":["Not all203 available sample positions were inspected.","No actual product renderer or continuous-motion approval."],
+  "runtimeApplied":false
+}

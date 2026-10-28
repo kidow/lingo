@@ -1,0 +1,381 @@
+{
+  "schema": "hanja-two-compound-verified-donor-guide-draft/v1",
+  "glyph": "纘",
+  "date": "2026-10-29",
+  "status": "MATH-COVERED-NATIVE-PROTOTYPE-REQUIRED",
+  "sourceGeometrySHA256": "aa241350799c5b55d739505e9c873cf2e820b1f65f6ae0c428d79a4dc9575f0f",
+  "sourcePCount": 62,
+  "mixedGuideSources": true,
+  "filledGeometryMixed": false,
+  "originalWhole": false,
+  "originalEngineCapture": false,
+  "locallyAuthoredDisplay": true,
+  "donor": {
+    "glyph": "玄",
+    "verificationSource": "vivasam-high-2022",
+    "geometryCorrection": "vivasam-g3ii-b10-a-1706-v1",
+    "pathsSHA256": "9c2d79be9d2bdce01ea299eb437b930c5a92101dd3d4e5cff7c84841f7f14725",
+    "sourceReference": {
+      "manifestSha256": "32853d2396dc4fe38362b9e51a828144d7e48889f60e28d850cae9fa2335620c",
+      "manifestRow": "1706",
+      "glyph": "玄",
+      "videoFilename": "1706 검을 현.mp4"
+    },
+    "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+    "license": "Arphic Public License, existing ARPHICPL.txt and COPYING.txt notices retained. Corrected centerline donor, not original filledP."
+  },
+  "plans": [
+    {
+      "logical": 1,
+      "sourceRawOneBased": [
+        1,
+        2
+      ],
+      "sourceP": 5,
+      "donorGlyph": "玄",
+      "donorStroke": 3,
+      "sourceDonorPath": "M47 32 L44.5 42 L34 56 L30.7 60.2 L31.4 62 L52.8 59.2",
+      "sourceDonorPointsExact": [
+        [
+          "47",
+          "32"
+        ],
+        [
+          "89/2",
+          "42"
+        ],
+        [
+          "34",
+          "56"
+        ],
+        [
+          "307/10",
+          "301/5"
+        ],
+        [
+          "157/5",
+          "62"
+        ],
+        [
+          "264/5",
+          "296/5"
+        ]
+      ],
+      "anchorDonorIndicesZeroBased": [
+        0,
+        4,
+        5
+      ],
+      "recipientAnchorsExact100": [
+        [
+          "611/25",
+          "8"
+        ],
+        [
+          "114952730008503/8250064291840",
+          "61753559887359/2357161226240"
+        ],
+        [
+          "458/25",
+          "36"
+        ]
+      ],
+      "jointSourcePIndicesOneBased": [
+        1,
+        1
+      ],
+      "jointPositiveIntersectionPieceArea100Squared": "1044917513733/3300025716736",
+      "jointStrictInteriorBothP": true,
+      "selectionRule": "Largest-area positive exact ear-intersection piece with strict-interior vertex-mean seed satisfying positive affine and required source macro direction. PublicP only, not private fitting.",
+      "matrixExact": [
+        "154954536570733/907385747627520",
+        "29898414850561/51850614150144",
+        "-32259685437953369/123404461677342720",
+        "6392031950353891/7051683524419584",
+        "1911153487280399093/77127788548339200",
+        "-42405277742594219/881460440552448"
+      ],
+      "determinantExact": "10772638934965153/35258417622097920",
+      "placedPointsExact100": [
+        [
+          "611/25",
+          "8"
+        ],
+        [
+          "104790620896058459/4897002447513600",
+          "6120462591650269/391760195801088"
+        ],
+        [
+          "43924396701480341/2754563876726400",
+          "4905057423376819/220365110138112"
+        ],
+        [
+          "8813893486869850783/617022308386713600",
+          "851949815773063867/35258417622097920"
+        ],
+        [
+          "114952730008503/8250064291840",
+          "61753559887359/2357161226240"
+        ],
+        [
+          "458/25",
+          "36"
+        ]
+      ],
+      "placedPoints100": [
+        [
+          24.44,
+          8
+        ],
+        [
+          21.39893169734166,
+          15.622982266319541
+        ],
+        [
+          15.946043971825155,
+          22.25877508604976
+        ],
+        [
+          14.284562109131743,
+          24.163019024402033
+        ],
+        [
+          13.933555659948107,
+          26.19827579035165
+        ],
+        [
+          18.32,
+          36
+        ]
+      ],
+      "edgeDeltas100": [
+        [
+          -3.041068302658341,
+          7.622982266319541
+        ],
+        [
+          -5.452887725516503,
+          6.63579281973022
+        ],
+        [
+          -1.6614818626934116,
+          1.9042439383522702
+        ],
+        [
+          -0.35100644918363705,
+          2.035256765949619
+        ],
+        [
+          4.386444340051893,
+          9.80172420964835
+        ]
+      ],
+      "firstThreeEdgesAllDL": true,
+      "firstFourEdgesAllDL": true,
+      "fourthCornerDelta100": [
+        -0.35100644918363705,
+        2.035256765949619
+      ],
+      "lastEdgeDirection": "DR",
+      "revealWidth": 24,
+      "padding": 12,
+      "maxSourceVertexDistanceUpper100": 7.619176387757131,
+      "fullRoundCoverage": {
+        "status": "PASS-CONSERVATIVE-COVERAGE",
+        "method": "Exact positive-ear triangulation; centroid-distance to original5segment placed donor polyline plus triangle radius, 1-Lipschitz; exact squared radical inequality.",
+        "nodes": 51,
+        "depth": 1,
+        "unproved": 0
+      },
+      "sourcePChanged": false,
+      "originalQControlsChanged": false,
+      "allRealProgressConnectivityProof": false,
+      "finiteBrowserApproved": false
+    },
+    {
+      "logical": 2,
+      "sourceRawOneBased": [
+        3,
+        4
+      ],
+      "sourceP": 6,
+      "donorGlyph": "玄",
+      "donorStroke": 4,
+      "sourceDonorPath": "M64 44.3 L61 51.2 L45 67 L32.5 81.4 L33.5 83 L68 77",
+      "sourceDonorPointsExact": [
+        [
+          "64",
+          "443/10"
+        ],
+        [
+          "61",
+          "256/5"
+        ],
+        [
+          "45",
+          "67"
+        ],
+        [
+          "65/2",
+          "407/5"
+        ],
+        [
+          "67/2",
+          "83"
+        ],
+        [
+          "68",
+          "77"
+        ]
+      ],
+      "anchorDonorIndicesZeroBased": [
+        0,
+        4,
+        5
+      ],
+      "recipientAnchorsExact100": [
+        [
+          "343/10",
+          "37/2"
+        ],
+        [
+          "25465061034547/1610816693200",
+          "806902300940603/16108166932000"
+        ],
+        [
+          "343/10",
+          "48"
+        ]
+      ],
+      "jointSourcePIndicesOneBased": [
+        1,
+        1
+      ],
+      "jointPositiveIntersectionPieceArea100Squared": "254764557200737/128865335456000",
+      "jointStrictInteriorBothP": true,
+      "selectionRule": "Largest-area positive exact ear-intersection piece with strict-interior vertex-mean seed satisfying positive affine and required source macro direction. PublicP only, not private fitting.",
+      "matrixExact": [
+        "29785951542213/56755426699400",
+        "53480707115397/567554266994000",
+        "-9928650514071/154658537755865",
+        "4132232011965353/4639756132675950",
+        "2749785569187838/773292688779325",
+        "-1252034956383357733/46397561326759500"
+      ],
+      "determinantExact": "585790380330189/1237268302046920",
+      "placedPointsExact100": [
+        [
+          "343/10",
+          "37/2"
+        ],
+        [
+          "199711200104859533/6186341510234600",
+          "1507150333267478657/61863415102346000"
+        ],
+        [
+          "141489593490347189/6186341510234600",
+          "6853210571736781963/185590245307038000"
+        ],
+        [
+          "14644204895073397/951744847728400",
+          "1386888280045329239/28552345431852000"
+        ],
+        [
+          "25465061034547/1610816693200",
+          "806902300940603/16108166932000"
+        ],
+        [
+          "343/10",
+          "48"
+        ]
+      ],
+      "placedPoints100": [
+        [
+          34.3,
+          18.5
+        ],
+        [
+          32.282601885857744,
+          24.362546600023123
+        ],
+        [
+          22.871287214950662,
+          36.92656669750569
+        ],
+        [
+          15.386692063556536,
+          48.57353254413086
+        ],
+        [
+          15.808788884574367,
+          50.09274514889929
+        ],
+        [
+          34.3,
+          48
+        ]
+      ],
+      "edgeDeltas100": [
+        [
+          -2.0173981141422574,
+          5.862546600023123
+        ],
+        [
+          -9.411314670907078,
+          12.564020097482572
+        ],
+        [
+          -7.484595151394127,
+          11.646965846625166
+        ],
+        [
+          0.42209682101783114,
+          1.5192126047684318
+        ],
+        [
+          18.49121111542563,
+          -2.0927451488992923
+        ]
+      ],
+      "firstThreeEdgesAllDL": true,
+      "firstFourEdgesAllDL": false,
+      "fourthCornerDelta100": [
+        0.42209682101783114,
+        1.5192126047684318
+      ],
+      "lastEdgeDirection": "right-up",
+      "revealWidth": 24,
+      "padding": 12,
+      "maxSourceVertexDistanceUpper100": 9.503361968725786,
+      "fullRoundCoverage": {
+        "status": "PASS-CONSERVATIVE-COVERAGE",
+        "method": "Exact positive-ear triangulation; centroid-distance to original5segment placed donor polyline plus triangle radius, 1-Lipschitz; exact squared radical inequality.",
+        "nodes": 119,
+        "depth": 4,
+        "unproved": 0
+      },
+      "sourcePChanged": false,
+      "originalQControlsChanged": false,
+      "allRealProgressConnectivityProof": false,
+      "finiteBrowserApproved": false
+    }
+  ],
+  "pen12Status": "Pending exact V-down then risingHright contact analysis; role not reversed.",
+  "inputSHA256": {
+    "docs/hanja-authored-ownstroke-u7e98-cross-contact-v2-2026-10-29/fixtures-draft.json": "a4ee3c06f45821c824afd8b8a266d8facc2c7e2b80cdfceb15ac8b6c39223f41",
+    "docs/hanja-authored-ownstroke-u7e98-cross-contact-v2-2026-10-29/fixtures-execution-draft.json": "b6889acd4fdf6234ae8ad4000d088057dd8fb3b1216cd1e71ad10c329e3c8d98",
+    "docs/hanja-authored-ownstroke-u7e98-cross-contact-v2-2026-10-29/native-actual-risk-hold-review.json": "dd6db2d3de9976d69a6f46d83d904a0de86f9c2184bfd0644eef60b37552cbfa",
+    "docs/hanja-authored-ownstroke-u6030-raw6-head-gap-2026-10-29/continuous-donor-guide-experiment.json": "93cbd553cd61585cc2da1a4b0b07d837bd99e6a2696a3e5df032f3db5e18a621",
+    "docs/hanja-authored-ownstroke-u6030-raw6-head-gap-2026-10-29/applied-xuan-component-donor-inventory.json": "5b1239e36e7dccf8a767bb3cc998b922e7d88d377bdc3d8ab8f0a21dc7475955",
+    "docs/hanja-authored-ownstroke-u6030-raw6-head-gap-2026-10-29/verify-continuous-donor-guide.py": "52317f09f8a1c3eb4a5e762ea3c7a5dd1b31ab968671982e36e12368caf697a6"
+  },
+  "newFilledP": 0,
+  "newSourceEngine": 0,
+  "sourceGuideBridgeAdded": false,
+  "allRealProgressConnectivityProof": false,
+  "actualRReviewed": false,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "sharedChanges": false,
+  "serverStarts": 0
+}
