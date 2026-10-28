@@ -1,0 +1,654 @@
+{
+  "schema": "hanja-ownstroke-R-draft-code-check/v1",
+  "date": "2026-10-29",
+  "glyph": "朕",
+  "status": "PASS-source-translation-and-guide-code-only",
+  "inputSHA256": {
+    "docs/hanja-actual-engine-capture-u6715-hkcs-2026-10-26/engine-whole-hkcs_m6715.json": "8154f8f413dc5b027aceec1a2d3219106ed4cda4404a1866ae740205fb91f73c",
+    "docs/hanja-authored-ownstroke-u6715-points-separated-2026-10-29/fixtures-draft.json": "a8ce1fa33a05b46cbda727c22dfee5d6ed4f0a7faf7cb016ac8685ab1d40f8bf",
+    "docs/hanja-authored-ownstroke-u6715-points-separated-2026-10-29/recipe.json": "ffd6d46c80c19a885bd04e5e5c59f91faf8f349fc3202160aaec8d654eacfd02",
+    "docs/hanja-authored-ownstroke-u6715-points-separated-2026-10-29/point-separation-check.json": "e10a66a6bc6d46634b5067b6d7b3638d7aab71b1adc4f24751492d8ced98231f",
+    "docs/hanja-authored-ownstroke-u6715-points-separated-2026-10-29/materialize-draft.py": "6662e39e83c56e096906901607b4f90e02585a10c26015615a7dd1b6a74c8651",
+    "docs/hanja-authored-ownstroke-u6715-points-separated-2026-10-29/native-static-review.json": "44b1f959d68dbd739de43fff1058072f61c8ed588fef3a801712d90b30ba2407",
+    "docs/hanja-official-media-compare-u6715-2026-10-29/native-clock-review.json": "2a959ff2c62b083423472641b858218bb630557319e628618b0974a1485fe9b8",
+    "docs/hanja-source-raw-compare-u6715-hkcs-original-2026-10-29/native-mapping-role-review.json": "cd5f1bd670db2e06bdee8ce3be674013db895e53286a89622e72f9cc93cf693f",
+    "lib/hanja-stroke-outline.ts": "b4d289d1911c4d43934dfad39c4cfbe22a246303bb7012114d16786688c36c40",
+    "components/hanja/stroke-outlines.tsx": "cb4d80f57dbd8ad9815b5b90128ece5171a678a3b1c24e94956c2ac9fff91f88",
+    "docs/hanja-authored-ownstroke-u6715-points-separated-2026-10-29/prepare-execution-draft.mjs": "cee20dbe6c398f425d9a1fd67825e0117e4242f532967ebdb331143498d4d9c0"
+  },
+  "logicalPens": 10,
+  "segments": 15,
+  "polygons": 29,
+  "curves": 8,
+  "cardinals": 7,
+  "expectedMaskCounts": [
+    2,
+    3,
+    1,
+    1,
+    1,
+    2,
+    1,
+    1,
+    2,
+    1
+  ],
+  "compoundPens": [
+    1,
+    2,
+    6,
+    9
+  ],
+  "pairProgress": [
+    {
+      "pen": 1,
+      "boundary": 0.4744054153751185,
+      "nextMask": 2
+    },
+    {
+      "pen": 2,
+      "boundary": 0.1635338345849292,
+      "nextMask": 2
+    },
+    {
+      "pen": 2,
+      "boundary": 0.8402255639018775,
+      "nextMask": 3
+    },
+    {
+      "pen": 6,
+      "boundary": 0.33883384942512207,
+      "nextMask": 2
+    },
+    {
+      "pen": 9,
+      "boundary": 0.16413531912872117,
+      "nextMask": 2
+    }
+  ],
+  "facts": [
+    {
+      "logical": 1,
+      "mask": 1,
+      "sourceRawOneBased": 1,
+      "primitiveOneBased": 1,
+      "kind": "cdDrawLine",
+      "sourceFlags": [
+        12,
+        1
+      ],
+      "originalSourcePAndQPreserved": true,
+      "declaredWholeDotTranslationOnly": false,
+      "matrixExact": [
+        "1",
+        "0",
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      "guide100": [
+        [
+          15.55,
+          13
+        ],
+        [
+          15.55,
+          56
+        ]
+      ],
+      "cardinalPolicy": "down"
+    },
+    {
+      "logical": 1,
+      "mask": 2,
+      "sourceRawOneBased": 1,
+      "primitiveOneBased": 2,
+      "kind": "cdDrawCurve",
+      "sourceFlags": [
+        1,
+        7
+      ],
+      "originalSourcePAndQPreserved": true,
+      "declaredWholeDotTranslationOnly": false,
+      "matrixExact": [
+        "1",
+        "0",
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      "guide100": [
+        [
+          15.55,
+          56
+        ],
+        [
+          15.55,
+          84
+        ],
+        [
+          7.2125,
+          93.5
+        ]
+      ],
+      "curvePolicy": {
+        "width": 14,
+        "padding": 7,
+        "controlLength": 40.63977477054081,
+        "weight": 47.63977477154081,
+        "until": 0.14693604311877817,
+        "sourceMicroclockEquivalent": false
+      }
+    },
+    {
+      "logical": 2,
+      "mask": 1,
+      "sourceRawOneBased": 2,
+      "primitiveOneBased": 1,
+      "kind": "cdDrawLine",
+      "sourceFlags": [
+        2,
+        2
+      ],
+      "originalSourcePAndQPreserved": true,
+      "declaredWholeDotTranslationOnly": false,
+      "matrixExact": [
+        "1",
+        "0",
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      "guide100": [
+        [
+          15.55,
+          13
+        ],
+        [
+          32.95,
+          13
+        ]
+      ],
+      "cardinalPolicy": "right"
+    },
+    {
+      "logical": 2,
+      "mask": 2,
+      "sourceRawOneBased": 3,
+      "primitiveOneBased": 1,
+      "kind": "cdDrawLine",
+      "sourceFlags": [
+        22,
+        1
+      ],
+      "originalSourcePAndQPreserved": true,
+      "declaredWholeDotTranslationOnly": false,
+      "matrixExact": [
+        "1",
+        "0",
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      "guide100": [
+        [
+          32.95,
+          13
+        ],
+        [
+          32.95,
+          85
+        ]
+      ],
+      "cardinalPolicy": "down"
+    },
+    {
+      "logical": 2,
+      "mask": 3,
+      "sourceRawOneBased": 3,
+      "primitiveOneBased": 2,
+      "kind": "cdDrawCurve",
+      "sourceFlags": [
+        1,
+        214
+      ],
+      "originalSourcePAndQPreserved": true,
+      "declaredWholeDotTranslationOnly": false,
+      "matrixExact": [
+        "1",
+        "0",
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      "guide100": [
+        [
+          32.95,
+          85
+        ],
+        [
+          32.95,
+          90
+        ],
+        [
+          27.950000000000003,
+          90
+        ]
+      ],
+      "curvePolicy": {
+        "width": 14,
+        "padding": 7,
+        "controlLength": 10,
+        "weight": 17.000000001,
+        "until": 0.41176470585813146,
+        "sourceMicroclockEquivalent": false
+      }
+    },
+    {
+      "logical": 3,
+      "mask": 1,
+      "sourceRawOneBased": 4,
+      "primitiveOneBased": 1,
+      "kind": "cdDrawCurve",
+      "sourceFlags": [
+        7,
+        8
+      ],
+      "originalSourcePAndQPreserved": true,
+      "declaredWholeDotTranslationOnly": true,
+      "matrixExact": [
+        "1",
+        "0",
+        "0",
+        "1",
+        "23/10",
+        "0"
+      ],
+      "guide100": [
+        [
+          19.6,
+          27.5
+        ],
+        [
+          24.675,
+          33
+        ],
+        [
+          27.2125,
+          39
+        ]
+      ],
+      "curvePolicy": {
+        "width": 14,
+        "padding": 7,
+        "controlLength": 13.998205643579379,
+        "weight": 20.99820564457938,
+        "until": 0.3333618175992589,
+        "sourceMicroclockEquivalent": false
+      }
+    },
+    {
+      "logical": 4,
+      "mask": 1,
+      "sourceRawOneBased": 5,
+      "primitiveOneBased": 1,
+      "kind": "cdDrawCurve",
+      "sourceFlags": [
+        7,
+        8
+      ],
+      "originalSourcePAndQPreserved": true,
+      "declaredWholeDotTranslationOnly": true,
+      "matrixExact": [
+        "1",
+        "0",
+        "0",
+        "1",
+        "23/10",
+        "0"
+      ],
+      "guide100": [
+        [
+          19.6,
+          48.5
+        ],
+        [
+          24.675,
+          54.5
+        ],
+        [
+          27.2125,
+          61
+        ]
+      ],
+      "curvePolicy": {
+        "width": 14,
+        "padding": 7,
+        "controlLength": 14.836218360798348,
+        "weight": 21.83621836179835,
+        "until": 0.32056832753817116,
+        "sourceMicroclockEquivalent": false
+      }
+    },
+    {
+      "logical": 5,
+      "mask": 1,
+      "sourceRawOneBased": 6,
+      "primitiveOneBased": 1,
+      "kind": "cdDrawCurve",
+      "sourceFlags": [
+        0,
+        7
+      ],
+      "originalSourcePAndQPreserved": true,
+      "declaredWholeDotTranslationOnly": false,
+      "matrixExact": [
+        "1",
+        "0",
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      "guide100": [
+        [
+          55,
+          16
+        ],
+        [
+          51,
+          29
+        ],
+        [
+          39,
+          41
+        ]
+      ],
+      "curvePolicy": {
+        "width": 14,
+        "padding": 7,
+        "controlLength": 30.57203325721259,
+        "weight": 37.572033258212585,
+        "until": 0.18630878855804067,
+        "sourceMicroclockEquivalent": false
+      }
+    },
+    {
+      "logical": 6,
+      "mask": 1,
+      "sourceRawOneBased": 7,
+      "primitiveOneBased": 1,
+      "kind": "cdDrawLine",
+      "sourceFlags": [
+        0,
+        100
+      ],
+      "originalSourcePAndQPreserved": true,
+      "declaredWholeDotTranslationOnly": false,
+      "matrixExact": [
+        "1",
+        "0",
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      "guide100": [
+        [
+          58,
+          14
+        ],
+        [
+          77,
+          14
+        ]
+      ],
+      "cardinalPolicy": "right"
+    },
+    {
+      "logical": 6,
+      "mask": 2,
+      "sourceRawOneBased": 8,
+      "primitiveOneBased": 1,
+      "kind": "cdDrawCurve",
+      "sourceFlags": [
+        7,
+        0
+      ],
+      "originalSourcePAndQPreserved": true,
+      "declaredWholeDotTranslationOnly": false,
+      "matrixExact": [
+        "1",
+        "0",
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      "guide100": [
+        [
+          72,
+          14
+        ],
+        [
+          79,
+          28
+        ],
+        [
+          91,
+          36
+        ]
+      ],
+      "curvePolicy": {
+        "width": 14,
+        "padding": 7,
+        "controlLength": 30.074680944354487,
+        "weight": 37.07468094535448,
+        "until": 0.18880809818208596,
+        "sourceMicroclockEquivalent": false
+      }
+    },
+    {
+      "logical": 7,
+      "mask": 1,
+      "sourceRawOneBased": 9,
+      "primitiveOneBased": 1,
+      "kind": "cdDrawLine",
+      "sourceFlags": [
+        0,
+        0
+      ],
+      "originalSourcePAndQPreserved": true,
+      "declaredWholeDotTranslationOnly": false,
+      "matrixExact": [
+        "1",
+        "0",
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      "guide100": [
+        [
+          45,
+          39
+        ],
+        [
+          84,
+          39
+        ]
+      ],
+      "cardinalPolicy": "right"
+    },
+    {
+      "logical": 8,
+      "mask": 1,
+      "sourceRawOneBased": 10,
+      "primitiveOneBased": 1,
+      "kind": "cdDrawLine",
+      "sourceFlags": [
+        0,
+        0
+      ],
+      "originalSourcePAndQPreserved": true,
+      "declaredWholeDotTranslationOnly": false,
+      "matrixExact": [
+        "1",
+        "0",
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      "guide100": [
+        [
+          40,
+          58
+        ],
+        [
+          92,
+          58
+        ]
+      ],
+      "cardinalPolicy": "right"
+    },
+    {
+      "logical": 9,
+      "mask": 1,
+      "sourceRawOneBased": 11,
+      "primitiveOneBased": 1,
+      "kind": "cdDrawLine",
+      "sourceFlags": [
+        32,
+        1
+      ],
+      "originalSourcePAndQPreserved": true,
+      "declaredWholeDotTranslationOnly": false,
+      "matrixExact": [
+        "1",
+        "0",
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      "guide100": [
+        [
+          64,
+          39
+        ],
+        [
+          64,
+          52
+        ]
+      ],
+      "cardinalPolicy": "down"
+    },
+    {
+      "logical": 9,
+      "mask": 2,
+      "sourceRawOneBased": 11,
+      "primitiveOneBased": 2,
+      "kind": "cdDrawCurve",
+      "sourceFlags": [
+        1,
+        7
+      ],
+      "originalSourcePAndQPreserved": true,
+      "declaredWholeDotTranslationOnly": false,
+      "matrixExact": [
+        "1",
+        "0",
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      "guide100": [
+        [
+          64,
+          52
+        ],
+        [
+          64,
+          84
+        ],
+        [
+          38,
+          92
+        ]
+      ],
+      "curvePolicy": {
+        "width": 14,
+        "padding": 7,
+        "controlLength": 59.20294101747089,
+        "weight": 66.2029410184709,
+        "until": 0.10573548383669196,
+        "sourceMicroclockEquivalent": false
+      }
+    },
+    {
+      "logical": 10,
+      "mask": 1,
+      "sourceRawOneBased": 12,
+      "primitiveOneBased": 1,
+      "kind": "cdDrawCurve",
+      "sourceFlags": [
+        7,
+        0
+      ],
+      "originalSourcePAndQPreserved": true,
+      "declaredWholeDotTranslationOnly": false,
+      "matrixExact": [
+        "1",
+        "0",
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      "guide100": [
+        [
+          66,
+          57
+        ],
+        [
+          75.5,
+          80
+        ],
+        [
+          89,
+          89
+        ]
+      ],
+      "curvePolicy": {
+        "width": 14,
+        "padding": 7,
+        "controlLength": 41.10971501584656,
+        "weight": 48.10971501684656,
+        "until": 0.14550075795603473,
+        "sourceMicroclockEquivalent": false
+      }
+    }
+  ],
+  "sourceOriginalPAndQControlPointsPreserved": true,
+  "wholeDots4And5TranslateOnly": true,
+  "other10RawGroupsExact": true,
+  "rawSourceGuideFlagsPreserved": true,
+  "sourceEngineRuns": 0,
+  "sourceMicroclockEquivalent": false,
+  "curveFullroundCoveragePending": true,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "remainingNativeRisks": [
+    "Compound1,2,6,9 primitive transitions and sourceP seam; no sourceclock match claimed.",
+    "Group6 H endpoint154,28 differs from nextQstart144,28. No bridge, crop, or continuous-guide rewrite.",
+    "Originalhook in2 and longcurve9 preserve originalP; fullround coverage/startgate/release/residual still require separate checks.",
+    "Point3/4 source shapes/width unchanged under translation; actualR starts, endings, separate white gaps and natural replay unreviewed."
+  ]
+}
