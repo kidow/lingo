@@ -1,3 +1,4 @@
+import {REVIEWED_U6621_MIXED_GUIDE_INPUT,makeReviewedU6621MixedGuideContext,sampleReviewedU6621MixedGuideFrame,type ReviewedU6621MixedGuideContext} from '@/lib/hanja-stroke-mixed-guide-u6621'
 import {REVIEWED_U6030_MIXED_GUIDE_INPUT,makeReviewedU6030MixedGuideContext,sampleReviewedU6030MixedGuideFrame,type ReviewedU6030MixedGuideContext} from '@/lib/hanja-stroke-mixed-guide-u6030'
 import {makeReviewedU51deBaseSourceRevealContext,REVIEWED_U51DE_BASE_SOURCE_REVEAL_INPUT,reviewedU51deBaseSourceRevealPolicy,sampleReviewedU51deBaseSourceRevealFrame,commitReviewedU51deBaseSourceReveal,type ReviewedU51deBaseSourceRevealPolicy} from '@/lib/hanja-stroke-source-reveal-u51de-base'
 import {makeReviewedU51deBaseHookContext,reviewedU51deBaseHookPolicy,sampleReviewedU51deBaseHookFrame,commitReviewedU51deBaseHook,type ReviewedU51deBaseHookPolicy} from '@/lib/hanja-stroke-source-hook-u51de-base'
@@ -396,6 +397,8 @@ export function StrokeOutlines({ strokes, clock, phase, count, manual }: {
 }) {
   const id = useId()
   const [elapsed, setElapsed] = useState(0)
+  const u6621MixedGuideContext=makeReviewedU6621MixedGuideContext(REVIEWED_U6621_MIXED_GUIDE_INPUT,strokes)
+  const u6621MixedGuideFrame=id+'-u6621-mixed-guide-frame-'+phase+'-'+count+'-'+String(manual)+'-'+String(elapsed)
   const u6030MixedGuideContext=makeReviewedU6030MixedGuideContext(REVIEWED_U6030_MIXED_GUIDE_INPUT,strokes)
   const u6030MixedGuideFrame=id+'-u6030-mixed-guide-frame-'+phase+'-'+count+'-'+String(manual)+'-'+String(elapsed)
   const u5ac2LocalRevealContext=makeLocalU5ac2RevealContext(LOCAL_U5AC2_REVEAL_INPUT.fullProof,LOCAL_U5AC2_REVEAL_INPUT.identity,strokes)
@@ -780,6 +783,7 @@ export function StrokeOutlines({ strokes, clock, phase, count, manual }: {
     {strokes.map((segments, stroke) => {
       const progress = phase === 'idle' || phase === 'done' ? 1 : manual ? (stroke < count ? 1 : 0)
         : (elapsed - stroke * (STROKE_DURATION + STROKE_GAP)) / STROKE_DURATION
+      if(u6621MixedGuideContext&&(stroke===6||stroke===7))return <U6621MixedGuideOutline key={stroke} context={u6621MixedGuideContext} pen={stroke===6?7:8} progress={Number.isFinite(progress)?Math.max(0,Math.min(1,progress)):NaN} clipId={id+'-u6621-mixed-'+stroke} frameId={u6621MixedGuideFrame}/>
       if(u6030MixedGuideContext&&(stroke===5||stroke===6))return <U6030MixedGuideOutline key={stroke} context={u6030MixedGuideContext} pen={stroke===5?6:7} progress={Number.isFinite(progress)?Math.max(0,Math.min(1,progress)):NaN} clipId={id+'-u6030-mixed-'+stroke} frameId={u6030MixedGuideFrame}/>
       const u83f0LocalPrefixPolicy=localU83f0SourcePrefixPolicy(u83f0LocalPrefixContext,stroke)
       if(u83f0LocalPrefixPolicy)return <U83f0LocalPrefixPreviewOutline key={stroke} policy={u83f0LocalPrefixPolicy} segments={segments} progress={Number.isFinite(progress)?Math.max(0,Math.min(1,progress)):NaN} frameId={u83f0LocalPrefixFrame} clipIds={segments.map((_,index)=>id+'-'+stroke+'-'+index)}/>
@@ -11832,5 +11836,13 @@ function U6030MixedGuideOutline({context,pen,progress,clipId,frameId}:{context:R
  return <g data-outline-stroke={pen} data-u6030-mixed-guide-context="u6030-sourceP8-mixed-guide" data-u6030-mixed-guide-fingerprint={frame.fingerprint} data-u6030-mixed-guide-pen={String(pen)} data-u6030-mixed-guide-progress={String(progress)} data-u6030-mixed-guide-phase={frame.phase} data-u6030-mixed-guide-frame={frameId} data-u6030-mixed-guide-status="source-bound">
   {frame.baseOutline&&<path id={clipId+'-base'} d={frame.baseOutline} data-u6030-mixed-guide-part="complete-firstP"/>}
   {frame.activeOutline&&(frame.mode==='full'?<path id={clipId+'-active'} d={frame.activeOutline} data-u6030-mixed-guide-part="full"/>:frame.mode==='curve'&&frame.segment?<g><defs>{frame.startClip!==undefined&&<clipPath id={clipId+'-source-start'} clipPathUnits="userSpaceOnUse"><polygon points={frame.startClip}/></clipPath>}<mask id={clipId+'-mask'} maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse" x="0" y="0" width="100" height="100" style={{maskType:'luminance'}}><path id={clipId+'-guide'} d={frame.segment.revealPath} clipPath={frame.startClip===undefined?undefined:'url(#'+clipId+'-source-start)'} fill="none" stroke="white" strokeWidth={frame.segment.revealWidth} strokeLinecap="round" strokeLinejoin="round" pathLength="1" strokeDasharray={String(frame.local)+' 2'} strokeDashoffset={0}/></mask></defs><path id={clipId+'-active'} d={frame.activeOutline} mask={'url(#'+clipId+'-mask)'} data-u6030-mixed-guide-part="curve"/></g>:frame.mode==='rect'&&frame.rect?<g><defs><clipPath id={clipId+'-rect'} clipPathUnits="userSpaceOnUse"><rect id={clipId+'-rect-box'} {...frame.rect}/></clipPath></defs><path id={clipId+'-active'} d={frame.activeOutline} clipPath={'url(#'+clipId+'-rect)'} data-u6030-mixed-guide-part="nextP-strip"/></g>:null)}
+ </g>
+}
+
+function U6621MixedGuideOutline({context,pen,progress,clipId,frameId}:{context:ReviewedU6621MixedGuideContext;pen:7|8;progress:number;clipId:string;frameId:string}){
+ const frame=sampleReviewedU6621MixedGuideFrame(context,pen,progress);if(!frame)return <g data-outline-stroke={pen} data-u6621-mixed-guide-status="rejected"/>
+ return <g data-outline-stroke={pen} data-u6621-mixed-guide-context="u6621-sourceP9-mixed-guide" data-u6621-mixed-guide-fingerprint={frame.fingerprint} data-u6621-mixed-guide-pen={String(pen)} data-u6621-mixed-guide-progress={String(progress)} data-u6621-mixed-guide-phase={frame.phase} data-u6621-mixed-guide-frame={frameId} data-u6621-mixed-guide-status="source-bound">
+  {frame.baseOutline&&<path id={clipId+'-base'} d={frame.baseOutline} data-u6621-mixed-guide-part="complete-firstP"/>}
+  {frame.activeOutline&&(frame.mode==='full'?<path id={clipId+'-active'} d={frame.activeOutline} data-u6621-mixed-guide-part="full"/>:frame.mode==='curve'&&frame.segment?<g><defs>{frame.startClip!==undefined&&<clipPath id={clipId+'-source-start'} clipPathUnits="userSpaceOnUse"><polygon points={frame.startClip}/></clipPath>}<mask id={clipId+'-mask'} maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse" x="0" y="0" width="100" height="100" style={{maskType:'luminance'}}><path id={clipId+'-guide'} d={frame.segment.revealPath} clipPath={frame.startClip===undefined?undefined:'url(#'+clipId+'-source-start)'} fill="none" stroke="white" strokeWidth={frame.segment.revealWidth} strokeLinecap="round" strokeLinejoin="round" pathLength="1" strokeDasharray={String(frame.local)+' 2'} strokeDashoffset={0}/></mask></defs><path id={clipId+'-active'} d={frame.activeOutline} mask={'url(#'+clipId+'-mask)'} data-u6621-mixed-guide-part="curve"/></g>:frame.mode==='rect'&&frame.rect?<g><defs><clipPath id={clipId+'-rect'} clipPathUnits="userSpaceOnUse"><rect id={clipId+'-rect-box'} {...frame.rect}/></clipPath></defs><path id={clipId+'-active'} d={frame.activeOutline} clipPath={'url(#'+clipId+'-rect)'} data-u6621-mixed-guide-part="nextP-strip"/></g>:null)}
  </g>
 }

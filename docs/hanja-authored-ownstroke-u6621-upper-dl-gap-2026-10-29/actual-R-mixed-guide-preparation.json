@@ -1,0 +1,55 @@
+{
+  "schema": "hanja-exact-helper-integration-preparation/v1",
+  "glyph": "昡",
+  "date": "2026-10-29",
+  "nativePrototypeReview": {
+    "path": "docs/hanja-authored-ownstroke-u6621-upper-dl-gap-2026-10-29/native-mixed-guide-prototype-review.json",
+    "SHA256": "3695ddc04028f10dcc92e50fdae33025b67bf22120955df7ff340f30dc487aa0"
+  },
+  "helper": {
+    "path": "lib/hanja-stroke-mixed-guide-u6621.ts",
+    "SHA256": "5da9c3b2bafdf8dfd5d18402166937c2ad63bdfff16b1e85480d1343ad842221"
+  },
+  "focusedTest": {
+    "path": "lib/hanja-stroke-mixed-guide-u6621.test.ts",
+    "SHA256": "68eff0fe435fa446b6cb0e088c09532cbbb5cf2b27b88bbfcadb099dfa54f0cb",
+    "passed": 5,
+    "selectedSemanticDiagnostics": 0
+  },
+  "renderIntegration": {
+    "patch": "docs/hanja-authored-ownstroke-u6621-upper-dl-gap-2026-10-29/actual-R-mixed-guide-integration.patch",
+    "SHA256": "2e83d3759d79fb90582f4521c7d80a0405622bdee2866dde9a65372541bfb2e9",
+    "beforeSHA256": "40130fedc1b2375399ddc94022062cb4b1f173f20d34face4b98e3703a8cc569",
+    "afterSHA256": "8412bcc55ec07ba21f23d6a37564a966ed231d84662e6b65b59c4be847f48da2",
+    "uniqueHunks": 4,
+    "exactForwardInverse": true,
+    "tsxSyntaxDiagnostics": 0,
+    "oldU6030ComponentUnchanged": true,
+    "addedRuntimeModule": "lib/hanja-stroke-mixed-guide-u6621.ts",
+    "expectedResourceClosureDelta": 1,
+    "actualSSRPending": true
+  },
+  "binding": {
+    "inputObjectIdentityRequired": true,
+    "full9Logical12Mask23PDescriptorSafeEquality": true,
+    "weakMapReceiptRequired": true,
+    "targetPens": [
+      7,
+      8
+    ],
+    "originalP23Unchanged": true,
+    "originalGeometrySHA256": "f9997623e283920dda1fd38c18db62a08b7b329f1a58d0d8675082b4dbe83f42",
+    "fingerprint": "5eb5f3902815c1b7f53c39535b3b65977df72ee30ebca4926262148462a3eb27",
+    "rootSpecificDomPrefix": "data-u6621-mixed-guide-",
+    "rootSpecificContext": "u6621-sourceP9-mixed-guide"
+  },
+  "scope": {
+    "actualRendererApproved": false,
+    "runtimeApplied": false,
+    "registrationChanged": false,
+    "actualSharedRendererChanged": false,
+    "oldHelperChanged": false,
+    "serverStarts": 0,
+    "buildRun": false
+  }
+}
