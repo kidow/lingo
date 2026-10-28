@@ -1,0 +1,122 @@
+{
+  "schema": "hanja-owned-actual-H-preparation/v1",
+  "glyph": "昡",
+  "date": "2026-10-29",
+  "helperBeforeSHA256": "26e11ae21dbef05b02d7cce17dc6121fe86663b1715cc28ccfad753c1e3e2b8a",
+  "helperAfterSHA256": "ed86949f1273d8d2e57c52ba2438ddfd3921303f697b8e9cc3e3be7758b66bce",
+  "patch": {
+    "path": "docs/hanja-authored-ownstroke-u6621-upper-dl-gap-2026-10-29/actual-H-mixed-guide-integration.patch",
+    "SHA256": "474a43a2c4e1607c29883b6dacf7c0ae193cb903d97440088c6f6542ea9207c6"
+  },
+  "profile": {
+    "path": "docs/hanja-authored-ownstroke-u6621-upper-dl-gap-2026-10-29/actual-profile-mixed-guide-start.json",
+    "SHA256": "80fcf03084a1f8f739a2d345d701100df54cc4bcb50d0d2d1158075d459444d0"
+  },
+  "sourceShape": [
+    9,
+    12,
+    23
+  ],
+  "actualGuideTargets": [
+    [
+      7,
+      "continuous7"
+    ],
+    [
+      8,
+      "dl8"
+    ],
+    [
+      9,
+      "generic"
+    ]
+  ],
+  "cardinalTargets": [
+    {
+      "pen": 1,
+      "mask": 1,
+      "direction": "down"
+    },
+    {
+      "pen": 2,
+      "mask": 1,
+      "direction": "right"
+    },
+    {
+      "pen": 2,
+      "mask": 2,
+      "direction": "down"
+    },
+    {
+      "pen": 3,
+      "mask": 1,
+      "direction": "right"
+    },
+    {
+      "pen": 4,
+      "mask": 1,
+      "direction": "right"
+    },
+    {
+      "pen": 5,
+      "mask": 1,
+      "direction": "down"
+    },
+    {
+      "pen": 6,
+      "mask": 1,
+      "direction": "right"
+    }
+  ],
+  "checks": {
+    "exactForwardInverse": true,
+    "uniqueHunks": 18,
+    "helperSyntaxDiagnostics": 0,
+    "browserSyntaxDiagnostics": 0,
+    "strictLoaderPositive": 1,
+    "strictLoaderNegative": 6,
+    "all956PinsMatchExpectedAppliedH": true,
+    "resourcesFullFunctionCJS": 388,
+    "resourcesFullFunctionESM": 388,
+    "resourcesRAMActualPayloadFields": [
+      "kind",
+      "glyph",
+      "pens",
+      "root",
+      "sharedVersion",
+      "temporalPolicy",
+      "curveTargets",
+      "pairProgress",
+      "cardinalTargets",
+      "displayFingerprint"
+    ],
+    "newSSRChecks": 0,
+    "actualComponentSSRDeferredToROOT": true,
+    "resourceExecutionAdjustment": "Only the call render() and SSRCount initialization were omitted in the RAM preparation run; dependency resolution, exact closure guard, CJS execution, ESM serialization and routes/payload construction ran normally.",
+    "finalDeltaReuse": "After full resources pass, stale inherited cardinal metadata was replaced by exact 昡7cardinal values and strict-loader assertion was added. This changes neither resources nor browser code; final loader positive+6negative and all956pins were checked without recompiling unchanged resources."
+  },
+  "reviewPlan": [
+    "Changed7 continuous compact and8phase compact first; own release3 for each actual guide7/8DL/9 and three blank full-round residuals.",
+    "All9 compact; initial18 phaseboundary6 ending27 aggregate51; own phase8bothlimits.",
+    "Whole520 idle/done/zero/prefix0..9 and natural7/8.",
+    "No futureH duringDL; independently pinned prototype agreement required in actualR."
+  ],
+  "aggregate": {
+    "initial": 18,
+    "boundary": 6,
+    "ending": 27,
+    "total": 51,
+    "gateRelease3": 9,
+    "residual": 3
+  },
+  "nativePrototypeReview": {
+    "path": "docs/hanja-authored-ownstroke-u6621-upper-dl-gap-2026-10-29/native-mixed-guide-prototype-review.json",
+    "SHA256": "3695ddc04028f10dcc92e50fdae33025b67bf22120955df7ff340f30dc487aa0"
+  },
+  "actualSharedHelperChanged": false,
+  "actualRendererChangedByChild": false,
+  "nativeActualReview": false,
+  "runtimeApplied": false,
+  "serversStarted": 0,
+  "buildRun": false
+}
