@@ -1,0 +1,35 @@
+{
+  "schema": "hanja-source-only-interior-trial-static-preparation-v1",
+  "date": "2026-10-28",
+  "glyph": "臝",
+  "status": "unapproved-relocated-point-trial-prepared",
+  "configSHA256": "713f79fd2fe30c2ee15ee754d3c618d00e2cf0473308314d67c6a4aa73bcb06d",
+  "configSemanticSHA256": "f256dee486ecba6b8998e9752e089f087d3a03e61d2e6ab0d0b2816081b28e8e",
+  "helper": {
+    "path": "scripts/hanja-raw-static-compare.py",
+    "preSHA256": "772247ca972c76e574f9d48000d100054a2eba60906dd0050f3a8ee26af41b8c",
+    "postSHA256": "43a1243ff04b43473ad194ac460fd9b848178b2cfccb81d10949bf4de6616012",
+    "patchSHA256": "98e2cd8681573b33ea91b72fb855b433aec6959f4ac1468d8599b676c2ae9b97",
+    "anchors": [
+      "OWNPOINT_U81DD={'config':'docs/hanja-source-raw-compare-u81dd-ownpoint-2026-10-28/config.json','configSemanticSHA256':'66b2ecc2e411b40763fab0e1651ae08a58a893577ed4844f0a54396332e612bf'}",
+      "    require(config_path==ROOT/OWNPOINT_U81DD['config'] and digest(json.dumps(semantic,sort_keys=True,separators=(',',':'),ensure_ascii=False).encode())==OWNPOINT_U81DD['configSemanticSHA256'],'exact closed two-size authored 臝 config required')"
+    ],
+    "applied": false
+  },
+  "actualGeometryChange": "Only previous point clone x translation +851/80. Donor P/Q, two sizes and recipient other24raw unchanged.",
+  "publicInnerGap": {
+    "y": "133",
+    "leftRaw": 21,
+    "leftInnerX": "160",
+    "rightRaw": 23,
+    "rightInnerX": "6731/40",
+    "centerX": "13131/80"
+  },
+  "oldTrials": "Preserve old fixtures/config/static HOLD. Left-pillar overlap is the reason for the new placement; no prior whole is approved.",
+  "newRendererOrServerCode": false,
+  "existingExactLoaderRunnerReused": true,
+  "validatorRAMExecuted": true,
+  "validatorRAMResult": "PASS: actual future load_ownpoint_u81dd accepted both the preserved old exact config and this new exact interior config; unknown config path rejected. Source materializers and original guards executed in RAM; no shared helper application or server.",
+  "nativeApproval": false,
+  "runtimeApplied": false
+}

@@ -1407,10 +1407,12 @@ def run_mixed_curve_u97b9_u7f96(args,config,config_path):
     finally:sys.argv=argv
 
 OWNPOINT_U81DD={'config':'docs/hanja-source-raw-compare-u81dd-ownpoint-2026-10-28/config.json','configSemanticSHA256':'66b2ecc2e411b40763fab0e1651ae08a58a893577ed4844f0a54396332e612bf'}
+OWNPOINT_U81DD_INTERIOR={'config':'docs/hanja-source-raw-compare-u81dd-ownpoint-interior-2026-10-28/config.json','configSemanticSHA256':'f256dee486ecba6b8998e9752e089f087d3a03e61d2e6ab0d0b2816081b28e8e'}
 
 def load_ownpoint_u81dd(config,config_path):
     semantic={k:v for k,v in config.items()if k!='launcherSHA256'}
-    require(config_path==ROOT/OWNPOINT_U81DD['config'] and digest(json.dumps(semantic,sort_keys=True,separators=(',',':'),ensure_ascii=False).encode())==OWNPOINT_U81DD['configSemanticSHA256'],'exact closed two-size authored 臝 config required')
+    expected=OWNPOINT_U81DD_INTERIOR if config_path==ROOT/OWNPOINT_U81DD_INTERIOR['config'] else OWNPOINT_U81DD
+    require(config_path==ROOT/expected['config'] and digest(json.dumps(semantic,sort_keys=True,separators=(',',':'),ensure_ascii=False).encode())==expected['configSemanticSHA256'],'exact closed two-size authored 臝 config required')
     require(hexsha(config.get('launcherSHA256')) and config['schema']=='hanja-shared-authored-ownstroke-compare/v1' and config['kind']=='authored-ownstroke-point-u81dd' and config['glyph']=='臝' and config['catalogStrokes']==config['domestic']['clips']==21 and config['sourceViewBox']=='0 0 200 200' and config['host']=='127.0.0.1','fixed static 臝21 context required')
     require(config['sourceRootWasAuthored']is True and config['candidateOriginalRoot']is False and config['isOriginalEngineCapture']is False and config['sourceTraceDescribesAuthoredRaw24']is False and config['nativeApproval']is False and config['runtimeApplied']is False and config['noPartialAnimation']is True and config['raw24MappingApproved']is False and config['selectedApprovedWholeRoot']is None and all(v is False for v in config['approval'].values()),'authored dot/whole/mapping must remain unapproved')
     require(config['sharedServe']=={'path':SHARED,'SHA256':SHARED_SHA} and config['changedRawIndexZeroBased']==24 and config['changedRawSlotOneBased']==25 and config['domesticLogicalPenUnderComparison']==21,'unchanged shell and distinct raw/logical identities required')

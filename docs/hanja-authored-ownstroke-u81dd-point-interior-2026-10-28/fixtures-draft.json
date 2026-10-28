@@ -1,0 +1,183 @@
+{
+  "schema": "hanja-ownstroke-DR-point-placement-draft-v1",
+  "date": "2026-10-28",
+  "glyph": "臝",
+  "status": "two-unapproved-interior-center-only-translation-trials",
+  "sourceContextRoot": "u81dd",
+  "selectedApprovedWholeRoot": null,
+  "sourceProofPath": "docs/hanja-goal-glyphwiki-batch530-2026-10-11/engine-proof.json",
+  "sourceProofSHA256": "5a1b0e13a70d35987f60603a526ca8b8ea6ed72a9e442ff63954edd23e8ae072",
+  "sourceTracePath": "docs/hanja-goal-glyphwiki-batch530-2026-10-11/draw-trace.json",
+  "sourceTraceSHA256": "ede3d1753a067f45986a6b79a1cce12eb23e18f6352886765f444e6eacf755bb",
+  "domesticObservation": {
+    "reportedBy": "ROOT direct original source-clock browser observation",
+    "logicalPen": 21,
+    "fractionsObserved": [
+      0.1,
+      0.5,
+      0.75
+    ],
+    "direction": "curved down-right from upper-left",
+    "otherTwentyIndividualPensReviewed": false,
+    "privateCoordinatesCopied": false
+  },
+  "slotCorrespondence": {
+    "publicRawIndexZeroBased": 24,
+    "domesticLogicalPen": 21,
+    "status": "unapproved-correspondence-hypothesis",
+    "publicOriginalGuide": [
+      137,
+      133,
+      170,
+      133
+    ],
+    "targetCenterExact": [
+      "13131/80",
+      "133"
+    ],
+    "definition": "At public source y133, original left pillar raw21 fills x148..160 and original right pillar raw23 begins at x6731/40=168.275. Use the midpoint of this open source-only interior gap, x13131/80=164.1375; raw22 is the top horizontal, not the left pillar. This is an author anchor and not a domestic coordinate."
+  },
+  "donor": {
+    "rawIndexZeroBased": 20,
+    "raw": [
+      2,
+      7,
+      8,
+      102.9,
+      155.68,
+      119.15,
+      162.4,
+      128.9,
+      173.04000000000002,
+      null,
+      null
+    ],
+    "callKind": "cdDrawCurve",
+    "polygonCount": 2,
+    "polygonVertices": [
+      22,
+      5
+    ],
+    "polygonsECMAScriptJSONSHA256": "6da8f14dfb959530398887ce33816599cec4f84fd0c824c637405d8778ba7ccd",
+    "guideEndpointCenterExact": [
+      "1159/10",
+      "16436000000000001/100000000000000"
+    ],
+    "selectionScope": "Exact own raw20 is an existing public DR quadratic with original flags7/8 and filled P2. Its suitability for domestic21 is unapproved. Original raw20 stays in place; only a clone is used at raw24."
+  },
+  "consideredAlternatives": [
+    {
+      "glyph": "臝",
+      "rawIndexZeroBased": 0,
+      "callKind": "cdDrawLine",
+      "rawGuide": [
+        100,
+        14,
+        100,
+        31
+      ],
+      "flags": [
+        0,
+        32
+      ],
+      "decision": "Do not use this vertical straight-line/ornament as an already curved DR point."
+    },
+    {
+      "glyph": "羖",
+      "rawIndexZeroBased": 0,
+      "callKind": "cdDrawCurve",
+      "flags": [
+        7,
+        8
+      ],
+      "polygonVertices": [
+        22,
+        5
+      ],
+      "decision": "Public curved DR alternative exists and ROOT previously saw it in whole view, but this draft uses own raw20 and makes no external donor transfer or approval claim."
+    }
+  ],
+  "variants": [
+    {
+      "id": "own-DR-point-interior-scale-0.5",
+      "priorVariantId": "own-DR-point-scale-0.5",
+      "scaleRational": "1/2",
+      "matrixRational": [
+        "1/2",
+        "0",
+        "0",
+        "1/2",
+        "1699/16",
+        "10163999999999999/200000000000000"
+      ]
+    },
+    {
+      "id": "own-DR-point-interior-scale-0.75",
+      "priorVariantId": "own-DR-point-scale-0.75",
+      "scaleRational": "3/4",
+      "matrixRational": [
+        "3/4",
+        "0",
+        "0",
+        "3/4",
+        "6177/80",
+        "3891999999999997/400000000000000"
+      ]
+    }
+  ],
+  "authorPlacementRule": "Preserve both previous trial sizes and donor shape. Translate only by public source deltaX851/80=10.6375, deltaY0 from the rejected old raw24-guide-center placement. The new target is the public inner-pillar-gap midpoint at y133. Transform all donor filled vertices and all guide points together; no private coordinates or publisher shape are copied.",
+  "sameSourceDerived": true,
+  "locallyAuthored": true,
+  "mixed": true,
+  "originalRoot": false,
+  "isOriginalEngineCapture": false,
+  "sourceTraceDescribesAuthoredRaw24": false,
+  "logicalRawGroupsApproved": false,
+  "fillRule": "nonzero",
+  "eachPolygonPaintedSeparately": true,
+  "priorFourWholeHOLDsUnchanged": true,
+  "approval": {
+    "donorSuitability": false,
+    "raw24Mapping": false,
+    "geometry": false,
+    "contact": false,
+    "whole": false,
+    "sourceOrder": false,
+    "native": false,
+    "runtime": false
+  },
+  "privateCoordinatesUsedOrCopied": false,
+  "derivedFrom": {
+    "fixturePath": "docs/hanja-authored-ownstroke-u81dd-point-2026-10-28/fixtures-draft.json",
+    "fixtureSHA256": "ecbdcecbcae0146841b00b9ebe6bfc12c64503d1a7e3632c5d8733e4a6bee421",
+    "materializerPath": "docs/hanja-authored-ownstroke-u81dd-point-2026-10-28/materialize-draft.py",
+    "materializerSHA256": "bd9ae0adfe67f5fb100094da7286f37fe6ee1780f91fa7f7e0185154bb8fa625"
+  },
+  "publicInnerGap": {
+    "sliceY": "133",
+    "leftRawIndexZeroBased": 21,
+    "rightRawIndexZeroBased": 23,
+    "leftFilledSpan": [
+      "148",
+      "160"
+    ],
+    "rightFilledSpan": [
+      "6731/40",
+      "27937/155"
+    ],
+    "leftInnerEdge": "160",
+    "rightInnerEdge": "6731/40",
+    "openGapWidth": "331/40",
+    "centerX": "13131/80",
+    "translationFromPriorRational": [
+      "851/80",
+      "0"
+    ],
+    "scope": "Exact straight-edge nonzero original polygon cross-sections at one public y only; not a full point-containment, contact or whole approval."
+  },
+  "priorTrialResult": {
+    "status": "HOLD-bad-left-pillar-overlap",
+    "reportedBy": "ROOT direct static observation of both prior trials",
+    "scope": "Both former raw24-guide-midpoint placements overlap the left pillar rather than occupy the right 凡 interior. Old files and original four whole HOLDs remain unchanged."
+  }
+}
