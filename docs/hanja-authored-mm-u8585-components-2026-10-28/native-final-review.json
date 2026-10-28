@@ -1,0 +1,28 @@
+{
+  "schema": "hanja-authored-MM-finite-native-review-v1",
+  "date": "2026-10-28",
+  "glyph": "薅",
+  "logicalStrokes": 17,
+  "status": "PASS-finite-authored-font-variant-renderer-review",
+  "fixture": {"path": "docs/hanja-authored-mm-u8585-components-2026-10-28/fixtures-reveal-start-draft.json", "SHA256": "a603440ef182279d0b06c66777a3d6648c398ca86043c57a3db6d9c24a82fbc1", "geometrySHA256": "e9e39047f1dc662adfcaeb0a5332dd202f093799ec4513bb7b27859b3e110a45"},
+  "renderer": {"path": "components/hanja/stroke-outlines.tsx", "SHA256": "cb4d80f57dbd8ad9815b5b90128ece5171a678a3b1c24e94956c2ac9fff91f88"},
+  "outlineHelper": {"path": "lib/hanja-stroke-outline.ts", "SHA256": "b4d289d1911c4d43934dfad39c4cfbe22a246303bb7012114d16786688c36c40"},
+  "observer": {"path": "scripts/hanja-actual-component-review.mjs", "SHA256": "90773f982b5c7b58ba5cd1d85113690e9eaf63400fcda79e787f5d0da31d5fab", "profileSHA256": "9e4bb4fb609c8f2adba305f8624a980ec8a96927db5e3228fc111e9f72b5f8ad"},
+  "sourceClockReview": {"path": "docs/hanja-official-media-compare-u8585-2026-10-28/native-clock-review.json", "SHA256": "5fbea37ad64902aafe13afeba76062bfdfbbd82fed5463011b3b837decb413d0"},
+  "browser": "Codex in-app browser, actual StrokeOutlines React component",
+  "observations": {
+    "whole": "Direct520px complete view: two distinct grass crosses above 女 and 辰/寸, complete and legible as 薅, no unintended grass/body contact. Body proportions and left-falling tail retain the fixed MM font, not publisher outlines or proportions.",
+    "coarse": {"pens": "1..17", "progress": [0,0.125,0.25,0.375,0.5,0.625,0.75,0.875,1], "frames": 153, "result": "Every grid directly viewed. Logical order, down/left/right and compound turns agree with the independently viewed source17 sequence. No observed detached future ink; bad[]; errors[]."},
+    "startGateRelease": {"pens": "1..17", "progress": "until-1e-8,until,until+1e-8", "frames": 51, "result": "Every triplet directly viewed; no observed release jump; bad[]; errors[]."},
+    "initial": {"pens": "1..17", "progress": [0,0.000001], "frames": 34, "result": "Every initial sample directly viewed across two overlapping captures. No finite initial fragment observed;35 states including main; bad[]; errors[]."},
+    "ending": {"pens": "1..17", "progress": [0.9999,0.99999999,1], "frames": 51, "result": "Every ending triplet directly viewed across three overlapping captures. No observed completion pop or missing stroke;52 states including main; bad[]; errors[]."},
+    "fullGuideResidual": {"pens": "1..17", "samples": 17, "result": "Actual committed source guide D/width/transform/owner read back. Clone removes dash and temporary start clip only. All17 original filled D minus full round guide areas directly viewed blank at300px across two overlapping captures. bad[]; errors[]."},
+    "timedSampledPlayback": {"pens": [5,12,16], "durationPerPenMilliseconds": 8000, "result": "Actual timers reached natural-ended,progress1,bad[],errors[] for all3 compound strokes. Continuous video and every instant were not observed."}
+  },
+  "authorship": "Locally authored four-grass-stroke placement combines fixed donor 十 strokes with thirteen unchanged fixed MM recipient body strokes. No original-whole, exact publisher geometry, source-clock identity or upstream microtiming equivalence claim.",
+  "approval": {"basicLogicalOrderAndDirections": true, "authoredWholeFontVariant": true, "finiteActualRenderer": true, "registerThisExactGeometry": true},
+  "limits": {"finiteSamplesOnly": true, "originalMMWhole": false, "officialPublisherGeometry": false, "sourceClockIdentity": false, "actualAppUIFreshlyTested": false, "privateSourceAssetsSaved": false},
+  "registrationConditions": "Independent strict capsule/loader and resolver17 success/16 rejection must pass before counting applied. Preserve all17 outlines, original source guides, authored affines and source gates.",
+  "buildRun": false,
+  "projectTypecheckRun": false
+}
