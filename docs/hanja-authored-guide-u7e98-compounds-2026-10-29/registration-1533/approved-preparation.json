@@ -1,0 +1,44 @@
+{
+  "schema": "hanja-approved-registration-preparation/v1",
+  "glyph": "纘",
+  "batch": 1533,
+  "date": "2026-10-29",
+  "finalNative": {
+    "path": "docs/hanja-authored-guide-u7e98-compounds-2026-10-29/native-actual-review.json",
+    "SHA256": "07ff48b0a4a9eca33f4ec1be6a3f98e19cce550cbae106c11fd2258b8f1eb297",
+    "status": "pass-bounded-actual-component-review"
+  },
+  "files": {
+    "lib/hanja-stroke-dictionary-glyphwiki-batch1533.ts": "d9b9a0edecfbbb1ceba91cbf17e41cb9cebe5d311508ea5ef40f55b60c599ff9",
+    "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch1533.json": "fd4fd692b6ed3a997c4acde2385df34a77a9058012a35e1ad766853153feb812",
+    "lib/hanja-stroke-dictionary-glyphwiki-batch1533.test.ts": "41408b323e115d1c93624022978fe9c837a275a60a23f5fb518645e493ce5689"
+  },
+  "moduleSemantic": {
+    "status": "PASS",
+    "diagnostics": 0,
+    "root": "lib/hanja-stroke-dictionary-glyphwiki-batch1533.ts",
+    "scope": "Actual root module, actual dictionary/outline types and two imported JSON files; no registry/project typecheck.",
+    "initialEvaluatorSyntaxErrorBeforeCompiler": true
+  },
+  "strictThreeTests": {
+    "command": "node --experimental-strip-types --test lib/hanja-stroke-dictionary-glyphwiki-batch1533.test.ts",
+    "executedByChild": false,
+    "executedByRoot": true,
+    "rootResult": { "tests": 3, "pass": 3, "fail": 0 },
+    "requiresRootRegistryConnection": true
+  },
+  "registry": {
+    "writtenByChild": false,
+    "writtenByRoot": true,
+    "activationCommit": "68d4e41a0a1bc036092114040ac9c0564d7033aa",
+    "liveCountAfterActivation": { "applied": 5949, "remaining": 29, "total": 5978 },
+    "expectedBeforeSHA256": "9dd814f96730aa34bed16354609b7bce89d7607dc12b4ec1d2598d091689aaef",
+    "import": "import { HANJA_DICTIONARY_GLYPHWIKI_BATCH1533_STROKES } from './hanja-stroke-dictionary-glyphwiki-batch1533.ts'",
+    "spread": "...HANJA_DICTIONARY_GLYPHWIKI_BATCH1533_STROKES"
+  },
+  "historicalPendingRecordPreserved": true,
+  "childServers": 0,
+  "childSSR": 0,
+  "build": 0,
+  "wholeProjectTypecheck": 0
+}
