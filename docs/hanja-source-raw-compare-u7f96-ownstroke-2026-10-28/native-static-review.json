@@ -1,0 +1,22 @@
+{
+  "schema": "hanja-authored-static-comparison-v1",
+  "date": "2026-10-28",
+  "glyph": "羖",
+  "browser": "Codex in-app browser",
+  "configSHA256": "b94fa57eafaf6ba907121623a7596aaa5d4e6b07c492dfff44bc7431108e61cd",
+  "helperSHA256": "d538889b1a8e3da505775cf42fd9328914d972dc488a1fc76ca335482835d552",
+  "fixtureSHA256": "54ed6761f490aa1f90f2f348c1ce80b7c5ccde2b2ec77febf892feb95aadea89",
+  "materializerSHA256": "612d970e1999304f8227bb2fddc24bedd4b8d0760b0bb497e72cd41a750d7d3e",
+  "views": [
+    {"route": "/whole", "scope": "Domestic complete10, original13raw/32P and authored13raw/31P directly viewed together.", "observation": "The authored new lower horizontal corrects the original strongly rising sheep-component line. Whole glyph remains legible. Original source root HOLD is preserved; this is a different explicitly authored scene."},
+    {"route": "/compare?source=authored&domestic=4&raw=4&dview=single&rview=single", "observation": "Original donor4 is a horizontal filled body with attached right serif, compatible as a font variant of directly viewed domestic4. It remains unchanged in the authored scene."},
+    {"route": "/compare?source=authored&domestic=5&raw=6&dview=single&rview=single", "observation": "New5 is horizontal, with a coherent body and right serif; its width and height fit the three-horizontal sheep component in the complete authored view. Publisher and KAGE nib details differ; publisher geometry was not copied."}
+  ],
+  "publicContactCheck": {"method": "Nonzero polygon winding and strict distance from every polygon edge, using public filled polygons only.", "positiveInteriorWitness": [43,123.9775], "newHorizontalPolygonZeroBased": 0, "retainedVerticalRawZeroBased": 4, "retainedVerticalPolygonZeroBased": 2, "minimumEdgeClearanceSourceUnits": 0.4003826270956656, "result": "Positive-area new-horizontal/retained-vertical contact exists, not only boundary touching. This is a local contact fact, not a global pixel proof."},
+  "remainingVisualCheck": "A faint internal horizontal raster seam is visible in the unchanged vertical in the static multi-path scene. Check its treatment in the actual renderer before registration; do not infer a geometry hole from that static raster alone.",
+  "orderingLimit": "Static source-prefix controls use raw slot order, not the proposed logical order. They were not treated as proof of logical5-before6. Existing all10 canonical observations retain their original scope; the actual mapped10 playback remains required.",
+  "result": "PASS-to-temporal-review-with-retained-vertical-raster-check",
+  "approval": {"donorContourFontVariant": true, "newHorizontalPlacement": true, "localPositiveContact": true, "wholeToTemporalReview": true, "animation": false, "runtime": false},
+  "privateSourceAssetsSaved": false,
+  "buildRun": false
+}

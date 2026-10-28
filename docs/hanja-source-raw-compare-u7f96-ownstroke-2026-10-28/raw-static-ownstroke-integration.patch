@@ -1,0 +1,57 @@
+*** Begin Patch
+*** Update File: scripts/hanja-raw-static-compare.py
+@@
+ 
++OWNSTROKE_U7F96={'config': 'docs/hanja-source-raw-compare-u7f96-ownstroke-2026-10-28/config.json', 'configSemanticSHA256': 'd6eda0fae7ecb5e26926a85b2a351c73ec95f78716d9c1ad12e037df81b0e660'}
++
++def load_ownstroke_u7f96(config,config_path):
++    semantic={k:v for k,v in config.items()if k!='launcherSHA256'}
++    require(config_path==ROOT/OWNSTROKE_U7F96['config'] and digest(json.dumps(semantic,sort_keys=True,separators=(',',':'),ensure_ascii=False).encode())==OWNSTROKE_U7F96['configSemanticSHA256'],'exact unapproved ownstroke 羖 config required')
++    require(hexsha(config.get('launcherSHA256')) and config['schema']=='hanja-shared-authored-ownstroke-compare/v1' and config['kind']=='authored-ownstroke-filled-groups-u7f96' and config['glyph']=='羖' and config['catalogStrokes']==config['domestic']['clips']==10 and config['sourceViewBox']=='0 0 200 200' and config['host']=='127.0.0.1','one closed static 羖 context required')
++    require(config['sourceRootWasAuthored']is True and config['candidateOriginalRoot']is False and config['isOriginalEngineCapture']is False and config['sourceTraceDescribesReplacement']is False and config['noPartialAnimation']is True and config['nativeApproval']is False and config['runtimeApplied']is False and all(v is False for v in config['approval'].values()),'source authorship and approvals must stay separate')
++    require(config['sharedServe']=={'path':SHARED,'SHA256':SHARED_SHA},'unchanged shared static shell required')
++    for file,pin in config['inputSHA256'].items():require(hexsha(pin)and digest(pinned_path(file).read_bytes())==pin,'ownstroke input changed: '+file)
++    metadata=json.loads(pinned_path(config['metadata']['path']).read_bytes());require(config['domestic']=={**metadata['dictionary'],'clips':10},'pinned domestic RAM-only reference required')
++    fixture=json.loads(pinned_path(config['fixture']['path']).read_bytes());proof=json.loads(pinned_path(fixture['sourceProofPath']).read_bytes())
++    require(sorted(proof)==['defaults','engineHashes','engineRevision','groups']and len(proof['groups'])==13,'original fixed four-field source is not a full5 or new engine capture')
++    spec=importlib.util.spec_from_file_location('hanja_authored_ownstroke_u7f96',pinned_path(config['materializer']['path']));module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module);candidate=module.load_candidate()
++    require(candidate['schema']=='hanja-authored-filled-groups-draft-v1' and candidate['glyph']=='羖' and candidate['originalRoot']is False and candidate['locallyAuthored']is True and candidate['mixed']is True and candidate['isOriginalEngineCapture']is False and candidate['sourceTraceDescribesReplacement']is False and all(v is False for v in candidate['approval'].values()),'exact authored candidate and no engine/order approval required')
++    require(len(candidate['groups'])==13 and [i for i,g in enumerate(candidate['groups'])if g!=proof['groups'][i]]==[5] and candidate['groups'][3]==proof['groups'][3] and len(candidate['groups'][3]['polygons'])==len(candidate['groups'][5]['polygons'])==2 and candidate['groups'][6]['polygons']==[],'only new5/raw6 changes; original4 donor and empty raw7 remain')
++    require(sum(len(g['polygons'])for g in proof['groups'])==32 and sum(len(g['polygons'])for g in candidate['groups'])==31 and candidate['logicalRawGroupsZeroBased']==config['logicalRawGroupsZeroBased'],'fixed ownstroke geometry counts and proposed logical grouping required')
++    for scene in[proof,candidate]:
++        for group in scene['groups']:
++            for poly in group['polygons']:
++                require(len(poly)>=3 and all(set(point)=={'x','y','off'} and point['off']==0 and all(type(point[k])in[int,float]and math.isfinite(point[k])for k in['x','y'])for point in poly),'original finite off0 polygon contract required')
++    return {'original':proof,'authored':candidate}
++
++def run_ownstroke_u7f96(args,config,config_path):
++    sources=load_ownstroke_u7f96(config,config_path)
++    def guards():
++        require(digest(config_path.read_bytes())==args.config_sha and digest(Path(__file__).resolve().read_bytes())==config['launcherSHA256'],'ownstroke config or launcher changed')
++        for file,pin in config['inputSHA256'].items():require(digest(pinned_path(file).read_bytes())==pin,'ownstroke source pin changed: '+file)
++    guards()
++    if args.check_only:
++        print(json.dumps({'kind':config['kind'],'glyph':'羖','catalogPens':10,'originalRawGroups':13,'originalPolygons':32,'authoredRawSlots':13,'authoredPolygons':31,'changedRawZeroBased':[5],'donorRawZeroBased':3,'HTTP':0,'server':0,'engine':0,'originalRoot':False,'nativeApproval':False,'runtimeApplied':False}));return
++    spec=importlib.util.spec_from_file_location('hanja_ownstroke_shared_static',pinned_path(SHARED));shared=importlib.util.module_from_spec(spec);spec.loader.exec_module(shared);require(shared.FETCH_COUNT==0,'publisher fetch must be RAM-only at server start')
++    shared.CONFIG=config;shared.HERE=config_path.parent;shared.ROOT=ROOT;shared.guards=guards;shared.load_sources=lambda:sources
++    source_svg,original_page,original_selection=shared.source_svg,shared.page,shared.selection
++    def authored_svg(proof,count=None,prefix=False):
++        value=source_svg(proof,count,prefix)
++        return value.replace('data-original-raw=','data-authored-slot=')if proof is sources['authored']else value
++    def authored_page(*params):
++        value=original_page(*params)
++        return value.replace('원authored raw ','저자가설 slot ').replace('원original raw ','원본 raw ').replace('원raw','source slot').replace('원proof exact','원source pin exact; authored replacement is not original engine geometry').replace('각 원source 전체','원본·저자가설 전체').replace('각 원번호 선택','source slot 선택')
++    def authored_selection(route,query):
++        require(route!='/checks','legacy original-proof checks do not describe an authored replacement')
++        return original_selection(route,query)
++    shared.source_svg=authored_svg;shared.page=authored_page;shared.selection=authored_selection
++    argv=sys.argv
++    try:sys.argv=[str(pinned_path(SHARED)),'--port',str(args.port)];shared.main()
++    finally:sys.argv=argv
++
+ def main():
+@@
+     if config.get('kind')=='reviewed-compiled-logical-strokes':return run_reviewed_compiled12(args,config,config_path)
++    if config.get('kind')=='authored-ownstroke-filled-groups-u7f96':return run_ownstroke_u7f96(args,config,config_path)
+     new_public_whole=new_public_whole_case(config)or new_local_recipe_whole_case(config)
+*** End Patch

@@ -1,0 +1,120 @@
+*** Begin Patch
+*** Update File: scripts/hanja-raw-static-compare.py
+@@
+ 
++OWNSTROKE_U7F96={'config': 'docs/hanja-source-raw-compare-u7f96-ownstroke-2026-10-28/config.json', 'configSemanticSHA256': 'd6eda0fae7ecb5e26926a85b2a351c73ec95f78716d9c1ad12e037df81b0e660'}
++
++def load_ownstroke_u7f96(config,config_path):
++    semantic={k:v for k,v in config.items()if k!='launcherSHA256'}
++    require(config_path==ROOT/OWNSTROKE_U7F96['config'] and digest(json.dumps(semantic,sort_keys=True,separators=(',',':'),ensure_ascii=False).encode())==OWNSTROKE_U7F96['configSemanticSHA256'],'exact unapproved ownstroke 羖 config required')
++    require(hexsha(config.get('launcherSHA256')) and config['schema']=='hanja-shared-authored-ownstroke-compare/v1' and config['kind']=='authored-ownstroke-filled-groups-u7f96' and config['glyph']=='羖' and config['catalogStrokes']==config['domestic']['clips']==10 and config['sourceViewBox']=='0 0 200 200' and config['host']=='127.0.0.1','one closed static 羖 context required')
++    require(config['sourceRootWasAuthored']is True and config['candidateOriginalRoot']is False and config['isOriginalEngineCapture']is False and config['sourceTraceDescribesReplacement']is False and config['noPartialAnimation']is True and config['nativeApproval']is False and config['runtimeApplied']is False and all(v is False for v in config['approval'].values()),'source authorship and approvals must stay separate')
++    require(config['sharedServe']=={'path':SHARED,'SHA256':SHARED_SHA},'unchanged shared static shell required')
++    for file,pin in config['inputSHA256'].items():require(hexsha(pin)and digest(pinned_path(file).read_bytes())==pin,'ownstroke input changed: '+file)
++    metadata=json.loads(pinned_path(config['metadata']['path']).read_bytes());require(config['domestic']=={**metadata['dictionary'],'clips':10},'pinned domestic RAM-only reference required')
++    fixture=json.loads(pinned_path(config['fixture']['path']).read_bytes());proof=json.loads(pinned_path(fixture['sourceProofPath']).read_bytes())
++    require(sorted(proof)==['defaults','engineHashes','engineRevision','groups']and len(proof['groups'])==13,'original fixed four-field source is not a full5 or new engine capture')
++    spec=importlib.util.spec_from_file_location('hanja_authored_ownstroke_u7f96',pinned_path(config['materializer']['path']));module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module);candidate=module.load_candidate()
++    require(candidate['schema']=='hanja-authored-filled-groups-draft-v1' and candidate['glyph']=='羖' and candidate['originalRoot']is False and candidate['locallyAuthored']is True and candidate['mixed']is True and candidate['isOriginalEngineCapture']is False and candidate['sourceTraceDescribesReplacement']is False and all(v is False for v in candidate['approval'].values()),'exact authored candidate and no engine/order approval required')
++    require(len(candidate['groups'])==13 and [i for i,g in enumerate(candidate['groups'])if g!=proof['groups'][i]]==[5] and candidate['groups'][3]==proof['groups'][3] and len(candidate['groups'][3]['polygons'])==len(candidate['groups'][5]['polygons'])==2 and candidate['groups'][6]['polygons']==[],'only new5/raw6 changes; original4 donor and empty raw7 remain')
++    require(sum(len(g['polygons'])for g in proof['groups'])==32 and sum(len(g['polygons'])for g in candidate['groups'])==31 and candidate['logicalRawGroupsZeroBased']==config['logicalRawGroupsZeroBased'],'fixed ownstroke geometry counts and proposed logical grouping required')
++    for scene in[proof,candidate]:
++        for group in scene['groups']:
++            for poly in group['polygons']:
++                require(len(poly)>=3 and all(set(point)=={'x','y','off'} and point['off']==0 and all(type(point[k])in[int,float]and math.isfinite(point[k])for k in['x','y'])for point in poly),'original finite off0 polygon contract required')
++    return {'original':proof,'authored':candidate}
++
++def run_ownstroke_u7f96(args,config,config_path):
++    sources=load_ownstroke_u7f96(config,config_path)
++    def guards():
++        require(digest(config_path.read_bytes())==args.config_sha and digest(Path(__file__).resolve().read_bytes())==config['launcherSHA256'],'ownstroke config or launcher changed')
++        for file,pin in config['inputSHA256'].items():require(digest(pinned_path(file).read_bytes())==pin,'ownstroke source pin changed: '+file)
++    guards()
++    if args.check_only:
++        print(json.dumps({'kind':config['kind'],'glyph':'羖','catalogPens':10,'originalRawGroups':13,'originalPolygons':32,'authoredRawSlots':13,'authoredPolygons':31,'changedRawZeroBased':[5],'donorRawZeroBased':3,'HTTP':0,'server':0,'engine':0,'originalRoot':False,'nativeApproval':False,'runtimeApplied':False}));return
++    spec=importlib.util.spec_from_file_location('hanja_ownstroke_shared_static',pinned_path(SHARED));shared=importlib.util.module_from_spec(spec);spec.loader.exec_module(shared);require(shared.FETCH_COUNT==0,'publisher fetch must be RAM-only at server start')
++    shared.CONFIG=config;shared.HERE=config_path.parent;shared.ROOT=ROOT;shared.guards=guards;shared.load_sources=lambda:sources
++    source_svg,original_page,original_selection=shared.source_svg,shared.page,shared.selection
++    def authored_svg(proof,count=None,prefix=False):
++        value=source_svg(proof,count,prefix)
++        return value.replace('data-original-raw=','data-authored-slot=')if proof is sources['authored']else value
++    def authored_page(*params):
++        value=original_page(*params)
++        return value.replace('원authored raw ','저자가설 slot ').replace('원original raw ','원본 raw ').replace('원raw','source slot').replace('원proof exact','원source pin exact; authored replacement is not original engine geometry').replace('각 원source 전체','원본·저자가설 전체').replace('각 원번호 선택','source slot 선택')
++    def authored_selection(route,query):
++        require(route!='/checks','legacy original-proof checks do not describe an authored replacement')
++        return original_selection(route,query)
++    shared.source_svg=authored_svg;shared.page=authored_page;shared.selection=authored_selection
++    argv=sys.argv
++    try:sys.argv=[str(pinned_path(SHARED)),'--port',str(args.port)];shared.main()
++    finally:sys.argv=argv
++
++OWNSTROKE_U97B9={'config': 'docs/hanja-source-raw-compare-u97b9-ownstroke-2026-10-28/config.json', 'configSemanticSHA256': '3d4d98fdf2d072830fab5399ec8b77755f3cd820d8dcaeb2000a3b935bd1bc57'}
++
++def load_ownstroke_u97b9(config,config_path):
++    semantic={k:v for k,v in config.items()if k!='launcherSHA256'}
++    require(config_path==ROOT/OWNSTROKE_U97B9['config'] and digest(json.dumps(semantic,sort_keys=True,separators=(',',':'),ensure_ascii=False).encode())==OWNSTROKE_U97B9['configSemanticSHA256'],'exact two-variant authored 鞹 config required')
++    require(hexsha(config.get('launcherSHA256')) and config['kind']=='authored-ownstroke-shear-u97b9' and config['glyph']=='鞹' and config['catalogStrokes']==config['domestic']['clips']==20 and config['sourceViewBox']=='0 0 200 200' and config['host']=='127.0.0.1','one fixed static 鞹 context required')
++    require(config['sourceRootWasAuthored']is True and config['candidateOriginalRoot']is False and config['isOriginalEngineCapture']is False and config['sourceTraceDescribesAuthoredRaw19']is False and config['nativeApproval']is False and config['runtimeApplied']is False and config['noPartialAnimation']is True and all(v is False for v in config['approval'].values()),'authored shear, geometry and mapping approvals remain separate')
++    require(config['sharedServe']=={'path':SHARED,'SHA256':SHARED_SHA} and config['changedRawIndexZeroBased']==19 and config['changedRawSlotOneBased']==20 and config['changedLogicalPenOneBased']==17,'unchanged static shell and explicit zero/one-based identities required')
++    for file,pin in config['inputSHA256'].items():require(hexsha(pin)and digest(pinned_path(file).read_bytes())==pin,'authored 鞹 source pin changed: '+file)
++    metadata=json.loads(pinned_path(config['metadata']['path']).read_bytes());require(config['domestic']=={**metadata['dictionary'],'clips':20},'exact RAM-only domestic20 reference required')
++    fixture=json.loads(pinned_path(config['fixture']['path']).read_bytes());proof=json.loads(pinned_path(fixture['sourceProofPath']).read_bytes())
++    require(sorted(proof)==['defaults','engineHashes','engineRevision','groups'] and len(proof['groups'])==24 and sum(len(g['polygons'])for g in proof['groups'])==42,'original four-field source with separate trace; never a full5 claim')
++    spec=importlib.util.spec_from_file_location('hanja_ownstroke_u97b9_materializer',pinned_path(config['materializer']['path']));module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module);out={'original':proof}
++    for key,variant_id in config['variantIds'].items():
++        candidate=module.load_candidate(variant_id)
++        require(candidate['glyph']=='鞹' and candidate['variantId']==variant_id and candidate['originalRoot']is False and candidate['locallyAuthored']is True and candidate['mixed']is True and candidate['isOriginalEngineCapture']is False and candidate['sourceTraceDescribesAuthoredRaw19']is False and all(v is False for v in candidate['approval'].values()),'explicit unapproved authored variant required')
++        require(len(candidate['groups'])==24 and [i for i,g in enumerate(candidate['groups'])if g!=proof['groups'][i]]==[19] and len(candidate['groups'][19]['polygons'])==2 and candidate['groups'][19]['originalRawReplaced']==proof['groups'][19]['raw'] and sum(len(g['polygons'])for g in candidate['groups'])==42,'only raw19 P-pair may change; other23 exact groups retained')
++        require(len(candidate['logicalRawGroupsZeroBased'])==20 and sorted(i for row in candidate['logicalRawGroupsZeroBased']for i in row)==list(range(24)),'proposed logical20 grouping retained, not approved')
++        guide=candidate['groups'][19]['authorGuide'];require(set(guide)=={'start','end'} and all(len(guide[k])==2 and all(type(v)in[int,float]and math.isfinite(v)for v in guide[k])for k in['start','end']),'actual transformed public-source guide endpoints required')
++        out[key]=candidate
++    for scene in out.values():
++        for group in scene['groups']:
++            for poly in group['polygons']:require(len(poly)>=3 and all(set(point)=={'x','y','off'} and point['off']==0 and all(type(point[k])in[int,float]and math.isfinite(point[k])for k in['x','y'])for point in poly),'finite unchanged off0 source-polygon contract required')
++    require(list(out)==['original','minus01','minus02'],'closed original plus two authored variants only')
++    return out
++
++def run_ownstroke_u97b9(args,config,config_path):
++    sources=load_ownstroke_u97b9(config,config_path)
++    def guards():
++        require(digest(config_path.read_bytes())==args.config_sha and digest(Path(__file__).resolve().read_bytes())==config['launcherSHA256'],'authored 鞹 config or launcher changed')
++        for file,pin in config['inputSHA256'].items():require(digest(pinned_path(file).read_bytes())==pin,'authored 鞹 source changed: '+file)
++    guards()
++    if args.check_only:
++        print(json.dumps({'kind':config['kind'],'glyph':'鞹','catalogPens':20,'rawSlots':24,'polygonsPerScene':42,'authoredVariants':2,'changedRawZeroBased':[19],'publicSourceGuideEndpointsPrepared':True,'HTTP':0,'server':0,'engine':0,'nativeApproval':False,'runtimeApplied':False}));return
++    spec=importlib.util.spec_from_file_location('hanja_ownstroke_u97b9_shared',pinned_path(SHARED));shared=importlib.util.module_from_spec(spec);spec.loader.exec_module(shared);require(shared.FETCH_COUNT==0,'no preparatory publisher fetch')
++    shared.CONFIG=config;shared.HERE=config_path.parent;shared.ROOT=ROOT;shared.guards=guards;shared.load_sources=lambda:sources
++    original_svg,original_page,original_selection=shared.source_svg,shared.page,shared.selection
++    def source_with_guide(proof,count=None,prefix=False):
++        value=original_svg(proof,count,prefix);authored=proof is not sources['original']
++        if authored:value=value.replace('data-original-raw=','data-authored-slot=')
++        if count is None or(prefix and count>=20)or(not prefix and count==20):
++            if authored:guide=proof['groups'][19]['authorGuide'];start,end=guide['start'],guide['end']
++            else:raw=proof['groups'][19]['raw'];require(raw[0]==1,'original raw19 line guide required');start,end=raw[3:5],raw[5:7]
++            require(all(type(v)in[int,float]and math.isfinite(v)for v in[*start,*end]),'finite public guide only')
++            attrs=' '.join(k+'="'+json.dumps(v,allow_nan=False)+'"'for k,v in zip(['x1','y1','x2','y2'],[*start,*end]))
++            line='<g fill="none" stroke="#1767c0" stroke-width="0.65" data-guide-raw-zero-based="19" data-guide-origin="'+('authored-public-source-affine'if authored else'original-public-source')+'"><line '+attrs+'/></g>'
++            require(value.endswith('</g></svg>'),'unchanged original polygon renderer shell required');value=value[:-6]+line+'</svg>'
++        return value
++    def authored_page(*params):
++        return original_page(*params).replace('원minus01 raw ','저자가설 -0.1 slot ').replace('원minus02 raw ','저자가설 -0.2 slot ').replace('원original raw ','원본 raw ').replace('원raw','source slot').replace('원proof exact','원source pin exact; shear P/guide are author hypotheses, not original engine captures').replace('각 원source 전체','원본·두저자가설 전체').replace('각 원번호 선택','source slot 선택')
++    def selection(route,query):
++        require(route!='/checks','legacy original-proof checks do not certify authored shear data')
++        return original_selection(route,query)
++    shared.source_svg=source_with_guide;shared.page=authored_page;shared.selection=selection
++    argv=sys.argv
++    try:sys.argv=[str(pinned_path(SHARED)),'--port',str(args.port)];shared.main()
++    finally:sys.argv=argv
++
+ def main():
+@@
+     if config.get('kind')=='reviewed-compiled-logical-strokes':return run_reviewed_compiled12(args,config,config_path)
++    if config.get('kind')=='authored-ownstroke-filled-groups-u7f96':return run_ownstroke_u7f96(args,config,config_path)
++    if config.get('kind')=='authored-ownstroke-shear-u97b9':return run_ownstroke_u97b9(args,config,config_path)
+     new_public_whole=new_public_whole_case(config)or new_local_recipe_whole_case(config)
+*** Update File: docs/hanja-source-raw-compare-u7f96-ownstroke-2026-10-28/config.json
+@@
+-  "launcherSHA256": "fd4932f5c993dff98808c7a36dc0e19f78f2098bf6fc2d66d0d7c666802bc609"
++  "launcherSHA256": "d538889b1a8e3da505775cf42fd9328914d972dc488a1fc76ca335482835d552"
+*** End Patch

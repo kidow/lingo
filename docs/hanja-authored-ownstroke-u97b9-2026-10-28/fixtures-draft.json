@@ -1,0 +1,47 @@
+{
+  "schema": "hanja-ownstroke-author-shear-draft-v1",
+  "date": "2026-10-28",
+  "glyph": "鞹",
+  "catalogStrokes": 20,
+  "status": "two-unapproved-public-source-only-author-hypotheses",
+  "sourceProofPath": "docs/hanja-goal-glyphwiki-batch448-2026-10-09/engine-proof.json",
+  "sourceProofSHA256": "523b330f9910eebed458929133783b90a9086562606e44aa77c1c80ad8a96128",
+  "sourceTracePath": "docs/hanja-goal-glyphwiki-batch448-2026-10-09/draw-trace.json",
+  "sourceTraceSHA256": "161271d4cfdaacf696844a0cb1a1d8e73507dd5acb0a4dfb229f678472a6a68b",
+  "canonicalEvidence": {
+    "path": "docs/hanja-goal-glyphwiki-batch448-2026-10-09/validation.json",
+    "SHA256": "9f172435959c48ff07de4afda53279f667d671d2f76bb3b056ee172bf16144bf",
+    "scope": "Prior all20 individual comparison and pen17 enlargement directly established ascending-right domestic17 versus horizontal original raw19. No exact domestic slope or replacement filled geometry was approved.",
+    "originalWholeHOLDUnchanged": true
+  },
+  "logicalRawGroupsZeroBased": [[0],[1],[2],[3],[5],[6,7],[8],[9],[4],[10],[11],[12],[13,14],[15],[16,17],[18],[19],[20,21],[22],[23]],
+  "changedLogicalPenOneBased": 17,
+  "changedRawIndexZeroBased": 19,
+  "sourceRaw19": [1,0,0,68.97608,141.98,138.45891999999998,141.98,null,null,null,null],
+  "sourcePolygons": [
+    [{"x":68.9,"y":139.9,"off":0},{"x":138.4,"y":139.9,"off":0},{"x":138.4,"y":143.9,"off":0},{"x":68.9,"y":143.9,"off":0}],
+    [{"x":138.4,"y":139.9,"off":0},{"x":114.4,"y":141.9,"off":0},{"x":126.4,"y":129.9,"off":0}]
+  ],
+  "fixedAuthorAnchor": {
+    "xRational": "10371749999999999/100000000000000",
+    "yRational": "7099/50",
+    "definition": "The retained binary64 guide endpoints yield (x0+x1)/2 = 103.71749999999999. Freeze that explicit source-derived author center, not a publisher coordinate. Endpoint floating representations are not snapped to a nominal decimal or the neighboring vertical."
+  },
+  "variants": [
+    {"id":"author-shear-minus-0.1","slopeRational":"-1/10","matrixRational":["1","-1/10","0","1","0","10371749999999999/1000000000000000"],"angleDegreesApprox":-5.710593137499643},
+    {"id":"author-shear-minus-0.2","slopeRational":"-1/5","matrixRational":["1","-1/5","0","1","0","10371749999999999/500000000000000"],"angleDegreesApprox":-11.309932474020215}
+  ],
+  "authorPlacementRule": "For original public source points only, x'=x and y'=y+slope*(x-centerX). Transform the entire original raw19 filled-P pair and both original guide endpoints together. Leave every other raw group, flags and ordering unchanged. Slopes -0.1/-0.2 are arbitrary authored trial values, not measurements of the domestic source.",
+  "sameSourceDerived": true,
+  "locallyAuthored": true,
+  "mixed": true,
+  "originalRoot": false,
+  "isOriginalEngineCapture": false,
+  "sourceTraceDescribesAuthoredRaw19": false,
+  "maskDirectionOnlyCorrection": false,
+  "mathematicalScope": "Each affine map has determinant one and preserves the raw19 polygon topology/area and its fixed anchor. This does not preserve or approve contacts against other unchanged raw groups, the whole shape, serif suitability or temporal growth.",
+  "fillRule": "nonzero",
+  "eachPolygonPaintedSeparately": true,
+  "approval": {"slope":false,"geometry":false,"contact":false,"whole":false,"sourceMapping":false,"native":false,"runtime":false},
+  "privateCoordinatesUsedOrCopied": false
+}

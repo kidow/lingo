@@ -1,0 +1,124 @@
+{
+  "schema": "hanja-shared-authored-ownstroke-compare/v1",
+  "kind": "authored-ownstroke-shear-u97b9",
+  "glyph": "鞹",
+  "catalogStrokes": 20,
+  "sourceViewBox": "0 0 200 200",
+  "host": "127.0.0.1",
+  "defaultSource": "minus01",
+  "sourceRoots": {
+    "original": {
+      "root": "u97b9",
+      "rawGroups": 24,
+      "polygons": 42,
+      "proofKind": "fixed-original-four-fields-with-separate-trace"
+    },
+    "minus01": {
+      "root": "lingo-u97b9-author-shear-minus-01",
+      "rawGroups": 24,
+      "polygons": 42,
+      "proofKind": "LOCAL-AUTHORED raw19 shear -0.1; not original capture"
+    },
+    "minus02": {
+      "root": "lingo-u97b9-author-shear-minus-02",
+      "rawGroups": 24,
+      "polygons": 42,
+      "proofKind": "LOCAL-AUTHORED raw19 shear -0.2; not original capture"
+    }
+  },
+  "variantIds": {
+    "minus01": "author-shear-minus-0.1",
+    "minus02": "author-shear-minus-0.2"
+  },
+  "domestic": {
+    "glyph": "鞹",
+    "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/9700/97b9.svg",
+    "status": 200,
+    "bytes": 9625,
+    "sha256": "b280d0b5e092e6ab1d87e7acdb20313923e07289b7cfa908ff9463e247b05de4",
+    "privateMediaSaved": false,
+    "clips": 20
+  },
+  "sharedServe": {
+    "path": "docs/hanja-source-raw-compare-u8a29-2026-10-21/serve.py",
+    "SHA256": "ba91ba7f00bc2e4899ca4d3c69d03ab5cd6f8b0a9f888899eea49aa69a58665d"
+  },
+  "materializer": {
+    "path": "docs/hanja-authored-ownstroke-u97b9-2026-10-28/materialize-draft.py",
+    "SHA256": "6761365de1ee7db2e6f14bb520441425551220ad2fe46bae9454f14d001ea455"
+  },
+  "fixture": {
+    "path": "docs/hanja-authored-ownstroke-u97b9-2026-10-28/fixtures-draft.json",
+    "SHA256": "b11cfd743b0f2a9c83f95376a3425af02c2f4d65d654fbcfda6831930b294f2a"
+  },
+  "metadata": {
+    "path": "docs/hanja-goal-glyphwiki-batch448-2026-10-09/metadata.json",
+    "SHA256": "763cf0499a6185156c79e2254bad3d2c80b01645cdd77561a2e668ce703c5d6d"
+  },
+  "originalSource": {
+    "proof": "docs/hanja-goal-glyphwiki-batch448-2026-10-09/engine-proof.json",
+    "proofSHA256": "523b330f9910eebed458929133783b90a9086562606e44aa77c1c80ad8a96128",
+    "trace": "docs/hanja-goal-glyphwiki-batch448-2026-10-09/draw-trace.json",
+    "traceSHA256": "161271d4cfdaacf696844a0cb1a1d8e73507dd5acb0a4dfb229f678472a6a68b"
+  },
+  "sourceRootWasAuthored": true,
+  "candidateOriginalRoot": false,
+  "isOriginalEngineCapture": false,
+  "sourceTraceDescribesAuthoredRaw19": false,
+  "noPartialAnimation": true,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "guardMode": "explicit-ownstroke-parameter-pins-v1",
+  "changedRawIndexZeroBased": 19,
+  "changedRawSlotOneBased": 20,
+  "changedLogicalPenOneBased": 17,
+  "showPublicGuideEndpoints": true,
+  "holdSummary": "UNAPPROVED author shear trials -0.1/-0.2. Only zeroBased raw19 (viewer raw20, proposed logical17) is transformed around its fixed original source anchor. Source polygons and source guide endpoints undergo the same explicit affine map; all other23 groups and painting order remain. The slopes are arbitrary author trial values, not domestic measurements. Whole, contacts, geometry suitability, mapping and animation are unapproved. Blue line shows public-source/authored guide endpoints only.",
+  "reviewPlan": [
+    {
+      "id": "whole",
+      "route": "/whole",
+      "goal": "Compare domestic20, untouched original24raw/42P and both authored24slot/42P wholes; inspect incline, serif, height, thickness, overall font consistency and neighboring contacts."
+    },
+    {
+      "id": "canonical17",
+      "route": "/compare?source=original&domestic=17&raw=20&dview=single&rview=single",
+      "goal": "Retain original horizontal raw19 P and source guide as canonical source facts. Publisher17 direction is a separate observation."
+    },
+    {
+      "id": "minus01",
+      "route": "/compare?source=minus01&domestic=17&raw=20&dview=single&rview=single",
+      "goal": "Inspect actual sheared P pair and its jointly transformed public-source guide; no measured domestic slope claim."
+    },
+    {
+      "id": "minus02",
+      "route": "/compare?source=minus02&domestic=17&raw=20&dview=single&rview=single",
+      "goal": "Inspect the independent -0.2 author trial with the same criteria; no low-score or visual-only automatic approval."
+    },
+    {
+      "id": "contact",
+      "route": "/whole",
+      "goal": "Check each transformed raw19 P against every retained neighbor for gaps, overlaps, terminals and seams. Determinant one and unchanged other groups do not prove contact compatibility."
+    }
+  ],
+  "approval": {
+    "geometry": false,
+    "mapping": false,
+    "placement": false,
+    "contact": false,
+    "whole": false,
+    "strokeOrder": false,
+    "native": false,
+    "runtime": false
+  },
+  "inputSHA256": {
+    "docs/hanja-authored-ownstroke-u97b9-2026-10-28/materialize-draft.py": "6761365de1ee7db2e6f14bb520441425551220ad2fe46bae9454f14d001ea455",
+    "docs/hanja-authored-ownstroke-u97b9-2026-10-28/fixtures-draft.json": "b11cfd743b0f2a9c83f95376a3425af02c2f4d65d654fbcfda6831930b294f2a",
+    "docs/hanja-goal-glyphwiki-batch448-2026-10-09/metadata.json": "763cf0499a6185156c79e2254bad3d2c80b01645cdd77561a2e668ce703c5d6d",
+    "docs/hanja-source-raw-compare-u8a29-2026-10-21/serve.py": "ba91ba7f00bc2e4899ca4d3c69d03ab5cd6f8b0a9f888899eea49aa69a58665d",
+    "docs/hanja-goal-glyphwiki-batch448-2026-10-09/engine-proof.json": "523b330f9910eebed458929133783b90a9086562606e44aa77c1c80ad8a96128",
+    "docs/hanja-goal-glyphwiki-batch448-2026-10-09/draw-trace.json": "161271d4cfdaacf696844a0cb1a1d8e73507dd5acb0a4dfb229f678472a6a68b",
+    "docs/hanja-goal-glyphwiki-batch448-2026-10-09/validation.json": "9f172435959c48ff07de4afda53279f667d671d2f76bb3b056ee172bf16144bf"
+  },
+  "launcherSHA256": "d538889b1a8e3da505775cf42fd9328914d972dc488a1fc76ca335482835d552"
+}

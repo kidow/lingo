@@ -1,0 +1,28 @@
+{
+  "schema": "hanja-authored-static-comparison-v1",
+  "date": "2026-10-28",
+  "glyph": "鞹",
+  "browser": "Codex in-app browser",
+  "configSHA256": "557972cb1246082b8de3cf2bde6e8dbf0f358f3272d8be5db4577328a2c88cff",
+  "helperSHA256": "d538889b1a8e3da505775cf42fd9328914d972dc488a1fc76ca335482835d552",
+  "fixtureSHA256": "b11cfd743b0f2a9c83f95376a3425af02c2f4d65d654fbcfda6831930b294f2a",
+  "materializerSHA256": "6761365de1ee7db2e6f14bb520441425551220ad2fe46bae9454f14d001ea455",
+  "views": [
+    {"route": "/whole", "scope": "Domestic20, original24raw/42P and both authored shear scenes directly viewed together."},
+    {"route": "/compare?source=minus01&domestic=17&raw=20&dview=single&rview=single", "scope": "Domestic17 and author -0.1 filled contour with public authored guide directly viewed."},
+    {"route": "/compare?source=minus02&domestic=17&raw=20&dview=single&rview=single", "scope": "Domestic17 and author -0.2 filled contour with public authored guide directly viewed."}
+  ],
+  "observation": "Both shears correct the flat baseline toward upper-right; -0.2 is qualitatively closer in direction. Both retain the donor horizontal's conspicuous right-hand serif instead of the directly observed rising stroke's tapered right tip. Direction improvement alone is not sufficient to approve a final authored contour.",
+  "publicContactCheck": {
+    "method": "Bounding-box broad phase against all other23 groups; convex changed body/serif polygon clipping against each potentially overlapping retained public polygon. No private geometry used.",
+    "possibleNeighborRawZeroBased": [7,17,18],
+    "newPossibleNeighborsBothVariants": [],
+    "pairwisePolygonIntersectionAreaSums": {"original": {"7": 0,"17": 0,"18": 48.00000000000182}, "minus01": {"7": 0,"17": 0,"18": 47.99999999999909}, "minus02": {"7": 0,"17": 0,"18": 48.00000000000091}},
+    "scope": "These are pairwise polygon-area sums, not a union-area or pixel-equivalence claim. They establish retained positive contact with raw18 and separation from raw7/raw17; all other groups have disjoint bounding boxes. They do not approve tip shape or animation."
+  },
+  "decision": "HOLD-final-contour; retain both explicit author trials and investigate an unchanged public genuine rising-stroke donor under a separately disclosed affine hypothesis. No publisher coordinates or measured slope may be copied.",
+  "originalSourceHOLDUnchanged": true,
+  "approval": {"newContactFailureObserved": false,"finalGeometry": false,"animation": false,"runtime": false},
+  "privateSourceAssetsSaved": false,
+  "buildRun": false
+}
