@@ -1,0 +1,39 @@
+{
+  "schema": "hanja-native-actual-final-review/v1",
+  "glyph": "柖",
+  "date": "2026-10-29",
+  "status": "PASS",
+  "reviewSurface": "Codex in-app browser panel, actual isolated component, tab128",
+  "H_SHA256": "1d9246e638ecd225d2b5631ee82fcce3fcacadeb72fbfa18a8b6b0da30f45bb6",
+  "profileSHA256": "7259633a02d356de1ebd9fae8400e560610fd4af74f103460da242f299532771",
+  "fixtureSHA256": "da8f60387f41e25ce96b6399f221d937e2d5e5e399ae6b2daa694419f3636966",
+  "geometrySHA256": "0ca907aca01ad61fe1e3dccfd966ecf0c3332abdba0ac8712ee4f5540154c599",
+  "coverageSHA256": "60ab4fe4de2613beb4740fe993975e77aa865b20acf2d9c97aaad60eeb46873b",
+  "clockReviewSHA256": "16e3a9b73ba23bf13f29327c53a24b0d9f9e507fa7cce2578447c42fede76274",
+  "mappingReviewSHA256": "44b8560aeab54c7416a40d30a0cf57689ab72368f8fa994ec7e63af45bea4ad1",
+  "isolatedChecks": { "SSR": 1, "CJSModules": 386, "ESMModules": 386, "customControls": 12 },
+  "observed": {
+    "allPensCompact9": 9,
+    "startReleaseGates": 5,
+    "blankResidualPanels": 5,
+    "initialFrames": 18,
+    "boundaryFrames": 9,
+    "endingFrames": 27,
+    "states": ["idle", "done", "selected-zero", "prefix0", "prefix1", "prefix2", "prefix3", "prefix4", "prefix5", "prefix6", "prefix7", "prefix8", "prefix9"],
+    "whole520": "PASS",
+    "natural8SecondPens": [4, 5, 8],
+    "naturalEndedProgress": 1,
+    "bad": [],
+    "errors": []
+  },
+  "findings": [
+    "The corrected wood point remains separate from the right descending-left stroke while retaining its own trunk contact.",
+    "Only pen5 mask3 uses width22/pad11; the other four quadratic masks retain width14/pad7.",
+    "A hairline was visible in some gate/boundary grid samples, but the final main520 hook was smooth and no ending jump was observed. This finite review does not claim every continuous-time frame was observed."
+  ],
+  "nativeTemporalApproved": true,
+  "runtimeAppliedAtNativeReview": false,
+  "build": false,
+  "fullProjectTypeCheck": false,
+  "privatePixelsSaved": false
+}
