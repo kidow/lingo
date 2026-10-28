@@ -1,0 +1,113 @@
+{
+  "schema": "hanja-public-source-curve-coverage-preflight/v1",
+  "date": "2026-10-29",
+  "glyph": "昡",
+  "scope": "Five original public Qmasks, only upperDL raw8 whole positiveYaffine changed. Seven cardinal masks not round-guide policies. Original compound7/8 sourceguidegaps are unchanged. No start/release/native approval.",
+  "inputSHA256": {
+    "docs/hanja-authored-ownstroke-u6621-upper-dl-gap-2026-10-29/prepare-execution-draft.mjs": "b3e498b1060f6ac2356b4ae9b8756c5eb9090e7fc9eb6bffa915867e23df484e",
+    "docs/hanja-authored-ownstroke-u6621-upper-dl-gap-2026-10-29/fixtures-execution-draft.json": "5a2f78c2d025c7bb844e72e5d49a7e0096044616817c8300ad259f4af9b776db",
+    "docs/hanja-authored-ownstroke-u6621-upper-dl-gap-2026-10-29/execution-draft-check.json": "7f518ea84bad0146f6ab47e8f52713e569d3c873195cbf96385ed3fccd76fd10",
+    "docs/hanja-authored-ownstroke-u6621-upper-dl-gap-2026-10-29/coverage-preflight.mjs": "b50949011fa4f8480d653947c29b0c009ada75245d979d72d6d89fac30301883"
+  },
+  "method": "Positive-ear triangles preserve originalpolygonarea within boundednumericmargin and avoid concavefan exteriorregions. At each triangle center distance to actual padded line segment and4097 evaluated original Q/C points gives an upper distance bound; plus triangle radius (1-Lipschitz) proves every triangle point within full round guide radius7. No original P/Q/C flattening. Unresolved triangulated regions do not aloneprove insufficientwidth.",
+  "numerics": {
+    "margin": 1e-8,
+    "formalIntervalProof": false,
+    "depthLimit": 16,
+    "nodeLimitPerMask": 60000,
+    "BezierEvaluationsPerMask": 4097
+  },
+  "counts": {
+    "curveMasks": 5,
+    "pass": 5,
+    "unproved": 0,
+    "outlier": 0
+  },
+  "units": [
+    {
+      "logical": 7,
+      "mask": 1,
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "radius": 7,
+      "width": 14,
+      "padding": 7,
+      "nodes": 162,
+      "maxDepth": 2,
+      "maxAcceptedUpperDistance": 6.984707970983229,
+      "sourceOutlinePreserved": true,
+      "sourceBezierGuidePreserved": true,
+      "curveDegree": 2,
+      "nativeApproval": false
+    },
+    {
+      "logical": 7,
+      "mask": 2,
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "radius": 7,
+      "width": 14,
+      "padding": 7,
+      "nodes": 171,
+      "maxDepth": 2,
+      "maxAcceptedUpperDistance": 6.971688169986426,
+      "sourceOutlinePreserved": true,
+      "sourceBezierGuidePreserved": true,
+      "curveDegree": 2,
+      "nativeApproval": false
+    },
+    {
+      "logical": 8,
+      "mask": 1,
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "radius": 7,
+      "width": 14,
+      "padding": 7,
+      "nodes": 366,
+      "maxDepth": 3,
+      "maxAcceptedUpperDistance": 6.987926007329544,
+      "sourceOutlinePreserved": true,
+      "sourceBezierGuidePreserved": true,
+      "curveDegree": 2,
+      "nativeApproval": false
+    },
+    {
+      "logical": 8,
+      "mask": 2,
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "radius": 7,
+      "width": 14,
+      "padding": 7,
+      "nodes": 902,
+      "maxDepth": 3,
+      "maxAcceptedUpperDistance": 6.999530222914075,
+      "sourceOutlinePreserved": true,
+      "sourceBezierGuidePreserved": true,
+      "curveDegree": 2,
+      "nativeApproval": false
+    },
+    {
+      "logical": 9,
+      "mask": 1,
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "radius": 7,
+      "width": 14,
+      "padding": 7,
+      "nodes": 155,
+      "maxDepth": 2,
+      "maxAcceptedUpperDistance": 6.998174721747793,
+      "sourceOutlinePreserved": true,
+      "sourceBezierGuidePreserved": true,
+      "curveDegree": 2,
+      "nativeApproval": false
+    }
+  ],
+  "cardinalPolicy": {
+    "masks": 7,
+    "onlyWholeRaw8PositiveYAffineMaintained": true,
+    "nativeStartContactAndEndingReviewRequired": true
+  },
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "sharedFilesChanged": false,
+  "serverStarts": 0,
+  "buildRun": false
+}
