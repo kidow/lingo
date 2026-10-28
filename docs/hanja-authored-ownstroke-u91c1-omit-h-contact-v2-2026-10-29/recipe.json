@@ -1,0 +1,147 @@
+{
+  "schema": "hanja-single-source-omission-plus-whole-sweep-Y-affine-static-hypothesis/v1",
+  "date": "2026-10-29",
+  "glyph": "釁",
+  "variantId": "u91c1-omit-raw29-sweeps-Y-contact-v2",
+  "originalSource": {
+    "path": "docs/hanja-goal-glyphwiki-batch1056-2026-10-13/engine-whole-u91c1-ue0106.json",
+    "SHA256": "259e4a48fc191f53f417ccc14969016808405b6566f6c5741a94a32e3b19fe6f"
+  },
+  "omittedSourceRawOneBased": [
+    29
+  ],
+  "retainedSourceRawOneBased": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    30,
+    31,
+    32,
+    33
+  ],
+  "reason": "Parent direct domestic26clock78 shows sweeps23/24 meeting body22. Explicit authored hypothesis: preserve X and terminalfilled maxY, set each complete original sweep minimumfilledY to130 to overlap originalbodybottom throughY131 by1.",
+  "originalClock": {
+    "path": "docs/hanja-official-media-compare-u91c1-2026-10-29/native-clock-review.json",
+    "SHA256": "5a92acef0d06ec6018c496ee5110ab62bdcfcc9b6cc93dbd807e54d26ee44940"
+  },
+  "originalWholeHold": {
+    "path": "docs/hanja-source-raw-compare-u91c1-ue0106-original-2026-10-29/native-whole-review.json",
+    "SHA256": "659a5624e5b1f92e56630dbbb30a8d714f79797986e59576dcb30b3182a51d38"
+  },
+  "sourceIdentity": {
+    "locallyAuthoredRoot": true,
+    "mixedParts": false,
+    "originalRoot": false,
+    "originalWhole": false,
+    "isOriginalEngineCapture": false,
+    "isActualLocallyAuthoredEngineCapture": false,
+    "sourceTraceDescribesAuthoredWhole": false
+  },
+  "preservation": {
+    "original32GroupArraysUnmodifiedBeforeMatrices": true,
+    "original36CallArraysUnmodifiedBeforeMatrices": true,
+    "originalCoordinateArraysChanged": false,
+    "addedPaths": 0,
+    "bridgePaths": 0,
+    "contactsChanged": true,
+    "retainedOther30RawCoordinatesExact": true,
+    "originalPAndGuideReceiveSamePositiveYAffine": true,
+    "coordinatesRepresentation": "Original P/raw/trace arrays retained plus one per-source-raw common matrix; static SVG applies matrix to complete original filledP. Guides are not painted; their complete original coordinates share the declared matrix for later normalization.",
+    "onlyNewContacts": [
+      [
+        28,
+        27
+      ],
+      [
+        30,
+        27
+      ]
+    ],
+    "lostContacts": []
+  },
+  "approval": {
+    "newWhole": false,
+    "mapping": false,
+    "directions": false,
+    "temporal": false,
+    "native": false,
+    "runtime": false
+  },
+  "baseOmissionRecipe": {
+    "path": "docs/hanja-authored-ownstroke-u91c1-omit-lower-h-2026-10-29/recipe.json",
+    "SHA256": "0f612da0319743494543f2dd607b59eb408939ef2ddc86c083ef5c818b5f90d7"
+  },
+  "publicMath": {
+    "path": "docs/hanja-authored-ownstroke-u91c1-omit-h-contact-v2-2026-10-29/public-math-v2.json",
+    "SHA256": "d7f649cded70830f377909164f7a33df63f5dc75c8d883137717aecc35965b02"
+  },
+  "placements": [
+    {
+      "sourceRawOneBased": 28,
+      "authorRawOneBased": 28,
+      "matrixExact": [
+        "1",
+        "0",
+        "0",
+        "38/35",
+        "0",
+        "-2577/175"
+      ],
+      "determinantExact": "38/35",
+      "filledSourceMinY": "1333/10",
+      "filledSourceMaxY": "859/5",
+      "newMinY": "130",
+      "maxYFixed": true,
+      "applyTo": [
+        "allOriginalP",
+        "wholeOriginalRawAndTraceGuides"
+      ]
+    },
+    {
+      "sourceRawOneBased": 30,
+      "authorRawOneBased": 29,
+      "matrixExact": [
+        "1",
+        "0",
+        "0",
+        "414/305",
+        "0",
+        "-93413/1525"
+      ],
+      "determinantExact": "414/305",
+      "filledSourceMinY": "1409/10",
+      "filledSourceMaxY": "857/5",
+      "newMinY": "130",
+      "maxYFixed": true,
+      "applyTo": [
+        "allOriginalP",
+        "wholeOriginalRawAndTraceGuides"
+      ]
+    }
+  ]
+}

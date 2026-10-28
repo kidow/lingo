@@ -1,0 +1,118 @@
+{
+  "schema": "hanja-public-whole-sweep-positive-Y-affine-contact-proof/v1",
+  "date": "2026-10-29",
+  "glyph": "釁",
+  "originalSource": {
+    "path": "docs/hanja-goal-glyphwiki-batch1056-2026-10-13/engine-whole-u91c1-ue0106.json",
+    "SHA256": "259e4a48fc191f53f417ccc14969016808405b6566f6c5741a94a32e3b19fe6f"
+  },
+  "baseOmissionRecipe": {
+    "path": "docs/hanja-authored-ownstroke-u91c1-omit-lower-h-2026-10-29/recipe.json",
+    "SHA256": "0f612da0319743494543f2dd607b59eb408939ef2ddc86c083ef5c818b5f90d7"
+  },
+  "baseOmissionFixture": {
+    "path": "docs/hanja-authored-ownstroke-u91c1-omit-lower-h-2026-10-29/fixtures-static-draft.json",
+    "SHA256": "763abc4220d426d6c0d3c3c2c488558de1ed30bcc0e7f4a4b9a18d24cc1d2bdc"
+  },
+  "originalClock": {
+    "path": "docs/hanja-official-media-compare-u91c1-2026-10-29/native-clock-review.json",
+    "SHA256": "5a92acef0d06ec6018c496ee5110ab62bdcfcc9b6cc93dbd807e54d26ee44940"
+  },
+  "verifier": {
+    "path": "docs/hanja-authored-ownstroke-u91c1-omit-h-contact-v2-2026-10-29/verify-public-contact-v2.py",
+    "SHA256": "3b4b8cf53d6c4dcc764ce9c584426fe71ab9c7ba4408437d09339457d050fcc3"
+  },
+  "coordinateSystem": "original200/Xright-Ydown",
+  "method": "Exact Fraction(Decimal) original off0 polygons. Positive affine fixes X and each source wholefilled maximumY while moving minimumY to130. Rectangle-body Sutherland-Hodgman clipping with exact shoelace and convex contact-piece intersection subtracts overlap for union area. Exact segment/containment all-raw contact comparison; original polygons independently simple.",
+  "result": {
+    "facts": [
+      {
+        "raw": 28,
+        "sourceMinY": "1333/10",
+        "sourceMaxY": "859/5",
+        "matrixExact": [
+          "1",
+          "0",
+          "0",
+          "38/35",
+          "0",
+          "-2577/175"
+        ],
+        "determinantExact": "38/35",
+        "newMinY": "130",
+        "newMaxY": "859/5",
+        "bodyOverlapBand": "1",
+        "bodyPerPArea": [
+          "56581173/196840000",
+          "8875/10032",
+          "0"
+        ],
+        "bodyUnionAreaExact": "135012626437/150955266000",
+        "clippedContactPiecesConvex": true,
+        "guideAffineRequired": true
+      },
+      {
+        "raw": 30,
+        "sourceMinY": "1409/10",
+        "sourceMaxY": "857/5",
+        "matrixExact": [
+          "1",
+          "0",
+          "0",
+          "414/305",
+          "0",
+          "-93413/1525"
+        ],
+        "determinantExact": "414/305",
+        "newMinY": "130",
+        "newMaxY": "857/5",
+        "bodyOverlapBand": "1",
+        "bodyPerPArea": [
+          "17385/16744",
+          "0"
+        ],
+        "bodyUnionAreaExact": "17385/16744",
+        "clippedContactPiecesConvex": true,
+        "guideAffineRequired": true
+      }
+    ],
+    "beforeContacts": [],
+    "afterContacts": [
+      [
+        28,
+        27
+      ],
+      [
+        30,
+        27
+      ]
+    ],
+    "newContacts": [
+      [
+        28,
+        27
+      ],
+      [
+        30,
+        27
+      ]
+    ],
+    "lostContacts": [],
+    "nonSimpleOriginalPolygons": [],
+    "contactsExpectedOnly": true,
+    "newGeometrySaved": false
+  },
+  "sourceGroupsUnchangedExceptDeclaredTransforms": true,
+  "originalCoordinatesSavedWithoutAlteration": true,
+  "allOtherRawExact": true,
+  "guideUsesSameDeclaredMatrix": true,
+  "staticOrTemporalApproval": false,
+  "sourceMicroclockEquivalent": false,
+  "execution": {
+    "newEngine": 0,
+    "privateMedia": 0,
+    "network": 0,
+    "server": 0,
+    "sharedFilesChanged": 0
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "schema": "hanja-authored-whole-sweep-affine-static-readiness/v1",
+  "date": "2026-10-29",
+  "glyph": "釁",
+  "files": {
+    "recipe": {
+      "path": "docs/hanja-authored-ownstroke-u91c1-omit-h-contact-v2-2026-10-29/recipe.json",
+      "SHA256": "3b517ab280989115f9b29aee71558c4f4fa68f6098e3a53eb2ded34be7124138"
+    },
+    "fixture": {
+      "path": "docs/hanja-authored-ownstroke-u91c1-omit-h-contact-v2-2026-10-29/fixtures-static-draft.json",
+      "SHA256": "0659a7869095ea1e3e5fd17ce0d4ea9115e0419ccda43a3e6bc781856e174db8"
+    },
+    "math": {
+      "path": "docs/hanja-authored-ownstroke-u91c1-omit-h-contact-v2-2026-10-29/public-math-v2.json",
+      "SHA256": "d7f649cded70830f377909164f7a33df63f5dc75c8d883137717aecc35965b02"
+    },
+    "verifier": {
+      "path": "docs/hanja-authored-ownstroke-u91c1-omit-h-contact-v2-2026-10-29/verify-public-contact-v2.py",
+      "SHA256": "3b4b8cf53d6c4dcc764ce9c584426fe71ab9c7ba4408437d09339457d050fcc3"
+    },
+    "config": {
+      "path": "docs/hanja-authored-ownstroke-u91c1-omit-h-contact-v2-2026-10-29/config.json",
+      "SHA256": "8be371d42dbfc7bc5893cf366e6c2a387093e95d2a2a3d78a4c87f2ec33e7062"
+    },
+    "adapter": {
+      "path": "docs/hanja-authored-ownstroke-u91c1-omit-h-contact-v2-2026-10-29/compare.py",
+      "SHA256": "7820c731cec938b61c761f751542bc436084939fdd4be0e6c705e222f8c0c3b6"
+    }
+  },
+  "counts": {
+    "originalRaw": 33,
+    "originalP": 59,
+    "omittedSourceRaw29P": 2,
+    "candidateRaw": 32,
+    "candidateCalls": 36,
+    "candidateP": 57,
+    "catalog": 25,
+    "domestic": 26
+  },
+  "mathematics": {
+    "exactRational": true,
+    "originalSimplePolygons": true,
+    "newContactsOnly": [
+      [
+        28,
+        27
+      ],
+      [
+        30,
+        27
+      ]
+    ],
+    "lostContacts": [],
+    "positiveDeterminants": [
+      "38/35",
+      "414/305"
+    ],
+    "bodyUnionContactAreas": [
+      {
+        "sourceRaw": 28,
+        "area": "135012626437/150955266000"
+      },
+      {
+        "sourceRaw": 30,
+        "area": "17385/16744"
+      }
+    ]
+  },
+  "display": "Original point and guide arrays remain retained, with declared common whole-raw matrices. Static originalP serializer is reused unchanged; SVG contains exactly57originalP paths and2outergroup transforms, coefficients converted from Fraction to17-digit binary64 text only at display. Rational proof concerns declared transforms; browser visual shape still requires independent review. Guides are not rendered or executed.",
+  "checks": {
+    "mathRuns": 1,
+    "checkOnlyRuns": 1,
+    "status": 0,
+    "result": {
+      "guardPass": true,
+      "glyph": "釁",
+      "root": "u91c1-omit-raw29-sweeps-Y-contact-v2",
+      "catalog": 25,
+      "domestic": 26,
+      "raw": 32,
+      "calls": 36,
+      "polygons": 57,
+      "locallyAuthored": true,
+      "originalWhole": false,
+      "isOriginalEngineCapture": false,
+      "originalSourceUnchanged": true,
+      "wholeAndIndependentSelectors": "PASS",
+      "HTTP": 0,
+      "server": 0,
+      "engine": 0,
+      "nativeApproval": false
+    }
+  },
+  "approval": {
+    "whole": false,
+    "mapping": false,
+    "sourceTiming": false,
+    "native": false,
+    "runtime": false
+  },
+  "execution": {
+    "engine": 0,
+    "network": 0,
+    "privateFetch": 0,
+    "server": 0,
+    "browser": 0,
+    "sharedFilesChanged": 0,
+    "build": 0
+  },
+  "previousCandidateOverwritten": false
+}
