@@ -1,0 +1,21 @@
+{
+  "glyph": "孽",
+  "date": "2026-10-28",
+  "status": "finite-actual-component-boundaries-reviewed-not-runtime-approved",
+  "geometrySHA256": "3e065c4f64aa5bfc650093b18eb674f3194681da9060384ef39084b8d211d22f",
+  "rendererSHA256": "cb4d80f57dbd8ad9815b5b90128ece5171a678a3b1c24e94956c2ac9fff91f88",
+  "helperSHA256": "c1bea4ba3af04aa27dcc7c45f5474a0bc9a38597b2f933bab0e28a57ae8182ac",
+  "profileSHA256": "46b2e01ccd032672af00b80776cc4f4adf511476eb1cfad2fc9822b61be9cc61",
+  "browser": "Codex in-app browser",
+  "observations": [
+    {"pens": [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20], "progress": [0,0.125,0.25,0.375,0.5,0.625,0.75,0.875,1], "result": "Finite coarse frames directly viewed; no additional detached future ink observed. Pen18 was additionally enlarged to300px. Cropped pen5/10 final cells were subsequently checked in ending frames."},
+    {"pens": [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20], "progress": "gate.until-1e-8,gate.until,gate.until+1e-8", "result": "Directly viewed each triplet; no release jump observed; diagnostics bad[] and errors[] for all20. Pens19/20 remain scheduled for a wider confirmation because the right edge of the screenshot was cropped."},
+    {"pens": [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20], "progress": [0.9999,0.99999999,1], "result": "Directly viewed complete ending triplets. Cropped captures5-8 were repeated with additional lower margin. No completion pop or missing stroke observed; diagnostics bad[] and errors[]."}
+  ],
+  "observerCorrection": "Expected SVG matrix numbers remain pinned. Computed CSS matrix must equal the exact number or its toPrecision(6) serialization; original source attributes and ownership guards remain required. This corrects browser serialization diagnostics only.",
+  "remaining": ["all20 initial micro-progress frames", "wider gate19/20 view", "full-guide residual with start clip excluded", "whole natural replay and product auto-start/replay"],
+  "runtimeApproved": false,
+  "registered": false,
+  "buildRun": false,
+  "projectTypecheckRun": false
+}
