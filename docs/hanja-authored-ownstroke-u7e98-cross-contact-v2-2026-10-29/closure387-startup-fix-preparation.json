@@ -1,0 +1,55 @@
+{
+  "schema": "hanja-exact-resource-closure-startup-fix-preparation/v1",
+  "glyph": "纘",
+  "date": "2026-10-29",
+  "observedStartupFailure": {
+    "reportedBy": "ROOT actual startup",
+    "actualH": "d987262cb3f6c1270a4489fa2817c79deff8f626facad6cfee57bccbbcf7da24",
+    "profileSHA256": "f61cfa7d516075016ff9ffd57e8f1c6459e19fae439edcb3c77b8e393ee3fff1",
+    "stage": "resources() canonical source-data raw-table closure assertion before React SSR and server",
+    "actualModuleCount": 387,
+    "expectedOldBranch": 386,
+    "reason": "Actual R imports the u6030 mixed-guide helper globally. Existing closure387 assertion exception only recognized the u6030 profile.",
+    "ReactSSR": 0,
+    "HTTPServerStarted": false,
+    "nativeObservations": 0
+  },
+  "previousPureSuccessScope": {
+    "selectorExpression": true,
+    "fixtureRouteJSONStringify": true,
+    "controlConstructorStub": true,
+    "fullResourcesPackConstruction": false,
+    "actualSSRStartupWasNotTestedByChild": true
+  },
+  "preparedFix": {
+    "path": "docs/hanja-authored-ownstroke-u7e98-cross-contact-v2-2026-10-29/actual-H-closure387-fix.patch",
+    "SHA256": "6f8e6c208aa85c43be5117c3a5c976264718c227b584cc6d9614b4058f0bde88",
+    "beforeH": "d987262cb3f6c1270a4489fa2817c79deff8f626facad6cfee57bccbbcf7da24",
+    "afterH": "26e11ae21dbef05b02d7cce17dc6121fe86663b1715cc28ccfad753c1e3e2b8a",
+    "hunks": 1,
+    "condition": "Only exact Zan kind/root/sharedVersion/profile/glyph/policy with exactR40130/helper29ce pins and actual helper dependency present receives387. Original u6030 exception and foreign386 fallback retained.",
+    "sourceGeometryChanged": false,
+    "RChanged": false,
+    "helperChanged": false
+  },
+  "profile": {
+    "path": "docs/hanja-authored-ownstroke-u7e98-cross-contact-v2-2026-10-29/actual-profile-start.json",
+    "SHA256": "cd9de6f132fab49a15a5d1cb7461e328300aa1ae6bc06115c60c357f9ae6b4b1",
+    "inputRegistry": "f8a2f01bb27585729ae9a58ca00d8f647a87ca8919791f28739849dc536d525a",
+    "executionEnabled": true,
+    "nativeApproval": false,
+    "runtimeApplied": false
+  },
+  "changedAssertFocusedChecks": {
+    "exactZan387": "PASS",
+    "oldU6030Mixed387": "PASS",
+    "foreign386Fallback": "PASS",
+    "rejectWrongCountRootProfileRPinMissingHelper": 5,
+    "actualResourcesOrSSRReexecutionByChild": false
+  },
+  "rootMustApplyAndRetryActualStartup": true,
+  "childSSR": 0,
+  "childServer": 0,
+  "actualSharedHWritten": false,
+  "build": false
+}

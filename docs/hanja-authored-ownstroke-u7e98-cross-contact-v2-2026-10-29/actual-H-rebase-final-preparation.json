@@ -1,0 +1,69 @@
+{
+  "schema": "hanja-exact-actual-H-rebase-preparation/v1",
+  "glyph": "纘",
+  "date": "2026-10-29",
+  "status": "STRICT-H-REBASED-PENDING-ROOT-REGISTRY-FINALIZATION",
+  "beforeH": "d2f7a3bf338008cc9f7e90bcc3f3d0e41b07afd154b17fc1d094bcc41d3422ea",
+  "afterH": "d987262cb3f6c1270a4489fa2817c79deff8f626facad6cfee57bccbbcf7da24",
+  "patch": {
+    "path": "docs/hanja-authored-ownstroke-u7e98-cross-contact-v2-2026-10-29/actual-H-integration.rebased-d2f7a3.patch",
+    "SHA256": "780ac396ff456aa9216d900d2c6c6a8f707d8de9f75dfc74f73024e2716a3ca6"
+  },
+  "overrides": {
+    "path": "docs/hanja-authored-ownstroke-u7e98-cross-contact-v2-2026-10-29/profile-overrides.pending.json",
+    "SHA256": "5d8f80a0cf7e663f9bf62022837e64d29328385968484829958c187759da1251"
+  },
+  "actualRendererSHA256": "40130fedc1b2375399ddc94022062cb4b1f173f20d34face4b98e3703a8cc569",
+  "helper": {
+    "path": "lib/hanja-stroke-mixed-guide-u6030.ts",
+    "SHA256": "29ce138dbd351d758ff65be2c4c492318b4560d2968dd7c305efd51530ef41d1"
+  },
+  "expectedResourceClosureModules": 387,
+  "registryProvisionalSHA256": "bf004dddc9b3d064ba40c3b633480093614fc0e22e3881fc45a76fac1ab57f09",
+  "sourceFixtureAndGeometryUnchanged": true,
+  "sourceFixtureSHA256": "b6889acd4fdf6234ae8ad4000d088057dd8fb3b1216cd1e71ad10c329e3c8d98",
+  "geometrySHA256": "aa241350799c5b55d739505e9c873cf2e820b1f65f6ae0c428d79a4dc9575f0f",
+  "nativeHunks": 15,
+  "oldPositionsAscending": true,
+  "bareBlankContextLines": 0,
+  "exactForwardAndInverse": true,
+  "explicitSourceArgumentAndPureLocalBindings": true,
+  "checks": {
+    "moduleAwareSyntax": "PASS",
+    "strictFixtureGuardAndThreeNegatives": "REUSED-byte-identical-unmodified-guard",
+    "actualStrictLoaderCount": 1,
+    "actualLocalBaselineSelection": "PASS-no-fresh-SSR-module-count-claim",
+    "actualGeneratedFixtureJSONFiveFields": "PASS",
+    "missingClosureRootNegative": "PASS-false-selection",
+    "missingResourceBranchNegative": "PASS-root-and-curve-mismatch",
+    "actualControlConstructorStub": {
+      "gate15": true,
+      "aggregate4": true,
+      "compound5": true,
+      "residual1": true,
+      "realDOM": false
+    }
+  },
+  "riskFirstExistingCompactButtons": [
+    1,
+    2,
+    12
+  ],
+  "guideGapSolutionClaim": false,
+  "supersededInvalidRebase": {
+    "path": "docs/hanja-authored-ownstroke-u7e98-cross-contact-v2-2026-10-29/actual-H-integration.rebased-29f249.patch",
+    "SHA256": "2d00ab12452de9ed4fc462158915f02405c9edfd5877ff72bc75b2500de6e89e",
+    "DO_NOT_APPLY": true,
+    "reason": "Stale captured REPL binding omitted source guard/dispatch/selector/resources inserts; failed actual selector pure check; never applied to shared H.",
+    "corrected29fRAMValidated": true
+  },
+  "profileFinalized": false,
+  "executionEnabled": false,
+  "actualHWritten": false,
+  "actualProfileWritten": false,
+  "SSR": 0,
+  "server": 0,
+  "build": false,
+  "globalTypeCheck": false,
+  "runtimeApplied": false
+}
