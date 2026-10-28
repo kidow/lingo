@@ -1,0 +1,93 @@
+{
+  "schema": "hanja-static-candidate-and-original-clock-readiness/v1",
+  "glyph": "纘",
+  "date": "2026-10-29",
+  "status": "READY-FOR-ROOT-STATIC-WHOLE-AND-ORIGINAL25-CLOCK-REVIEW",
+  "catalogStrokes": 25,
+  "sourceCounts": {
+    "raw": 30,
+    "drawingCalls": 31,
+    "polygons": 62,
+    "nonDrawingRawOneBased": [
+      22
+    ]
+  },
+  "existingEvidence": {
+    "HKmWholeHOLD": {
+      "path": "docs/hanja-source-raw-compare-u7e98-hkcs-m-whole-2026-10-26/native-whole-review.json",
+      "SHA256": "001d5c97609a4a3bc9263b7cc26ae5fd893cf8883c5271850fd9ff0fef263777",
+      "reason": "Right-leg terminal hook closes original white gap at upperH"
+    },
+    "originalHookContactProof": {
+      "path": "docs/hanja-source-raw-compare-u7e98-hkcs-m-whole-2026-10-26/end-hook-contact-proof.json",
+      "SHA256": "774365b1734c2d3b2fda88a66174577685fc1fa38b585dcc8e46d0cf17e43163",
+      "positiveAreaExact": "56/5"
+    },
+    "HKuWholeHOLD": {
+      "path": "docs/hanja-source-raw-compare-u7e98-hkcs-u-whole-2026-10-26/native-whole-review.json",
+      "SHA256": "7c5fffc60fbc3787ff89287d01bb625d7b109ad5facd04daa2ff91318b2dd214",
+      "reason": "Left lower center short detached point differs from domestic longV; separate unchanged source"
+    }
+  },
+  "candidate": {
+    "matrixExact": [
+      "4499/3403",
+      "0",
+      "0",
+      "1",
+      "-4504697/85075",
+      "0"
+    ],
+    "changedRawOneBased": 21,
+    "anchorX": "32881/200",
+    "terminalHookToH19BandStrictXGap": "1",
+    "originalWholeRaw21Contacts": [
+      18,
+      19
+    ],
+    "candidateWholeRaw21Contacts": [
+      18,
+      19
+    ],
+    "newClosedContacts": [],
+    "lostClosedContacts": [],
+    "rawMetadataAndFlagsPreserved": true,
+    "other29RawAndTraceExact": true,
+    "sourceWholeNotOriginal": true,
+    "sourceEngineRerun": false,
+    "publicCoordinatesOnly": true
+  },
+  "focusedChecks": {
+    "staticExactAffineContactAndSharedActualPageSelection": "PASS",
+    "firstStaticAttempt": "FAIL-KeyError holdSummary in generated page; config field supplied, changed actual page contract rerun PASS",
+    "clockFirstPartition": "PASS-metadata-and-common-validator-synthetic25-only",
+    "clockRestPartition": "PASS-metadata-and-common-validator-synthetic25-only",
+    "selection17Guard": "REJECTED-as-required",
+    "HTTP": 0,
+    "serverStarts": 0,
+    "privateFetch": 0,
+    "builds": 0,
+    "fullTypeChecks": 0
+  },
+  "inputSHA256": {
+    "docs/hanja-authored-ownstroke-u7e98-hook-separated-2026-10-29/config.json": "9f58a2accb1d8fe4abfdd6d414ba23be3bd7b5e73aff3c0880af506f42020a85",
+    "docs/hanja-authored-ownstroke-u7e98-hook-separated-2026-10-29/compare.py": "249de97c6b881c2d8e54ff090e528caaaa5200ba97a1724cba497bc80379c720",
+    "docs/hanja-authored-ownstroke-u7e98-hook-separated-2026-10-29/fixtures-draft.json": "a8475b569494c09daa311fed1c7585e211cb364d75758c7032ce022b65ded57b",
+    "docs/hanja-authored-ownstroke-u7e98-hook-separated-2026-10-29/materialize-draft.py": "2f35dc45dc30fec33eff958bc24510e9bc8884c12e9b84bd4b9ff5a98427be73",
+    "docs/hanja-official-media-compare-u7e98-2026-10-29/clock.py": "d5d6d9f804ed4ca8b72587728fa1e11a8f56f3b81250d3ddec14147b6e89315f",
+    "docs/hanja-official-media-compare-u7e98-2026-10-29/config-first.json": "9a27c6d886fa0f42843e916ce0ce368212f1c99b125a9ead03b3f389a0b17ed6",
+    "docs/hanja-official-media-compare-u7e98-2026-10-29/config-rest.json": "57404379f38a92454e25a25feb401f15aeb1b5a2c1c9327188e8e6cc606f748f"
+  },
+  "nextRequired": [
+    "ROOT whole original/candidate and changed raw21 visual review; X stretch is not automatically acceptable font geometry",
+    "ROOT original25 clock split1..13 and14..25; current fixed metadata alone is not clock observation",
+    "Only after original clock, formulate raw30 to logical25 mapping and compare all individual roles/prefixes; exact-Q-chain limitations belong to unchanged-source families and are not mapping approval",
+    "Execution fixture/coverage and actual renderer temporal review remain unprepared"
+  ],
+  "nativeApproval": false,
+  "logicalMappingApproved": false,
+  "domesticClockReviewed": false,
+  "runtimeApplied": false,
+  "sharedCodeChanged": false,
+  "privateMediaSaved": false
+}

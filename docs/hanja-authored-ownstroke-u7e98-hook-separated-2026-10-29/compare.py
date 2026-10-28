@@ -1,0 +1,59 @@
+import argparse,hashlib,importlib.util,json,sys
+from pathlib import Path
+sys.dont_write_bytecode=True
+ROOT=Path(__file__).resolve().parents[2]
+HERE=Path(__file__).resolve().parent
+CONFIG=HERE/'config.json'
+SHARED="docs/hanja-source-raw-compare-u8a29-2026-10-21/serve.py"
+SHARED_SHA="ba91ba7f00bc2e4899ca4d3c69d03ab5cd6f8b0a9f888899eea49aa69a58665d"
+META="docs/hanja-goal-glyphwiki-batch905-2026-10-13/metadata.json"
+META_SHA="05c756fe368ca595b3d8a2d9910839c7f3a1f225b6aba4e5462ea486922d716e"
+SOURCE="docs/hanja-actual-engine-capture-u7e98-hkcs-m-2026-10-26/engine-whole-hkcs_m7e98.json"
+SOURCE_SHA="1d05a3718cfc27b49fe3b6a009ed03537280a1a3b2d2d8bdd4c485d90fca8503"
+def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+def require(value,message):
+    if not value:raise ValueError(message)
+def main():
+    parser=argparse.ArgumentParser();parser.add_argument('--config-sha',required=True);parser.add_argument('--check-only',action='store_true');parser.add_argument('--port',type=int);args=parser.parse_args()
+    config=json.loads(CONFIG.read_bytes())
+    def guards():
+        require(sha(CONFIG)==args.config_sha and sha(Path(__file__).resolve())==config['adapterSHA256'],'exact candidate config/adapter changed')
+        require(config['schema']=='hanja-single-source-affine-static-comparison/v1' and config['glyph']=='纘' and config['catalogStrokes']==25 and config['sourceViewBox']=='0 0 200 200' and config['host']=='127.0.0.1','one local static context only')
+        require(config['sourceRootWasAuthored']is True and config['candidateOriginalRoot']is False and config['isOriginalEngineCapture']is False and config['noPartialAnimation']is True and config['nativeApproval']is False and config['runtimeApplied']is False,'author static draft is not original/approved')
+        require(config['sourceRoots']=={'original':'hkcs_m7e98','authored':'local_u7e98_hkcs_raw21_x4499over3403_20261029'} and config['defaultSource']=='authored','only original and authored same-source whole raw21 candidate')
+        require(config['sharedServe']=={'path':SHARED,'SHA256':SHARED_SHA} and sha(ROOT/SHARED)==SHARED_SHA,'reuse unchanged static shell')
+        require(sha(ROOT/META)==META_SHA and sha(ROOT/SOURCE)==SOURCE_SHA,'metadata/source changed')
+        metadata=json.loads((ROOT/META).read_bytes());require(config['domestic']=={**metadata['dictionary'],'clips':25,'privateMediaSaved':False},'exact RAM-only domestic source')
+        for p,h in config['inputSHA256'].items():require(sha(ROOT/p)==h,'candidate input changed: '+p)
+    guards()
+    path=HERE/'materialize-draft.py';spec=importlib.util.spec_from_file_location('shao_affine_static_draft',path);draft=importlib.util.module_from_spec(spec);spec.loader.exec_module(draft);candidate=draft.load_candidate();report=draft.verify()
+    require(candidate['matrixExact']==['4499/3403','0','0','1','-4504697/85075','0'] and candidate['changedRawZeroBased']==[20] and report['terminalHookH19BandStrictXGap']=='1','single positive originalP affine only')
+    sources={'original':json.loads((ROOT/SOURCE).read_bytes()),'authored':candidate}
+    spec=importlib.util.spec_from_file_location('shao_affine_shared_static',ROOT/SHARED);shared=importlib.util.module_from_spec(spec);spec.loader.exec_module(shared);require(shared.FETCH_COUNT==0,'publisher fetched only in RAM at root server start')
+    render_config={**config,'sourceRoots':{key:{'root':root,'rawGroups':len(sources[key]['groups']),'proofKind':'original-public-engine-capture'if key=='original'else'locally-authored-positive-affine-not-engine-capture'}for key,root in config['sourceRoots'].items()}}
+    require(set(render_config['sourceRoots'])=={'original','authored'}and all(item['rawGroups']==30 for item in render_config['sourceRoots'].values()),'exact two-source rendering projection')
+    shared.CONFIG=render_config;shared.HERE=HERE;shared.ROOT=ROOT;shared.guards=guards;shared.load_sources=lambda:sources
+    original_svg,original_page,original_selection=shared.source_svg,shared.page,shared.selection
+    def source_svg(proof,count=None,prefix=False):
+        value=original_svg(proof,count,prefix)
+        return value.replace('data-original-raw=','data-authored-slot=')if proof is candidate else value
+    def page(*params):
+        return original_page(*params).replace('원authored raw ','저자 affine slot ').replace('원original raw ','원본HKCS raw ').replace('원proof exact','원source exact; authored whole raw21 positiveXaffine is not engine capture or approved whole/role/clock')
+    def selection(route,query):
+        require(route!='/checks','legacy original engine checks do not describe the authored affine')
+        return original_selection(route,query)
+    shared.source_svg=source_svg;shared.page=page;shared.selection=selection
+    if args.check_only:
+        synthetic={'viewBox':'0 0 200 200','transform':'matrix(1 0 0 1 0 0)','strokes':[{'d':'M0 0 L1 1'}for _ in range(25)]}
+        require(selection('/whole','')is None,'whole selection contract')
+        selected=selection('/compare','source=authored&domestic=1&raw=21&dview=single&rview=single')
+        require(selected=={'source':'authored','domestic':1,'raw':21,'dview':'single','rview':'single'},'compare selection contract')
+        whole=page('/whole',None,sources,synthetic);comparison=page('/compare',selected,sources,synthetic)
+        require(whole.count('<section class="panel">')==3 and comparison.count('<section class="panel">')==2 and render_config['sourceRoots']['authored']['root']in whole,'actual shared whole/compare page contract')
+        require(shared.FETCH_COUNT==0,'synthetic domestic contract test must not fetch')
+        print(json.dumps({**report,'HTTP':0,'server':0,'sharedCodeChanged':False,'sharedWholePageContract':'PASS','sharedCompareSelectionAndPageContract':'PASS','syntheticDomesticOnly':True,'nativeApproval':False},ensure_ascii=False));return
+    require(args.port is not None and 0<=args.port<=65535,'explicit local port required')
+    old=sys.argv
+    try:sys.argv=[str(ROOT/SHARED),'--port',str(args.port)];shared.main()
+    finally:sys.argv=old
+if __name__=='__main__':main()
