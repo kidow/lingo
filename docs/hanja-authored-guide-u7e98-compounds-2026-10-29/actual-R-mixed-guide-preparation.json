@@ -1,0 +1,170 @@
+{
+  "schema": "hanja-reviewed-mixed-guide-common-helper-preparation/v1",
+  "glyph": "纘",
+  "date": "2026-10-29",
+  "status": "READY-FOR-ROOT-390-CLOSURE-H-INTEGRATION-AND-FRESH-ACTUAL-R",
+  "files": {
+    "common": {
+      "path": "lib/hanja-stroke-mixed-guide-u7e98.ts",
+      "SHA256": "ebf02e39e9e0293b32bd3535b9b5c764c1e28b4ff9a55cc68a0fc452db95f112"
+    },
+    "commonTest": {
+      "path": "lib/hanja-stroke-mixed-guide-u7e98.test.ts",
+      "SHA256": "9314fc74190bc53d747da59ef13a32585fccb04fcaa44237c10d0692811cd015"
+    },
+    "pen12Support": {
+      "path": "lib/hanja-stroke-mixed-guide-u7e98-pen12.ts",
+      "SHA256": "9bfe268bfec499ccd966709be902a334da17f417cab684491f31997a6dcddced"
+    },
+    "pen12SupportTest": {
+      "path": "lib/hanja-stroke-mixed-guide-u7e98-pen12.test.ts",
+      "SHA256": "b1e64c01286c396504ae503c7d05dbe8dd3df161bfdbee72b0136c5cedc8ad4b"
+    },
+    "Rpatch": {
+      "path": "docs/hanja-authored-guide-u7e98-compounds-2026-10-29/actual-R-mixed-guide-integration.patch",
+      "SHA256": "c8ea58294e6d63a379eff60e32e6b82f39917d5f54787f660c4abfdf4a257ced"
+    }
+  },
+  "sourceFixture": {
+    "path": "docs/hanja-authored-ownstroke-u7e98-cross-contact-v2-2026-10-29/fixtures-execution-draft.json",
+    "key": "strokes",
+    "SHA256": "b6889acd4fdf6234ae8ad4000d088057dd8fb3b1216cd1e71ad10c329e3c8d98",
+    "geometrySHA256": "aa241350799c5b55d739505e9c873cf2e820b1f65f6ae0c428d79a4dc9575f0f",
+    "pens": 25,
+    "masks": 31,
+    "sourceP": 62,
+    "customPens": [
+      1,
+      2,
+      12
+    ],
+    "unmodifiedP": 62
+  },
+  "bindings": {
+    "inputIdentityRequired": true,
+    "all25RowsAll31SegmentsExact": true,
+    "gettersNotInvoked": true,
+    "extraSymbolsOrKeysAndForeignPrototypesRejected": true,
+    "objectKeyReorderingSafe": true,
+    "arrayOrderFixed": true,
+    "opaqueWeakMapContext": true,
+    "sourceMutationRecheckedOnSample": true,
+    "pen12DelegationSourceAndFingerprintPreserved": true
+  },
+  "R": {
+    "beforeSHA256": "8412bcc55ec07ba21f23d6a37564a966ed231d84662e6b65b59c4be847f48da2",
+    "afterSHA256": "55db76b01618110165dd5f22d512428550512feb180757814b734e80ffa304d1",
+    "nativeHunks": 4,
+    "sortedOldPositions": true,
+    "exactForwardAndInverse": true,
+    "actualAppliedByROOT": true,
+    "childActualSharedWrites": 0,
+    "existingU6030AndU6621RenderersByteUnchanged": true,
+    "newClipMarkup": "polygon points={frame.startClip}; notpath d",
+    "ownerDOMContext": "u7e98-sourceP62-mixed-guide",
+    "ownerDOMPrefix": "data-u7e98-mixed-guide-",
+    "sourceFrameId": "id-u7e98-mixed-guide-frame-phase-count-manual-elapsed",
+    "sourceParts": [
+      "complete-firstP",
+      "full",
+      "curve",
+      "nextP-strip"
+    ]
+  },
+  "fingerprints": {
+    "pen1": "2c8ac4392596ba53d47166b3ca3a3a6ec950d53f6fa9ff12a4bafd6b4af5c653",
+    "pen2": "2c8ac4392596ba53d47166b3ca3a3a6ec950d53f6fa9ff12a4bafd6b4af5c653",
+    "pen12": "e206fbe26ba9c6a57ba07c372656903065a603536f91bbf4b0b42cbad4d2591b"
+  },
+  "policies": {
+    "pen1": "Merged original5P with verifieddonor3 fullcontinuous guide, width24/pad12; sourcegeometry unchanged.",
+    "pen2": {
+      "DL": "Exact originalsource3P Q14/7; outlineSegmentProgress sourceRow timing beforeoriginalJSboundary",
+      "DLend": 0.5770868086377152,
+      "H": "Original3P sourcecontact left-head/right rectangle, no futureH duringDL",
+      "leftHeadEnd": 0.7593158732299321
+    },
+    "pen12": {
+      "supportAPI": "makeReviewedU7e98Pen12Context / sampleReviewedU7e98Pen12Frame",
+      "VEnd": 0.3186826127097574,
+      "leftHeadEnd": 0.5325830087935445,
+      "role": "Vdown thenrisingHright"
+    }
+  },
+  "HIntegrationRequired": {
+    "expectedModules": 390,
+    "actualClosureByChild": false,
+    "additionalMainModule": "@/lib/hanja-stroke-mixed-guide-u7e98",
+    "additionalTransitiveModule": "@/lib/hanja-stroke-mixed-guide-u7e98-pen12",
+    "exactRewrites": [
+      {
+        "file": "lib/hanja-stroke-mixed-guide-u7e98.ts",
+        "from": "from'./hanja-stroke-outline.ts'",
+        "to": "from'@/lib/hanja-stroke-outline'",
+        "occurrences": 1
+      },
+      {
+        "file": "lib/hanja-stroke-mixed-guide-u7e98.ts",
+        "from": "from'./hanja-stroke-mixed-guide-u7e98-pen12.ts'",
+        "to": "from'@/lib/hanja-stroke-mixed-guide-u7e98-pen12'",
+        "occurrences": 1
+      },
+      {
+        "file": "lib/hanja-stroke-mixed-guide-u7e98-pen12.ts",
+        "from": "from'./hanja-stroke-outline.ts'",
+        "to": "from'@/lib/hanja-stroke-outline'",
+        "occurrences": 1
+      }
+    ],
+    "genericCurveTargets": 10,
+    "customCurveTargets": 2,
+    "customPhaseBoundaries": 4,
+    "genericSourceBoundaries": 3
+  },
+  "validation": {
+    "childFocusedCommonTests": {
+      "pass": 7,
+      "fail": 0
+    },
+    "parentReportedCombinedHelperTests": {
+      "pass": 12,
+      "fail": 0
+    },
+    "genuineNarrowSemantic": {
+      "root": "lib/hanja-stroke-mixed-guide-u7e98.ts",
+      "imports": [
+        "lib/hanja-stroke-mixed-guide-u7e98-pen12.ts",
+        "lib/hanja-stroke-outline.ts"
+      ],
+      "diagnostics": 0,
+      "registryLoaded": false,
+      "wholeProject": false
+    },
+    "Rsyntax": {
+      "Rsyntax": "PASS",
+      "legacy6030And6621RenderersUnchanged": true,
+      "exactNewRendererCount": 1,
+      "polygonStartClip": true,
+      "selectedPens": [
+        1,
+        2,
+        12
+      ],
+      "fullRTypeCheck": false,
+      "SSR": 0,
+      "sharedWrites": 0
+    },
+    "SSRFreshByChild": 0,
+    "serverByChild": 0,
+    "build": false,
+    "fullTypeCheck": false
+  },
+  "freshNativeRequired": [
+    "Correctpolygon pen1 initial0/1e-6/.01/.03/.1 andgate-release; previous prototype clip-active initialframes are invalid evidence.",
+    "Pen1continuous middle/ending,pen2DL/phase boundaries andoldfailure.5/.625,pen12support boundaries inactualR.",
+    "Allsource25/31/62 completion,remaining22 ordinaryrows,states,prefixes,naturalreplay before runtime approval."
+  ],
+  "nativeApproval": false,
+  "actualRReviewed": false,
+  "runtimeApplied": false
+}
