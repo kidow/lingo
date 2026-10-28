@@ -1,0 +1,58 @@
+import fs from 'node:fs'
+import crypto from 'node:crypto'
+import assert from 'node:assert/strict'
+import {outlineStartClip} from '../../lib/hanja-stroke-outline.ts'
+const base=new URL('../../',import.meta.url),F='docs/hanja-authored-mm-u850c-components-2026-10-28/'
+const sha=b=>crypto.createHash('sha256').update(b).digest('hex'),read=p=>fs.readFileSync(new URL(p,base)),json=p=>JSON.parse(read(p))
+const FIXED={
+ [F+'recipe.json']:'2ba7622840fa5543ec229911c24c670a4c49eef41ca6b33121d5bf1f7b0a67fb',
+ ['docs/hanja-official-media-compare-u850c-2026-10-28/native-body-clock-review.json']:'11ab3101d12859e387d0ae93d5559b0e74eeff57b58574a08dcdacb976d3e13f',
+ ['docs/hanja-official-media-compare-u850c-2026-10-28/native-first-four-clock-review.json']:'77feec1f1d2075f8d6a5a8175c5da0c261767ef9d726e4d8dbe7ec09d841d520',
+ [F+'native-static-review.json']:'b55a1e05a2f565309be9968b85721085bdbf70b71391e6c57a24810aa8783fe6',
+ ['lib/hanja-stroke-outline.ts']:'b4d289d1911c4d43934dfad39c4cfbe22a246303bb7012114d16786688c36c40',
+ ['components/hanja/stroke-outlines.tsx']:'cb4d80f57dbd8ad9815b5b90128ece5171a678a3b1c24e94956c2ac9fff91f88'
+}
+const gcd=(a,b)=>{a=a<0n?-a:a;b=b<0n?-b:b;while(b){[a,b]=[b,a%b]}return a||1n}
+const fraction=(n,d=1n)=>{assert(d!==0n);if(d<0n){n=-n;d=-d}const g=gcd(n,d);return{n:n/g,d:d/g}}
+const rat=x=>{if(typeof x==='object'&&x&&'n'in x)return x;const s=String(x);if(s.includes('/')){const[a,b]=s.split('/');return fraction(BigInt(a),BigInt(b))}if(s.includes('.')){const negative=s.startsWith('-'),a=negative?s.slice(1):s,[whole,decimal]=a.split('.');return fraction((negative?-1n:1n)*BigInt(whole+decimal),10n**BigInt(decimal.length))}return fraction(BigInt(s))}
+const add=(a,b)=>{a=rat(a);b=rat(b);return fraction(a.n*b.d+b.n*a.d,a.d*b.d)},neg=a=>{a=rat(a);return fraction(-a.n,a.d)},sub=(a,b)=>add(a,neg(b)),mul=(a,b)=>{a=rat(a);b=rat(b);return fraction(a.n*b.n,a.d*b.d)},div=(a,b)=>{a=rat(a);b=rat(b);return fraction(a.n*b.d,a.d*b.n)},eq=(a,b)=>{a=rat(a);b=rat(b);return a.n===b.n&&a.d===b.d},str=a=>{a=rat(a);return a.d===1n?String(a.n):a.n+'/'+a.d},num=a=>{a=rat(a);return Number(a.n)/Number(a.d)}
+const apply=(m,p)=>[add(add(mul(m[0],p[0]),mul(m[2],p[1])),m[4]),add(add(mul(m[1],p[0]),mul(m[3],p[1])),m[5])]
+const parse=d=>{const tokens=d.match(/[MLQCZ]|-?(?:\d*\.\d+|\d+)/g);assert(tokens);assert.equal(d.replace(/[\s,]/g,''),tokens.join(''));let i=0;const rows=[];while(i<tokens.length){const command=tokens[i++],arity={M:2,L:2,Q:4,C:6,Z:0}[command];assert(arity!==undefined);const values=tokens.slice(i,i+arity).map(rat);assert.equal(values.length,arity);i+=arity;rows.push({command,values})}assert.equal(rows[0].command,'M');assert.equal(rows.at(-1).command,'Z');assert.equal(rows.filter(r=>r.command==='M').length,1);return rows}
+const coords=rows=>rows.flatMap(r=>Array.from({length:r.values.length/2},(_,i)=>r.values.slice(2*i,2*i+2)))
+const bounds=points=>{const xs=points.map(p=>num(p[0])),ys=points.map(p=>num(p[1]));return[Math.min(...xs),Math.min(...ys),Math.max(...xs),Math.max(...ys)]}
+const placed=(rows,m)=>rows.map(r=>r.command+(r.values.length?' '+Array.from({length:r.values.length/2},(_,i)=>apply(m,r.values.slice(2*i,2*i+2)).map(v=>num(v).toPrecision(17)).join(' ')).join(' '):'')).join(' ')
+function source(spec){assert.equal(sha(read(spec.path)),spec.SHA256);const d=json(spec.path);assert.equal(sha(d.originalRecordJSON),d.originalRecordSHA256);assert.deepEqual(JSON.parse(d.originalRecordJSON),d.record);assert.equal(d.record.strokes.length,d.record.medians.length);return d}
+function build(){
+ for(const[p,h]of Object.entries(FIXED))assert.equal(sha(read(p)),h,p)
+ const recipe=json(F+'recipe.json'),body=json('docs/hanja-official-media-compare-u850c-2026-10-28/native-body-clock-review.json'),staticReview=json(F+'native-static-review.json')
+ assert.equal(body.result,'PASS-original-order-direction-identification-for-execution-draft-preparation');assert.equal(staticReview.status,'PASS-finite-static-role-and-placement-only');assert.equal(body.runtimeApproved,false);assert.equal(staticReview.sourceAnimationApproved,false)
+ const sources={recipient:source(recipe.sources.recipient),donor:source(recipe.sources.donor)};assert.equal(sources.recipient.record.strokes.length,14);assert.equal(sources.donor.record.strokes.length,2);assert.equal(recipe.parts.length,15)
+ const inputSHA256={...FIXED};for(const spec of Object.values(recipe.sources)){inputSHA256[spec.path]=spec.SHA256;for(const name of['originalNoticeCopy','completeLicenseCopy']){const p=spec.license[name];assert.equal(sha(read(p.path)),p.SHA256);inputSHA256[p.path]=p.SHA256}}
+ const N=['1/10',0,0,'-1/10',0,90].map(rat),trace=[],strokes=[],coverageSources=new Map()
+ for(let i=0;i<15;i++){
+  const part=recipe.parts[i],record=sources[part.source].record,index=part.sourceStrokeOneBased-1;assert.equal(part.sourceStrokeOneBased,part.sourceMedianOneBased);assert.equal(part.logicalOneBased,i+1)
+  if(i<4)assert.deepEqual([part.source,part.sourceStrokeOneBased],['donor',[1,2,1,2][i]]);else{assert.deepEqual([part.source,part.sourceStrokeOneBased],['recipient',i]);assert.deepEqual(part.matrixExact,['1','0','0','1','0','0'])}
+  const originalD=record.strokes[index],median=record.medians[index],rows=parse(originalD),M=part.matrixExact.map(rat);assert.deepEqual(M.map(num),part.matrix);assert(num(sub(mul(M[0],M[3]),mul(M[1],M[2])))>0)
+  const[a,b,c,d,e,f]=M,C=[div(a,10),neg(div(b,10)),div(c,10),neg(div(d,10)),div(e,10),div(sub(900,f),10)]
+  const T=[a,neg(b),neg(c),d,add(div(e,10),mul(90,c)),sub(mul(90,sub(1,d)),div(f,10))]
+  const sourcePoints=coords(rows),placedPoints=sourcePoints.map(p=>apply(C,p)),unplacedPoints=sourcePoints.map(p=>apply(N,p)),outline=placed(rows,C),normalizedMedian=median.map(p=>apply(N,p)),maskMedian=normalizedMedian.map(p=>p.map(num))
+  for(const p of[...sourcePoints,...median.map(p=>p.map(rat))])assert.deepEqual(apply(T,apply(N,p)).map(str),apply(C,p).map(str))
+  const inverse=p=>{const target=[sub(mul(p[0],10),e),sub(sub(900,mul(p[1],10)),f)],det=sub(mul(a,d),mul(b,c));return[div(sub(mul(d,target[0]),mul(c,target[1])),det),div(sub(mul(a,target[1]),mul(b,target[0])),det)]}
+  for(let k=0;k<sourcePoints.length;k++)assert.deepEqual(inverse(placedPoints[k]).map(str),sourcePoints[k].map(str))
+  const first=maskMedian[0],next=maskMedian.find(p=>p[0]!==first[0]||p[1]!==first[1]);assert(next);const len=Math.hypot(next[0]-first[0],next[1]-first[1]),unit=[(next[0]-first[0])/len,(next[1]-first[1])/len],padding=10,width=20,padded=first.map((v,k)=>v-padding*unit[k])
+  const revealPath='M'+padded.map(v=>v.toPrecision(17)).join(' ')+' L'+maskMedian.map(p=>p.map(v=>v.toPrecision(17)).join(' ')).join(' L'),medianLength=maskMedian.slice(1).reduce((n,p,k)=>n+Math.hypot(p[0]-maskMedian[k][0],p[1]-maskMedian[k][1]),0),weight=padding+medianLength
+  const gate={unit,minProjection:Math.min(...unplacedPoints.map(p=>num(p[0])*unit[0]+num(p[1])*unit[1])),firstProjection:first[0]*unit[0]+first[1]*unit[1],padding,until:padding/weight,bounds:bounds(unplacedPoints)}
+  assert(gate.minProjection<gate.firstProjection+padding);assert(weight>padding&&gate.until>0&&gate.until<1)
+  const segment={outline,bounds:bounds(placedPoints),direction:'curve',weight,revealPath,revealWidth:width,revealTransform:'matrix('+T.map(v=>num(v).toPrecision(17)).join(' ')+')',revealStartGate:gate}
+  for(const p of[0,1e-6,gate.until-1e-8]){const clip=outlineStartClip(segment,p);assert.equal(typeof clip,'string');assert(!clip.includes('NaN')&&!clip.includes('Infinity'))}assert.equal(outlineStartClip(segment,gate.until),undefined)
+  const evidence={logical:i+1,source:part.source,sourcePathOneBased:index+1,originalDSHA256:sha(originalD),originalMedianSHA256:sha(JSON.stringify(median)),sourceMatrixExact:part.matrixExact,placedOutlineMatrixExact:C.map(str),maskOnlyTransformExact:T.map(str),sourceCommandSequence:rows.map(r=>r.command),placedCommandSequence:parse(outline).map(r=>r.command),controlPairs:sourcePoints.length,normalizationApplications:1,BezierFlattened:false,sourceGeometryEdited:false,sourceMedianEdited:false,placedAndMaskFramesExactlyEquivalent:true,exactControlPointRoundTrips:true,medianFirstDeltaSourceNormalized100:[next[0]-first[0],next[1]-first[1]],medianOverallDeltaSourceNormalized100:maskMedian.at(-1).map((v,k)=>v-first[k]),maskPolylineLengthSourceNormalized100:medianLength,displayWeight:weight,upstreamMicroclockEquivalent:false}
+  trace.push(evidence);strokes.push([segment]);coverageSources.set(part.source+':'+index,{source:part.source,index,originalD,normalizedMedian:maskMedian,radius:10})
+ }
+ const bodyPaths=sources.recipient.record.strokes.slice(3),bodyMedians=sources.recipient.record.medians.slice(3),binding=recipe.body11Binding
+ assert.equal(sha(JSON.stringify(bodyPaths)),binding.pathsSHA256);assert.equal(sha(JSON.stringify(bodyMedians)),binding.mediansSHA256)
+ const fixture={schema:'hanja-authored-MM-padded-affine-mask-draft/v1',date:'2026-10-28',glyph:'蔌',variantId:'u850c-authored15-recipient-envelope-source-start-draft',locallyAuthoredRoot:true,mixedParts:true,originalWhole:false,originalMMWhole:false,temporalPolicy:'source-padded-affine-mask-draft',startGatePolicy:'source-start-half-plane-gate-draft',upstreamTimingEquivalenceClaim:false,nativeApproval:false,runtimeApplied:false,inputSHA256,recipe:{path:F+'recipe.json',SHA256:FIXED[F+'recipe.json']},sourceIdentity:recipe.sources,nativeMappingEvidence:{body:{path:'docs/hanja-official-media-compare-u850c-2026-10-28/native-body-clock-review.json',SHA256:FIXED['docs/hanja-official-media-compare-u850c-2026-10-28/native-body-clock-review.json']},static:{path:F+'native-static-review.json',SHA256:FIXED[F+'native-static-review.json']},scope:'Original domestic clock and finite static source-role support; source mask timing/native runtime still unapproved'},trace,u850c:{strokes}}
+ const check={schema:'hanja-authored-MM-execution-source-check/v1',date:'2026-10-28',glyph:'蔌',status:'PASS-source-normalization-affine-and-start-gate-code-only',inputSHA256,logicalPens:15,segments:15,bodySourcePathsIdentityPreserved:11,placedGrassPaths:4,distinctPublicSourcePathsForCoverage:coverageSources.size,sourceCommandAndControlPointsPreserved:true,BezierFlattened:false,sourceOriginalDAndMedianEdited:false,exactControlAndMedianFrameBinding:true,maskSourceWidthOriginalMM:200,maskSourcePaddingOriginalMM:100,sourceNormalizedWidth100:20,sourceNormalizedPadding100:10,medianPolylineWeight:'10 + exact source-normalized polyline length; display policy only',gateTests:'actual outlineStartClip at0,1e-6,until-1e-8,until; no NaN/Infinity',bodyObservedDirections:body.observedDirections,trace,remainingNativeRisks:['Fullround guide coverage is a separate source-local preflight; source-affine equivalence alone is insufficient.','Original source median first tangent, growth, start gate release, completion and actualR replay remain unreviewed.','The grass uses independently placed original十 donor paths; no private geometry, source original-whole or font-identity claim.','Body D and medians remain exact original records; filled weight/serifs/slopes differ from the domestic font.'],nativeApproval:false,runtimeApplied:false}
+ return{fixture,check,coverageSources:[...coverageSources.values()]}
+}
+export{build,parse,coords,rat,add,sub,mul,div,eq,str,num,apply}
+if(import.meta.url===new URL(process.argv[1]||'',new URL('file:///')).href){const{check}=build();console.log(JSON.stringify({logicalPens:check.logicalPens,segments:check.segments,distinctCoverageSources:check.distinctPublicSourcePathsForCoverage,sourceAndGateChecks:'PASS',nativeApproval:false}))}
