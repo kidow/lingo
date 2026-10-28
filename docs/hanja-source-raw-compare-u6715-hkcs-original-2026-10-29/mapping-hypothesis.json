@@ -1,0 +1,104 @@
+{
+  "schema": "hanja-source-static-grouping-hypothesis/v1",
+  "date": "2026-10-29",
+  "glyph": "朕",
+  "status": "unapproved-macro-role-hypothesis-only",
+  "source": {
+    "path": "docs/hanja-actual-engine-capture-u6715-hkcs-2026-10-26/engine-whole-hkcs_m6715.json",
+    "SHA256": "8154f8f413dc5b027aceec1a2d3219106ed4cda4404a1866ae740205fb91f73c"
+  },
+  "domesticClock": {
+    "path": "docs/hanja-official-media-compare-u6715-2026-10-29/native-clock-review.json",
+    "SHA256": "2a959ff2c62b083423472641b858218bb630557319e628618b0974a1485fe9b8"
+  },
+  "oneBasedLogicalRawGroups": [
+    [
+      1
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      4
+    ],
+    [
+      5
+    ],
+    [
+      6
+    ],
+    [
+      7,
+      8
+    ],
+    [
+      9
+    ],
+    [
+      10
+    ],
+    [
+      11
+    ],
+    [
+      12
+    ]
+  ],
+  "basis": "ROOT directly observed ten macro roles. Group2 topH then rightV-hook uses source raw2+3, group6 topH then DRsweep uses raw7+8; source primitive order is unchanged. Other raw rows are proposed one-to-one only pending current comparison.",
+  "compoundEvidence": {
+    "logical2": {
+      "sourceRaws": [
+        2,
+        3
+      ],
+      "sameGuideJoin": [
+        65.9,
+        26
+      ],
+      "macro": "Hright then Vdown and left hook",
+      "nativeSourceMappingApproved": false
+    },
+    "logical6": {
+      "sourceRaws": [
+        7,
+        8
+      ],
+      "sourceRaw7End": [
+        154,
+        28
+      ],
+      "sourceRaw8Start": [
+        144,
+        28
+      ],
+      "sameGuideJoin": false,
+      "macro": "Hright then DRcurve",
+      "microclockOrContinuousGuideClaim": false,
+      "nativeSourceMappingApproved": false
+    }
+  },
+  "geometry": {
+    "originalAll12GroupsUnchanged": true,
+    "onlyOriginalPListsConcatenated": true,
+    "original29PolygonsPreserved": true,
+    "sourceOrderUnchanged": true,
+    "originalTraceUnchanged": true,
+    "source4And5PointPlacementChanged": false,
+    "pointAffineProposed": false,
+    "engineRuns": 0
+  },
+  "approval": {
+    "sourceMapping": false,
+    "sourceDirection": false,
+    "compoundContact": false,
+    "temporal": false,
+    "native": false,
+    "runtime": false
+  },
+  "limits": [
+    "This grouping only supports a new static comparison configuration. Domestic clock observations do not approve source geometry or correspondence.",
+    "Group6 source guide endpoints differ; source contact and reveal/timing continuity remain unverified.",
+    "OriginalHKCS12raw whole HOLD is preserved, including touching DR points4/5. No point displacement, sourceP edit or authored full5 claim."
+  ]
+}
