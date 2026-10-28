@@ -1,0 +1,101 @@
+{
+  "schema": "hanja-logical-static-comparison-code-check/v1",
+  "date": "2026-10-29",
+  "glyph": "釁",
+  "mapping": {
+    "path": "docs/hanja-authored-ownstroke-u91c1-omit-h-contact-v2-2026-10-29/logical-mapping-hypothesis.json",
+    "SHA256": "0dfd01c846000e28cdd279e1b38392a19a5f4764ebafef2fd6067cc109df8ee2"
+  },
+  "config": {
+    "path": "docs/hanja-authored-ownstroke-u91c1-omit-h-contact-v2-2026-10-29/config-logical.json",
+    "SHA256": "09da937302103bb3b4b81c4482ed83529865ef86d9e21ed63bb0054febaed803"
+  },
+  "adapter": {
+    "path": "docs/hanja-authored-ownstroke-u91c1-omit-h-contact-v2-2026-10-29/compare-logical.py",
+    "SHA256": "aacb00c0c6bc55eae0fced995bdaecd4437bda25be2bee979413d2e255793fa6"
+  },
+  "sourceFixture": {
+    "path": "docs/hanja-authored-ownstroke-u91c1-omit-h-contact-v2-2026-10-29/fixtures-static-draft.json",
+    "SHA256": "0659a7869095ea1e3e5fd17ce0d4ea9115e0419ccda43a3e6bc781856e174db8"
+  },
+  "nativeWholeContact": {
+    "path": "docs/hanja-authored-ownstroke-u91c1-omit-h-contact-v2-2026-10-29/native-whole-contact-review.json",
+    "SHA256": "bb9ce891634ea818ac4207ad928ba8eec685f8377974390c318833fb31eb1b02"
+  },
+  "counts": {
+    "logical": 26,
+    "retainedRaw": 32,
+    "originalRaw": 33,
+    "omittedRaw": 29,
+    "calls": 36,
+    "P": 57,
+    "compoundPens": [
+      6,
+      9,
+      11,
+      15,
+      18,
+      25
+    ]
+  },
+  "checks": {
+    "oneEachSourceRaw": true,
+    "exactCompoundGuideJunctions": 6,
+    "currentPages": 26,
+    "prefixPages": 26,
+    "sourceMembershipExactAllPages": true,
+    "originalPPaths57AndExactlyTwoMatrices": true,
+    "checkOnlyRuns": 1,
+    "status": 0,
+    "actualResult": {
+      "guardPass": true,
+      "glyph": "釁",
+      "root": "u91c1-omit-raw29-sweeps-Y-contact-v2",
+      "catalog": 25,
+      "domestic": 26,
+      "logicalPens": 26,
+      "retainedRaw": 32,
+      "calls": 36,
+      "polygons": 57,
+      "locallyAuthored": true,
+      "originalWhole": false,
+      "isOriginalEngineCapture": false,
+      "originalSourceUnchanged": true,
+      "wholeAndAll26LogicalSelectors": "PASS",
+      "HTTP": 0,
+      "server": 0,
+      "engine": 0,
+      "nativeApproval": false
+    }
+  },
+  "suggestedDirectPrefixes": [
+    6,
+    9,
+    10,
+    11,
+    15,
+    18,
+    20,
+    22,
+    23,
+    24,
+    25,
+    26
+  ],
+  "limits": "Synthetic no-private-media page contract only; actual native all26current and criticalprefix correspondence still unapproved. Whole keeps original physical path order; prefixes follow proposed logical order, preserving original per-rawP and within-row primitives.",
+  "approval": {
+    "mapping": false,
+    "direction": false,
+    "temporal": false,
+    "native": false,
+    "runtime": false
+  },
+  "execution": {
+    "HTTP": 0,
+    "privateFetch": 0,
+    "server": 0,
+    "engine": 0,
+    "sharedFilesChanged": 0,
+    "build": 0
+  }
+}
