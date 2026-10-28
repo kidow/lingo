@@ -1,0 +1,106 @@
+{
+  "schema": "hanja-approved-explicit-variant-registration-preparation/v1",
+  "date": "2026-10-29",
+  "glyph": "釁",
+  "batch": 1527,
+  "countPolicy": {
+    "kind": "existing-explicit-reviewed-dictionary-variant",
+    "catalogStrokes": 25,
+    "playbackStrokes": 26,
+    "form": "사전",
+    "catalogFile": "content/hanja/characters/special.json",
+    "catalogId": "u91c1",
+    "sourceRow": 5931,
+    "catalogUnchanged": true,
+    "defaultCountEqualityCheckUnchanged": true,
+    "allowedCandidateAndPathsHashesRequired": true,
+    "onlyCatalog25InputAccepted": true
+  },
+  "sourceCapsule": {
+    "originalRaw": 33,
+    "originalCalls": 37,
+    "originalP": 59,
+    "retainedRaw": 32,
+    "retainedCalls": 36,
+    "authorP": 57,
+    "logical": 26,
+    "masks": 36,
+    "curves": 10,
+    "cardinals": 26,
+    "omittedRaw": [
+      29
+    ],
+    "wholeAffineRaw": [
+      28,
+      30
+    ],
+    "mixedParts": false,
+    "originalRoot": false,
+    "isOriginalEngineCapture": false,
+    "isActualLocallyAuthoredEngineCapture": false,
+    "sourceAffine20Pad10": [
+      [
+        23,
+        1
+      ],
+      [
+        24,
+        1
+      ]
+    ],
+    "onlyWidth22Pad11": [
+      25,
+      3
+    ],
+    "other7CurveWidth14Pad7": true
+  },
+  "finalNativeReview": {
+    "path": "docs/hanja-authored-ownstroke-u91c1-omit-h-contact-v2-2026-10-29/native-final-width22-review.json",
+    "SHA256": "b579b532822e1500dc97301670b50893f2e1ac6b5e5bc76ddfcedeed05387421"
+  },
+  "files": {
+    "data": {
+      "path": "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch1527.json",
+      "SHA256": "a705521d5b913551fdf0393b94d9b11ffd3754f2bbd04951aacfa3fee3ae42f1"
+    },
+    "module": {
+      "path": "lib/hanja-stroke-dictionary-glyphwiki-batch1527.ts",
+      "SHA256": "0d90794835d9392f733fd41218ed3a783962c4e24365cacf587d77b26b744a52"
+    },
+    "test": {
+      "path": "lib/hanja-stroke-dictionary-glyphwiki-batch1527.test.ts",
+      "SHA256": "2f9d8800d4ddbe72763d7c72bb79ad03c9d255f71f224c7f1d4e500ffd9cad87"
+    },
+    "notice": {
+      "path": "docs/hanja-authored-ownstroke-u91c1-omit-h-contact-v2-2026-10-29/batch1527-NOTICE.md",
+      "SHA256": "d314dcffb12d361e14255fde22c30e5e5cdc89a340623a04df619b47ea4006ea"
+    },
+    "bundlePatch": {
+      "path": "docs/hanja-authored-ownstroke-u91c1-omit-h-contact-v2-2026-10-29/batch1527-approved-bundle.patch",
+      "SHA256": "14c91fc27d63a744913a7eab3533730b1cfa02acefbb49ab79df8a86e5180cc7"
+    },
+    "variantPatch": {
+      "path": "docs/hanja-authored-ownstroke-u91c1-omit-h-contact-v2-2026-10-29/batch1527-approved-variant.patch",
+      "SHA256": "d4a416f640e172130d2d8f65a5ebcdb4282ec0c21ab7873987e6009757060ee0"
+    }
+  },
+  "variantRegistryBefore": "f98d1a13ccc54c5c532621ad834d4476a407c4d1512111caa9ff10ca4db526f1",
+  "variantRegistryAfter": "b5ed11b2320b3d18409c63f01dfd4ce5d378f36a068606b9ee0011c8e115c3be",
+  "mainRegistryBeforeAndAfter": "91270d373f73e7b908fbbdd0ccbb213028096f23efd58e4cb0125925e3f1f34d",
+  "checks": {
+    "sourcePinsVerified": 24,
+    "TSModuleAndTestSyntax0": true,
+    "rootActualThreeFocusedTestsPending": true,
+    "actualCorpus25Resolver26VariantRequired": true,
+    "wrongCatalog26And24MustReturnNull": true,
+    "defaultCountCheckChanged": false,
+    "corpusChanged": false,
+    "mutableCurrentHOrVariantRegistryPermanentlyPinned": false,
+    "build": 0,
+    "wholeTypecheck": 0,
+    "childSSR": 0,
+    "childServer": 0,
+    "actualProductionFilesWritten": 0
+  },
+  "focusedTestCommand": "node --test lib/hanja-stroke-dictionary-glyphwiki-batch1527.test.ts"
+}
