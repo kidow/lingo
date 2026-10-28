@@ -6,6 +6,8 @@ export type HanjaOutlineSegment = {
   weight: number
   revealPath?: string
   revealWidth?: number
+  /** Optional source-space mask placement; the filled outline is already placed. */
+  revealTransform?: string
 }
 export type HanjaOutlineStrokes = readonly (readonly HanjaOutlineSegment[])[]
 

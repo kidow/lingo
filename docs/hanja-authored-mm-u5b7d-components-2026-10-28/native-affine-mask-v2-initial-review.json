@@ -1,0 +1,33 @@
+{
+  "schema": "hanja-actual-renderer-partial-native-review/v1",
+  "date": "2026-10-28",
+  "glyph": "孽",
+  "profileSHA256": "bb57c8663e3c9965211967cb04791872fbc4a479b4a3b3b6d5c8a00bbd452c5c",
+  "helperSHA256": "282e1571a1d5e0021af0a6b792b204d627850eccf79a584cb0f6c9bbb6315a4d",
+  "rendererSHA256": "953d07bda96ef66c7b17dfc1cf752370d77116df0992806c1e5141deb46a0b72",
+  "fixtureSHA256": "a626d09ea7b9b0a485cc4798ad4821c2b8a9d232f88147aadb404a896ce8a744",
+  "geometrySHA256": "42ddd63c72da8d6b851329eea91c5bb77c093e88718e77dc9326134c5b2b7159",
+  "surface": "Codex in-app browser panel",
+  "observed": {
+    "pen1CompactGrid": [0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875, 1],
+    "pen1CompletionFineGrid": [0.9999, 0.99999999, 1],
+    "initialPairs": { "pens": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], "progress": [0, 0.000001] },
+    "initialDisplaySize": 1040,
+    "hydrationReady": true,
+    "clientErrors": []
+  },
+  "findings": [
+    "The selected stroke is absent at p=0, but a finite head fragment appears already at p=0.000001. This is plainly visible in independent initial regions, especially pens 1 through 6. Pens intersecting previous completed ink are harder to distinguish; no separate pass is assigned to those pens.",
+    "The main completed whole displayed during the grids matches the separately accepted authored-v2 whole at this observation level. Completion of pen1 is visibly continuous across the three recorded endpoint samples.",
+    "The plain-outline monitor emits noTransformN for the intentionally declared white mask guide transform. At zero it reports no bad checks, and at positive progress the reported issue is noTransformN. This is a monitor assumption requiring a narrow draft-specific check, not proof of an incorrect filled-outline transform."
+  ],
+  "decision": "HOLD",
+  "cause": "Initial head exposure needs a continuous source-derived start gate; the draft-only transform diagnostic also needs correction.",
+  "remainingPensInitialReview": [11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
+  "allPenTemporalApproval": false,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "privateMediaOrScreenshotsSaved": false,
+  "build": false,
+  "next": "Preserve this draft. Test a source-coordinate half-plane gate whose zero boundary is the original control-hull minimum projection and whose release is padding divided by padded guide length. Reinspect initial, intermediate and completion regions in the actual renderer before any registration."
+}
