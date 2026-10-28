@@ -1,0 +1,33 @@
+{
+  "schema": "hanja-authored-MM-finite-native-review-v1",
+  "date": "2026-10-28",
+  "glyph": "孽",
+  "logicalStrokes": 20,
+  "status": "PASS-finite-source-order-whole-and-actual-renderer-review",
+  "fixture": {"path": "docs/hanja-authored-mm-u5b7d-components-2026-10-28/fixtures-reveal-v3-start-draft.json", "SHA256": "f96ad2d1ffb45480ec495706b176d2f158e89d469e25aa147d85634e5f6004b4", "geometrySHA256": "3e065c4f64aa5bfc650093b18eb674f3194681da9060384ef39084b8d211d22f"},
+  "renderer": {"path": "components/hanja/stroke-outlines.tsx", "SHA256": "cb4d80f57dbd8ad9815b5b90128ece5171a678a3b1c24e94956c2ac9fff91f88"},
+  "outlineHelper": {"path": "lib/hanja-stroke-outline.ts", "SHA256": "b4d289d1911c4d43934dfad39c4cfbe22a246303bb7012114d16786688c36c40"},
+  "latestObserver": {"path": "scripts/hanja-actual-component-review.mjs", "SHA256": "7e4e50a6b0d24eb9764b5a5ea187a4cb73802b1c69be50229ff083108f25ec72", "profileSHA256": "93dcd5849c5ff5a1b264a2fc73a7d7f29099d3c1894cb9b46451d90e861dd6cf"},
+  "reusedUnchangedEvidence": {
+    "whole": {"path": "docs/hanja-authored-mm-u5b7d-components-2026-10-28/native-whole-v2-review.json", "SHA256": "a63a22e3a6fb8ea4e5ee312af43882a48218e6627220c694302e2f43d4c492c9"},
+    "canonicalFirstFour": {"path": "docs/hanja-official-media-compare-u5b7d-2026-10-28/first-four-clock-review.json", "SHA256": "578cd9d903c1e965be2eeed5e9072c2811fa7a2f23edb53c59f55a163154c33f"},
+    "canonicalBodySixteen": {"path": "docs/hanja-official-media-compare-u5b7d-2026-10-28/body-sixteen-clock-review.json", "SHA256": "6fd0b46a22455640202fb2699249c5945f1dbbc9d4477099bb22c14a1e003384"},
+    "bodyContact": "docs/hanja-official-media-compare-u5b7d-2026-10-28/body-contact-review.json",
+    "reason": "Same authored filled D, part order and matrices. v3 adds source-start mask gating only. Observer-only fixes do not change renderer or source data. Previous insufficient v2 mask starts are superseded, not approved."
+  },
+  "browser": "Codex in-app browser; actual StrokeOutlines React component",
+  "directObservations": {
+    "coarse": {"pens": "1..20", "progress": [0,0.125,0.25,0.375,0.5,0.625,0.75,0.875,1], "result": "No observed detached future ink; rightward/downward/curved progression agrees with reviewed canonical order. Pen18 enlarged300px; complete pen5/10 also checked in ending frames."},
+    "sourceGateRelease": {"pens": "1..20", "progress": "until-1e-8,until,until+1e-8", "result": "No observed jump. Previously cropped pen19/20 triplets were directly rechecked at300px with wider capture."},
+    "ending": {"pens": "1..20", "progress": [0.9999,0.99999999,1], "result": "No observed completion pop or missing stroke; all triplets directly viewed, with cropped5..8 repeated."},
+    "initial": {"pens": "1..20", "progress": [0,0.000001], "actualSamples": 40, "observerSHA256": "5c7fa8c4d56ce0aeab38981a09f2a132753f24adefadafed87896eb2d39f54d8", "result": "All40 directly viewed across two overlapping captures. No finite initial source fragment observed. Hydration true;41 states including main; bad[]; errors[]."},
+    "fullGuideResidual": {"pens": "1..20", "actualSamples": 20, "observerSHA256": "7e4e50a6b0d24eb9764b5a5ea187a4cb73802b1c69be50229ff083108f25ec72", "result": "Actual committed source guide read back with exact D/width/transform and owner checks. Clone removes dash and temporary source-start clip only, preserves transform. All20 original filled D minus full round guide areas directly viewed blank at300px across three overlapping captures. bad[]; errors[]. This is a full-guide coverage check, not pixel-equivalence to a publisher microclock."},
+    "timedSampledPlayback": {"pens": [1,11,18,19], "durationPerPenMilliseconds": 8000, "result": "Actual component timer reached natural-ended and progress1 with bad[]/errors[]. Start/end snapshots were sampled; this is not a claim that continuous video or every intermediate instant was observed."}
+  },
+  "observerFailureAndCorrection": "Initial20 residual attempts used two RAFs without guaranteeing React commit and failed source-guide readiness. Single pen20 then passed. Exact-draft-only bounded source/owner/transform commit checks were added; final20 attempt passed without ignoring errors or altering geometry.",
+  "limits": {"finiteSamplesOnly": true, "officialPublisherGeometry": false, "originalMMWhole": false, "upstreamTimingEquivalence": false, "actualAppUIFreshlyTested": false, "privateSourceAssetsSaved": false},
+  "approval": {"canonicalOrderAndDirections": true, "authoredWhole": true, "finiteActualRenderer": true, "registerThisExactGeometry": true},
+  "registrationConditions": "Preserve all20 exact outlines, guide transforms and source-start gates. Strict capsule/resolver checks must pass before counting applied. This record does not authorize modified geometry or another glyph.",
+  "buildRun": false,
+  "projectTypecheckRun": false
+}
