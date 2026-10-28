@@ -1,0 +1,13 @@
+*** Begin Patch
+*** Update File: scripts/hanja-official-media-compare.py
+@@
++    elif path == ROOT/"docs/hanja-official-media-compare-u83cf-2026-10-28/config.json":
++        require(config['glyph']=='菏' and config['sourceRoot']=='u83cf' and config['domesticClips']==12 and config['allowedStrokes']==list(range(1,13)) and config['defaultStroke']==1 and config['metadataFile']=="docs/hanja-goal-glyphwiki-batch998-2026-10-13/metadata.json", 'Exact 菏 original12 clock-only audit config required')
++        require(config['metadataSHA256']=="a47e681720fe5ffbf81d700d7a7181ed9b7ad114a20b5f54f6762fbfbe763d57" and metadata['glyph']=='菏' and metadata['candidate']['strokes']==12 and metadata['dictionary']['clips']==12, 'Preserve 菏 catalogue12 and publisher12; no authored composition approval')
++        require(config['media']['svg']=={"url":"http://img.e-hanja.kr/hanjaSvg/aniSVG/8300/83cf.svg","bytes":6125,"sha256":"eeb73ad977f088459c3a9d1d906e6306277b736cbf321dcf119cf0facc2d99b8"}, 'Exact unchanged 菏 original publisher media required')
++        safe_raw=pinned_path("docs/hanja-official-media-compare-u83cf-2026-10-28/safe-source-metadata.json").read_bytes()
++        require(sha(safe_raw)=="c0198099527e979449e837ea536338aae5c14c0e58a723d6a6e9a8916851416e", 'Exact safe-only 菏 original timing metadata required')
++        safe=json.loads(safe_raw)
++        require(safe['glyph']=='菏' and safe['sourceRoot']=='u83cf' and safe['sourceRootIsAuditContextOnly']is True and safe['selectedWholeRoot']is None and safe['catalogStrokes']==12 and safe['publisherTimedPaths']==12 and safe['fetchFacts']['clips']==12 and safe['fetchFacts']['SHA256']==config['media']['svg']['sha256'] and safe['cssSHA256']==CSS['sha256'] and safe['cssReferencePresent']is True and safe['bodyOutputOrFileSaved']is False and safe['logicalPensFromTimingApproved']is False and safe['sourceRawMappingApproved']is False and safe['catalogCountChanged']is False and safe['firstFourOrderDirectionReviewed']is False and safe['remainingEightOrderDirectionReviewed']is False and config['svgRoot']==safe['svgRoot'] and config['timedPaths']==safe['timedPaths'], 'Only original12 clock controls: first4 and later8 still require ROOT actual temporal observation')
+     elif path == ROOT/"docs/hanja-official-media-compare-u5b7d-2026-10-28/config.json":
+*** End Patch

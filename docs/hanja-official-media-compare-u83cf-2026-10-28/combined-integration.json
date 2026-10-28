@@ -1,0 +1,33 @@
+{
+  "schema": "hanja-original-clock-combined-integration/v1",
+  "date": "2026-10-28",
+  "helper": {
+    "path": "scripts/hanja-official-media-compare.py",
+    "beforeSHA256": "476886771104f4203a1137031bd85cda79770d1c9fab9cd360488fcd2fafa12a",
+    "afterSHA256": "7b508553e424d67f292457df51af2c0d2004c16079405a11591211476abebe29"
+  },
+  "cases": [
+    {
+      "glyph": "菏",
+      "paths": 12,
+      "config": "docs/hanja-official-media-compare-u83cf-2026-10-28/config.json",
+      "configSHA256": "4f74ef9ae9c96fb8538888fe60e03a12db12fa7adee7926c2807b641b51666c7"
+    },
+    {
+      "glyph": "薅",
+      "paths": 17,
+      "config": "docs/hanja-official-media-compare-u8585-2026-10-28/config.json",
+      "configSHA256": "0b8d2e5a78601145bc9b6f249935fe109c4ba1d8c9ca330f808f37c2ec6f86aa"
+    }
+  ],
+  "checks": {
+    "bothExactCheckOnly": "PASS",
+    "HTTP": 0,
+    "server": 0,
+    "sharedFetchFunctionCopies": 0
+  },
+  "scope": "Two independent exact publisher-media cases only. Original path/timing pins, script isolation and all prior case guards remain intact.",
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "build": false
+}

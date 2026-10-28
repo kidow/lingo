@@ -1,0 +1,102 @@
+{
+  "schema": "hanja-original-clock-observation-plan/v1",
+  "date": "2026-10-28",
+  "glyph": "菏",
+  "sourceRoot": "u83cf",
+  "sourceRootIsAuditContextOnly": true,
+  "scope": "Original publisher 12-stroke clock preparation only; no authored geometry, mapping or temporal approval.",
+  "counts": {
+    "catalog": 12,
+    "publisherTimedPaths": 12,
+    "originalMMFilledPaths": 11,
+    "originalMedians": 11
+  },
+  "inputs": {
+    "sourceRecord": {
+      "path": "docs/hanja-source-original-u83cf-mm-2026-10-27/source-record.json",
+      "SHA256": "f9af6506c2517a375d833493b37864c798017ccc04bb4fb33a2eae1379e89303"
+    },
+    "existingWholeHold": {
+      "path": "docs/hanja-source-raw-compare-u83cf-mm-whole-2026-10-28/native-whole-review.json",
+      "SHA256": "63655732cc24644c06e233d7b24f62ade8b7c5af619c1f12bbe320bacf1e1e9a",
+      "preserved": true,
+      "observation": "Original MM connected three-stroke grass versus domestic separated four-stroke grass; no authored candidate approved."
+    },
+    "safeMetadata": {
+      "path": "docs/hanja-official-media-compare-u83cf-2026-10-28/safe-source-metadata.json",
+      "SHA256": "c0198099527e979449e837ea536338aae5c14c0e58a723d6a6e9a8916851416e"
+    },
+    "donor": {
+      "path": "docs/hanja-authored-donor-u5b7d-u5341-mm-2026-10-28/donor-source-record.json",
+      "SHA256": "ef9a8cc552dde368f0b7cfaf00960f994b9c05a9b42742ec26d18ffe89071336",
+      "reuseOfExactPublicDataOnly": true
+    }
+  },
+  "selection": {
+    "allowedStrokes": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "fractions": [
+      0,
+      0.00001,
+      0.25,
+      0.5,
+      0.75,
+      0.99999,
+      1
+    ],
+    "firstFourOrderDirectionReviewed": false,
+    "remainingEightOrderDirectionReviewed": false,
+    "requiredSurface": "ROOT direct Codex browser panel; local RAM original publisher media only"
+  },
+  "nextAuthoredHypothesis": {
+    "candidateCreated": false,
+    "authoredFlagRequired": true,
+    "mixedPartsFlagRequired": true,
+    "originalMMWholeClaimAllowed": false,
+    "proposedPartSources": "Two original 十 H,V pairs as authored4 plus unchanged original 菏 MM4..11 body8, conditional on recipient-specific direct evidence.",
+    "sourceBodyPathsOrMediansEdited": false,
+    "matricesChosen": false,
+    "nieMatricesTransferred": false,
+    "requiredBeforePlacement": [
+      "Directly observe all four 菏 top strokes and source-specific contact/spacing constraints.",
+      "Directly observe the eight 菏 body strokes; equal body counts do not establish source correspondence or trajectory compatibility.",
+      "Choose new explicit 菏-specific affine author anchors from its public MM geometry and reviewed direction, then record conservative bounds and native unapproved flags.",
+      "Keep all recipient body paths/medians unchanged, and label any future composition authored rather than original whole."
+    ]
+  },
+  "approval": {
+    "sourceWholeCompatibility": false,
+    "sourceBodyCompatibility": false,
+    "mapping": false,
+    "order": false,
+    "direction": false,
+    "authoredPlacement": false,
+    "native": false,
+    "runtime": false
+  },
+  "execution": {
+    "successfulPinnedAssets": 2,
+    "priorSandboxZeroBodyFailure": 1,
+    "bodyReturnedToContextMode": false,
+    "bodyFilesWritten": 0,
+    "server": 0,
+    "browser": 0,
+    "engine": 0,
+    "sharedHelperApplied": false,
+    "registry": 0,
+    "build": 0,
+    "commit": 0
+  }
+}
