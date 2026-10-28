@@ -1,0 +1,21 @@
+*** Begin Patch
+*** Update File: scripts/hanja-official-media-compare.py
+@@
++    elif path == ROOT/'docs/hanja-official-media-compare-u71c4-2026-10-28/config.json':
++        require(config['glyph']=='燄' and config['sourceRoot']=='u71c4' and config['domesticClips']==16 and config['allowedStrokes']==[2] and config['defaultStroke']==2, 'Exact 燄 changed pen2 original-clock-only config required')
++        semantic={k:v for k,v in config.items()if k!='launcherSHA256'}
++        require(sha(json.dumps(semantic,sort_keys=True,separators=(',',':'),ensure_ascii=False).encode())=='5a708e8b2f0e80e7a29f765a06ce0ec8b34074037b23e317b49f7839ed49d176', 'Exact 燄 original-media control config required')
++        safe_raw=pinned_path('docs/hanja-official-media-compare-u71c4-2026-10-28/safe-source-metadata.json').read_bytes()
++        require(sha(safe_raw)=='b922f9e915ba1dad57548c99e0842e2e4f63d312f7d289b0ffb45d4fe5628bfe', 'Exact 燄 safe timing metadata required')
++        safe=json.loads(safe_raw)
++        require(safe['glyph']=='燄' and safe['sourceRoot']=='u71c4' and safe['sourceRootIsAuditContextOnly']is True and safe['selectedWholeRoot']is None and safe['catalogStrokes']==16 and safe['publisherTimedPaths']==16 and safe['fetchFacts']['clips']==16 and safe['fetchFacts']['SHA256']==config['media']['svg']['sha256'] and safe['cssSHA256']==CSS['sha256'] and safe['inertScriptValidated']is True and safe['bodyOutputOrFileSaved']is False and safe['logicalPensFromTimingApproved']is False and safe['sourceRawMappingApproved']is False and safe['catalogCountChanged']is False and config['svgRoot']==safe['svgRoot'] and config['timedPaths']==safe['timedPaths'], 'Original clock controls only; authored terminal, mapping, timing and runtime approvals remain false')
++    elif path == ROOT/'docs/hanja-official-media-compare-u9dd6-2026-10-28/config.json':
++        require(config['glyph']=='鷖' and config['sourceRoot']=='u9dd6' and config['domesticClips']==22 and config['allowedStrokes']==[9] and config['defaultStroke']==9, 'Exact 鷖 changed pen9 original-clock-only config required')
++        semantic={k:v for k,v in config.items()if k!='launcherSHA256'}
++        require(sha(json.dumps(semantic,sort_keys=True,separators=(',',':'),ensure_ascii=False).encode())=='b9373bf6461e8ba2d4c7b7edfcab04bdbce6e5fa565f1166cf0ffa2e8d29a9b4', 'Exact 鷖 original-media control config required')
++        safe_raw=pinned_path('docs/hanja-official-media-compare-u9dd6-2026-10-28/safe-source-metadata.json').read_bytes()
++        require(sha(safe_raw)=='c6df28dfa1132454c0b40f54ba9b517b724ffe6fa1b601851e0787641bc02ee4', 'Exact 鷖 safe timing metadata required')
++        safe=json.loads(safe_raw)
++        require(safe['glyph']=='鷖' and safe['sourceRoot']=='u9dd6' and safe['sourceRootIsAuditContextOnly']is True and safe['selectedWholeRoot']is None and safe['catalogStrokes']==22 and safe['publisherTimedPaths']==22 and safe['fetchFacts']['clips']==22 and safe['fetchFacts']['SHA256']==config['media']['svg']['sha256'] and safe['cssSHA256']==CSS['sha256'] and safe['inertScriptValidated']is True and safe['bodyOutputOrFileSaved']is False and safe['logicalPensFromTimingApproved']is False and safe['sourceRawMappingApproved']is False and safe['catalogCountChanged']is False and config['svgRoot']==safe['svgRoot'] and config['timedPaths']==safe['timedPaths'], 'Original clock controls only; authored terminal, mapping, timing and runtime approvals remain false')
+     elif path == ROOT/'docs/hanja-official-media-compare-u97b9-2026-10-28/config.json':
+*** End Patch
