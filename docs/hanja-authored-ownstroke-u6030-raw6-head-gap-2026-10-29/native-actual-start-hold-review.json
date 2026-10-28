@@ -1,0 +1,36 @@
+{
+  "schema": "hanja-native-actual-review/v1",
+  "glyph": "怰",
+  "date": "2026-10-29",
+  "status": "HOLD-DISCONNECTED-COMPOUND-START",
+  "surface": "Codex in-app browser tabs130 and131",
+  "H_SHA256": "a8303827b4ad9e81cc289856b5f4d4e7f0cce088e8bdd252d405a88ef3920d24",
+  "profileSHA256": "e4ab29a5c411518d62ab0f96c6c0cb0a3141fb5cdd6694a79765510275776d39",
+  "fixtureSHA256": "a8afed867fb242c938030bf8f39dc1be6d4ff947d7e7c1e10e120f98cdf28226",
+  "geometrySHA256": "553c5b11537fd0754a2587da2e0a5213fcc322ae550dc522aba75ef2f9e4ebf8",
+  "isolatedChecks": { "SSR": 1, "CJS": 386, "ESM": 386, "customControls": 14 },
+  "observed": {
+    "allPensCompact9": 8,
+    "compoundBoundaryFrames": 6,
+    "bad": [],
+    "errors": []
+  },
+  "failure": [
+    "Pen6 at global0.625 shows a detached descending-right fragment before joining the completed descending-left part.",
+    "Pen7 at global0.625 shows a detached lower-horizontal start before joining the completed descending-left part.",
+    "Exact handoff frames are clean, but do not establish the subsequent growing contour is connected."
+  ],
+  "originalClockCrosscheck": {
+    "configSHA256": "76eab3040c89fc2fc73096b11ea478909f1c7128e194907d0f5e93a0652a6025",
+    "pen6Fractions": [0.1, 0.25, 0.5, 0.75],
+    "pen7Fractions": [0.5],
+    "finding": "Observed original mid-progress contours remain connected. These samples establish the candidate mismatch, not an exact retracing path or a new bridge."
+  },
+  "next": "Analyze public filled contacts and exact applicability of existing contact-prefix policies, then perform fresh affected native review. Preserve original guides and declared gaps.",
+  "nativeTemporalApproved": false,
+  "runtimeApplied": false,
+  "unperformedChecksNotClaimed": true,
+  "privatePixelsSaved": false,
+  "build": false,
+  "fullProjectTypeCheck": false
+}
