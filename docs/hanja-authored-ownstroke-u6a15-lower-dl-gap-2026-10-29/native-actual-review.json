@@ -1,0 +1,39 @@
+{
+  "glyph": "樕",
+  "date": "2026-10-29",
+  "reviewer": "ROOT",
+  "status": "pass-bounded-actual-component-review",
+  "nativeBrowserPanel": true,
+  "actualHelperSHA256": "a6a382b792695bfbcf2432005a4ceda14614594b4b183e00a6302162dc515f27",
+  "profileSHA256": "f54236736c56f4097eee7796afcbf614c68d1732ca01dd4f61f08518780b2432",
+  "rendererSHA256": "55db76b01618110165dd5f22d512428550512feb180757814b734e80ffa304d1",
+  "fixtureSHA256": "a87c891080e8093a31f9e27b4f5ca7847eaffece52a24a8f09a0274d9d8980bc",
+  "geometrySHA256": "251fad095cd7bae6d328e5bd1f5278cf0b628718ce95cb23c60452249aeb9478",
+  "checks": {
+    "isolatedSSR": 1, "CJS": 390, "ESM": 390,
+    "all15PensCompact9": 135,
+    "gateReleaseTriples": 8,
+    "visuallyBlankFullRoundResiduals": 8,
+    "aggregateSamples": 81,
+    "initialFrames": 30, "boundaryFrames": 6, "endingFrames": 45,
+    "aggregateColumns": 3, "aggregateSamplePx": 240,
+    "allAggregateFramesObservedNormal": true,
+    "wholeStates520px": 19,
+    "wholeStateLabels": "idle/done/selected-zero and exact prefix0..15",
+    "natural8secondStartAndProgress1EndPens": [14,7,13,15],
+    "bad": [], "errors": []
+  },
+  "observations": [
+    "All135 compact,24 gate and81 aggregate frames were inspected in the browser panel. All8 actual full-round residual panels appeared blank.",
+    "The lower falling stroke remains separated from the upper horizontal while retaining its original own crossing with the final stroke. Full520 and19 state views were inspected separately.",
+    "Natural selected-pen playback reached progress1 for7/13/14/15. No detached future ink, missing completion, unexpected connections or state-fill anomalies were observed in the finite inspected set."
+  ],
+  "limits": [
+    "Raw16 retains original P/Q under its documented positive whole affine. This is authored placement, not an original engine capture.",
+    "Source clock, direction mapping and8Q coverage proofs remain separate pinned evidence. No publisher microclock equivalence, exam-body approval, arbitrary intermediate-frame guarantee or fresh application UI review is claimed.",
+    "Private source bodies, screenshots, credentials and learning records were not saved or transmitted."
+  ],
+  "nativeApproval": true,
+  "actualAppUI": false,
+  "runtimeApplied": false
+}
