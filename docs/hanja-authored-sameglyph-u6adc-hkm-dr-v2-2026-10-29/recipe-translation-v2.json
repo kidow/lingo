@@ -1,0 +1,77 @@
+{
+  "schema": "hanja-same-glyph-mixed-public-whole-replacement-recipe/v1",
+  "glyph": "櫜",
+  "status": "unapproved-positive-translation-contact-pass-static-pending",
+  "catalogStrokes": 19,
+  "sourceRawCount": 23,
+  "sources": {
+    "recipient": {
+      "path": "docs/hanja-goal-glyphwiki-batch438-2026-10-09/engine-proof.json",
+      "sha256": "e0ddc60691b7d6e4050407cc2d08fccd414ba5e8cb2c5a83ff04ec21d9cdfece",
+      "root": "default existing capture",
+      "raw": 23,
+      "P": 38
+    },
+    "donor": {
+      "path": "docs/hanja-official-media-compare-u6adc-2026-10-29/captured-hkm-engine-proof.json",
+      "sha256": "2d7be08884f0091076badb7c6e8c87be20105c1e7d3c524d707fdfa745df687a",
+      "root": "hkcs_m6adc@1",
+      "raw": 23,
+      "P": 38
+    }
+  },
+  "replacement": {
+    "recipientRawOneBased": 19,
+    "donorRawOneBased": 15,
+    "replaceWholePrimitiveGroup": true,
+    "filledP": "all donor raw15 original polygons",
+    "guide": "all donor raw15 original trace calls",
+    "matrix": [
+      "1",
+      "0",
+      "0",
+      "1",
+      "0",
+      "-10229/1830"
+    ],
+    "other22RecipientRawExact": true,
+    "guideAfterDeclaredAffine": [
+      {
+        "kind": "cdDrawCurve",
+        "args": [
+          128.8,
+          80.5503825136612,
+          150.4,
+          85.4703825136612,
+          161.2,
+          96.1303825136612,
+          7,
+          8
+        ]
+      }
+    ]
+  },
+  "flags": {
+    "authored": true,
+    "mixedParts": true,
+    "originalWhole": false,
+    "originalEngineCapture": false,
+    "actualNewEngineCapture": false,
+    "sourceTraceDescribesAuthoredWhole": false,
+    "wholeApproved": false,
+    "mappingApproved": false,
+    "temporalApproved": false,
+    "runtimeApplied": false
+  },
+  "limits": {
+    "newContactWithRecipientRaw17": false,
+    "lostContactWithRecipientRaw9": true,
+    "contactWithRaw18Preserved": true,
+    "translationChosenByPublicSourceGapConstraint": true,
+    "originalHkmWholeHoldPreserved": true,
+    "noGuessedBridge": true,
+    "noPointEditsExceptDeclaredWholeAffine": true,
+    "originalPublisherIdentity": false
+  },
+  "newEngine": 0
+}

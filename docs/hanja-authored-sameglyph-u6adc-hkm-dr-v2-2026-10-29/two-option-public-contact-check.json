@@ -1,0 +1,128 @@
+{
+  "schema": "hanja-sameglyph-whole-affine-two-options-check/v1",
+  "glyph": "櫜",
+  "inputs": {
+    "recipient": {
+      "path": "docs/hanja-goal-glyphwiki-batch438-2026-10-09/engine-proof.json",
+      "sha256": "e0ddc60691b7d6e4050407cc2d08fccd414ba5e8cb2c5a83ff04ec21d9cdfece",
+      "root": "default existing capture",
+      "raw": 23,
+      "P": 38
+    },
+    "donor": {
+      "path": "docs/hanja-official-media-compare-u6adc-2026-10-29/captured-hkm-engine-proof.json",
+      "sha256": "2d7be08884f0091076badb7c6e8c87be20105c1e7d3c524d707fdfa745df687a",
+      "root": "hkcs_m6adc@1",
+      "raw": 23,
+      "P": 38
+    }
+  },
+  "sourceMath": {
+    "scale": {
+      "matrix": [
+        "1",
+        "0",
+        "0",
+        "27/242",
+        "0",
+        "185201/2420"
+      ],
+      "fixedStart": "4307/50",
+      "targetMaxY": "883/10",
+      "actualMaxY": "883/10",
+      "originalHeight": "201/10",
+      "newHeight": "5427/2420",
+      "contacts": [
+        {
+          "raw": 18,
+          "pairs": [
+            {
+              "donorP": 1,
+              "otherP": 1,
+              "area": "93663/84700"
+            }
+          ]
+        }
+      ]
+    },
+    "translation": {
+      "matrix": [
+        "1",
+        "0",
+        "0",
+        "1",
+        "0",
+        "-10229/1830"
+      ],
+      "minimalVerticalGapOneAgainstRaw17": "10229/1830",
+      "witness": [
+        "1591/10",
+        "211/2",
+        "92333/915"
+      ],
+      "contacts": [
+        {
+          "raw": 18,
+          "pairs": [
+            {
+              "donorP": 1,
+              "otherP": 1,
+              "area": "3469/350"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "selection": {
+    "selected": "whole-y-translation-up",
+    "matrix": [
+      "1",
+      "0",
+      "0",
+      "1",
+      "0",
+      "-10229/1830"
+    ],
+    "determinant": "1",
+    "rejectScaleBecause": "원 guide 시작을 고정하는 Yscale27/242는 높이20.1→5427/2420(약2.24256), 약11.16%로 얇아져 후보로 채택하지 않음.",
+    "exactVerticalGapAgainstRaw17": "1",
+    "gapWitness": [
+      "1591/10",
+      "211/2",
+      "92333/915"
+    ],
+    "onlyContactRaw18": true,
+    "newContacts": [],
+    "raw9OriginalContactNotPreserved": true
+  },
+  "conservation": {
+    "recipientOther22RawExact": true,
+    "donorAllPOriginalWholeAffineOnly": true,
+    "donorGuideAllQControlsSameAffine": true,
+    "donorFlagsPreserved": true,
+    "positiveDeterminant": true,
+    "noNewP": true,
+    "recipientRaw": 23,
+    "candidateP": 38,
+    "newEngine": 0,
+    "newServer": 0
+  },
+  "method": {
+    "exactRationalContact": true,
+    "pairAreaIsNotUnionClaim": true,
+    "verticalGapDefinition": "모든 겹치는 x에서 donor filled 하단과 raw17 filled 상단 간 y 간격이 최소1. 각 원선분 공통 x구간 양끝의 유리수 극값으로 산출.",
+    "methodReuses": "docs/hanja-authored-ownstroke-u6030-raw6-head-gap-2026-10-29/verify-public-contact.py",
+    "scriptSyntax": true
+  },
+  "page": {
+    "path": "docs/hanja-authored-sameglyph-u6adc-hkm-dr-v2-2026-10-29/translated-contact-diagnostic.html",
+    "sha256": "de06a5e874cbccf14cc92d8a25a98ad2f5693f3c34d870ff3099033b2d7ce62c"
+  },
+  "approval": {
+    "whole": false,
+    "mapping": false,
+    "temporal": false,
+    "runtime": false
+  }
+}
