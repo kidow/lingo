@@ -1,0 +1,139 @@
+{
+  "schema": "hanja-existing-source-next-review-inventory/v1",
+  "date": "2026-10-29",
+  "glyph": "蘷",
+  "id": "u8637",
+  "grade": "특급",
+  "catalog": {
+    "strokes": 20,
+    "sourceRow": 904,
+    "unchanged": true
+  },
+  "liveResolver": {
+    "checkedBy": "actual hanjaStrokeData library import at strokes20 and21",
+    "results": [
+      {
+        "strokes": 20,
+        "applied": false,
+        "source": null,
+        "outlineCount": null
+      },
+      {
+        "strokes": 21,
+        "applied": false,
+        "source": null,
+        "outlineCount": null
+      }
+    ],
+    "registered": false
+  },
+  "inputSHA256": {
+    "docs/hanja-goal-glyphwiki-batch486-2026-10-10/metadata.json": "68072422ea291dfe469a56cd663a679473f588ff820bdc58ffea2b7ac81737bb",
+    "docs/hanja-goal-glyphwiki-batch486-2026-10-10/whole-review.json": "22eb57b745e13f1f95b19909300404bf938237dc64c4db0f719adaad54e4c56a",
+    "docs/hanja-goal-glyphwiki-batch486-2026-10-10/whole-variant-inventory.json": "6c0f0f67bb78fb55510a87a384b5c47e29abc7722945bff7d4e10f1ae185f868",
+    "docs/hanja-goal-glyphwiki-batch486-2026-10-10/engine-proof.json": "75ef83fd8b4594fc4f0d7e9c47bffb32aea50542a93dfcecb62c7badeb710ffd",
+    "docs/hanja-goal-glyphwiki-batch486-2026-10-10/draw-trace.json": "007a111f27bccd1f341592dc5dfd3603ed0e40741ee3d18f2c2fe5bcd1a7d221",
+    "docs/hanja-goal-glyphwiki-batch486-2026-10-10/sources.json": "be719c8569df4de813c39666bd17f4beac5af02393a307a01d1fa1d7d3a7a4c2",
+    "docs/hanja-goal-glyphwiki-batch486-2026-10-10/validation.json": "357e2dcfe9be393abbfd1b817b95c28d54f6b1b62c5ca7936da354a176139479",
+    "docs/hanja-source-inventory-mm-remaining59-2026-10-27/coverage.json": "815c61b172c915223791c38b04bfcd5653c9a164737f487c67585ff3fe582677"
+  },
+  "publisherMetadata": {
+    "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/8600/8637.svg",
+    "SHA256": "5234028cc46a2913c67ebdabd5c1f155e849f3f76d06831900ddfdb422f35e8a",
+    "bytes": 10172,
+    "clips": 21,
+    "privateMediaSaved": false,
+    "freshTimedClockReviewed": false
+  },
+  "existingWhole": {
+    "root": "u8637",
+    "rawSlots": 23,
+    "drawingCalls": 26,
+    "filledP": 51,
+    "quadraticCalls": 10,
+    "engineFiles": 8,
+    "records": 6,
+    "archive": {
+      "url": "https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/dump_newest_only.txt",
+      "repositoryRevision": "a7dd7f3d911936770fa742e8c37d16bee7e2173c",
+      "snapshotCommitDate": "2016-05-02T21:53:32Z",
+      "bytes": 63801771,
+      "sha256": "7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62",
+      "entries": 438756
+    },
+    "alternateWholeInPinnedFamily": false,
+    "priorSourceVerifierPassed": true,
+    "priorSourceVerifierReusedWithoutRerun": true,
+    "nativeWholeStatus": "HOLD",
+    "nativeOrderApproved": false,
+    "nativeDirectionsApproved": false,
+    "nativeProgressiveFramesApproved": 0,
+    "findings": [
+      "Domestic separated four-stroke grass top differs from original connected three-stroke top.",
+      "Existing native whole record additionally reports a lower-left body mismatch; top-only replacement cannot be presumed sufficient."
+    ],
+    "historicalReleaseCondition": "A complete exact domestic-like whole source with separated four-stroke grass top and matching lower body, with exact original curve routes; do not split or transplant the existing original."
+  },
+  "makeMeAHanzi": {
+    "originalMMWholeExists": false,
+    "fixedCoverage": {
+      "path": "docs/hanja-source-inventory-mm-remaining59-2026-10-27/coverage.json",
+      "SHA256": "815c61b172c915223791c38b04bfcd5653c9a164737f487c67585ff3fe582677"
+    },
+    "absenceScope": "Exact glyph absent only from this already examined fixed revision. No all-public-source absence claim and no refetch."
+  },
+  "nextRecommendation": {
+    "onlyRoute": "Original publisher21stroke finite clock review, then targeted originalwhole source-role comparison for top and lower-left body.",
+    "reason": "The complete original is native-rejected; body compatibility must be established before retaining its body in an explicit authored candidate.",
+    "clockPreparationContract": {
+      "reuseExistingSafeOriginalClockTool": true,
+      "selectedStrokeAllowlists": [
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        [
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21
+        ]
+      ],
+      "maxExistingAllowlistSize": 16,
+      "mediaOnlyInServerRAM": true,
+      "rootBrowserPanelRequired": true,
+      "noNewGeometry": true
+    },
+    "subsequentDecision": "After clock roles are directly established, use source current/prefix views to determine the lower-left body compatibility. Only then consider bounded authored composition or another whole source.",
+    "countHandling": "Keep catalog20 and publisher21 distinct. If21playback is eventually approved, use existing explicit catalog/playback variant machinery. Do not alter catalog or force group count now."
+  },
+  "notEstablished": [
+    "Full21stroke original order/direction finite review.",
+    "23raw→21logical mapping.",
+    "Compatible lower-left body.",
+    "Any donor placement, geometry modification or new guide.",
+    "Any product/native runtime approval."
+  ],
+  "newGeometry": 0,
+  "sharedFilesChanged": 0,
+  "registrations": 0,
+  "serverStarts": 0,
+  "networkFetches": 0,
+  "buildRun": false,
+  "runtimeApplied": false
+}
