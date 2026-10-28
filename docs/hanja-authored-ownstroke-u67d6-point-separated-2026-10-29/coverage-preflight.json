@@ -1,0 +1,366 @@
+{
+  "units": [
+    {
+      "logical": 3,
+      "mask": 1,
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "width": 14,
+      "padding": 7,
+      "radius": 7,
+      "polygons": 1,
+      "triangles": 21,
+      "triangulationMethods": [
+        "positive-ear-actual-polygon"
+      ],
+      "nodes": 185,
+      "maxDepth": 3,
+      "maxAcceptedUpperDistance": 6.983891311962254,
+      "worstOriginalVertex": {
+        "point": [
+          20.15,
+          30
+        ],
+        "lower": 3.044834239533576,
+        "sampledUpper": 3.0510337030548778,
+        "QSampleErrorUpper": 0.006199453521302004
+      },
+      "widthInsufficientByOriginalVertex": false,
+      "originalPAndActualQPreserved": true,
+      "nativeApproval": false,
+      "reusedUnchanged14Policy": true
+    },
+    {
+      "logical": 4,
+      "mask": 1,
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "width": 14,
+      "padding": 7,
+      "radius": 7,
+      "polygons": 2,
+      "triangles": 23,
+      "triangulationMethods": [
+        "positive-ear-actual-polygon",
+        "positive-ear-actual-polygon"
+      ],
+      "nodes": 71,
+      "maxDepth": 2,
+      "maxAcceptedUpperDistance": 6.724503002626772,
+      "worstOriginalVertex": {
+        "point": [
+          38,
+          55.55
+        ],
+        "lower": 2.6457081539438865,
+        "sampledUpper": 2.6485262443110806,
+        "QSampleErrorUpper": 0.002818080367194307
+      },
+      "widthInsufficientByOriginalVertex": false,
+      "originalPAndActualQPreserved": true,
+      "nativeApproval": false,
+      "reusedUnchanged14Policy": true
+    },
+    {
+      "logical": 5,
+      "mask": 2,
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "width": 14,
+      "padding": 7,
+      "radius": 7,
+      "polygons": 2,
+      "triangles": 23,
+      "triangulationMethods": [
+        "positive-ear-actual-polygon",
+        "positive-ear-actual-polygon"
+      ],
+      "nodes": 251,
+      "maxDepth": 3,
+      "maxAcceptedUpperDistance": 6.970624938444719,
+      "worstOriginalVertex": {
+        "point": [
+          91.25,
+          17
+        ],
+        "lower": 5.480802684266053,
+        "sampledUpper": 5.4854429084679115,
+        "QSampleErrorUpper": 0.004640214201858206
+      },
+      "widthInsufficientByOriginalVertex": false,
+      "originalPAndActualQPreserved": true,
+      "nativeApproval": false,
+      "reusedUnchanged14Policy": true
+    },
+    {
+      "logical": 5,
+      "mask": 3,
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "width": 22,
+      "padding": 11,
+      "radius": 11,
+      "polygons": 2,
+      "triangles": 22,
+      "triangulationMethods": [
+        "positive-ear-actual-polygon",
+        "positive-ear-actual-polygon"
+      ],
+      "nodes": 50,
+      "maxDepth": 3,
+      "maxAcceptedUpperDistance": 10.859105555717862,
+      "worstOriginalVertex": {
+        "point": [
+          65.4,
+          45
+        ],
+        "lower": 10.43908579578555,
+        "sampledUpper": 10.44030650891055,
+        "QSampleErrorUpper": 0.001220703125
+      },
+      "widthInsufficientByOriginalVertex": false,
+      "originalPAndActualQPreserved": true,
+      "nativeApproval": false
+    },
+    {
+      "logical": 6,
+      "mask": 1,
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "width": 14,
+      "padding": 7,
+      "radius": 7,
+      "polygons": 1,
+      "triangles": 21,
+      "triangulationMethods": [
+        "positive-ear-actual-polygon"
+      ],
+      "nodes": 133,
+      "maxDepth": 2,
+      "maxAcceptedUpperDistance": 6.9965283389779485,
+      "worstOriginalVertex": {
+        "point": [
+          58.2,
+          16
+        ],
+        "lower": 3.0812753497843994,
+        "sampledUpper": 3.0878714973164785,
+        "QSampleErrorUpper": 0.0065961375320790615
+      },
+      "widthInsufficientByOriginalVertex": false,
+      "originalPAndActualQPreserved": true,
+      "nativeApproval": false,
+      "reusedUnchanged14Policy": true
+    }
+  ],
+  "counts": {
+    "curves": 5,
+    "pass": 5,
+    "unproved": 0,
+    "reusedUnchanged": 4,
+    "freshChanged": 1
+  },
+  "method": "Every polygon is covered by actual positive-ear triangles or conservative fan fallback. Distance to actual padded L and4097 original Q samples plus triangle radius gives a1-Lipschitz upper bound, with1e-8 margin. Original vertex lower bound subtracts maxQderivative/8192. No originalP/Q flattening; not a formal interval proof.",
+  "numerics": {
+    "QSamples": 4097,
+    "margin": 1e-8,
+    "depthLimit": 16,
+    "nodeLimitPerMask": 60000,
+    "formalIntervalProof": false
+  },
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "inputSHA256": {
+    "docs/hanja-authored-ownstroke-u67d6-point-separated-2026-10-29/fixtures-execution-draft.json": "da8f60387f41e25ce96b6399f221d937e2d5e5e399ae6b2daa694419f3636966",
+    "docs/hanja-authored-ownstroke-u67d6-point-separated-2026-10-29/prepare-execution-draft.mjs": "e9f6f15ff3650dc2c110f8e36f63167516d9241adfda54544ab62ff8cdb9f086",
+    "docs/hanja-authored-ownstroke-u67d6-point-separated-2026-10-29/execution-draft-check.json": "160e8cf92e7d8ccaae00e4f418953a50e6aed814f3370a755db6e6a06608658f",
+    "docs/hanja-authored-ownstroke-u67d6-point-separated-2026-10-29/coverage-preflight.mjs": "5e9176ae2428644bba8445629d78a0997fd6719f92a63e5776be22a812abe032"
+  },
+  "sourcePAndOriginalQExceptDeclaredWholePointAffine": true,
+  "other11MasksExact": true,
+  "serverStarts": 0,
+  "build": false,
+  "originalDefault14Preflight": {
+    "units": [
+      {
+        "logical": 3,
+        "mask": 1,
+        "status": "PASS-CONSERVATIVE-COVERAGE",
+        "width": 14,
+        "padding": 7,
+        "radius": 7,
+        "polygons": 1,
+        "triangles": 21,
+        "triangulationMethods": [
+          "positive-ear-actual-polygon"
+        ],
+        "nodes": 185,
+        "maxDepth": 3,
+        "maxAcceptedUpperDistance": 6.983891311962254,
+        "worstOriginalVertex": {
+          "point": [
+            20.15,
+            30
+          ],
+          "lower": 3.044834239533576,
+          "sampledUpper": 3.0510337030548778,
+          "QSampleErrorUpper": 0.006199453521302004
+        },
+        "widthInsufficientByOriginalVertex": false,
+        "originalPAndActualQPreserved": true,
+        "nativeApproval": false
+      },
+      {
+        "logical": 4,
+        "mask": 1,
+        "status": "PASS-CONSERVATIVE-COVERAGE",
+        "width": 14,
+        "padding": 7,
+        "radius": 7,
+        "polygons": 2,
+        "triangles": 23,
+        "triangulationMethods": [
+          "positive-ear-actual-polygon",
+          "positive-ear-actual-polygon"
+        ],
+        "nodes": 71,
+        "maxDepth": 2,
+        "maxAcceptedUpperDistance": 6.724503002626772,
+        "worstOriginalVertex": {
+          "point": [
+            38,
+            55.55
+          ],
+          "lower": 2.6457081539438865,
+          "sampledUpper": 2.6485262443110806,
+          "QSampleErrorUpper": 0.002818080367194307
+        },
+        "widthInsufficientByOriginalVertex": false,
+        "originalPAndActualQPreserved": true,
+        "nativeApproval": false
+      },
+      {
+        "logical": 5,
+        "mask": 2,
+        "status": "PASS-CONSERVATIVE-COVERAGE",
+        "width": 14,
+        "padding": 7,
+        "radius": 7,
+        "polygons": 2,
+        "triangles": 23,
+        "triangulationMethods": [
+          "positive-ear-actual-polygon",
+          "positive-ear-actual-polygon"
+        ],
+        "nodes": 251,
+        "maxDepth": 3,
+        "maxAcceptedUpperDistance": 6.970624938444719,
+        "worstOriginalVertex": {
+          "point": [
+            91.25,
+            17
+          ],
+          "lower": 5.480802684266053,
+          "sampledUpper": 5.4854429084679115,
+          "QSampleErrorUpper": 0.004640214201858206
+        },
+        "widthInsufficientByOriginalVertex": false,
+        "originalPAndActualQPreserved": true,
+        "nativeApproval": false
+      },
+      {
+        "logical": 5,
+        "mask": 3,
+        "status": "UNPROVED",
+        "width": 14,
+        "padding": 7,
+        "radius": 7,
+        "polygons": 2,
+        "triangles": 22,
+        "triangulationMethods": [
+          "positive-ear-actual-polygon",
+          "positive-ear-actual-polygon"
+        ],
+        "nodes": 17,
+        "maxDepth": 16,
+        "maxAcceptedUpperDistance": 0,
+        "worstOriginalVertex": {
+          "point": [
+            65.4,
+            45
+          ],
+          "lower": 10.43908579578555,
+          "sampledUpper": 10.44030650891055,
+          "QSampleErrorUpper": 0.001220703125
+        },
+        "widthInsufficientByOriginalVertex": true,
+        "originalPAndActualQPreserved": true,
+        "nativeApproval": false
+      },
+      {
+        "logical": 6,
+        "mask": 1,
+        "status": "PASS-CONSERVATIVE-COVERAGE",
+        "width": 14,
+        "padding": 7,
+        "radius": 7,
+        "polygons": 1,
+        "triangles": 21,
+        "triangulationMethods": [
+          "positive-ear-actual-polygon"
+        ],
+        "nodes": 133,
+        "maxDepth": 2,
+        "maxAcceptedUpperDistance": 6.9965283389779485,
+        "worstOriginalVertex": {
+          "point": [
+            58.2,
+            16
+          ],
+          "lower": 3.0812753497843994,
+          "sampledUpper": 3.0878714973164785,
+          "QSampleErrorUpper": 0.0065961375320790615
+        },
+        "widthInsufficientByOriginalVertex": false,
+        "originalPAndActualQPreserved": true,
+        "nativeApproval": false
+      }
+    ],
+    "counts": {
+      "curves": 5,
+      "pass": 4,
+      "unproved": 1
+    },
+    "method": "Every polygon is covered by actual positive-ear triangles or conservative fan fallback. Distance to actual padded L and4097 original Q samples plus triangle radius gives a1-Lipschitz upper bound, with1e-8 margin. Original vertex lower bound subtracts maxQderivative/8192. No originalP/Q flattening; not a formal interval proof.",
+    "numerics": {
+      "QSamples": 4097,
+      "margin": 1e-8,
+      "depthLimit": 16,
+      "nodeLimitPerMask": 60000,
+      "formalIntervalProof": false
+    },
+    "nativeApproval": false,
+    "runtimeApplied": false
+  },
+  "correction": {
+    "logical": 5,
+    "mask": 3,
+    "originalRadius": 7,
+    "originalWidth": 14,
+    "originalVertexDistanceLower": 10.43908579578555,
+    "newWidth": 22,
+    "newPadding": 11,
+    "allOther11MasksByteEquivalent": true,
+    "sourcePAndOriginalQChanged": false
+  },
+  "reuse": {
+    "unchangedUnits": [
+      "3:1",
+      "4:1",
+      "5:2",
+      "6:1"
+    ],
+    "equalityVerifiedAgainstInitialBuild": true
+  },
+  "savedVerifierIOAndPolicyGuardsCheckedWithoutRepeatingSuccessfulNumericBounds": true,
+  "cardinalMasks": {
+    "count": 7,
+    "roundCoverageNotApplicable": true,
+    "actualInitialTransitionEndingStillRequired": true
+  }
+}
