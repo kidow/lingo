@@ -1,0 +1,98 @@
+{
+  "schema": "hanja-logical-static-comparison-preparation-check/v1",
+  "date": "2026-10-29",
+  "glyph": "曙",
+  "status": "ready-for-ROOT-direct-current-and-prefix-role-review",
+  "pins": {
+    "mapping": {
+      "path": "docs/hanja-authored-ownstroke-u66d9-central-h-2026-10-29/logical-mapping-hypothesis.json",
+      "SHA256": "731d31a99f2436779bc379d44791a935908b9afcc5b665086ebaac41d8474120"
+    },
+    "config": {
+      "path": "docs/hanja-authored-ownstroke-u66d9-central-h-2026-10-29/config-logical.json",
+      "SHA256": "56e1fcaba79181626356e59de0cfa40689a3f53870e1eb4964c01a7c7d8366d1"
+    },
+    "adapter": {
+      "path": "docs/hanja-authored-ownstroke-u66d9-central-h-2026-10-29/compare-logical.py",
+      "SHA256": "2763be2e09a256490822e22864f918f8160891db9deac527a89828387dfbbf80"
+    },
+    "existingAuthoredFixture": {
+      "path": "docs/hanja-authored-ownstroke-u66d9-central-h-2026-10-29/fixtures-draft.json",
+      "SHA256": "7c2f392b32f73af72e43af36f0474c20030f5a718fed3382f3a71b892016f165"
+    },
+    "existingRecipe": {
+      "path": "docs/hanja-authored-ownstroke-u66d9-central-h-2026-10-29/recipe.json",
+      "SHA256": "1a47d0e9717c093604cfa7bc0b093813f362fb00c5352f3d188c4a89a6fc5511"
+    },
+    "originalClock": {
+      "path": "docs/hanja-official-media-compare-u66d9-2026-10-29/native-clock-review.json",
+      "SHA256": "1698e82f4f1c3f509c12904fc93b0fb67ddc447a3aa7732f1ba243146666fa4f"
+    },
+    "wholeContact": {
+      "path": "docs/hanja-authored-ownstroke-u66d9-central-h-2026-10-29/native-whole-contact-review.json",
+      "SHA256": "527d923ada8f28db5a2ac3834d6e9fc31bd1bbb94589157d98bf5f5bb6b4cee7"
+    },
+    "sharedServe": {
+      "path": "docs/hanja-source-raw-compare-u8a29-2026-10-21/serve.py",
+      "SHA256": "ba91ba7f00bc2e4899ca4d3c69d03ab5cd6f8b0a9f888899eea49aa69a58665d"
+    }
+  },
+  "mapping": {
+    "logicalPens": 18,
+    "originalRawGroups": 21,
+    "polygons": 31,
+    "all21RawExactlyOnce": true,
+    "compoundLogicalPens": [
+      2,
+      6,
+      16
+    ],
+    "raw14CentralHLogical12": true,
+    "raw21SeparatePointLogical14": true,
+    "raw21MovesBeforeLowerSunForLogicalPrefix14": true,
+    "status": "hypothesis only; original clock supports roles but source current/prefix comparison still pending"
+  },
+  "executed": {
+    "pythonAST": true,
+    "actualSharedPageWhole": true,
+    "actualSelectionCompare": true,
+    "actualSharedSinglePages": 18,
+    "actualSharedPrefixPages": 18,
+    "currentPoint14HasOnlyRaw21TwoP": true,
+    "prefix14IncludesRaw21ButNotLowerSunRaw16": true,
+    "privateDomesticSVGInContract": "empty stub only; no private geometry fetched or copied",
+    "privateHTTP": 0,
+    "newClockReview": 0,
+    "newSourceCapture": 0,
+    "newGeometry": 0,
+    "newProjection": 0,
+    "sharedCodeWrites": 0,
+    "serverStarts": 0,
+    "actualBrowserViews": 0
+  },
+  "preserved": {
+    "originalConfigAndAdapter": true,
+    "original21RawSource": true,
+    "existingRaw14PositiveAffineFixture": true,
+    "other20RawGroups": true,
+    "original18Clock54Frames": true,
+    "existingWholeContactLimitedPASS": true
+  },
+  "requiredROOTReview": [
+    "All18 current pairs, with original clock directions already recorded.",
+    "Critical prefixes2,6,12,13,14,16,18; inspect compoundH/V and source raw21 point moved before lower sun.",
+    "Full whole contact remains the existing approved limited observation, not direction/grouping/timing approval.",
+    "ROOT records and closes only this local review server."
+  ],
+  "approval": {
+    "sourceMapping": false,
+    "currentRoles": false,
+    "prefixRoles": false,
+    "direction": false,
+    "temporal": false,
+    "native": false,
+    "runtime": false
+  },
+  "CLI": "python3 -B docs/hanja-authored-ownstroke-u66d9-central-h-2026-10-29/compare-logical.py --config-sha 56e1fcaba79181626356e59de0cfa40689a3f53870e1eb4964c01a7c7d8366d1 --port <ROOT-owned-port>",
+  "commitSuggested": "docs(hanja): prepare Shu21-to18 logical role comparison"
+}
