@@ -1,0 +1,121 @@
+{
+  "schema": "hanja-exact-H-preparation/v1",
+  "glyph": "蔗",
+  "variant": "point5-contact-point13-downleft-v3",
+  "status": "prepared-for-ROOT-isolated-native-review-focused-validation-passed",
+  "preH": "f05a8a3ad2336777a33fa96b68760ade182d50d2c76ac9ab788b10a4c0cbe9ff",
+  "expectedPostH": "541e1b56a5d85e7179e5359560d28819955c1a64e550075cb94ddf1daaedf66f",
+  "patch": {
+    "path": "docs/hanja-authored-mm-u8517-components-2026-10-28/actual-H-integration-v3.patch",
+    "SHA256": "a957d4638a726ec6859f9a44f9b03d4fe0f3ff805e34c67b1bfbb0bc25d58c93",
+    "hunks": 11,
+    "nativeApplied": false
+  },
+  "profileOverrides": {
+    "path": "docs/hanja-authored-mm-u8517-components-2026-10-28/profile-overrides-v3.pending.json",
+    "SHA256": "2077695897be2c4e38a55f852055bfb9c9bb9f7c76b8f83010c55ab9a1f157ec"
+  },
+  "actualIsolatedProfile": {
+    "path": "docs/hanja-authored-mm-u8517-components-2026-10-28/actual-profile-v3-start.json",
+    "SHA256": "06836c70960df7125dc3d0641eeea96102136a886c38b634cabde5a080b9e8d6",
+    "profileFinalized": true,
+    "executionEnabled": true,
+    "nativeApproval": false,
+    "runtimeApplied": false
+  },
+  "fixture": {
+    "path": "docs/hanja-authored-mm-u8517-components-2026-10-28/fixtures-reveal-v3-start-draft.json",
+    "SHA256": "76fef5524f66d150ab05d5a0e2486bcd2ea886bfc857946c5b51e31721912ae4",
+    "geometrySHA256": "9f2a5816d814e903ef4c2e9247379940667affb131a40d130ad04a29a86fade1",
+    "key": "u8517.strokes"
+  },
+  "counts": {
+    "logical": 15,
+    "masks": 15,
+    "subpaths": 15,
+    "curves": 15,
+    "boundaries": 0
+  },
+  "sourceIdentity": {
+    "locallyAuthored": true,
+    "mixedParts": true,
+    "originalRoot": false,
+    "originalMMWhole": false,
+    "originalEngineCapture": false,
+    "composition": "grass4 +body9 identity +source-preserving affine point5 head-contact and point13 down-left",
+    "mask": "independent N100 source-affine width20/pad10"
+  },
+  "sourceEvidence": {
+    "body": {
+      "path": "docs/hanja-official-media-compare-u8517-2026-10-28/native-clock-review.json",
+      "SHA256": "c2eb041bb7e1b313264cc379483e59acc8e9d45a837774af4eae50bd81f57631"
+    },
+    "static": {
+      "path": "docs/hanja-authored-mm-u8517-components-2026-10-28/native-static-v3-review.json",
+      "SHA256": "3855c090b71032c587ed5424321cd7f3ed5adcacb27bc4343ec3ceb1654eb43d"
+    },
+    "scope": "Original domestic clock and finite static source-role support; source mask timing/native runtime still unapproved"
+  },
+  "verification": {
+    "serverParseDiagnostics": 0,
+    "clientParseDiagnostics": 0,
+    "exactGuard": true,
+    "negativeCases": 4,
+    "entireActualGeneratedRouteExecuted": true,
+    "payload": {
+      "rootAndSharedVersion": true,
+      "temporalPolicy": true,
+      "pens": 15,
+      "curves": 15,
+      "pairs": 0,
+      "attrsAndTargets": true
+    },
+    "actualBaseline386ClosureSelected": true,
+    "Su4ComputedMatrixPredicateByteUnchanged": true,
+    "sourceInputPinsUnchanged": true,
+    "forwardOriginalBlockCursorCheck": true,
+    "exactInverseToPreH": true,
+    "bareBlankContextLines": 0,
+    "existingServerGuardASTPreserved": true,
+    "changedExistingServerFunctions": [
+      "resources"
+    ],
+    "exactClientContextNegativeCases": 5,
+    "baselineClosure": {
+      "newRootSelected": true,
+      "existingRootsPreserved": 16,
+      "foreignContextNegatives": 2,
+      "expectedResourceModules": 386
+    },
+    "Su4Compatibility": {
+      "predicateByteUnchanged": true,
+      "Su4StillSelected": true,
+      "all15ZheSegmentsExcluded": true
+    },
+    "reusedChecks": "Unchanged source-affine15 dynamic controls keep prior successful30initial/45ending/gate3/all-pens residual tests. All15 changed fixture gate/width/matrix/source fields were checked by the new exact guard; no unchanged generic control tests repeated.",
+    "commonCapsule": {
+      "baseProfile": {
+        "path": "docs/hanja-authored-mm-u85aa-components-2026-10-28/actual-profile-own17-v2-start.json",
+        "SHA256": "a9dac0e447abb572749d5644db97fc4f224256d3834572db9f7a9243c4c94dfb"
+      },
+      "registrySHA256": "263d5fbcebb0e05c012a6ba2230eee19c6c9715f13635b3140ce4850b5cece77",
+      "sourceR": "cb4d80f57dbd8ad9815b5b90128ece5171a678a3b1c24e94956c2ac9fff91f88"
+    }
+  },
+  "author": {
+    "SSR": 0,
+    "server": 0,
+    "browser": 0,
+    "sharedWrites": 0,
+    "build": 0,
+    "globalTypeCheck": 0
+  },
+  "approval": {
+    "temporal": false,
+    "native": false,
+    "runtime": false
+  },
+  "isolatedSSRCLI": "node scripts/hanja-actual-component-review.mjs --profile docs/hanja-authored-mm-u8517-components-2026-10-28/actual-profile-v3-start.json --profile-sha 06836c70960df7125dc3d0641eeea96102136a886c38b634cabde5a080b9e8d6 --check-new",
+  "commitSuggested": "docs(hanja): prepare Zhe v3 source-affine native review",
+  "observationScope": "Child source pins/guard/generated route/closure/scope/transport only. ROOT must directly review actual source-affine mask start/release/ending/residual for this candidate before native approval or1519 registration."
+}
