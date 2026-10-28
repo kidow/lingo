@@ -1,0 +1,124 @@
+{
+  "schema": "hanja-public-whole-raw-positive-Y-shrink-contact-proof/v1",
+  "date": "2026-10-29",
+  "glyph": "怰",
+  "legacyOriginalProof4": {
+    "path": "docs/hanja-goal-glyphwiki-batch126-2026-09-27/engine-proof.json",
+    "SHA256": "fef26dbd710dac54ff97f9040e0636f5e3f45fd0687ee47f46f8ae5e444e2242"
+  },
+  "separateTrace": {
+    "path": "docs/hanja-goal-glyphwiki-batch126-2026-09-27/draw-trace.json",
+    "SHA256": "98731d24ca0671b759673c24437cdfe84c0f0628d5830ebf99598c4f98f80412"
+  },
+  "verifier": {
+    "path": "docs/hanja-authored-ownstroke-u6030-raw6-head-gap-2026-10-29/verify-public-contact.py",
+    "SHA256": "2e10934196e91fb93140e31d3313ec0f1cca7f35e87cb4b0de05b6b0c88cacac"
+  },
+  "sourceCoordinateSystem": "original200/Xright-Ydown",
+  "method": "Exact Fraction(Decimal) simple off0 polygon graph, exact ear decomposition with area parity and exact convex triangle clipping. Whole raw6 positiveYaffine fixes maxY and places minY at sourceHmaxY+1. Contactunion areas are exact because at mostone Ppair has positivearea in each selected group pair.",
+  "result": {
+    "matrixExact": [
+      "1",
+      "0",
+      "0",
+      "89/93",
+      "0",
+      "130/31"
+    ],
+    "determinant": "89/93",
+    "sourceMinY": "51",
+    "sourceMaxY": "195/2",
+    "horizontalMaxY": "52",
+    "newMinY": "53",
+    "newMaxY": "195/2",
+    "gapToHExact": "1",
+    "distanceWitness": [
+      [
+        "1279/10",
+        "53"
+      ],
+      [
+        "1279/10",
+        "52"
+      ]
+    ],
+    "beforeContacts": [
+      4,
+      5,
+      7
+    ],
+    "afterContacts": [
+      7
+    ],
+    "lostContacts": [
+      4,
+      5
+    ],
+    "newContacts": [],
+    "raw7PositiveAreaPreserved": true,
+    "contactAreas": [
+      {
+        "otherRaw": 4,
+        "PpairAreas": [
+          {
+            "raw6P": 2,
+            "otherP": 1,
+            "originalArea": "640/627",
+            "candidateArea": "0"
+          }
+        ],
+        "originalUnionArea": "640/627",
+        "candidateUnionArea": "0",
+        "unionExactBecauseAtMostOnePositivePpair": true
+      },
+      {
+        "otherRaw": 5,
+        "PpairAreas": [
+          {
+            "raw6P": 2,
+            "otherP": 1,
+            "originalArea": "640/627",
+            "candidateArea": "0"
+          }
+        ],
+        "originalUnionArea": "640/627",
+        "candidateUnionArea": "0",
+        "unionExactBecauseAtMostOnePositivePpair": true
+      },
+      {
+        "otherRaw": 7,
+        "PpairAreas": [
+          {
+            "raw6P": 1,
+            "otherP": 1,
+            "originalArea": "9409604/3117505",
+            "candidateArea": "569129039908/188431588075"
+          }
+        ],
+        "originalUnionArea": "9409604/3117505",
+        "candidateUnionArea": "569129039908/188431588075",
+        "unionExactBecauseAtMostOnePositivePpair": true
+      }
+    ],
+    "allOriginalPolygonsSimple": true,
+    "bridgeAdded": false,
+    "guideHandoffResolved": false
+  },
+  "guideHandoffUnresolved": true,
+  "newGeometryPaths": false,
+  "newBridge": false,
+  "execution": {
+    "engine": 0,
+    "privateMedia": 0,
+    "network": 0,
+    "server": 0,
+    "sharedFilesChanged": 0
+  },
+  "approval": {
+    "whole": false,
+    "directions": false,
+    "temporal": false,
+    "native": false,
+    "runtime": false
+  }
+}
