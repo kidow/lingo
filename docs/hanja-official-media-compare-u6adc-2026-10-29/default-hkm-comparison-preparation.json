@@ -1,0 +1,50 @@
+{
+  "schema": "hanja-public-default-hkm-static-comparison-preparation/v1",
+  "glyph": "櫜",
+  "catalogStrokes": 19,
+  "domesticClockStrokes": 19,
+  "inputs": {
+    "docs/hanja-goal-glyphwiki-batch438-2026-10-09/engine-proof.json": "e0ddc60691b7d6e4050407cc2d08fccd414ba5e8cb2c5a83ff04ec21d9cdfece",
+    "docs/hanja-official-media-compare-u6adc-2026-10-29/captured-hkm-engine-proof.json": "2d7be08884f0091076badb7c6e8c87be20105c1e7d3c524d707fdfa745df687a",
+    "docs/hanja-official-media-compare-u6adc-2026-10-29/captured-hkm-receipt.json": "2bc81d94bc1a30f1817e477920161234e23e6b68d6f5543f0994fb31e16d4ced"
+  },
+  "sourceCounts": {
+    "default": {
+      "raw": 23,
+      "P": 38
+    },
+    "hkm": {
+      "raw": 23,
+      "P": 38
+    }
+  },
+  "checks": {
+    "allPFinite": true,
+    "allOffZero": true,
+    "onlyExactOriginalMLZSerialization": true,
+    "noScalingOfSourceCoordinates": true,
+    "svgViewBox": "0 0 200 200",
+    "sourceGroupsReordered": false,
+    "sourcePointsChanged": false,
+    "newEngine": 0,
+    "newPrivateMedia": 0
+  },
+  "page": {
+    "path": "docs/hanja-official-media-compare-u6adc-2026-10-29/default-hkm-original-compare.html",
+    "sha256": "3d18489181a4ebb941df1074c8e6f3e4e26d5d895168409b726fb95289a26b31",
+    "views": [
+      "?raw=whole",
+      "?raw=11",
+      "?raw=12"
+    ],
+    "targetRawIndicesAreNotDomesticStrokes": true
+  },
+  "approvals": {
+    "whole": false,
+    "mapping": false,
+    "temporal": false,
+    "runtime": false
+  },
+  "startup": "python3 -u -m http.server 0 --bind 127.0.0.1 --directory /Users/kidow/Documents/dev/kidow/lingo/docs/hanja-official-media-compare-u6adc-2026-10-29/",
+  "rootMustReviewInBrowserPanel": true
+}

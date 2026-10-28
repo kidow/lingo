@@ -1,0 +1,15 @@
+{
+  "glyph":"櫜",
+  "reviewedAt":"2026-10-29",
+  "status":"hold-whole-compatibility-target-row-identification-next",
+  "htmlSha256":"3d18489181a4ebb941df1074c8e6f3e4e26d5d895168409b726fb95289a26b31",
+  "hkmCaptureSha256":"2d7be08884f0091076badb7c6e8c87be20105c1e7d3c524d707fdfa745df687a",
+  "checks":{"nativeBrowserPanel":true,"bothWholeAt520px":true,"raw11And12BothSources":true,"publicGeometryOnly":true},
+  "findings":[
+    "Default whole has middle-right V plus H; domestic11/12 need V plus DR point.",
+    "HKm whole has middle-right DL plus DR point; it is not a compatible complete replacement for domestic V plus DR.",
+    "Matching raw indices are not matching roles: default11 is bottom V while HKm11 is middle H; default12 is bottom DL while HKm12 is middle DL.",
+    "Identify the two actual right-side HKm source rows before evaluating any explicit mixed-parts candidate. No donor or placement approval follows from this whole view."
+  ],
+  "runtimeApplied":false
+}
