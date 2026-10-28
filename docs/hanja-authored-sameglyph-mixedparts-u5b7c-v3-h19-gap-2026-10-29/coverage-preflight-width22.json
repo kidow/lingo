@@ -1,0 +1,66 @@
+{
+  "schema": "hanja-public-source-curve-coverage-preflight/v1",
+  "date": "2026-10-29",
+  "glyph": "孼",
+  "scope": "Onlychanged18m2 Qwidth22/pad11 afterconcretewidth14outlier. Fourunchanged14/7curve successes reused frompinnedpreviousreport; allP/Qcontrols unchanged, onlypadprefix/weight/gate updated. No earlygate/nativeapproval. No start/release/native approval.",
+  "inputSHA256": {
+    "docs/hanja-authored-sameglyph-mixedparts-u5b7c-v3-h19-gap-2026-10-29/prepare-execution-draft-width22.mjs": "48e458de1c707f094baa0dc4e4ac608ab91ab28538dc374034fddca2b4acb188",
+    "docs/hanja-authored-sameglyph-mixedparts-u5b7c-v3-h19-gap-2026-10-29/fixtures-execution-draft-width22.json": "c4f91415449523cae0eef537faad0174c1f8a230299663b8b09e8e4d27fd39d5",
+    "docs/hanja-authored-sameglyph-mixedparts-u5b7c-v3-h19-gap-2026-10-29/execution-draft-width22-check.json": "f2b85c4dfc82f1852b4d894354cdecd4ebf761a8f7645f5e3189e10aac104a6a",
+    "docs/hanja-authored-sameglyph-mixedparts-u5b7c-v3-h19-gap-2026-10-29/coverage-preflight-width22.mjs": "bb184f987c06a8a68709bf997b6e35fba37a26f45b0952c1d6c942f137df0c99"
+  },
+  "method": "Positive-ear triangles preserve originalpolygonarea within boundednumericmargin and avoid concavefan exteriorregions. At each triangle center distance to actual padded line segment and4097 evaluated original Q/C points gives an upper distance bound; plus triangle radius (1-Lipschitz) proves every triangle point within full round guide radius11 forchangedmask. No original P/Q/C flattening. Unresolved triangulated regions do not aloneprove insufficientwidth.",
+  "numerics": {
+    "margin": 1e-8,
+    "formalIntervalProof": false,
+    "depthLimit": 16,
+    "nodeLimitPerMask": 60000,
+    "BezierEvaluationsPerMask": 4097
+  },
+  "counts": {
+    "curveMasks": 1,
+    "pass": 1,
+    "unproved": 0,
+    "outlier": 0
+  },
+  "units": [
+    {
+      "logical": 18,
+      "mask": 2,
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "radius": 11,
+      "width": 22,
+      "padding": 11,
+      "nodes": 50,
+      "maxDepth": 3,
+      "maxAcceptedUpperDistance": 10.865722549214619,
+      "sourceOutlinePreserved": true,
+      "sourceBezierGuidePreserved": true,
+      "curveDegree": 2,
+      "nativeApproval": false
+    }
+  ],
+  "cardinalPolicy": {
+    "masks": 19,
+    "declaredCallSelectionAndWholeAffinesMaintained": true,
+    "nativeStartContactAndEndingReviewRequired": true
+  },
+  "reusedPreviousCoverage": {
+    "path": "docs/hanja-authored-sameglyph-mixedparts-u5b7c-v3-h19-gap-2026-10-29/coverage-preflight.json",
+    "SHA256": "eebe7628d8f0693056f180cfc5942c78a9e14c4d5679adb1b25b2d3e203b5cac",
+    "unchangedSuccessfulMasks": [
+      "4:1",
+      "12:1",
+      "13:1",
+      "17:2"
+    ],
+    "reused": 4,
+    "rerun": false
+  },
+  "combinedFullroundSupportedMasks": 5,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "sharedFilesChanged": false,
+  "serverStarts": 0,
+  "buildRun": false
+}

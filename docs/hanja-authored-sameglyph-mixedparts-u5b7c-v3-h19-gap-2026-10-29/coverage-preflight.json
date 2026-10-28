@@ -1,0 +1,133 @@
+{
+  "schema": "hanja-public-source-curve-coverage-preflight/v1",
+  "date": "2026-10-29",
+  "glyph": "孼",
+  "scope": "Five placedpublicQmasks in explicit sameglyphmixedparts andselectedcall execution. Raw5whole shear plusretainedraw17/18/23/24Q sources; allP/guide100baked, no revealTransform, actualworldradius7. Nineteen cardinal masks/guidegap2 are notapproved bycoverage. No start/release/native approval.",
+  "inputSHA256": {
+    "docs/hanja-authored-sameglyph-mixedparts-u5b7c-v3-h19-gap-2026-10-29/prepare-execution-draft.mjs": "2e5a0c7a8f018795765c81d1bd3071b4bc42e3ab19764d4c8d1bc393b211ca9b",
+    "docs/hanja-authored-sameglyph-mixedparts-u5b7c-v3-h19-gap-2026-10-29/fixtures-execution-draft.json": "84dd83c58b2dd2dffc241b4dc1aa6a8aac3d92ea1f3d6e28aab7abda26cd979f",
+    "docs/hanja-authored-sameglyph-mixedparts-u5b7c-v3-h19-gap-2026-10-29/execution-draft-check.json": "0a5a370fae8be1fd3603b5dc81517575783fdea083fddf50d6720d5db81794f0",
+    "docs/hanja-authored-sameglyph-mixedparts-u5b7c-v3-h19-gap-2026-10-29/coverage-preflight.mjs": "934c1bfc232b0c1e8d619a62adc13f681bbae6289ac27040499c9ccaab462056"
+  },
+  "method": "Positive-ear triangles preserve originalpolygonarea within boundednumericmargin and avoid concavefan exteriorregions. At each triangle center distance to actual padded line segment and4097 evaluated original Q/C points gives an upper distance bound; plus triangle radius (1-Lipschitz) proves every triangle point within full round guide radius7. No original P/Q/C flattening. Unresolved triangulated regions do not aloneprove insufficientwidth.",
+  "numerics": {
+    "margin": 1e-8,
+    "formalIntervalProof": false,
+    "depthLimit": 16,
+    "nodeLimitPerMask": 60000,
+    "BezierEvaluationsPerMask": 4097
+  },
+  "counts": {
+    "curveMasks": 5,
+    "pass": 4,
+    "unproved": 0,
+    "outlier": 1
+  },
+  "units": [
+    {
+      "logical": 4,
+      "mask": 1,
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "radius": 7,
+      "width": 14,
+      "padding": 7,
+      "nodes": 26,
+      "maxDepth": 1,
+      "maxAcceptedUpperDistance": 6.631400431287764,
+      "sourceOutlinePreserved": true,
+      "sourceBezierGuidePreserved": true,
+      "curveDegree": 2,
+      "nativeApproval": false
+    },
+    {
+      "logical": 12,
+      "mask": 1,
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "radius": 7,
+      "width": 14,
+      "padding": 7,
+      "nodes": 35,
+      "maxDepth": 1,
+      "maxAcceptedUpperDistance": 6.786914959709464,
+      "sourceOutlinePreserved": true,
+      "sourceBezierGuidePreserved": true,
+      "curveDegree": 2,
+      "nativeApproval": false
+    },
+    {
+      "logical": 13,
+      "mask": 1,
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "radius": 7,
+      "width": 14,
+      "padding": 7,
+      "nodes": 38,
+      "maxDepth": 1,
+      "maxAcceptedUpperDistance": 6.364510992260083,
+      "sourceOutlinePreserved": true,
+      "sourceBezierGuidePreserved": true,
+      "curveDegree": 2,
+      "nativeApproval": false
+    },
+    {
+      "logical": 17,
+      "mask": 2,
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "radius": 7,
+      "width": 14,
+      "padding": 7,
+      "nodes": 115,
+      "maxDepth": 2,
+      "maxAcceptedUpperDistance": 6.987124632966265,
+      "sourceOutlinePreserved": true,
+      "sourceBezierGuidePreserved": true,
+      "curveDegree": 2,
+      "nativeApproval": false
+    },
+    {
+      "logical": 18,
+      "mask": 2,
+      "status": "OUTLIER-CONFIRMED",
+      "radius": 7,
+      "width": 14,
+      "padding": 7,
+      "curveDegree": 2,
+      "outliers": [
+        {
+          "polygon": 2,
+          "vertex": 2,
+          "sourceFilledPoint100": [
+            35,
+            89.9
+          ],
+          "distanceLower": 9.99999999,
+          "subdivisionNodes": 1,
+          "method": "every sourceBezier control-hull bbox plus exact padded-line distance excludes radius; bounded binary64 margin1e-8, not formal interval proof"
+        },
+        {
+          "polygon": 2,
+          "vertex": 3,
+          "sourceFilledPoint100": [
+            35,
+            88.4
+          ],
+          "distanceLower": 9.99999999,
+          "subdivisionNodes": 1,
+          "method": "every sourceBezier control-hull bbox plus exact padded-line distance excludes radius; bounded binary64 margin1e-8, not formal interval proof"
+        }
+      ],
+      "confirmedOutlierVertices": 2,
+      "nativeApproval": false
+    }
+  ],
+  "cardinalPolicy": {
+    "masks": 19,
+    "declaredCallSelectionAndWholeAffinesMaintained": true,
+    "nativeStartContactAndEndingReviewRequired": true
+  },
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "sharedFilesChanged": false,
+  "serverStarts": 0,
+  "buildRun": false
+}
