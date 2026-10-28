@@ -1,0 +1,53 @@
+{
+  "schema": "hanja-authored-MM-component-adapter-check/v1",
+  "date": "2026-10-28",
+  "glyph": "孽",
+  "version": 2,
+  "variantId": "authored20-independent-HV-v2",
+  "adapter": {
+    "path": "scripts/hanja-static-authored-mm-u5b7d-components-v2.py",
+    "SHA256": "6fec45e392d838069c5cd17d3aa40668aac19f1049de3374c2f8b84a4c40b4d5"
+  },
+  "config": {
+    "path": "docs/hanja-authored-mm-u5b7d-components-2026-10-28/config-v2.json",
+    "SHA256": "510ef1320371abcaa48aecd0aff35890f77637814c444915fd7e5d6f99cfc13f"
+  },
+  "recipe": {
+    "path": "docs/hanja-authored-mm-u5b7d-components-2026-10-28/recipe-v2.json",
+    "SHA256": "69228511e46728d786159fd769db9933afc0ac0d288eb3cab178ac83ef00e8f8"
+  },
+  "readiness": {
+    "path": "docs/hanja-authored-mm-u5b7d-components-2026-10-28/readiness-v2.json",
+    "SHA256": "c182fbe4d9bfdb89585053eaf0abf89758050cd10a5145ea901174cacf650de1"
+  },
+  "baseAdapter": {
+    "path": "scripts/hanja-static-authored-mm-u5b7d-components.py",
+    "SHA256": "1916e95108eac816fe930bc9d9d9598dcb39bf124c8074a5b438aaffa584f2ee"
+  },
+  "command": "python3 -B scripts/hanja-static-authored-mm-u5b7d-components-v2.py --config docs/hanja-authored-mm-u5b7d-components-2026-10-28/config-v2.json --config-sha 510ef1320371abcaa48aecd0aff35890f77637814c444915fd7e5d6f99cfc13f --check-only",
+  "exitCode": 0,
+  "result": {
+    "authoredWholeCheck": "PASS",
+    "glyph": "孽",
+    "originalWhole": false,
+    "originalMMWhole": false,
+    "locallyAuthoredRoot": true,
+    "mixedParts": true,
+    "originalRecipientPaths": 19,
+    "originalDonorPaths": 2,
+    "retainedBodyPaths": 16,
+    "authoredParts": 20,
+    "sourceYFlipCount": 1,
+    "originalPathStringsChanged": false,
+    "originalMediansChanged": false,
+    "mappingApproved": false,
+    "directionApproved": false,
+    "nativeApproval": false,
+    "runtimeApplied": false,
+    "HTTP": 0,
+    "server": 0,
+    "engine": 0,
+    "projection": 0
+  },
+  "scope": "V2 only: four independent authored H/V group matrices; v1 files unchanged. Whole visual/native and temporal approval remain false."
+}

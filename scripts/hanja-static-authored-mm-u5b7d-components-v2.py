@@ -1,0 +1,56 @@
+#!/usr/bin/env python3
+"""Pinned authored 孽20 v2; four independent placements, never an original MM whole."""
+import sys
+sys.dont_write_bytecode = True
+import hashlib, importlib.util, json, math
+from fractions import Fraction
+from pathlib import Path
+ROOT = Path(__file__).resolve().parent.parent
+BASE_PATH = 'scripts/hanja-static-authored-mm-u5b7d-components.py'
+BASE_SHA = '1916e95108eac816fe930bc9d9d9598dcb39bf124c8074a5b438aaffa584f2ee'
+p = ROOT / BASE_PATH
+if hashlib.sha256(p.read_bytes()).hexdigest() != BASE_SHA:
+    raise ValueError('unchanged v1 whole adapter required')
+spec = importlib.util.spec_from_file_location('hanja_authored_u5b7d_v1_for_v2',p)
+base = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(base)
+# Strict source readers run under the unchanged v1 specification before v2 is installed.
+v1_sources = base.read_sources()
+v1_recipe = v1_sources['recipe']
+base.EXPECTED = json.loads("{\"schema\":\"hanja-authored-MM-component-whole-compare/v1\",\"kind\":\"authored-mm-components-whole-u5b7d-v2\",\"glyph\":\"孽\",\"catalogStrokes\":20,\"authoredParts\":20,\"originalRecipientMM\":19,\"recipe\":{\"path\":\"docs/hanja-authored-mm-u5b7d-components-2026-10-28/recipe-v2.json\",\"SHA256\":\"69228511e46728d786159fd769db9933afc0ac0d288eb3cab178ac83ef00e8f8\"},\"readiness\":{\"path\":\"docs/hanja-authored-mm-u5b7d-components-2026-10-28/readiness-v2.json\",\"SHA256\":\"c182fbe4d9bfdb89585053eaf0abf89758050cd10a5145ea901174cacf650de1\"},\"sources\":{\"recipient\":{\"path\":\"docs/hanja-source-original-u5b7d-mm-2026-10-27/source-record.json\",\"SHA256\":\"158df25c141bd6686666fae9b5abba4ea483f72733c8af9134abf28a5481d354\",\"recordField\":\"record\",\"glyph\":\"孽\",\"originalFilledPaths\":19,\"license\":{\"kind\":\"Arphic Public License, original graphics.txt notice\",\"originalNoticeCopy\":{\"path\":\"public/hanja-strokes/MAKEMEAHANZI-COPYING.txt\",\"SHA256\":\"df2e856c73d2ddf036ba95556e25a27163de5cae6ef80e9509a86ec8ece9f84f\"},\"completeLicenseCopy\":{\"path\":\"public/hanja-strokes/ARPHICPL.txt\",\"SHA256\":\"76430f0e943a5a088af54d44a58af187be53528fffdfe5ce6abdfc44d508f78f\"},\"existingProjectRule\":\"scripts/hanja-stroke-audit.ts MAKE_ME_A_HANZI_SOURCE binds this exact graphics.txt revision and corpus SHA; no dictionary.txt used.\",\"freshUpstreamLicenseRequest\":false}},\"donor\":{\"path\":\"docs/hanja-authored-donor-u5b7d-u5341-mm-2026-10-28/donor-source-record.json\",\"SHA256\":\"ef9a8cc552dde368f0b7cfaf00960f994b9c05a9b42742ec26d18ffe89071336\",\"recordField\":\"record\",\"glyph\":\"十\",\"originalFilledPaths\":2,\"license\":{\"kind\":\"Arphic Public License, original graphics.txt notice\",\"originalNoticeCopy\":{\"path\":\"public/hanja-strokes/MAKEMEAHANZI-COPYING.txt\",\"SHA256\":\"df2e856c73d2ddf036ba95556e25a27163de5cae6ef80e9509a86ec8ece9f84f\"},\"completeLicenseCopy\":{\"path\":\"public/hanja-strokes/ARPHICPL.txt\",\"SHA256\":\"76430f0e943a5a088af54d44a58af187be53528fffdfe5ce6abdfc44d508f78f\"},\"existingProjectRule\":\"scripts/hanja-stroke-audit.ts MAKE_ME_A_HANZI_SOURCE binds this exact graphics.txt revision and corpus SHA; no dictionary.txt used.\",\"freshUpstreamLicenseRequest\":false}}},\"licenses\":{\"recipient\":{\"kind\":\"Arphic Public License, original graphics.txt notice\",\"originalNoticeCopy\":{\"path\":\"public/hanja-strokes/MAKEMEAHANZI-COPYING.txt\",\"SHA256\":\"df2e856c73d2ddf036ba95556e25a27163de5cae6ef80e9509a86ec8ece9f84f\"},\"completeLicenseCopy\":{\"path\":\"public/hanja-strokes/ARPHICPL.txt\",\"SHA256\":\"76430f0e943a5a088af54d44a58af187be53528fffdfe5ce6abdfc44d508f78f\"},\"existingProjectRule\":\"scripts/hanja-stroke-audit.ts MAKE_ME_A_HANZI_SOURCE binds this exact graphics.txt revision and corpus SHA; no dictionary.txt used.\",\"freshUpstreamLicenseRequest\":false},\"donor\":{\"kind\":\"Arphic Public License, original graphics.txt notice\",\"originalNoticeCopy\":{\"path\":\"public/hanja-strokes/MAKEMEAHANZI-COPYING.txt\",\"SHA256\":\"df2e856c73d2ddf036ba95556e25a27163de5cae6ef80e9509a86ec8ece9f84f\"},\"completeLicenseCopy\":{\"path\":\"public/hanja-strokes/ARPHICPL.txt\",\"SHA256\":\"76430f0e943a5a088af54d44a58af187be53528fffdfe5ce6abdfc44d508f78f\"},\"existingProjectRule\":\"scripts/hanja-stroke-audit.ts MAKE_ME_A_HANZI_SOURCE binds this exact graphics.txt revision and corpus SHA; no dictionary.txt used.\",\"freshUpstreamLicenseRequest\":false}},\"publisherMetadata\":{\"path\":\"docs/hanja-goal-glyphwiki-batch708-2026-10-12/metadata.json\",\"SHA256\":\"6ae93a09957c1718bd7238182ff4e93da0f1320f62afb158bd1875bf77eced8a\"},\"domestic\":{\"url\":\"http://img.e-hanja.kr/hanjaSvg/aniSVG/5B00/5B7D.svg\",\"status\":200,\"bytes\":9781,\"sha256\":\"3a4a709bcbeef1625d1b18f8f786fd75a8dc91e32b7eb396414c2d6646602bf2\",\"clips\":20,\"glyph\":\"孽\",\"privateMediaSaved\":false},\"coreAdapter\":{\"path\":\"scripts/hanja-static-original-mm-u6715.py\",\"SHA256\":\"26f1f172a54fd35483a2db80dd56cdfb43cb58d1a7396d669de12784a1d81562\"},\"sharedServe\":{\"path\":\"docs/hanja-source-raw-compare-u8a29-2026-10-21/serve.py\",\"SHA256\":\"ba91ba7f00bc2e4899ca4d3c69d03ab5cd6f8b0a9f888899eea49aa69a58665d\"},\"fixedMMRevision\":\"bddc96d41bef78427ed0e034e9f7e31d71fd1b92\",\"fixedMMCorpusSHA256\":\"a28c478b5178e98f67f510b2d52fde08a69dc664654ef43498253b9b764d46ee\",\"sourceViewBox\":\"0 0 1024 1024\",\"sourceYFlip\":\"matrix(1 0 0 -1 0 900)\",\"wholeOnly\":true,\"host\":\"127.0.0.1\",\"originalWhole\":false,\"originalMMWhole\":false,\"authored\":true,\"locallyAuthoredRoot\":true,\"mixedParts\":true,\"mappingApproved\":false,\"directionApproved\":false,\"nativeApproval\":false,\"runtimeApplied\":false,\"inputSHA256\":{\"docs/hanja-authored-mm-u5b7d-components-2026-10-28/recipe.json\":\"d8bfa56282a8422d5a55b849c3d5dba1987f0c1af985c05133a11ef653da0c4f\",\"docs/hanja-authored-mm-u5b7d-components-2026-10-28/readiness.json\":\"7012f81d61f63380ad4a5f2427a796707d695039b843f9935e72ea6d4c096122\",\"docs/hanja-source-original-u5b7d-mm-2026-10-27/source-record.json\":\"158df25c141bd6686666fae9b5abba4ea483f72733c8af9134abf28a5481d354\",\"docs/hanja-authored-donor-u5b7d-u5341-mm-2026-10-28/donor-source-record.json\":\"ef9a8cc552dde368f0b7cfaf00960f994b9c05a9b42742ec26d18ffe89071336\",\"docs/hanja-goal-glyphwiki-batch708-2026-10-12/metadata.json\":\"6ae93a09957c1718bd7238182ff4e93da0f1320f62afb158bd1875bf77eced8a\",\"scripts/hanja-static-original-mm-u6715.py\":\"26f1f172a54fd35483a2db80dd56cdfb43cb58d1a7396d669de12784a1d81562\",\"docs/hanja-source-raw-compare-u8a29-2026-10-21/serve.py\":\"ba91ba7f00bc2e4899ca4d3c69d03ab5cd6f8b0a9f888899eea49aa69a58665d\",\"public/hanja-strokes/MAKEMEAHANZI-COPYING.txt\":\"df2e856c73d2ddf036ba95556e25a27163de5cae6ef80e9509a86ec8ece9f84f\",\"public/hanja-strokes/ARPHICPL.txt\":\"76430f0e943a5a088af54d44a58af187be53528fffdfe5ce6abdfc44d508f78f\",\"docs/hanja-authored-mm-u5b7d-components-2026-10-28/recipe-v2.json\":\"69228511e46728d786159fd769db9933afc0ac0d288eb3cab178ac83ef00e8f8\",\"docs/hanja-authored-mm-u5b7d-components-2026-10-28/readiness-v2.json\":\"c182fbe4d9bfdb89585053eaf0abf89758050cd10a5145ea901174cacf650de1\",\"scripts/hanja-static-authored-mm-u5b7d-components.py\":\"1916e95108eac816fe930bc9d9d9598dcb39bf124c8074a5b438aaffa584f2ee\"},\"version\":2,\"previousRecipe\":{\"path\":\"docs/hanja-authored-mm-u5b7d-components-2026-10-28/recipe.json\",\"SHA256\":\"d8bfa56282a8422d5a55b849c3d5dba1987f0c1af985c05133a11ef653da0c4f\",\"unchanged\":true}}")
+base.CONFIG_FILE = 'docs/hanja-authored-mm-u5b7d-components-2026-10-28/config-v2.json'
+base.ADAPTER_FILE = 'scripts/hanja-static-authored-mm-u5b7d-components-v2.py'
+require = base.require
+def read_v2_sources():
+    recipe = base.read_json_pin(base.EXPECTED['recipe'])
+    readiness = base.read_json_pin(base.EXPECTED['readiness'])
+    require(recipe['schema'] == 'hanja-authored-MM-component-recipe/v1' and recipe['glyph'] == '孽', 'fixed v2 candidate required')
+    require(recipe['version'] == 2 and recipe['variantId'] == 'authored20-independent-HV-v2' and recipe['previousRecipe'] == base.EXPECTED['previousRecipe'], 'one separately labelled v2 recipe required')
+    require(all(recipe[k] is True for k in ['authored','locallyAuthoredRoot','mixedParts']), 'explicit authored mixed root required')
+    require(all(recipe[k] is False for k in ['originalWhole','originalMMWhole','mappingApproved','directionApproved','nativeApproval','runtimeApplied']), 'no shape or temporal approval inherited')
+    require(base.same_json(recipe['sources'],v1_recipe['sources']) and base.same_json(recipe['body16Binding'],v1_recipe['body16Binding']), 'same strictly verified original sources and body16 binding required')
+    require(readiness['recipe'] == base.EXPECTED['recipe'] and readiness['authored'] is True and readiness['originalMMWhole'] is False and all(v is False for v in readiness['approval'].values()), 'v2 readiness remains unapproved')
+    parts = recipe['parts']
+    require(type(parts) is list and len(parts) == 20, 'twenty fixed original selections required')
+    order = [('donor',1),('donor',2),('donor',1),('donor',2)] + [('recipient',n)for n in range(4,20)]
+    for logical,(part,(source,stroke)) in enumerate(zip(parts,order),1):
+        require(part['logicalOneBased'] == logical and part['source'] == source and part['sourceStrokeOneBased'] == part['sourceMedianOneBased'] == stroke, 'v2 H,V,H,V plus original body16 required')
+        m,e = part['matrix'],part['matrixExact']
+        require(type(m) is list and type(e) is list and len(m) == len(e) == 6 and all(type(x) in (int,float) and math.isfinite(x) for x in m), 'finite affine placement required')
+        require(all(type(x) is str and float(Fraction(x)) == y for x,y in zip(e,m)) and Fraction(e[0])*Fraction(e[3])-Fraction(e[1])*Fraction(e[2]) > 0, 'exact rational matrix agreement and positive determinant required')
+        if source == 'recipient':
+            require(base.same_json(part,v1_recipe['parts'][logical-1]) and m == [1,0,0,1,0,0], 'unchanged identity body16 required')
+        else:
+            group = ['leftH','leftV','rightH','rightV'][logical-1]
+            placement = recipe['placements'][group]
+            require(part['placementGroup'] == group and m == placement['matrix'] and e == placement['matrixExact'] and placement['nativePlacementApproved'] is False, 'exact independent H/V author placement required')
+            require(part['authoredPlacement'] is True and part['sourceOrderHint'] == ('H' if stroke == 1 else 'V'), 'declared author selection only, never a stroke-order approval')
+    return {'recipe':recipe,'recipient':v1_sources['recipient'],'donor':v1_sources['donor']}
+v1_page = base.whole_page
+def whole_page(shared,route,selected,sources,domestic):
+    result = v1_page(shared,route,selected,sources,domestic)
+    return result.replace('locally authored mixed20 whole comparison','locally authored mixed20 v2 whole comparison').replace('Original 孽 body16 plus two placed original 十 pairs; H,V,H,V is this author recipe.','V2: unchanged original 孽 body16 plus four original 十-derived H/V parts with four independently authored group matrices; H,V,H,V is this recipe only.').replace('LOCALLY AUTHORED20 · not original MM19 whole','LOCALLY AUTHORED20 V2 · not original MM19 whole')
+base.read_sources = read_v2_sources
+base.whole_page = whole_page
+if __name__ == '__main__':
+    base.main()
