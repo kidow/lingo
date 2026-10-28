@@ -1,0 +1,104 @@
+{
+  "schema": "hanja-authored-donor-reuse-conditions/v1",
+  "date": "2026-10-28",
+  "recipient": {
+    "path": "docs/hanja-source-original-u5b7d-mm-2026-10-27/source-record.json",
+    "SHA256": "158df25c141bd6686666fae9b5abba4ea483f72733c8af9134abf28a5481d354",
+    "glyph": "孽",
+    "catalog": {
+      "strokes": 20,
+      "grade": "특급"
+    },
+    "counts": {
+      "filledStrokes": 19,
+      "medians": 19,
+      "catalogCountMatches": false,
+      "countDifferenceIsNotRejection": true
+    },
+    "revision": "bddc96d41bef78427ed0e034e9f7e31d71fd1b92",
+    "wholeCorpusSHA256": "a28c478b5178e98f67f510b2d52fde08a69dc664654ef43498253b9b764d46ee"
+  },
+  "donor": {
+    "path": "docs/hanja-authored-donor-u5b7d-u5341-mm-2026-10-28/donor-source-record.json",
+    "SHA256": "ef9a8cc552dde368f0b7cfaf00960f994b9c05a9b42742ec26d18ffe89071336",
+    "glyph": "十",
+    "originalRecordSHA256": "26f1170214a3258b7b05bb23cbb66eaad4e5d7854758ac868d091868889fd21d",
+    "originalFilledPaths": 2,
+    "originalMedians": 2
+  },
+  "provenance": {
+    "sameFixedCorpusRevision": true,
+    "sameWholeCorpusSHA256": true,
+    "fontIdentityBeyondCorpusIndependentlyProved": false,
+    "license": {
+      "kind": "Arphic Public License, original graphics.txt notice",
+      "originalNoticeCopy": {
+        "path": "public/hanja-strokes/MAKEMEAHANZI-COPYING.txt",
+        "SHA256": "df2e856c73d2ddf036ba95556e25a27163de5cae6ef80e9509a86ec8ece9f84f"
+      },
+      "completeLicenseCopy": {
+        "path": "public/hanja-strokes/ARPHICPL.txt",
+        "SHA256": "76430f0e943a5a088af54d44a58af187be53528fffdfe5ce6abdfc44d508f78f"
+      },
+      "existingProjectRule": "scripts/hanja-stroke-audit.ts MAKE_ME_A_HANZI_SOURCE binds this exact graphics.txt revision and corpus SHA; no dictionary.txt used.",
+      "freshUpstreamLicenseRequest": false
+    }
+  },
+  "currentRecipientHold": {
+    "catalog": 20,
+    "originalMMFilledPaths": 19,
+    "originalGrassStructure": "three source strokes versus four domestic grass strokes; direct whole HOLD preserved",
+    "status": "HOLD",
+    "thisTaskChangesHold": false
+  },
+  "classification": {
+    "candidateKind": "authored-composition-hypothesis-only",
+    "authoredFlagRequired": true,
+    "originalWholeClaimAllowed": false,
+    "originalRecipientRecordEdited": false,
+    "newCompositeRendered": false
+  },
+  "confirmedNow": {
+    "donorExactRecordCount": 1,
+    "donorFilledAndMedianCount": 2,
+    "donorMedianOrder": "H→V in original 十 only",
+    "donorFirstMedianXNondecreasing": true,
+    "donorSecondMedianYNonincreasing": true,
+    "donorHToVDoesNotApproveGrassOrder": true,
+    "sourceCorpusStored": false,
+    "sourceCorpusPrinted": false,
+    "networkRequests": 1
+  },
+  "requiredBeforeAnyComposition": [
+    "Obtain direct recipient-specific evidence for the four grass strokes and their order; the standalone 十 median order is insufficient.",
+    "Identify the exact recipient source parts intended for replacement; do not assume correspondence merely from a radical name or arithmetic.",
+    "Document every proposed donor placement or transform explicitly and preserve donor provenance; no transform or placement has been selected in this task.",
+    "Keep the remaining recipient body and its original paths unchanged unless separately authorized and directly verified.",
+    "Any future assembled candidate must be labelled authored; it must not be represented as the original MM whole or an officially approved glyph.",
+    "Review complete shape, white gaps, contact and each actual stroke direction in the browser panel before registration."
+  ],
+  "notAuthorizedOrPerformed": {
+    "newPlacements": true,
+    "newTransforms": true,
+    "recipientPathEdits": true,
+    "sharedRendererEdits": true,
+    "registration": true
+  },
+  "approvals": {
+    "recipientGrassOrder": false,
+    "recipientPlacement": false,
+    "recipientAuthoredGeometry": false,
+    "officialExamBody": false,
+    "native": false,
+    "runtimeApplied": false
+  },
+  "execution": {
+    "newEngine": 0,
+    "newGeometry": 0,
+    "sourceProjection": 0,
+    "server": 0,
+    "browser": 0,
+    "build": 0,
+    "commit": 0
+  }
+}
