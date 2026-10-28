@@ -1,0 +1,47 @@
+{
+  "schema": "hanja-pending-registration-focused-check/v1",
+  "batch": 1533,
+  "glyph": "纘",
+  "status": "pass-preparation-only",
+  "pendingPath": "docs/hanja-authored-guide-u7e98-compounds-2026-10-29/registration-1533/pending.json",
+  "pendingSHA256": "3daa8894bb41f900607d2f41b7fd5083b1604eefb0224c65983a9519f73a138f",
+  "executed": "node --experimental-strip-types --input-type=module -e <RAM test source>",
+  "testSourceSHA256": "762b1989ccfae854f6c7d77b58fcbc480fe57cf646573fd432b62de5236bd207",
+  "actualTests": 3,
+  "passed": 3,
+  "failed": 0,
+  "asserted": [
+    "source/helper/review-time R pins; exact25logical31masks62P; helper24/26 rejection",
+    "independent sameJSON loader strict data descriptors, getters never invoked, hostile prototype/hidden/symbol/extra rejection, object key reorder acceptance",
+    "deeply frozen literal candidate; custom completed15P plus unaffected47P equals62; pen2 futureH absent at .5"
+  ],
+  "productionFilesCreated": 0,
+  "productionPayloadApproved": false,
+  "registryWritten": false,
+  "resolverOrAppUITested": false,
+  "finalNativeReview": null,
+  "SSR": 0,
+  "servers": 0,
+  "build": 0,
+  "wholeProjectTypecheck": 0,
+  "limitations": [
+    "RAM candidate capsule tests use only glyph/sourceStrokeIndices/outlines, not final production metadata",
+    "existing committed 12 helper tests and narrow semantic PASS reused; not rerun",
+    "initial command could not start because REPL has no process binding; corrected executable selector then actual3tests ran once",
+    "final source metadata, reviewed JSON runtime import, resolver and negative24/26 production checks require final native evidence and root activation"
+  ],
+  "fixedSourceFacts": {
+    "originalHKm": {
+      "path": "docs/hanja-actual-engine-capture-u7e98-hkcs-m-2026-10-26/engine-whole-hkcs_m7e98.json",
+      "SHA256": "1d05a3718cfc27b49fe3b6a009ed03537280a1a3b2d2d8bdd4c485d90fca8503"
+    },
+    "wholeAffinesRecipe": {
+      "path": "docs/hanja-authored-ownstroke-u7e98-cross-contact-v2-2026-10-29/recipe.json",
+      "SHA256": "cdb5dc7926f692bacc2624cced884045e4a0beb331b130714771a3cc8813fc56"
+    },
+    "pen12NativePrototype": {
+      "path": "docs/hanja-source-phase-u7e98-pen12-contact-2026-10-29/native-prototype-review.json",
+      "SHA256": "0b6d7a8b4905b7059c287165acc0b4cfd72a116dc64b1c3d68cf4bdcfc965287"
+    }
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "schema": "hanja-isolated-mixed-guide-H-profile-preparation/v1",
+  "glyph": "纘",
+  "status": "ready-for-ROOT-apply-and-one-startup",
+  "before": {
+    "path": "scripts/hanja-actual-component-review.mjs",
+    "SHA256": "a3624b56efb2193ee4dedf53a22c6186b63fe5cdf7040237ece96d213ac223ab"
+  },
+  "after": {
+    "path": "scripts/hanja-actual-component-review.mjs",
+    "SHA256": "79e4e736099529097ba0f9e6773c5d8bb2990c079f1a97b3c7844584aeb304b3"
+  },
+  "patch": {
+    "path": "docs/hanja-authored-guide-u7e98-compounds-2026-10-29/actual-H-mixed-guide-integration.patch",
+    "SHA256": "4d263cea01dbc172d63938b033c8ffd0fa86736b231bbcf8d674a751d606ad71",
+    "ascendingHunks": 15,
+    "forwardInverseExact": true
+  },
+  "profile": {
+    "path": "docs/hanja-authored-guide-u7e98-compounds-2026-10-29/actual-profile-mixed-guide-start.json",
+    "SHA256": "df250889827e48b1c373d65a1c3de7ec12176ea0a54111c04bac7c83fe858cdd",
+    "R": {
+      "path": "components/hanja/stroke-outlines.tsx",
+      "SHA256": "55db76b01618110165dd5f22d512428550512feb180757814b734e80ffa304d1"
+    },
+    "aggregate": {
+      "path": "lib/hanja-strokes.ts",
+      "SHA256": "9dd814f96730aa34bed16354609b7bce89d7607dc12b4ec1d2598d091689aaef"
+    },
+    "expectedClosure": 390,
+    "flags": {
+      "profileFinalized": true,
+      "executionEnabled": true,
+      "sharedWindowPending": false,
+      "nativeApproval": false,
+      "runtimeApplied": false
+    }
+  },
+  "sourceCounts": {
+    "logical25": 25,
+    "originalMasks31": 31,
+    "P62": 62,
+    "sourceQ15": 15,
+    "actualRoundGuides12": 12,
+    "customPens": [
+      1,
+      2,
+      12
+    ],
+    "genericQ10": 10,
+    "phaseBoundaries4": 4,
+    "genericBoundaries3": 3
+  },
+  "checks": {
+    "syntax": true,
+    "inputSHAMatchesExcludingPlannedH": 995,
+    "sourceGuardAndControlsAndActualRoute": {
+      "sourceGuardPositive": true,
+      "missingNegative5": true,
+      "actualWholeRoute": true,
+      "controls": 27,
+      "release12": true,
+      "boundary7": true,
+      "threeCustomCompact": true,
+      "residual12": true,
+      "closure390": true,
+      "missingLeafRejected": true
+    },
+    "Su4GuardByteUnchanged": true,
+    "extraDeclaredLeafModule": true,
+    "threeExactImportAliasRewrites": true,
+    "engineRuns": 0,
+    "SSR": 0,
+    "server": 0,
+    "sharedWrites": 0,
+    "build": false,
+    "fullTypecheck": false
+  },
+  "mustReviewFresh": [
+    "Pen1 initial source-start polygon andgate. Historical prototype initial clip is invalid evidence.",
+    "Pen2 and12 every phase boundary andcompact17.",
+    "All25compact9/146aggregate/29states/12gates/12residuals/whole62P520; natural1/2/12."
+  ],
+  "startup": "node scripts/hanja-actual-component-review.mjs --profile docs/hanja-authored-guide-u7e98-compounds-2026-10-29/actual-profile-mixed-guide-start.json --profile-sha df250889827e48b1c373d65a1c3de7ec12176ea0a54111c04bac7c83fe858cdd --port 0"
+}

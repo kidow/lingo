@@ -1,0 +1,34 @@
+{
+  "glyph":"纘",
+  "reviewedAt":"2026-10-29",
+  "status":"partial-pass-residual-tool-blocked",
+  "actualHelperSHA256":"79e4e736099529097ba0f9e6773c5d8bb2990c079f1a97b3c7844584aeb304b3",
+  "profileSHA256":"df250889827e48b1c373d65a1c3de7ec12176ea0a54111c04bac7c83fe858cdd",
+  "rendererSHA256":"55db76b01618110165dd5f22d512428550512feb180757814b734e80ffa304d1",
+  "fixtureSHA256":"b6889acd4fdf6234ae8ad4000d088057dd8fb3b1216cd1e71ad10c329e3c8d98",
+  "geometrySHA256":"aa241350799c5b55d739505e9c873cf2e820b1f65f6ae0c428d79a4dc9575f0f",
+  "completedChecks":{
+    "nativeBrowserPanel":true,
+    "isolatedSSR":1,
+    "CJS":390,
+    "ESM":390,
+    "pen1ContinuousFrames":16,
+    "pen2PhaseFrames":17,
+    "pen12PhaseFrames":17,
+    "freshPen1PolygonInitialClipReviewed":true,
+    "all25PensCompact9":true,
+    "gateReleaseTriples":12,
+    "allCompletedSampleBadAndErrorArraysEmpty":true,
+    "detachedFuturePieceObserved":false
+  },
+  "failedToolCheck":{
+    "button":"纘 mixed full-round residual12",
+    "error":"TypeError: Cannot read properties of undefined (reading 'pen1')",
+    "oldBoardRemained":"pen25 gate-release3",
+    "residualApproved":false
+  },
+  "remaining":["12actual full-round residuals","146aggregate frames","29states","main520 former failure points","natural playback1/2/12"],
+  "limits":["Only finite completed checks are reusable while renderer, helpers, fixture and their binding stay unchanged.","The residual button failure is a review-tool error; no blank-residual pass or final runtime approval is claimed.","Private source bodies and screenshots were not saved or sent to analysis APIs."],
+  "runtimeApplied":false,
+  "nativeApproval":false
+}
