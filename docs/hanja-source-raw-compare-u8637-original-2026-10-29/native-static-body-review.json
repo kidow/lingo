@@ -1,0 +1,55 @@
+{
+  "glyph": "蘷",
+  "reviewedAt": "2026-10-29",
+  "status": "hold-original-whole-after-four-body-role-checks",
+  "nativeBrowserPanel": true,
+  "reviewer": "ROOT",
+  "configSHA256": "0efb42c6ccb09b732b25ed7485e0cbb273431d4a9d28383b668e2955c6343c42",
+  "source": {
+    "path": "docs/hanja-goal-glyphwiki-batch486-2026-10-10/engine-proof.json",
+    "SHA256": "75ef83fd8b4594fc4f0d7e9c47bffb32aea50542a93dfcecb62c7badeb710ffd"
+  },
+  "reviewedViews": {
+    "singlePairs": [
+      {
+        "domestic": 6,
+        "raw": 11,
+        "role": "Vdown"
+      },
+      {
+        "domestic": 7,
+        "raw": 12,
+        "role": "Hright"
+      },
+      {
+        "domestic": 8,
+        "raw": 13,
+        "role": "Vdown"
+      },
+      {
+        "domestic": 9,
+        "raw": 14,
+        "role": "risingHright"
+      }
+    ],
+    "whole": {
+      "domestic": 21,
+      "publicRaw": 23,
+      "displayPx": 520
+    },
+    "allSinglePairsAtPx": 520
+  },
+  "observations": [
+    "ROOT가 domestic6↔raw11/7↔12/8↔13/9↔14를520px 실제브라우저에서 직접대조했고 V/H/V/risingH 거시역할이 모두 있음을 확인했습니다.",
+    "전체whole의 source상단은 연결草3획, 국내원문은 분리草4획으로 기존HOLD를 유지합니다.",
+    "공개source 하단첫DL은 중앙box 왼하단과 붙어보이며 국내17DL은 따로 분리되어 보입니다. 이는 실제시각 관찰이며 정확한접촉집합·면적은 아직 코드검산 전입니다."
+  ],
+  "approvalScope": "네개몸체 거시역할만 확인. 전체source mapping, 원형형태호환, 접촉보정, 새grass구성, 시간진행·runtime은 미승인.",
+  "exactContactAreaEstablished": false,
+  "wholeHOLDPreserved": true,
+  "sourceMappingApproved": false,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "privateBodiesSaved": false,
+  "pixelsSaved": false
+}
