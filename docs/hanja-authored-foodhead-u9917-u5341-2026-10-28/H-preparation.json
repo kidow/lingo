@@ -1,0 +1,100 @@
+{
+  "schema": "hanja-actual-component-H-patch-preparation/v1",
+  "glyph": "餗",
+  "date": "2026-10-29",
+  "beforeH": "541e1b56a5d85e7179e5359560d28819955c1a64e550075cb94ddf1daaedf66f",
+  "afterH": "52ad3d76e84321d1a2bc1a65e731cb33dd7b9a53a06b4797973cda90caaf9ac7",
+  "patch": {
+    "path": "docs/hanja-authored-foodhead-u9917-u5341-2026-10-28/actual-H-integration.patch",
+    "SHA256": "a5d29e16bb065df9ebc19b5b41c6762db6f3e5398df6bfd74beac8a8d3f42990"
+  },
+  "profileOverlay": {
+    "path": "docs/hanja-authored-foodhead-u9917-u5341-2026-10-28/profile-overrides.pending.json",
+    "SHA256": "a3f4c9792eeda0b242c8731a3bffefa6f65064815a83e9431addf9a6441ceec0"
+  },
+  "profilePath": "docs/hanja-authored-foodhead-u9917-u5341-2026-10-28/actual-profile-start.json",
+  "root": "lingo-u9917-hkcs-mm-tenh-v2-start-draft",
+  "fixture": {
+    "path": "docs/hanja-authored-foodhead-u9917-u5341-2026-10-28/fixtures-execution-draft.json",
+    "SHA256": "32450a1d27099ef7377b8ab546cf731ae2e731cd1e2ac6622806f044e48c658d",
+    "geometrySHA256": "82331db83542fba6384fe14af4768b16494d2e289859a13f1fe005f916afd97c"
+  },
+  "sourceCounts": {
+    "pens": 16,
+    "masks": 18,
+    "subpaths": 28,
+    "curves": 5,
+    "sourceAffineMasks": 1,
+    "compoundPens": [
+      4,
+      12
+    ]
+  },
+  "hunkOriginalLines": [
+    12,
+    345,
+    530,
+    816,
+    820,
+    824,
+    5893,
+    5907,
+    5920,
+    5928,
+    5929,
+    5931,
+    5932,
+    5933,
+    5934,
+    5941,
+    5942,
+    5943,
+    5944,
+    5945,
+    5946,
+    5948,
+    5949,
+    5950,
+    5951,
+    5953,
+    5990,
+    5997,
+    6028,
+    6048,
+    6160,
+    6205,
+    6451
+  ],
+  "validation": {
+    "sameOriginalHBytePin": true,
+    "hunksAscending": true,
+    "exactInverse": true,
+    "nodeSyntaxStatus": 0,
+    "exactFixtureGuardPositive": true,
+    "exactFixtureGuardNegativeCases": 4,
+    "actualGeneratedFixtureRouteWholeLineExecuted": true,
+    "projectionFields": [
+      "root",
+      "sharedVersion",
+      "temporalPolicy",
+      "curveTargets",
+      "pairProgress"
+    ],
+    "projectionMissingOrTamperedRejected": 4,
+    "controls5GatesAndAggregate86": true,
+    "localBaselineClosureChosen386": true,
+    "oldKuoDebugExcluded": true,
+    "existingZheClosurePreserved": true,
+    "su4NumericExceptionByteUnchanged": true,
+    "SSR": 0,
+    "server": 0,
+    "actualSharedHWrite": 0,
+    "build": 0,
+    "globalTypecheck": 0
+  },
+  "profileNotFinalized": true,
+  "actualAppUIApproved": false,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "next": "Root applies H, refreshes shared registry/dependency pins after1519, materializes actual profile from the existing Zhe baseline plus this overlay, sets final execution gates only after exact source checks, then runs actual SSR/native review. No source geometry or source policy changed."
+}

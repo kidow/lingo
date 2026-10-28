@@ -1,0 +1,133 @@
+{
+  "schema": "hanja-public-mixed-filled-coverage-preflight/v1",
+  "date": "2026-10-28",
+  "glyph": "餗",
+  "scope": "Full round guide only, dash/start clip removed; bounded public numerical coverage, not temporal/raster/native approval.",
+  "inputSHA256": {
+    "docs/hanja-authored-foodhead-u9917-u5341-2026-10-28/fixtures-execution-draft.json": "32450a1d27099ef7377b8ab546cf731ae2e731cd1e2ac6622806f044e48c658d",
+    "docs/hanja-authored-foodhead-u9917-u5341-2026-10-28/execution-draft-check.json": "aef21fc276806ae64521f9f3b8b6437956ad8c534172889f7c7de7adf1bf7b11",
+    "docs/hanja-authored-foodhead-u9917-u5341-2026-10-28/coverage-preflight.py": "d1e78f27b4e9933d8444a5218608c2dd4b8179e9714826a789da85647efff228",
+    "docs/hanja-authored-component-u81dd-u51e1-2026-10-28/coverage-preflight.py": "b11ec7c430d57ea00325e7ea0ba13b99bc852624a6874d5cd597c870bd2282a6"
+  },
+  "numerics": {
+    "margin": 1e-8,
+    "triangleDepthLimit": 16,
+    "triangleNodeLimit": 60000,
+    "QOutsideControlBoxDepthLimit": 20,
+    "MMBoundarySamplesPerCurve": 257,
+    "formalIntervalProof": false
+  },
+  "counts": {
+    "masks": 5,
+    "pass": 5,
+    "outlier": 0,
+    "unproved": 0
+  },
+  "units": [
+    {
+      "pen": 1,
+      "mask": 1,
+      "source": "Original retained KAGE P/Q",
+      "radiusInGuideFrame": 7,
+      "revealWidth": 14,
+      "revealTransform": null,
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "coverage": {
+        "covered": true,
+        "nodes": 394,
+        "maxDepth": 3,
+        "maxAcceptedUpperDistance": 6.992860546243944
+      },
+      "coverageRegion": "Original P fan superset; possible concave exterior can leave coverage unproved.",
+      "outliers": [],
+      "outlierWitnessCount": 0,
+      "nativeApproval": false
+    },
+    {
+      "pen": 2,
+      "mask": 1,
+      "source": "Original retained KAGE P/Q",
+      "radiusInGuideFrame": 7,
+      "revealWidth": 14,
+      "revealTransform": null,
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "coverage": {
+        "covered": true,
+        "nodes": 171,
+        "maxDepth": 2,
+        "maxAcceptedUpperDistance": 6.800154945098909
+      },
+      "coverageRegion": "Original P fan superset; possible concave exterior can leave coverage unproved.",
+      "outliers": [],
+      "outlierWitnessCount": 0,
+      "nativeApproval": false
+    },
+    {
+      "pen": 3,
+      "mask": 1,
+      "source": "OriginalMM十H source-affine",
+      "radiusInGuideFrame": 10,
+      "revealWidth": 20,
+      "revealTransform": "matrix(0.21275820170109355 0.016902395707454328 0 0.40913740197749743 15.880935601458081 10.077270876219364)",
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "coverage": {
+        "covered": true,
+        "nodes": 306,
+        "maxDepth": 3,
+        "maxAcceptedUpperDistance": 9.942254992441853
+      },
+      "coverageRegion": "Exact endpoint-chord polygon ear triangles plus originalQ/C control hulls; source-local mask frame with already exact affine binding. No product/source path flattening.",
+      "outliers": [],
+      "outlierWitnessCount": 0,
+      "nativeApproval": false
+    },
+    {
+      "pen": 15,
+      "mask": 1,
+      "source": "Original retained KAGE P/Q",
+      "radiusInGuideFrame": 7,
+      "revealWidth": 14,
+      "revealTransform": null,
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "coverage": {
+        "covered": true,
+        "nodes": 673,
+        "maxDepth": 3,
+        "maxAcceptedUpperDistance": 6.9945483734100256
+      },
+      "coverageRegion": "Original P fan superset; possible concave exterior can leave coverage unproved.",
+      "outliers": [],
+      "outlierWitnessCount": 0,
+      "nativeApproval": false
+    },
+    {
+      "pen": 16,
+      "mask": 1,
+      "source": "Original retained KAGE P/Q",
+      "radiusInGuideFrame": 7,
+      "revealWidth": 14,
+      "revealTransform": null,
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "coverage": {
+        "covered": true,
+        "nodes": 533,
+        "maxDepth": 3,
+        "maxAcceptedUpperDistance": 6.947258276938588
+      },
+      "coverageRegion": "Original P fan superset; possible concave exterior can leave coverage unproved.",
+      "outliers": [],
+      "outlierWitnessCount": 0,
+      "nativeApproval": false
+    }
+  ],
+  "limits": [
+    "KAGE fan supersets may leave conservative unproved cases; unproved is not insufficient width.",
+    "Only actual source vertices/boundary witnesses count as concrete outliers.",
+    "Source-local donor coverage transports through the pinned exact affine but does not establish original microclock or native start/transition behavior.",
+    "Native whole/16strokes/compound4,12/endings/residuals/replay remain required."
+  ],
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "serverStarts": 0,
+  "buildRun": false
+}
