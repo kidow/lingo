@@ -1,0 +1,46 @@
+{
+  "schema": "hanja-terminal-H-exact-rebase-report/v1",
+  "date": "2026-10-28",
+  "glyph": "燄",
+  "originalPatch": {
+    "path": "docs/hanja-authored-terminal-experiments-2026-10-28/u71c4-actual-H-integration.patch",
+    "SHA256": "58e527c555478c306cd68d647fe6d85a20ea1a70ea58ee3cb80ccde302876565",
+    "preserved": true
+  },
+  "helper": {
+    "path": "scripts/hanja-actual-component-review.mjs",
+    "preSHA256": "6f6e8ba21848e4ca554c85ae34e812e97dee0f2da1cc3c97a591d020c1741970",
+    "postSHA256": "07398a4f5595ecb302565837cd3bc287e371ab98aac7197a383522a465d081ea",
+    "patchSHA256": "195392b7c17ad25dc3eec219e632389bf71614a7b8898dcef06d298d84fb4e1a",
+    "applied": true,
+    "appliedBy": "ROOT applied a source-position-sorted transport; preparation agent did not write shared H."
+  },
+  "hunks": 13,
+  "originalHunkOrderPreserved": false,
+  "nativeOriginalPositionOrderValidated": true,
+  "sortedOriginalHunkIndices": [1,2,3,4,5,11,10,6,7,8,9,12,13],
+  "originalSourcePositions": [850,334722,432086,838782,2319781,2321955,2335024,2337022,2344527,2349385,2386585,2408435,2615630],
+  "nativeOrderCorrection": "The initial rebased document retained descending hunk positions. ROOT's first native apply failed even though every old block existed. The prior RAM replacement/inverse checks did not validate native forward hunk order; the earlier order-PASS report was incorrect. ROOT sorted exact old-block positions and applied successfully. This document now contains that same stable ascending order and reproduces post07398a4 exactly; original unsorted preparation is retained as historical material only.",
+  "bareBlankContextLines": 0,
+  "exactByteInverse": true,
+  "futureHAndClientSyntax": "PASS",
+  "oldKuoServerValidatorAST": "exact unchanged source node",
+  "oldKuoObserverAST": "exact unchanged source node after removing only the new exact terminal context alternative; fixedPen/fixedMask binding, padding8 only pen16mask2, requiredWidth2x padding and actual DOM width check preserved byte-for-byte",
+  "newTerminalWidthPolicy": "Exact16 mask-count pattern has no pen16mask2, so the preserved Kuo width16 exception cannot apply; all11 terminal curve masks remain width14/padding7.",
+  "baseProfileChanges": {
+    "fields": [
+      "adapterSHA256",
+      "inputSHA256"
+    ],
+    "onlyChangedInput": "scripts/hanja-actual-component-review.mjs",
+    "otherBaseFieldsAndPinsUnchanged": true
+  },
+  "oldKuoDebugControls": "excluded from terminal context and otherwise preserved",
+  "profileEnabled": false,
+  "temporalApproval": false,
+  "nativeApproval": false,
+  "authorSSR": 0,
+  "HTTP": 0,
+  "server": 0,
+  "registryUpdated": false
+}

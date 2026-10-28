@@ -1,0 +1,360 @@
+{
+  "schema": "hanja-public-fullround-coverage-preflight/v1",
+  "date": "2026-10-28",
+  "glyph": "燄",
+  "candidate": "u71c4",
+  "fixture": {
+    "path": "docs/hanja-authored-terminal-experiments-2026-10-28/u71c4-fixtures-execution-draft.json",
+    "SHA256": "ddaf1ae1dba78be09e493def6937defb4cef23c890083d4259e99f66d65c518e"
+  },
+  "method": "Source M/L/Q full guide including declared padded L; all stationary cubic monotone intervals/endpoints give distance upper witnesses. Independent polygon fan triangles are certified by distance(center)+max vertex radius, using1-Lipschitz distance to whole guide. Positive outliers are additionally lower-bounded against the entire Q by recursive deCasteljau control boxes plus exact L distance. No pixel sampling. Upper-distance witnesses are actual evaluated guide points; incomplete stationary-root finding could only loosen this upper bound, not create a false positive coverage pass.",
+  "numericAbsoluteMargin100": 1e-8,
+  "triangleDepthCap": 16,
+  "triangleNodeCap": 60000,
+  "QHullDepthCap": 24,
+  "sourceGeometryChanged": false,
+  "sourceMicroclockApproved": false,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "curveCount": 11,
+  "curves": [
+    {
+      "pen": 1,
+      "mask": 1,
+      "outlineSHA256": "50f7263db897da87b3b6a4493372db28ca846f87d2fdb028cf63d443f406f97f",
+      "guideSHA256": "2ccd9d22a285b79a46691c4ebb98f6da38adcd2b84ff3b359449def9e1c9ca8a",
+      "width14Radius7": {
+        "covered": true,
+        "nodes": 650,
+        "acceptedTriangles": 493,
+        "maxDepth": 3,
+        "maximumAcceptedUpperDistance100": 6.999963129903084,
+        "radius100": 7
+      },
+      "radius7OutlierWitnesses": [],
+      "conservativeCoverage": {
+        "radius100": 7,
+        "proof": {
+          "covered": true,
+          "nodes": 650,
+          "acceptedTriangles": 493,
+          "maxDepth": 3,
+          "maximumAcceptedUpperDistance100": 6.999963129903084,
+          "radius100": 7
+        }
+      },
+      "minimumRadiusClaimed": false,
+      "classification": "R7_FAN_COVERAGE_PROVEN",
+      "largerRadiusIsNotNecessaryWidthEvidence": false
+    },
+    {
+      "pen": 2,
+      "mask": 2,
+      "outlineSHA256": "436163b6286473bb65c5897742b15061bcb30954ab87c7587b0da2472f0dc710",
+      "guideSHA256": "dc1f4a477ec5176a0d79bbb407d5ab1eee14255efa118b3c1e343770b1d7bf20",
+      "width14Radius7": {
+        "covered": true,
+        "nodes": 267,
+        "acceptedTriangles": 206,
+        "maxDepth": 2,
+        "maximumAcceptedUpperDistance100": 6.985349528403345,
+        "radius100": 7
+      },
+      "radius7OutlierWitnesses": [],
+      "conservativeCoverage": {
+        "radius100": 7,
+        "proof": {
+          "covered": true,
+          "nodes": 267,
+          "acceptedTriangles": 206,
+          "maxDepth": 2,
+          "maximumAcceptedUpperDistance100": 6.985349528403345,
+          "radius100": 7
+        }
+      },
+      "minimumRadiusClaimed": false,
+      "classification": "R7_FAN_COVERAGE_PROVEN",
+      "largerRadiusIsNotNecessaryWidthEvidence": false
+    },
+    {
+      "pen": 3,
+      "mask": 1,
+      "outlineSHA256": "0a349d4e41fe23118f3cc00e29c94fce3ecff4e31930e0f2020492b001d524c7",
+      "guideSHA256": "7016f6be52d7a7a5d828a02968764c82ccb6b6338380fe36ada5d34ed18ed27d",
+      "width14Radius7": {
+        "covered": true,
+        "nodes": 46,
+        "acceptedTriangles": 40,
+        "maxDepth": 1,
+        "maximumAcceptedUpperDistance100": 6.9509362825750705,
+        "radius100": 7
+      },
+      "radius7OutlierWitnesses": [],
+      "conservativeCoverage": {
+        "radius100": 7,
+        "proof": {
+          "covered": true,
+          "nodes": 46,
+          "acceptedTriangles": 40,
+          "maxDepth": 1,
+          "maximumAcceptedUpperDistance100": 6.9509362825750705,
+          "radius100": 7
+        }
+      },
+      "minimumRadiusClaimed": false,
+      "classification": "R7_FAN_COVERAGE_PROVEN",
+      "largerRadiusIsNotNecessaryWidthEvidence": false
+    },
+    {
+      "pen": 9,
+      "mask": 1,
+      "outlineSHA256": "185a9115e63a84f84a3b96cf887cfe8b3a259913d8b8f78ce344b2c355cb85e6",
+      "guideSHA256": "59c7d890b2624fce066b19caa3dbee453a69a4a595d218ebc14f240923012393",
+      "width14Radius7": {
+        "covered": true,
+        "nodes": 79,
+        "acceptedTriangles": 65,
+        "maxDepth": 2,
+        "maximumAcceptedUpperDistance100": 6.901230178808097,
+        "radius100": 7
+      },
+      "radius7OutlierWitnesses": [],
+      "conservativeCoverage": {
+        "radius100": 7,
+        "proof": {
+          "covered": true,
+          "nodes": 79,
+          "acceptedTriangles": 65,
+          "maxDepth": 2,
+          "maximumAcceptedUpperDistance100": 6.901230178808097,
+          "radius100": 7
+        }
+      },
+      "minimumRadiusClaimed": false,
+      "classification": "R7_FAN_COVERAGE_PROVEN",
+      "largerRadiusIsNotNecessaryWidthEvidence": false
+    },
+    {
+      "pen": 10,
+      "mask": 1,
+      "outlineSHA256": "051ff92f641fd2a664bc5b529b6a9b96d7d567ef2c82dc5dda0aa63938b503d6",
+      "guideSHA256": "e3c1039a7411148a597d2764c72478fde445d3182c14115162460383b1a976a7",
+      "width14Radius7": {
+        "covered": true,
+        "nodes": 86,
+        "acceptedTriangles": 70,
+        "maxDepth": 2,
+        "maximumAcceptedUpperDistance100": 6.952259698039891,
+        "radius100": 7
+      },
+      "radius7OutlierWitnesses": [],
+      "conservativeCoverage": {
+        "radius100": 7,
+        "proof": {
+          "covered": true,
+          "nodes": 86,
+          "acceptedTriangles": 70,
+          "maxDepth": 2,
+          "maximumAcceptedUpperDistance100": 6.952259698039891,
+          "radius100": 7
+        }
+      },
+      "minimumRadiusClaimed": false,
+      "classification": "R7_FAN_COVERAGE_PROVEN",
+      "largerRadiusIsNotNecessaryWidthEvidence": false
+    },
+    {
+      "pen": 11,
+      "mask": 1,
+      "outlineSHA256": "654b9a91b5f97e10f5fd9480b102b63c215dd0bf5f98be14aeb8cc343abb6470",
+      "guideSHA256": "c0a2ba148529594d901ad3e28ad1f80440d6219e125422ea1b4b361105b33be6",
+      "width14Radius7": {
+        "covered": false,
+        "nodes": 8580,
+        "maxDepth": 16,
+        "reason": "conservative fan upper bound unresolved within declared cap"
+      },
+      "radius7OutlierWitnesses": [],
+      "conservativeCoverage": {
+        "radius100": 8,
+        "proof": {
+          "covered": true,
+          "nodes": 2506,
+          "acceptedTriangles": 1885,
+          "maxDepth": 6,
+          "maximumAcceptedUpperDistance100": 7.999061753892595,
+          "radius100": 8
+        }
+      },
+      "minimumRadiusClaimed": false,
+      "classification": "R7_UNDETERMINED_FAN_SUPERSET",
+      "largerRadiusIsNotNecessaryWidthEvidence": true
+    },
+    {
+      "pen": 12,
+      "mask": 1,
+      "outlineSHA256": "9ea637009b08f06b7eda632c90f067f721b3561c86f22b44238b90221e49b7a1",
+      "guideSHA256": "30ba8b5e7788e967398145097b6702cbbc8af55e18217d374b6f879ebfd56720",
+      "width14Radius7": {
+        "covered": true,
+        "nodes": 251,
+        "acceptedTriangles": 194,
+        "maxDepth": 3,
+        "maximumAcceptedUpperDistance100": 6.96742386233363,
+        "radius100": 7
+      },
+      "radius7OutlierWitnesses": [],
+      "conservativeCoverage": {
+        "radius100": 7,
+        "proof": {
+          "covered": true,
+          "nodes": 251,
+          "acceptedTriangles": 194,
+          "maxDepth": 3,
+          "maximumAcceptedUpperDistance100": 6.96742386233363,
+          "radius100": 7
+        }
+      },
+      "minimumRadiusClaimed": false,
+      "classification": "R7_FAN_COVERAGE_PROVEN",
+      "largerRadiusIsNotNecessaryWidthEvidence": false
+    },
+    {
+      "pen": 13,
+      "mask": 1,
+      "outlineSHA256": "1756acc36a4b3125670fe3dd14b4da07839e2496f7531f94787825a780117bfe",
+      "guideSHA256": "28a3a7ec9d42a19c8491b89c933c3fedee4a3a0efd88f656f40ecf2214aa89fc",
+      "width14Radius7": {
+        "covered": true,
+        "nodes": 159,
+        "acceptedTriangles": 125,
+        "maxDepth": 2,
+        "maximumAcceptedUpperDistance100": 6.850888559185422,
+        "radius100": 7
+      },
+      "radius7OutlierWitnesses": [],
+      "conservativeCoverage": {
+        "radius100": 7,
+        "proof": {
+          "covered": true,
+          "nodes": 159,
+          "acceptedTriangles": 125,
+          "maxDepth": 2,
+          "maximumAcceptedUpperDistance100": 6.850888559185422,
+          "radius100": 7
+        }
+      },
+      "minimumRadiusClaimed": false,
+      "classification": "R7_FAN_COVERAGE_PROVEN",
+      "largerRadiusIsNotNecessaryWidthEvidence": false
+    },
+    {
+      "pen": 14,
+      "mask": 1,
+      "outlineSHA256": "d37994ae1e2ff11d193a45e5f64e35f3eb2d90dfdd9ef2287117cd7e02651fe3",
+      "guideSHA256": "978d4f1d5bfb13776c06d946ee32885ed47ffd8efd553dc266bbc0588033b51d",
+      "width14Radius7": {
+        "covered": true,
+        "nodes": 138,
+        "acceptedTriangles": 109,
+        "maxDepth": 2,
+        "maximumAcceptedUpperDistance100": 6.992902680558945,
+        "radius100": 7
+      },
+      "radius7OutlierWitnesses": [],
+      "conservativeCoverage": {
+        "radius100": 7,
+        "proof": {
+          "covered": true,
+          "nodes": 138,
+          "acceptedTriangles": 109,
+          "maxDepth": 2,
+          "maximumAcceptedUpperDistance100": 6.992902680558945,
+          "radius100": 7
+        }
+      },
+      "minimumRadiusClaimed": false,
+      "classification": "R7_FAN_COVERAGE_PROVEN",
+      "largerRadiusIsNotNecessaryWidthEvidence": false
+    },
+    {
+      "pen": 15,
+      "mask": 1,
+      "outlineSHA256": "57b43f187bc38ebca9dcd9116ad3ba7aeac15151075caba2051770fa663dd687",
+      "guideSHA256": "e5b4a898394a31fb24adb22540cf9d3733f1f5270acc6d11400415b699442f3c",
+      "width14Radius7": {
+        "covered": false,
+        "nodes": 3232,
+        "maxDepth": 16,
+        "reason": "conservative fan upper bound unresolved within declared cap"
+      },
+      "radius7OutlierWitnesses": [],
+      "conservativeCoverage": {
+        "radius100": 10,
+        "proof": {
+          "covered": true,
+          "nodes": 9610,
+          "acceptedTriangles": 7213,
+          "maxDepth": 9,
+          "maximumAcceptedUpperDistance100": 9.999992117313766,
+          "radius100": 10
+        }
+      },
+      "minimumRadiusClaimed": false,
+      "classification": "R7_UNDETERMINED_FAN_SUPERSET",
+      "largerRadiusIsNotNecessaryWidthEvidence": true
+    },
+    {
+      "pen": 16,
+      "mask": 1,
+      "outlineSHA256": "90ab6ecfae86c3ed78cdb3f43f0408547b1b0d3e55be44eb80b7a3b0089941ae",
+      "guideSHA256": "40f5dcaa52c16710cd915d0b8cf563b6f623d03eca51ca6ae94c3212cb8fe251",
+      "width14Radius7": {
+        "covered": false,
+        "nodes": 973,
+        "maxDepth": 16,
+        "reason": "conservative fan upper bound unresolved within declared cap"
+      },
+      "radius7OutlierWitnesses": [],
+      "conservativeCoverage": {
+        "radius100": 9,
+        "proof": {
+          "covered": true,
+          "nodes": 2097,
+          "acceptedTriangles": 1578,
+          "maxDepth": 7,
+          "maximumAcceptedUpperDistance100": 8.999938579880787,
+          "radius100": 9
+        }
+      },
+      "minimumRadiusClaimed": false,
+      "classification": "R7_UNDETERMINED_FAN_SUPERSET",
+      "largerRadiusIsNotNecessaryWidthEvidence": true
+    }
+  ],
+  "elapsedSecondsObserved": 0.6165547499999999,
+  "limitations": [
+    "Float64 calculations use an explicit1e-8 source100-unit safety margin; this is a bounded numerical certificate, not interval-arithmetic or infinite-precision formal proof.",
+    "Fan triangles conservatively cover filled polygons, potentially including extra space outside concave polygons; unresolved fan coverage is not by itself proof of a filled-polygon failure.",
+    "A sufficient tested integer radius is not claimed minimal. Width/padding policies and actual renderer/native effects remain unapproved."
+  ],
+  "policyChangeProposed": false,
+  "summary": {
+    "radius7FanCoverageProven": 8,
+    "radius7ActualVertexCounterexamples": [],
+    "radius7Uncertain": [
+      {
+        "pen": 11,
+        "mask": 1
+      },
+      {
+        "pen": 15,
+        "mask": 1
+      },
+      {
+        "pen": 16,
+        "mask": 1
+      }
+    ]
+  }
+}

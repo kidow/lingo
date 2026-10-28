@@ -1,0 +1,32 @@
+import test from 'node:test'
+import assert from 'node:assert/strict'
+import {readFileSync} from 'node:fs'
+import {createHash} from 'node:crypto'
+import {loadGlyphWikiBatch1514Strokes as load,HANJA_DICTIONARY_GLYPHWIKI_BATCH1514_STROKES as expected,GLYPHWIKI_BATCH1514_SOURCE_INPUT as input,GLYPHWIKI_BATCH1514_REGISTRATION_AUTHORIZED as authorized,GLYPHWIKI_BATCH1514_RUNTIME_APPLIED as runtime} from './hanja-stroke-dictionary-glyphwiki-batch1514.ts'
+const read=(p:string)=>JSON.parse(readFileSync(new URL('../'+p,import.meta.url),'utf8')),hash=(s:string|Uint8Array)=>createHash('sha256').update(s).digest('hex'),bundle=()=>read('public/hanja-strokes/dictionary-reviewed-glyphwiki-batch1514.json')
+test('1514 actual same-glyph authored terminal capture binds finite native evidence',()=>{
+ assert.strictEqual(load(bundle()),expected);assert.equal(authorized,true);assert.equal(runtime,true);
+ for(const pin of [input.fixture,input.authoredFull5,input.sourceOverrides,input.staticReview,input.canonicalStaticReview,input.domesticClock2Review,input.finalNativeReview,input.renderer,input.outlineHelper])assert.equal(hash(readFileSync(new URL('../'+pin.path,import.meta.url))),pin.SHA256);
+ for(const[p,pin]of Object.entries(input.inputSHA256))assert.equal(hash(readFileSync(new URL('../'+p,import.meta.url))),pin);
+ const f=read(input.fixture.path),n=read(input.finalNativeReview.path),full=read(input.authoredFull5.path),d=expected[0];assert.equal(n.approval.registrationAuthorized,true);assert.equal(n.runtimeAppliedAtReview,false);assert.equal(n.sourceIdentity.mixedParts,false);assert.equal(n.sourceIdentity.isActualLocallyAuthoredEngineCapture,true);assert.equal(n.sourceIdentity.sourceTraceDescribesAuthoredRecipient,true);assert.equal(n.limitations.actualAppUI,false);assert.equal(n.limitations.originalMicroclockEquivalence,false);assert.equal(n.limitations.wholeNaturalAutoplayTest,false);
+ assert.equal(n.native.compact9Pens.length,12);assert.equal(n.native.curveStartRelease3.length,11);assert.deepEqual([n.native.aggregateInitial.samples,n.native.aggregateCompoundBoundary.samples,n.native.aggregateEnding.samples],[32,6,48]);assert.equal(n.native.fullRoundResidual.curveMasks,11);assert.equal(n.native.stateChecks.count,20);assert.deepEqual(n.native.stateChecks.failed,[]);assert.deepEqual(n.native.allObservedBadAndErrors,[]);
+ assert.deepEqual(Object.keys(full).sort(),['defaults','engineHashes','engineRevision','groups','trace']);assert.equal(full.groups.flatMap((g:{polygons:unknown[]})=>g.polygons).length,37);assert.deepEqual(full.groups.map((g:{polygons:unknown[]})=>g.polygons),full.trace.map((row:{polygons:unknown[]}[])=>row.flatMap(c=>c.polygons)));
+ assert.equal(d.glyph,'燄');assert.deepEqual(d.outlines,f.strokes);assert.equal(hash(JSON.stringify(d.outlines)),input.fixture.geometrySHA256);assert.equal(n.fixtureSHA256,input.fixture.SHA256);assert.deepEqual(d.paths,d.outlines?.map(row=>row.map(s=>s.outline).join(' ')));assert.equal(hash(JSON.stringify(d.paths)),d.pathsSha256);assert.equal(d.sourceReference.geometryReviewSha256,input.finalNativeReview.SHA256);
+ assert.equal(input.locallyAuthoredRoot,true);assert.equal(input.mixedParts,false);assert.equal(input.originalWhole,false);assert.equal(input.originalPublicRoot,false);assert.equal(input.isOriginalEngineCapture,false);assert.equal(input.isActualLocallyAuthoredEngineCapture,true);assert.equal(input.sourceTraceDescribesAuthoredRecipient,true);assert.equal(input.actualAppUIFresh,false);assert.equal(input.originalMicroclockEquivalence,false);assert.deepEqual(input.radius7MathematicalProofUnresolvedPens,[11,15,16]);assert.equal(input.finiteNativeResidualAll11Blank,true);assert.equal(d.geometryLicense?.spdx,'LicenseRef-GlyphWiki');assert(Object.isFrozen(d.outlines?.[0][0]));assert(Object.isFrozen(input.inputSHA256));
+})
+test('1514 exact16 pens18 masks37 P and11 gates reject15/17 counts and source-policy changes',()=>{
+ const d=expected[0];assert.equal(d.paths.length,16);assert.equal(d.outlines?.flat().length,18);assert.equal(d.outlines?.flat().reduce((n,s)=>n+(s.outline.match(/M/g)||[]).length,0),37);assert.equal(d.outlines?.flat().filter(s=>s.revealStartGate).length,11);assert.equal(d.outlines?.flat().filter(s=>s.revealTransform).length,0);
+ for(const s of d.outlines!.flat().filter(s=>s.revealStartGate)){assert.equal(s.revealWidth,14);assert.equal(s.revealStartGate?.padding,7)}
+ for(const count of[15,17])for(const key of ['paths','outlines','sourceStrokeIndices']){const b=bundle();b[0][key]=count===15?b[0][key].slice(0,15):[...b[0][key],b[0][key][0]];assert.throws(()=>load(b))}
+ for(const key of ['outline','bounds','direction','weight']){const b=bundle();delete b[0].outlines[0][0][key];assert.throws(()=>load(b))}
+ for(const key of ['revealPath','revealWidth','revealStartGate']){const b=bundle();delete b[0].outlines[0][0][key];assert.throws(()=>load(b))}
+ for(const key of ['unit','minProjection','firstProjection','padding','until','bounds']){const b=bundle();b[0].outlines[0][0].revealStartGate[key]=null;assert.throws(()=>load(b))}
+ const changed=bundle();changed[0].outlines[0][0].revealWidth=16;assert.throws(()=>load(changed));const review=bundle();review[0].sourceReference.geometryReviewSha256='0'.repeat(64);assert.throws(()=>load(review));
+})
+test('1514 strict JSON capsule rejects hostile descriptors and freezes independent identity',()=>{
+ const invoke=load as(...a:unknown[])=>unknown;assert.throws(()=>invoke());assert.throws(()=>invoke(bundle(),0));for(const value of[null,undefined,[],{},'x'])assert.throws(()=>load(value));
+ const extra=bundle();extra[0].extra=1;assert.throws(()=>load(extra));const sym=bundle();sym[0][Symbol('extra')]=1;assert.throws(()=>load(sym));const hidden=bundle();Object.defineProperty(hidden[0],'hidden',{value:1});assert.throws(()=>load(hidden));
+ const inherited=bundle();Object.setPrototypeOf(inherited[0],{});assert.throws(()=>load(inherited));const np=bundle();Object.setPrototypeOf(np[0],null);assert.throws(()=>load(np));const sparse=bundle();delete sparse[0].outlines[0][0];assert.throws(()=>load(sparse));
+ let reads=0;const getter=bundle();Object.defineProperty(getter[0].outlines[0][0],'weight',{enumerable:true,get(){reads++;return 0}});assert.throws(()=>load(getter));assert.equal(reads,0);
+ const reversed=JSON.parse(JSON.stringify(bundle(),(_k,v)=>v&&typeof v==='object'&&!Array.isArray(v)?Object.fromEntries(Object.entries(v).reverse()):v));assert.strictEqual(load(reversed),expected);
+})

@@ -1,0 +1,9 @@
+# 燄 batch1514 provenance and finite review
+
+This is a locally authored same-glyph terminal edit, with mixedParts=false. A separate local child/root graph changes only the terminal field4 to0 in cdp-8b6c-03 row3; coordinate tokens remain unchanged. The fresh pinned KAGE run produced the actual authored full5 capture (SHA256 fff82a46568c51ba1ea2f4b0d4ba179ced0d927dca086368513a3bc7a156a025), whose trace describes the locally authored recipient. It is not an original upstream public root or original-public capture. No cross-glyph donor geometry is used.
+
+Source geometry is normalized200→100 once, without a y flip, preserving16 logical outlines,18 masks and37 original generated polygons. All11 source-start gates use width14/padding7 and control-polygon-length upper-bound author display weights. These are not publisher microclock equivalence.
+
+[native-final review](u71c4-native-final-review.json), SHA256 7fab6b6eca918256fe140b3a4acbd9e4b983a9bf33d8768a230bc9fcf065a5d9, approves finite isolated actual-component observations and registration. It records12 compact9 pen boards,11 start-release targets,32 initial/6 boundary/48 ending samples,11 blank full-round residuals, selected pen2 natural replay and20 state checks. Earlier numerical preflight did not prove radius7 continuous coverage for pens11/15/16; finite blank residual observations do not turn that into an infinite-time or continuous mathematical proof. Actual app UI, whole natural autoplay and publisher geometry identity remain unclaimed. Native review preceded runtime activation.
+
+License: GlyphWiki Project and contributors, LicenseRef-GlyphWiki, pinned [license revision18](https://glyphwiki.org/wiki/GlyphWiki:データ・記事のライセンス@18). The capsule lists the pinned2016 source archive, actual engine revision, local edit and source references. Earlier source trial files remain historical artifacts.
