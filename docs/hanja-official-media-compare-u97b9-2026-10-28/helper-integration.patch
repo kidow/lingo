@@ -1,0 +1,12 @@
+*** Begin Patch
+*** Update File: /Users/kidow/Documents/dev/kidow/lingo/scripts/hanja-official-media-compare.py
+@@
++    elif path == ROOT/'docs/hanja-official-media-compare-u97b9-2026-10-28/config.json':
++        require(config['glyph']=='鞹' and config['sourceRoot']=='u97b9' and config['domesticClips']==20 and config['allowedStrokes']==[17] and config['defaultStroke']==17 and config['metadataFile']=='docs/hanja-goal-glyphwiki-batch448-2026-10-09/metadata.json', 'Exact 鞹 original pen17 clock-only config required')
++        require(config['metadataSHA256']=='763cf0499a6185156c79e2254bad3d2c80b01645cdd77561a2e668ce703c5d6d' and metadata['glyph']=='鞹' and metadata['candidate']['strokes']==20, 'Pinned original 鞹20 metadata required; do not invent missing dictionary.clips')
++        safe_raw=pinned_path('docs/hanja-official-media-compare-u97b9-2026-10-28/safe-source-metadata.json').read_bytes()
++        require(sha(safe_raw)=='cbc6e305c6772bed0ddeb52f25941f7e178c5b8b5acae7807db1a0693bb24461', 'Exact 鞹 safe timing metadata required')
++        safe=json.loads(safe_raw)
++        require(safe['glyph']=='鞹' and safe['sourceRoot']=='u97b9' and safe['sourceRootIsAuditContextOnly']is True and safe['selectedWholeRoot']is None and safe['catalogStrokes']==20 and safe['publisherTimedPaths']==20 and safe['fetchFacts']['clips']==20 and safe['fetchFacts']['SHA256']==config['media']['svg']['sha256'] and safe['cssSHA256']==CSS['sha256'] and safe['bodyOutputOrFileSaved']is False and safe['logicalPensFromTimingApproved']is False and safe['sourceRawMappingApproved']is False and config['svgRoot']==safe['svgRoot'] and config['timedPaths']==safe['timedPaths'], 'Clock-only control does not approve new filled geometry, source mapping or coordinates')
+     elif path == ROOT/'docs/hanja-official-media-compare-u8585-2026-10-28/config.json':
+*** End Patch
