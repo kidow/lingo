@@ -1,0 +1,128 @@
+{
+  "schema": "hanja-public-source-target-carrier-check/v1",
+  "glyph": "櫜",
+  "inputs": {
+    "docs/hanja-goal-glyphwiki-batch438-2026-10-09/engine-proof.json": "e0ddc60691b7d6e4050407cc2d08fccd414ba5e8cb2c5a83ff04ec21d9cdfece",
+    "docs/hanja-official-media-compare-u6adc-2026-10-29/captured-hkm-engine-proof.json": "2d7be08884f0091076badb7c6e8c87be20105c1e7d3c524d707fdfa745df687a",
+    "docs/hanja-official-media-compare-u6adc-2026-10-29/captured-hkm-receipt.json": "2bc81d94bc1a30f1817e477920161234e23e6b68d6f5543f0994fb31e16d4ced"
+  },
+  "targets": [
+    {
+      "label": "오른쪽 첫 대상",
+      "default": {
+        "raw": 18,
+        "primitive": "line",
+        "start": [
+          127.9,
+          71.55
+        ],
+        "end": [
+          127.9,
+          101.15
+        ],
+        "net": "down"
+      },
+      "hkm": {
+        "raw": 14,
+        "primitive": "quadratic",
+        "Q": [
+          137.8,
+          73.84,
+          127,
+          93.52,
+          100,
+          105
+        ],
+        "flags": [
+          0,
+          7
+        ],
+        "bounds": [
+          99.6,
+          70.8,
+          144.2,
+          105.8
+        ],
+        "net": "left/down",
+        "P": 3
+      }
+    },
+    {
+      "label": "오른쪽 다음 대상",
+      "default": {
+        "raw": 19,
+        "primitive": "line",
+        "start": [
+          127.9,
+          86.35
+        ],
+        "end": [
+          174.7,
+          86.35
+        ],
+        "net": "right"
+      },
+      "hkm": {
+        "raw": 15,
+        "primitive": "quadratic",
+        "Q": [
+          128.8,
+          86.14,
+          150.4,
+          91.06,
+          161.2,
+          101.72
+        ],
+        "flags": [
+          7,
+          8
+        ],
+        "bounds": [
+          129.5,
+          85.4,
+          165,
+          105.5
+        ],
+        "net": "right/down",
+        "P": 2
+      }
+    }
+  ],
+  "hkmLeaf": {
+    "name": "hkcs_m5904-p03-s00",
+    "version": 1,
+    "rows": [
+      {
+        "leafRow": 5,
+        "capturedRaw": 14,
+        "data": "2:0:7:142:24:130:72:100:100"
+      },
+      {
+        "leafRow": 6,
+        "capturedRaw": 15,
+        "data": "2:7:8:132:54:156:66:168:92"
+      }
+    ],
+    "coordinatePlacement": [
+      0.9,
+      0,
+      0,
+      0.41,
+      10,
+      64
+    ],
+    "placementIsExistingCaptureNotNewAuthoring": true
+  },
+  "limits": {
+    "sameRawNumberIsNotSameRole": true,
+    "hkmWholeHold": "오른쪽 첫 carrier는 V가 필요한 위치에서 DL임. HKm 전체 자형 PASS 아님.",
+    "hkmRaw15OnlyPotentialDRDonor": true,
+    "noDonorPlacementApproved": true,
+    "newEngine": 0,
+    "newGeometry": 0
+  },
+  "page": {
+    "path": "docs/hanja-official-media-compare-u6adc-2026-10-29/default-hkm-original-compare-v2.html",
+    "sha256": "0f5fcfa16a54dd74221d582bfe968782ec7f85be2d53fe675fc1fc78868e49a2"
+  }
+}
