@@ -1,0 +1,51 @@
+{
+  "schema": "hanja-authored-MM-component-adapter-check/v1",
+  "date": "2026-10-28",
+  "glyph": "孽",
+  "adapter": {
+    "path": "scripts/hanja-static-authored-mm-u5b7d-components.py",
+    "SHA256": "1916e95108eac816fe930bc9d9d9598dcb39bf124c8074a5b438aaffa584f2ee"
+  },
+  "config": {
+    "path": "docs/hanja-authored-mm-u5b7d-components-2026-10-28/config.json",
+    "SHA256": "bb9455bd54f3a853e15edd77ef16a1a58e56aa373bc5feee44ad172482022a69"
+  },
+  "recipe": {
+    "path": "docs/hanja-authored-mm-u5b7d-components-2026-10-28/recipe.json",
+    "SHA256": "d8bfa56282a8422d5a55b849c3d5dba1987f0c1af985c05133a11ef653da0c4f"
+  },
+  "readiness": {
+    "path": "docs/hanja-authored-mm-u5b7d-components-2026-10-28/readiness.json",
+    "SHA256": "7012f81d61f63380ad4a5f2427a796707d695039b843f9935e72ea6d4c096122"
+  },
+  "command": "python3 -B scripts/hanja-static-authored-mm-u5b7d-components.py --config docs/hanja-authored-mm-u5b7d-components-2026-10-28/config.json --config-sha bb9455bd54f3a853e15edd77ef16a1a58e56aa373bc5feee44ad172482022a69 --check-only",
+  "exitCode": 0,
+  "result": "PASS",
+  "checks": {
+    "originalRecipientPaths": 19,
+    "originalDonorPaths": 2,
+    "retainedBodyPaths": 16,
+    "authoredParts": 20,
+    "originalPathStringsChanged": false,
+    "originalMediansChanged": false,
+    "sourceYFlipCount": 1,
+    "wholeOnlyRoutes": true,
+    "HTTP": 0,
+    "server": 0,
+    "engine": 0,
+    "projection": 0
+  },
+  "scope": {
+    "originalWhole": false,
+    "originalMMWhole": false,
+    "locallyAuthoredRoot": true,
+    "mixedParts": true,
+    "mappingApproved": false,
+    "directionApproved": false,
+    "nativeApproval": false,
+    "runtimeApplied": false
+  },
+  "pending": [
+    "ROOT browser whole comparison of this locally authored mixed composition; no temporal approval or exact filled-contact proof."
+  ]
+}
