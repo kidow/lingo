@@ -497,8 +497,23 @@ export function dictionarySourceReference(glyph: string) {
   }
 }
 
+export type HanjaGeometryLicense = Readonly<{
+  spdx?: string
+  name?: string
+  url: string
+  attribution: string
+  sourceUrl: string
+  sourceUrls?: readonly string[]
+  revision: string
+  modifications: string
+  editableSource?: string
+  editableSourceDraft?: string
+}>
+
 export type HanjaDictionaryStrokeData = {
   glyph: string
+  /** Geometry attribution retained by the batch loader alongside its fixed source. */
+  geometryLicense?: HanjaGeometryLicense
   /** When present, paths are filled outlines, not centerlines. */
   outlines?: import('./hanja-stroke-outline.ts').HanjaOutlineStrokes
   /** Optional source-derived width in the normalized 100-unit viewBox; pinned by its batch loader. */
