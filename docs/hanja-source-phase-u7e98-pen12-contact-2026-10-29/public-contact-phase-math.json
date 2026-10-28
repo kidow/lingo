@@ -1,0 +1,83 @@
+{
+  "schema": "hanja-pen12-contact-phase-public-math/v1",
+  "date": "2026-10-29",
+  "glyph": "纘",
+  "inputSHA256": {
+    "docs/hanja-authored-ownstroke-u7e98-cross-contact-v2-2026-10-29/fixtures-execution-draft.json": "b6889acd4fdf6234ae8ad4000d088057dd8fb3b1216cd1e71ad10c329e3c8d98",
+    "docs/hanja-authored-ownstroke-u6030-raw6-head-gap-2026-10-29/verify-contact-strip-growth.py": "945d1d0f0297b056cd6e10049ee01a38271c1989e6676b528532656f411252ea"
+  },
+  "shape": [
+    25,
+    31,
+    62
+  ],
+  "sourceRaw": [
+    14,
+    15
+  ],
+  "priorP": 1,
+  "nextP": 3,
+  "oldBoundary": "11000000000000000/34517101220135697",
+  "oldBoundaryFloat": 0.31868261270975745,
+  "observedGlobal": 0.375,
+  "observedActiveMask": 2,
+  "observedNextLocal": 0.08265954801803883,
+  "priorCompletedAtObservation": true,
+  "sourceQStart100": [
+    "9989/200",
+    "43"
+  ],
+  "sourceQStartOutsidePrior": true,
+  "positiveContactArea100": "1417533/127600",
+  "maxPositiveCellArea100": "148445027091/33381473600",
+  "contactComponent": [
+    1,
+    1
+  ],
+  "strictSeed100": [
+    "466597343681/8345368400",
+    "1139142703/29385100"
+  ],
+  "criticalX": 26,
+  "sliceChecks": 51,
+  "nextUnionXMonotone": true,
+  "violations": [],
+  "nextBounds100": [
+    "241/5",
+    "711/20",
+    "1301/20",
+    "929/20"
+  ],
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "sourceCause": "At global .375 raw14 V is already complete. The active source is raw15 H at local .082659548; its Q head lies below-left outside completed V. The detached low future fragment belongs to raw15 H head, not an additional V.",
+  "candidatePlan": {
+    "VEnd": 0.31868261270975745,
+    "leftHeadEnd": 0.5325830087935445,
+    "seedX": 55.91093422322734,
+    "seedY": 38.76599715502074,
+    "HBounds": [
+      48.2,
+      35.55,
+      65.05,
+      46.45
+    ],
+    "sourceVWeight": 11,
+    "sourceHWeight": 23.517101220135697,
+    "authorWeightRule": "Preserve original V weight boundary, split remaining H display by own seed-to-leftmost excursion versus own fullH xspan. Original Q retained as provenance only."
+  },
+  "argument": [
+    "Raw15 original3P union has one connected vertical interval at all26 sourcevertex/edgecross critical x and51 critical/open interval slices.",
+    "A strict positive-area raw14V/raw15H contact seed is obtained from an exact convex intersection cell centroid.",
+    "Retain complete original V; seed-to-left strip has positive overlap with V for positive width and connected original H union. At leftHeadEnd it equals ownleftbound..seed, then same strip right boundary grows to ownmax.",
+    "All original62 filledP and original sourceQ strings remain unchanged. No bridge, crop, guessed sourceQ or private geometry is introduced."
+  ],
+  "limitations": [
+    "Fractions certify the exact serialized public fixture coordinate strings, not unavailable font master curves.",
+    "The left-head excursion and phase weights are an explicit author display, not original publisher retracing or microclock.",
+    "Native visual start/transition/complete and natural playback remain unapproved."
+  ],
+  "sharedFilesChanged": 0,
+  "servers": 0,
+  "buildRun": false
+}
