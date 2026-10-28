@@ -1,0 +1,116 @@
+{
+  "schema": "hanja-legacy-proof4-static-readiness/v1",
+  "date": "2026-10-29",
+  "glyph": "怰",
+  "catalogStrokes": 8,
+  "expectedDomesticClips": 8,
+  "sourceRawGroups": 10,
+  "sourceCalls": 10,
+  "sourceP": 23,
+  "config": {
+    "path": "docs/hanja-source-raw-compare-u6030-legacy-original-2026-10-29/config.json",
+    "SHA256": "3bfeca13c0daa2db2662108dfc87d818586f272b018bb09a57026ef44a13ac1b"
+  },
+  "adapter": {
+    "path": "docs/hanja-source-raw-compare-u6030-legacy-original-2026-10-29/compare.py",
+    "SHA256": "6b6284eb0aa2931b54677ccb10ebbeb48c6ec31f28dd689b9f146f49f2e4ad31"
+  },
+  "legacyProof": {
+    "path": "docs/hanja-goal-glyphwiki-batch126-2026-09-27/engine-proof.json",
+    "SHA256": "fef26dbd710dac54ff97f9040e0636f5e3f45fd0687ee47f46f8ae5e444e2242"
+  },
+  "separateTrace": {
+    "path": "docs/hanja-goal-glyphwiki-batch126-2026-09-27/draw-trace.json",
+    "SHA256": "98731d24ca0671b759673c24437cdfe84c0f0628d5830ebf99598c4f98f80412"
+  },
+  "sourceRecords": {
+    "path": "docs/hanja-goal-glyphwiki-batch126-2026-09-27/sources.json",
+    "SHA256": "01f3431dc7e3a855ec307611faae5be360873b69e67a022c9f41c02986083016"
+  },
+  "priorFindings": {
+    "path": "docs/hanja-goal-glyphwiki-batch126-2026-09-27/findings.json",
+    "SHA256": "8fade38dddfc8e1a3b89b9f301fca9e62b85d900e9551f601ed634d63881ebc1"
+  },
+  "priorRecentReadiness": {
+    "path": "docs/hanja-goal-glyphwiki-batch126-2026-09-27/whole-and-proof-readiness-2026-10-28.json",
+    "SHA256": "f3813836e971768d92ff7ce760ffd1332a0445ac8b62dfb9196d743e07131bf8"
+  },
+  "retainedProofKeys": [
+    "engineRevision",
+    "hashes",
+    "groups",
+    "defaults"
+  ],
+  "actualFull5Claim": false,
+  "sourceAndTraceOrderedPExactlyEqual": true,
+  "unresolved": {
+    "compound6": {
+      "sourceRaw": [
+        6,
+        7
+      ],
+      "end": [
+        106.66,
+        97
+      ],
+      "nextStart": [
+        86.52,
+        82
+      ]
+    },
+    "compound7": {
+      "sourceRaw": [
+        8,
+        9
+      ],
+      "end": [
+        91.82,
+        174
+      ],
+      "nextStart": [
+        72.74,
+        177
+      ]
+    },
+    "whole": "Legacy Mincho sixth upper region attaches to topH unlike prior domestic gap; ROOT fresh whole recheck required.",
+    "retracingInferred": false,
+    "bridgeAdded": false
+  },
+  "checks": {
+    "runs": 1,
+    "status": 0,
+    "result": {
+      "guardPass": true,
+      "glyph": "怰",
+      "root": "u6030",
+      "catalog": 8,
+      "domestic": 8,
+      "raw": 10,
+      "calls": 10,
+      "polygons": 23,
+      "legacyProof4AndSeparateTrace": true,
+      "newFull5Claim": false,
+      "originalSourceUnchanged": true,
+      "wholeAndIndependentSelectors": "PASS",
+      "HTTP": 0,
+      "server": 0,
+      "engine": 0,
+      "nativeApproval": false
+    }
+  },
+  "approval": {
+    "whole": false,
+    "sourceMapping": false,
+    "continuousTraversal": false,
+    "native": false,
+    "runtime": false
+  },
+  "execution": {
+    "newEngine": 0,
+    "privateFetch": 0,
+    "server": 0,
+    "browser": 0,
+    "sharedChanges": 0,
+    "build": 0
+  }
+}
