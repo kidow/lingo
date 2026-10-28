@@ -1,0 +1,120 @@
+{
+  "schema": "hanja-shared-authored-mixed-curve-donor-compare/v1",
+  "kind": "authored-mixed-curve-donor-u97b9-u7f96",
+  "glyph": "鞹",
+  "catalogStrokes": 20,
+  "sourceViewBox": "0 0 200 200",
+  "host": "127.0.0.1",
+  "defaultSource": "candidate",
+  "sourceRoots": {
+    "recipient": {
+      "root": "u97b9",
+      "sourceGlyph": "鞹",
+      "rawGroups": 24,
+      "polygons": 42,
+      "proofKind": "fixed original recipient four-field source + separate trace"
+    },
+    "donor": {
+      "root": "u7f96",
+      "sourceGlyph": "羖",
+      "rawGroups": 13,
+      "polygons": 32,
+      "proofKind": "fixed public upward donor; prior horizontal-role HOLD is preserved"
+    },
+    "candidate": {
+      "root": "lingo-u97b9-u7f96-upward-donor-v1",
+      "sourceGlyph": "鞹",
+      "rawGroups": 24,
+      "polygons": 43,
+      "proofKind": "LOCAL-AUTHORED mixed public curve donor; not original engine capture"
+    }
+  },
+  "domestic": {
+    "glyph": "鞹",
+    "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/9700/97b9.svg",
+    "status": 200,
+    "bytes": 9625,
+    "sha256": "b280d0b5e092e6ab1d87e7acdb20313923e07289b7cfa908ff9463e247b05de4",
+    "privateMediaSaved": false,
+    "clips": 20
+  },
+  "sharedServe": {
+    "path": "docs/hanja-source-raw-compare-u8a29-2026-10-21/serve.py",
+    "SHA256": "ba91ba7f00bc2e4899ca4d3c69d03ab5cd6f8b0a9f888899eea49aa69a58665d"
+  },
+  "materializer": {
+    "path": "docs/hanja-authored-donor-u97b9-u7f96-2026-10-28/materialize-draft.py",
+    "SHA256": "cd98e409710704a49f706f6acbcd0b7760993ef87fbb493ef7696b2708ca712c"
+  },
+  "fixture": {
+    "path": "docs/hanja-authored-donor-u97b9-u7f96-2026-10-28/fixtures-draft.json",
+    "SHA256": "907d45becbcfdbbd257c85b73d94e1a5c20ad248bed706829d73a32fd32534db"
+  },
+  "metadata": {
+    "path": "docs/hanja-goal-glyphwiki-batch448-2026-10-09/metadata.json",
+    "SHA256": "763cf0499a6185156c79e2254bad3d2c80b01645cdd77561a2e668ce703c5d6d"
+  },
+  "sourceRootWasAuthored": true,
+  "sameSourceDerived": false,
+  "mixedPublicSources": true,
+  "candidateOriginalRoot": false,
+  "isOriginalEngineCapture": false,
+  "sourceTraceDescribesAuthoredRecipient": false,
+  "noPartialAnimation": true,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "changedRawIndexZeroBased": 19,
+  "changedRawSlotOneBased": 20,
+  "changedLogicalPenOneBased": 17,
+  "showPublicGuideEndpoints": true,
+  "holdSummary": "UNAPPROVED mixed public donor: genuine upward Q donor from 羖 raw5 is placed only into 鞹 zeroBased raw19 (viewer raw20 / proposed logical17). All recipient23 other groups remain. Its endpoints reuse the arbitrary previous author -0.2 target, not domestic measurements; the Q middle is the transformed original donor control point. Prior H-shear HOLD and donor's incompatibility with 羖 horizontal stay preserved. New tip, font fit, contacts, whole and animation remain unapproved.",
+  "reviewPlan": [
+    {
+      "id": "whole",
+      "route": "/whole",
+      "goal": "Compare domestic recipient20, original recipient24raw/42P, public donor specimen13raw/32P and mixed candidate24slot/43P. Donor specimen is a separate glyph/source, not the target whole."
+    },
+    {
+      "id": "donor",
+      "route": "/compare?source=donor&domestic=17&raw=6&dview=single&rview=single",
+      "goal": "Inspect original public donor3P and original three-point Q guide. Its earlier HOLD in 羖 horizontal role neither rejects nor approves this different-role candidate."
+    },
+    {
+      "id": "recipient-original",
+      "route": "/compare?source=recipient&domestic=17&raw=20&dview=single&rview=single",
+      "goal": "Retain original horizontal recipient P/guide as canonical source facts, separate from author trials."
+    },
+    {
+      "id": "new-tip",
+      "route": "/compare?source=candidate&domestic=17&raw=20&dview=single&rview=single",
+      "goal": "Inspect actual transformed3P and three-point Q guide. Compare the tapered ascending tip with domestic17; no direction, slope, filled shape or serif compatibility is yet approved."
+    },
+    {
+      "id": "contact",
+      "route": "/whole",
+      "goal": "Check the new3P against every retained recipient neighbor and overall font consistency. Positive affine determinant and exact source preservation do not prove new contacts."
+    }
+  ],
+  "approval": {
+    "donorSuitability": false,
+    "geometry": false,
+    "directionMapping": false,
+    "contact": false,
+    "whole": false,
+    "native": false,
+    "runtime": false
+  },
+  "inputSHA256": {
+    "docs/hanja-authored-donor-u97b9-u7f96-2026-10-28/materialize-draft.py": "cd98e409710704a49f706f6acbcd0b7760993ef87fbb493ef7696b2708ca712c",
+    "docs/hanja-authored-donor-u97b9-u7f96-2026-10-28/fixtures-draft.json": "907d45becbcfdbbd257c85b73d94e1a5c20ad248bed706829d73a32fd32534db",
+    "docs/hanja-goal-glyphwiki-batch448-2026-10-09/metadata.json": "763cf0499a6185156c79e2254bad3d2c80b01645cdd77561a2e668ce703c5d6d",
+    "docs/hanja-source-raw-compare-u8a29-2026-10-21/serve.py": "ba91ba7f00bc2e4899ca4d3c69d03ab5cd6f8b0a9f888899eea49aa69a58665d",
+    "docs/hanja-goal-glyphwiki-batch448-2026-10-09/engine-proof.json": "523b330f9910eebed458929133783b90a9086562606e44aa77c1c80ad8a96128",
+    "docs/hanja-goal-glyphwiki-batch448-2026-10-09/draw-trace.json": "161271d4cfdaacf696844a0cb1a1d8e73507dd5acb0a4dfb229f678472a6a68b",
+    "docs/hanja-goal-glyphwiki-batch440-2026-10-09/engine-proof.json": "45ba067fd16a3708ca81c2f157f1839d4d67d88e8830701009d51318b746b2e2",
+    "docs/hanja-goal-glyphwiki-batch440-2026-10-09/draw-trace.json": "056f077df90a6410c1d2391ddb0969b99a06121f5c42dfba2dc1d469f213abff",
+    "docs/hanja-authored-ownstroke-u97b9-2026-10-28/fixtures-draft.json": "b11cfd743b0f2a9c83f95376a3425af02c2f4d65d654fbcfda6831930b294f2a",
+    "docs/hanja-goal-glyphwiki-batch448-2026-10-09/validation.json": "9f172435959c48ff07de4afda53279f667d671d2f76bb3b056ee172bf16144bf"
+  },
+  "launcherSHA256": "772247ca972c76e574f9d48000d100054a2eba60906dd0050f3a8ee26af41b8c"
+}

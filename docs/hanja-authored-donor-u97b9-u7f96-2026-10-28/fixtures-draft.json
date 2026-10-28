@@ -1,0 +1,55 @@
+{
+  "schema": "hanja-mixed-public-curve-donor-draft-v1",
+  "date": "2026-10-28",
+  "glyph": "鞹",
+  "variantId": "u97b9-author-u7f96-upward-tip-to-minus-point-two-endpoints",
+  "status": "unapproved-new-tip-comparison-hypothesis",
+  "recipient": {
+    "glyph": "鞹",
+    "proofPath": "docs/hanja-goal-glyphwiki-batch448-2026-10-09/engine-proof.json",
+    "proofSHA256": "523b330f9910eebed458929133783b90a9086562606e44aa77c1c80ad8a96128",
+    "tracePath": "docs/hanja-goal-glyphwiki-batch448-2026-10-09/draw-trace.json",
+    "traceSHA256": "161271d4cfdaacf696844a0cb1a1d8e73507dd5acb0a4dfb229f678472a6a68b",
+    "changedRawIndexZeroBased": 19,
+    "changedLogicalPenOneBased": 17
+  },
+  "donor": {
+    "glyph": "羖",
+    "proofPath": "docs/hanja-goal-glyphwiki-batch440-2026-10-09/engine-proof.json",
+    "proofSHA256": "45ba067fd16a3708ca81c2f157f1839d4d67d88e8830701009d51318b746b2e2",
+    "tracePath": "docs/hanja-goal-glyphwiki-batch440-2026-10-09/draw-trace.json",
+    "traceSHA256": "056f077df90a6410c1d2391ddb0969b99a06121f5c42dfba2dc1d469f213abff",
+    "rawIndexZeroBased": 5,
+    "raw": [2,0,7,12.38,135.34,43.52,125.24,91.095,110.09,null,null],
+    "polygons": 3,
+    "polygonVertices": [22,3,3],
+    "polygonsECMAScriptJSONSHA256": "91710a50f21c2949d95e55a77abd2142542a52bf1bc76f1aed831fe53cc948be",
+    "selectionBasis": "A fixed public upward-curve filled donor is available. It was incompatible with 羖's domestic fifth horizontal and remains HOLD there; that failure does not approve it for 鞹. Its taper is only a new comparison hypothesis."
+  },
+  "authorTarget": {
+    "previousFixturePath": "docs/hanja-authored-ownstroke-u97b9-2026-10-28/fixtures-draft.json",
+    "previousFixtureSHA256": "b11cfd743b0f2a9c83f95376a3425af02c2f4d65d654fbcfda6831930b294f2a",
+    "previousVariantId": "author-shear-minus-0.2",
+    "endpointsExact": [["862201/12500","74464141999999999/500000000000000"],["6922945999999999/50000000000000","67515858000000001/500000000000000"]],
+    "definition": "Reuse exactly the public recipient raw19 endpoints after its previous explicitly arbitrary author slope -0.2 about the frozen public guide center. Neither slope nor endpoints are publisher measurements. The transformed donor has these same endpoints; its middle curve shape is not the previous straight-line guide."
+  },
+  "matrixRational": ["3474141999999999/3935750000000000","2838358000000001/19678750000000000","0","1","11423136445000000619/196787500000000000","18580925737999995861/1574300000000000000"],
+  "transformDefinition": "x'=a*x+e; y'=b*x+y+f. Choose a/e to map donor endpoint x-span to the public author target span, then b/f to map both endpoint y values. d=1 and determinant a>0. Apply this same affine map to all three original filled polygons and all three quadratic guide points, with original off flags retained.",
+  "previousTrials": {
+    "status": "HOLD-to-new-tip-comparison",
+    "filesPreserved": true,
+    "reportedBy": "ROOT direct static comparison",
+    "observedCounterexample": "The -0.2 own-H shear is net ascending but retains the original horizontal's upper-right serif, unlike the domestic seventeenth tapered ascending tip.",
+    "nativeApprovalForEitherPreviousTrial": false
+  },
+  "sameSourceDerived": false,
+  "locallyAuthored": true,
+  "mixed": true,
+  "originalRoot": false,
+  "isOriginalEngineCapture": false,
+  "sourceTraceDescribesAuthoredRecipient": false,
+  "fillRule": "nonzero",
+  "eachPolygonPaintedSeparately": true,
+  "approval": {"donorSuitability":false,"geometry":false,"directionMapping":false,"contact":false,"whole":false,"native":false,"runtime":false},
+  "privateCoordinatesUsedOrCopied": false
+}

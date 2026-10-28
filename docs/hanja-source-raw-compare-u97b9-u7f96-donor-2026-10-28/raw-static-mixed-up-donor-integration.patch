@@ -1,0 +1,68 @@
+*** Begin Patch
+*** Update File: scripts/hanja-raw-static-compare.py
+@@
+ 
++MIXED_CURVE_U97B9_U7F96={'config': 'docs/hanja-source-raw-compare-u97b9-u7f96-donor-2026-10-28/config.json', 'configSemanticSHA256': '67f56d080cd6a5d970d5a7d3d8344635bef465f6925bc46e7a6b3b14cc659cd3'}
++
++def load_mixed_curve_u97b9_u7f96(config,config_path):
++    semantic={k:v for k,v in config.items()if k!='launcherSHA256'}
++    require(config_path==ROOT/MIXED_CURVE_U97B9_U7F96['config'] and digest(json.dumps(semantic,sort_keys=True,separators=(',',':'),ensure_ascii=False).encode())==MIXED_CURVE_U97B9_U7F96['configSemanticSHA256'],'exact mixed public upward-donor config required')
++    require(hexsha(config.get('launcherSHA256')) and config['kind']=='authored-mixed-curve-donor-u97b9-u7f96' and config['glyph']=='鞹' and config['catalogStrokes']==config['domestic']['clips']==20 and config['sourceViewBox']=='0 0 200 200' and config['host']=='127.0.0.1','one static mixed-donor context required')
++    require(config['sourceRootWasAuthored']is True and config['sameSourceDerived']is False and config['mixedPublicSources']is True and config['candidateOriginalRoot']is False and config['isOriginalEngineCapture']is False and config['sourceTraceDescribesAuthoredRecipient']is False and config['nativeApproval']is False and config['runtimeApplied']is False and config['noPartialAnimation']is True and all(v is False for v in config['approval'].values()),'mixed authored geometry and approval scopes must stay separate')
++    require(config['sharedServe']=={'path':SHARED,'SHA256':SHARED_SHA},'unchanged static renderer/HTTP required')
++    for file,pin in config['inputSHA256'].items():require(hexsha(pin)and digest(pinned_path(file).read_bytes())==pin,'mixed public donor input changed: '+file)
++    metadata=json.loads(pinned_path(config['metadata']['path']).read_bytes());require(config['domestic']=={**metadata['dictionary'],'clips':20},'pinned domestic recipient RAM reference required')
++    fixture=json.loads(pinned_path(config['fixture']['path']).read_bytes());require(fixture['privateCoordinatesUsedOrCopied']is False and fixture['sameSourceDerived']is False and all(v is False for v in fixture['approval'].values()),'public-only unapproved mixed fixture required')
++    recipient=json.loads(pinned_path(fixture['recipient']['proofPath']).read_bytes());donor=json.loads(pinned_path(fixture['donor']['proofPath']).read_bytes())
++    require(sorted(recipient)==sorted(donor)==['defaults','engineHashes','engineRevision','groups'] and len(recipient['groups'])==24 and len(donor['groups'])==13 and sum(len(g['polygons'])for g in recipient['groups'])==42 and sum(len(g['polygons'])for g in donor['groups'])==32,'two fixed four-field originals with separate traces; no full5 claim')
++    spec=importlib.util.spec_from_file_location('hanja_mixed_up_donor',pinned_path(config['materializer']['path']));module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module);candidate=module.load_candidate()
++    require(candidate['schema']=='hanja-authored-filled-groups-draft-v1' and candidate['glyph']=='鞹' and candidate['variantId']==fixture['variantId'] and candidate['locallyAuthored']is True and candidate['mixed']is True and candidate['originalRoot']is False and candidate['isOriginalEngineCapture']is False and candidate['sourceTraceDescribesAuthoredRecipient']is False and all(v is False for v in candidate['approval'].values()),'separate authored recipient, not either original capture')
++    require(len(candidate['groups'])==24 and [i for i,g in enumerate(candidate['groups'])if g!=recipient['groups'][i]]==[19] and sum(len(g['polygons'])for g in candidate['groups'])==43 and [len(p)for p in candidate['groups'][19]['polygons']]==[22,3,3] and candidate['groups'][19]['donorOriginalRaw']==donor['groups'][5]['raw'],'only recipient raw19 receives the actual three-P public donor')
++    guide=candidate['groups'][19]['authorGuide'];require(guide['kind']=='quadratic' and len(guide['points'])==3 and all(len(q)==2 and all(type(v)in[int,float]and math.isfinite(v)for v in q)for q in guide['points']),'actual transformed Q guide points required')
++    require(len(candidate['logicalRawGroupsZeroBased'])==20 and sorted(i for row in candidate['logicalRawGroupsZeroBased']for i in row)==list(range(24)),'proposed logical mapping retained but unapproved')
++    out={'recipient':recipient,'donor':donor,'candidate':candidate}
++    for scene in out.values():
++        for group in scene['groups']:
++            for poly in group['polygons']:require(len(poly)>=3 and all(set(q)=={'x','y','off'}and q['off']==0 and all(type(q[k])in[int,float]and math.isfinite(q[k])for k in['x','y'])for q in poly),'finite public off0 P required')
++    return out
++
++def run_mixed_curve_u97b9_u7f96(args,config,config_path):
++    sources=load_mixed_curve_u97b9_u7f96(config,config_path)
++    def guards():
++        require(digest(config_path.read_bytes())==args.config_sha and digest(Path(__file__).resolve().read_bytes())==config['launcherSHA256'],'mixed-donor config or launcher changed')
++        for file,pin in config['inputSHA256'].items():require(digest(pinned_path(file).read_bytes())==pin,'mixed donor input changed: '+file)
++    guards()
++    if args.check_only:
++        print(json.dumps({'kind':config['kind'],'glyph':'鞹','recipientP':42,'donorP':32,'candidateP':43,'changedRawZeroBased':[19],'guidePoints':3,'HTTP':0,'server':0,'engine':0,'geometryApproval':False,'mappingApproval':False,'nativeApproval':False,'runtimeApplied':False}));return
++    spec=importlib.util.spec_from_file_location('hanja_mixed_donor_static',pinned_path(SHARED));shared=importlib.util.module_from_spec(spec);spec.loader.exec_module(shared);require(shared.FETCH_COUNT==0,'no preparation fetch')
++    shared.CONFIG=config;shared.ROOT=ROOT;shared.HERE=config_path.parent;shared.guards=guards;shared.load_sources=lambda:sources
++    original_svg,original_page,original_selection=shared.source_svg,shared.page,shared.selection
++    def mixed_source_svg(proof,count=None,prefix=False):
++        value=original_svg(proof,count,prefix);authored=proof is sources['candidate'];is_donor=proof is sources['donor'];index=5 if is_donor else 19;slot=index+1
++        if authored:value=value.replace('data-original-raw=','data-authored-slot=')
++        if count is None or(prefix and count>=slot)or(not prefix and count==slot):
++            if authored:points=proof['groups'][index]['authorGuide']['points'];origin='authored-public-donor-affine'
++            else:
++                raw=proof['groups'][index]['raw'];require(raw[0]in[1,2],'fixed public line/Q guide only');points=[raw[i:i+2]for i in([3,5]if raw[0]==1 else[3,5,7])];origin='original-public-donor'if is_donor else'original-public-recipient'
++            require(all(len(q)==2 and all(type(v)in[int,float]and math.isfinite(v)for v in q)for q in points),'finite public guide coordinates')
++            pair=lambda q:' '.join(json.dumps(v,allow_nan=False)for v in q)
++            path='M'+pair(points[0])+(' L'+pair(points[1])if len(points)==2 else' Q'+pair(points[1])+' '+pair(points[2]))
++            guide='<g fill="none" stroke="#1767c0" stroke-width="0.65" data-guide-origin="'+origin+'"><path data-public-guide-only="true" d="'+path+'"/></g>'
++            require(value.endswith('</g></svg>'),'unchanged original P renderer shell');value=value[:-6]+guide+'</svg>'
++        return value
++    def mixed_page(*params):
++        return original_page(*params).replace('원candidate raw ','새 저자가설 slot ').replace('원recipient raw ','원본鞹 raw ').replace('원donor raw ','공개羖 donor raw ').replace('원raw','source slot').replace('원proof exact','공개원source pins exact; mixed candidate is not an original engine capture').replace('각 원source 전체','원recipient·공개donor·새후보 전체').replace('각 원번호 선택','source slot 선택')
++    def selection(route,query):
++        require(route!='/checks','legacy original-proof report does not certify authored mixed geometry')
++        return original_selection(route,query)
++    shared.source_svg=mixed_source_svg;shared.page=mixed_page;shared.selection=selection
++    argv=sys.argv
++    try:sys.argv=[str(pinned_path(SHARED)),'--port',str(args.port)];shared.main()
++    finally:sys.argv=argv
++
+ def main():
+@@
+     if config.get('kind')=='authored-ownstroke-shear-u97b9':return run_ownstroke_u97b9(args,config,config_path)
++    if config.get('kind')=='authored-mixed-curve-donor-u97b9-u7f96':return run_mixed_curve_u97b9_u7f96(args,config,config_path)
+     new_public_whole=new_public_whole_case(config)or new_local_recipe_whole_case(config)
+*** End Patch

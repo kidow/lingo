@@ -1,0 +1,84 @@
+{
+  "schema": "hanja-shared-authored-terminal-compare/v1",
+  "kind": "authored-terminal-public-kage-pair",
+  "glyph": "燄",
+  "catalogStrokes": 16,
+  "sourceViewBox": "0 0 200 200",
+  "host": "127.0.0.1",
+  "defaultSource": "authored",
+  "sourceRoots": {
+    "original": {
+      "root": "u71c4",
+      "file": "docs/hanja-source-full5-three-candidates-2026-10-28/engine-whole-u71c4.json",
+      "fileSHA256": "0c217263017c7fa574185ab550dac4b16aa561bb5a63cf77a24625a57a65f30d",
+      "rawGroups": 18,
+      "drawingCalls": 19,
+      "polygons": 39,
+      "proofKind": "actual-public-original-full5"
+    },
+    "authored": {
+      "root": "local_u71c4_terminal0_20261028",
+      "file": "docs/hanja-authored-terminal-experiments-2026-10-28/engine-whole-local_u71c4_terminal0_20261028.json",
+      "fileSHA256": "fff82a46568c51ba1ea2f4b0d4ba179ced0d927dca086368513a3bc7a156a025",
+      "rawGroups": 18,
+      "drawingCalls": 18,
+      "polygons": 37,
+      "proofKind": "actual-locally-authored-engine-full5"
+    }
+  },
+  "domestic": {
+    "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/7100/71C4.svg",
+    "status": 200,
+    "bytes": 7630,
+    "sha256": "903f220583b233f09533969abf7661e9ca1b8e059b28b6d76186c72dd4cdeefd",
+    "clips": 16,
+    "glyph": "燄",
+    "privateMediaSaved": false
+  },
+  "metadata": "docs/hanja-goal-glyphwiki-batch725-2026-10-12/metadata.json",
+  "sourceOverride": "docs/hanja-authored-terminal-experiments-2026-10-28/sources-local-u71c4-terminal0.json",
+  "changedLogicalPenOneBased": 2,
+  "allowedRawGroupsZeroBased": [
+    1,
+    2
+  ],
+  "sharedServe": {
+    "path": "docs/hanja-source-raw-compare-u8a29-2026-10-21/serve.py",
+    "SHA256": "ba91ba7f00bc2e4899ca4d3c69d03ab5cd6f8b0a9f888899eea49aa69a58665d"
+  },
+  "inputSHA256": {
+    "docs/hanja-authored-terminal-experiments-2026-10-28/sources-local-u71c4-terminal0.json": "553c2f118f345f1fafcdee82345fcfd24e115f3014c45182745343d1549f765a",
+    "docs/hanja-goal-glyphwiki-batch725-2026-10-12/sources.json": "6b71a63de83e55275b3ad82463ae3a5e25ba2e50d0dab5128a608fcb50ba59c0",
+    "docs/hanja-source-full5-three-candidates-2026-10-28/engine-whole-u71c4.json": "0c217263017c7fa574185ab550dac4b16aa561bb5a63cf77a24625a57a65f30d",
+    "docs/hanja-authored-terminal-experiments-2026-10-28/engine-whole-local_u71c4_terminal0_20261028.json": "fff82a46568c51ba1ea2f4b0d4ba179ced0d927dca086368513a3bc7a156a025",
+    "docs/hanja-goal-glyphwiki-batch725-2026-10-12/metadata.json": "2d516c848e4c2568906f9f68aa71758214e6e72097347ea89e05aabee1445eb2",
+    "docs/hanja-authored-terminal-experiments-2026-10-28/capture.json": "7d34cbef9bc156abcbe2b3e35695565c36edaa71129fb42a20daf7ca5b1e7f27",
+    "docs/hanja-authored-terminal-experiments-2026-10-28/scope-check.json": "798e152383cf4965f725d838f425031f1b1d2241f16a144484e14563f15c34a7"
+  },
+  "originalRecordsEdited": false,
+  "candidateOriginalRoot": false,
+  "candidateActualAuthoredEngineCapture": true,
+  "noPartialAnimation": true,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "approval": {
+    "whole": false,
+    "mapping": false,
+    "direction": false,
+    "timing": false,
+    "native": false,
+    "runtime": false
+  },
+  "holdSummary": "Static original/authored whole and individual raw comparison only. One original child terminal cell changed to0 in separate local root namespaces; all source coordinate tokens preserved. Original full5 remains public-original, candidate full5 is actual locally-authored engine output. Within-slot code scope is not shape/direction/timing approval. No private media stored.",
+  "reviewPlan": [
+    {
+      "route": "/whole",
+      "goal": "original public whole vs authored terminal0 whole and publisher; no match approval inferred"
+    },
+    {
+      "route": "/compare?source=authored&domestic=2&raw=3&dview=single&rview=single",
+      "goal": "changed original raw terminal contour; whole/direct static only, no playback"
+    }
+  ],
+  "launcherSHA256": "772247ca972c76e574f9d48000d100054a2eba60906dd0050f3a8ee26af41b8c"
+}

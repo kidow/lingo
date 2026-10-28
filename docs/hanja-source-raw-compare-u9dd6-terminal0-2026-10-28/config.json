@@ -1,0 +1,84 @@
+{
+  "schema": "hanja-shared-authored-terminal-compare/v1",
+  "kind": "authored-terminal-public-kage-pair",
+  "glyph": "鷖",
+  "catalogStrokes": 22,
+  "sourceViewBox": "0 0 200 200",
+  "host": "127.0.0.1",
+  "defaultSource": "authored",
+  "sourceRoots": {
+    "original": {
+      "root": "u9dd6",
+      "file": "docs/hanja-source-full5-three-candidates-2026-10-28/engine-whole-u9dd6.json",
+      "fileSHA256": "4bb1b5eaf9d08ebcfe61d82e99f9dadead4ac08bbcb546d60fcbea8d2bbd9bb2",
+      "rawGroups": 27,
+      "drawingCalls": 32,
+      "polygons": 58,
+      "proofKind": "actual-public-original-full5"
+    },
+    "authored": {
+      "root": "local_u9dd6_terminal0_20261028",
+      "file": "docs/hanja-authored-terminal-experiments-2026-10-28/engine-whole-local_u9dd6_terminal0_20261028.json",
+      "fileSHA256": "aaece83806e7006a57b453316234a41a29f9645d4e3af00b56ba5be29d2c4781",
+      "rawGroups": 27,
+      "drawingCalls": 32,
+      "polygons": 57,
+      "proofKind": "actual-locally-authored-engine-full5"
+    }
+  },
+  "domestic": {
+    "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/9D00/9DD6.svg",
+    "status": 200,
+    "bytes": 10163,
+    "sha256": "3408a7bf1956fd86ff8ee4afeb3c595b87781cdb93fa59ff1ab93ea2aed68684",
+    "clips": 22,
+    "glyph": "鷖",
+    "privateMediaSaved": false
+  },
+  "metadata": "docs/hanja-goal-glyphwiki-batch736-2026-10-12/metadata.json",
+  "sourceOverride": "docs/hanja-authored-terminal-experiments-2026-10-28/sources-local-u9dd6-terminal0.json",
+  "changedLogicalPenOneBased": 9,
+  "allowedRawGroupsZeroBased": [
+    9,
+    10
+  ],
+  "sharedServe": {
+    "path": "docs/hanja-source-raw-compare-u8a29-2026-10-21/serve.py",
+    "SHA256": "ba91ba7f00bc2e4899ca4d3c69d03ab5cd6f8b0a9f888899eea49aa69a58665d"
+  },
+  "inputSHA256": {
+    "docs/hanja-authored-terminal-experiments-2026-10-28/sources-local-u9dd6-terminal0.json": "79c86b27120e9e46f12e3f45fc12599d30e6b1c2e0f5d81725b2bce5e42bdb00",
+    "docs/hanja-goal-glyphwiki-batch736-2026-10-12/sources.json": "1668b083c40a2a6c720e13f2ae1ac900e79abbdf01f16a8d8bdd27609fa29fe9",
+    "docs/hanja-source-full5-three-candidates-2026-10-28/engine-whole-u9dd6.json": "4bb1b5eaf9d08ebcfe61d82e99f9dadead4ac08bbcb546d60fcbea8d2bbd9bb2",
+    "docs/hanja-authored-terminal-experiments-2026-10-28/engine-whole-local_u9dd6_terminal0_20261028.json": "aaece83806e7006a57b453316234a41a29f9645d4e3af00b56ba5be29d2c4781",
+    "docs/hanja-goal-glyphwiki-batch736-2026-10-12/metadata.json": "e25f6544f0c88226a5b713f03da22b01107a7085a2fac2d80f4461be5014e5cb",
+    "docs/hanja-authored-terminal-experiments-2026-10-28/capture.json": "7d34cbef9bc156abcbe2b3e35695565c36edaa71129fb42a20daf7ca5b1e7f27",
+    "docs/hanja-authored-terminal-experiments-2026-10-28/scope-check.json": "798e152383cf4965f725d838f425031f1b1d2241f16a144484e14563f15c34a7"
+  },
+  "originalRecordsEdited": false,
+  "candidateOriginalRoot": false,
+  "candidateActualAuthoredEngineCapture": true,
+  "noPartialAnimation": true,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "approval": {
+    "whole": false,
+    "mapping": false,
+    "direction": false,
+    "timing": false,
+    "native": false,
+    "runtime": false
+  },
+  "holdSummary": "Static original/authored whole and individual raw comparison only. One original child terminal cell changed to0 in separate local root namespaces; all source coordinate tokens preserved. Original full5 remains public-original, candidate full5 is actual locally-authored engine output. Within-slot code scope is not shape/direction/timing approval. No private media stored.",
+  "reviewPlan": [
+    {
+      "route": "/whole",
+      "goal": "original public whole vs authored terminal0 whole and publisher; no match approval inferred"
+    },
+    {
+      "route": "/compare?source=authored&domestic=9&raw=11&dview=single&rview=single",
+      "goal": "changed original raw terminal contour; whole/direct static only, no playback"
+    }
+  ],
+  "launcherSHA256": "772247ca972c76e574f9d48000d100054a2eba60906dd0050f3a8ee26af41b8c"
+}

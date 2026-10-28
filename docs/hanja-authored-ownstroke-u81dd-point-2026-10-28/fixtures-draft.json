@@ -1,0 +1,59 @@
+{
+  "schema": "hanja-ownstroke-DR-point-placement-draft-v1",
+  "date": "2026-10-28",
+  "glyph": "臝",
+  "status": "two-unapproved-static-point-size-trials",
+  "sourceContextRoot": "u81dd",
+  "selectedApprovedWholeRoot": null,
+  "sourceProofPath": "docs/hanja-goal-glyphwiki-batch530-2026-10-11/engine-proof.json",
+  "sourceProofSHA256": "5a1b0e13a70d35987f60603a526ca8b8ea6ed72a9e442ff63954edd23e8ae072",
+  "sourceTracePath": "docs/hanja-goal-glyphwiki-batch530-2026-10-11/draw-trace.json",
+  "sourceTraceSHA256": "ede3d1753a067f45986a6b79a1cce12eb23e18f6352886765f444e6eacf755bb",
+  "domesticObservation": {
+    "reportedBy": "ROOT direct original source-clock browser observation",
+    "logicalPen": 21,
+    "fractionsObserved": [0.1,0.5,0.75],
+    "direction": "curved down-right from upper-left",
+    "otherTwentyIndividualPensReviewed": false,
+    "privateCoordinatesCopied": false
+  },
+  "slotCorrespondence": {
+    "publicRawIndexZeroBased": 24,
+    "domesticLogicalPen": 21,
+    "status": "unapproved-correspondence-hypothesis",
+    "publicOriginalGuide": [137,133,170,133],
+    "targetCenterExact": ["307/2","133"],
+    "definition": "Only the public raw24 horizontal guide midpoint (153.5,133) anchors the authored replacement. This is not a coordinate measured from publisher artwork."
+  },
+  "donor": {
+    "rawIndexZeroBased": 20,
+    "raw": [2,7,8,102.9,155.68,119.15,162.4,128.9,173.04000000000002,null,null],
+    "callKind": "cdDrawCurve",
+    "polygonCount": 2,
+    "polygonVertices": [22,5],
+    "polygonsECMAScriptJSONSHA256": "6da8f14dfb959530398887ce33816599cec4f84fd0c824c637405d8778ba7ccd",
+    "guideEndpointCenterExact": ["1159/10","16436000000000001/100000000000000"],
+    "selectionScope": "Exact own raw20 is an existing public DR quadratic with original flags7/8 and filled P2. Its suitability for domestic21 is unapproved. Original raw20 stays in place; only a clone is used at raw24."
+  },
+  "consideredAlternatives": [
+    {"glyph":"臝","rawIndexZeroBased":0,"callKind":"cdDrawLine","rawGuide":[100,14,100,31],"flags":[0,32],"decision":"Do not use this vertical straight-line/ornament as an already curved DR point."},
+    {"glyph":"羖","rawIndexZeroBased":0,"callKind":"cdDrawCurve","flags":[7,8],"polygonVertices":[22,5],"decision":"Public curved DR alternative exists and ROOT previously saw it in whole view, but this draft uses own raw20 and makes no external donor transfer or approval claim."}
+  ],
+  "variants": [
+    {"id":"own-DR-point-scale-0.5","scaleRational":"1/2","matrixRational":["1/2","0","0","1/2","1911/20","10163999999999999/200000000000000"]},
+    {"id":"own-DR-point-scale-0.75","scaleRational":"3/4","matrixRational":["3/4","0","0","3/4","2663/40","3891999999999997/400000000000000"]}
+  ],
+  "authorPlacementRule": "Uniformly scale the donor's entire filled P pair and all three quadratic guide points together. Translate its public guide-endpoint midpoint onto the public raw24 midpoint. Scales0.5/0.75 are arbitrary author trial sizes, not domestic measurements. Positive determinant and exact inverse only establish source transformation arithmetic, not glyph correctness or contact.",
+  "sameSourceDerived": true,
+  "locallyAuthored": true,
+  "mixed": true,
+  "originalRoot": false,
+  "isOriginalEngineCapture": false,
+  "sourceTraceDescribesAuthoredRaw24": false,
+  "logicalRawGroupsApproved": false,
+  "fillRule": "nonzero",
+  "eachPolygonPaintedSeparately": true,
+  "priorFourWholeHOLDsUnchanged": true,
+  "approval": {"donorSuitability":false,"raw24Mapping":false,"geometry":false,"contact":false,"whole":false,"sourceOrder":false,"native":false,"runtime":false},
+  "privateCoordinatesUsedOrCopied": false
+}

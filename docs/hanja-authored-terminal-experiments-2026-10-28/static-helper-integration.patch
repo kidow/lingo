@@ -1,0 +1,11 @@
+*** Begin Patch
+*** Update File: /Users/kidow/Documents/dev/kidow/lingo/scripts/hanja-raw-static-compare.py
+@@
++    if config.get('kind')=='authored-terminal-public-kage-pair':
++        terminal_path=pinned_path('docs/hanja-authored-terminal-experiments-2026-10-28/static-pair-adapter.py')
++        require(digest(terminal_path.read_bytes())=='ff1be92c37918dc356df3070dafe41705b2a123f734075f1dba1390f4fc2749a','fixed authored terminal pair adapter changed')
++        terminal_spec=importlib.util.spec_from_file_location('hanja_authored_terminal_pair',terminal_path)
++        terminal_adapter=importlib.util.module_from_spec(terminal_spec);terminal_spec.loader.exec_module(terminal_adapter)
++        return terminal_adapter.run_terminal(args,config,config_path)
+     if config.get('kind')=='fixed-mm-original-filled-whole-u66d9':
+*** End Patch

@@ -1,0 +1,30 @@
+{
+  "schema": "hanja-authored-static-comparison-preparation-v1",
+  "date": "2026-10-28",
+  "glyph": "臝",
+  "status": "unapproved-static-two-size-point-comparison-prepared",
+  "configSHA256": "3788de6cc471328fbf144019b40c7ac9b19e9ee85ee3b7f8ffe64d2f3b91853a",
+  "semanticConfigSHA256": "66b2ecc2e411b40763fab0e1651ae08a58a893577ed4844f0a54396332e612bf",
+  "helper": {
+    "path": "scripts/hanja-raw-static-compare.py",
+    "preSHA256": "d538889b1a8e3da505775cf42fd9328914d972dc488a1fc76ca335482835d552",
+    "postSHA256": "15d356faf98975b66b5951615fcd1d4855929b60f197bc9ae0b8ca50e3ede1c2",
+    "patchSHA256": "6734fe406849be7075f1767045521ddafd36b095f2d0d8e369c0647168bb5ea8",
+    "anchors": [
+      "def main():",
+      "    if config.get('kind')=='authored-ownstroke-shear-u97b9':return run_ownstroke_u97b9(args,config,config_path)"
+    ],
+    "applied": false
+  },
+  "sharedRenderingCopied": false,
+  "originalRenderingReused": true,
+  "existingWholeHOLDsPreserved": 4,
+  "sourceMappingApproved": false,
+  "geometryApproval": false,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "validatorRAMExecuted": true,
+  "validatorRAMResult": "PASS: exact future load_ownpoint_u81dd accepted original/half/threequarter; raw24MappingApproved/nativeApproval/unknown defaultSource mutations rejected. No guards relaxed; actual helper remains unchanged.",
+  "actualCheckOnlyExecuted": false,
+  "serverStarts": 0
+}

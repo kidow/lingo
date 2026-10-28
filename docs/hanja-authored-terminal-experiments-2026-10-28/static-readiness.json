@@ -1,0 +1,50 @@
+{
+  "schema": "hanja-authored-terminal-static-readiness/v1",
+  "date": "2026-10-28",
+  "helperBeforeSHA256": "d538889b1a8e3da505775cf42fd9328914d972dc488a1fc76ca335482835d552",
+  "helperAfterSHA256": "53fa88791a623caad8bdb6efd98833c53d7f3e4ebdc0314475b21c88f3d67875",
+  "adapter": {
+    "path": "docs/hanja-authored-terminal-experiments-2026-10-28/static-pair-adapter.py",
+    "SHA256": "ff1be92c37918dc356df3070dafe41705b2a123f734075f1dba1390f4fc2749a"
+  },
+  "configs": [
+    "docs/hanja-source-raw-compare-u71c4-terminal0-2026-10-28/config.json",
+    "docs/hanja-source-raw-compare-u9dd6-terminal0-2026-10-28/config.json"
+  ],
+  "checks": [
+    {
+      "glyph": "燄",
+      "status": "PASS",
+      "sources": [
+        "original",
+        "authored"
+      ],
+      "privateHTTP": 0,
+      "server": 0,
+      "engine": 0,
+      "falseOriginalClaimRejected": true
+    },
+    {
+      "glyph": "鷖",
+      "status": "PASS",
+      "sources": [
+        "original",
+        "authored"
+      ],
+      "privateHTTP": 0,
+      "server": 0,
+      "engine": 0,
+      "falseOriginalClaimRejected": true
+    }
+  ],
+  "helperPatchSyntaxParsed": true,
+  "helperInverseExact": true,
+  "helperActuallyModified": false,
+  "nativeApproval": false,
+  "wholeApproval": false,
+  "timingApproval": false,
+  "runtimeApplied": false,
+  "scope": "Original full5 and actual authored-engine full5 remain separately labeled. Static whole/raw/prefix only; no source shape or direction equivalence claimed.",
+  "reuse": "Existing private-RAM shared shell source_svg/page/selection reused; /checks rejected for authored captures. Native private media fetch deferred to ROOT browser server.",
+  "rootNext": "Apply six-line helper patch after coordinating other prepared branches, repin both config.launcherSHA256 if composed helper differs, then check-only and direct whole/changed raw native review."
+}
