@@ -1,0 +1,304 @@
+{
+  "schema": "hanja-authored-MM-padded-start-gate-check/v1",
+  "date": "2026-10-28",
+  "glyph": "菏",
+  "fixture": {
+    "path": "docs/hanja-authored-mm-u83cf-components-2026-10-28/fixtures-reveal-v1-start-draft.json",
+    "SHA256": "68ec183a86a4945606252b34f218d02b636f6d8d7455026b3c170e5fb5804d81",
+    "rootKey": "u83cf",
+    "strokesECMAScriptJSONSHA256": "8d09d7edb9bc82fa37c4da3d1b4212bf5587f04aa1995630f895f1af33a0c53e",
+    "filledOutlinesECMAScriptJSONSHA256": "349bd0b7c8bd77395e997af12c0d97c20666b66eb7c316f694ef9925e99f054a"
+  },
+  "inputs": {
+    "sourceDraft": {
+      "path": "docs/hanja-authored-mm-u83cf-components-2026-10-28/source-draft-v1.json",
+      "SHA256": "36ca1a005b0e8ae01b177b32e1d32dbd7bc4fd1df847fb82125227072cdfc6fe"
+    },
+    "recipe": {
+      "path": "docs/hanja-authored-mm-u83cf-components-2026-10-28/recipe.json",
+      "SHA256": "0eff670e6a2335dd73e5207781c30f9363c81ffe5fcc01f63ccd1ed35757ee24"
+    },
+    "reusedCalculationReference": {
+      "path": "docs/hanja-authored-mm-u5b7d-components-2026-10-28/fixtures-reveal-v3-start-draft.json",
+      "SHA256": "f96ad2d1ffb45480ec495706b176d2f158e89d469e25aa147d85634e5f6004b4",
+      "scope": "Only identical pinned 十 unplaced guide/weight/width/gate cases and the published calculation contract. No 孽 placement or native approval transferred."
+    }
+  },
+  "counts": {
+    "logical": 12,
+    "segments": 12,
+    "unchangedBodyParts": 8,
+    "donorGuideGateCasesReused": 4,
+    "recipientGuideGateCasesDerived": 8
+  },
+  "sourcePreservation": {
+    "everyFilledDMatchesOwnGeometryDraft": true,
+    "allOriginalMediansAndDUnedited": true,
+    "body8IdentityRecipeUnchanged": true,
+    "niePlacedGeometryTransferred": false,
+    "ownMatrixConjugation": true
+  },
+  "rules": {
+    "N": "x/10,(900-y)/10",
+    "paddingOriginalSource": 100,
+    "widthNormalizedUnplacedN": 20,
+    "guide": "Straight extension of first distinct original median tangent by100 source units; then original median points, in original order.",
+    "weight": "Euclidean length of padded unplaced N polyline.",
+    "revealTransform": "N M N^-1, using each 菏 part exact matrix.",
+    "gate": "Use own unplaced N original control hull and median first tangent. minProjection=min dot(unit,control); firstProjection=dot(unit,first).",
+    "until": "10 / weight; no arbitrary time threshold",
+    "activeCut": "minProjection+(firstProjection+10-minProjection)*(p/until)",
+    "requiredRContract": "pathLength1, dasharray=p 2, dashoffset0, revealed arclength=p*weight; no .999 offset correction.",
+    "releaseReason": "At until the padded-prefix center reaches the original first median point. Radius10 prefix-mask support along the unit is <=firstProjection+10; release adds no current guide-mask ink in the geometric model.",
+    "zeroReason": "All original Bezier fill lies in its control convex hull. A cut at its minimum linear projection contains no positive filled area.",
+    "finitePrecision": "Numeric unit/projection/bounds values are binary64 representations; fresh native zero/start/release and anisotropic mask behavior remain unapproved."
+  },
+  "cases": [
+    {
+      "logicalOneBased": 1,
+      "sameSourceDonorProofReused": true,
+      "paddedGuideLength": 93.59167769064149,
+      "paddingNormalized": 10,
+      "until": 0.10684710699442809,
+      "minProjection": 21.862246782865306,
+      "firstProjection": 23.38030160593985,
+      "releaseCut": 33.38030160593985,
+      "unitNorm": 1.0,
+      "gateBoundsUnplacedN": [
+        9.5,
+        34.0,
+        94.9,
+        51.6
+      ],
+      "sourcePlacementDeterminantExact": "5149666627129/23418104130960",
+      "nativeStartOrReleaseApproved": false
+    },
+    {
+      "logicalOneBased": 2,
+      "sameSourceDonorProofReused": true,
+      "paddedGuideLength": 98.17725360352658,
+      "paddingNormalized": 10,
+      "until": 0.10185658727410964,
+      "minProjection": 44.436142437400896,
+      "firstProjection": 46.29051005070819,
+      "releaseCut": 56.29051005070819,
+      "unitNorm": 0.9999999999999999,
+      "gateBoundsUnplacedN": [
+        43.7,
+        6.4,
+        57.6,
+        95.6
+      ],
+      "sourcePlacementDeterminantExact": "5018/29329",
+      "nativeStartOrReleaseApproved": false
+    },
+    {
+      "logicalOneBased": 3,
+      "sameSourceDonorProofReused": true,
+      "paddedGuideLength": 93.59167769064149,
+      "paddingNormalized": 10,
+      "until": 0.10684710699442809,
+      "minProjection": 21.862246782865306,
+      "firstProjection": 23.38030160593985,
+      "releaseCut": 33.38030160593985,
+      "unitNorm": 1.0,
+      "gateBoundsUnplacedN": [
+        9.5,
+        34.0,
+        94.9,
+        51.6
+      ],
+      "sourcePlacementDeterminantExact": "5319995275781/23418104130960",
+      "nativeStartOrReleaseApproved": false
+    },
+    {
+      "logicalOneBased": 4,
+      "sameSourceDonorProofReused": true,
+      "paddedGuideLength": 98.17725360352658,
+      "paddingNormalized": 10,
+      "until": 0.10185658727410964,
+      "minProjection": 44.436142437400896,
+      "firstProjection": 46.29051005070819,
+      "releaseCut": 56.29051005070819,
+      "unitNorm": 0.9999999999999999,
+      "gateBoundsUnplacedN": [
+        43.7,
+        6.4,
+        57.6,
+        95.6
+      ],
+      "sourcePlacementDeterminantExact": "8385/29329",
+      "nativeStartOrReleaseApproved": false
+    },
+    {
+      "logicalOneBased": 5,
+      "sameSourceDonorProofReused": false,
+      "paddedGuideLength": 22.64810369970089,
+      "paddingNormalized": 10,
+      "until": 0.4415380701445688,
+      "minProjection": 35.884980459352256,
+      "firstProjection": 36.66346147056891,
+      "releaseCut": 46.66346147056891,
+      "unitNorm": 0.9999999999999999,
+      "gateBoundsUnplacedN": [
+        20.8,
+        32.9,
+        32.9,
+        44.0
+      ],
+      "sourcePlacementDeterminantExact": "1",
+      "nativeStartOrReleaseApproved": false
+    },
+    {
+      "logicalOneBased": 6,
+      "sameSourceDonorProofReused": false,
+      "paddedGuideLength": 20.835831411798537,
+      "paddingNormalized": 10,
+      "until": 0.47994245117271306,
+      "minProjection": 38.80538701744317,
+      "firstProjection": 40.19265811374728,
+      "releaseCut": 50.19265811374728,
+      "unitNorm": 1.0,
+      "gateBoundsUnplacedN": [
+        14.3,
+        48.5,
+        26.1,
+        58.3
+      ],
+      "sourcePlacementDeterminantExact": "1",
+      "nativeStartOrReleaseApproved": false
+    },
+    {
+      "logicalOneBased": 7,
+      "sameSourceDonorProofReused": false,
+      "paddedGuideLength": 43.06452410824637,
+      "paddingNormalized": 10,
+      "until": 0.2322096948027138,
+      "minProjection": -93.19479738669402,
+      "firstProjection": -92.07080299381411,
+      "releaseCut": -82.07080299381411,
+      "unitNorm": 1.0,
+      "gateBoundsUnplacedN": [
+        13.7,
+        60.0,
+        32.2,
+        91.3
+      ],
+      "sourcePlacementDeterminantExact": "1",
+      "nativeStartOrReleaseApproved": false
+    },
+    {
+      "logicalOneBased": 8,
+      "sameSourceDonorProofReused": false,
+      "paddedGuideLength": 61.698505947602484,
+      "paddingNormalized": 10,
+      "until": 0.1620784789909258,
+      "minProjection": 39.80040200801999,
+      "firstProjection": 41.67455393203747,
+      "releaseCut": 51.67455393203747,
+      "unitNorm": 1.0,
+      "gateBoundsUnplacedN": [
+        34.8,
+        33.0,
+        88.8,
+        45.5
+      ],
+      "sourcePlacementDeterminantExact": "1",
+      "nativeStartOrReleaseApproved": false
+    },
+    {
+      "logicalOneBased": 9,
+      "sameSourceDonorProofReused": false,
+      "paddedGuideLength": 29.24905895324539,
+      "paddingNormalized": 10,
+      "until": 0.34189134139272637,
+      "minProjection": 65.53256056988283,
+      "firstProjection": 66.5407538094195,
+      "releaseCut": 76.5407538094195,
+      "unitNorm": 1.0,
+      "gateBoundsUnplacedN": [
+        39.0,
+        52.4,
+        46.6,
+        73.3
+      ],
+      "sourcePlacementDeterminantExact": "1",
+      "nativeStartOrReleaseApproved": false
+    },
+    {
+      "logicalOneBased": 10,
+      "sameSourceDonorProofReused": false,
+      "paddedGuideLength": 35.22634408922326,
+      "paddingNormalized": 10,
+      "until": 0.28387845115778804,
+      "minProjection": 62.36466455145403,
+      "firstProjection": 65.58956765077343,
+      "releaseCut": 75.58956765077343,
+      "unitNorm": 1.0,
+      "gateBoundsUnplacedN": [
+        40.8,
+        49.3,
+        64.9,
+        67.3
+      ],
+      "sourcePlacementDeterminantExact": "1",
+      "nativeStartOrReleaseApproved": false
+    },
+    {
+      "logicalOneBased": 11,
+      "sameSourceDonorProofReused": false,
+      "paddedGuideLength": 23.934394328295518,
+      "paddingNormalized": 10,
+      "until": 0.417808776058222,
+      "minProjection": -1.8027756377319903,
+      "firstProjection": 1.3867504905630739,
+      "releaseCut": 11.386750490563074,
+      "unitNorm": 0.9999999999999999,
+      "gateBoundsUnplacedN": [
+        43.3,
+        63.8,
+        61.2,
+        68.8
+      ],
+      "sourcePlacementDeterminantExact": "1",
+      "nativeStartOrReleaseApproved": false
+    },
+    {
+      "logicalOneBased": 12,
+      "sameSourceDonorProofReused": false,
+      "paddedGuideLength": 75.24385237196165,
+      "paddingNormalized": 10,
+      "until": 0.13290122295394768,
+      "minProjection": 74.91203058743417,
+      "firstProjection": 78.3596585566126,
+      "releaseCut": 88.3596585566126,
+      "unitNorm": 1.0,
+      "gateBoundsUnplacedN": [
+        56.4,
+        38.0,
+        76.0,
+        97.5
+      ],
+      "sourcePlacementDeterminantExact": "1",
+      "nativeStartOrReleaseApproved": false
+    }
+  ],
+  "result": "PASS-derived-math-and-preservation-only",
+  "approval": {
+    "domesticFirstFourOrder": false,
+    "body8Compatibility": false,
+    "wholeAuthoredShape": false,
+    "startNative": false,
+    "releaseNative": false,
+    "allIntermediateFrames": false,
+    "runtime": false
+  },
+  "execution": {
+    "newHTTP": 0,
+    "sharedFilesChanged": 0,
+    "server": 0,
+    "browser": 0,
+    "build": 0,
+    "commit": 0
+  }
+}
