@@ -1,0 +1,6 @@
+*** Begin Patch
+*** Update File: scripts/hanja-actual-component-review.mjs
+@@
+  button((U709aFinalStartExact?'炚':U8819RoofStartExact?'蠙':U6adcMixedDRStartExact?'櫜':U5b7cEolStartExact?'孼':U7e98CrossStartExact?'纘':U67d6PointStartExact?'柖':U8b41HVStartExact?'譁':U6030LegacyStartExact?'怰':U91c1XinStartExact?'釁':U9c49PointStartExact?'鱉':U6715PointsStartExact?'朕':U66d9CentralHStartExact?'曙':U77a5OwnVStartExact?'瞥':U5e77BingStartExact?'幷':U9917FoodStartExact?'餗':U81ddMixedStartExact?'臝':U9dd6TerminalStartExact?'鷖':U71c4TerminalStartExact?'燄':'鞹')+' aggregate'+aggregateAll.length+' initial'+aggregateInitial.length+'-boundary'+aggregateBoundary.length+'-ending'+aggregateEnding.length+'',()=>aggregateBoard(aggregateAll));
++ if(U8819RoofStartExact)button('蠙 aggregate112 one-column240',()=>{generation++;T=null;board(aggregateAll,240);document.querySelector('#board').style.setProperty('grid-template-columns','240px');});
+*** End Patch

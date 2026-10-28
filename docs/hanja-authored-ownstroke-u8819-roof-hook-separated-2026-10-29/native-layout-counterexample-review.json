@@ -1,0 +1,56 @@
+{
+  "glyph": "蠙",
+  "date": "2026-10-29",
+  "reviewer": "ROOT",
+  "nativeBrowserPanel": true,
+  "status": "partial-pass-aggregate-layout-counterexamples-held",
+  "actualHelperSHA256": "f88c7cd2386413e1aaeb5c943b5da0be4519a2fcac174f929cd4e2e442e9cb45",
+  "profileSHA256": "0a6a4471bdf98dd840e250a274cfd4d8ba32d49836a01e9d1543eb0108dff77b",
+  "rendererSHA256": "55db76b01618110165dd5f22d512428550512feb180757814b734e80ffa304d1",
+  "fixtureSHA256": "9eb28004746b5cf398ec387c098bfa31f1bba6fa7664a876f18f3af0746dc9fe",
+  "geometrySHA256": "e560c1f3518c67c784ecca5701f7b6182306a9d0d7cc4ec0f85447817820252e",
+  "completedChecks": {
+    "isolatedSSR": 1,
+    "CJS": 390,
+    "ESM": 390,
+    "all20PensCompact9": 180,
+    "additionalCompound9And11Compact9at300px": 18,
+    "gateReleaseTriples": 9,
+    "allCurveFullRoundResidualsVisuallyBlank": 9,
+    "states520px": 24,
+    "natural8SecondStartAndProgress1EndPens": [11,9,2,15],
+    "bad": [],
+    "errors": []
+  },
+  "aggregateObservation": {
+    "samples": 112,
+    "columns": 3,
+    "samplePx": 240,
+    "observedAllSamples": true,
+    "unexpectedFill": [
+      { "index": 47, "pen": 11, "progress": 0.34545454544198345, "column": 3, "region": "completed left insect box interior" },
+      { "index": 110, "pen": 20, "progress": 0.99999999, "column": 3, "region": "completed lower shell box interior" }
+    ],
+    "remaining110SamplesObservedNormal": true,
+    "immediateAndSettledBad": [],
+    "repeatNativeCaptureReproduced": true,
+    "viewport": { "width": 1280, "height": 720, "devicePixelRatio": 2 },
+    "wholeAggregatePass": false
+  },
+  "exactCounterexampleSingleViews": {
+    "sameTwoProgressValues": true,
+    "main240ActualX12": "both normal",
+    "main240ActualX316": "both normal",
+    "main520ActualX316": "both normal",
+    "earlierMain520Pen11Minus1e10": "normal; distinct from exact boundary",
+    "initialTwoBadCropsSupersededByFullScrollYCorrectedViews": true
+  },
+  "limits": [
+    "Root cause of multi-column fill anomaly remains unknown. No assertion of a browser defect, antialiasing or source defect.",
+    "Earlier different-glyph fixed21 one-column evidence is context only, not this glyph approval.",
+    "A fixed one-column repeat of the same112 samples is pending. Geometry, guide width16 and product renderer must remain unchanged for reuse.",
+    "Private source bodies and screenshots were not saved."
+  ],
+  "nativeApproval": false,
+  "runtimeApplied": false
+}
