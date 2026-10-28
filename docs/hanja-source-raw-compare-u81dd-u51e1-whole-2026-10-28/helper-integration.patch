@@ -1,0 +1,11 @@
+*** Begin Patch
+*** Update File: scripts/hanja-raw-static-compare.py
+@@
++    if config.get('kind')=='authored-u81dd-public-body-fan3-whole':
++        mixed_path=pinned_path('docs/hanja-authored-component-u81dd-u51e1-2026-10-28/static-whole-adapter.py')
++        require(digest(mixed_path.read_bytes())=='b13341aa8b8a9a97afebe7e7236dddd6b65c8f0ad1aabc990a3fcedae5667a9e','fixed mixed 臝/凡 whole adapter changed')
++        mixed_spec=importlib.util.spec_from_file_location('hanja_mixed_u81dd_fan3',mixed_path)
++        mixed_adapter=importlib.util.module_from_spec(mixed_spec);mixed_spec.loader.exec_module(mixed_adapter)
++        return mixed_adapter.run_mixed_whole(args,config,config_path)
+     if config.get('kind')=='authored-terminal-public-kage-pair':
+*** End Patch

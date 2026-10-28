@@ -1467,6 +1467,18 @@ def main():
     config_path=pinned_path(args.config);require(config_path.name=='config.json'and config_path.parent.parent==ROOT/'docs'and config_path.parent.name.startswith('hanja-source-raw-compare-'),'comparison config location required')
     config_bytes=config_path.read_bytes();require(len(config_bytes)<=65536 and digest(config_bytes)==args.config_sha,'config SHA changed')
     config=json.loads(config_bytes)
+    if config.get('kind')=='authored-u81dd-public-body-fan3-dot-separated-whole':
+        mixed_path=pinned_path('docs/hanja-authored-component-u81dd-u51e1-2026-10-28/static-whole-adapter-v2-dot-separated.py')
+        require(digest(mixed_path.read_bytes())=='181f8397e530f51f82d6ce9dd294dc099c4266f986d7f16897011174bd874c0c','fixed separated third-dot 臝/凡 whole adapter changed')
+        mixed_spec=importlib.util.spec_from_file_location('hanja_mixed_u81dd_fan3_dot_separated',mixed_path)
+        mixed_adapter=importlib.util.module_from_spec(mixed_spec);mixed_spec.loader.exec_module(mixed_adapter)
+        return mixed_adapter.run_mixed_whole(args,config,config_path)
+    if config.get('kind')=='authored-u81dd-public-body-fan3-whole':
+        mixed_path=pinned_path('docs/hanja-authored-component-u81dd-u51e1-2026-10-28/static-whole-adapter.py')
+        require(digest(mixed_path.read_bytes())=='b13341aa8b8a9a97afebe7e7236dddd6b65c8f0ad1aabc990a3fcedae5667a9e','fixed mixed 臝/凡 whole adapter changed')
+        mixed_spec=importlib.util.spec_from_file_location('hanja_mixed_u81dd_fan3',mixed_path)
+        mixed_adapter=importlib.util.module_from_spec(mixed_spec);mixed_spec.loader.exec_module(mixed_adapter)
+        return mixed_adapter.run_mixed_whole(args,config,config_path)
     if config.get('kind')=='authored-terminal-public-kage-pair':
         terminal_path=pinned_path('docs/hanja-authored-terminal-experiments-2026-10-28/static-pair-adapter.py')
         require(digest(terminal_path.read_bytes())=='ff1be92c37918dc356df3070dafe41705b2a123f734075f1dba1390f4fc2749a','fixed authored terminal pair adapter changed')
