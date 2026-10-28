@@ -1,0 +1,85 @@
+{
+  "schema": "hanja-bounded-public-full5-capture-preparation/v1",
+  "glyph": "櫜",
+  "date": "2026-10-29",
+  "status": "READY-FOR-ROOT-ONE-CAPTURE-NOT-EXECUTED",
+  "driver": {
+    "path": "docs/hanja-official-media-compare-u6adc-2026-10-29/capture-hkm.mjs",
+    "SHA256": "8bdc712d606ded07c0378fb7f4651db2ab32280972338796e4a5096b8be14448"
+  },
+  "source": {
+    "path": "docs/hanja-source-alternative-u6adc-2026-10-26/sources.json",
+    "SHA256": "523eae26e1932b1c95ea2d9145c684a6b32dedea1581b26cbd8d4f93a12decad",
+    "root": "hkcs_m6adc@1",
+    "closureKeys": [
+      "hkcs_m6adc@1",
+      "hkcs_m56ca-c01@2",
+      "hkcs_m548e@3",
+      "hkcs_m56ca-c04@1",
+      "hkcs_m5904-p03-s00@1",
+      "hkcs_m53e3-p04-s00@1"
+    ],
+    "sourceFetchNeeded": false
+  },
+  "engine": {
+    "revision": "49232bac0348fe815f4200d4116ab7917e0db47f",
+    "hashes": {
+      "2d.js": "dd17c52d85a6fcdf8a76e30189a24ba2f73856e0d298e80a72e0a562bcb70942",
+      "buhin.js": "6fa8e13bd964525299fa697dc40ea2c8b436d2ccb5952fe95f45d7fbf67b9456",
+      "curve.js": "77477845aff9c4d53616c91247510bd10daeb4282423bdfcde7a8bebcd21f0da",
+      "kage.js": "c36a60ff9ae7d392740d8aad62e823553dc25c991eba40482fcbc8a1a1db6d78",
+      "kagecd.js": "489fdd76e307642f6adaa99d280a41b1dda0760b4ca64b4711f0f49c08d9c860",
+      "kagedf.js": "e6d7cb5eeacda24705306302fd85a01c78f2adcdfdba43d1cac1d3616b6bf847",
+      "polygon.js": "f0afbe3b0c6f4723005ec927d2292eb991ecf5c598c16cfefb7bc55cfef75bf2",
+      "polygons.js": "111b9b0aaca536805cf92ab9d1e7be099f9e082a2169cc7c0bf49e3deee20b1a"
+    },
+    "fixedPublicFilesToFetch": 8,
+    "fetchTimeoutMsPerFile": 20000,
+    "retryLoop": false,
+    "VMContextsIfRootInvokes": 1,
+    "makeGlyphCallsIfRootInvokes": 1,
+    "defaultsWillBeComparedExactly": {
+      "kMage": 10,
+      "kWidth": 5,
+      "kMinWidthT": 6,
+      "kAdjustMageStep": 5
+    }
+  },
+  "instrumentation": {
+    "reusedFrom": "docs/hanja-goal-glyphwiki-batch438-2026-10-09/verify-source.mjs",
+    "sourceFileSHA256": "2e4b23cacd607b818faa7bdfde8fa1c8e192d59c6ff8649ec23fbc34945e93fe",
+    "cookedProgramSHA256": "b65913a7f0c9444b729794760a054704f1e157fbe7c62c12a4c6176ee0ada61b",
+    "programUnchanged": true,
+    "originalBroadVerifierMustNotBeExecuted": "It also refetches old whole variants/private dictionary/next unrelated sources; this thin entry limits processing to fixedHKm6 and8publicengine files."
+  },
+  "sourceClock": {
+    "path": "docs/hanja-official-media-compare-u6adc-2026-10-29/native-clock-review.json",
+    "SHA256": "8b85fcb29e4b2f28469351a514a4c2eadd37823c9c2b8cf34ef64087876dc7e8",
+    "original19Frames": 57,
+    "domestic11": "V",
+    "domestic12": "fallingDRpoint",
+    "HKmWholeSourceMappingApproved": false
+  },
+  "metadataOnlyCommand": "node docs/hanja-official-media-compare-u6adc-2026-10-29/capture-hkm.mjs --plan",
+  "rootOnlyRAMCaptureCode": [
+    "const gaoModule = await import(\"file:///Users/kidow/Documents/dev/kidow/lingo/docs/hanja-official-media-compare-u6adc-2026-10-29/capture-hkm.mjs\");",
+    "const gaoResult = await gaoModule.capture();",
+    "nodeRepl.write({raw: gaoResult.receipt.rawGroups, calls: gaoResult.receipt.drawingCalls, P: gaoResult.receipt.P});"
+  ],
+  "resultHandling": "Keep proof/receipt in processRAM; root persists public capture via native apply_patch. The driver performs no file writes and prints no fullgeometry through CLI. Do not expose private media or run broad legacy verifier.",
+  "focusedPreparationCheck": {
+    "planMetadata": "PASS",
+    "closure": 6,
+    "engineHashes": 8,
+    "sourceDrawingRowArithmetic": 23,
+    "actualEngineRowsPending": true,
+    "HTTP": 0,
+    "engineRuns": 0,
+    "server": 0
+  },
+  "sourceProjection": 0,
+  "privateFetch": 0,
+  "privateMediaSaved": false,
+  "nativeApproval": false,
+  "runtimeApplied": false
+}
