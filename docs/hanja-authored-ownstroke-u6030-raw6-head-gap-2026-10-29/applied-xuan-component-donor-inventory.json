@@ -1,0 +1,132 @@
+{
+  "schema": "hanja-applied-component-donor-readiness/v1",
+  "date": "2026-10-29",
+  "recipient": "怰",
+  "candidateDonor": "玄",
+  "actualResolverCheck": {
+    "found": true,
+    "verificationSource": "vivasam-high-2022",
+    "geometryCorrection": "vivasam-g3ii-b10-a-1706-v1",
+    "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+    "paths": 5,
+    "pathsSHA256": "9c2d79be9d2bdce01ea299eb437b930c5a92101dd3d4e5cff7c84841f7f14725",
+    "outlines": false,
+    "variant": false
+  },
+  "fixedRuntimeDonor": {
+    "bundle": "public/hanja-strokes/textbook-reviewed.json",
+    "bundleSHA256": "975d517db71eed058d7e74cfd87447bfc39f495e3dd29fb1568024eeb3b7905d",
+    "entrySHA256": "048abae912a3acb10d4f3630017c36825f0a1d865d5bace47cb6791067b13e4f",
+    "pathsSHA256": "9c2d79be9d2bdce01ea299eb437b930c5a92101dd3d4e5cff7c84841f7f14725",
+    "geometryCorrection": "vivasam-g3ii-b10-a-1706-v1",
+    "sourceStrokeIndices": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "sourceReference": {
+      "manifestSha256": "32853d2396dc4fe38362b9e51a828144d7e48889f60e28d850cae9fa2335620c",
+      "manifestRow": "1706",
+      "glyph": "玄",
+      "videoFilename": "1706 검을 현.mp4"
+    },
+    "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8"
+  },
+  "review": {
+    "path": "docs/hanja-g3ii-batch10-2026-09-12/review-a.json",
+    "SHA256": "096123dc28a0847ca0d86af35729880b5c3208d3d9bbcc38c3951e49a7cbc20a",
+    "status": "matched",
+    "runtimeApproved": true,
+    "allCumulativeStatesVisuallyInspected": true,
+    "cumulativeCount": 5,
+    "strokeWidth": 5,
+    "strokeLinecap": "round",
+    "strokeLinejoin": "round",
+    "reviewDate": "2026-09-12",
+    "sourceVideo": {
+      "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/1706.mp4",
+      "sha256": "7b1c32ff8dd83d53a8e956b98ee03b963866958d74b2737e1f23c31d64f4819c",
+      "bytes": 336765
+    },
+    "reviewScope": "Donor standalone five corrected centerlines, order/direction/boundary/glyphform and cumulative playback only. Not embedded component placement or original filled outlines."
+  },
+  "publicProvenance": {
+    "corpus": {
+      "name": "Ja",
+      "url": "https://raw.githubusercontent.com/parsimonhi/animCJK/ec5e17cca76c87587790bcbce5ea0b4d4fb753d6/graphicsJa.txt",
+      "sha256": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+      "bytes": 21862957
+    },
+    "license": "Arphic Public License; retain existing ARPHICPL.txt and COPYING.txt notices. Corrected centerlines remain explicitly authored corrections; no original full-font-outline claim.",
+    "correctionRegistry": "scripts/hanja-stroke-textbook-corrections.json",
+    "correctionId": "vivasam-g3ii-b10-a-1706-v1",
+    "correctionSHA256": "4c8cb78942dc7220d7e16706b6a8131710e7ceffcec242bacb77b9d1ece066d1",
+    "donorGeometryKind": "textbook-corrected-centerlines"
+  },
+  "continuousGuideFacts": {
+    "all5PathsSingleMove": true,
+    "stroke3": {
+      "M": 1,
+      "L": 5
+    },
+    "stroke4": {
+      "M": 1,
+      "L": 5
+    },
+    "noSeparatePrimitiveGuideHandoffIn3or4": true,
+    "alreadyApprovedStandalone": true
+  },
+  "receiverRoleComparison": {
+    "recipientOriginalClock": "docs/hanja-official-media-compare-u6030-2026-10-29/native-clock-review.json",
+    "recipientOrder": [
+      "shorttopV",
+      "H",
+      "DLthenDR",
+      "longDLthenHright",
+      "DRpoint"
+    ],
+    "donorOrder": [
+      "DRpoint",
+      "H",
+      "DLthenrightbend",
+      "longDLthenrightbend",
+      "DRpoint"
+    ],
+    "donorFirstSegments": [
+      [
+        7,
+        5
+      ],
+      [
+        6,
+        6
+      ]
+    ],
+    "donorFirstSegmentsDeterminant": 12,
+    "firstDonorNoncollinear": true,
+    "firstRecipientSourceIsStraightV": true,
+    "implication": "No nonsingular affine maps both noncollinear donor-first segments to the exact same straight vertical receiver line. A full5 placement cannot be claimed an exact direction/shape-preserving replacement."
+  },
+  "sourceAvailability": {
+    "verifiedComplete5CenterlineComponent": true,
+    "verifiedFilledPComponent": false,
+    "existingDedicatedFullSourceFolder": false,
+    "originalSourceFontFilledOutlinesRecovered": false
+  },
+  "reuseConditions": [
+    "Use all5 corrected centerlines without inventing a connecting segment; one explicit placement matrix preserves each continuous path.",
+    "Explicit mixedParts/locallyAuthoredRoot and originalWhole/originalEngineCapture=false; retain Arphic provenance and correction identity.",
+    "Do not claim unchanged filled KAGE source. Existing actualR filled-outline execution fixture cannot consume these5 centerlines as original filledP without a separately declared stroke-envelope display or complete centerline playback route.",
+    "Receiver first-stroke mismatch needs a distinct authored-form decision and native whole/order/direction comparison; donor standalone approval does not approve this placement.",
+    "Any partial reuse3..5 while keeping receiverV/H is a different mixed-components proposal requiring explicit inventory and contact evidence, not a complete5 donor identity."
+  ],
+  "readyForAutomaticComponentReplacement": false,
+  "readyForDirectRegistration": false,
+  "nextRecommendation": "The continuous approved donor exists, but only as corrected centerlines and with a first-stroke form mismatch. Obtain ROOT decision on an explicit new mixed centerline/form candidate before composing. No complete compatible filledP+continuousguide donor has been established by these existing records.",
+  "newGeometry": 0,
+  "sharedChanges": 0,
+  "network": 0,
+  "servers": 0
+}

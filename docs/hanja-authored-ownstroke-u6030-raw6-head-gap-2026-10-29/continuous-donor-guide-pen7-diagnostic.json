@@ -1,0 +1,113 @@
+{
+  "schema": "hanja-continuous-donor-guide-native-diagnostic/v1",
+  "glyph": "怰",
+  "pen": 7,
+  "status": "DIAGNOSTIC-UNAPPROVED",
+  "sourceReport": {
+    "path": "docs/hanja-authored-ownstroke-u6030-raw6-head-gap-2026-10-29/continuous-donor-guide-experiment.json",
+    "SHA256": "93cbd553cd61585cc2da1a4b0b07d837bd99e6a2696a3e5df032f3db5e18a621"
+  },
+  "fullPCoverage": {
+    "logical": 7,
+    "radius": 12,
+    "status": "PASS-CONSERVATIVE-FULL-P-COVERAGE",
+    "nodes": 546,
+    "depth": 4,
+    "maxAcceptedUpperBound": 11.99891912508394,
+    "startInsideOriginalP": false,
+    "endInsideOriginalP": false,
+    "guideOutsideFilledPIntervals": [
+      {
+        "edge": 1,
+        "t0": "0",
+        "t1": "4135395837775192521126/140912223270246780343289",
+        "length": 0.2664972533278754
+      },
+      {
+        "edge": 2,
+        "t0": "474308746796207286643479/506051491567568446983298",
+        "t1": "1",
+        "length": 1.6560486485516173
+      },
+      {
+        "edge": 3,
+        "t0": "0",
+        "t1": "1",
+        "length": 22.511591087587185
+      },
+      {
+        "edge": 4,
+        "t0": "0",
+        "t1": "295771049889955/754611074256297",
+        "length": 0.9054889398492411
+      },
+      {
+        "edge": 5,
+        "t0": "96576610577678711008/96625428586425862393",
+        "t1": "1",
+        "length": 0.020291441745316472
+      }
+    ],
+    "formalIntervalProof": false,
+    "margin": 1e-8,
+    "nativeApproval": false
+  },
+  "finiteConnectivity": {
+    "logical": 7,
+    "width": 24,
+    "padding": 12,
+    "until": 0.10669833704444771,
+    "sourceTriangles": 42,
+    "originalPositiveTriangleContacts": 323,
+    "finiteConnectedProofAll": false,
+    "checks": [
+      {
+        "p": 0.5,
+        "visibleComponentsUpperBound": 2,
+        "activeConvexCells": 68,
+        "additionalExactPositiveWitnessLinks": 440,
+        "componentCellCounts": [
+          63,
+          5
+        ],
+        "gateReleased": true
+      }
+    ]
+  },
+  "note": "Two is a sufficient-graph component upper bound, not observed failure or proof of actual disconnection. ROOT requested direct visual diagnosis before further witness loops.",
+  "segment": {
+    "outline": "M85.75 41.5 L82.8 45.75 L79.6 50.05 L76.25 54.45 L72.65 58.95 L68.8 63.5 L64.8 68.15 L60.5 72.9 L56 77.65 L51.25 82.45 L46.2 87.3 L45.55 86.65 L49.85 81.2 L54 75.9 L58 70.75 L61.85 65.75 L65.5 60.9 L68.95 56.15 L72.2 51.5 L75.25 47 L78.1 42.55 L80.7 38.3 Z M80.45 38.7 L81 37.9 L85.75 41.5 Z M85.75 41.5 L86.5 43.15 L83.6 43.1 Z M36.4 85.45 L41.6 84.8 L46.75 84.15 L51.9 83.5 L57 82.85 L62.1 82.25 L67.15 81.6 L72.15 81 L77.15 80.45 L82.15 79.95 L87.15 79.55 L87.3 80.4 L82.5 81.8 L77.65 83.05 L72.75 84.25 L67.8 85.35 L62.8 86.4 L57.75 87.45 L52.7 88.45 L47.6 89.45 L42.45 90.4 L37.3 91.35 Z M37.3 91.35 L35.4 85.6 L36.4 85.45 Z M37.3 91.35 L40.05 89.45 L38.5 92.7 Z",
+    "direction": "curve",
+    "weight": 112.46660756297557,
+    "revealPath": "M88.34183810119316 28.502620728103913 L83.54 39.5 L79.90628731180594 47.822087449645934 L61.09531578947502 66.34692500312543 L46.343546400936454 83.35154299948486 L47.449144202841815 85.38001634932029 L87.25 80",
+    "revealWidth": 24,
+    "revealStartGate": {
+      "unit": [
+        -0.40015317509942966,
+        0.9164482726580071
+      ],
+      "minProjection": 2.320982350684666,
+      "firstProjection": 2.770910522184927,
+      "padding": 12,
+      "until": 0.10669833704444771,
+      "bounds": [
+        35.4,
+        37.9,
+        87.3,
+        92.7
+      ]
+    }
+  },
+  "sourcePUnchanged": true,
+  "donorOriginalContinuousPath": "M64 44.3 L61 51.2 L45 67 L32.5 81.4 L33.5 83 L68 77",
+  "donorPositiveMatrixExact": [
+    "307727336617235093527/267836517990621277275",
+    "31184695423687686847/535673035981242554550",
+    "-8705903292614144419/321403821588745532730",
+    "197890084179317180843/160701910794372766365",
+    "36022873191829532191523/3214038215887455327300",
+    "-15087757024504152136949/803509553971863831825"
+  ],
+  "nativeApproved": false,
+  "runtimeApplied": false
+}
