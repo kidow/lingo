@@ -5768,7 +5768,7 @@ function u5b7dStartDraftGuideTransform(n,group,expected,svg){
  const points=U5b7dStartDraftOutlineRuntime.outlineStartClip(segment,p);
  if(points===undefined){if(n.getAttribute('clip-path')!==null||defs.children.length!==1||defs.firstElementChild!==mask)return false;}
  else{const clip=defs.firstElementChild,polygon=clip?.firstElementChild;if(defs.children.length!==2||defs.lastElementChild!==mask||clip?.localName!=='clipPath'||clip.id!==mask.id+'-source-start'||clip.getAttribute('clipPathUnits')!=='userSpaceOnUse'||clip.children.length!==1||polygon?.localName!=='polygon'||polygon.getAttribute('points')!==points||n.getAttribute('clip-path')!=='url(#'+clip.id+')'||![clip,polygon].every(v=>v.isConnected&&v.ownerDocument===document&&v.ownerSVGElement===svg))return false;}
- try{const em=new DOMMatrix(segment.revealTransform),am=new DOMMatrix(style.transform);return ['a','b','c','d','e','f'].every(k=>Number.isFinite(am[k])&&Math.abs(am[k]-em[k])<=Math.max(1,Math.abs(em[k]))*1e-6);}catch{return false;}
+ try{const values=segment.revealTransform.slice(7,-1).trim().split(/[ ,]+/).map(Number);if(values.length!==6||!values.every(Number.isFinite))return false;const em=new DOMMatrix(values),am=style.transform==='none'?new DOMMatrix():new DOMMatrix(style.transform);return ['a','b','c','d','e','f'].every(k=>Number.isFinite(am[k])&&Math.abs(am[k]-em[k])<=Math.max(1,Math.abs(em[k]))*1e-6);}catch{return false;}
 }
 function plainState(host,skipSpecial=false){
  if(!skipSpecial&&C.root==='u51de'&&C.sharedVersion==="u51de-base-catalog15-playback16-source-preview-1")return u51deBaseSourcePreviewState(host);
