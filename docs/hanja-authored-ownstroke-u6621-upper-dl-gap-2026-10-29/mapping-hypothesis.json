@@ -1,0 +1,161 @@
+{
+  "schema": "hanja-public-source-logical-grouping-hypothesis/v1",
+  "glyph": "昡",
+  "sourceRawGroups": 12,
+  "domesticStrokes": 9,
+  "oneBasedLogicalRawGroups": [
+    [
+      1
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      4
+    ],
+    [
+      5
+    ],
+    [
+      6
+    ],
+    [
+      7
+    ],
+    [
+      8,
+      9
+    ],
+    [
+      10,
+      11
+    ],
+    [
+      12
+    ]
+  ],
+  "sourceGroupRationale": [
+    "raw1 leftdayV",
+    "raw2topH+3rightV",
+    "raw4innerH",
+    "raw5bottomH",
+    "raw6shortV",
+    "raw7H",
+    "raw8DL+9DR",
+    "raw10longDL+11Hright",
+    "raw12DRpoint"
+  ],
+  "evidence": {
+    "clock": {
+      "path": "docs/hanja-official-media-compare-u6621-2026-10-29/native-clock-review.json",
+      "SHA256": "0218d23418ebf0c014181c300aa1863fe4b902b2e8be57d24fd308294ff8bf35",
+      "scope": "Original9clock27frames finite macro roles only"
+    },
+    "whole": {
+      "path": "docs/hanja-authored-ownstroke-u6621-upper-dl-gap-2026-10-29/native-static-whole-review.json",
+      "SHA256": "7f9ff58d6dcce54d8c56cbfdc1ee2f75bb884a11a402155d1fdb0975597567e1",
+      "scope": "Authorwhole/gap/sourcejoint/finalpoint only; no individualsource mapping"
+    }
+  },
+  "compoundGuideBoundaries": [
+    {
+      "logical": 2,
+      "rawGroups": [
+        2,
+        3
+      ],
+      "previousGuideEnd": [
+        65.47904999999999,
+        37.56
+      ],
+      "nextGuideStart": [
+        65.47904999999999,
+        37.56
+      ],
+      "sourceEndpointExactlyEqual": true,
+      "gapVector": [
+        0,
+        0
+      ],
+      "raw8AuthoredYaffineAppliedSeparately": false
+    },
+    {
+      "logical": 7,
+      "rawGroups": [
+        8,
+        9
+      ],
+      "previousGuideEnd": [
+        104.88,
+        97
+      ],
+      "nextGuideStart": [
+        84.36,
+        82
+      ],
+      "sourceEndpointExactlyEqual": false,
+      "gapVector": [
+        -20.519999999999996,
+        -15
+      ],
+      "raw8AuthoredYaffineAppliedSeparately": true
+    },
+    {
+      "logical": 8,
+      "rawGroups": [
+        10,
+        11
+      ],
+      "previousGuideEnd": [
+        89.76,
+        174
+      ],
+      "nextGuideStart": [
+        70.32,
+        177
+      ],
+      "sourceEndpointExactlyEqual": false,
+      "gapVector": [
+        -19.440000000000012,
+        3
+      ],
+      "raw8AuthoredYaffineAppliedSeparately": false
+    }
+  ],
+  "authoredRaw8GuideEnd": {
+    "source": [
+      104.88,
+      97
+    ],
+    "candidate": [
+      104.88,
+      97.02150537634408
+    ],
+    "candidateYExact": "9023/93",
+    "nextRaw9Start": [
+      84.36,
+      82
+    ],
+    "endpointExactlyEqual": false
+  },
+  "all12SourceRawGroupsIncludedExactlyOnce": true,
+  "sourcePOrderPreserved": true,
+  "sourceRowsDeleted": [],
+  "nonConsecutiveGroups": [],
+  "sourceGuideMicroclockEquivalence": false,
+  "canonical9MappingApproved": false,
+  "approval": {
+    "sourceMapping": false,
+    "direction": false,
+    "temporal": false,
+    "runtime": false,
+    "native": false
+  },
+  "limits": [
+    "Clock roles are hypotheses forsourcecurrent/prefix review; actualsourceindividualcorrespondence remains ROOTpending.",
+    "Only2→3 originalguideendpoint isidentical;7/8 compoundguidegaps remain separate sourceprimitives, no bridge/retracingtrajectory inferred.",
+    "Original raw1→5 incidentalclosure is neither joined nor deleted;4daylogical usesraw2/3 grouping only.",
+    "Authorraw8 wholeYaffine remains separate from originalwhole/enginecapture claims."
+  ]
+}
