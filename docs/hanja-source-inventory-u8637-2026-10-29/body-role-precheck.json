@@ -1,0 +1,131 @@
+{
+  "schema": "hanja-existing-body-role-code-precheck/v1",
+  "glyph": "蘷",
+  "date": "2026-10-29",
+  "source": {
+    "path": "docs/hanja-goal-glyphwiki-batch486-2026-10-10/engine-proof.json",
+    "SHA256": "75ef83fd8b4594fc4f0d7e9c47bffb32aea50542a93dfcecb62c7badeb710ffd"
+  },
+  "originalClock": {
+    "path": "docs/hanja-official-media-compare-u8637-2026-10-29/native-clock-review.json",
+    "SHA256": "79532c6c35db10b8839bb8bcd55985fc1a18b43706c2535857ca4a3896947520"
+  },
+  "sourceShape": {
+    "raw": 23,
+    "calls": 26,
+    "P": 51
+  },
+  "bodyRoleCandidates": [
+    {
+      "domestic": 6,
+      "raw": 11,
+      "role": "왼몸체 오른V down",
+      "sourceCalls": [
+        {
+          "kind": "cdDrawLine",
+          "args": [
+            47.2,
+            51.775,
+            47.2,
+            106.06,
+            1000,
+            32
+          ]
+        }
+      ],
+      "filledP": 2,
+      "sourceClockEvidence": "6 왼쪽몸체 오른V 상→하",
+      "codeRoleSupported": true,
+      "geometryCompatibilityApproved": false
+    },
+    {
+      "domestic": 7,
+      "raw": 12,
+      "role": "오른V 중간 짧은H right",
+      "sourceCalls": [
+        {
+          "kind": "cdDrawLine",
+          "args": [
+            47.2,
+            77.185,
+            70.825,
+            77.185,
+            2,
+            200
+          ]
+        }
+      ],
+      "filledP": 2,
+      "sourceClockEvidence": "7 그 오른V 중간의 짧은H 좌→우",
+      "codeRoleSupported": true,
+      "geometryCompatibilityApproved": false
+    },
+    {
+      "domestic": 8,
+      "raw": 13,
+      "role": "왼V down",
+      "sourceCalls": [
+        {
+          "kind": "cdDrawLine",
+          "args": [
+            27.625,
+            67.945,
+            27.625,
+            109.14,
+            1000,
+            32
+          ]
+        }
+      ],
+      "filledP": 2,
+      "sourceClockEvidence": "8 왼V 상→하",
+      "codeRoleSupported": true,
+      "geometryCompatibilityApproved": false
+    },
+    {
+      "domestic": 9,
+      "raw": 14,
+      "role": "바닥 risingH right",
+      "sourceCalls": [
+        {
+          "kind": "cdDrawCurve",
+          "args": [
+            13.45,
+            111.45,
+            37.075,
+            108.755,
+            73.525,
+            101.825,
+            0,
+            7
+          ]
+        }
+      ],
+      "filledP": 3,
+      "sourceClockEvidence": "9 바닥 risingH 좌→우",
+      "codeRoleSupported": true,
+      "geometryCompatibilityApproved": false
+    }
+  ],
+  "sourceOrderFact": "원source는 centralbox raw5..10을 먼저, left止형 raw11..14를 나중에 그립니다. 원문은 left6..9를 central10..14보다 먼저 그리므로 같은 순서라고 주장할 수 없습니다.",
+  "candidateRetention": {
+    "allFourBroadRolesPresent": true,
+    "sourcePAndQUnchanged": true,
+    "newGeometry": 0,
+    "retentionForTargetedStaticComparisonOnly": true,
+    "bodyGeometryApproved": false,
+    "wholeHOLDPreserved": true
+  },
+  "grassFact": "기존source raw1H+raw2V+raw3V는 연결3획. 원문 분리4획1..4에 직접 대응/원형승인 불가. 새grassdonor나배치를 아직 만들지 않습니다.",
+  "requiredRootVisual": [
+    "국내6↔raw11, 국내7↔raw12, 국내8↔raw13, 국내9↔raw14 각각 단독520px 비교",
+    "source raw11..14 전체와 국내prefix9의 left止형 폭/세로foot/바닥risingH 접촉 직접비교. 기존 raw prefix14에는 centralraw5..10도 포함된다는 순서차이 주의.",
+    "원문 좌몸체와 public source가 실제형태상 호환하는지 root판정 전 몸체재사용/저자조합 금지."
+  ],
+  "mappingApproved": false,
+  "directionAssignmentApproved": false,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "serverStarts": 0,
+  "buildRun": false
+}
