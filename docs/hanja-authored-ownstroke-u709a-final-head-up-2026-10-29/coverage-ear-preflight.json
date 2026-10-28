@@ -1,0 +1,77 @@
+{
+  "schema": "hanja-public-source-curve-coverage-preflight/v1",
+  "date": "2026-10-29",
+  "glyph": "炚",
+  "scope": "Only previously fan-inconclusive7m2/8m1 rechecked with positive-ear triangulation; unchanged successful5m1/6m1 reused. Width14 is isotropic in placed100 frame because both outline and guide are transformed explicitly and revealTransform is absent. No start/release/native approval.",
+  "inputSHA256": {
+    "docs/hanja-authored-ownstroke-u709a-final-head-up-2026-10-29/prepare-execution-draft.mjs": "59b1a4aa77732605c7027c241e9fcf4045c5d1c5ecd24822aa4e5075ca4ccaa6",
+    "docs/hanja-authored-ownstroke-u709a-final-head-up-2026-10-29/fixtures-execution-draft.json": "60d5c3b8ce9a7a57d5268d03440b645fb7f2a0ba26490beef3ba487f1b74c7d1",
+    "docs/hanja-authored-ownstroke-u709a-final-head-up-2026-10-29/execution-draft-check.json": "d645724f136033c18a7d4b781a2c98ebea719533e1b74412f0fe54ab0da7a862",
+    "docs/hanja-authored-ownstroke-u709a-final-head-up-2026-10-29/coverage-ear-preflight.mjs": "b4892c34c61ebe7ff248f4a5db626a59ef54f57010dd876cf9b6f74a992c1dee"
+  },
+  "method": "Positive-ear triangles preserve exact original polygon area within bounded numeric margin and avoid concave-fan exterior regions. At each triangle center distance to actual padded line segment and4097 evaluated original Q/C points gives an upper distance bound; plus triangle radius (1-Lipschitz) proves every triangle point within full round guide radius7. No original P/Q/C flattening. Unresolved triangulated regions are not by themselves insufficient width.",
+  "numerics": {
+    "margin": 1e-8,
+    "formalIntervalProof": false,
+    "depthLimit": 16,
+    "nodeLimitPerMask": 60000,
+    "BezierEvaluationsPerMask": 4097
+  },
+  "counts": {
+    "curveMasks": 2,
+    "pass": 2,
+    "unproved": 0,
+    "outlier": 0
+  },
+  "units": [
+    {
+      "logical": 7,
+      "mask": 2,
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "radius": 7,
+      "width": 14,
+      "padding": 7,
+      "nodes": 276,
+      "maxDepth": 3,
+      "maxAcceptedUpperDistance": 6.953922989885704,
+      "sourceOutlinePreserved": true,
+      "sourceBezierGuidePreserved": true,
+      "curveDegree": 2,
+      "nativeApproval": false
+    },
+    {
+      "logical": 8,
+      "mask": 1,
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "radius": 7,
+      "width": 14,
+      "padding": 7,
+      "nodes": 469,
+      "maxDepth": 3,
+      "maxAcceptedUpperDistance": 6.949662579190453,
+      "sourceOutlinePreserved": true,
+      "sourceBezierGuidePreserved": true,
+      "curveDegree": 2,
+      "nativeApproval": false
+    }
+  ],
+  "cardinalPolicy": {
+    "masks": 6,
+    "onlyWholeRaw9PositiveYAffineMaintained": true,
+    "nativeStartContactAndEndingReviewRequired": true
+  },
+  "reusedSuccessfulUnits": {
+    "file": "coverage-preflight.json",
+    "SHA256": "e174f6139a46fb87bedac5c550653b34316872a4649059939b607808879128d5",
+    "logicalMasks": [
+      "5:1",
+      "6:1"
+    ],
+    "rerun": false
+  },
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "sharedFilesChanged": false,
+  "serverStarts": 0,
+  "buildRun": false
+}
