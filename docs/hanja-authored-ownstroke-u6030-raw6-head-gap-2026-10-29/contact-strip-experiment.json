@@ -1,0 +1,149 @@
+{
+  "schema": "hanja-source-P-contact-seeded-strip-experiment/v1",
+  "date": "2026-10-29",
+  "glyph": "怰",
+  "status": "MATH-SUPPORTED-NATIVE-UNREVIEWED",
+  "inputSHA256": {
+    "docs/hanja-authored-ownstroke-u6030-raw6-head-gap-2026-10-29/fixtures-execution-draft.json": "a8afed867fb242c938030bf8f39dc1be6d4ff947d7e7c1e10e120f98cdf28226",
+    "docs/hanja-authored-ownstroke-u6030-raw6-head-gap-2026-10-29/native-actual-start-hold-review.json": "7c6f90161a181e16d8f17c37f0fba08aa5fe6a6a9e6ab9abdb6ab4aa730ba760"
+  },
+  "sourceProof": {
+    "rows": [
+      {
+        "logical": 6,
+        "priorRaw": 6,
+        "nextRaw": 7,
+        "nextSourcePCount": 2,
+        "criticalXSlices": 25,
+        "criticalAndOpenIntervalSliceChecks": 49,
+        "xMonotoneUnionProved": true,
+        "violations": [],
+        "seed200": [
+          "86188747039562189935872/801830249651065084685",
+          "154539267096974794539869/1603660499302130169370"
+        ],
+        "seedFromPositiveConvexIntersectionArea200": "4928321064133186911738/4009151248255325423425",
+        "seedStrictlyInsideBothFilledSets": true,
+        "nextBBox200": [
+          "867/10",
+          "819/10",
+          "1241/10",
+          "624/5"
+        ],
+        "priorPContactEdges": [
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            3
+          ]
+        ]
+      },
+      {
+        "logical": 7,
+        "priorRaw": 8,
+        "nextRaw": 9,
+        "nextSourcePCount": 3,
+        "criticalXSlices": 26,
+        "criticalAndOpenIntervalSliceChecks": 51,
+        "xMonotoneUnionProved": true,
+        "violations": [],
+        "seed200": [
+          "6618207819254797549/69740012495930550",
+          "11908806814208702717/69740012495930550"
+        ],
+        "seedFromPositiveConvexIntersectionArea200": "1631654126478341399/139480024991861100",
+        "seedStrictlyInsideBothFilledSets": true,
+        "nextBBox200": [
+          "354/5",
+          "1591/10",
+          "873/5",
+          "927/5"
+        ],
+        "priorPContactEdges": [
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            3
+          ]
+        ]
+      }
+    ],
+    "method": "Exact rational vertical union intervals at all sourcevertex and all sourceedge-crossing x coordinates plus every intervening open interval midpoint; crosssection topology is constant between these events. Positive convex intersection interior centroid is the contact seed.",
+    "nativeApproval": false
+  },
+  "plans": [
+    {
+      "pen": 6,
+      "mask": 2,
+      "seedX": 53.745008421089885,
+      "sourceSeed200": [
+        "86188747039562189935872/801830249651065084685",
+        "154539267096974794539869/1603660499302130169370"
+      ],
+      "bounds": [
+        43.35,
+        40.95,
+        62.05,
+        62.4
+      ],
+      "headCompletionShare": 0.25,
+      "policy": "x-band expands from strict interior prior/next intersection; lefthead completes at local.25, rightfront growslinearly to1. Authored local display, not source Q traversal.",
+      "priorPContactGraphConnected": true,
+      "xMonotone": true
+    },
+    {
+      "pen": 7,
+      "mask": 2,
+      "seedX": 47.449144202841815,
+      "sourceSeed200": [
+        "6618207819254797549/69740012495930550",
+        "11908806814208702717/69740012495930550"
+      ],
+      "bounds": [
+        35.4,
+        79.55,
+        87.3,
+        92.7
+      ],
+      "headCompletionShare": 0.25,
+      "policy": "x-band expands from strict interior prior/next intersection; lefthead completes at local.25, rightfront growslinearly to1. Authored local display, not source Q traversal.",
+      "priorPContactGraphConnected": true,
+      "xMonotone": true
+    }
+  ],
+  "closedGrowthArgument": [
+    "The original nextP union has one connected vertical interval at every sourcevertex/edgecrossing x and every open-event interval, with no exceptions. Its intersection with any nonempty xstrip through the chosen contactseed is connected.",
+    "The seed is strictly interior to a positive-area convex prior/next intersection. Every positive-width strip containing this seed overlaps the completed prior by positive area. The priorP contact graph is connected.",
+    "Clip xinterval is nested. At p0 width0 has zero filled positive area. Width is continuous and Lipschitz, so no positive-area initial pop or subsequent area jump in ideal geometry. At p1 clip equals full nextP bounds.",
+    "The rightmost display front moves only toward +x, consistent with the forward xcomponent of source DR/right guide. The lefthead grows backward from the contactseed and completes at.25: this is explicitly authored head expansion, not original guide traversal, CSS identity or retracing. Overall macro impression requires ROOT direct review."
+  ],
+  "noNewFilledGeometry": true,
+  "originalOutlineAndGuideProvenancePreserved": true,
+  "originalGuideUsedAsClipTrajectory": false,
+  "headShareIsAuthoredNotPublisher": true,
+  "sourcePClippedForDisplayOnlyNotEdited": true,
+  "sourceGuideGapsResolved": false,
+  "nativeTemporalApproval": false,
+  "runtimeApplied": false,
+  "sharedFilesChanged": 0,
+  "serverStarts": 0,
+  "requiredNative": [
+    "Initial0/1e-6/.01/.03 and contact seed; .25/.5/.75 andfull completion; natural8sec ofeach secondmask.",
+    "Must keep contact throughout and not visually read as an unwanted reverse stroke. Reject the candidate if head expansion fails macro DR/right impression.",
+    "This source-only prototype is not actualR or appUI approval; successful native experiment still needs a narrow source-specific actualR integration."
+  ]
+}
