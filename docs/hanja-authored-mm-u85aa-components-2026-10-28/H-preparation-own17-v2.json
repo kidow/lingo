@@ -1,0 +1,125 @@
+{
+  "schema": "hanja-exact-H-preparation/v1",
+  "glyph": "薪",
+  "variant": "own17-to11-v2",
+  "status": "prepared-not-applied-focused-validation-passed",
+  "preH": "98f37aa408530bbb8cf4c68afd4604251ac2a09bed3ee400ade7842a15eef60a",
+  "expectedPostH": "f05a8a3ad2336777a33fa96b68760ade182d50d2c76ac9ab788b10a4c0cbe9ff",
+  "patch": {
+    "path": "docs/hanja-authored-mm-u85aa-components-2026-10-28/actual-H-integration-own17-v2.patch",
+    "SHA256": "232c942e6c45e4436d3c924cb10b692bcb15379a1b58391eeca70c6c9a360ad1",
+    "hunks": 11,
+    "nativeApplied": false
+  },
+  "profileOverrides": {
+    "path": "docs/hanja-authored-mm-u85aa-components-2026-10-28/profile-overrides-own17-v2.pending.json",
+    "SHA256": "ef39e1e2b8202bd4a3bfebb06c70492974381682bb7f39f6d2d7ff47b54bdea2"
+  },
+  "fixture": {
+    "path": "docs/hanja-authored-mm-u85aa-components-2026-10-28/fixtures-reveal-own17-v2-start-draft.json",
+    "SHA256": "06934a0c472a1597803e60a75cc68ac13a34306002ede867152491ff374e9c5a",
+    "geometrySHA256": "2fa130d780eb1ace4419cc14896caf526ca92181bb69b7a24db3976d156994d0",
+    "key": "u85aa.strokes"
+  },
+  "counts": {
+    "logical": 17,
+    "masks": 17,
+    "subpaths": 17,
+    "curves": 17,
+    "boundaries": 0
+  },
+  "sourceIdentity": {
+    "locallyAuthored": true,
+    "mixedParts": true,
+    "originalRoot": false,
+    "originalMMWhole": false,
+    "originalEngineCapture": false,
+    "composition": "grass4 +12 original identity body parts +1 affine replacement of logical11 using unchanged own MMpath16/logical17",
+    "mask": "independent N100 source-affine width20/pad10"
+  },
+  "sourceEvidence": {
+    "originalClock": {
+      "path": "docs/hanja-official-media-compare-u85aa-2026-10-28/native-clock-review.json",
+      "SHA256": "20fb7f7c936a8c30d814023f5b78e2671e8997c1768e87a72933e71986787ffd"
+    },
+    "static": {
+      "path": "docs/hanja-authored-mm-u85aa-components-2026-10-28/native-static-own17-to11-v2-review.json",
+      "SHA256": "b4e95041a080eb6d56fd02c5b058e27e64fca424abd74d58c8b5010b617b05bf"
+    },
+    "scope": "Original17 domestic clock, other16 static roles reused, new plain-vertical own17-to11 placement only; source mask/native runtime unapproved"
+  },
+  "verification": {
+    "serverParseDiagnostics": 0,
+    "clientParseDiagnostics": 0,
+    "exactGuard": true,
+    "negativeCases": 4,
+    "generatedRoute": {
+      "entireActualNewRouteExecuted": true,
+      "rootAndSharedVersion": true,
+      "temporalPolicy": true,
+      "glyph": "薪",
+      "pens": 17,
+      "curveTargets": 17,
+      "pairProgress": 0,
+      "attrsAndTargets": true
+    },
+    "actualLocalBaselineClosureExpressionSelected": true,
+    "Su4ComputedMatrixScopeByteUnchanged": true,
+    "sourceInputsUnchanged": true,
+    "preparationCorrection": "The copied guard initially retained Su native-mapping metadata after path substitution; focused guard caught it. Exact Xin v2 originalClock/static pins were corrected before this patch was written.",
+    "forwardOriginalBlockCursorCheck": true,
+    "exactInverseToPreH": true,
+    "bareBlankContextLines": 0,
+    "existingServerGuardASTPreserved": true,
+    "changedExistingServerFunctions": [
+      "resources"
+    ],
+    "dynamicControls": {
+      "buttons": 6,
+      "initial": 34,
+      "ending": 51,
+      "currentGateRelease": 3,
+      "allPensResidual": true
+    },
+    "exactClientContextNegatives": 5,
+    "baselineClosure": {
+      "actualNewRootSelected": true,
+      "existingRootsPreserved": 15,
+      "foreignContextNegatives": 2
+    },
+    "Su4ComputedMatrixException": {
+      "existingSu4StillSelected": true,
+      "all17XinSegmentsExcluded": true,
+      "predicateByteUnchanged": true
+    },
+    "commonCapsule": {
+      "baseProfile": {
+        "path": "docs/hanja-authored-mm-u850c-components-2026-10-28/actual-profile-start.json",
+        "SHA256": "c821f74c7ceada5410fd65c5fd270d9e77e7b84c021031f9e45c39f9aefd8bcb"
+      },
+      "closureModules": 386,
+      "registrySHA256": "599f1a11c955edbe720b27c6d02e4f3dfdeb9f7bc6fb675d9e376cc10b35d65a",
+      "scope": "Current registry was read exactly; no runtime registry file changed by this child. ROOT refreshes only input pins affected by concurrent registration."
+    }
+  },
+  "requiredFreshNative": [
+    "All17 compact9/coarse,17 gate-release3,17 initial2/ending3 and all17 full-round residual.",
+    "Focus new logical11 donor plain vertical, unchanged donor17, and authored grass4; other16 static roles and original17 clock reused only for recorded scope.",
+    "Su4 computed-matrix exception remains restricted to Su4. No numeric tolerance has been authorized for any Xin segment."
+  ],
+  "author": {
+    "SSR": 0,
+    "server": 0,
+    "browser": 0,
+    "sharedWrites": 0,
+    "build": 0,
+    "globalTypeCheck": 0
+  },
+  "approval": {
+    "temporal": false,
+    "native": false,
+    "runtime": false
+  },
+  "commitSuggested": "docs(hanja): prepare Xin own-stroke v2 native review",
+  "observationScope": "Source pins/guard/generated route/closure/pure controls only. No child browser DOM, transformed-mask visibility or actual playback approval. ROOT must perform finite native review before registration."
+}
