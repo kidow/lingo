@@ -1,0 +1,215 @@
+{
+  "schema": "hanja-isolated-width16-H-preparation/v1",
+  "glyph": "蠙",
+  "before": {
+    "path": "scripts/hanja-actual-component-review.mjs",
+    "SHA256": "444cf4bb0e05d3d20e748efa091cababd31d30507ad87c20b26abe296763af2e"
+  },
+  "after": {
+    "path": "scripts/hanja-actual-component-review.mjs",
+    "SHA256": "f88c7cd2386413e1aaeb5c943b5da0be4519a2fcac174f929cd4e2e442e9cb45"
+  },
+  "patch": {
+    "path": "docs/hanja-authored-ownstroke-u8819-roof-hook-separated-2026-10-29/actual-H-width16-integration.patch",
+    "SHA256": "7c92e5c27c2b718ff5a3bf43121320a746bbb9d0cb130722d19cc2b5157fa926",
+    "ascendingHunks": 15,
+    "forwardInverseExact": true
+  },
+  "profile": {
+    "path": "docs/hanja-authored-ownstroke-u8819-roof-hook-separated-2026-10-29/actual-profile-width16-start.json",
+    "SHA256": "0a6a4471bdf98dd840e250a274cfd4d8ba32d49836a01e9d1543eb0108dff77b",
+    "renderer": {
+      "path": "components/hanja/stroke-outlines.tsx",
+      "SHA256": "55db76b01618110165dd5f22d512428550512feb180757814b734e80ffa304d1"
+    },
+    "aggregate": {
+      "path": "lib/hanja-strokes.ts",
+      "SHA256": "c1ac8213b5fbd7a4a39152e60cb0ee0931c15077af01b00674e3827b6e17fae6"
+    },
+    "expectedClosure": 390,
+    "SSRPensNormalized": [],
+    "SSRPensReason": "Existingcommon H selected-1 indexing does not accept0; startup remains oneSSR andfullnative20rolecoverage isplanned."
+  },
+  "tests": {
+    "RAM": {
+      "sourcePositive": true,
+      "missingNegative4": true,
+      "width14SubstitutionRejected": true,
+      "wholeActualRoute": true,
+      "controlsGenerated": 35,
+      "gates9": true,
+      "aggregate112": true,
+      "fullroundControl": true,
+      "closure390": true,
+      "missingLeafRejected": true
+    },
+    "padding": {
+      "padding9": [
+        {
+          "pen": 5,
+          "mask": 1,
+          "pad": 7
+        },
+        {
+          "pen": 6,
+          "mask": 1,
+          "pad": 7
+        },
+        {
+          "pen": 8,
+          "mask": 1,
+          "pad": 7
+        },
+        {
+          "pen": 9,
+          "mask": 2,
+          "pad": 7
+        },
+        {
+          "pen": 11,
+          "mask": 2,
+          "pad": 8
+        },
+        {
+          "pen": 12,
+          "mask": 1,
+          "pad": 7
+        },
+        {
+          "pen": 13,
+          "mask": 1,
+          "pad": 7
+        },
+        {
+          "pen": 19,
+          "mask": 1,
+          "pad": 7
+        },
+        {
+          "pen": 20,
+          "mask": 1,
+          "pad": 7
+        }
+      ],
+      "only11m2Is8": true
+    },
+    "syntax": true,
+    "Su4GuardByteUnchanged": true,
+    "sourcePinsCheckedExcludingPlannedH": 1010,
+    "newRendererImports": 0,
+    "isolatedHSSR": 0,
+    "server": 0,
+    "sharedWrites": 0,
+    "build": false,
+    "fullTypecheck": false
+  },
+  "freshNativePlan": {
+    "priority": [
+      "논리11 V→leftHook 두 실제원호출 전환 및 width16/pad8 start/release/residual",
+      "논리9 roofH→보정hook/다음 논리10H와 간격",
+      "복합2/15 H→V 경계",
+      "전체20획 시작·중간·완료·누적 상태"
+    ],
+    "allLogicalCompact": {
+      "pens": 20,
+      "samplesPerPen": 9,
+      "frames": 180
+    },
+    "gateRelease": {
+      "curves": 9,
+      "samples": [
+        "until-1e-8",
+        "until",
+        "until+1e-8"
+      ],
+      "frames": 27
+    },
+    "fullroundResidual": {
+      "curves": 9,
+      "expected": "모두 빈 화면; 실제원guide clone의 dash와startclip만 제거한 별도피복검토"
+    },
+    "aggregate": {
+      "initial": {
+        "pens": 20,
+        "samples": [
+          0,
+          0.000001
+        ],
+        "frames": 40
+      },
+      "boundaries": {
+        "sourceBoundaries": 4,
+        "samples": [
+          "boundary-1e-8",
+          "boundary",
+          "boundary+1e-8"
+        ],
+        "frames": 12
+      },
+      "ending": {
+        "pens": 20,
+        "samples": [
+          0.999999,
+          1,
+          1.000001
+        ],
+        "frames": 60
+      },
+      "frames": 112
+    },
+    "states": {
+      "prefixes": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "other": [
+        "idle",
+        "done",
+        "selected-zero"
+      ],
+      "total": 24
+    },
+    "whole": {
+      "px": 520,
+      "checks": [
+        "원P43 유지",
+        "원문역할·hook/H간격",
+        "누락·중복·연결·분리조각",
+        "선택 상태와 실제DOM일치"
+      ]
+    },
+    "naturalPens": [
+      2,
+      9,
+      11,
+      15
+    ],
+    "independentOriginalClockRerun": false,
+    "alreadySuccessfulGeometryRerun": false
+  },
+  "approvals": {
+    "native": false,
+    "runtime": false,
+    "registration": false
+  },
+  "startup": "node scripts/hanja-actual-component-review.mjs --profile docs/hanja-authored-ownstroke-u8819-roof-hook-separated-2026-10-29/actual-profile-width16-start.json --profile-sha 0a6a4471bdf98dd840e250a274cfd4d8ba32d49836a01e9d1543eb0108dff77b --port 0"
+}
