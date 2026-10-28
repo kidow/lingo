@@ -1,0 +1,128 @@
+{
+  "schema": "hanja-mixed-residual-target-settle-preparation/v1",
+  "glyph": "纘",
+  "status": "ready-for-ROOT-tool-only-apply-and-affected-native",
+  "before": {
+    "H": {
+      "path": "scripts/hanja-actual-component-review.mjs",
+      "SHA256": "5cd5c08aaff588b74abd5069322617427edd78b530b0b3fd554ce0f5a87c7204"
+    },
+    "profile": {
+      "path": "docs/hanja-authored-guide-u7e98-compounds-2026-10-29/actual-profile-mixed-guide-start.json",
+      "SHA256": "4f2f6326c8c311fd0233b6dba506c03fff42db8504a49a84c9dc23241264a3d5"
+    }
+  },
+  "after": {
+    "H": {
+      "path": "scripts/hanja-actual-component-review.mjs",
+      "SHA256": "444cf4bb0e05d3d20e748efa091cababd31d30507ad87c20b26abe296763af2e"
+    },
+    "profile": {
+      "path": "docs/hanja-authored-guide-u7e98-compounds-2026-10-29/actual-profile-mixed-guide-start.json",
+      "SHA256": "71eff3e3f948af6d29fc904086a6871151282e70e200f4fd82799da04b43086a"
+    }
+  },
+  "rootReportedFailures": [
+    {
+      "H": "79e4e736099529097ba0f9e6773c5d8bb2990c079f1a97b3c7844584aeb304b3",
+      "error": "TypeError Cannot read properties of undefined (reading 'pen1')",
+      "resolution": "Prior export-name correction only; residualnotapproved"
+    },
+    {
+      "H": "5cd5c08aaff588b74abd5069322617427edd78b530b0b3fd554ce0f5a87c7204",
+      "error": "Error: 纘 residual guide missing",
+      "residualNotApproved": true
+    }
+  ],
+  "causeEvidence": {
+    "boundedReplay": "An injected4RAF commit schedule reproduces the same missingguide error at targetpen5 while pen3 DOM remains andcustom1/2/12 alreadyhaveexpectedclampedprogress. This proves oldwait is insufficient; nativefirstfailingtarget wasnotrecorded.",
+    "fix": "Wait for unique exacttarget guide+linked originalink/mask/current midpointdash. Keep2500ms/120attemptbound and selectiongenerationcancellation; no silent skips."
+  },
+  "offlineVerification": {
+    "verifier": {
+      "path": "docs/hanja-authored-guide-u7e98-compounds-2026-10-29/verify-residual-dom.mjs",
+      "SHA256": "4ab7f3911efbed798571b0e929f2c85e5f462027c7dff1bff34af6752e0284cd"
+    },
+    "result": {
+      "schema": "hanja-residual-source-dom-regression/v1",
+      "glyph": "纘",
+      "before": {
+        "failure": "Error: 纘 residual guide missing",
+        "lastTarget": 5,
+        "residuals": 0,
+        "staticMarkupCommits": 4,
+        "pending": {
+          "pen": 5,
+          "progress": 0.5,
+          "frames": 2
+        },
+        "customSnapshots": [
+          {
+            "pen": 1,
+            "progress": "1",
+            "status": "source-bound"
+          },
+          {
+            "pen": 2,
+            "progress": "1",
+            "status": "source-bound"
+          },
+          {
+            "pen": 12,
+            "progress": "0",
+            "status": "source-bound"
+          }
+        ]
+      },
+      "after": {
+        "failure": null,
+        "residuals": 12,
+        "allGuideAttributesMatched": true,
+        "allOriginalInkBindingsMatched": true,
+        "missingAttributes": 0,
+        "staticMarkupCommits": 13
+      },
+      "scope": "Actual productR custom JSX and genericpartial JSX rendered through ReactDOMServer, parsed by bundled xml-js into a narrow SVG DOM adapter. The exact H residual functions run unchanged under an injected4RAF sourcecommit schedule. No unrelated policy dispatch, isolatedHstartup, browser pixels or blank-residual approval is claimed.",
+      "nativeResidualApproval": false,
+      "isolatedHSSR": 0,
+      "server": 0,
+      "geometryChanges": 0,
+      "renderedSVGFilesSaved": 0
+    },
+    "residualFunctionBytesIdenticalBetweenVerifiedAndFinalH": true,
+    "actualR": {
+      "path": "components/hanja/stroke-outlines.tsx",
+      "SHA256": "55db76b01618110165dd5f22d512428550512feb180757814b734e80ffa304d1"
+    },
+    "RHelpersAndFixtureChanged": false,
+    "geometryOrSourceGuideChanged": false
+  },
+  "boardCSS": {
+    "result": {
+      "before": {
+        "grid": "240px",
+        "size": "240px"
+      },
+      "after": {
+        "grid": null,
+        "size": "240px"
+      },
+      "defaultCSS3Columns": true,
+      "onlyNewCaseForcedSingleColumnRemoved": true
+    },
+    "change": "Only remove new纘 flag from forcedsinglecolumn predicate. ExistingremoveProperty exposesdefault3column CSS and --sample-size240. Allotherglyphconditions unchanged."
+  },
+  "checks": {
+    "syntax": true,
+    "ascendingHunks": 2,
+    "forwardInverseExact": true,
+    "profileChangesOnlyHHashes": 2,
+    "isolatedHSSR": 0,
+    "server": 0,
+    "sharedWrites": 0,
+    "build": false,
+    "fullTypecheck": false
+  },
+  "next": "ROOT apply H+profile patches; freshresidual12 thenremaining146aggregate/29states/natural. Reuse productcompact/gate PASS with sameR/helper/fixture; no nativeblank-residualclaim fromofflineSVG.",
+  "startup": "node scripts/hanja-actual-component-review.mjs --profile docs/hanja-authored-guide-u7e98-compounds-2026-10-29/actual-profile-mixed-guide-start.json --profile-sha 71eff3e3f948af6d29fc904086a6871151282e70e200f4fd82799da04b43086a --port 0"
+}

@@ -1,0 +1,45 @@
+{
+  "schema": "hanja-mixed-residual-export-fix/v1",
+  "glyph": "纘",
+  "rootReportedFirstFailure": {
+    "tool": "residual12",
+    "message": "TypeError Cannot read properties of undefined (reading 'pen1')",
+    "residualApproved": false,
+    "oldBoardRetained": true,
+    "previousProductCompactAndGatePassReused": true
+  },
+  "cause": {
+    "wrongAccessor": "REVIEWED_U7e98_MIXED_GUIDE_INPUT",
+    "actualExport": "REVIEWED_U7E98_MIXED_GUIDE_INPUT",
+    "scope": "single H residual tool property; no renderer/geometry/guide change"
+  },
+  "before": {
+    "path": "scripts/hanja-actual-component-review.mjs",
+    "SHA256": "79e4e736099529097ba0f9e6773c5d8bb2990c079f1a97b3c7844584aeb304b3",
+    "profileSHA256": "df250889827e48b1c373d65a1c3de7ec12176ea0a54111c04bac7c83fe858cdd"
+  },
+  "after": {
+    "path": "scripts/hanja-actual-component-review.mjs",
+    "SHA256": "5cd5c08aaff588b74abd5069322617427edd78b530b0b3fd554ce0f5a87c7204",
+    "profileSHA256": "4f2f6326c8c311fd0233b6dba506c03fff42db8504a49a84c9dc23241264a3d5"
+  },
+  "checks": {
+    "result": {
+      "oldCaseReproduced": true,
+      "actualExportResolved": true,
+      "captureTargetOutlines": 12,
+      "pen1And2Bound": true,
+      "other10GenericSourceExact": true,
+      "productFilesChanged": false
+    },
+    "syntax": true,
+    "forwardInverseExact": true,
+    "onlyOneHPropertyChanged": true,
+    "profileOnlyHHashFieldsChanged": 2,
+    "SSR": 0,
+    "server": 0,
+    "sharedWrites": 0
+  },
+  "affectedNativeOnly": "Fresh residual12; continue146aggregate/29states/natural1/2/12 not previously completed. Reuse unchanged actual compact/gate results; do not claim residual PASS until ROOT direct review.",
+  "startup": "node scripts/hanja-actual-component-review.mjs --profile docs/hanja-authored-guide-u7e98-compounds-2026-10-29/actual-profile-mixed-guide-start.json --profile-sha 4f2f6326c8c311fd0233b6dba506c03fff42db8504a49a84c9dc23241264a3d5 --port 0"
+}
