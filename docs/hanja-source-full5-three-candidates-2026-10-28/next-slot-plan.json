@@ -1,0 +1,213 @@
+{
+  "schema": "hanja-single-failed-slot-investigation-plan/v1",
+  "date": "2026-10-28",
+  "scope": "Unexecuted authoring hypotheses after unchanged-original full5 capture. Not an approved correction, compatible original, registered candidate or completed animation.",
+  "captureRecord": "docs/hanja-source-full5-three-candidates-2026-10-28/capture.json",
+  "candidateBodyChangesPerformed": 0,
+  "cases": [
+    {
+      "glyph": "燄",
+      "catalog": 16,
+      "root": "u71c4",
+      "full5": "docs/hanja-source-full5-three-candidates-2026-10-28/engine-whole-u71c4.json",
+      "existingReview": "docs/hanja-goal-glyphwiki-batch725-2026-10-12/review.json",
+      "completedEvidence": {
+        "all16DomesticStaticDirectionsRecorded": true,
+        "approvedStaticDirections": [
+          1,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16
+        ],
+        "unchangedOriginalBodyFreshlyReproduced": true,
+        "allTemporalPensApproved": false
+      },
+      "singleFailure": {
+        "logicalPen": 2,
+        "logicalSourceGroupsZeroBased": [
+          1,
+          2
+        ],
+        "freshFailedCall": {
+          "rawOneBased": 3,
+          "callOneBased": 2,
+          "kind": "cdDrawCurve",
+          "args": [
+            73.03102141766591,
+            75.04578572483945,
+            65.845,
+            82,
+            55.845,
+            82,
+            2,
+            214
+          ]
+        },
+        "sourceOwner": "cdp-8b6c-03",
+        "sourceRowOneBased": 3,
+        "sourceOriginalRow": "2:22:4:159:40:153:73:133:82",
+        "observedFailure": "Additional leftward terminal hook after the domestic diagonal descent; no compatible whole currently approved."
+      },
+      "unexecutedProposal": {
+        "kind": "explicit-authored-terminal-variant-hypothesis",
+        "singleSourceFieldCandidate": {
+          "fieldOneBased": 3,
+          "from": "4",
+          "to": "0"
+        },
+        "coordinateArgumentsWouldRemainUnchanged": true,
+        "reason": "Test a distinct authored termination in the actual pinned engine rather than concealing the original hook with a mask.",
+        "unconfirmed": "Original source flag4 becomes adjusted raw204 and final draw214. The effect of source flag0, possible coupled adjustments and the final endpoint shape are not assumed or executed.",
+        "requiredAcceptance": [
+          "Actual authored engine capture with original and proposed source records stored separately; originalWhole=false and authored=true.",
+          "Require any geometric change to stay inside logical2 source groups; unexpected changes elsewhere stop reuse.",
+          "Direct native single/whole comparison against original domestic2, then all16 progressive/fine/replay checks."
+        ],
+        "newGeometryGenerated": false
+      }
+    },
+    {
+      "glyph": "鷖",
+      "catalog": 22,
+      "root": "u9dd6",
+      "full5": "docs/hanja-source-full5-three-candidates-2026-10-28/engine-whole-u9dd6.json",
+      "existingReview": "docs/hanja-goal-glyphwiki-batch736-2026-10-12/review.json",
+      "completedEvidence": {
+        "all22DomesticStaticDirectionsRecorded": true,
+        "approvedStaticDirections": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "unchangedOriginalBodyFreshlyReproduced": true,
+        "allTemporalPensApproved": false
+      },
+      "singleFailure": {
+        "logicalPen": 9,
+        "logicalSourceGroupsZeroBased": [
+          9,
+          10
+        ],
+        "freshFailedCall": {
+          "rawOneBased": 11,
+          "callOneBased": 3,
+          "kind": "cdDrawLine",
+          "args": [
+            166.74625,
+            44.595,
+            179.90625,
+            44.595,
+            4006,
+            5
+          ]
+        },
+        "sourceOwner": "u6bb3-02",
+        "sourceRowOneBased": 3,
+        "sourceOriginalRow": "3:22:5:151:28:151:83:183:83",
+        "observedFailure": "Original horizontal turn adds an upward terminal hook; domestic pen9 finishes horizontally."
+      },
+      "unexecutedProposal": {
+        "kind": "explicit-authored-terminal-variant-hypothesis",
+        "singleSourceFieldCandidate": {
+          "fieldOneBased": 3,
+          "from": "5",
+          "to": "0"
+        },
+        "coordinateArgumentsWouldRemainUnchanged": true,
+        "reason": "Test the pinned source bend command with an explicitly authored termination choice; do not erase a polygon and call it the original whole.",
+        "unconfirmed": "The source5 is adjusted to raw4005 and emitted line terminal5. Source0 rendering, prior-corner interactions and unchanged neighboring geometry require real execution; no plain-cap result is presumed.",
+        "requiredAcceptance": [
+          "Separate authored source record/root and actual full5 capture; original public source remains byte-exact.",
+          "Require geometric differences to remain confined to logical9 source groups; preserve other21 only after exact comparison.",
+          "Direct native termination/whole review and all22 progressive/fine/replay checks; existing nonconsecutive grouping is not newly approved."
+        ],
+        "newGeometryGenerated": false
+      }
+    },
+    {
+      "glyph": "嗸",
+      "catalog": 14,
+      "root": "u55f8",
+      "full5": "docs/hanja-source-full5-three-candidates-2026-10-28/engine-whole-u55f8.json",
+      "existingReview": "docs/hanja-goal-glyphwiki-batch741-2026-10-12/review.json",
+      "completedEvidence": {
+        "all14DomesticStaticDirectionsRecorded": true,
+        "sourceWholeVariantsTraceIdenticalForFailedSlot": true,
+        "other13SourceStaticDirectionsExplicitlyApproved": false,
+        "unchangedOriginalBodyFreshlyReproduced": true,
+        "allTemporalPensApproved": false
+      },
+      "singleFailure": {
+        "logicalPen": 4,
+        "logicalSourceGroupsZeroBased": [
+          3
+        ],
+        "freshFailedCall": {
+          "rawOneBased": 4,
+          "callOneBased": 1,
+          "kind": "cdDrawLine",
+          "args": [
+            59,
+            55.32,
+            59,
+            73.545,
+            0,
+            32
+          ]
+        },
+        "sourceOwner": "u6556-03",
+        "sourceRowOneBased": 4,
+        "sourceOriginalRow": "1:0:32:59:48:59:63",
+        "observedFailure": "Source is a short vertical line; domestic4 is a curved downward-right dot."
+      },
+      "unexecutedProposal": {
+        "kind": "complete-public-curved-dot-donor-needed",
+        "donorSelected": false,
+        "newCoordinatesChosen": false,
+        "reason": "A direction label or affine of a straight median does not establish the required curved trajectory. Acquire an exact licensed complete curved-dot source with usable path/median provenance before choosing any placement.",
+        "requiredAcceptance": [
+          "Do not infer a donor from the radical name or alter the original vertical point coordinates into a curve.",
+          "If a mixed authored dot is proposed, label mixedParts/authored and independently validate complete shape, scale, contacts and actual direction.",
+          "Preserve remaining source groups only as original-data evidence; their native temporal approval is still outstanding."
+        ],
+        "newGeometryGenerated": false
+      }
+    }
+  ],
+  "limits": [
+    "All three original whole compatibility HOLDs remain in force.",
+    "Fresh exact body reproduction reuses only unchanged-source evidence, not a geometry or runtime approval.",
+    "The end-flag alternatives are unexecuted hypotheses; no assumption that flag0 fixes the observed mismatch is made.",
+    "No old header was attached to an old body to fabricate the new proofs.",
+    "No new provider rows, drawing coordinates, masks, profiles, registration, renderer branches or server were produced."
+  ]
+}
