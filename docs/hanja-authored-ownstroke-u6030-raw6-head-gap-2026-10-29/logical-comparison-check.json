@@ -1,0 +1,143 @@
+{
+  "schema": "hanja-logical-static-comparison-code-check/v1",
+  "date": "2026-10-29",
+  "glyph": "怰",
+  "mapping": {
+    "path": "docs/hanja-authored-ownstroke-u6030-raw6-head-gap-2026-10-29/logical-mapping-hypothesis.json",
+    "SHA256": "5ee04458962ddf3bc27045ec58f39089ccb3bf03226f618feb3d15f4999491da"
+  },
+  "config": {
+    "path": "docs/hanja-authored-ownstroke-u6030-raw6-head-gap-2026-10-29/config-logical.json",
+    "SHA256": "ba129f35290837b8811ca678232b46071696c147026183dc2135e953ddaf8c58"
+  },
+  "adapter": {
+    "path": "docs/hanja-authored-ownstroke-u6030-raw6-head-gap-2026-10-29/compare-logical.py",
+    "SHA256": "4f6f13636129c36234cce10504fd101e53eba1946dba7029492aa38f645daaf8"
+  },
+  "sourceFixture": {
+    "path": "docs/hanja-authored-ownstroke-u6030-raw6-head-gap-2026-10-29/fixtures-static-draft.json",
+    "SHA256": "201f2fef977751f23cb306dbb4f5e2f3ccd59a4774fd407b984072dcbdce34dd"
+  },
+  "originalClock": {
+    "path": "docs/hanja-official-media-compare-u6030-2026-10-29/native-clock-review.json",
+    "SHA256": "8a380f3a012be3d6db1429ac810c383c4d8bef20c53e38f8677042bc414490b8"
+  },
+  "nativeStaticWhole": {
+    "path": "docs/hanja-authored-ownstroke-u6030-raw6-head-gap-2026-10-29/native-static-whole-review.json",
+    "SHA256": "c70e99e49c1eb40db958625a618cc9a4a3ed0dea7e3f2d138feee12a8060a651"
+  },
+  "counts": {
+    "logical": 8,
+    "sourceRaw": 10,
+    "calls": 10,
+    "P": 23,
+    "compoundPens": [
+      6,
+      7
+    ]
+  },
+  "checks": {
+    "all10SourceRawExactlyOnce": true,
+    "currentPages": 8,
+    "prefixPages": 8,
+    "sourceMembershipExactAll16Pages": true,
+    "originalP23AndExactlyOneMatrix": true,
+    "checkOnlyRuns": 1,
+    "status": 0,
+    "actualResult": {
+      "guardPass": true,
+      "glyph": "怰",
+      "root": "u6030-legacy-raw6-headgap1-Yshrink-v1",
+      "catalog": 8,
+      "domestic": 8,
+      "logicalPens": 8,
+      "retainedRaw": 10,
+      "calls": 10,
+      "polygons": 23,
+      "legacyProof4AndSeparateTrace": true,
+      "newFull5Claim": false,
+      "locallyAuthored": true,
+      "originalWhole": false,
+      "originalSourceUnchanged": true,
+      "wholeAndAll8CurrentPrefixPages": "PASS",
+      "HTTP": 0,
+      "server": 0,
+      "engine": 0,
+      "nativeApproval": false
+    }
+  },
+  "sourceGuideHandoffs": [
+    {
+      "logical": 6,
+      "sourceRaw": [
+        6,
+        7
+      ],
+      "previousGuideEndOriginal200": [
+        "5333/50",
+        "97"
+      ],
+      "previousGuideEndAfterAuthorMatrix": [
+        "5333/50",
+        "9023/93"
+      ],
+      "nextGuideStartOriginalAndUnchanged": [
+        "2163/25",
+        "82"
+      ],
+      "nextMinusEndExact": [
+        "-1007/50",
+        "-1397/93"
+      ],
+      "continuous": false,
+      "retracingInferred": false,
+      "bridgeAdded": false
+    },
+    {
+      "logical": 7,
+      "sourceRaw": [
+        8,
+        9
+      ],
+      "previousGuideEndOriginalAndUnchanged": [
+        "4591/50",
+        "174"
+      ],
+      "nextGuideStartOriginalAndUnchanged": [
+        "3637/50",
+        "177"
+      ],
+      "nextMinusEndExact": [
+        "-477/25",
+        "3"
+      ],
+      "continuous": false,
+      "retracingInferred": false,
+      "bridgeAdded": false
+    }
+  ],
+  "suggestedDirectPrefixes": [
+    3,
+    5,
+    6,
+    7,
+    8
+  ],
+  "limits": "Synthetic no-private-media static page checks only. All8current and criticalprefix native correspondence pending. Existingwhole/staticcontact PASS does not approve mapping or temporal masks. Both guidegaps remain; no inferred retracing/bridge.",
+  "approval": {
+    "mapping": false,
+    "directions": false,
+    "continuousGuide": false,
+    "sourceClockIdentity": false,
+    "temporal": false,
+    "native": false,
+    "runtime": false
+  },
+  "execution": {
+    "engine": 0,
+    "privateFetch": 0,
+    "server": 0,
+    "sharedFilesChanged": 0,
+    "build": 0
+  }
+}
