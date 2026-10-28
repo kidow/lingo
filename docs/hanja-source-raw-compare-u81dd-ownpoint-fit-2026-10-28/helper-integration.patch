@@ -1,0 +1,20 @@
+*** Begin Patch
+*** Update File: /Users/kidow/Documents/dev/kidow/lingo/scripts/hanja-raw-static-compare.py
+@@
+-OWNPOINT_U81DD_INTERIOR={'config':'docs/hanja-source-raw-compare-u81dd-ownpoint-interior-2026-10-28/config.json','configSemanticSHA256':'f256dee486ecba6b8998e9752e089f087d3a03e61d2e6ab0d0b2816081b28e8e'}
++OWNPOINT_U81DD_INTERIOR={'config':'docs/hanja-source-raw-compare-u81dd-ownpoint-interior-2026-10-28/config.json','configSemanticSHA256':'f256dee486ecba6b8998e9752e089f087d3a03e61d2e6ab0d0b2816081b28e8e'}
++OWNPOINT_U81DD_FIT={'config':'docs/hanja-source-raw-compare-u81dd-ownpoint-fit-2026-10-28/config.json','configSemanticSHA256':'d26d71d7a840066f891158c8d29efa43f6016c8e1a1177e3c8392af4c70b6e8f'}
+@@
+-    expected=OWNPOINT_U81DD_INTERIOR if config_path==ROOT/OWNPOINT_U81DD_INTERIOR['config'] else OWNPOINT_U81DD
++    expected=OWNPOINT_U81DD_FIT if config_path==ROOT/OWNPOINT_U81DD_FIT['config'] else OWNPOINT_U81DD_INTERIOR if config_path==ROOT/OWNPOINT_U81DD_INTERIOR['config'] else OWNPOINT_U81DD
+@@
+-    require(list(out)==['original','half','threequarter'],'closed original and two trial sizes required')
++    expected_keys=['original','upper110','middle120','lower130']if config_path==ROOT/OWNPOINT_U81DD_FIT['config']else['original','half','threequarter']
++    require(list(out)==expected_keys,'closed original and exact authored trial keys required')
+@@
+-        print(json.dumps({'kind':config['kind'],'glyph':'臝','catalogPens':21,'rawSlots':25,'polygonsPerScene':48,'authoredVariants':2,'changedRawZeroBased':[24],'raw24MappingApproved':False,'HTTP':0,'server':0,'engine':0,'nativeApproval':False,'runtimeApplied':False}));return
++        print(json.dumps({'kind':config['kind'],'glyph':'臝','catalogPens':21,'rawSlots':25,'polygonsPerScene':48,'authoredVariants':len(sources)-1,'changedRawZeroBased':[24],'raw24MappingApproved':False,'HTTP':0,'server':0,'engine':0,'nativeApproval':False,'runtimeApplied':False}));return
+@@
+-        return original_page(*params).replace('원half raw ','저자점0.5 slot ').replace('원threequarter raw ','저자점0.75 slot ').replace('원original raw ','원본 raw ').replace('원raw','source slot').replace('원proof exact','고정 원문 및 미승인 저자점 가설; raw24↔국내21 대응 미승인').replace('각 원source 전체','원본·저자점 두크기 전체').replace('각 원번호 선택','source slot 선택')
++        return original_page(*params).replace('원half raw ','저자점0.5 slot ').replace('원threequarter raw ','저자점0.75 slot ').replace('원original raw ','원본 raw ').replace('원raw','source slot').replace('원proof exact','고정 원문 및 미승인 저자점 가설; raw24↔국내21 대응 미승인').replace('각 원source 전체','원본·저자점 두크기 전체').replace('각 원번호 선택','source slot 선택').replace('원upper110 raw ','저자점0.275@y110 slot ').replace('원middle120 raw ','저자점0.265@y120 slot ').replace('원lower130 raw ','저자점0.26@y130 slot ')
+*** End Patch

@@ -1408,10 +1408,11 @@ def run_mixed_curve_u97b9_u7f96(args,config,config_path):
 
 OWNPOINT_U81DD={'config':'docs/hanja-source-raw-compare-u81dd-ownpoint-2026-10-28/config.json','configSemanticSHA256':'66b2ecc2e411b40763fab0e1651ae08a58a893577ed4844f0a54396332e612bf'}
 OWNPOINT_U81DD_INTERIOR={'config':'docs/hanja-source-raw-compare-u81dd-ownpoint-interior-2026-10-28/config.json','configSemanticSHA256':'f256dee486ecba6b8998e9752e089f087d3a03e61d2e6ab0d0b2816081b28e8e'}
+OWNPOINT_U81DD_FIT={'config':'docs/hanja-source-raw-compare-u81dd-ownpoint-fit-2026-10-28/config.json','configSemanticSHA256':'d26d71d7a840066f891158c8d29efa43f6016c8e1a1177e3c8392af4c70b6e8f'}
 
 def load_ownpoint_u81dd(config,config_path):
     semantic={k:v for k,v in config.items()if k!='launcherSHA256'}
-    expected=OWNPOINT_U81DD_INTERIOR if config_path==ROOT/OWNPOINT_U81DD_INTERIOR['config'] else OWNPOINT_U81DD
+    expected=OWNPOINT_U81DD_FIT if config_path==ROOT/OWNPOINT_U81DD_FIT['config'] else OWNPOINT_U81DD_INTERIOR if config_path==ROOT/OWNPOINT_U81DD_INTERIOR['config'] else OWNPOINT_U81DD
     require(config_path==ROOT/expected['config'] and digest(json.dumps(semantic,sort_keys=True,separators=(',',':'),ensure_ascii=False).encode())==expected['configSemanticSHA256'],'exact closed two-size authored 臝 config required')
     require(hexsha(config.get('launcherSHA256')) and config['schema']=='hanja-shared-authored-ownstroke-compare/v1' and config['kind']=='authored-ownstroke-point-u81dd' and config['glyph']=='臝' and config['catalogStrokes']==config['domestic']['clips']==21 and config['sourceViewBox']=='0 0 200 200' and config['host']=='127.0.0.1','fixed static 臝21 context required')
     require(config['sourceRootWasAuthored']is True and config['candidateOriginalRoot']is False and config['isOriginalEngineCapture']is False and config['sourceTraceDescribesAuthoredRaw24']is False and config['nativeApproval']is False and config['runtimeApplied']is False and config['noPartialAnimation']is True and config['raw24MappingApproved']is False and config['selectedApprovedWholeRoot']is None and all(v is False for v in config['approval'].values()),'authored dot/whole/mapping must remain unapproved')
@@ -1427,7 +1428,8 @@ def load_ownpoint_u81dd(config,config_path):
         require(len(candidate['groups'])==25 and [i for i,g in enumerate(candidate['groups'])if g!=proof['groups'][i]]==[24] and len(candidate['groups'][24]['polygons'])==2 and candidate['groups'][24]['originalRawReplaced']==proof['groups'][24]['raw'] and candidate['groups'][24]['donorOriginalRaw']==proof['groups'][20]['raw'] and sum(len(g['polygons'])for g in candidate['groups'])==48,'only raw24 filled point replacement; other24 exact groups retained')
         guide=candidate['groups'][24]['authorGuide'];require(set(guide)=={'kind','points'} and guide['kind']=='quadratic' and len(guide['points'])==3 and all(len(p)==2 and all(type(v)in[int,float]and math.isfinite(v)for v in p)for p in guide['points']),'actual transformed public quadratic guide required')
         out[key]=candidate
-    require(list(out)==['original','half','threequarter'],'closed original and two trial sizes required')
+    expected_keys=['original','upper110','middle120','lower130']if config_path==ROOT/OWNPOINT_U81DD_FIT['config']else['original','half','threequarter']
+    require(list(out)==expected_keys,'closed original and exact authored trial keys required')
     for scene in out.values():
         for group in scene['groups']:
             for poly in group['polygons']:require(len(poly)>=3 and all(set(p)=={'x','y','off'} and p['off']==0 and all(type(p[k])in[int,float]and math.isfinite(p[k])for k in['x','y'])for p in poly),'finite off0 original polygon contract required')
@@ -1440,7 +1442,7 @@ def run_ownpoint_u81dd(args,config,config_path):
         for file,pin in config['inputSHA256'].items():require(digest(pinned_path(file).read_bytes())==pin,'authored 臝 source changed: '+file)
     guards()
     if args.check_only:
-        print(json.dumps({'kind':config['kind'],'glyph':'臝','catalogPens':21,'rawSlots':25,'polygonsPerScene':48,'authoredVariants':2,'changedRawZeroBased':[24],'raw24MappingApproved':False,'HTTP':0,'server':0,'engine':0,'nativeApproval':False,'runtimeApplied':False}));return
+        print(json.dumps({'kind':config['kind'],'glyph':'臝','catalogPens':21,'rawSlots':25,'polygonsPerScene':48,'authoredVariants':len(sources)-1,'changedRawZeroBased':[24],'raw24MappingApproved':False,'HTTP':0,'server':0,'engine':0,'nativeApproval':False,'runtimeApplied':False}));return
     spec=importlib.util.spec_from_file_location('hanja_ownpoint_u81dd_shared',pinned_path(SHARED));shared=importlib.util.module_from_spec(spec);spec.loader.exec_module(shared);require(shared.FETCH_COUNT==0,'no preparatory private publisher fetch')
     shared.CONFIG=config;shared.HERE=config_path.parent;shared.ROOT=ROOT;shared.guards=guards;shared.load_sources=lambda:sources
     source_svg,original_page,original_selection=shared.source_svg,shared.page,shared.selection
@@ -1448,7 +1450,7 @@ def run_ownpoint_u81dd(args,config,config_path):
         value=source_svg(proof,count,prefix)
         return value.replace('data-original-raw=','data-authored-slot=')if proof is not sources['original']else value
     def authored_page(*params):
-        return original_page(*params).replace('원half raw ','저자점0.5 slot ').replace('원threequarter raw ','저자점0.75 slot ').replace('원original raw ','원본 raw ').replace('원raw','source slot').replace('원proof exact','고정 원문 및 미승인 저자점 가설; raw24↔국내21 대응 미승인').replace('각 원source 전체','원본·저자점 두크기 전체').replace('각 원번호 선택','source slot 선택')
+        return original_page(*params).replace('원half raw ','저자점0.5 slot ').replace('원threequarter raw ','저자점0.75 slot ').replace('원original raw ','원본 raw ').replace('원raw','source slot').replace('원proof exact','고정 원문 및 미승인 저자점 가설; raw24↔국내21 대응 미승인').replace('각 원source 전체','원본·저자점 두크기 전체').replace('각 원번호 선택','source slot 선택').replace('원upper110 raw ','저자점0.275@y110 slot ').replace('원middle120 raw ','저자점0.265@y120 slot ').replace('원lower130 raw ','저자점0.26@y130 slot ')
     def authored_selection(route,query):
         require(route!='/checks','legacy original-proof checks do not certify authored point data')
         return original_selection(route,query)

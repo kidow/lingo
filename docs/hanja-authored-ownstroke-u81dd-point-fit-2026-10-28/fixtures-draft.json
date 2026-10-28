@@ -1,0 +1,51 @@
+{
+  "schema": "hanja-public-interior-point-fit-trials-v1",
+  "date": "2026-10-28",
+  "glyph": "臝",
+  "status": "three-unapproved-public-source-clearance-trials",
+  "sourceProofPath": "docs/hanja-goal-glyphwiki-batch530-2026-10-11/engine-proof.json",
+  "sourceProofSHA256": "5a1b0e13a70d35987f60603a526ca8b8ea6ed72a9e442ff63954edd23e8ae072",
+  "sourceTracePath": "docs/hanja-goal-glyphwiki-batch530-2026-10-11/draw-trace.json",
+  "sourceTraceSHA256": "ede3d1753a067f45986a6b79a1cce12eb23e18f6352886765f444e6eacf755bb",
+  "selectedApprovedWholeRoot": null,
+  "sourceContextRoot": "u81dd",
+  "changedRawIndexZeroBased": 24,
+  "donorRawIndexZeroBased": 20,
+  "donorPolygons": 2,
+  "donorPolygonVertices": [22,5],
+  "donorFilledBBoxCenterExact": ["1181/10","3319/20"],
+  "authorAnchorRule": "Align the public donor filled-bounding-box center, not its offset guide midpoint, with the public inner-pillar midpoint at the selected author height. Scale all original P and all three Q points together. No private/publisher coordinates are used.",
+  "closedUpperSafetyCell": {
+    "leftBoundaryRaw": 21,
+    "rightBoundaryRaw": 23,
+    "topBoundaryRaw": 22,
+    "topFilledMaximumY": "100",
+    "bottomAuthorCutoffY": "136",
+    "bottomCutoffProvenance": "Public raw21 first vertical/curve guide control y136. This is an author-selected finite upper-interior cell, not a claim that 凡 has a drawn bottom boundary.",
+    "proofRule": "Clip all straight-edge original polygons to the entire candidate filled-bbox y band using exact rational original vertices and edge/band intersections. Require bbox strictly right of the left pillar, left of the right pillar, below top filled H and above the author cutoff. Additionally require bbox disjoint from the clipped x-bounds of EVERY retained source polygon, not only sampled points or bbox center."
+  },
+  "variants": [
+    {"id":"fit-upper110-scale-0.275","scaleRational":"11/40","centerExact":["132238/805","110"],"matrixRational":["11/40","0","0","11/40","8487489/64400","51491/800"],"minimumClearanceExact":"951/8050"},
+    {"id":"fit-middle120-scale-0.265","scaleRational":"53/200","centerExact":["118193/720","120"],"matrixRational":["53/200","0","0","53/200","149468/1125","304093/4000"],"minimumClearanceExact":"63901/288000"},
+    {"id":"fit-lower130-scale-0.26","scaleRational":"13/50","centerExact":["105033/640","130"],"matrixRational":["13/50","0","0","13/50","2134529/16000","86853/1000"],"minimumClearanceExact":"4223/16000"}
+  ],
+  "sizeReasoning": "The source upper-pillar gap around y100..136 is approximately8.2..8.9 source units, while donor filled width29.4 makes prior scales0.5/0.75 widths14.7/22.05. Those upper-region placements cannot fit the full original dot. These trial scales0.275/0.265/0.26 are all greater than0.25 and retain the original DR dot aspect/shape; they are explicit author choices, not official sizes.",
+  "priorResults": {
+    "originalWholeHOLDs": 4,
+    "originalGuideCenterTrials": "Both directly viewed HOLD: overlap left pillar.",
+    "innerMidpointOnlyTrials": "Both directly viewed HOLD: bridge left and right pillars; moving only x did not address full point width.",
+    "filesPreserved": true
+  },
+  "domesticLogicalPenUnderComparison": 21,
+  "raw24MappingApproved": false,
+  "logicalRawGroupsApproved": false,
+  "sameSourceDerived": true,
+  "locallyAuthored": true,
+  "mixed": true,
+  "originalRoot": false,
+  "isOriginalEngineCapture": false,
+  "sourceTraceDescribesAuthoredRaw24": false,
+  "approval": {"donorSuitability":false,"raw24Mapping":false,"geometry":false,"whole":false,"sourceOrder":false,"native":false,"runtime":false},
+  "mathematicalClaimOnly": "Exact finite polygon strict-disjointness and upper-cell containment for this fixed public source representation; not anti-aliasing clearance, domestic visual size/shape correctness, whole compatibility or animation approval.",
+  "privateCoordinatesUsedOrCopied": false
+}
