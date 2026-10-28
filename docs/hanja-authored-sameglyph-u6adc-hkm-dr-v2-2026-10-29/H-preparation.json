@@ -1,0 +1,90 @@
+{
+  "schema": "hanja-isolated-H-profile-preparation/v1",
+  "glyph": "櫜",
+  "status": "ready-for-ROOT-shared-apply-and-one-actual-startup",
+  "before": {
+    "path": "scripts/hanja-actual-component-review.mjs",
+    "SHA256": "ed86949f1273d8d2e57c52ba2438ddfd3921303f697b8e9cc3e3be7758b66bce"
+  },
+  "after": {
+    "path": "scripts/hanja-actual-component-review.mjs",
+    "SHA256": "a3624b56efb2193ee4dedf53a22c6186b63fe5cdf7040237ece96d213ac223ab"
+  },
+  "patch": {
+    "path": "docs/hanja-authored-sameglyph-u6adc-hkm-dr-v2-2026-10-29/actual-H-integration.patch",
+    "SHA256": "02682442cd8efb21c2718b23e303f613f52498ef547597c280b1e696c90097d8",
+    "hunks": 15,
+    "ordered": true,
+    "forwardInverseExact": true
+  },
+  "profile": {
+    "path": "docs/hanja-authored-sameglyph-u6adc-hkm-dr-v2-2026-10-29/actual-profile-start.json",
+    "SHA256": "3e138ff68ec5f92201f3d0bf5629940860e61f2efd5266c8b85ba4b1c93b8a4b",
+    "adapterSHA256": "a3624b56efb2193ee4dedf53a22c6186b63fe5cdf7040237ece96d213ac223ab",
+    "flags": {
+      "profileFinalized": true,
+      "executionEnabled": true,
+      "sharedWindowPending": false,
+      "nativeApproval": false,
+      "runtimeApplied": false
+    }
+  },
+  "fixedSharedFiles": {
+    "components/hanja/stroke-outlines.tsx": "8412bcc55ec07ba21f23d6a37564a966ed231d84662e6b65b59c4be847f48da2",
+    "lib/hanja-strokes.ts": "d35a5fd69ab7a1939f8d470fe989d13a77582425d5b7240be92c77964fb6cf8e",
+    "lib/hanja-stroke-dictionary.ts": "2aa223d8f895129520a86116d40d84c896393278ec0835b2fd7f413918cfc33f"
+  },
+  "checks": {
+    "syntax": true,
+    "inputSHACurrentMatchesExcludingPlannedH": 969,
+    "sourceGuardPositive": true,
+    "sourceGuardMissingNegative": [
+      "root",
+      "sourceIdentity",
+      "curveTargets",
+      "pairProgress"
+    ],
+    "actualWholeFixtureRoute": {
+      "actualWholeRoute": true,
+      "projected": [
+        "root",
+        "sharedVersion",
+        "temporalPolicy",
+        "curveTargets",
+        "cardinalTargets",
+        "pairProgress"
+      ]
+    },
+    "localClosurePredicateSelects": true,
+    "exactTwoHelperPresence388": true,
+    "noHelperMissingApproval": true,
+    "Su4GuardByteUnchanged": true,
+    "noNewRuntimeImports": true,
+    "newClosureModules": 0,
+    "actualSSR": 0,
+    "serverStarts": 0,
+    "sharedWrites": 0,
+    "fullBuild": false,
+    "fullTypecheck": false
+  },
+  "coverage": {
+    "pens": 19,
+    "masks": 23,
+    "polygons": 38,
+    "curves": 8,
+    "cardinals": 15,
+    "compoundPens": [
+      3,
+      7,
+      9,
+      14
+    ],
+    "gateReleaseSamples": 24,
+    "initialSamples": 38,
+    "boundarySamples": 12,
+    "endingSamples": 57,
+    "stateViews": 23,
+    "sourceWholeOrTemporalIdentity": false
+  },
+  "startup": "node scripts/hanja-actual-component-review.mjs --profile docs/hanja-authored-sameglyph-u6adc-hkm-dr-v2-2026-10-29/actual-profile-start.json --profile-sha 3e138ff68ec5f92201f3d0bf5629940860e61f2efd5266c8b85ba4b1c93b8a4b --port 0"
+}
