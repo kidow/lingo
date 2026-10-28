@@ -1,0 +1,113 @@
+{
+  "schema": "hanja-source-contact-phase-prototype-readiness/v1",
+  "glyph": "纘",
+  "pen": 2,
+  "date": "2026-10-29",
+  "status": "READY-FOR-ROOT-BROWSER-PHASE-PROTOTYPE-ONLY",
+  "previousGlobalTubePrototype": "HOLD atp.5: futureHfragment appeared separately; preserved in earlier guide folder. No width loop or extra tube proposed.",
+  "sourceGeometrySHA256": "aa241350799c5b55d739505e9c873cf2e820b1f65f6ae0c428d79a4dc9575f0f",
+  "sourcePCount": 62,
+  "affectedOriginalP": {
+    "DL": 3,
+    "H": 3
+  },
+  "newFilledP": 0,
+  "sourceQChanged": false,
+  "pen1ContinuousPrototypeUnchanged": true,
+  "donorCornerReference": {
+    "glyph": "玄",
+    "stroke": 4,
+    "math": "docs/hanja-authored-guide-u7e98-compounds-2026-10-29/donor-guide-math.json",
+    "SHA256": "9262444e338d4016355198daa0e1f263bc3d2acd97e3ec3da727ce7ece56f7eb",
+    "seedExact100": [
+      "25465061034547/1610816693200",
+      "806902300940603/16108166932000"
+    ],
+    "seedX": 15.808788884574367,
+    "strictInsideCompletedDLAndSourceH": true
+  },
+  "DL": {
+    "source": "Exact existing original2m1 Q14/7; no donor tube onH duringDLphase",
+    "originalJSBoundary": 0.5770868086377152,
+    "progressFunction": "actual outlineSegmentProgress(sourceRow,globalProgress)[0] retained before boundary; exact boundary commits fullDL",
+    "coverageReuse": {
+      "path": "docs/hanja-authored-ownstroke-u7e98-cross-contact-v2-2026-10-29/coverage-preflight.json",
+      "SHA256": "c8f56897e2ba136584421b286384f361d24276cb464869bae1987bc18f6cb1d1",
+      "unit": {
+        "logical": 2,
+        "mask": 1,
+        "status": "PASS-CONSERVATIVE-COVERAGE",
+        "radius": 7,
+        "width": 14,
+        "padding": 7,
+        "nodes": 462,
+        "maxDepth": 3,
+        "maxAcceptedUpperDistance": 6.8986562056690035,
+        "sourceOutlinePreserved": true,
+        "sourceBezierGuidePreserved": true,
+        "curveDegree": 2,
+        "nativeApproval": false
+      },
+      "recomputed": false
+    }
+  },
+  "H": {
+    "sourceP": 3,
+    "xMonotone": true,
+    "criticalX": 27,
+    "criticalAndMidpointChecks": 53,
+    "positiveVerticalOverlapAtSeed": [
+      [
+        "713013851962993/14497350238800",
+        "4315883521070813/85373284739600"
+      ]
+    ],
+    "unionAreaExact": "113",
+    "leftHeadAreaExact": "2274100250420004638708411111/46705147543652092672320000",
+    "clock": "Original source DLboundary; authored H left-head time fraction from exact source-union area, then right-body. Not publisher CSS/microclock.",
+    "leftHeadEnd": 0.7593158732299321,
+    "sourcePaintedOncePerFrame": true,
+    "stripFamily": "Left phase grows rectleft fromseedX toxmin, rightfixedatseed; right phase holdsxmin andextendsright fromseed toxmax; no separately filled newpieces."
+  },
+  "prototype": {
+    "file": "pen2-contact-display.html",
+    "finiteFrames": 209,
+    "defaultProgress": 0.5,
+    "sourceZoom": "Public prefix bounds+4 in original100unit coordinates",
+    "actualR": false,
+    "rootMustReview": [
+      "Oldfailurep.5 should showonly originalDL3P; Habsent",
+      "DLend±1e-8, p.625, leftHeadEnd±1e-8 connectedhead/body continuity",
+      "Ending .95/.99999999/1; verify complete unchangedH3P and no new source gap"
+    ]
+  },
+  "codeCheck": {
+    "syntax": "PASS",
+    "frozenDataSHA": "PASS",
+    "exactSourceDLAndH": true,
+    "originalDLBoundary": true,
+    "noHInDLPhase": true,
+    "strictContactRectFamily": true,
+    "finiteFrames": 209,
+    "presetsComplete": true,
+    "actualR": false,
+    "nativeApproval": false,
+    "server": 0
+  },
+  "inputSHA256": {
+    "docs/hanja-source-phase-u7e98-pen2-contact-2026-10-29/verify-public-contact-phase.py": "a8b0df9811ab7bde8acecd3886928b01bdc49f8eef97448dbcd6b3282cdd7f88",
+    "docs/hanja-source-phase-u7e98-pen2-contact-2026-10-29/contact-phase-math.json": "a8aae19c4787c7f61cd9fd32f5e7e5edc006f744b8322daef52f8edd42d58e47",
+    "docs/hanja-source-phase-u7e98-pen2-contact-2026-10-29/phase-display.json": "b3acadbb28f385e2865c8c4072e2b6567b7263dc83a6b73593da11a2eaa9efdc",
+    "docs/hanja-source-phase-u7e98-pen2-contact-2026-10-29/pen2-contact-display.html": "a2a14d7475a166bb2592836deb768ead93d04f18a25a4880b0b5e5610939b5d3"
+  },
+  "mathematicalScope": "Exact closed H-strip topology with opaque priorDL; not raster AA/all-real-render-progress guarantee.",
+  "allRealProgressActualPixelProof": false,
+  "actualRReviewed": false,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "sharedRChanged": false,
+  "newHelperIntegrated": false,
+  "SSR": 0,
+  "server": 0,
+  "build": false
+}
