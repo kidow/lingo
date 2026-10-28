@@ -1,0 +1,70 @@
+{
+  "schema": "hanja-actual-component-H-preparation/v1",
+  "glyph": "樕",
+  "status": "prepared-disabled-pending-root-window",
+  "baseH": "3b59442f1daba09fa78950ed27fbb3a0d037a312e4a22cad624c7cb6b76e783f",
+  "postH": "a6a382b792695bfbcf2432005a4ceda14614594b4b183e00a6302162dc515f27",
+  "R": "55db76b01618110165dd5f22d512428550512feb180757814b734e80ffa304d1",
+  "patch": {
+    "path": "docs/hanja-authored-ownstroke-u6a15-lower-dl-gap-2026-10-29/actual-H-integration.patch",
+    "SHA256": "b8d9513374477a5b34f6c0260711ff6b03a42120cfab7591f8141908a7b62129",
+    "hunks": 16,
+    "nativeOldBlockIndicesSorted": true,
+    "exactForward": true,
+    "exactInverse": true
+  },
+  "profile": {
+    "path": "docs/hanja-authored-ownstroke-u6a15-lower-dl-gap-2026-10-29/actual-profile-start.json",
+    "SHA256": "993fe807d60e64f1b4ad8ae6b7cd84d9dd55e3e9f9c9753712f7fde0d2b59362",
+    "profileFinalized": false,
+    "executionEnabled": false,
+    "registrySHA256": "c1ac8213b5fbd7a4a39152e60cb0ee0931c15077af01b00674e3827b6e17fae6"
+  },
+  "fixture": {
+    "path": "docs/hanja-authored-ownstroke-u6a15-lower-dl-gap-2026-10-29/fixtures-execution-draft.json",
+    "SHA256": "a87c891080e8093a31f9e27b4f5ca7847eaffece52a24a8f09a0274d9d8980bc",
+    "geometrySHA256": "251fad095cd7bae6d328e5bd1f5278cf0b628718ce95cb23c60452249aeb9478",
+    "logical": 15,
+    "masks": 17,
+    "P": 28,
+    "Q": 8,
+    "cardinal": 9
+  },
+  "focusedChecks": {
+    "syntax": "PASS-final-exact-source",
+    "actualFixtureGuard": "PASS",
+    "guardNegatives": 7,
+    "actualGeneratedFixtureJSON": "PASS-seven-fields-and-strokes",
+    "actualClosureSelectorAndRaw390Assertion": "PASS",
+    "exactRootNegatives": "PASS",
+    "actualSetupControls": "PASS",
+    "releaseButtons": 8,
+    "compoundButtons": 2,
+    "aggregate": {
+      "initial": 30,
+      "boundary": 6,
+      "ending": 45,
+      "total": 81
+    },
+    "controlsTargetNegative": "PASS",
+    "callbacksExecuted": false,
+    "sourceOriginalGeometryUnchanged": true,
+    "priorOneColumn112ButtonExactPreserved": true
+  },
+  "RAMPreparationCorrections": [
+    "Character-level generic insertion split variable identifiers; replaced with complete identifier/boolean/count clauses before any artifact was saved.",
+    "Pure negative closure check needed existing unrelated 凞 fallback predicate definitions; reused those exact definitions rather than broadening guards."
+  ],
+  "limitations": [
+    "RAM guard/route/control checks are not SSR or native playback.",
+    "Existing sourceclock/mapping/fullround8Q coverage are reused unchanged.",
+    "Actual H is not changed by this preparation; root applies transport after exact before hash check.",
+    "Profile remains disabled and native/runtime/source-temporal approvals false."
+  ],
+  "SSR": 0,
+  "HTTP": 0,
+  "server": 0,
+  "sharedFilesWritten": 0,
+  "build": 0,
+  "projectTypecheck": 0
+}
