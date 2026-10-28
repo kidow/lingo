@@ -1,0 +1,148 @@
+{
+  "schema": "hanja-unapproved-ownstroke-static-readiness/v1",
+  "glyph": "譁",
+  "date": "2026-10-29",
+  "status": "READY-FOR-ROOT-STATIC-REVIEW-NOT-APPROVED",
+  "configSHA256": "28b5d205ecf7e3d0a13f33706b57b77a2c48c14ffbbe9671eeb143da697f685f",
+  "inputSHA256": {
+    "docs/hanja-authored-ownstroke-u8b41-body-h-2026-10-29/recipe.json": "97380e2c6d5a355bc4d55378294d981992b3a778d1a7246181ddf351ba2d2534",
+    "docs/hanja-authored-ownstroke-u8b41-body-h-2026-10-29/fixtures-draft.json": "a7c2777f1292cbc0616cd8a3916c3561257ff641ad32e389e8661321e9f2b5a7",
+    "docs/hanja-authored-ownstroke-u8b41-body-h-2026-10-29/materialize-draft.py": "ee3243c0c779c56d56dc3d87953409f943b5a20b2ea49d7d7d49eb0e56294909",
+    "docs/hanja-authored-ownstroke-u8b41-body-h-2026-10-29/compare.py": "49d515b5a04701570e532ec59186e1a5e9c592857d15cc830792f56c6bc14c92",
+    "docs/hanja-authored-ownstroke-u8b41-body-h-2026-10-29/config.json": "28b5d205ecf7e3d0a13f33706b57b77a2c48c14ffbbe9671eeb143da697f685f"
+  },
+  "sourcePreservation": {
+    "originalRawRows": 20,
+    "polygons": 36,
+    "onlyChangedRawOneBased": 16,
+    "other19GroupsAndTraceExact": true,
+    "raw16WholePAndGuideSamePositiveAffine": true,
+    "sourceFlagsUnchanged": true,
+    "exactMatrix": [
+      "224/163",
+      "0",
+      "0",
+      "1",
+      "-21472/815",
+      "0"
+    ],
+    "inverseMatrix": [
+      "163/224",
+      "0",
+      "0",
+      "1",
+      "671/35",
+      "0"
+    ],
+    "symbolicInverseIdentityPassed": true,
+    "privateFit": false,
+    "sourceEngineRuns": 0
+  },
+  "contactProof": {
+    "raw16Raw20ExactUnionIntersectionArea": "4",
+    "existingRaw14PairwiseContactArea": "48",
+    "newPositiveContactsRawOneBased": [
+      18,
+      20
+    ],
+    "newCentralVRaw18CrossingAccepted": false,
+    "noNewCrossingsClaim": false,
+    "pairwiseAreasAreNotUnionAreas": true
+  },
+  "hypothesis": {
+    "mapping": [
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ],
+      [
+        5
+      ],
+      [
+        6,
+        7
+      ],
+      [
+        8
+      ],
+      [
+        9
+      ],
+      [
+        10
+      ],
+      [
+        11
+      ],
+      [
+        12
+      ],
+      [
+        13
+      ],
+      [
+        16,
+        20
+      ],
+      [
+        14
+      ],
+      [
+        15
+      ],
+      [
+        17
+      ],
+      [
+        19
+      ],
+      [
+        18
+      ]
+    ],
+    "approved": false,
+    "sourceOrderIdentity": false,
+    "nonconsecutiveRaw16Plus20CompoundApproved": false,
+    "centralVRaw18Domestic18RoleApproved": false
+  },
+  "reuse": {
+    "originalClockRecord": "docs/hanja-official-media-compare-u8b41-2026-10-27/native-clock-review.json",
+    "originalClockRecordSHA256": "fe25015a8f76bf324b72e1f02cb31ec306a833d8aeb6b00fe4a81917ebfbb7b3",
+    "originalClock54FramesReplayed": false,
+    "oldOriginalWholeHOLDPreserved": true,
+    "unchangedSourceRevalidated": false
+  },
+  "checks": {
+    "materializerExactSourceAndContactPassed": true,
+    "actualCheckOnlyPassed": true,
+    "wholePanels": 4,
+    "comparisonPanels": 2,
+    "actualWholePageAndComparisonSelectionExecuted": true,
+    "initialAttemptFailure": "Duplicated docs prefix in adapter metadata path; corrected adapter/config SHA only. Follow-up check-only passed.",
+    "sharedCodeChanged": false,
+    "networkFetches": 0,
+    "serverStarts": 0
+  },
+  "requiredNativeReview": [
+    "Whole original20/authored20/unapproved18-role shape and contact",
+    "Canonical13 current vs authored raw16+20 horizontal, with new centralV crossing explicitly judged",
+    "Canonical18 vs original raw18 central vertical role hypothesis",
+    "Hypothesis canonicalprefix13 and14; remaining logical roles remain unapproved"
+  ],
+  "approval": {
+    "whole": false,
+    "newCentralVCrossing": false,
+    "mapping": false,
+    "temporal": false,
+    "native": false,
+    "runtime": false
+  }
+}
