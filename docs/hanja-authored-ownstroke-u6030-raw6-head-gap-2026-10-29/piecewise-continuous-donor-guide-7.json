@@ -1,0 +1,470 @@
+{
+  "schema": "hanja-piecewise-positive-affine-donor-guide-experiment/v1",
+  "glyph": "怰",
+  "pen": 7,
+  "date": "2026-10-29",
+  "status": "DIAGNOSTIC-UNAPPROVED",
+  "sourcePUnchanged": true,
+  "originalSourceQProvenanceOnly": true,
+  "mixedAuthoredGuide": true,
+  "filledGeometryMixed": false,
+  "originalClockIdentity": false,
+  "exactPiecewisePlan": {
+    "logical": 7,
+    "sourceDonor4": "M64 44.3 L61 51.2 L45 67 L32.5 81.4 L33.5 83 L68 77",
+    "targetAnchors100": [
+      [
+        "4177/50",
+        "79/2"
+      ],
+      [
+        "4591/100",
+        "87"
+      ],
+      [
+        "3637/100",
+        "177/2"
+      ],
+      [
+        "349/4",
+        "80"
+      ]
+    ],
+    "parts": [
+      {
+        "donorIndicesZeroBased": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "matrixExact": [
+          "12031/9668",
+          "-14311/338380",
+          "14311/338380",
+          "12031/9668",
+          "6848479/3383800",
+          "-8744303/676760"
+        ],
+        "determinantExact": "36722669/23686600",
+        "receiverStart100": [
+          "4177/50",
+          "79/2"
+        ],
+        "receiverEnd100": [
+          "4591/100",
+          "87"
+        ],
+        "placed100": [
+          [
+            "4177/50",
+            "79/2"
+          ],
+          [
+            "271037561/3383800",
+            "32628859/676760"
+          ],
+          [
+            "205925099/3383800",
+            "46393097/676760"
+          ],
+          [
+            "4591/100",
+            "87"
+          ]
+        ]
+      },
+      {
+        "donorIndicesZeroBased": [
+          3,
+          4
+        ],
+        "matrixExact": [
+          "-357/178",
+          "4191/890",
+          "-4191/890",
+          "-357/178",
+          "2200099/4450",
+          "173043/1780"
+        ],
+        "determinantExact": "116577/4450",
+        "receiverStart100": [
+          "4591/100",
+          "87"
+        ],
+        "receiverEnd100": [
+          "3637/100",
+          "177/2"
+        ],
+        "placed100": [
+          [
+            "4591/100",
+            "87"
+          ],
+          [
+            "3637/100",
+            "177/2"
+          ]
+        ]
+      },
+      {
+        "donorIndicesZeroBased": [
+          4,
+          5
+        ],
+        "matrixExact": [
+          "60212/40875",
+          "401/40875",
+          "-401/40875",
+          "60212/40875",
+          "-662927/54500",
+          "-1393592/40875"
+        ],
+        "determinantExact": "6652561/3065625",
+        "receiverStart100": [
+          "3637/100",
+          "177/2"
+        ],
+        "receiverEnd100": [
+          "349/4",
+          "80"
+        ],
+        "placed100": [
+          [
+            "3637/100",
+            "177/2"
+          ],
+          [
+            "349/4",
+            "80"
+          ]
+        ]
+      }
+    ],
+    "piecewiseJoinEndpointsExact": true,
+    "wholePlacedGuide100": [
+      [
+        "4177/50",
+        "79/2"
+      ],
+      [
+        "271037561/3383800",
+        "32628859/676760"
+      ],
+      [
+        "205925099/3383800",
+        "46393097/676760"
+      ],
+      [
+        "4591/100",
+        "87"
+      ],
+      [
+        "3637/100",
+        "177/2"
+      ],
+      [
+        "349/4",
+        "80"
+      ]
+    ],
+    "originalReceiverPUnchanged": true,
+    "sourceQProvenanceOnly": true,
+    "reposition": {
+      "vector100": [
+        "-477/50",
+        "3/2"
+      ],
+      "radius": 12,
+      "positiveDotRegionVertexCount": 15,
+      "positiveDotRegionMaxDistanceSquaredToTip": "1124201/10000",
+      "witness100": [
+        "177/5",
+        "428/5"
+      ],
+      "wholePositiveDotRegionInsideCompletedTipDisk": true,
+      "noNewFilledInkFromLeftwardCorner": true,
+      "argument": "For dot(q-tip,V)<=0, every moved center tip+tV is no closer to q than tip. All positive-dot P region lies in the completed tip disk, using the convex squarednorm maximum on original/intersection boundaryvertices. Thus no original filledP can become newly covered along the leftward corner if this bound passes."
+    },
+    "coverageVertexNecessaryRadius": 4.479867824191525,
+    "coverageVertexWitness100": [
+      "77/2",
+      "927/10"
+    ],
+    "nativeApproval": false,
+    "originalRetracingClaim": false
+  },
+  "fullCoverage": [
+    {
+      "logical": 7,
+      "radius": 12,
+      "status": "PASS-CONSERVATIVE-FULL-P-COVERAGE",
+      "nodes": 338,
+      "maxDepth": 2,
+      "maxAcceptedUpperDistance": 11.950085617744406
+    }
+  ],
+  "finiteConnectivity": [
+    {
+      "logical": 7,
+      "width": 24,
+      "padding": 12,
+      "until": 0.08931750688381652,
+      "sourceTriangles": 42,
+      "originalPositiveTriangleContacts": 323,
+      "finiteConnectedProofAll": false,
+      "checks": [
+        {
+          "p": 0,
+          "visibleComponents": 0,
+          "idealPositiveArea": 0
+        },
+        {
+          "p": 0.000001,
+          "visibleComponentsUpperBound": 1,
+          "activeConvexCells": 1,
+          "componentCellCounts": [
+            1
+          ],
+          "gateReleased": false
+        },
+        {
+          "p": 0.001,
+          "visibleComponentsUpperBound": 1,
+          "activeConvexCells": 1,
+          "componentCellCounts": [
+            1
+          ],
+          "gateReleased": false
+        },
+        {
+          "p": 0.01,
+          "visibleComponentsUpperBound": 1,
+          "activeConvexCells": 9,
+          "componentCellCounts": [
+            9
+          ],
+          "gateReleased": false
+        },
+        {
+          "p": 0.03,
+          "visibleComponentsUpperBound": 1,
+          "activeConvexCells": 10,
+          "componentCellCounts": [
+            10
+          ],
+          "gateReleased": false
+        },
+        {
+          "p": 0.1,
+          "visibleComponentsUpperBound": 1,
+          "activeConvexCells": 24,
+          "componentCellCounts": [
+            24
+          ],
+          "gateReleased": true
+        },
+        {
+          "p": 0.08931749688381653,
+          "visibleComponentsUpperBound": 1,
+          "activeConvexCells": 12,
+          "componentCellCounts": [
+            12
+          ],
+          "gateReleased": false
+        },
+        {
+          "p": 0.08931750688381652,
+          "visibleComponentsUpperBound": 1,
+          "activeConvexCells": 12,
+          "componentCellCounts": [
+            12
+          ],
+          "gateReleased": true
+        },
+        {
+          "p": 0.08931751688381652,
+          "visibleComponentsUpperBound": 1,
+          "activeConvexCells": 24,
+          "componentCellCounts": [
+            24
+          ],
+          "gateReleased": true
+        },
+        {
+          "p": 0.25,
+          "visibleComponentsUpperBound": 1,
+          "activeConvexCells": 40,
+          "componentCellCounts": [
+            40
+          ],
+          "gateReleased": true
+        },
+        {
+          "p": 0.35,
+          "visibleComponentsUpperBound": 1,
+          "activeConvexCells": 47,
+          "componentCellCounts": [
+            47
+          ],
+          "gateReleased": true
+        },
+        {
+          "p": 0.4,
+          "visibleComponentsUpperBound": 2,
+          "activeConvexCells": 67,
+          "componentCellCounts": [
+            63,
+            4
+          ],
+          "gateReleased": true
+        },
+        {
+          "p": 0.45,
+          "visibleComponentsUpperBound": 1,
+          "activeConvexCells": 80,
+          "componentCellCounts": [
+            80
+          ],
+          "gateReleased": true
+        },
+        {
+          "p": 0.475,
+          "visibleComponentsUpperBound": 1,
+          "activeConvexCells": 81,
+          "componentCellCounts": [
+            81
+          ],
+          "gateReleased": true
+        },
+        {
+          "p": 0.49,
+          "visibleComponentsUpperBound": 1,
+          "activeConvexCells": 81,
+          "componentCellCounts": [
+            81
+          ],
+          "gateReleased": true
+        },
+        {
+          "p": 0.5,
+          "visibleComponentsUpperBound": 1,
+          "activeConvexCells": 82,
+          "componentCellCounts": [
+            82
+          ],
+          "gateReleased": true
+        },
+        {
+          "p": 0.51,
+          "visibleComponentsUpperBound": 1,
+          "activeConvexCells": 82,
+          "componentCellCounts": [
+            82
+          ],
+          "gateReleased": true
+        },
+        {
+          "p": 0.55,
+          "visibleComponentsUpperBound": 1,
+          "activeConvexCells": 108,
+          "componentCellCounts": [
+            108
+          ],
+          "gateReleased": true
+        },
+        {
+          "p": 0.6,
+          "visibleComponentsUpperBound": 1,
+          "activeConvexCells": 108,
+          "componentCellCounts": [
+            108
+          ],
+          "gateReleased": true
+        },
+        {
+          "p": 0.625,
+          "visibleComponentsUpperBound": 1,
+          "activeConvexCells": 131,
+          "componentCellCounts": [
+            131
+          ],
+          "gateReleased": true
+        },
+        {
+          "p": 0.75,
+          "visibleComponentsUpperBound": 1,
+          "activeConvexCells": 134,
+          "componentCellCounts": [
+            134
+          ],
+          "gateReleased": true
+        },
+        {
+          "p": 0.95,
+          "visibleComponentsUpperBound": 1,
+          "activeConvexCells": 142,
+          "componentCellCounts": [
+            142
+          ],
+          "gateReleased": true
+        },
+        {
+          "p": 0.99999999,
+          "visibleComponentsUpperBound": 1,
+          "activeConvexCells": 142,
+          "componentCellCounts": [
+            142
+          ],
+          "gateReleased": true
+        },
+        {
+          "p": 1,
+          "visibleComponentsUpperBound": 1,
+          "activeConvexCells": 142,
+          "componentCellCounts": [
+            142
+          ],
+          "gateReleased": true
+        }
+      ]
+    }
+  ],
+  "scope": "Sufficient finite convex-cell graph connectivity: sourceP ears clipped by start halfplane intersect each capsule are convex; exact Fraction polygon/segment distance and contact edges or common corner disks establish graph links. Binary64 placedguide/cap timing is rationalized; not a formal all-real-progress interval proof.",
+  "phaseFractions": {
+    "leftCornerStart": 0.5441657026603905,
+    "leftCornerEnd": 0.6160454889247072
+  },
+  "segment": {
+    "outline": "M85.75 41.5 L82.8 45.75 L79.6 50.05 L76.25 54.45 L72.65 58.95 L68.8 63.5 L64.8 68.15 L60.5 72.9 L56 77.65 L51.25 82.45 L46.2 87.3 L45.55 86.65 L49.85 81.2 L54 75.9 L58 70.75 L61.85 65.75 L65.5 60.9 L68.95 56.15 L72.2 51.5 L75.25 47 L78.1 42.55 L80.7 38.3 Z M80.45 38.7 L81 37.9 L85.75 41.5 Z M85.75 41.5 L86.5 43.15 L83.6 43.1 Z M36.4 85.45 L41.6 84.8 L46.75 84.15 L51.9 83.5 L57 82.85 L62.1 82.25 L67.15 81.6 L72.15 81 L77.15 80.45 L82.15 79.95 L87.15 79.55 L87.3 80.4 L82.5 81.8 L77.65 83.05 L72.75 84.25 L67.8 85.35 L62.8 86.4 L57.75 87.45 L52.7 88.45 L47.6 89.45 L42.45 90.4 L37.3 91.35 Z M37.3 91.35 L35.4 85.6 L36.4 85.45 Z M37.3 91.35 L40.05 89.45 L38.5 92.7 Z",
+    "direction": "curve",
+    "weight": 134.35216027256,
+    "revealPath": "M87.94815760177644 28.338989895269307 L83.54 39.5 L80.09857586145753 48.21333855428808 L60.856167326674154 68.55177167681305 L45.91 87 L36.37 88.5 L87.25 80",
+    "revealWidth": 24,
+    "revealStartGate": {
+      "unit": [
+        -0.3673464668147027,
+        0.9300841753942244
+      ],
+      "minProjection": 5.495126435450189,
+      "firstProjection": 6.050201090371598,
+      "padding": 12,
+      "until": 0.08931750688381652,
+      "bounds": [
+        35.4,
+        37.9,
+        87.3,
+        92.7
+      ]
+    }
+  },
+  "requiredNative": [
+    ".35/.4/.45 before DLtip: inspect anticipation of future lowerH.",
+    "Corner start/mid/end: check no visible new head backfill.",
+    "Whole macroDL thenright, fullshape and natural replay."
+  ],
+  "conditionalNext": "If .4 early H is observed, ROOT proposed phase-specific originalP-only clipping. Do not integrate this whole-P tube before diagnosis.",
+  "nativeApproved": false,
+  "runtimeApplied": false,
+  "sharedFilesChanged": 0
+}
