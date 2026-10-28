@@ -1,0 +1,378 @@
+{
+  "schema": "hanja-original-P-phase-specific-display-experiment/v1",
+  "date": "2026-10-29",
+  "glyph": "怰",
+  "pen": 7,
+  "status": "PROTOTYPE-NATIVE-UNREVIEWED",
+  "inputSHA256": {
+    "docs/hanja-authored-ownstroke-u6030-raw6-head-gap-2026-10-29/fixtures-execution-draft.json": "a8afed867fb242c938030bf8f39dc1be6d4ff947d7e7c1e10e120f98cdf28226",
+    "docs/hanja-authored-ownstroke-u6030-raw6-head-gap-2026-10-29/contact-strip-experiment.json": "c36f5cc9406b882ca7ed08181f7192b185a1d59214bea4096a4113c31290bab1",
+    "docs/hanja-authored-ownstroke-u6030-raw6-head-gap-2026-10-29/piecewise-continuous-donor-guide-7.json": "300b32b71b87dc823fb64d760c906a757aef4afcbc796ff05f595dfc4d0d0072",
+    "docs/hanja-authored-ownstroke-u6030-raw6-head-gap-2026-10-29/native-piecewise-donor-pen7-review.json": "f321c5012bd60aae6d5017f95ef410b6fa020ac4c66c5b11d5e2698ea8d7fd4f"
+  },
+  "phasePlan": {
+    "DLend": 0.5441657026603905,
+    "cornerEnd": 0.6160454889247072,
+    "nextBounds": [
+      35.4,
+      79.55,
+      87.3,
+      92.7
+    ],
+    "seedX": 47.449144202841815
+  },
+  "DLonly": {
+    "sourceRaw": 8,
+    "sourcePCount": 3,
+    "outlineUnchanged": true,
+    "segment": {
+      "outline": "M85.75 41.5 L82.8 45.75 L79.6 50.05 L76.25 54.45 L72.65 58.95 L68.8 63.5 L64.8 68.15 L60.5 72.9 L56 77.65 L51.25 82.45 L46.2 87.3 L45.55 86.65 L49.85 81.2 L54 75.9 L58 70.75 L61.85 65.75 L65.5 60.9 L68.95 56.15 L72.2 51.5 L75.25 47 L78.1 42.55 L80.7 38.3 Z M80.45 38.7 L81 37.9 L85.75 41.5 Z M85.75 41.5 L86.5 43.15 L83.6 43.1 Z",
+      "direction": "curve",
+      "weight": 73.10983769911488,
+      "revealPath": "M87.94815760177644 28.338989895269307 L83.54 39.5 L80.09857586145753 48.21333855428808 L60.856167326674154 68.55177167681305 L45.91 87",
+      "revealWidth": 24,
+      "revealStartGate": {
+        "unit": [
+          -0.3673464668147027,
+          0.9300841753942244
+        ],
+        "minProjection": 5.495126435450189,
+        "firstProjection": 6.050201090371598,
+        "padding": 12,
+        "until": 0.16413659744925518,
+        "bounds": [
+          45.55,
+          37.9,
+          86.5,
+          87.3
+        ]
+      }
+    },
+    "coverage": [
+      {
+        "logical": 7,
+        "radius": 12,
+        "status": "PASS-CONSERVATIVE-FULL-P-COVERAGE",
+        "nodes": 114,
+        "maxDepth": 2,
+        "maxAcceptedUpperDistance": 11.719239407882258
+      }
+    ],
+    "finiteChecks": [
+      {
+        "logical": 7,
+        "width": 24,
+        "padding": 12,
+        "until": 0.16413659744925518,
+        "sourceTriangles": 22,
+        "originalPositiveTriangleContacts": 128,
+        "finiteConnectedProofAll": true,
+        "checks": [
+          {
+            "p": 0,
+            "visibleComponents": 0,
+            "idealPositiveArea": 0
+          },
+          {
+            "p": 0.000001,
+            "visibleComponentsUpperBound": 1,
+            "activeConvexCells": 1,
+            "componentCellCounts": [
+              1
+            ],
+            "gateReleased": false
+          },
+          {
+            "p": 0.001,
+            "visibleComponentsUpperBound": 1,
+            "activeConvexCells": 1,
+            "componentCellCounts": [
+              1
+            ],
+            "gateReleased": false
+          },
+          {
+            "p": 0.01,
+            "visibleComponentsUpperBound": 1,
+            "activeConvexCells": 9,
+            "componentCellCounts": [
+              9
+            ],
+            "gateReleased": false
+          },
+          {
+            "p": 0.03,
+            "visibleComponentsUpperBound": 1,
+            "activeConvexCells": 10,
+            "componentCellCounts": [
+              10
+            ],
+            "gateReleased": false
+          },
+          {
+            "p": 0.1,
+            "visibleComponentsUpperBound": 1,
+            "activeConvexCells": 11,
+            "componentCellCounts": [
+              11
+            ],
+            "gateReleased": false
+          },
+          {
+            "p": 0.1641365874492552,
+            "visibleComponentsUpperBound": 1,
+            "activeConvexCells": 12,
+            "componentCellCounts": [
+              12
+            ],
+            "gateReleased": false
+          },
+          {
+            "p": 0.16413659744925518,
+            "visibleComponentsUpperBound": 1,
+            "activeConvexCells": 12,
+            "componentCellCounts": [
+              12
+            ],
+            "gateReleased": true
+          },
+          {
+            "p": 0.16413660744925518,
+            "visibleComponentsUpperBound": 1,
+            "activeConvexCells": 24,
+            "componentCellCounts": [
+              24
+            ],
+            "gateReleased": true
+          },
+          {
+            "p": 0.25,
+            "visibleComponentsUpperBound": 1,
+            "activeConvexCells": 25,
+            "componentCellCounts": [
+              25
+            ],
+            "gateReleased": true
+          },
+          {
+            "p": 0.35,
+            "visibleComponentsUpperBound": 1,
+            "activeConvexCells": 39,
+            "componentCellCounts": [
+              39
+            ],
+            "gateReleased": true
+          },
+          {
+            "p": 0.4,
+            "visibleComponentsUpperBound": 1,
+            "activeConvexCells": 40,
+            "componentCellCounts": [
+              40
+            ],
+            "gateReleased": true
+          },
+          {
+            "p": 0.45,
+            "visibleComponentsUpperBound": 1,
+            "activeConvexCells": 40,
+            "componentCellCounts": [
+              40
+            ],
+            "gateReleased": true
+          },
+          {
+            "p": 0.475,
+            "visibleComponentsUpperBound": 1,
+            "activeConvexCells": 41,
+            "componentCellCounts": [
+              41
+            ],
+            "gateReleased": true
+          },
+          {
+            "p": 0.49,
+            "visibleComponentsUpperBound": 1,
+            "activeConvexCells": 41,
+            "componentCellCounts": [
+              41
+            ],
+            "gateReleased": true
+          },
+          {
+            "p": 0.5,
+            "visibleComponentsUpperBound": 1,
+            "activeConvexCells": 41,
+            "componentCellCounts": [
+              41
+            ],
+            "gateReleased": true
+          },
+          {
+            "p": 0.51,
+            "visibleComponentsUpperBound": 1,
+            "activeConvexCells": 41,
+            "componentCellCounts": [
+              41
+            ],
+            "gateReleased": true
+          },
+          {
+            "p": 0.55,
+            "visibleComponentsUpperBound": 1,
+            "activeConvexCells": 41,
+            "componentCellCounts": [
+              41
+            ],
+            "gateReleased": true
+          },
+          {
+            "p": 0.6,
+            "visibleComponentsUpperBound": 1,
+            "activeConvexCells": 47,
+            "componentCellCounts": [
+              47
+            ],
+            "gateReleased": true
+          },
+          {
+            "p": 0.625,
+            "visibleComponentsUpperBound": 1,
+            "activeConvexCells": 47,
+            "componentCellCounts": [
+              47
+            ],
+            "gateReleased": true
+          },
+          {
+            "p": 0.75,
+            "visibleComponentsUpperBound": 1,
+            "activeConvexCells": 63,
+            "componentCellCounts": [
+              63
+            ],
+            "gateReleased": true
+          },
+          {
+            "p": 0.95,
+            "visibleComponentsUpperBound": 1,
+            "activeConvexCells": 63,
+            "componentCellCounts": [
+              63
+            ],
+            "gateReleased": true
+          },
+          {
+            "p": 0.99999999,
+            "visibleComponentsUpperBound": 1,
+            "activeConvexCells": 63,
+            "componentCellCounts": [
+              63
+            ],
+            "gateReleased": true
+          },
+          {
+            "p": 1,
+            "visibleComponentsUpperBound": 1,
+            "activeConvexCells": 63,
+            "componentCellCounts": [
+              63
+            ],
+            "gateReleased": true
+          }
+        ]
+      }
+    ]
+  },
+  "nextP": {
+    "sourceRaw": 9,
+    "sourcePCount": 3,
+    "outlineUnchanged": true,
+    "xMonotoneProof": {
+      "logical": 7,
+      "priorRaw": 8,
+      "nextRaw": 9,
+      "nextSourcePCount": 3,
+      "criticalXSlices": 26,
+      "criticalAndOpenIntervalSliceChecks": 51,
+      "xMonotoneUnionProved": true,
+      "violations": [],
+      "seed200": [
+        "6618207819254797549/69740012495930550",
+        "11908806814208702717/69740012495930550"
+      ],
+      "seedFromPositiveConvexIntersectionArea200": "1631654126478341399/139480024991861100",
+      "seedStrictlyInsideBothFilledSets": true,
+      "nextBBox200": [
+        "354/5",
+        "1591/10",
+        "873/5",
+        "927/5"
+      ],
+      "priorPContactEdges": [
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ]
+    },
+    "contactSeed200": [
+      "6618207819254797549/69740012495930550",
+      "11908806814208702717/69740012495930550"
+    ]
+  },
+  "displayPolicy": [
+    "0..DLend: only original raw8 P under mapped continuous donorDL guide and existing source-start gate. No future raw9 P is rendered.",
+    "DLend..cornerEnd: raw8 P complete; original raw9 P clip expands from exact positive-contact interior x toward original raw9 minX. This uses the explicitly authored positive placement of donorcorner leftward movement, not original donor direction or publisher retracing.",
+    "cornerEnd..1: retain raw8 and all raw9 lefthead; expand raw9 right boundary from contactseed x to original maxX."
+  ],
+  "mathematicalArguments": [
+    "DL p0 source-support gate has ideal zero filledarea, and fullDL coverage passes. Only firstP exists during this phase, so future-H anticipation is excluded structurally.",
+    "NextP union has connected vertical intervals at all 51 exact critical/open slice tests and is x-monotone. Its intersection with every nested xstrip through the strict positive-contact interior seed stays connected and positively attached to complete firstP for positive stripwidth.",
+    "At DLend nextstrip width0; at cornerEnd its left boundary already equals minX and right boundary remains seedX. H starts from exactly the same strip. All boundaries vary continuously; ideal added area has no jump, no rollback and no invented filled bridge.",
+    "At1 both original raw8/raw9 filled sets are complete and unchanged. No all-real-progress formal claim is made for the DLtube beyond existing support-plane reasoning plus 24 finite connected checks."
+  ],
+  "mixedAuthoredDisplay": true,
+  "originalClockIdentity": false,
+  "originalDonorLeftwardDirectionClaim": false,
+  "noNewFilledP": true,
+  "noNewBridge": true,
+  "sourceQProvenancePreserved": true,
+  "sourceQUsedAsDisplayTrajectory": false,
+  "nativeApproved": false,
+  "runtimeApplied": false,
+  "sharedFilesChanged": 0,
+  "requiredNative": [
+    0,
+    0.000001,
+    0.001,
+    0.01,
+    0.03,
+    0.1,
+    0.25,
+    0.35,
+    0.4,
+    0.45,
+    0.5,
+    0.5441656926603905,
+    0.5441657026603905,
+    0.5441657126603906,
+    0.5621356492264697,
+    0.580105595792549,
+    0.6160454789247072,
+    0.6160454889247072,
+    0.6160454989247073,
+    0.75,
+    0.95,
+    0.99999999,
+    1
+  ]
+}
