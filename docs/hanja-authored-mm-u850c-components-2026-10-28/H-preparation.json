@@ -1,0 +1,119 @@
+{
+  "schema": "hanja-exact-H-preparation/v1",
+  "glyph": "蔌",
+  "status": "ROOT-native-logical4-computed-matrix-unit-fix-prepared",
+  "preH": "cdf17aa136f170e96adc6bb2998fedfc5bb8133231bddbd330c5bfa95d77ef5f",
+  "expectedPostH": "b7bd7f979f222b64b25f92b7eeb072036f22233b7bf38dcdb65ced1a91877088",
+  "patch": {
+    "path": "docs/hanja-authored-mm-u850c-components-2026-10-28/actual-H-integration.patch",
+    "SHA256": "14951693c1412b72694e2d16a9d3a3c0dfc805f9f6620e9fdd9e6e9fc8c85ea9",
+    "hunks": 10,
+    "nativeApplied": false
+  },
+  "profileOverrides": {
+    "path": "docs/hanja-authored-mm-u850c-components-2026-10-28/profile-overrides.pending.json",
+    "SHA256": "725685ca0d869208dc480fbb6b28ce328f62dab8d9da85368ee259ff58795ca2"
+  },
+  "fixture": {
+    "path": "docs/hanja-authored-mm-u850c-components-2026-10-28/fixtures-reveal-start-draft.json",
+    "SHA256": "f89432a0b2cd74750b8a6fe19da5c58ebd761aea2f4d62c30e8e57fa9319e983",
+    "geometrySHA256": "a4bda38a3ce442cbcb1c923d8dc876abb33aec3b1528c936f46d8ec7775d4b7e",
+    "key": "u850c.strokes"
+  },
+  "counts": {
+    "logical": 15,
+    "masks": 15,
+    "subpaths": 15,
+    "curves": 15,
+    "boundaries": 0
+  },
+  "sourceIdentity": {
+    "locallyAuthored": true,
+    "mixedParts": true,
+    "originalRoot": false,
+    "originalMMWhole": false,
+    "originalEngineCapture": false,
+    "first4": "authored donor-grass4",
+    "remaining11": "original MM recipient body11",
+    "mask": "independent N100 source-affine width20/pad10"
+  },
+  "sourceEvidence": {
+    "body": {
+      "path": "docs/hanja-official-media-compare-u850c-2026-10-28/native-body-clock-review.json",
+      "SHA256": "11ab3101d12859e387d0ae93d5559b0e74eeff57b58574a08dcdacb976d3e13f"
+    },
+    "static": {
+      "path": "docs/hanja-authored-mm-u850c-components-2026-10-28/native-static-review.json",
+      "SHA256": "b55a1e05a2f565309be9968b85721085bdbf70b71391e6c57a24810aa8783fe6"
+    },
+    "scope": "Original domestic clock and finite static source-role support; source mask timing/native runtime still unapproved"
+  },
+  "verification": {
+    "serverParseDiagnostics": 0,
+    "clientParseDiagnostics": 0,
+    "exactGuard": true,
+    "negativeCases": 4,
+    "generatedRoute": {
+      "method": "Executed the entire new H routes.set(/fixture.json) line with the composed target profile and frozen original fixture.",
+      "actualNewRootPresent": true,
+      "rootAndSharedVersion": true,
+      "temporalPolicy": true,
+      "glyph": "蔌",
+      "pens": 15,
+      "curveTargets": 15,
+      "pairProgress": 0,
+      "attrsAndTargets": true
+    },
+    "originalSourceInputsUnchanged": true,
+    "forwardOriginalBlockCursorCheck": true,
+    "exactInverseToPreH": true,
+    "bareBlankContextLines": 0,
+    "existingServerGuardASTPreserved": true,
+    "changedExistingServerFunctions": [
+      "resources"
+    ],
+    "exactClientContextNegatives": 5,
+    "dynamicControls": {
+      "buttons": 6,
+      "initial": 30,
+      "ending": 45,
+      "currentGateRelease": 3,
+      "allPensResidual": true
+    },
+    "commonCapsule": "Current frozen Luo profile common versions/constants/resource closure386 inherited; target overrides do not copy old Hoa common capsule fields."
+  },
+  "requiredFreshNative": [
+    "All15 compact9/coarse,15 gate-release3,15 initial2 and ending3,all15 full-round residual.",
+    "Reuse recorded first4/body11 original source-clock directions and selected authored whole; actual source-affine start/turn/ending remains unreviewed."
+  ],
+  "author": {
+    "SSR": 0,
+    "server": 0,
+    "browser": 0,
+    "sharedWrites": 0,
+    "build": 0,
+    "globalTypeCheck": 0
+  },
+  "approval": {
+    "temporal": false,
+    "native": false,
+    "runtime": false
+  },
+  "commitSuggested": "docs(hanja): prepare Su source-affine native review",
+  "observationScope": "Only preparation/metadata/pure controls verified. Actual transform, mask ownership, start/transition/ending and residual require ROOT browser native review. Native/all-time/publisher-clock identity/runtime remain false.",
+  "followupCorrection": {
+    "path": "docs/hanja-authored-mm-u850c-components-2026-10-28/baseline-closure-fix-check.json",
+    "SHA256": "4da76d81f1fe2dc1a0fa93082b322b150d3400df036a536f7a1395b0c588f4a0",
+    "expectedCorrectedH": "6a25778e3680c12ac208b5a6ceb605ce9943e70a1ba19d8ca1542e9774a5e691",
+    "originalPatchPreserved": true,
+    "actualClosureSelectionVerified": true,
+    "nativeAfterFixPending": true
+  },
+  "logical4ObserverCorrection": {
+    "path": "docs/hanja-authored-mm-u850c-components-2026-10-28/logical4-computed-matrix-unit-check.json",
+    "SHA256": "4d4d7ece9b018764b792c0772eb616c9d8a4875941586a33163ca1e50c15b723",
+    "expectedCorrectedH": "98f37aa408530bbb8cf4c68afd4604251ac2a09bed3ee400ade7842a15eef60a",
+    "sourceAndRendererUnchanged": true,
+    "nativeAfterFixPending": true
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "schema": "hanja-exact-computed-matrix-unit-compatibility/v1",
+  "glyph": "蔌",
+  "logical": 4,
+  "mask": 1,
+  "status": "prepared-not-applied-native-recheck-required",
+  "preH": "6a25778e3680c12ac208b5a6ceb605ce9943e70a1ba19d8ca1542e9774a5e691",
+  "expectedPostH": "98f37aa408530bbb8cf4c68afd4604251ac2a09bed3ee400ade7842a15eef60a",
+  "patch": {
+    "path": "docs/hanja-authored-mm-u850c-components-2026-10-28/actual-H-logical4-computed-matrix-unit-fix.patch",
+    "SHA256": "3007cf5a113bbef4017a3f2314b4ea0bd4a9d8e13de029da041c692210cd5744",
+    "hunks": 1,
+    "nativeApplied": false
+  },
+  "source": {
+    "fixture": {
+      "path": "docs/hanja-authored-mm-u850c-components-2026-10-28/fixtures-reveal-start-draft.json",
+      "SHA256": "f89432a0b2cd74750b8a6fe19da5c58ebd761aea2f4d62c30e8e57fa9319e983",
+      "geometrySHA256": "a4bda38a3ce442cbcb1c923d8dc876abb33aec3b1528c936f46d8ec7775d4b7e"
+    },
+    "segmentSHA256": "e8f833b16c327749726b894f721a6774a6017391bdb2366df9516bf08ee9c6a2",
+    "matrixAttribute": "matrix(0.92086330935251803 0.0000000000000000 -0.10303794878788912 0.24644549763033174 20.125670837737392 3.9066350710900473)",
+    "profile": {
+      "path": "docs/hanja-authored-mm-u850c-components-2026-10-28/actual-profile-start.json",
+      "SHA256": "d537ce9b7e4453bff15953887dd4ae6d8c3e40d91b7b939810c9519cb196b989"
+    }
+  },
+  "ROOTObservation": {
+    "computedMatrix": [
+      0.920863,
+      0,
+      -0.103038,
+      0.246446,
+      20.1257,
+      3.90664
+    ],
+    "onlyFailure": "noTransform4",
+    "otherAttributesAndOwnerMaskGate": "ROOT reported PASS",
+    "cause": "Unknown. Float32-before-six-significant-digits hypothesis is contradicted for coefficient d. No SVG.baseVal proxy bypass or private coordinate extraction."
+  },
+  "compatibility": {
+    "scope": "Exact Su root/sharedVersion/policy/glyph15 and expected===strokes[3], segment===strokes[3][0], exact pinned source revealPath and matrix, width20/pad10 only.",
+    "legacyExactOrToPrecision6": "Preserved for all existing contexts.",
+    "additionalRule": "For nonzero expected coefficients only, finite computed value may differ by at most10^(floor(log10(abs(expected)))-5). Expected zero remains exact zero only.",
+    "attributeIdentity": "Exact original transform attribute and all existing owner/clip/gate checks are unchanged and execute before this computed-style comparison. This does not authorize CSS author transforms or source geometry modification."
+  },
+  "verification": {
+    "isolatedActualObserverTail": true,
+    "observedSixAccepted": true,
+    "legacyExactAndSixDigitAccepted": true,
+    "boundaryCases": 10,
+    "zeroMustStayExact": true,
+    "foreignContextNegativeCases": 5,
+    "otherSegmentOrCloneNegativeCases": 2,
+    "sourceMismatchNegativeCases": 2,
+    "nonFiniteNegativeCases": 2,
+    "float32HypothesisRejected": true,
+    "numericResult": {
+      "observed6": true,
+      "legacyExactAnd6sigPreserved": true,
+      "boundaryCases": 10,
+      "zeroExactOnly": true,
+      "foreignContextCases": 5,
+      "otherSegmentOrClone": 2,
+      "sourceMismatchCases": 2,
+      "nonFiniteCases": 2,
+      "float32HypothesisRejected": true,
+      "coefficientD": {
+        "expected": 0.24644549763033174,
+        "computed": 0.246446,
+        "delta": 5.023696682537881e-7,
+        "unit": 0.000001
+      }
+    },
+    "syntaxServerDiagnostics": 0,
+    "syntaxClientDiagnostics": 0,
+    "exactInverse": true,
+    "actualDOM": false
+  },
+  "approval": {
+    "newNative": false,
+    "runtime": false,
+    "allTime": false,
+    "officialGeometry": false
+  },
+  "author": {
+    "SSR": 0,
+    "server": 0,
+    "browser": 0,
+    "sharedWrites": 0,
+    "rendererWrites": 0,
+    "sourceGeometryWrites": 0,
+    "build": 0,
+    "globalTypeCheck": 0
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "schema": "hanja-exact-baseline-closure-fix-check/v1",
+  "glyph": "蔌",
+  "status": "prepared-not-applied",
+  "preH": "b7bd7f979f222b64b25f92b7eeb072036f22233b7bf38dcdb65ced1a91877088",
+  "expectedPostH": "6a25778e3680c12ac208b5a6ceb605ce9943e70a1ba19d8ca1542e9774a5e691",
+  "patch": {
+    "path": "docs/hanja-authored-mm-u850c-components-2026-10-28/actual-H-baseline-closure-fix.patch",
+    "SHA256": "56819d7bb071223bf29f7b56ee7e0e9770009ba1eeddd86b7a61141dc3b6e14a",
+    "hunks": 1,
+    "nativeApplied": false
+  },
+  "failure": {
+    "rootObserved": "ROOT actual SSR failed with Unknown import ./hanja-stroke-start-caps-u705d-hkcs-m.ts; browser review0.",
+    "cause": "The prep generator attempted a single-quoted list prefix, but the actual first root was double-quoted Luo. It omitted Su from useLocalU83f0BaselineClosure.",
+    "priorScopeCorrection": "Metadata/guard/generated-route checks did not test baseline resource-closure selection. No SSR or completed native success was established by those checks."
+  },
+  "actualSelectionExpressionCheck": {
+    "method": "Execute complete actual old/new const useLocalU83f0BaselineClosure statements with exact Su and all existing root contexts.",
+    "oldSuSelected": false,
+    "newSuSelected": true,
+    "existingRootsPreserved": 14,
+    "foreignKindOrRootNegativeCases": 2,
+    "passed": true
+  },
+  "syntaxServerDiagnostics": 0,
+  "exactInverse": true,
+  "sourceAndComponentUnchanged": true,
+  "author": {
+    "SSR": 0,
+    "server": 0,
+    "browser": 0,
+    "sharedWrites": 0,
+    "build": 0,
+    "globalTypeCheck": 0
+  },
+  "nativeApproval": false,
+  "runtimeApplied": false
+}

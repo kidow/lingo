@@ -1,0 +1,28 @@
+{
+  "glyph": "蔌",
+  "date": "2026-10-28",
+  "adapterSha256": "6a25778e3680c12ac208b5a6ceb605ce9943e70a1ba19d8ca1542e9774a5e691",
+  "profileSha256": "d537ce9b7e4453bff15953887dd4ae6d8c3e40d91b7b939810c9519cb196b989",
+  "fixtureSha256": "f89432a0b2cd74750b8a6fe19da5c58ebd761aea2f4d62c30e8e57fa9319e983",
+  "geometrySha256": "a4bda38a3ce442cbcb1c923d8dc876abb33aec3b1528c936f46d8ec7775d4b7e",
+  "method": "Codex in-app browser actual renderer native screenshots and read-only DOM attribute/computed-style inspection",
+  "finiteObservations": {
+    "fullRoundResidual": {"maskCount":15,"result":"PASS-all15 blank"},
+    "startRelease3At300px": {"pensViewed":[1,2,3,4,5],"checksPassed":[1,2,3,5],"pen4Failures":["main:noTransform4","sample0:noTransform4","sample1:noTransform4","sample2:noTransform4"],"pen4AbruptDifferenceObservedAcrossThreeFrames":false}
+  },
+  "pen4Dom": {
+    "declaredTransform": "matrix(0.92086330935251803 0.0000000000000000 -0.10303794878788912 0.24644549763033174 20.125670837737392 3.9066350710900473)",
+    "computedTransform": "matrix(0.920863, 0, -0.103038, 0.246446, 20.1257, 3.90664)",
+    "strokeWidth":20,
+    "releaseClipPath":null,
+    "declaredD":0.24644549763033174,
+    "directSixSignificantDigits":0.246445,
+    "float32ThenSixSignificantDigits":0.246445,
+    "observedComputedD":0.246446
+  },
+  "finding": "The transform observer rejects a rounded computed-style coefficient despite exact declared source-transform identity. A float32-then-six-digit explanation was tested and did not match; no browser internal cause is claimed.",
+  "status": "HOLD-transform-observer-precision-only",
+  "reusableEvidenceCondition": "Successful finite observations may be reused only if renderer, outline helper, fixture geometry, source transforms and render policies stay unchanged; the pending fix must be limited to the exact Su pen4 observer comparison.",
+  "runtimeApproved":false,
+  "registered":false
+}

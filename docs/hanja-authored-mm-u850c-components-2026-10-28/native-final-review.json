@@ -1,0 +1,33 @@
+{
+  "glyph": "蔌",
+  "reviewedAt": "2026-10-28",
+  "reviewer": "Codex root via in-app browser tab 71",
+  "result": "PASS",
+  "harnessSha256": "98f37aa408530bbb8cf4c68afd4604251ac2a09bed3ee400ade7842a15eef60a",
+  "profileSha256": "c821f74c7ceada5410fd65c5fd270d9e77e7b84c021031f9e45c39f9aefd8bcb",
+  "fixtureSha256": "f89432a0b2cd74750b8a6fe19da5c58ebd761aea2f4d62c30e8e57fa9319e983",
+  "geometrySha256": "a4bda38a3ce442cbcb1c923d8dc876abb33aec3b1528c936f46d8ec7775d4b7e",
+  "rendererSha256": "cb4d80f57dbd8ad9815b5b90128ece5171a678a3b1c24e94956c2ac9fff91f88",
+  "helperSha256": "b4d289d1911c4d43934dfad39c4cfbe22a246303bb7012114d16786688c36c40",
+  "pens": 15,
+  "masks": 15,
+  "mixedParts": true,
+  "isOriginalWholeSource": false,
+  "isOriginalRoot": false,
+  "isOriginalEngineCapture": false,
+  "observations": {
+    "compact9": "All 15 pens at 0,.125,.25,.375,.5,.625,.75,.875,1 directly viewed; sequential growth and final shapes PASS.",
+    "startRelease3": "All 15 directly viewed around each gate; pen4 retested with final harness and passed after narrowly scoped computed-matrix observer correction. Renderer and geometry unchanged.",
+    "fullRoundResidual": "All 15 masks blank. Reused successful native observations under harness 6a25778e3680c12ac208b5a6ceb605ce9943e70a1ba19d8ca1542e9774a5e691 because renderer/helper/fixture/policy unchanged; final change affects only exact pen4 matrix observer.",
+    "initial": "30 frames, 0 and .000001 for all 15 pens, directly viewed at 300px. No premature current-stroke fragments.",
+    "ending": "45 frames, .9999/.99999999/1 for all 15 pens, directly viewed at 300px. No completion jump or missing contour.",
+    "states": "19 states: idle, done, selected-zero, exact prefixes 0 through 15; bad/errors empty.",
+    "natural": "Selected pens 4 and 13 each reached natural-ended after eight-second playback; final shapes directly viewed; bad/errors empty.",
+    "whole": "520px final root directly viewed; legible mixed-source authored character.",
+    "compoundBoundaries": "None: every logical pen has a single mask."
+  },
+  "sourceReview": "Original domestic first-four clocks and body clocks, static whole/current/prefix comparisons are recorded separately. MM source outlines and medians remain exact under declared affine placements. Grass uses two 十 strokes twice; this is a locally authored mixed-source result, not original whole-glyph or publisher geometry.",
+  "limits": "Finite isolated actual StrokeOutlines review. Does not claim full application UI, whole-character natural autoplay, original source microclock, uniform publisher font identity, or geometry equality with domestic reference.",
+  "bad": [],
+  "errors": []
+}
