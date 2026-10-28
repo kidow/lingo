@@ -1,0 +1,80 @@
+{
+  "schema": "hanja-strict-registration-candidate-plan-v1",
+  "date": "2026-10-28",
+  "batch": 1509,
+  "glyph": "孽",
+  "strokes": 20,
+  "status": "pending-final-native-record-not-registration-authorized",
+  "runtimeRegistrationCountObservedByCoordinator": 5923,
+  "runtimeCountIsNotRecomputedHere": true,
+  "targetFilesCheckedAbsent": [
+    "lib/hanja-stroke-dictionary-glyphwiki-batch1509.ts",
+    "lib/hanja-stroke-dictionary-glyphwiki-batch1509.test.ts",
+    "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch1509.json"
+  ],
+  "source": {
+    "path": "docs/hanja-authored-mm-u5b7d-components-2026-10-28/fixtures-reveal-v3-start-draft.json",
+    "SHA256": "f96ad2d1ffb45480ec495706b176d2f158e89d469e25aa147d85634e5f6004b4",
+    "strokesPointer": "/u5b7d/strokes",
+    "strokesECMAScriptJSONSHA256": "3e065c4f64aa5bfc650093b18eb674f3194681da9060384ef39084b8d211d22f",
+    "counts": {"logical": 20, "segments": 20, "startGates": 20},
+    "requiredExactSegmentFields": ["outline", "bounds", "direction", "weight", "revealPath", "revealWidth", "revealTransform", "revealStartGate"],
+    "copyWithoutRecalculation": true,
+    "nativeApprovalInSourceDraftRemainsFalse": true
+  },
+  "capsuleScaffold": {
+    "arrayLength": 1,
+    "glyph": "孽",
+    "verificationSourceAfterFinalApproval": "ehanja-crosschecked",
+    "verifiedAt": null,
+    "geometrySource": null,
+    "geometryCorrectionAfterFinalApproval": "locally-authored-mixed-MM-donor-grass-four-and-recipient-body-sixteen; affine-reveal-and-source-start-gates",
+    "sourceStrokeIndices": [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20],
+    "outlinesRule": "Exact source /u5b7d/strokes including every revealTransform and revealStartGate; no field stripping, path normalization or weight recalculation.",
+    "pathsRule": "For each logical stroke join its segment.outline strings with one ASCII space, in existing segment order.",
+    "pathsSha256": null,
+    "sourceReference": {
+      "dictionarySvgSHA256": null,
+      "orderReviewSHA256": null,
+      "directionReviewSHA256": null,
+      "geometryReviewSHA256": null,
+      "geometryLicense": "Arphic Public License",
+      "editableSource": "hanja-strokes/dictionary-reviewed-glyphwiki-batch1509.json",
+      "modifications": "Locally authored mixed root: recipient 孽 MM body sixteen plus independently placed donor 十 four grass-head strokes. Original recipient whole nineteen is not used as an approved whole. Affine source-medial reveal and start gates are authored display policies; no upstream timing-equivalence claim."
+    }
+  },
+  "moduleScaffold": {
+    "template": "lib/hanja-stroke-dictionary-glyphwiki-batch1502.ts",
+    "expectedLiteral": "Finalized capsule array embedded as an independent JSON literal; not an alias of the public JSON module.",
+    "expectedType": "readonly HanjaDictionaryStrokeData[]",
+    "freezeDeepExpected": true,
+    "sameJSONContract": "Preserve existing plain-object/Array prototype checks, own enumerable data-descriptor checks, exact Reflect.ownKeys count, array length and value equality. Accessors, symbols, hidden properties, inherited objects and extra fields must reject without invoking getters.",
+    "loader": "loadGlyphWikiBatch1509Strokes",
+    "loaderArity": 1,
+    "outputIdentity": "Exact deeply frozen EXPECTED instance, including when accepting an independently parsed exact clone.",
+    "export": "HANJA_DICTIONARY_GLYPHWIKI_BATCH1509_STROKES",
+    "sourceInputExport": "GLYPHWIKI_BATCH1509_SOURCE_INPUT",
+    "registrationAuthorized": false,
+    "runtimeApplied": false,
+    "sourceInputRule": "Bind the exact v3 fixture/recipe/recipient/donor and final native record pins; retain local-authored/mixed/originalWhole=false claims. Do not invent original KAGE capture or original-MM whole provenance."
+  },
+  "testScaffold": [
+    "Final public capsule parses to the independent embedded EXPECTED; frozen return identity is stable.",
+    "Glyph 孽, twenty logical strokes and twenty masks; all twenty revealTransform and startGate objects exactly equal the pinned v3 source.",
+    "Paths exactly match outline concatenation and ECMAScript JSON SHA; body and donor D data stay unchanged.",
+    "Wrong outline, transform, gate projection, gate bounds, gate.until, width, direction, weight, source pin or review pin rejects.",
+    "Undefined/null/string/object instead of exact array, wrong array length, sparse arrays, extra keys, symbol keys, hidden properties, custom prototypes and accessor getters reject; getter invocation count stays zero.",
+    "Wrong argument arity rejects; exact structured clone accepts; deeply nested data and SOURCE_INPUT are frozen.",
+    "Runtime resolver returns 孽 only after the coordinator applies the separate registry patch following the final native record."
+  ],
+  "reusableEvidence": {
+    "wholeV2": {"path":"docs/hanja-authored-mm-u5b7d-components-2026-10-28/native-whole-v2-review.json","SHA256":"a63a22e3a6fb8ea4e5ee312af43882a48218e6627220c694302e2f43d4c492c9"},
+    "canonicalFirstFour": {"path":"docs/hanja-official-media-compare-u5b7d-2026-10-28/first-four-clock-review.json","SHA256":"578cd9d903c1e965be2eeed5e9072c2811fa7a2f23edb53c59f55a163154c33f"},
+    "canonicalBodySixteen": {"path":"docs/hanja-official-media-compare-u5b7d-2026-10-28/body-sixteen-clock-review.json","SHA256":"6fd0b46a22455640202fb2699249c5945f1dbbc9d4477099bb22c14a1e003384"},
+    "v3Arithmetic": {"path":"docs/hanja-authored-mm-u5b7d-components-2026-10-28/reveal-start-gate-v3-check.json","SHA256":"9d59920490e39f24ad48f6fdc6da4c448f67317f0ec198ce9b1a860f310ed1ac"}
+  },
+  "finalNativeReview": {"path":null,"SHA256":null,"receivedFromCoordinator":false},
+  "activationGate": "Do not materialize finalized capsule/module or apply registry patch while any final evidence field is null. Coordinator must supply the final exact input-bound native fullPASS record and confirm current renderer gate/affine support pins; previous whole/arithmetic reviews alone do not authorize activation.",
+  "approval": {"newGeometry":false,"newWhole":false,"nativeFullPASS":false,"registration":false,"runtime":false},
+  "sharedFilesChanged": false
+}
