@@ -1,0 +1,58 @@
+{
+  "schema": "hanja-exact-public-original-P-body-sweep-distance/v1",
+  "date": "2026-10-29",
+  "glyph": "釁",
+  "originalSource": {
+    "path": "docs/hanja-goal-glyphwiki-batch1056-2026-10-13/engine-whole-u91c1-ue0106.json",
+    "SHA256": "259e4a48fc191f53f417ccc14969016808405b6566f6c5741a94a32e3b19fe6f"
+  },
+  "method": "Exact Fraction(Decimal JSON values). Bodyraw27 is closed rectangle45..155 x127..131. All off0 polygons of each sweep lie at or below their minimum vertexY. A minimum-Y vertex projects onto the rectangle topedge, proving exact global minimum distance by vertical lowerbound plus attained witness. No curve interpolation or private coordinates.",
+  "coordinateSystem": "original200",
+  "results": [
+    {
+      "sourceRaw": 28,
+      "bodyRaw": 27,
+      "polygons": 3,
+      "minY": "1333/10",
+      "bodyMaxY": "131",
+      "minimumDistance": "23/10",
+      "minimumDistanceSquared": "529/100",
+      "witness": [
+        "326/5",
+        "1333/10"
+      ],
+      "bodyWitness": [
+        "326/5",
+        "131"
+      ],
+      "filledSetIntersectionEmpty": true
+    },
+    {
+      "sourceRaw": 30,
+      "bodyRaw": 27,
+      "polygons": 2,
+      "minY": "1409/10",
+      "bodyMaxY": "131",
+      "minimumDistance": "99/10",
+      "minimumDistanceSquared": "9801/100",
+      "witness": [
+        "1383/10",
+        "1409/10"
+      ],
+      "bodyWitness": [
+        "1383/10",
+        "131"
+      ],
+      "filledSetIntersectionEmpty": true
+    }
+  ],
+  "authorCandidateContactsChanged": false,
+  "conclusion": "Both original sweeps remain positively separated from the middlebodybottom. Omitting raw29 does not repair either contact. Fresh candidate whole and source mapping remain unapproved.",
+  "execution": {
+    "engine": 0,
+    "privateMedia": 0,
+    "network": 0,
+    "server": 0,
+    "geometryChanged": false
+  }
+}
