@@ -1,0 +1,56 @@
+{
+  "schema": "hanja-ownstroke-replacement-hypothesis-v1",
+  "date": "2026-10-28",
+  "glyph": "羖",
+  "catalogStrokes": 10,
+  "status": "unapproved-source-anchored-one-stroke-hypothesis",
+  "sameSourceDerived": true,
+  "locallyAuthored": true,
+  "mixed": true,
+  "originalRoot": false,
+  "evidence": {
+    "canonicalReview": "docs/hanja-goal-glyphwiki-batch440-2026-10-09/validation.json",
+    "canonicalReviewSHA256": "d31518d0d57518f4c71393eaa4fdd8ebba893ffdf55b21744461d0a3973fb2b7",
+    "existingObservationScope": "All ten domestic pens were directly compared; pen five was enlarged. The record explicitly documents pen-five near-horizontal versus upward mismatch. It does not separately certify donor pen-four filled contour compatibility.",
+    "domesticPenFiveDegrees": -1.0230301886678357,
+    "originalPenFiveEndpointDegrees": -17.785071430634215,
+    "originalWholeHOLDUnchanged": true
+  },
+  "original": {
+    "root": "u7f96",
+    "proofPath": "docs/hanja-goal-glyphwiki-batch440-2026-10-09/engine-proof.json",
+    "proofSHA256": "45ba067fd16a3708ca81c2f157f1839d4d67d88e8830701009d51318b746b2e2",
+    "tracePath": "docs/hanja-goal-glyphwiki-batch440-2026-10-09/draw-trace.json",
+    "sourcePath": "docs/hanja-goal-glyphwiki-batch440-2026-10-09/sources.json",
+    "sourceSHA256": "8f041036a7b438a835deb2c8b42610a236f5b832a153126b1def3c16015549de",
+    "logicalRawGroupsZeroBased": [[0], [1], [2], [3], [5, 6], [4], [7], [8, 9], [10, 11], [12]]
+  },
+  "hypothesis": {
+    "donorLogicalPenOneBased": 4,
+    "donorRawIndexZeroBased": 3,
+    "donorPolygonCount": 2,
+    "donorPolygonsSHA256": "443ff87f71e22dd6aabe219d89ad6ba652ea7801d6161101617980eff7b0606d",
+    "donorOriginalRaw": [1, 0, 0, 19.3, 87.87, 82.445, 87.87, null, null, null, null],
+    "replaceLogicalPenOneBased": 5,
+    "replaceRawIndexZeroBased": 5,
+    "retainedNonDrawingRawIndexZeroBased": 6,
+    "action": "Reference the donor's two original filled polygons without changing their stored vertices or flags; clone them into the new logical fifth pen under the explicit author affine transform. Omit only the original upward raw-five ink from the authored scene. Preserve the original fourth pen and all other original ink and ordering.",
+    "svgMatrixRational": ["91/73", "0", "0", "1", "-21314/1825", "14443/400"],
+    "authorAnchorDefinition": "Map the donor horizontal guide endpoints x=19.3..82.445 to the replaced curve endpoint x-span 12.38..91.095. Put its horizontal guide at the original quadratic's t=0.5 y=(135.34+2*125.24+110.09)/4=123.9775. This is an authored source-coordinate placement, not a domestic measurement or authoritative stroke shape.",
+    "newGuide": {"start": [12.38, 123.9775], "end": [91.095, 123.9775]},
+    "changesFilledGeometry": true,
+    "maskDirectionOnlyCorrection": false,
+    "originalProofFilesMutated": false,
+    "renderedOrCompiled": false
+  },
+  "requiredBeforeAnyApproval": [
+    "Directly inspect the canonical fourth-pen filled shape against its original donor; prior all-ten comparison alone is not an independent donor-contour approval.",
+    "Compare the new actual filled fifth pen and authored whole against the domestic whole; reject if length, height, serif, thickness or spatial relationships differ materially.",
+    "Check transformed original polygons and all contacts/overlaps with retained original ink; no contact or whole compatibility has yet been calculated or approved.",
+    "Verify domestic fifth-pen direction and subsequent stroke ordering independently of this author guide.",
+    "Only after whole compatibility, prepare and directly inspect start, intermediate growth, transitions and completion; no animation is approved here."
+  ],
+  "approval": {"donorContour": false, "placement": false, "contact": false, "whole": false, "strokeOrder": false, "native": false, "runtime": false},
+  "registrationChanged": false,
+  "privateMediaStoredOrTransmitted": false
+}
