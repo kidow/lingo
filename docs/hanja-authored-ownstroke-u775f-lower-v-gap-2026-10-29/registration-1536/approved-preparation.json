@@ -1,0 +1,38 @@
+{
+  "schema": "hanja-approved-registration-preparation/v1",
+  "glyph": "睟",
+  "batch": 1536,
+  "date": "2026-10-29",
+  "finalNative": {
+    "path": "docs/hanja-authored-ownstroke-u775f-lower-v-gap-2026-10-29/native-actual-review.json",
+    "SHA256": "36ddbefbe3e94dd6db0655983edb968d1ab9be037ac64dac380009ec1f28d3bb",
+    "status": "pass-bounded-actual-component-review"
+  },
+  "files": {
+    "lib/hanja-stroke-dictionary-glyphwiki-batch1536.ts": "bfd4e9ac3d21f9faac14a9a55854dd44413038048413594d433d46089dfa9629",
+    "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch1536.json": "95e3931dd50e79485c9c16363c05040d06560a7bee178cd1bca83e75f84f93de",
+    "lib/hanja-stroke-dictionary-glyphwiki-batch1536.test.ts": "c5476f43112eb1b6eaf0d54e8c63e73c4239588f1b9a7445baf1841009bad6d6"
+  },
+  "moduleSemantic": {
+    "status": "PASS",
+    "diagnostics": 0,
+    "root": "lib/hanja-stroke-dictionary-glyphwiki-batch1536.ts",
+    "scope": "Actual module with actual dictionary/outline types and two JSON imports; no registry/project typecheck."
+  },
+  "strictThreeTests": {
+    "command": "node --experimental-strip-types --test lib/hanja-stroke-dictionary-glyphwiki-batch1536.test.ts",
+    "executedByChild": false,
+    "requiresRootRegistryConnection": true
+  },
+  "registry": {
+    "writtenByChild": false,
+    "expectedBeforeSHA256": "7505c2816c3b3b34697d3c471c7887d0144dc5e1bb8599c7bd9a78a4fe920c37",
+    "import": "import { HANJA_DICTIONARY_GLYPHWIKI_BATCH1536_STROKES } from './hanja-stroke-dictionary-glyphwiki-batch1536.ts'",
+    "spread": "...HANJA_DICTIONARY_GLYPHWIKI_BATCH1536_STROKES"
+  },
+  "historicalPendingRecordsPreserved": true,
+  "childServers": 0,
+  "childSSR": 0,
+  "build": 0,
+  "projectTypecheck": 0
+}
