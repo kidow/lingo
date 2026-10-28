@@ -1,0 +1,98 @@
+{
+  "schema": "hanja-public-source-curve-coverage-preflight/v1",
+  "date": "2026-10-29",
+  "glyph": "睟",
+  "scope": "Four original public Q masks from fixed 睟 execution; raw14 wholeY affine affects only a cardinal segment. No revealTransform; world100 radius7 matches actualmask. Ten cardinal masks and compound2 handoff need direct native review. No start/release/native approval.",
+  "inputSHA256": {
+    "docs/hanja-authored-ownstroke-u775f-lower-v-gap-2026-10-29/prepare-execution-draft.mjs": "2acaf2de9c36474f30942b21f6714e5a0046eb9b7de11dfe8ce402184143d3a5",
+    "docs/hanja-authored-ownstroke-u775f-lower-v-gap-2026-10-29/fixtures-execution-draft.json": "b06fe6a9b65b4b4991f9b056b900c6f7694d43609d0cd30d80233915a4d1a7c3",
+    "docs/hanja-authored-ownstroke-u775f-lower-v-gap-2026-10-29/execution-draft-check.json": "46a751d4cd23749489335411911f0d69072884157608c428032850c3cc6f4a44",
+    "docs/hanja-authored-ownstroke-u775f-lower-v-gap-2026-10-29/coverage-preflight.mjs": "d4521ae1f9f6cb40a7d1e5f0495685ff47224239c62a81321efe66c7fdaee0c6"
+  },
+  "method": "Positive-ear triangles preserve originalpolygonarea within boundednumericmargin and avoid concavefan exteriorregions. At each triangle center distance to actual padded line segment and4097 evaluated original Q/C points gives an upper distance bound; plus triangle radius (1-Lipschitz) proves every triangle point within full round guide radius7. No original P/Q/C flattening. Unresolved triangulated regions do not aloneprove insufficientwidth.",
+  "numerics": {
+    "margin": 1e-8,
+    "formalIntervalProof": false,
+    "depthLimit": 16,
+    "nodeLimitPerMask": 60000,
+    "BezierEvaluationsPerMask": 4097
+  },
+  "counts": {
+    "curveMasks": 4,
+    "pass": 4,
+    "unproved": 0,
+    "outlier": 0
+  },
+  "units": [
+    {
+      "logical": 8,
+      "mask": 1,
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "radius": 7,
+      "width": 14,
+      "padding": 7,
+      "nodes": 126,
+      "maxDepth": 2,
+      "maxAcceptedUpperDistance": 6.8875656726096635,
+      "sourceOutlinePreserved": true,
+      "sourceBezierGuidePreserved": true,
+      "curveDegree": 2,
+      "nativeApproval": false
+    },
+    {
+      "logical": 9,
+      "mask": 1,
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "radius": 7,
+      "width": 14,
+      "padding": 7,
+      "nodes": 71,
+      "maxDepth": 2,
+      "maxAcceptedUpperDistance": 6.908986034013765,
+      "sourceOutlinePreserved": true,
+      "sourceBezierGuidePreserved": true,
+      "curveDegree": 2,
+      "nativeApproval": false
+    },
+    {
+      "logical": 10,
+      "mask": 1,
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "radius": 7,
+      "width": 14,
+      "padding": 7,
+      "nodes": 150,
+      "maxDepth": 2,
+      "maxAcceptedUpperDistance": 6.9380291215031535,
+      "sourceOutlinePreserved": true,
+      "sourceBezierGuidePreserved": true,
+      "curveDegree": 2,
+      "nativeApproval": false
+    },
+    {
+      "logical": 11,
+      "mask": 1,
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "radius": 7,
+      "width": 14,
+      "padding": 7,
+      "nodes": 91,
+      "maxDepth": 2,
+      "maxAcceptedUpperDistance": 6.797146659570522,
+      "sourceOutlinePreserved": true,
+      "sourceBezierGuidePreserved": true,
+      "curveDegree": 2,
+      "nativeApproval": false
+    }
+  ],
+  "cardinalPolicy": {
+    "masks": 10,
+    "declaredWholeAffinesMaintained": true,
+    "nativeStartContactAndEndingReviewRequired": true
+  },
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "sharedFilesChanged": false,
+  "serverStarts": 0,
+  "buildRun": false
+}
