@@ -1,0 +1,46 @@
+{
+  "glyph": "孼",
+  "unicode": "u5b7c",
+  "reviewedAt": "2026-10-29",
+  "status": "pass-bounded-actual-review",
+  "runtimeAppliedAtReview": false,
+  "actualHelperSha256": "aa9e04d5de635f8289948d74a9f3c157d3937b641669190b1e4b346ba35a4f58",
+  "rendererSha256": "cb4d80f57dbd8ad9815b5b90128ece5171a678a3b1c24e94956c2ac9fff91f88",
+  "profileSha256": "4015f0b3234e1a582e92ae37ac94d96410049ea24bcdd6e39a2980740bc24c70",
+  "fixtureSha256": "c4f91415449523cae0eef537faad0174c1f8a230299663b8b09e8e4d27fd39d5",
+  "geometrySha256": "73f26899f88927601757a51b9445a51eb88e68bb002e3f3dd538098acdf196ed",
+  "sourceClockReviewSha256": "d29f8c7f95d4a4a6468a31e4726dfb76d270ff3656db7e0f258fafb03a164faa",
+  "staticMappingReviewSha256": "20f98c6948ae9a5c85c4ffc697e7c3da7639f9a3952ad7e4ede55d6e024e474a",
+  "coverageSha256": "9e98e2b95a565fb1f56f83b424224473a0b9c3cca1d7aba266b8d40eea1f85a8",
+  "shape": {"logicalStrokes":19,"masks":24,"outlines":43,"curves":5},
+  "checks": {
+    "nativeBrowserPanel": true,
+    "all19PensCompact9": true,
+    "pen2CustomNineFramesAt300px": true,
+    "curveReleaseTriples": ["4m1","12m1","13m1","17m2","18m2"],
+    "initialFrames": 38,
+    "compoundBoundaryFrames": 15,
+    "endingFrames": 57,
+    "allFiveFullRoundResidualsBlank": true,
+    "states": ["idle","done","selected-zero","prefix0-through19"],
+    "stateCount":23,
+    "wholeAt520px": true,
+    "natural8SecondStartedAndEndedAtOne": [2,18],
+    "allObservedBadArraysEmpty": true,
+    "allObservedErrorArraysEmpty": true,
+    "isolatedSsr":1,
+    "cjsClosureModules":386,
+    "esmClosureModules":386
+  },
+  "findings": [
+    "No detached future fragment or missing completed outline was observed in the explicitly reviewed frames.",
+    "Pen 2 source V-to-H guide overrun is preserved; its reviewed transition stays within the already completed V.",
+    "Only 18m2 uses width22/pad11; other four curved masks retain width14/pad7.",
+    "The authored same-glyph copy, omitted large DL and positive affine corrections remain explicit; no source-engine identity is claimed."
+  ],
+  "limits": [
+    "Finite frame and start/end observations are not an exhaustive proof of every continuous frame.",
+    "No private publisher image, SVG, CSS or browser screenshot is stored in this record.",
+    "Registration and runtime count must be checked separately after activation."
+  ]
+}
