@@ -1,0 +1,167 @@
+{
+  "schema": "hanja-existing-public-source-next-static-plan/v1",
+  "date": "2026-10-29",
+  "glyph": "孼",
+  "catalogStrokes": 19,
+  "grade": "특급II",
+  "metadata": {
+    "path": "docs/hanja-goal-glyphwiki-batch707-2026-10-12/metadata.json",
+    "SHA256": "3a38393c9aa588d9bf594c4330453066533eb9d2728a2076bed795c40ba3ff8a"
+  },
+  "existingReadiness": {
+    "path": "docs/hanja-source-inventory-u5b7c-2026-10-26/source-readiness.json",
+    "SHA256": "7581d685b4be674e4b2930795a757981bfd31305ed04637b37d34fdad8bc227d"
+  },
+  "wholeHolds": {
+    "m": {
+      "path": "docs/hanja-source-raw-compare-u5b7c-hkcs-whole-2026-10-25/native-whole-m-review.json",
+      "SHA256": "2b43ac9d69ac114af83739d86e6ba74a2afb3561a1a010adb0dda5daafcfd56e"
+    },
+    "u": {
+      "path": "docs/hanja-source-raw-compare-u5b7c-hkcs-whole-2026-10-25/native-whole-u-review.json",
+      "SHA256": "7f283817853c2a012863613c5b5da46bbf3497e9c8d6757748d4b5beeb073d93"
+    }
+  },
+  "fixedCapturedSources": {
+    "m": {
+      "path": "docs/hanja-actual-engine-capture-u5b7c-hkcs-m-2026-10-25/engine-whole-hkcs_m5b7c.json",
+      "SHA256": "15c216d7e4e468e8f3820026dd76d1cf86e0d3af394256f89d98bbc0e04cf5df",
+      "raw": 25,
+      "calls": 25,
+      "P": 45,
+      "originalWholeApproval": false
+    },
+    "u": {
+      "path": "docs/hanja-actual-engine-capture-u5b7c-hkcs-u-2026-10-25/engine-whole-hkcs_u5b7c.json",
+      "SHA256": "a98c156cc1c8a004ac360d0f4e9f7b05fdfa6d98250ddacadd622d9593a2eb11",
+      "raw": 23,
+      "calls": 25,
+      "P": 46,
+      "originalWholeApproval": false
+    }
+  },
+  "facts": {
+    "mTopXinRaw15": {
+      "type": "actual source cdDrawLine horizontal guide",
+      "rawFlags": [
+        0,
+        100
+      ],
+      "P": 2
+    },
+    "uTopXinRaw14": {
+      "type": "actual source cdDrawCurve DRmark",
+      "P": 2
+    },
+    "mAvailableOwnRaw21": {
+      "type": "actual source cdDrawLine downward vertical guide",
+      "rawFlags": [
+        32,
+        32
+      ],
+      "P": 1,
+      "sourceRoleApproval": false
+    },
+    "newClosedNotCaptured": [
+      {
+        "root": "zihai-071224@5",
+        "topXinOriginalRow": "2:7:8:77:13:96:27:101:39",
+        "kind": "quadratic DR mark; not an authored straight vertical row"
+      },
+      {
+        "root": "u5b7c-t@1",
+        "topXinOriginalRow": "2:7:8:77:13:97:27:102:43",
+        "kind": "quadratic DR mark; not an authored straight vertical row"
+      }
+    ],
+    "fixedMMWholeExists": false,
+    "fixedMMAbsenceRevision": "bddc96d41bef78427ed0e034e9f7e31d71fd1b92",
+    "clockRecordFound": false
+  },
+  "recommendedNext": {
+    "first": "Direct original19clock from fixed publisherSVG before sourceorder/targetrole approval. ExistingwholeHOLD observation only establishes static uprightV-required counterexample.",
+    "second": "Only after ROOT original19clock+whole review: a sameglyph mixedparts authoredsubstitution may copy original mraw21 wholeP/guide to replace mraw15. This is not merely ownstrokeaffine and requires directtargetrole/contact evidence; preserveother24raw/originalraw21.",
+    "third": "ROOT staticwhole plus topV/current/contact review: uprightV muststandaboveandmeetfirstH, upperfallstroke mustcontactmountain, Xinbottom mustremainseparatefromZiupperturn. Preserveoriginalm/uHOLD.",
+    "notChosen": "Do not claim90degree rotation of oldH is publishercompatible merely because its guide becomesvertical. Newlyclosed DRsources are notestablished uprightV; obtainingnewsource is fallbackif ownVauthoredstatic fails.",
+    "geometryGenerationAllowedNow": false
+  },
+  "preparedGeometry": false,
+  "donorPlacementApproved": false,
+  "sourceMappingApproved": false,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "privateFetches": 0,
+  "serversStarted": 0,
+  "sharedFilesModified": false,
+  "buildRun": false,
+  "limits": [
+    "Public sourcekind/flags/Pcounts only, no radicalbasedorder inference.",
+    "Available sourceV is not already approved for targettoprole; affineplacement andshape/contact require freshnative.",
+    "No sourceP/guide/candidate geometry generated inthisinventory."
+  ],
+  "preparedOriginalClock": {
+    "adapter": {
+      "path": "docs/hanja-official-media-compare-u5b7c-2026-10-29/clock.py",
+      "SHA256": "3e53e999bda58aab05f0442c670c4cdaacb6c8de56b71106f31b751b5b4907ee"
+    },
+    "configs": [
+      {
+        "path": "docs/hanja-official-media-compare-u5b7c-2026-10-29/config-first.json",
+        "SHA256": "a966eb9ccd1c3f0a8bebbacc1682227df53aaecfc0879304766a123dc2511256",
+        "selected": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ]
+      },
+      {
+        "path": "docs/hanja-official-media-compare-u5b7c-2026-10-29/config-rest.json",
+        "SHA256": "ab28898988057fee0282621f29f2ef1086cfc235e028cc189050bc3c8a87df95",
+        "selected": [
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19
+        ]
+      }
+    ],
+    "checkOnly": "PASS-ownpins-and-common-validator-with-explicit-synthetic19rows",
+    "selectedCount17Rejected": true,
+    "originalTimedPathsFetched": false,
+    "originalClockVerified": false,
+    "privateFetches": 0,
+    "failedHistoricalAllConfig": {
+      "path": "docs/hanja-official-media-compare-u5b7c-2026-10-29/config-all.json",
+      "SHA256": "283e0745a095113fc30dc440279caaccab4e49b7b7d7343cfa2f6ccde77bac44",
+      "reason": "19selected exceeds unchanged commonvalidator max16; preserved as failed preparation, no longer accepted"
+    }
+  },
+  "preparedOriginalStatic": {
+    "adapter": {
+      "path": "docs/hanja-source-raw-compare-u5b7c-originals-2026-10-29/compare.py",
+      "SHA256": "863dcb0d24b594d2dbf43410b58c388c2e8db9fa700160dc8833eafd48d32bad"
+    },
+    "config": {
+      "path": "docs/hanja-source-raw-compare-u5b7c-originals-2026-10-29/config.json",
+      "SHA256": "43455f68d7ed1ac8d9e06856db9dc19098a853f76d168299ffc8f65fbefea61e"
+    },
+    "checkOnly": "PASS",
+    "originalEmptyMRows": [
+      7,
+      11
+    ],
+    "sourceGroupingApproved": false
+  }
+}
