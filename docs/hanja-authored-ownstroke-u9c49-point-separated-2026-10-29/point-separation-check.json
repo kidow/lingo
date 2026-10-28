@@ -1,0 +1,359 @@
+{
+  "schema": "hanja-public-source-positive-dot-translation-separation/v1",
+  "date": "2026-10-29",
+  "glyph": "鱉",
+  "status": "PASS-source-math-only-new-native-pending",
+  "source": {
+    "path": "docs/hanja-actual-engine-capture-u9c49-hkcs-m-2026-10-25/engine-whole-hkcs_m9c49.json",
+    "SHA256": "d6c0c87e387968e2af0f41ecd4a8f02007dd712b6d7f1dcd4a6188fb20cfcb6c"
+  },
+  "exactGeometryHelper": {
+    "path": "docs/hanja-source-original-u840d-hkcs-2026-10-25/verify-body-rising-bands.py",
+    "SHA256": "2ceee7728789781ccb8bb58173b131560229dfebc794d47463bcad1f5ea00f76",
+    "ASTFunctionsOnly": [
+      "det",
+      "events",
+      "union_row",
+      "value",
+      "vec"
+    ],
+    "oldTargetLoopsExecuted": 0
+  },
+  "positiveMatrixExact": [
+    "1",
+    "0",
+    "0",
+    "1",
+    "0",
+    "-4"
+  ],
+  "determinantExact": "1",
+  "changedRawOneBased": [
+    2
+  ],
+  "sourceDotOriginalPolygons": 2,
+  "authorRule": "Translate complete original dot raw2 P and Q guide upward4 public200 units. This explicitly targets conservative roofV5 gap>=1, rather than private coordinates. Translation-3 would leave bboxgap1/5 only; selected-4 gives6/5.",
+  "newDotBoundsExact": [
+    "368/5",
+    "83/5",
+    "102",
+    "363/10"
+  ],
+  "roofV5ExactBBoxGap": "6/5",
+  "translationMinus3RejectedBBoxGap": "1/5",
+  "counts": {
+    "raw": 25,
+    "calls": 26,
+    "polygons": 48,
+    "otherRawGroupsStrictlyDisjoint": 24,
+    "nonBBoxPolygonPairsCheckedExactly": 3
+  },
+  "other24GroupsExact": true,
+  "rawFlagsPreserved": true,
+  "originalPAndQShapeWidthDirectionPreserved": true,
+  "noNewPolygonContactWithAnyOtherRaw": true,
+  "results": [
+    {
+      "otherRawOneBased": 1,
+      "allFilledPolygonsStrictlyDisjoint": true,
+      "minimumSquaredDistanceLowerBoundExact": "72361/100",
+      "pairs": null
+    },
+    {
+      "otherRawOneBased": 3,
+      "allFilledPolygonsStrictlyDisjoint": true,
+      "minimumSquaredDistanceLowerBoundExact": "41353/25",
+      "pairs": null
+    },
+    {
+      "otherRawOneBased": 4,
+      "allFilledPolygonsStrictlyDisjoint": true,
+      "minimumSquaredDistanceLowerBoundExact": "193/5",
+      "pairs": [
+        {
+          "dotP": 1,
+          "otherP": 1,
+          "intersectionAreaExact": "0",
+          "squaredDistanceLowerBoundExact": "1764/25",
+          "method": "strict-exact-AABB-distance-lower-bound"
+        },
+        {
+          "dotP": 2,
+          "otherP": 1,
+          "intersectionAreaExact": "0",
+          "squaredDistanceLowerBoundExact": "193/5",
+          "method": "strict-exact-AABB-distance-lower-bound"
+        }
+      ]
+    },
+    {
+      "otherRawOneBased": 5,
+      "allFilledPolygonsStrictlyDisjoint": true,
+      "minimumSquaredDistanceLowerBoundExact": "36/25",
+      "pairs": [
+        {
+          "dotP": 1,
+          "otherP": 1,
+          "intersectionAreaExact": "0",
+          "squaredDistanceLowerBoundExact": "2704/25",
+          "method": "strict-exact-AABB-distance-lower-bound"
+        },
+        {
+          "dotP": 1,
+          "otherP": 2,
+          "intersectionAreaExact": "0",
+          "squaredDistanceLowerBoundExact": "289/25",
+          "method": "strict-exact-AABB-distance-lower-bound"
+        },
+        {
+          "dotP": 1,
+          "otherP": 3,
+          "intersectionAreaExact": "0",
+          "squaredDistanceLowerBoundExact": "201601/100",
+          "method": "strict-exact-AABB-distance-lower-bound"
+        },
+        {
+          "dotP": 1,
+          "otherP": 4,
+          "intersectionAreaExact": "0",
+          "squaredDistanceLowerBoundExact": "201601/100",
+          "method": "strict-exact-AABB-distance-lower-bound"
+        },
+        {
+          "dotP": 1,
+          "otherP": 5,
+          "intersectionAreaExact": "0",
+          "squaredDistanceLowerBoundExact": "239121/100",
+          "method": "strict-exact-AABB-distance-lower-bound"
+        },
+        {
+          "dotP": 2,
+          "otherP": 1,
+          "intersectionAreaExact": "0",
+          "squaredDistanceLowerBoundExact": "1681/25",
+          "method": "strict-exact-AABB-distance-lower-bound"
+        },
+        {
+          "dotP": 2,
+          "otherP": 2,
+          "intersectionAreaExact": "0",
+          "squaredDistanceLowerBoundExact": "36/25",
+          "method": "strict-exact-AABB-distance-lower-bound"
+        },
+        {
+          "dotP": 2,
+          "otherP": 3,
+          "intersectionAreaExact": "0",
+          "squaredDistanceLowerBoundExact": "182329/100",
+          "method": "strict-exact-AABB-distance-lower-bound"
+        },
+        {
+          "dotP": 2,
+          "otherP": 4,
+          "intersectionAreaExact": "0",
+          "squaredDistanceLowerBoundExact": "182329/100",
+          "method": "strict-exact-AABB-distance-lower-bound"
+        },
+        {
+          "dotP": 2,
+          "otherP": 5,
+          "intersectionAreaExact": "0",
+          "squaredDistanceLowerBoundExact": "45781/20",
+          "method": "strict-exact-AABB-distance-lower-bound"
+        }
+      ]
+    },
+    {
+      "otherRawOneBased": 6,
+      "allFilledPolygonsStrictlyDisjoint": true,
+      "minimumSquaredDistanceLowerBoundExact": "1024/25",
+      "pairs": null
+    },
+    {
+      "otherRawOneBased": 7,
+      "allFilledPolygonsStrictlyDisjoint": true,
+      "minimumSquaredDistanceLowerBoundExact": "80361/100",
+      "pairs": null
+    },
+    {
+      "otherRawOneBased": 8,
+      "allFilledPolygonsStrictlyDisjoint": true,
+      "minimumSquaredDistanceLowerBoundExact": "3961/10",
+      "pairs": null
+    },
+    {
+      "otherRawOneBased": 9,
+      "allFilledPolygonsStrictlyDisjoint": true,
+      "minimumSquaredDistanceLowerBoundExact": "3182656/17425",
+      "pairs": [
+        {
+          "dotP": 1,
+          "otherP": 1,
+          "intersectionAreaExact": "0",
+          "squaredDistanceLowerBoundExact": "17648401/65225",
+          "method": "exact-nonzero-fill-event-area-and-segment-distance"
+        },
+        {
+          "dotP": 1,
+          "otherP": 2,
+          "intersectionAreaExact": "0",
+          "squaredDistanceLowerBoundExact": "10816/25",
+          "method": "strict-exact-AABB-distance-lower-bound"
+        },
+        {
+          "dotP": 1,
+          "otherP": 3,
+          "intersectionAreaExact": "0",
+          "squaredDistanceLowerBoundExact": "84681/100",
+          "method": "strict-exact-AABB-distance-lower-bound"
+        },
+        {
+          "dotP": 2,
+          "otherP": 1,
+          "intersectionAreaExact": "0",
+          "squaredDistanceLowerBoundExact": "3182656/17425",
+          "method": "exact-nonzero-fill-event-area-and-segment-distance"
+        },
+        {
+          "dotP": 2,
+          "otherP": 2,
+          "intersectionAreaExact": "0",
+          "squaredDistanceLowerBoundExact": "10973/25",
+          "method": "strict-exact-AABB-distance-lower-bound"
+        },
+        {
+          "dotP": 2,
+          "otherP": 3,
+          "intersectionAreaExact": "0",
+          "squaredDistanceLowerBoundExact": "15773/20",
+          "method": "strict-exact-AABB-distance-lower-bound"
+        }
+      ]
+    },
+    {
+      "otherRawOneBased": 10,
+      "allFilledPolygonsStrictlyDisjoint": true,
+      "minimumSquaredDistanceLowerBoundExact": "225",
+      "pairs": null
+    },
+    {
+      "otherRawOneBased": 11,
+      "allFilledPolygonsStrictlyDisjoint": true,
+      "minimumSquaredDistanceLowerBoundExact": "289/100",
+      "pairs": [
+        {
+          "dotP": 1,
+          "otherP": 1,
+          "intersectionAreaExact": "0",
+          "squaredDistanceLowerBoundExact": "289/100",
+          "method": "strict-exact-AABB-distance-lower-bound"
+        },
+        {
+          "dotP": 2,
+          "otherP": 1,
+          "intersectionAreaExact": "0",
+          "squaredDistanceLowerBoundExact": "433222596/174725",
+          "method": "exact-nonzero-fill-event-area-and-segment-distance"
+        }
+      ]
+    },
+    {
+      "otherRawOneBased": 12,
+      "allFilledPolygonsStrictlyDisjoint": true,
+      "minimumSquaredDistanceLowerBoundExact": "30949/100",
+      "pairs": null
+    },
+    {
+      "otherRawOneBased": 13,
+      "allFilledPolygonsStrictlyDisjoint": true,
+      "minimumSquaredDistanceLowerBoundExact": "138613/50",
+      "pairs": null
+    },
+    {
+      "otherRawOneBased": 14,
+      "allFilledPolygonsStrictlyDisjoint": true,
+      "minimumSquaredDistanceLowerBoundExact": "444889/100",
+      "pairs": null
+    },
+    {
+      "otherRawOneBased": 15,
+      "allFilledPolygonsStrictlyDisjoint": true,
+      "minimumSquaredDistanceLowerBoundExact": "387089/100",
+      "pairs": null
+    },
+    {
+      "otherRawOneBased": 16,
+      "allFilledPolygonsStrictlyDisjoint": true,
+      "minimumSquaredDistanceLowerBoundExact": "657117/100",
+      "pairs": null
+    },
+    {
+      "otherRawOneBased": 17,
+      "allFilledPolygonsStrictlyDisjoint": true,
+      "minimumSquaredDistanceLowerBoundExact": "683929/100",
+      "pairs": null
+    },
+    {
+      "otherRawOneBased": 18,
+      "allFilledPolygonsStrictlyDisjoint": true,
+      "minimumSquaredDistanceLowerBoundExact": "824629/100",
+      "pairs": null
+    },
+    {
+      "otherRawOneBased": 19,
+      "allFilledPolygonsStrictlyDisjoint": true,
+      "minimumSquaredDistanceLowerBoundExact": "954529/100",
+      "pairs": null
+    },
+    {
+      "otherRawOneBased": 20,
+      "allFilledPolygonsStrictlyDisjoint": true,
+      "minimumSquaredDistanceLowerBoundExact": "683929/100",
+      "pairs": null
+    },
+    {
+      "otherRawOneBased": 21,
+      "allFilledPolygonsStrictlyDisjoint": true,
+      "minimumSquaredDistanceLowerBoundExact": "1292769/100",
+      "pairs": null
+    },
+    {
+      "otherRawOneBased": 22,
+      "allFilledPolygonsStrictlyDisjoint": true,
+      "minimumSquaredDistanceLowerBoundExact": "811501/50",
+      "pairs": null
+    },
+    {
+      "otherRawOneBased": 23,
+      "allFilledPolygonsStrictlyDisjoint": true,
+      "minimumSquaredDistanceLowerBoundExact": "150637/10",
+      "pairs": null
+    },
+    {
+      "otherRawOneBased": 24,
+      "allFilledPolygonsStrictlyDisjoint": true,
+      "minimumSquaredDistanceLowerBoundExact": "378709/25",
+      "pairs": null
+    },
+    {
+      "otherRawOneBased": 25,
+      "allFilledPolygonsStrictlyDisjoint": true,
+      "minimumSquaredDistanceLowerBoundExact": "845533/50",
+      "pairs": null
+    }
+  ],
+  "geometryEditedInOriginalSource": false,
+  "bridgePaths": 0,
+  "addedPaths": 0,
+  "engineRuns": 0,
+  "privateCoordinatesCopied": false,
+  "canonical22MappingApproved": false,
+  "sourceMicroclockEquivalent": false,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "limits": [
+    "Rational public fixed-coordinate geometry only; exact segment-distance result is reported for overlapping-box pairs and AABB lower bounds for other pairs. No private contour or pixel fitting.",
+    "Whole/current/roof contact and canonical22 source mapping await ROOT direct review; originalHKCS-m HOLD preserved.",
+    "SourceP/Q are not cut, redrawn, or independently control-adjusted; whole dot and its guide receive the same positive translation."
+  ]
+}
