@@ -1,0 +1,55 @@
+{
+  "schema": "hanja-mm-reveal-implementation-evidence/v1",
+  "date": "2026-10-28",
+  "glyph": "孽",
+  "scope": "Public upstream animation engineering evidence only; not a Korean stroke-order authority, runtime approval or an equivalence proof for the existing renderer.",
+  "retrieval": {
+    "tool": "Firecrawl",
+    "format": "markdown text returned from public raw GitHub URLs",
+    "ref": "master",
+    "immutableCommitResolved": false,
+    "sourcePins": [
+      {
+        "url": "https://raw.githubusercontent.com/chanind/hanzi-writer/master/src/renderers/svg/StrokeRenderer.ts",
+        "retrievedTextSHA256": "7900aa0f2c4e33a0c0f0f1bbc227daa715db64838211b809c11f59c3605e14ce",
+        "retrievedTextBytes": 2654
+      },
+      {
+        "url": "https://raw.githubusercontent.com/chanind/hanzi-writer/master/src/renderers/StrokeRendererBase.ts",
+        "retrievedTextSHA256": "bd1770c7fff1a6e54b9a1241ca35c4ff8f310d0e307e6e8e12b2c568b56c1021",
+        "retrievedTextBytes": 678
+      },
+      {
+        "url": "https://raw.githubusercontent.com/chanind/hanzi-writer/master/src/geometry.ts",
+        "retrievedTextSHA256": "c70f09b8a30ffca8627b18179267b53aaf3ca0c165a4fdbb6e14065e3f5d9c57",
+        "retrievedTextBytes": 7652
+      }
+    ]
+  },
+  "confirmedUpstream": {
+    "strokeWidthInOriginalSourceCoordinates": 200,
+    "startExtensionDistanceInOriginalSourceCoordinates": 100,
+    "dashLength": "Original median polyline length plus 100",
+    "dashOffset": "dashLength * 0.999 * (1 - displayPortion)",
+    "strokeLinecap": "round",
+    "strokeLinejoin": "miter",
+    "geometry": "A colored median sweep is clipped to the unchanged filled stroke outline.",
+    "extendStart": "Parallel intermediate points are filtered; the first median point is extended backward along its first segment.",
+    "getPathString": "The upstream helper rounds generated path coordinates to tenths."
+  },
+  "localRenderer": {
+    "path": "components/hanja/stroke-outlines.tsx",
+    "SHA256": "abf736abcc1a3cddb5d505eec6b26125a3dc2c96b6ff5bcafccde733cdc05c02",
+    "note": "The current generic branch draws a white revealPath mask with pathLength=1 and dasharray `${progress} 2`; it has no per-segment group transform field. This is not the same dash/extension contract as the upstream renderer."
+  },
+  "decision": {
+    "directPortApproved": false,
+    "untransformedConstantWidthForAuthoredPartsApproved": false,
+    "sourceWidthMeansKoreanOrderApproval": false,
+    "geometryOnlyDraftAllowed": true,
+    "temporalReview": false,
+    "runtimeApplied": false,
+    "next": "Preserve a deterministically transformed geometry-only draft with no executable reveal policy. Specify and test the actual candidate reveal contract, including the nonuniform authored transforms, before connecting an exact candidate fixture to the existing review helper."
+  },
+  "build": false
+}
