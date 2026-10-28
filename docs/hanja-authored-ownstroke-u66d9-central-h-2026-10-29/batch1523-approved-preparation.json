@@ -1,0 +1,68 @@
+{
+  "schema": "hanja-approved-registration-preparation/v1",
+  "date": "2026-10-29",
+  "glyph": "曙",
+  "batch": 1523,
+  "sourceCapsule": {
+    "originalRaw": 21,
+    "originalCalls": 21,
+    "originalP": 31,
+    "authoredRaw": 21,
+    "authoredP": 31,
+    "logical": 18,
+    "masks": 21,
+    "curves": 2,
+    "cardinals": 19,
+    "mixedParts": false,
+    "originalRoot": false,
+    "isOriginalEngineCapture": false,
+    "isActualLocallyAuthoredEngineCapture": false,
+    "changedRaw": [
+      14
+    ],
+    "other20RawExact": true
+  },
+  "finalNativeReview": {
+    "path": "docs/hanja-authored-ownstroke-u66d9-central-h-2026-10-29/native-final-review.json",
+    "SHA256": "412c93e08b11b8de0200d70fe3ff36ddea2845ea874d164a6a1f3d229036213f"
+  },
+  "files": {
+    "data": {
+      "path": "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch1523.json",
+      "SHA256": "368e1d44084c33897df272ae2dfc0cfa36b0abdd1f7cb9bcae61c01a5285597e"
+    },
+    "module": {
+      "path": "lib/hanja-stroke-dictionary-glyphwiki-batch1523.ts",
+      "SHA256": "f487d1561d61011ed33bcfd57685aad8a56357f06b0b1e06affd09420f98fe83"
+    },
+    "test": {
+      "path": "lib/hanja-stroke-dictionary-glyphwiki-batch1523.test.ts",
+      "SHA256": "01a3caf445330ec440b5893798fcb75a6e95d29c129babf138f71aa3dfe26a38"
+    },
+    "notice": {
+      "path": "docs/hanja-authored-ownstroke-u66d9-central-h-2026-10-29/batch1523-NOTICE.md",
+      "SHA256": "d41457523bb665fe4ff1424f727417d4926139feb5ab31a55ecbf825d5ce47b2"
+    },
+    "bundlePatch": {
+      "path": "docs/hanja-authored-ownstroke-u66d9-central-h-2026-10-29/batch1523-approved-bundle.patch",
+      "SHA256": "f67bacee3793072342ca71e483c54f947c1a0f8f33aeb013a0e1f9554f8b72ab"
+    },
+    "registryPatch": {
+      "path": "docs/hanja-authored-ownstroke-u66d9-central-h-2026-10-29/batch1523-approved-registry.patch",
+      "SHA256": "69d0139d9b5e077ebb4d8538e7bced542463af2820ffc407bc32acdb768637b5"
+    }
+  },
+  "registryBefore": "3830209371d456c81a191f5bcf3042f5c53020af87367a339b152eb2adc09068",
+  "registryAfter": "c92fa1e6eaebfa30d649d70fa00d12fcdab0391231b8695cc9782f74ea530772",
+  "checks": {
+    "sourcePinsVerified": 21,
+    "actualRootFocusedTestsPending": true,
+    "mutableActualHOrRegistryPermanentPin": false,
+    "build": 0,
+    "wholeTypecheck": 0,
+    "childSSR": 0,
+    "childServer": 0,
+    "actualRegistrationWrites": 0
+  },
+  "focusedTestCommand": "node --test lib/hanja-stroke-dictionary-glyphwiki-batch1523.test.ts"
+}
