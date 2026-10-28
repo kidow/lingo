@@ -382,7 +382,7 @@ import { reviewedU7277Context, reviewedU7277Policy, commitReviewedU7277Caps, typ
 import { reviewedCanContext, reviewedCanPolicy, commitReviewedCanCaps, type ReviewedCanPolicy } from '@/lib/hanja-stroke-start-gate-can'
 import { reviewedDiContext, reviewedDiPolicy, commitReviewedDiCaps, type ReviewedDiPolicy } from '@/lib/hanja-stroke-start-gate-di'
 import { reviewedSiContext, reviewedSiPolicy, commitReviewedSiCaps, type ReviewedSiPolicy } from '@/lib/hanja-stroke-start-gate-si'
-import { outlineClip, outlineSegmentProgress, type HanjaOutlineSegment, type HanjaOutlineStrokes } from '@/lib/hanja-stroke-outline'
+import { outlineClip, outlineSegmentProgress, outlineStartClip, type HanjaOutlineSegment, type HanjaOutlineStrokes } from '@/lib/hanja-stroke-outline'
 import { reviewedQuanQuadraticCapsContext, reviewedQuanQuadraticCapsPolicy, commitReviewedQuanQuadraticCaps, type ReviewedQuanQuadraticCapsPolicy, reviewedHanjaRevealContext, reviewedHanjaRevealPolicy, reviewedHanjaRevealClip, measureReviewedHanjaRevealLength, commitReviewedGrowingCaps, type ReviewedHanjaRevealPolicy, reviewedQuadraticCapsContext, reviewedQuadraticCapsPolicy, commitReviewedQuadraticCaps, type ReviewedQuadraticCapsPolicy } from '@/lib/hanja-stroke-start-gate'
 
 /** Only this small SVG subtree updates per frame; the card and controls do not. */
@@ -1528,10 +1528,13 @@ export function StrokeOutlines({ strokes, clock, phase, count, manual }: {
         if (p <= 0) return null
         if (p >= 1) return <path key={index} d={segment.outline} data-u83f0-k-source-window10-owner={u83f0KPreviewContext&&stroke===9&&index===0?id+'-'+stroke+'-1-owner':undefined} data-u83f0-k-source-window10-frame={u83f0KPreviewContext&&stroke===9&&index===0?u83f0KPreviewFrame:undefined} data-u83f0-k-source-window10-progress={u83f0KPreviewContext&&stroke===9&&index===0?String(p):undefined} data-u8609-fold-owner={u8609SourceContexts&&[5,13].includes(stroke)&&index===0?id+'-u8609-fold-'+(stroke+1):undefined} data-u8609-fold-pen={u8609SourceContexts&&[5,13].includes(stroke)&&index===0?String(stroke+1):undefined} data-u8609-fold-mask={u8609SourceContexts&&[5,13].includes(stroke)&&index===0?'1':undefined} data-u8609-fold-progress={u8609SourceContexts&&[5,13].includes(stroke)&&index===0?String(p):undefined} data-u8b92-prior14-owner={u8b92HkcsContext&&stroke===13&&index===0?id+'-u8b92-prior14':undefined} data-u8b92-prior14-pen={u8b92HkcsContext&&stroke===13&&index===0?'14':undefined} data-u8b92-prior14-mask={u8b92HkcsContext&&stroke===13&&index===0?'1':undefined} data-u8b92-prior14-progress={u8b92HkcsContext&&stroke===13&&index===0?String(p):undefined} />
         const clipId = `${id}-${stroke}-${index}`
+        const sourceStartClip = outlineStartClip(segment, p)
         return segment.direction === 'curve'
           ? <g key={index}>
-            <defs><mask id={clipId} maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
-              <path d={segment.revealPath} transform={segment.revealTransform} fill="none" stroke="white" strokeWidth={segment.revealWidth}
+            <defs>
+              {sourceStartClip !== undefined && <clipPath id={clipId + '-source-start'} clipPathUnits="userSpaceOnUse"><polygon points={sourceStartClip} /></clipPath>}
+              <mask id={clipId} maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
+              <path d={segment.revealPath} transform={segment.revealTransform} clipPath={sourceStartClip === undefined ? undefined : `url(#${clipId}-source-start)`} fill="none" stroke="white" strokeWidth={segment.revealWidth}
                 strokeLinecap="round" pathLength="1" strokeDasharray={`${p} 2`} strokeDashoffset={0} />
             </mask></defs>
             <path d={segment.outline} mask={`url(#${clipId})`} />

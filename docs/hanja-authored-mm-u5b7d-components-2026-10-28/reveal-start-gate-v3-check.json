@@ -1,0 +1,877 @@
+{
+  "schema": "hanja-source-start-half-plane-gate-draft-check/v1",
+  "date": "2026-10-28",
+  "glyph": "孽",
+  "policy": "source-start-half-plane-gate-draft",
+  "fixture": {
+    "path": "docs/hanja-authored-mm-u5b7d-components-2026-10-28/fixtures-reveal-v3-start-draft.json",
+    "SHA256": "f96ad2d1ffb45480ec495706b176d2f158e89d469e25aa147d85634e5f6004b4",
+    "rootKey": "u5b7d",
+    "candidateStrokesECMAScriptJSONSHA256": "3e065c4f64aa5bfc650093b18eb674f3194681da9060384ef39084b8d211d22f"
+  },
+  "inputs": {
+    "v2Fixture": {
+      "path": "docs/hanja-authored-mm-u5b7d-components-2026-10-28/fixtures-reveal-v2-draft.json",
+      "SHA256": "a626d09ea7b9b0a485cc4798ad4821c2b8a9d232f88147aadb404a896ce8a744",
+      "strokesECMAScriptJSONSHA256": "42ddd63c72da8d6b851329eea91c5bb77c093e88718e77dc9326134c5b2b7159"
+    },
+    "sourceDraft": {
+      "path": "docs/hanja-authored-mm-u5b7d-components-2026-10-28/source-draft-v2.json",
+      "SHA256": "5891bf12a08caeefac7438c4c7f1da39586a3a4bda3447be6f42c313c2e40eb9"
+    },
+    "recipe": {
+      "path": "docs/hanja-authored-mm-u5b7d-components-2026-10-28/recipe-v2.json",
+      "SHA256": "69228511e46728d786159fd769db9933afc0ac0d288eb3cab178ac83ef00e8f8"
+    }
+  },
+  "filledOutlinesECMAScriptJSONSHA256": "6fbef8bd56b0366a91abf84167c40de0903d53b148e02e78e1fbead08d6b9258",
+  "counts": {
+    "logical": 20,
+    "segments": 20,
+    "gatesAdded": 20
+  },
+  "immutability": {
+    "onlyNewSegmentField": "revealStartGate",
+    "stripGatesEqualsV2WholeFixture": true,
+    "filledDUnchanged": true,
+    "guideUnchanged": true,
+    "revealTransformUnchanged": true,
+    "widthUnchanged": true,
+    "weightUnchanged": true
+  },
+  "gateFormula": {
+    "frame": "Unplaced source N: x/10, (900-y)/10; before v2 revealTransform.",
+    "unit": "Forward vector from first two distinct unplaced N original median points, normalized.",
+    "minProjection": "Minimum dot(unit, point) over every original unplaced N M/L/Q/C control point.",
+    "firstProjection": "dot(unit, original first median point in unplaced N).",
+    "padding": 10,
+    "until": "padding / unchanged padded-guide length(weight)",
+    "activeCut": "minProjection+(firstProjection+padding-minProjection)*(p/until), for p<=until",
+    "beyondUntil": "gate released",
+    "keptHalfPlane": "dot(unit,point)<=cut"
+  },
+  "reasoning": {
+    "zero": "A closed filled Bezier shape lies in the convex hull of its original path control points. A linear projection is no smaller than the minimum control projection. Intersecting the shape with projection<=that minimum has no positive area at p=0.",
+    "release": "Before or at padded length10, the guide center lies on the straight backward extension ending at the original first median point. Its forward projection is no greater than firstProjection. With radius10, every prefix-mask point has forward projection<=firstProjection+10. The gate at until therefore contains all current mask ink before release.",
+    "requiredRContract": "pathLength=1, dasharray=p 2, dashoffset=0; revealed guide arc length=p*weight. No .999 offset correction.",
+    "finitePrecision": "Stored values are binary64 calculations of the stated unit/projection/bounds. The convex-hull/support arguments are geometric; fresh native start/release behavior is not approved by this data check.",
+    "unrelatedLaterReveals": "This proves only the source-start gate contract; it does not approve later contacts, turns, completions or all intermediate frames."
+  },
+  "cases": [
+    {
+      "logicalOneBased": 1,
+      "source": "donor",
+      "sourcePathOneBased": 1,
+      "sourceMedianOneBased": 1,
+      "controlPoints": 29,
+      "firstDistinctMedianPointsN": [
+        [
+          10.9,
+          45.8
+        ],
+        [
+          17.7,
+          47.8
+        ]
+      ],
+      "firstDistinctMedianDeltaN": [
+        6.799999999999999,
+        2.0
+      ],
+      "unitNorm": 1.0,
+      "minProjectionControlIndicesOneBased": [
+        17
+      ],
+      "everyControlAtOrAheadOfZeroCut": true,
+      "firstProjectionPlusPaddingAtOrAheadOfMin": true,
+      "releaseCut": 33.38030160593985,
+      "paddedGuideFirstLegLength": 9.999999999999998,
+      "declaredPaddedGuideLengthUnchanged": 93.59167769064149,
+      "recomputedPaddedGuideLength": 93.59167769064152,
+      "untilFormula": "10 / unchanged v2 weight",
+      "until": 0.10684710699442809,
+      "boundsUnplacedN": [
+        9.5,
+        34.0,
+        94.9,
+        51.6
+      ],
+      "allOriginalSegmentFieldsUnchanged": true
+    },
+    {
+      "logicalOneBased": 2,
+      "source": "donor",
+      "sourcePathOneBased": 2,
+      "sourceMedianOneBased": 2,
+      "controlPoints": 27,
+      "firstDistinctMedianPointsN": [
+        [
+          45.6,
+          8.9
+        ],
+        [
+          48.4,
+          9.7
+        ]
+      ],
+      "firstDistinctMedianDeltaN": [
+        2.799999999999997,
+        0.7999999999999989
+      ],
+      "unitNorm": 0.9999999999999999,
+      "minProjectionControlIndicesOneBased": [
+        21
+      ],
+      "everyControlAtOrAheadOfZeroCut": true,
+      "firstProjectionPlusPaddingAtOrAheadOfMin": true,
+      "releaseCut": 56.29051005070819,
+      "paddedGuideFirstLegLength": 10.000000000000004,
+      "declaredPaddedGuideLengthUnchanged": 98.17725360352658,
+      "recomputedPaddedGuideLength": 98.1772536035266,
+      "untilFormula": "10 / unchanged v2 weight",
+      "until": 0.10185658727410964,
+      "boundsUnplacedN": [
+        43.7,
+        6.4,
+        57.6,
+        95.6
+      ],
+      "allOriginalSegmentFieldsUnchanged": true
+    },
+    {
+      "logicalOneBased": 3,
+      "source": "donor",
+      "sourcePathOneBased": 1,
+      "sourceMedianOneBased": 1,
+      "controlPoints": 29,
+      "firstDistinctMedianPointsN": [
+        [
+          10.9,
+          45.8
+        ],
+        [
+          17.7,
+          47.8
+        ]
+      ],
+      "firstDistinctMedianDeltaN": [
+        6.799999999999999,
+        2.0
+      ],
+      "unitNorm": 1.0,
+      "minProjectionControlIndicesOneBased": [
+        17
+      ],
+      "everyControlAtOrAheadOfZeroCut": true,
+      "firstProjectionPlusPaddingAtOrAheadOfMin": true,
+      "releaseCut": 33.38030160593985,
+      "paddedGuideFirstLegLength": 9.999999999999998,
+      "declaredPaddedGuideLengthUnchanged": 93.59167769064149,
+      "recomputedPaddedGuideLength": 93.59167769064152,
+      "untilFormula": "10 / unchanged v2 weight",
+      "until": 0.10684710699442809,
+      "boundsUnplacedN": [
+        9.5,
+        34.0,
+        94.9,
+        51.6
+      ],
+      "allOriginalSegmentFieldsUnchanged": true
+    },
+    {
+      "logicalOneBased": 4,
+      "source": "donor",
+      "sourcePathOneBased": 2,
+      "sourceMedianOneBased": 2,
+      "controlPoints": 27,
+      "firstDistinctMedianPointsN": [
+        [
+          45.6,
+          8.9
+        ],
+        [
+          48.4,
+          9.7
+        ]
+      ],
+      "firstDistinctMedianDeltaN": [
+        2.799999999999997,
+        0.7999999999999989
+      ],
+      "unitNorm": 0.9999999999999999,
+      "minProjectionControlIndicesOneBased": [
+        21
+      ],
+      "everyControlAtOrAheadOfZeroCut": true,
+      "firstProjectionPlusPaddingAtOrAheadOfMin": true,
+      "releaseCut": 56.29051005070819,
+      "paddedGuideFirstLegLength": 10.000000000000004,
+      "declaredPaddedGuideLengthUnchanged": 98.17725360352658,
+      "recomputedPaddedGuideLength": 98.1772536035266,
+      "untilFormula": "10 / unchanged v2 weight",
+      "until": 0.10185658727410964,
+      "boundsUnplacedN": [
+        43.7,
+        6.4,
+        57.6,
+        95.6
+      ],
+      "allOriginalSegmentFieldsUnchanged": true
+    },
+    {
+      "logicalOneBased": 5,
+      "source": "recipient",
+      "sourcePathOneBased": 4,
+      "sourceMedianOneBased": 4,
+      "controlPoints": 20,
+      "firstDistinctMedianPointsN": [
+        [
+          36.5,
+          22.9
+        ],
+        [
+          33.9,
+          22.7
+        ]
+      ],
+      "firstDistinctMedianDeltaN": [
+        -2.6000000000000014,
+        -0.1999999999999993
+      ],
+      "unitNorm": 1.0,
+      "minProjectionControlIndicesOneBased": [
+        6
+      ],
+      "everyControlAtOrAheadOfZeroCut": true,
+      "firstProjectionPlusPaddingAtOrAheadOfMin": true,
+      "releaseCut": -28.148838545268198,
+      "paddedGuideFirstLegLength": 10.000000000000002,
+      "declaredPaddedGuideLengthUnchanged": 22.72548704838258,
+      "recomputedPaddedGuideLength": 22.72548704838258,
+      "untilFormula": "10 / unchanged v2 weight",
+      "until": 0.44003457345974556,
+      "boundsUnplacedN": [
+        24.4,
+        19.4,
+        38.1,
+        32.2
+      ],
+      "allOriginalSegmentFieldsUnchanged": true
+    },
+    {
+      "logicalOneBased": 6,
+      "source": "recipient",
+      "sourcePathOneBased": 5,
+      "sourceMedianOneBased": 5,
+      "controlPoints": 28,
+      "firstDistinctMedianPointsN": [
+        [
+          22.7,
+          28.8
+        ],
+        [
+          25.3,
+          31.7
+        ]
+      ],
+      "firstDistinctMedianDeltaN": [
+        2.6000000000000014,
+        2.8999999999999986
+      ],
+      "unitNorm": 1.0,
+      "minProjectionControlIndicesOneBased": [
+        13
+      ],
+      "everyControlAtOrAheadOfZeroCut": true,
+      "firstProjectionPlusPaddingAtOrAheadOfMin": true,
+      "releaseCut": 46.59687174818991,
+      "paddedGuideFirstLegLength": 10.000000000000002,
+      "declaredPaddedGuideLengthUnchanged": 42.9060831849683,
+      "recomputedPaddedGuideLength": 42.906083184968296,
+      "untilFormula": "10 / unchanged v2 weight",
+      "until": 0.23306718436381058,
+      "boundsUnplacedN": [
+        20.2,
+        27.8,
+        27.6,
+        62.0
+      ],
+      "allOriginalSegmentFieldsUnchanged": true
+    },
+    {
+      "logicalOneBased": 7,
+      "source": "recipient",
+      "sourcePathOneBased": 6,
+      "sourceMedianOneBased": 6,
+      "controlPoints": 25,
+      "firstDistinctMedianPointsN": [
+        [
+          27.9,
+          32.4
+        ],
+        [
+          28.8,
+          31.4
+        ]
+      ],
+      "firstDistinctMedianDeltaN": [
+        0.9000000000000021,
+        -1.0
+      ],
+      "unitNorm": 1.0,
+      "minProjectionControlIndicesOneBased": [
+        13
+      ],
+      "everyControlAtOrAheadOfZeroCut": true,
+      "firstProjectionPlusPaddingAtOrAheadOfMin": true,
+      "releaseCut": 4.5813856738582075,
+      "paddedGuideFirstLegLength": 9.999999999999996,
+      "declaredPaddedGuideLengthUnchanged": 33.07510510674509,
+      "recomputedPaddedGuideLength": 33.07510510674509,
+      "untilFormula": "10 / unchanged v2 weight",
+      "until": 0.30234219869374424,
+      "boundsUnplacedN": [
+        24.7,
+        26.1,
+        47.4,
+        40.2
+      ],
+      "allOriginalSegmentFieldsUnchanged": true
+    },
+    {
+      "logicalOneBased": 8,
+      "source": "recipient",
+      "sourcePathOneBased": 7,
+      "sourceMedianOneBased": 7,
+      "controlPoints": 17,
+      "firstDistinctMedianPointsN": [
+        [
+          27.9,
+          41.4
+        ],
+        [
+          38.6,
+          38.5
+        ]
+      ],
+      "firstDistinctMedianDeltaN": [
+        10.700000000000003,
+        -2.8999999999999986
+      ],
+      "unitNorm": 1.0,
+      "minProjectionControlIndicesOneBased": [
+        16
+      ],
+      "everyControlAtOrAheadOfZeroCut": true,
+      "firstProjectionPlusPaddingAtOrAheadOfMin": true,
+      "releaseCut": 26.09864346457527,
+      "paddedGuideFirstLegLength": 9.999999999999996,
+      "declaredPaddedGuideLengthUnchanged": 25.803017807560767,
+      "recomputedPaddedGuideLength": 25.803017807560764,
+      "untilFormula": "10 / unchanged v2 weight",
+      "until": 0.3875515675949273,
+      "boundsUnplacedN": [
+        24.4,
+        36.7,
+        44.1,
+        42.3
+      ],
+      "allOriginalSegmentFieldsUnchanged": true
+    },
+    {
+      "logicalOneBased": 9,
+      "source": "recipient",
+      "sourcePathOneBased": 8,
+      "sourceMedianOneBased": 8,
+      "controlPoints": 25,
+      "firstDistinctMedianPointsN": [
+        [
+          27.3,
+          48.1
+        ],
+        [
+          28.5,
+          47.3
+        ]
+      ],
+      "firstDistinctMedianDeltaN": [
+        1.1999999999999993,
+        -0.8000000000000043
+      ],
+      "unitNorm": 0.9999999999999999,
+      "minProjectionControlIndicesOneBased": [
+        15
+      ],
+      "everyControlAtOrAheadOfZeroCut": true,
+      "firstProjectionPlusPaddingAtOrAheadOfMin": true,
+      "releaseCut": 6.033893596989458,
+      "paddedGuideFirstLegLength": 9.999999999999998,
+      "declaredPaddedGuideLengthUnchanged": 33.758685820410264,
+      "recomputedPaddedGuideLength": 33.758685820410264,
+      "untilFormula": "10 / unchanged v2 weight",
+      "until": 0.2962200617997419,
+      "boundsUnplacedN": [
+        24.3,
+        41.7,
+        47.9,
+        56.1
+      ],
+      "allOriginalSegmentFieldsUnchanged": true
+    },
+    {
+      "logicalOneBased": 10,
+      "source": "recipient",
+      "sourcePathOneBased": 9,
+      "sourceMedianOneBased": 9,
+      "controlPoints": 19,
+      "firstDistinctMedianPointsN": [
+        [
+          27.2,
+          57.5
+        ],
+        [
+          38.5,
+          54.8
+        ]
+      ],
+      "firstDistinctMedianDeltaN": [
+        11.3,
+        -2.700000000000003
+      ],
+      "unitNorm": 0.9999999999999999,
+      "minProjectionControlIndicesOneBased": [
+        18
+      ],
+      "everyControlAtOrAheadOfZeroCut": true,
+      "firstProjectionPlusPaddingAtOrAheadOfMin": true,
+      "releaseCut": 23.09251422493716,
+      "paddedGuideFirstLegLength": 9.999999999999998,
+      "declaredPaddedGuideLengthUnchanged": 27.89968999872445,
+      "recomputedPaddedGuideLength": 27.899689998724448,
+      "untilFormula": "10 / unchanged v2 weight",
+      "until": 0.35842692160583833,
+      "boundsUnplacedN": [
+        23.6,
+        52.7,
+        45.6,
+        58.4
+      ],
+      "allOriginalSegmentFieldsUnchanged": true
+    },
+    {
+      "logicalOneBased": 11,
+      "source": "recipient",
+      "sourcePathOneBased": 10,
+      "sourceMedianOneBased": 10,
+      "controlPoints": 14,
+      "firstDistinctMedianPointsN": [
+        [
+          62.4,
+          19.2
+        ],
+        [
+          68.2,
+          23.6
+        ]
+      ],
+      "firstDistinctMedianDeltaN": [
+        5.800000000000004,
+        4.400000000000002
+      ],
+      "unitNorm": 0.9999999999999999,
+      "minProjectionControlIndicesOneBased": [
+        8
+      ],
+      "everyControlAtOrAheadOfZeroCut": true,
+      "firstProjectionPlusPaddingAtOrAheadOfMin": true,
+      "releaseCut": 71.31775574669479,
+      "paddedGuideFirstLegLength": 9.999999999999991,
+      "declaredPaddedGuideLengthUnchanged": 17.280109889280514,
+      "recomputedPaddedGuideLength": 17.280109889280514,
+      "untilFormula": "10 / unchanged v2 weight",
+      "until": 0.5787000235573367,
+      "boundsUnplacedN": [
+        61.7,
+        18.6,
+        69.2,
+        25.5
+      ],
+      "allOriginalSegmentFieldsUnchanged": true
+    },
+    {
+      "logicalOneBased": 12,
+      "source": "recipient",
+      "sourcePathOneBased": 11,
+      "sourceMedianOneBased": 11,
+      "controlPoints": 23,
+      "firstDistinctMedianPointsN": [
+        [
+          53.6,
+          27.6
+        ],
+        [
+          60.9,
+          27.7
+        ]
+      ],
+      "firstDistinctMedianDeltaN": [
+        7.299999999999997,
+        0.09999999999999787
+      ],
+      "unitNorm": 1.0,
+      "minProjectionControlIndicesOneBased": [
+        17
+      ],
+      "everyControlAtOrAheadOfZeroCut": true,
+      "firstProjectionPlusPaddingAtOrAheadOfMin": true,
+      "releaseCut": 63.973018344291674,
+      "paddedGuideFirstLegLength": 10.0,
+      "declaredPaddedGuideLengthUnchanged": 35.334529097626955,
+      "recomputedPaddedGuideLength": 35.334529097626955,
+      "untilFormula": "10 / unchanged v2 weight",
+      "until": 0.28300929021498106,
+      "boundsUnplacedN": [
+        51.5,
+        22.2,
+        80.2,
+        30.1
+      ],
+      "allOriginalSegmentFieldsUnchanged": true
+    },
+    {
+      "logicalOneBased": 13,
+      "source": "recipient",
+      "sourcePathOneBased": 12,
+      "sourceMedianOneBased": 12,
+      "controlPoints": 15,
+      "firstDistinctMedianPointsN": [
+        [
+          57.9,
+          31.2
+        ],
+        [
+          60.1,
+          34.5
+        ]
+      ],
+      "firstDistinctMedianDeltaN": [
+        2.200000000000003,
+        3.3000000000000007
+      ],
+      "unitNorm": 1.0,
+      "minProjectionControlIndicesOneBased": [
+        12
+      ],
+      "everyControlAtOrAheadOfZeroCut": true,
+      "firstProjectionPlusPaddingAtOrAheadOfMin": true,
+      "releaseCut": 68.0771105447815,
+      "paddedGuideFirstLegLength": 10.000000000000002,
+      "declaredPaddedGuideLengthUnchanged": 16.46610640301039,
+      "recomputedPaddedGuideLength": 16.46610640301039,
+      "untilFormula": "10 / unchanged v2 weight",
+      "until": 0.6073081125099353,
+      "boundsUnplacedN": [
+        56.9,
+        30.1,
+        62.3,
+        38.1
+      ],
+      "allOriginalSegmentFieldsUnchanged": true
+    },
+    {
+      "logicalOneBased": 14,
+      "source": "recipient",
+      "sourcePathOneBased": 13,
+      "sourceMedianOneBased": 13,
+      "controlPoints": 21,
+      "firstDistinctMedianPointsN": [
+        [
+          71.7,
+          27.9
+        ],
+        [
+          73.0,
+          29.7
+        ]
+      ],
+      "firstDistinctMedianDeltaN": [
+        1.2999999999999972,
+        1.8000000000000007
+      ],
+      "unitNorm": 1.0,
+      "minProjectionControlIndicesOneBased": [
+        11
+      ],
+      "everyControlAtOrAheadOfZeroCut": true,
+      "firstProjectionPlusPaddingAtOrAheadOfMin": true,
+      "releaseCut": 74.59762318299714,
+      "paddedGuideFirstLegLength": 10.000000000000004,
+      "declaredPaddedGuideLengthUnchanged": 20.62403276475998,
+      "recomputedPaddedGuideLength": 20.624032764759985,
+      "untilFormula": "10 / unchanged v2 weight",
+      "until": 0.4848712234925689,
+      "boundsUnplacedN": [
+        67.3,
+        25.0,
+        76.1,
+        39.8
+      ],
+      "allOriginalSegmentFieldsUnchanged": true
+    },
+    {
+      "logicalOneBased": 15,
+      "source": "recipient",
+      "sourcePathOneBased": 14,
+      "sourceMedianOneBased": 14,
+      "controlPoints": 25,
+      "firstDistinctMedianPointsN": [
+        [
+          50.4,
+          41.0
+        ],
+        [
+          53.2,
+          41.2
+        ]
+      ],
+      "firstDistinctMedianDeltaN": [
+        2.8000000000000043,
+        0.20000000000000284
+      ],
+      "unitNorm": 1.0,
+      "minProjectionControlIndicesOneBased": [
+        17
+      ],
+      "everyControlAtOrAheadOfZeroCut": true,
+      "firstProjectionPlusPaddingAtOrAheadOfMin": true,
+      "releaseCut": 63.19304752097337,
+      "paddedGuideFirstLegLength": 9.999999999999995,
+      "declaredPaddedGuideLengthUnchanged": 43.86556880275906,
+      "recomputedPaddedGuideLength": 43.86556880275905,
+      "untilFormula": "10 / unchanged v2 weight",
+      "until": 0.2279692312885504,
+      "boundsUnplacedN": [
+        48.3,
+        34.6,
+        85.0,
+        43.0
+      ],
+      "allOriginalSegmentFieldsUnchanged": true
+    },
+    {
+      "logicalOneBased": 16,
+      "source": "recipient",
+      "sourcePathOneBased": 15,
+      "sourceMedianOneBased": 15,
+      "controlPoints": 19,
+      "firstDistinctMedianPointsN": [
+        [
+          54.0,
+          49.4
+        ],
+        [
+          56.8,
+          49.6
+        ]
+      ],
+      "firstDistinctMedianDeltaN": [
+        2.799999999999997,
+        0.20000000000000284
+      ],
+      "unitNorm": 1.0,
+      "minProjectionControlIndicesOneBased": [
+        13
+      ],
+      "everyControlAtOrAheadOfZeroCut": true,
+      "firstProjectionPlusPaddingAtOrAheadOfMin": true,
+      "releaseCut": 67.38237406026248,
+      "paddedGuideFirstLegLength": 9.999999999999995,
+      "declaredPaddedGuideLengthUnchanged": 34.123075075028325,
+      "recomputedPaddedGuideLength": 34.123075075028325,
+      "untilFormula": "10 / unchanged v2 weight",
+      "until": 0.2930568238065426,
+      "boundsUnplacedN": [
+        52.6,
+        45.3,
+        79.4,
+        51.1
+      ],
+      "allOriginalSegmentFieldsUnchanged": true
+    },
+    {
+      "logicalOneBased": 17,
+      "source": "recipient",
+      "sourcePathOneBased": 16,
+      "sourceMedianOneBased": 16,
+      "controlPoints": 26,
+      "firstDistinctMedianPointsN": [
+        [
+          63.3,
+          40.8
+        ],
+        [
+          66.1,
+          43.4
+        ]
+      ],
+      "firstDistinctMedianDeltaN": [
+        2.799999999999997,
+        2.6000000000000014
+      ],
+      "unitNorm": 1.0,
+      "minProjectionControlIndicesOneBased": [
+        20
+      ],
+      "everyControlAtOrAheadOfZeroCut": true,
+      "firstProjectionPlusPaddingAtOrAheadOfMin": true,
+      "releaseCut": 84.14823287412965,
+      "paddedGuideFirstLegLength": 9.999999999999998,
+      "declaredPaddedGuideLengthUnchanged": 27.72135434248447,
+      "recomputedPaddedGuideLength": 27.721354342484474,
+      "untilFormula": "10 / unchanged v2 weight",
+      "until": 0.36073273608694006,
+      "boundsUnplacedN": [
+        61.2,
+        38.3,
+        69.1,
+        58.2
+      ],
+      "allOriginalSegmentFieldsUnchanged": true
+    },
+    {
+      "logicalOneBased": 18,
+      "source": "recipient",
+      "sourcePathOneBased": 17,
+      "sourceMedianOneBased": 17,
+      "controlPoints": 30,
+      "firstDistinctMedianPointsN": [
+        [
+          35.5,
+          60.8
+        ],
+        [
+          39.9,
+          62.1
+        ]
+      ],
+      "firstDistinctMedianDeltaN": [
+        4.399999999999999,
+        1.3000000000000043
+      ],
+      "unitNorm": 1.0,
+      "minProjectionControlIndicesOneBased": [
+        14
+      ],
+      "everyControlAtOrAheadOfZeroCut": true,
+      "firstProjectionPlusPaddingAtOrAheadOfMin": true,
+      "releaseCut": 61.27257400994908,
+      "paddedGuideFirstLegLength": 10.000000000000004,
+      "declaredPaddedGuideLengthUnchanged": 49.488911424880996,
+      "recomputedPaddedGuideLength": 49.488911424880996,
+      "untilFormula": "10 / unchanged v2 weight",
+      "until": 0.20206546703252823,
+      "boundsUnplacedN": [
+        34.0,
+        54.7,
+        67.6,
+        70.9
+      ],
+      "allOriginalSegmentFieldsUnchanged": true
+    },
+    {
+      "logicalOneBased": 19,
+      "source": "recipient",
+      "sourcePathOneBased": 18,
+      "sourceMedianOneBased": 18,
+      "controlPoints": 34,
+      "firstDistinctMedianPointsN": [
+        [
+          48.7,
+          68.5
+        ],
+        [
+          50.0,
+          68.7
+        ]
+      ],
+      "firstDistinctMedianDeltaN": [
+        1.2999999999999972,
+        0.20000000000000284
+      ],
+      "unitNorm": 0.9999999999999999,
+      "minProjectionControlIndicesOneBased": [
+        22
+      ],
+      "everyControlAtOrAheadOfZeroCut": true,
+      "firstProjectionPlusPaddingAtOrAheadOfMin": true,
+      "releaseCut": 68.54961879698017,
+      "paddedGuideFirstLegLength": 10.000000000000005,
+      "declaredPaddedGuideLengthUnchanged": 48.94120727573689,
+      "recomputedPaddedGuideLength": 48.94120727573689,
+      "untilFormula": "10 / unchanged v2 weight",
+      "until": 0.20432679446707483,
+      "boundsUnplacedN": [
+        40.9,
+        67.0,
+        60.0,
+        98.1
+      ],
+      "allOriginalSegmentFieldsUnchanged": true
+    },
+    {
+      "logicalOneBased": 20,
+      "source": "recipient",
+      "sourcePathOneBased": 19,
+      "sourceMedianOneBased": 19,
+      "controlPoints": 23,
+      "firstDistinctMedianPointsN": [
+        [
+          11.5,
+          76.7
+        ],
+        [
+          16.6,
+          77.8
+        ]
+      ],
+      "firstDistinctMedianDeltaN": [
+        5.100000000000001,
+        1.0999999999999943
+      ],
+      "unitNorm": 0.9999999999999999,
+      "minProjectionControlIndicesOneBased": [
+        15
+      ],
+      "everyControlAtOrAheadOfZeroCut": true,
+      "firstProjectionPlusPaddingAtOrAheadOfMin": true,
+      "releaseCut": 37.41275680875574,
+      "paddedGuideFirstLegLength": 10.0,
+      "declaredPaddedGuideLengthUnchanged": 92.66853397375576,
+      "recomputedPaddedGuideLength": 92.66853397375576,
+      "untilFormula": "10 / unchanged v2 weight",
+      "until": 0.10791149456224326,
+      "boundsUnplacedN": [
+        9.6,
+        66.2,
+        95.2,
+        80.5
+      ],
+      "allOriginalSegmentFieldsUnchanged": true
+    }
+  ],
+  "result": "PASS-derived-gate-data-and-v2-immutability",
+  "approvals": {
+    "newStartNative": false,
+    "releaseNative": false,
+    "wholeAnimation": false,
+    "mapping": false,
+    "runtime": false
+  },
+  "execution": {
+    "sharedFilesChanged": 0,
+    "server": 0,
+    "browser": 0,
+    "build": 0,
+    "commit": 0
+  }
+}
