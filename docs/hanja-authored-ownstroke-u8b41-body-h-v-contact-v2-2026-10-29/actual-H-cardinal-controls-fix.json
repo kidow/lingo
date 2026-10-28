@@ -1,0 +1,51 @@
+{
+  "schema": "hanja-exact-cardinal-controls-fix-preparation/v1",
+  "glyph": "譁",
+  "date": "2026-10-29",
+  "baseH": "144730f993e97e63412d54755bcb7e5d0fabdc0feaafd4c95a0bfa045cfe4ae2",
+  "proposedH": "e91585959e9561d8e2f6bfcf53cccf4937f2567ad3db1c4ca1539d70f4247701",
+  "patchSHA256": "aa0bbccead21ff5311330999f9164a5136fc13b3d004a2d82f9b04f80d062b5e",
+  "rootObservedFailure": {
+    "startupSSR386Passed": true,
+    "mountPassed": true,
+    "genericControlsOnly": true,
+    "missingAggregateAndCompoundControls": true
+  },
+  "cause": "Eight existing OR lists ended in U9c49PointStartExact. Initial patch only prepended the new flag where Turtle flag was followed by OR; terminal clauses were omitted. Not a zero-curve rejection.",
+  "change": "Append exact U8b41HVStartExact to these eight terminal context predicates only. No R, fixture, geometry, count or width exception changes.",
+  "previousChecksScope": "Payload/strictguard/386-predicate execution passed; it did not execute the setup outer condition or establish actual DOM controls.",
+  "hunks": 7,
+  "oldPositionsAscending": true,
+  "bareBlankContextLines": 0,
+  "exactForwardAndInverseReconstruction": true,
+  "focusedControlConstructionStub": {
+    "oldOuterConditionReproducedMissingControls": true,
+    "actualSetupAndOuterConditionExecutedWithButtonStub": true,
+    "labels": [
+      "譁 aggregate96 initial36-boundary6-ending54",
+      "譁 aggregate initial36",
+      "譁 aggregate source-boundary6",
+      "譁 aggregate ending54",
+      "譁 compound pen6 compact9",
+      "譁 compound pen13 compact9"
+    ],
+    "noCurveGateOrResidualButtons": true,
+    "SSR": 0,
+    "realDOM": false,
+    "server": 0
+  },
+  "probeHarnessNote": "First residual-button assertion accidentally matched aggregate with /gate/; narrowed to release/residual and passed without source changes.",
+  "profileBeforeSHA256": "2c0dd02c086e07643ae2174fcbc86ce6401f0cd13f2a37d53f9ef01f4610122b",
+  "profileAfterSHA256": "5d63305779a137c62d2996360ed64b05d0ade2d9ccadc3dd192127e738c3800f",
+  "profileChangedFields": [
+    "adapterSHA256",
+    "inputSHA256[scripts/hanja-actual-component-review.mjs]"
+  ],
+  "actualDOMPassed": false,
+  "actualSharedHEdited": false,
+  "authorSSR": 0,
+  "authorServer": 0,
+  "registrationPreparationPaused": true,
+  "nativeApproval": false,
+  "runtimeApplied": false
+}
