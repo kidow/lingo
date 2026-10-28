@@ -1,0 +1,58 @@
+{
+  "schema": "hanja-original-clock-slot-identification-preparation-v1",
+  "date": "2026-10-28",
+  "glyph": "臝",
+  "catalogStrokes": 21,
+  "originalTimedPaths": 21,
+  "status": "prepared-not-native-reviewed",
+  "configSHA256": "5ba273ee38ecbf7428fff060307a77378bec2491790ab657d9037ec42f7bcb01",
+  "scopeCorrection": "Keep the existing exact controlled-original-media-only/no-temporal-approval scope and closed field set. The identification-only purpose remains in this readiness record; no raw24 mapping is assumed.",
+  "helper": {
+    "path": "scripts/hanja-official-media-compare.py",
+    "preSHA256": "3ddb83523e353950638b7fa5a15be25cba7566c91d1c7ed567b49e220aa05bce",
+    "postSHA256": "8b911722168235777fdd965b21895be568a71211531334f5b5e5797ebad65081",
+    "patchSHA256": "cac0d1113b672caf8b04ef7650d204144f7f27dc79307e0ddb90973f524496c9",
+    "applied": true
+  },
+  "existingEvidence": {
+    "path": "docs/hanja-goal-glyphwiki-batch530-2026-10-11/validation.json",
+    "SHA256": "a68011d057b190980f6e5d745730b8dc768cdf02b7a2e7ee8883308b4e37e047",
+    "wholeVariantsCompared": 4,
+    "individualPensApproved": 0,
+    "progressiveFramesApproved": 0,
+    "observation": "All four whole variants retain an interior horizontal where the domestic right-lower 凡-like part has a slanting point. Variant0102 improves terminal hook only; matching whole root remains unselected."
+  },
+  "knownPublicSlot": {
+    "root": "u81dd",
+    "rawIndexZeroBased": 24,
+    "rawKind": "horizontal",
+    "publicGuide": [
+      137,
+      133,
+      170,
+      133
+    ],
+    "polygonCount": 2,
+    "domesticLogicalPen": null,
+    "domesticDirection": null,
+    "sourceMappingApproved": false
+  },
+  "nextNativePlan": [
+    "First use the original completed whole as orientation and select original timed paths to identify which logical pen is the right-lower inner slanting point; do not infer that it is pen21 or map by raw index.",
+    "Inspect identified pen at original CSS fractions0/.1/.5/.75/1 to determine direction and onset, with full glyph visible; record only logical index/direction and safe status, no publisher d or coordinates.",
+    "The remaining original21 logical strokes have no individual/native progressive approval in the batch530 record. Inspect or explicitly leave those directions pending; four static whole observations are not a substitute.",
+    "Only after logical correspondence and direction are established may a public-source-only authored point replacement be proposed; original whole/font/contact approval remains separate."
+  ],
+  "approval": {
+    "raw24Correspondence": false,
+    "newGeometry": false,
+    "sourceOrder": false,
+    "sourceDirections": false,
+    "whole": false,
+    "native": false,
+    "runtime": false
+  },
+  "checkOnlyExecuted": false,
+  "serverStarts": 0,
+  "privateBodySavedOrTransmitted": false
+}
