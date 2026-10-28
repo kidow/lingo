@@ -1,0 +1,34 @@
+{
+  "schema": "hanja-authored-MM-finite-native-review-v1",
+  "date": "2026-10-28",
+  "glyph": "菏",
+  "logicalStrokes": 12,
+  "status": "PASS-finite-authored-font-variant-renderer-review",
+  "fixture": {"path": "docs/hanja-authored-mm-u83cf-components-2026-10-28/fixtures-reveal-v1-start-draft.json", "SHA256": "68ec183a86a4945606252b34f218d02b636f6d8d7455026b3c170e5fb5804d81", "geometrySHA256": "8d09d7edb9bc82fa37c4da3d1b4212bf5587f04aa1995630f895f1af33a0c53e"},
+  "renderer": {"path": "components/hanja/stroke-outlines.tsx", "SHA256": "cb4d80f57dbd8ad9815b5b90128ece5171a678a3b1c24e94956c2ac9fff91f88"},
+  "outlineHelper": {"path": "lib/hanja-stroke-outline.ts", "SHA256": "b4d289d1911c4d43934dfad39c4cfbe22a246303bb7012114d16786688c36c40"},
+  "observer": {"path": "scripts/hanja-actual-component-review.mjs", "SHA256": "90773f982b5c7b58ba5cd1d85113690e9eaf63400fcda79e787f5d0da31d5fab", "profileSHA256": "1e6d57a528eba12a51a4748a497dda617872ba74bc5ad136be969a4e8610e386"},
+  "sourceClockReview": {"path": "docs/hanja-official-media-compare-u83cf-2026-10-28/native-clock-review.json", "SHA256": "43bd7a0cd2baa2e25adb220813a5a7dce0de8f4b157cf8e45ef146b9492c1a90"},
+  "browser": "Codex in-app browser, actual StrokeOutlines React component",
+  "observations": {
+    "whole": "Direct520px whole view: two separate grass crosses, water and 可 body are complete and legible; no unintended cross/body contact. This is a locally authored font variant, not publisher geometry.",
+    "coarse": {"pens": "1..12", "progress": [0,0.125,0.25,0.375,0.5,0.625,0.75,0.875,1], "result": "All108 finite frames directly viewed. Pen7 additionally enlarged300px; other grids150px. No observed detached future ink or incorrect logical ordering."},
+    "startGateRelease": {"pens": "1..12", "progress": "until-1e-8,until,until+1e-8", "result": "All36 frames directly viewed with no observed release jump; bad[] and errors[]."},
+    "initial": {"pens": "1..12", "progress": [0,0.000001], "samples": 24, "result": "All24 directly viewed in one full gallery capture; no finite initial fragment observed;25 states including main; bad[]; errors[]."},
+    "ending": {"pens": "1..12", "progress": [0.9999,0.99999999,1], "samples": 36, "result": "All36 directly viewed across two overlapping captures. No observed completion pop or missing stroke;37 states including main; bad[]; errors[]."},
+    "fullGuideResidual": {"pens": "1..12", "samples": 12, "result": "Actual committed source guide D/width/transform/owner read back. Clone removes dash and temporary start clip only. Original filled D minus full round guide directly viewed blank for all12 at300px across two overlapping captures. bad[]; errors[]."},
+    "timedSampledPlayback": {"pens": [7,12], "durationPerPenMilliseconds": 8000, "result": "Timer reached natural-ended,progress1,bad[],errors[] for both. No continuous-video or all-instants claim."}
+  },
+  "fontVariantDecision": {
+    "pen": 7,
+    "observedDifference": "Publisher font shows a left-shoulder/down-foot ornamental approach before the upper-right rising stroke. The fixed MM filled stroke has a triangular lower foot and no corresponding left shoulder; its original median starts near that lower foot and rises upper-right.",
+    "decision": "Accept the directly reviewed MM font-specific rising stroke as a locally authored font variant: one logical rising stroke in the same water-component slot, no extra or missing logical stroke, whole glyph and rising terminal direction directly checked. Preserve the original MM filled D and guide rather than inventing a missing publisher shoulder. This does not establish identical initial motion or source-clock equivalence.",
+    "originalClockIdentityApproved": false,
+    "publisherMicroclockEquivalence": false
+  },
+  "approval": {"basicLogicalOrderAndDirections": true, "authoredWholeFontVariant": true, "finiteActualRenderer": true, "registerThisExactGeometry": true},
+  "limits": {"finiteSamplesOnly": true, "originalMMWhole": false, "officialPublisherGeometry": false, "sourceClockIdentity": false, "actualAppUIFreshlyTested": false, "privateSourceAssetsSaved": false},
+  "registrationConditions": "Strict independent capsule/loader checks and resolver12 success/11 rejection must pass before counting applied. All12 guides, affines and source gates remain exact.",
+  "buildRun": false,
+  "projectTypecheckRun": false
+}
