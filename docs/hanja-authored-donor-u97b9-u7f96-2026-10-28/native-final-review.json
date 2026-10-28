@@ -1,0 +1,50 @@
+{
+  "schema": "hanja-authored-finite-native-review/v1",
+  "glyph": "鞹",
+  "strokes": 20,
+  "date": "2026-10-28",
+  "status": "PASS-finite-isolated-component-with-explicit-layout-limitation",
+  "fixture": "docs/hanja-authored-donor-u97b9-u7f96-2026-10-28/fixtures-execution-draft-width16.json",
+  "fixtureSHA256": "c4e934c508cbda734765650b0705fd5caecfa2978e117346a0cddb59c4c8f65c",
+  "geometrySHA256": "16e9c535b8e5715426e88bb54a7c54a413f80e490890032ac5028aa1c2e13ea8",
+  "rendererSHA256": "cb4d80f57dbd8ad9815b5b90128ece5171a678a3b1c24e94956c2ac9fff91f88",
+  "outlineHelperSHA256": "b4d289d1911c4d43934dfad39c4cfbe22a246303bb7012114d16786688c36c40",
+  "adapterSHA256": "6f6e8ba21848e4ca554c85ae34e812e97dee0f2da1cc3c97a591d020c1741970",
+  "profileSHA256": "fcba52e020fbe1087007bff39a995142eb999030bf9e154e93b143a9e6c2ea78",
+  "sourceIdentity": {
+    "locallyAuthoredRoot": true,
+    "mixedParts": true,
+    "originalPublicRoot": false,
+    "isOriginalEngineCapture": false,
+    "sourceTraceDescribesReplacement": false,
+    "replacement": "Only recipient zeroBased raw19/logical17 uses an affine-transformed genuine public 羖 upward Q donor. Other23 raw filled groups are unchanged.",
+    "normalization": "Public source200 to100 once, no y flip",
+    "guidePolicy": "Six source curves use padded source-start gates; logical16 mask2 alone uses width16/pad8, other five width14/pad7. Control-polygon length upper bounds plus margin define weights; this is an authored reveal policy."
+  },
+  "evidence": {
+    "static": "docs/hanja-source-raw-compare-u97b9-u7f96-donor-2026-10-28/native-static-review.json",
+    "contactMath": "docs/hanja-authored-donor-u97b9-u7f96-2026-10-28/static-contact-math-report.json",
+    "previousFiniteViews": "docs/hanja-authored-donor-u97b9-u7f96-2026-10-28/native-width14-partial-review.json",
+    "independentLayoutCounterexamples": "docs/hanja-authored-donor-u97b9-u7f96-2026-10-28/native-layout-counterexample-review.json",
+    "reuseRule": "The other25 segments/19 logical pens are exactly unchanged between width14 and width16 fixtures. Reuse their canonical static and finite growth observations only; the changed16.2 guide, local gate, compound boundary, residual and replay were reviewed afresh."
+  },
+  "native": {
+    "browser": "Codex in-app browser",
+    "whole520": "PASS-author-font-fit-and-central-vertical-contact",
+    "compact9Pens": [6,13,15,16,17,18,19],
+    "curveStartRelease3": [[15,2],[16,2],[17,1],[18,2],[19,1],[19,2]],
+    "changed16Fresh": {
+      "compact9": {"progress":[0,0.125,0.25,0.375,0.5,0.625,0.75,0.875,1],"result":"PASS","bad":[],"errors":[]},
+      "padding8StartRelease3": {"result":"PASS","bad":[],"errors":[]},
+      "compoundBoundary3": {"progress":[0.5494367958812406,0.5494367959812406,0.5494367960812406],"result":"PASS-continuous","bad":[],"errors":[]},
+      "naturalReplay": {"durationSeconds":8,"mode":"natural-ended","progress":1,"bad":[],"errors":[]}
+    },
+    "fullRoundResidual": {"curveMasks":6,"result":"PASS-all6 blank","scope":"Original filled P minus actual committed guide with dash and temporary source-start clip removed; transform retained."},
+    "aggregateFrames": {"initial":40,"compoundBoundary":18,"ending":60,"unqualifiedMultiColumnRasterPass":false,"counterexampleResolution":"Same21 affected initial/ending counterexample inputs directly viewed in a one-column240 board were normal; isolated main240/520 and same-x-offset single SVG views were also normal. Preserve the multi-column display limitation without attributing an unproven engine cause."},
+    "natural17": {"durationSeconds":8,"mode":"natural-ended","progress":1,"bad":[],"errors":[]},
+    "stateChecks": {"count":24,"idle":true,"done":true,"selectedZero":true,"exactPrefixes":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20],"failed":[],"finalBrowserWarningsAndErrors":[]}
+  },
+  "approval": {"filledGeometry":true,"mapping":true,"direction":true,"finiteTemporalReview":true,"registrationAuthorized":true},
+  "limitations": {"actualAppUI":false,"wholeNaturalAutoplayTest":false,"originalMicroclockEquivalence":false,"publisherGeometryIdentity":false,"infiniteTimeContinuityProof":false,"multiColumnReviewRasterCauseUnresolved":true},
+  "runtimeAppliedAtReview": false
+}

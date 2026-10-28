@@ -1,0 +1,7 @@
+*** Begin Patch
+*** Update File: /Users/kidow/Documents/dev/kidow/lingo/scripts/hanja-actual-component-review.mjs
+@@
+  if(debugCases.length!==21)throw Error('鞹 exact size-AB21 counterexample samples');
++ button('鞹 X-offset fixed21 one-column240',()=>{generation++;T=null;board(debugCases,240);document.querySelector('#board').style.setProperty('grid-template-columns','240px');});
++ for(const [selected,progress]of[[7,1e-6],[6,.99999999]])for(const offset of[0,304])button('鞹 X-offset main240 x'+offset+' pen'+selected+' p='+progress,()=>{generation++;pen=selected;setMainSize(240);document.querySelector('#root').style.marginLeft=offset+'px';show(progress);});
+*** End Patch

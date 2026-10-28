@@ -1,0 +1,21 @@
+{
+  "schema": "hanja-u97b9-width16-observer-check/v1",
+  "HBeforeSHA256": "c3d5d08704ee4e4f56e4172ea4b07d1b9a13bfaf9b82768399c57d516322327c",
+  "HAfterSHA256": "6f6e8ba21848e4ca554c85ae34e812e97dee0f2da1cc3c97a591d020c1741970",
+  "profileBeforeSHA256": "8641e09b79565017add4fee723c82469e12c078e82a9653f6d130aaebdcc55d5",
+  "profileAfterSHA256": "fcba52e020fbe1087007bff39a995142eb999030bf9e154e93b143a9e6c2ea78",
+  "cause": "Observer retained width14/pad7 and DOM stroke-width14 literals after fixture16m2 became width16/pad8.",
+  "scope": "Only canonical global strokes row16/mask2 with exact DOM pen16 permits16/8. Other five canonical curves require14/7. Source/R/fixture unchanged; existing defs/mask/ink/clip/dash/same-document/transform checks preserved.",
+  "syntax": true,
+  "forwardInverseExact": true,
+  "mockedGuideDOMContracts": {
+    "positive": 12,
+    "negative": 15,
+    "cases": "Six curves at gated and released progress; wrong DOM widths, wrong padding, cloned expected row and wrong DOM pen all rejected"
+  },
+  "actualDOMOrBrowser": false,
+  "SSR": 0,
+  "actualHModified": false,
+  "nativeApproval": false,
+  "runtimeApplied": false
+}

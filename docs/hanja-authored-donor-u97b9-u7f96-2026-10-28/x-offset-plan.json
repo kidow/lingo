@@ -1,0 +1,51 @@
+{
+  "schema": "hanja-u97b9-x-offset-layout-debug/v1",
+  "HBeforeSHA256": "11762dc23c3a9a33b95182f959303bc280cb85f09093377ddb6f3f8cb78f12ea",
+  "HAfterSHA256": "e2b179438b7fbe1e4024b96a3f09447052e8b399655066b3e632b513010c7fcf",
+  "profileBeforeSHA256": "92799b1430bce46e2db5b2e37565f42ef345c6aef00ae4b25962aeba4fc5c2d2",
+  "profileAfterSHA256": "066a16c6a66d83694d059ae8347bf3decff5c1cdaa4488c7c1d3498f7f661a96",
+  "controls": {
+    "oneColumn": {
+      "sameExistingDebugCases": 21,
+      "size": 240,
+      "gridTemplateColumns": "240px",
+      "SVGGeometryUnchanged": true
+    },
+    "mainAB": [
+      {
+        "pen": 7,
+        "progress": 0.000001,
+        "offsetRelativeCSS": 0,
+        "size": 240
+      },
+      {
+        "pen": 7,
+        "progress": 0.000001,
+        "offsetRelativeCSS": 304,
+        "size": 240
+      },
+      {
+        "pen": 6,
+        "progress": 0.99999999,
+        "offsetRelativeCSS": 0,
+        "size": 240
+      },
+      {
+        "pen": 6,
+        "progress": 0.99999999,
+        "offsetRelativeCSS": 304,
+        "size": 240
+      }
+    ]
+  },
+  "scope": "Five UI controls inside existing exact 鞹 setup. Only board grid columns and root HTML margin-left change. SVG path/clip/units/clock/size remain fixed within each A/B pair. Existing board clears grid-template-columns on the next board call; x0 main button restores margin-left.",
+  "observedHypothesis": "Multiple directly observed black-interior cells concentrate in middle column, while single main and single board240 are normal. X-offset/layout versus screenshot/raster explanation remains unconfirmed.",
+  "separateResidualIssue": "Pen16mask2 radius7 foot-distance failure is separate; this layout-only patch does not address it.",
+  "sourceFixtureChanged": false,
+  "RChanged": false,
+  "actualHModified": false,
+  "syntax": true,
+  "forwardInverseExact": true,
+  "nativeObserved": false,
+  "causeConfirmed": false
+}

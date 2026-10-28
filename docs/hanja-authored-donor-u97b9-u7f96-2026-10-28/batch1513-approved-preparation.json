@@ -1,0 +1,106 @@
+{
+  "schema": "hanja-approved-strict-registration-preparation/v1",
+  "date": "2026-10-28",
+  "batch": 1513,
+  "glyph": "鞹",
+  "status": "approved-data-prepared-registry-not-yet-applied",
+  "sourceFixture": {
+    "path": "docs/hanja-authored-donor-u97b9-u7f96-2026-10-28/fixtures-execution-draft-width16.json",
+    "SHA256": "c4e934c508cbda734765650b0705fd5caecfa2978e117346a0cddb59c4c8f65c",
+    "geometrySHA256": "16e9c535b8e5715426e88bb54a7c54a413f80e490890032ac5028aa1c2e13ea8"
+  },
+  "finalNativeReview": {
+    "path": "docs/hanja-authored-donor-u97b9-u7f96-2026-10-28/native-final-review.json",
+    "SHA256": "b4db1c7ed421dc4cfeee19c5cc149cd2fe687efd7418ff7d56ac42b3bdee24f1"
+  },
+  "counts": {
+    "logical": 20,
+    "masks": 26,
+    "polygons": 43,
+    "sourceStartGates": 6
+  },
+  "widthPolicy": [
+    [
+      15,
+      2,
+      14,
+      7
+    ],
+    [
+      16,
+      2,
+      16,
+      8
+    ],
+    [
+      17,
+      1,
+      14,
+      7
+    ],
+    [
+      18,
+      2,
+      14,
+      7
+    ],
+    [
+      19,
+      1,
+      14,
+      7
+    ],
+    [
+      19,
+      2,
+      14,
+      7
+    ]
+  ],
+  "limitedApproval": "Final native record authorizes finite isolated actual-renderer geometry/mapping/direction/temporal review and registration. It does not claim all118 multi-column raster views passed.",
+  "limitations": {
+    "multiColumnReviewRasterCauseUnresolved": true,
+    "independentOneColumn21CounterexamplesNormal": true,
+    "actualAppUI": false,
+    "wholeNaturalAutoplayTest": false,
+    "originalMicroclockEquivalence": false,
+    "publisherGeometryIdentity": false,
+    "infiniteContinuityProof": false
+  },
+  "provenance": {
+    "locallyAuthoredRoot": true,
+    "mixedParts": true,
+    "originalPublicWhole": false,
+    "isOriginalEngineCapture": false
+  },
+  "runtimeAtFinalNativeReview": false,
+  "actualLibPublicRegistryModifiedByThisPreparation": false,
+  "virtualFinalModuleFlags": "registrationAuthorized/runtimeApplied true describe the final module state to apply atomically with the separate registry integration; they do not report current actual registration.",
+  "validation": {
+    "actualJSONDataImport": true,
+    "independentExpectedLiteral": true,
+    "strictRuntimeTests": {
+      "runtime": "Node v25.9.0",
+      "tests": 3,
+      "pass": 3,
+      "fail": 0
+    },
+    "selectedVirtualSemantic": {
+      "files": 3,
+      "diagnostics": 0
+    },
+    "wholeProjectTypeCheck": false,
+    "build": false,
+    "SSR": false,
+    "server": false
+  },
+  "registryBeforeSHA256": "30d0c6ded401ca438100aa82a1952bd99ff746a6e1c25aecef215a5566d28b3b",
+  "registryProposedAfterSHA256": "d10808249420d66859650b755a06b209215a0fe33fde76ba9fefaffff48db7ce",
+  "prior1512FreezeInputSHA256": {
+    "lib/hanja-strokes.ts": "30d0c6ded401ca438100aa82a1952bd99ff746a6e1c25aecef215a5566d28b3b",
+    "lib/hanja-stroke-dictionary-glyphwiki-batch1512.ts": "ba9345855cec33f5035762473986edc621bb6436a7ef72afc37d23d5cbdbd9ce",
+    "lib/hanja-stroke-dictionary-glyphwiki-batch1512.test.ts": "ede8aeac9cb6c9f672b776f8220cac929239c798730c38fb0b898ef182f0aec5",
+    "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch1512.json": "fc24354d5d9689a81791482b7d2ec70ad42c5b89f997219d6dfab088be785901"
+  },
+  "nextAction": "ROOT applies batch1513-approved-bundle.patch and the separately prepared batch1513-registry-integration.patch, runs focused actual resolver/batch tests once, then commits only related files. Preserve disabled draft/pending history."
+}

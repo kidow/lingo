@@ -1,0 +1,21 @@
+{
+  "schema": "hanja-isolated-layout-counterexample-review/v1",
+  "glyph": "鞹",
+  "date": "2026-10-28",
+  "browser": "Codex in-app browser",
+  "adapterSHA256": "e2b179438b7fbe1e4024b96a3f09447052e8b399655066b3e632b513010c7fcf",
+  "fixtureSHA256": "b8a85be0077a8747c7f6339c1a26f10a5d81c6939a14ed19e10620feb3e313ed",
+  "rendererUnchangedSHA256": "cb4d80f57dbd8ad9815b5b90128ece5171a678a3b1c24e94956c2ac9fff91f88",
+  "multipleColumnObservation": "Some middle-column box interiors appear black in the aggregate initial/ending boards. No duplicate SVG ids were found. DOM source and clip binding checks were true, so they alone are not a raster proof.",
+  "independentNativeObservations": {
+    "main240AndSingleBoard240": {"pen":7,"progress":0.000001,"normalInBoth":true},
+    "main240OffsetAB": [{"pen":7,"progress":0.000001,"marginLeft":[0,304],"normalInBoth":true},{"pen":6,"progress":0.99999999,"marginLeft":[0,304],"normalInBoth":true}],
+    "oneColumn240Fixed21": {"initialPens":[5,7,9],"initialProgress":[0,0.000001],"endingPens":[6,7,8,9,10],"endingProgress":[0.9999,0.99999999,1],"samples":21,"all21DirectlyViewed":true,"result":"PASS-no-black-interior-artifact"}
+  },
+  "interpretation": "The counterexample inputs render normally in an independently observed single SVG and in the same21-sample one-column board. Exact cause of the multi-column display problem is unresolved. Do not describe the original multi-column boards as unqualified raster PASS or claim a browser-engine defect is proven.",
+  "productRendererChanged": false,
+  "sourceGeometryChangedForAB": false,
+  "actualAppUI": false,
+  "registrationAuthorizedByThisRecordAlone": false,
+  "privateMediaSavedOrTransmitted": false
+}

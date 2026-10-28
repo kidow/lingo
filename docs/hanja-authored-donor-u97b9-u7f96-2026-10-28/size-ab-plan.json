@@ -1,0 +1,91 @@
+{
+  "schema": "hanja-u97b9-size-ab-debug-plan/v1",
+  "HBeforeSHA256": "c2b97a04c2a706957c9e936f048a26d6f13dace0c56cd75b595c46a4fe9947e0",
+  "HAfterSHA256": "11762dc23c3a9a33b95182f959303bc280cb85f09093377ddb6f3f8cb78f12ea",
+  "profileBeforeSHA256": "5e16396e2765d365007c4fb51e1818f8c6132817f084e1530f999fe5f67bacae",
+  "profileAfterSHA256": "92799b1430bce46e2db5b2e37565f42ef345c6aef00ae4b25962aeba4fc5c2d2",
+  "sourceFixtureChanged": false,
+  "RChanged": false,
+  "geometryOrClipPolicyChanged": false,
+  "purpose": "Separate main/independent-board-root and240/520CSSpx effects for directly observed near-zero/near-one box-interior fill discrepancy. Cause not yet established.",
+  "controls": {
+    "currentMain": [
+      {
+        "size": 240,
+        "progress": 0.000001
+      },
+      {
+        "size": 240,
+        "progress": 0.99999999
+      },
+      {
+        "size": 520,
+        "progress": 0.000001
+      },
+      {
+        "size": 520,
+        "progress": 0.99999999
+      }
+    ],
+    "currentSingleBoard": [
+      {
+        "size": 240,
+        "progress": 0.000001
+      },
+      {
+        "size": 240,
+        "progress": 0.99999999
+      },
+      {
+        "size": 520,
+        "progress": 0.000001
+      },
+      {
+        "size": 520,
+        "progress": 0.99999999
+      }
+    ],
+    "fixedPack": {
+      "initialPens": [
+        5,
+        7,
+        9
+      ],
+      "initialProgress": [
+        0,
+        0.000001
+      ],
+      "endingPens": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "endingProgress": [
+        0.9999,
+        0.99999999,
+        1
+      ],
+      "samples": 21,
+      "sizes": [
+        240,
+        520
+      ]
+    },
+    "boundary18": {
+      "sameExistingSamples": true,
+      "sizes": [
+        240,
+        520
+      ]
+    }
+  },
+  "scope": "Only exact 鞹 case admits main240; generic520/1040 unchanged. board retains existing unique sample-N React root prefixes and original source/clock pipeline. Root performs UI clicks; no DOM style scripts.",
+  "syntax": true,
+  "forwardInverseExact": true,
+  "actualHModified": false,
+  "actualProfileModified": false,
+  "nativeObserved": false,
+  "causeConfirmed": false
+}
