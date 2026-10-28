@@ -1,0 +1,15 @@
+*** Begin Patch
+*** Update File: /Users/kidow/Documents/dev/kidow/lingo/scripts/hanja-actual-component-review.mjs
+@@
++ const aggregateInitial=Array.from({length:10},(_,i)=>[0,1e-6].map(progress=>({pen:i+1,progress,label:'initial'}))).flat();
++ const aggregateBoundary=C.pairProgress.flatMap(t=>[-1e-10,0,1e-10].map((delta,i)=>({pen:t.pen,progress:t.boundary+delta,label:'before mask'+t.nextMask+' '+['minus','exact','plus'][i]})));
++ const aggregateEnding=Array.from({length:10},(_,i)=>[.9999,.99999999,1].map(progress=>({pen:i+1,progress,label:'ending'}))).flat();
++ const aggregateAll=[...aggregateInitial,...aggregateBoundary,...aggregateEnding];
++ if(aggregateInitial.length!==20||aggregateBoundary.length!==18||aggregateEnding.length!==30||aggregateAll.length!==68||aggregateAll.some(t=>!Number.isInteger(t.pen)||t.pen<1||t.pen>10||!Number.isFinite(t.progress)||t.progress<0||t.progress>1))throw Error('羖 aggregate68 fixed sample projection');
++ const aggregateBoard=samples=>{generation++;T=null;board(samples,240);};
++ button('羖 aggregate68 initial20-boundary18-ending30',()=>aggregateBoard(aggregateAll));
++ button('羖 aggregate initial20',()=>aggregateBoard(aggregateInitial));
++ button('羖 aggregate source-boundary18',()=>aggregateBoard(aggregateBoundary));
++ button('羖 aggregate ending30',()=>aggregateBoard(aggregateEnding));
+  button('羖 all-curve full-round residual',()=>plainCoverage(true));
+*** End Patch

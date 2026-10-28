@@ -1,0 +1,502 @@
+{
+  "schema": "hanja-ownstroke-R-draft-code-check/v1",
+  "status": "PASS-limited-code-only",
+  "inputSHA256": {
+    "docs/hanja-authored-ownstroke-u7f96-2026-10-28/fixtures-draft.json": "54ed6761f490aa1f90f2f348c1ce80b7c5ccde2b2ec77febf892feb95aadea89",
+    "docs/hanja-authored-ownstroke-u7f96-2026-10-28/hypothesis.json": "84d8eba9256f15a4193f59e8b3af331d4a77758609edd45d70ae01d3d78efc97",
+    "docs/hanja-authored-ownstroke-u7f96-2026-10-28/materialize-draft.py": "612d970e1999304f8227bb2fddc24bedd4b8d0760b0bb497e72cd41a750d7d3e",
+    "docs/hanja-goal-glyphwiki-batch440-2026-10-09/engine-proof.json": "45ba067fd16a3708ca81c2f157f1839d4d67d88e8830701009d51318b746b2e2",
+    "docs/hanja-goal-glyphwiki-batch440-2026-10-09/draw-trace.json": "056f077df90a6410c1d2391ddb0969b99a06121f5c42dfba2dc1d469f213abff",
+    "docs/hanja-goal-glyphwiki-batch297-2026-10-05/progressive.mjs": "9f339e897efd82150852e6923265dd5c0c2bc0a4263376f523929aa55742c24a",
+    "scripts/hanja-component-geometry.ts": "e539d9d3538fc9f143842c52910fe7ee5ecac415eea206e885875ca3acb4434a",
+    "lib/hanja-stroke-outline.ts": "b4d289d1911c4d43934dfad39c4cfbe22a246303bb7012114d16786688c36c40"
+  },
+  "logicalPens": 10,
+  "segments": 16,
+  "nonDrawingRawPreserved": [
+    6
+  ],
+  "changedRaw": [
+    5
+  ],
+  "otherRawGeometryPreserved": 12,
+  "otherLogicalPensPreserved": 9,
+  "facts": [
+    {
+      "logical": 1,
+      "raw": 0,
+      "primitive": 0,
+      "kind": "cdDrawCurve",
+      "sourceControlPoints100": [
+        [
+          10.9475,
+          9.595
+        ],
+        [
+          16.57,
+          15.15
+        ],
+        [
+          18.7325,
+          24.745
+        ]
+      ],
+      "flags": [
+        7,
+        8
+      ],
+      "authored": false,
+      "curveCandidatePolicy": {
+        "originalPath100": "M10.9475 9.595 Q16.57 15.15 18.7325 24.745",
+        "paddedGuidePath": "M5.967952212796646 4.675233355639907 L10.9475 9.595 Q16.57 15.15 18.7325 24.745",
+        "padding100": 7,
+        "width100": 14,
+        "lengthMethod": "padding7 + source Bezier control-polygon length + explicit numeric upper margin1e-9",
+        "controlPolygonLength": 17.739501530809086,
+        "numericUpperMargin": 1e-9,
+        "weight": 24.739501531809086,
+        "until": 0.2829483039906715,
+        "singleMOpenContinuousPath": true,
+        "releaseSupport": "Bezier arc length is at most control-polygon length; at p=7/weight true guide distance is at most7, so its round-cap leading projection is at most firstProjection+7. This supports removing the gate without exposing ink beyond the already reachable cap; author display timing is not publisher timing.",
+        "approved": false
+      }
+    },
+    {
+      "logical": 2,
+      "raw": 1,
+      "primitive": 0,
+      "kind": "cdDrawCurve",
+      "sourceControlPoints100": [
+        [
+          37.33,
+          10.1
+        ],
+        [
+          33.87,
+          17.17
+        ],
+        [
+          27.815,
+          26.765
+        ]
+      ],
+      "flags": [
+        0,
+        7
+      ],
+      "authored": false,
+      "curveCandidatePolicy": {
+        "originalPath100": "M37.33 10.1 Q33.87 17.17 27.815 26.765",
+        "paddedGuidePath": "M40.407022704764806 3.812557652402541 L37.33 10.1 Q33.87 17.17 27.815 26.765",
+        "padding100": 7,
+        "width100": 14,
+        "lengthMethod": "padding7 + source Bezier control-polygon length + explicit numeric upper margin1e-9",
+        "controlPolygonLength": 19.217039511581092,
+        "numericUpperMargin": 1e-9,
+        "weight": 26.217039512581092,
+        "until": 0.26700192432638414,
+        "singleMOpenContinuousPath": true,
+        "releaseSupport": "Bezier arc length is at most control-polygon length; at p=7/weight true guide distance is at most7, so its round-cap leading projection is at most firstProjection+7. This supports removing the gate without exposing ink beyond the already reachable cap; author display timing is not publisher timing.",
+        "approved": false
+      }
+    },
+    {
+      "logical": 3,
+      "raw": 2,
+      "primitive": 0,
+      "kind": "cdDrawLine",
+      "sourceControlPoints100": [
+        [
+          6.19,
+          26.765
+        ],
+        [
+          44.25,
+          26.765
+        ]
+      ],
+      "flags": [
+        0,
+        0
+      ],
+      "authored": false
+    },
+    {
+      "logical": 4,
+      "raw": 3,
+      "primitive": 0,
+      "kind": "cdDrawLine",
+      "sourceControlPoints100": [
+        [
+          9.65,
+          43.935
+        ],
+        [
+          41.2225,
+          43.935
+        ]
+      ],
+      "flags": [
+        0,
+        0
+      ],
+      "authored": false
+    },
+    {
+      "logical": 5,
+      "raw": 5,
+      "authored": true,
+      "guide100": [
+        [
+          6.19,
+          61.98875
+        ],
+        [
+          45.5475,
+          61.98875
+        ]
+      ],
+      "originalTraceUsed": false,
+      "cardinal": "right"
+    },
+    {
+      "logical": 6,
+      "raw": 4,
+      "primitive": 0,
+      "kind": "cdDrawLine",
+      "sourceControlPoints100": [
+        [
+          24.355,
+          26.765
+        ],
+        [
+          24.355,
+          53.53
+        ]
+      ],
+      "flags": [
+        32,
+        1
+      ],
+      "authored": false
+    },
+    {
+      "logical": 6,
+      "raw": 4,
+      "primitive": 1,
+      "kind": "cdDrawCurve",
+      "sourceControlPoints100": [
+        [
+          24.355,
+          53.53
+        ],
+        [
+          24.7875,
+          86.355
+        ],
+        [
+          8.3525,
+          94.94
+        ]
+      ],
+      "flags": [
+        1,
+        7
+      ],
+      "authored": false,
+      "curveCandidatePolicy": {
+        "originalPath100": "M24.355 53.53 Q24.7875 86.355 8.3525 94.94",
+        "paddedGuidePath": "M24.26277647404949 46.53060753913161 L24.355 53.53 Q24.7875 86.355 8.3525 94.94",
+        "padding100": 7,
+        "width100": 14,
+        "lengthMethod": "padding7 + source Bezier control-polygon length + explicit numeric upper margin1e-9",
+        "controlPolygonLength": 51.37000249880076,
+        "numericUpperMargin": 1e-9,
+        "weight": 58.370002499800755,
+        "until": 0.11992461367504471,
+        "singleMOpenContinuousPath": true,
+        "releaseSupport": "Bezier arc length is at most control-polygon length; at p=7/weight true guide distance is at most7, so its round-cap leading projection is at most firstProjection+7. This supports removing the gate without exposing ink beyond the already reachable cap; author display timing is not publisher timing.",
+        "approved": false
+      }
+    },
+    {
+      "logical": 7,
+      "raw": 7,
+      "primitive": 0,
+      "kind": "cdDrawLine",
+      "sourceControlPoints100": [
+        [
+          57.9875,
+          14.36
+        ],
+        [
+          57.9875,
+          26.24
+        ]
+      ],
+      "flags": [
+        12,
+        1
+      ],
+      "authored": false
+    },
+    {
+      "logical": 7,
+      "raw": 7,
+      "primitive": 1,
+      "kind": "cdDrawCurve",
+      "sourceControlPoints100": [
+        [
+          57.9875,
+          26.24
+        ],
+        [
+          57.9875,
+          40.1
+        ],
+        [
+          44.115,
+          50
+        ]
+      ],
+      "flags": [
+        1,
+        7
+      ],
+      "authored": false,
+      "curveCandidatePolicy": {
+        "originalPath100": "M57.9875 26.24 Q57.9875 40.1 44.115 50",
+        "paddedGuidePath": "M57.9875 19.24 L57.9875 26.24 Q57.9875 40.1 44.115 50",
+        "padding100": 7,
+        "width100": 14,
+        "lengthMethod": "padding7 + source Bezier control-polygon length + explicit numeric upper margin1e-9",
+        "controlPolygonLength": 30.902777245801225,
+        "numericUpperMargin": 1e-9,
+        "weight": 37.90277724680122,
+        "until": 0.18468303666562483,
+        "singleMOpenContinuousPath": true,
+        "releaseSupport": "Bezier arc length is at most control-polygon length; at p=7/weight true guide distance is at most7, so its round-cap leading projection is at most firstProjection+7. This supports removing the gate without exposing ink beyond the already reachable cap; author display timing is not publisher timing.",
+        "approved": false
+      }
+    },
+    {
+      "logical": 8,
+      "raw": 8,
+      "primitive": 0,
+      "kind": "cdDrawLine",
+      "sourceControlPoints100": [
+        [
+          57.9875,
+          14.36
+        ],
+        [
+          78.5725,
+          14.36
+        ]
+      ],
+      "flags": [
+        2,
+        2
+      ],
+      "authored": false
+    },
+    {
+      "logical": 8,
+      "raw": 9,
+      "primitive": 0,
+      "kind": "cdDrawLine",
+      "sourceControlPoints100": [
+        [
+          78.5725,
+          14.36
+        ],
+        [
+          78.5725,
+          36.585
+        ]
+      ],
+      "flags": [
+        22,
+        1
+      ],
+      "authored": false
+    },
+    {
+      "logical": 8,
+      "raw": 9,
+      "primitive": 1,
+      "kind": "cdDrawCurve",
+      "sourceControlPoints100": [
+        [
+          78.5725,
+          36.585
+        ],
+        [
+          78.5725,
+          41.585
+        ],
+        [
+          83.5725,
+          41.585
+        ]
+      ],
+      "flags": [
+        1,
+        2001
+      ],
+      "authored": false,
+      "curveCandidatePolicy": {
+        "originalPath100": "M78.5725 36.585 Q78.5725 41.585 83.5725 41.585",
+        "paddedGuidePath": "M78.5725 29.585 L78.5725 36.585 Q78.5725 41.585 83.5725 41.585",
+        "padding100": 7,
+        "width100": 14,
+        "lengthMethod": "padding7 + source Bezier control-polygon length + explicit numeric upper margin1e-9",
+        "controlPolygonLength": 10,
+        "numericUpperMargin": 1e-9,
+        "weight": 17.000000001,
+        "until": 0.41176470585813146,
+        "singleMOpenContinuousPath": true,
+        "releaseSupport": "Bezier arc length is at most control-polygon length; at p=7/weight true guide distance is at most7, so its round-cap leading projection is at most firstProjection+7. This supports removing the gate without exposing ink beyond the already reachable cap; author display timing is not publisher timing.",
+        "approved": false
+      }
+    },
+    {
+      "logical": 8,
+      "raw": 9,
+      "primitive": 2,
+      "kind": "cdDrawLine",
+      "sourceControlPoints100": [
+        [
+          83.5725,
+          41.585
+        ],
+        [
+          92.8925,
+          41.585
+        ]
+      ],
+      "flags": [
+        2006,
+        5
+      ],
+      "authored": false
+    },
+    {
+      "logical": 9,
+      "raw": 10,
+      "primitive": 0,
+      "kind": "cdDrawLine",
+      "sourceControlPoints100": [
+        [
+          49.9325,
+          52.475
+        ],
+        [
+          83.495,
+          52.475
+        ]
+      ],
+      "flags": [
+        0,
+        2
+      ],
+      "authored": false
+    },
+    {
+      "logical": 9,
+      "raw": 11,
+      "primitive": 0,
+      "kind": "cdDrawCurve",
+      "sourceControlPoints100": [
+        [
+          83.495,
+          52.475
+        ],
+        [
+          73.2025,
+          85.64
+        ],
+        [
+          39.64,
+          93.56
+        ]
+      ],
+      "flags": [
+        22,
+        7
+      ],
+      "authored": false,
+      "curveCandidatePolicy": {
+        "originalPath100": "M83.495 52.475 Q73.2025 85.64 39.64 93.56",
+        "paddedGuidePath": "M85.56977865305335 45.78954612304938 L83.495 52.475 Q73.2025 85.64 39.64 93.56",
+        "padding100": 7,
+        "width100": 14,
+        "lengthMethod": "padding7 + source Bezier control-polygon length + explicit numeric upper margin1e-9",
+        "controlPolygonLength": 69.20970348247752,
+        "numericUpperMargin": 1e-9,
+        "weight": 76.20970348347753,
+        "until": 0.09185182043803149,
+        "singleMOpenContinuousPath": true,
+        "releaseSupport": "Bezier arc length is at most control-polygon length; at p=7/weight true guide distance is at most7, so its round-cap leading projection is at most firstProjection+7. This supports removing the gate without exposing ink beyond the already reachable cap; author display timing is not publisher timing.",
+        "approved": false
+      }
+    },
+    {
+      "logical": 10,
+      "raw": 12,
+      "primitive": 0,
+      "kind": "cdDrawCurve",
+      "sourceControlPoints100": [
+        [
+          55.75,
+          52.475
+        ],
+        [
+          62.015,
+          82.175
+        ],
+        [
+          91.1025,
+          88.61
+        ]
+      ],
+      "flags": [
+        7,
+        0
+      ],
+      "authored": false,
+      "curveCandidatePolicy": {
+        "originalPath100": "M55.75 52.475 Q62.015 82.175 91.1025 88.61",
+        "paddedGuidePath": "M54.30519545526411 45.62572705847471 L55.75 52.475 Q62.015 82.175 91.1025 88.61",
+        "padding100": 7,
+        "width100": 14,
+        "lengthMethod": "padding7 + source Bezier control-polygon length + explicit numeric upper margin1e-9",
+        "controlPolygonLength": 60.14438864801514,
+        "numericUpperMargin": 1e-9,
+        "weight": 67.14438864901514,
+        "until": 0.10425294117414939,
+        "singleMOpenContinuousPath": true,
+        "releaseSupport": "Bezier arc length is at most control-polygon length; at p=7/weight true guide distance is at most7, so its round-cap leading projection is at most firstProjection+7. This supports removing the gate without exposing ink beyond the already reachable cap; author display timing is not publisher timing.",
+        "approved": false
+      }
+    }
+  ],
+  "policies": {
+    "cardinal5": "right; actual replacement filled H and author guide",
+    "curveWidth14": "legacy proposal, not reviewed approval",
+    "curvePadding7": "one radius source-start extension with original remaining Q/C controls preserved",
+    "startClipHelper": "outlineStartClip reused unchanged",
+    "guideLength": "padding7 + source control-polygon upper bound +1e-9 numeric margin; display weight differs from original clock and exact arc length",
+    "singleMOpenContinuousGuide": true,
+    "releaseSupport": "until=7/weight is no later than actual guide arrival at source first point under normalized arclength dash semantics; native and numerical behavior still unapproved",
+    "originalMicroTimingEquivalent": false
+  },
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "requiredNativeReview": [
+    "whole with donor4 and replacement5",
+    "all starts, curve cap release, transitions and completion",
+    "cardinal/compound decoration onset",
+    "mapping and source contacts; original microtiming is not claimed"
+  ]
+}

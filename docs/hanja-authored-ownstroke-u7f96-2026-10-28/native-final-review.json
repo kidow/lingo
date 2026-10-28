@@ -1,0 +1,45 @@
+{
+  "schema": "hanja-authored-finite-native-review/v1",
+  "glyph": "羖",
+  "strokes": 10,
+  "date": "2026-10-28",
+  "status": "PASS-finite-actual-component-review",
+  "fixture": "docs/hanja-authored-ownstroke-u7f96-2026-10-28/fixtures-execution-draft.json",
+  "fixtureSHA256": "f8b9d57ac8913f9dd595fe4174c257c13728f738e405402fed7611b3535e2b9d",
+  "geometrySHA256": "f8746ee43e0eaacf345e3cfae0affc0a73dcfd56ab79723692117ff88d790ea1",
+  "rendererSHA256": "cb4d80f57dbd8ad9815b5b90128ece5171a678a3b1c24e94956c2ac9fff91f88",
+  "outlineHelperSHA256": "b4d289d1911c4d43934dfad39c4cfbe22a246303bb7012114d16786688c36c40",
+  "profileSHA256": "af2a9f28139bb5c9ca524fecb0117cb7a97005ffd1deef5a4707f24add9b7050",
+  "adapterSHA256": "ae21aef732332770579a8f87e10957e47fadf9698d7faa6589dabf4273807b3c",
+  "staticReview": {
+    "path": "docs/hanja-source-raw-compare-u7f96-ownstroke-2026-10-28/native-static-review.json",
+    "SHA256": "dbbb899eba77aaee6cd5200c0fee8e81c794c15f4e80e04780484ddc762ecc82",
+    "reused": true,
+    "reason": "Original canonical 10-pen comparison and donor4/new5 whole comparison remain input-identical."
+  },
+  "sourceIdentity": {
+    "locallyAuthoredRoot": true,
+    "mixedParts": true,
+    "originalPublicRoot": false,
+    "isOriginalEngineCapture": false,
+    "sourceTraceDescribesReplacement": false,
+    "replacement": "Only original raw5 is replaced with the same glyph's affine-transformed original horizontal raw3; all other raw geometry is retained.",
+    "normalization": "200 to100 once, no y flip"
+  },
+  "native": {
+    "browser": "Codex in-app browser",
+    "directScreenshotsViewed": true,
+    "compact9": {"pens": [1,2,3,4,5,6,7,8,9,10], "progress": [0,0.125,0.25,0.375,0.5,0.625,0.75,0.875,1], "result": "PASS"},
+    "startRelease3": {"curveMasks": [[1,1],[2,1],[6,2],[7,2],[8,3],[9,2],[10,1]], "localDelta": [-0.00000001,0,0.00000001], "result": "PASS-no-observed-pop"},
+    "aggregateInitial": {"samples":20,"progress":[0,0.000001],"pens":"all10","result":"PASS"},
+    "aggregateCompoundBoundary": {"boundaries":6,"samples":18,"globalDelta":[-0.0000000001,0,0.0000000001],"result":"PASS"},
+    "aggregateEnding": {"samples":30,"progress":[0.9999,0.99999999,1],"pens":"all10","result":"PASS"},
+    "fullRoundResidual": {"curveMasks":7,"result":"PASS-all7 blank","scope":"Actual committed guide, original source ink minus full guide with dash and temporary start clip removed; transform retained."},
+    "enlargedContact": {"size":520,"pens":[5,6],"result":"PASS-continuous-contact-no-visible-internal-seam"},
+    "naturalPlayback": {"pen":8,"durationSeconds":8,"endState":"natural-ended","progress":1,"bad":[],"errors":[]},
+    "stateChecks": {"idle":true,"done":true,"selectedZero":true,"exactPrefixes":[0,1,2,3,4,5,6,7,8,9,10],"bad":[],"errors":[],"finalBrowserWarningsAndErrors":[]}
+  },
+  "approval": {"filledGeometry":true,"mapping":true,"direction":true,"finiteTemporalReview":true,"registrationAuthorized":true},
+  "limitations": {"actualAppUI":false,"wholeNaturalAutoplayTest":false,"originalMicroclockEquivalence":false,"publisherGeometryIdentity":false,"infiniteTimeContinuityProof":false},
+  "runtimeAppliedAtReview": false
+}
