@@ -1,0 +1,142 @@
+{
+  "schema": "hanja-single-source-affine-static-preparation-check/v1",
+  "date": "2026-10-28",
+  "glyph": "幷",
+  "status": "prepared-for-ROOT-static-whole-and-upper-pair-review",
+  "candidateId": "local_u5e77_005_raw2_x53over50_20261028",
+  "pins": {
+    "recipe": {
+      "path": "docs/hanja-authored-ownstroke-u5e77-upper-h-2026-10-28/recipe.json",
+      "SHA256": "0eb7d34a982ecfefe009cf62e7eb43d41e62bd83dc9979680b1a29a5f6ab2785"
+    },
+    "fixture": {
+      "path": "docs/hanja-authored-ownstroke-u5e77-upper-h-2026-10-28/fixtures-draft.json",
+      "SHA256": "7f91ddfe11153d4056f7d76d2c7ea712ac443249764958e0130936dc6c5fd1f5"
+    },
+    "materializer": {
+      "path": "docs/hanja-authored-ownstroke-u5e77-upper-h-2026-10-28/materialize-draft.py",
+      "SHA256": "96df68095b7605d7470bfbba3edc6b0ba86c386cbafe412b1dc4cb5a80990280"
+    },
+    "adapter": {
+      "path": "docs/hanja-authored-ownstroke-u5e77-upper-h-2026-10-28/compare.py",
+      "SHA256": "2c647da1fea115584924715fd8fd56922b8c1b7a01848e8e9500a0ee42e393b6"
+    },
+    "config": {
+      "path": "docs/hanja-authored-ownstroke-u5e77-upper-h-2026-10-28/config.json",
+      "SHA256": "85e84fc23a579af46513292e12700a22e51babee7f3e87b3f052246989579623"
+    },
+    "originalSource": {
+      "path": "docs/hanja-actual-engine-capture-u5e77-005-2026-10-27/engine-whole-u5e77-02-var-005.json",
+      "SHA256": "33e5d36c16b0b3c333d462128b234d81a14bf4aa7a788a495113992a352e0d9e",
+      "root": "u5e77-02-var-005",
+      "version": 2
+    },
+    "unchangedSharedShell": {
+      "path": "docs/hanja-source-raw-compare-u8a29-2026-10-21/serve.py",
+      "SHA256": "ba91ba7f00bc2e4899ca4d3c69d03ab5cd6f8b0a9f888899eea49aa69a58665d"
+    }
+  },
+  "sourceEvidence": {
+    "canonicalDomesticRole": "Domestic8 directions/cumulative/final were directly viewed;2/6 are the upper horizontals that join in cumulative6/final8. No candidate005 progressive or new affine timing approval is inferred.",
+    "original005HoldRetained": true,
+    "exactMMOriginalAbsent": true,
+    "fixedMMRevision": "bddc96d41bef78427ed0e034e9f7e31d71fd1b92",
+    "newMMFetch": 0,
+    "sourceAlternativeNotInferredFromOtherUnicode": true
+  },
+  "mathematicalCheck": {
+    "changedRawZeroBased": [
+      1
+    ],
+    "originalGroupCount": 8,
+    "derivedGroupCount": 8,
+    "originalContours": 18,
+    "derivedContours": "The two copied raw2 P contours and its source guide receive one explicit positive affine. Fixed original P data remains in the untouched original capture; derived transformed coordinates are not presented as original engine output.",
+    "other7GroupsExactlyEqual": true,
+    "allOriginalSourceFileBytesUnchanged": true,
+    "matrixExact": [
+      "53/50",
+      "0",
+      "0",
+      "1",
+      "-132/25",
+      "0"
+    ],
+    "determinantExact": "53/50",
+    "anchor": [
+      88,
+      57
+    ],
+    "sourceShaft": [
+      88,
+      138,
+      55,
+      59
+    ],
+    "authoredShaft": [
+      88,
+      141,
+      55,
+      59
+    ],
+    "rightOriginalShaft": [
+      140,
+      186,
+      55,
+      59
+    ],
+    "overlapRectangle": [
+      140,
+      141,
+      55,
+      59
+    ],
+    "exactUnionIntersectionArea": "4",
+    "extraSerifIntersection": "Exact rational clipping confirms left-serif/right-shaft intersection is contained in the already-counted overlap rectangle; right serif is x-separated. No double-counted intersection.",
+    "bridgePaths": 0,
+    "addedPaths": 0,
+    "sourceDirectionReversed": false,
+    "newPrivateCoordinates": 0
+  },
+  "execution": {
+    "exactConfigCheckOnly": "PASS",
+    "PythonASTFiles": 2,
+    "unchangedSourceSVGRendererPublicOriginalAndCandidate": "PASS",
+    "publicSourceSVGOutputSaved": false,
+    "privateHTTP": 0,
+    "privateMediaSaved": false,
+    "sourceEngineRuns": 0,
+    "sharedCodeWrites": 0,
+    "serverStarts": 0,
+    "SSR": 0,
+    "build": 0,
+    "globalTypeCheck": 0,
+    "actualBrowserReview": false,
+    "sharedWholePageContract": "PASS-synthetic-domestic-no-private-media",
+    "sharedCompareSelectionAndPageContract": "PASS-synthetic-domestic-no-private-media",
+    "renderOnlySourceRootsProjection": "strict guarded original strings preserved; adapter projects exact root/rawGroups/proofKind objects for unchanged shared page and selection"
+  },
+  "ROOTReviewPlan": [
+    "ROOT /whole sourceauthored against domestic completed8, then original005 source baseline only as needed.",
+    "ROOT current2/current6 and cumulative6/prefix6 show upper horizontal roles/contact; compare source raw2/raw6 and whole context.",
+    "No inferred new direction, timing or animation approval. No private coordinate export.",
+    "Root records PID/port and terminates this server/wrapper after review."
+  ],
+  "limits": [
+    "Positive contact area does not establish matching domestic whole shape, font identity, local serif appearance or correct placement.",
+    "Canonical8 direction/cumulative/final record supports the two horizontal roles only in its recorded scope; no newly authored candidate timing/native approval is implied.",
+    "Whole and upper-pair/prefix6 static comparison must precede any animation preparation. Original005/source alternatives remain held."
+  ],
+  "approval": {
+    "whole": false,
+    "contact": false,
+    "newPlacement": false,
+    "newDirection": false,
+    "temporal": false,
+    "native": false,
+    "runtime": false
+  },
+  "checkOnlyCLI": "python3 -B docs/hanja-authored-ownstroke-u5e77-upper-h-2026-10-28/compare.py --config-sha 85e84fc23a579af46513292e12700a22e51babee7f3e87b3f052246989579623 --check-only",
+  "serverCLI": "python3 -B docs/hanja-authored-ownstroke-u5e77-upper-h-2026-10-28/compare.py --config-sha 85e84fc23a579af46513292e12700a22e51babee7f3e87b3f052246989579623 --port <ROOT-owned-available-port>",
+  "commitSuggested": "docs(hanja): prepare Bing upper-bar affine contact trial"
+}
