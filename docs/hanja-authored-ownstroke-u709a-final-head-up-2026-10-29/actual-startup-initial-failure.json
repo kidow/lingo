@@ -1,0 +1,13 @@
+{
+  "glyph": "炚",
+  "date": "2026-10-29",
+  "status": "FAILED-before-server-and-native-review",
+  "harnessSha256": "1ee11f40d26295bbc4ba45627ec4204f6c9cb6e1fd50819f3b71e899abe3c1a1",
+  "profileSha256": "63781ded96f99d6f6b747f303074f945c57bdbc11af1c411e0c38c1cd61342f0",
+  "error": "Unknown import ./hanja-stroke-start-caps-u705d-hkcs-m.ts",
+  "cause": "Candidate exact-root missing from resources closure branch and HTML plainState serialization branch; generic resource route was selected.",
+  "serverStarted": false,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "followup": "Add only the exact candidate root to the two existing branch lists, preserve renderer and validation, refreeze profile and rerun isolated startup."
+}
