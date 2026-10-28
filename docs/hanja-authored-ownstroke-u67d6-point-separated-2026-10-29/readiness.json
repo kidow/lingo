@@ -1,0 +1,115 @@
+{
+  "schema": "hanja-same-source-point-static-readiness/v1",
+  "glyph": "柖",
+  "date": "2026-10-29",
+  "status": "HISTORICAL-STATIC-PASS-BEFORE-ORIGINAL-CLOCK-AND-MAPPING",
+  "historicalCheckpoint": true,
+  "laterEvidence": {
+    "originalClock": {"path": "docs/hanja-authored-ownstroke-u67d6-point-separated-2026-10-29/native-clock-review.json", "SHA256": "16e3a9b73ba23bf13f29327c53a24b0d9f9e507fa7cce2578447c42fede76274"},
+    "logicalMapping": {"path": "docs/hanja-authored-ownstroke-u67d6-point-separated-2026-10-29/native-mapping-role-review.json", "SHA256": "44b8560aeab54c7416a40d30a0cf57689ab72368f8fa994ec7e63af45bea4ad1"}
+  },
+  "inputSHA256": {
+    "docs/hanja-actual-engine-capture-u67d6-hkcs-2026-10-25/engine-whole-hkcs_m67d6.json": "3294f58e470428ffe54ae2d9d17ec7a022eca2006f8bc5dd7b6d371165098271",
+    "docs/hanja-goal-glyphwiki-batch661-2026-10-11/metadata.json": "3ab48781bf13575955b469cc30ca2466b7fa2a3cb6a20af887232b0d5d99a3e2",
+    "docs/hanja-authored-ownstroke-u67d6-point-separated-2026-10-29/recipe.json": "f19f3b153e8f3f78a605d46c7334f728cfdc35daea25e2a0e88355ae80795153",
+    "docs/hanja-authored-ownstroke-u67d6-point-separated-2026-10-29/fixtures-draft.json": "5e69882deb5ecebaf2d7b7e9dacdf572adae33dc32ebbcbb6b95ee1bf90865fc",
+    "docs/hanja-authored-ownstroke-u67d6-point-separated-2026-10-29/materialize-draft.py": "088c971473b950d1bf926a41bd15afa77861246e5da617f9813ad632dbff2cce",
+    "docs/hanja-authored-ownstroke-u67d6-point-separated-2026-10-29/compare.py": "b29657ee9bea483e3506b97b2d8d3e4124800b54eeefc102d2f3707a00acfe01",
+    "docs/hanja-authored-ownstroke-u67d6-point-separated-2026-10-29/config.json": "29146a02e1c798b8bcfd3b4ad886fbd7effe26afd6c209647a7522bcfe64ae1d",
+    "docs/hanja-authored-ownstroke-u67d6-point-separated-2026-10-29/native-static-review.json": "b6f53519bc6e6a070dbc0acc9154013d9320d86a3f2ec53dee88d5569ac782d0"
+  },
+  "source": {
+    "providerRoot": "hkcs_m67d6@3",
+    "raw": 11,
+    "calls": 12,
+    "P": 18,
+    "authoredChangedRawOneBased": [
+      4
+    ],
+    "other10RawAndTraceExact": true,
+    "wholePointPAndAllGuideControlsSameAffine": true,
+    "sourceFlagsAndYUnchanged": true,
+    "sourceGuideDRMonotonicityPreserved": true,
+    "sourceEngineRuns": 0,
+    "originalRootClaim": false,
+    "isOriginalEngineCapture": false,
+    "mixedParts": false
+  },
+  "affine": {
+    "matrixExact": [
+      "1208/1383",
+      "0",
+      "0",
+      "1",
+      "3024/461",
+      "0"
+    ],
+    "inverseMatrixExact": [
+      "1383/1208",
+      "0",
+      "0",
+      "1",
+      "-1134/151",
+      "0"
+    ],
+    "exactInverseIdentityPassed": true,
+    "publicGuideXAnchor": "51.84",
+    "candidatePointMaxX": "76",
+    "counterpartRaw7MinX": "77",
+    "strictClosedPBoundingXGap": "1",
+    "privateFitting": false
+  },
+  "contactGraph": {
+    "method": "Exact rational closed-polygon contact; segment intersections and nonzero winding. Not positive-area quantification.",
+    "originalPoint4ContactsRaw": [
+      2,
+      7
+    ],
+    "candidatePoint4ContactsRaw": [
+      2
+    ],
+    "newContacts": [],
+    "ownTrunkRaw2ContactMaintained": true
+  },
+  "sourceAlternatives": {
+    "selectedOriginalHOLD": {
+      "path": "docs/hanja-source-raw-compare-u67d6-hkcs-whole-2026-10-25/native-whole-review.json",
+      "SHA256": "40d954d0aae120cb3dc49a6e573217c28da822ee63756484a2a365d8df750569",
+      "preserved": true
+    },
+    "preserved": true,
+    "fixedMMAbsenceRecord": "docs/hanja-source-mm-u6030-u67d6-2026-10-28/absence-scan.json",
+    "fixedMMAbsenceSHA256": "7d6f0d0ef33c30dac7d842c65faa3bcfdb8eac6fb53baa06728f0cf00aa928cd",
+    "absenceScope": "Exact fixed MakeMeAHanzi corpus only; no universal public-source absence claim."
+  },
+  "checks": {
+    "actualMaterializerAndCheckOnlyPassed": true,
+    "actualWhole3PanelAndCurrent2PanelContractsPassed": true,
+    "fetchesDuringStaticChecks": 0,
+    "sharedCodeChanged": false,
+    "serverStarts": 0,
+    "build": false
+  },
+  "nativeStatic": {
+    "record": "docs/hanja-authored-ownstroke-u67d6-point-separated-2026-10-29/native-static-review.json",
+    "SHA256": "b6f53519bc6e6a070dbc0acc9154013d9320d86a3f2ec53dee88d5569ac782d0",
+    "rootReportedWholeAndPointCurrentPASS": true,
+    "other8RolesOrClockNotClaimed": true
+  },
+  "clockPreparation": {
+    "script": "docs/hanja-authored-ownstroke-u67d6-point-separated-2026-10-29/prepare-safe-metadata.py",
+    "firstChildAttempt": "DNS failure errno8 before receiving originalSVG; no retry",
+    "assetsReceivedByChild": 0,
+    "privateSVGOrCSSSaved": false,
+    "privateBodyOutput": false,
+    "rootNetworkExecutionStillPossible": true
+  },
+  "approval": {
+    "wholeStatic": true,
+    "pointCurrentStatic": true,
+    "allLogicalRoles": false,
+    "originalClock": false,
+    "temporal": false,
+    "runtime": false
+  }
+}
