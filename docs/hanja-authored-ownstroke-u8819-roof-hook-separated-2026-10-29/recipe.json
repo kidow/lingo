@@ -1,0 +1,77 @@
+{
+  "schema": "hanja-whole-raw-positive-affine-two-static-candidates/v1",
+  "glyph": "蠙",
+  "date": "2026-10-29",
+  "source": {
+    "path": "docs/hanja-actual-engine-capture-u8819-hkcs-2026-10-26/engine-whole-hkcs_m8819.json",
+    "SHA256": "1b6efbd56add0a361572755488eb27f54fab06c4e74394bd2e9cc47a934d5da4"
+  },
+  "targetRawOneBased": 11,
+  "sourcePCount": 2,
+  "sourceFlags": [
+    22,
+    7
+  ],
+  "fixedOriginalGuideHead": [
+    "8919/50",
+    "919/25"
+  ],
+  "variants": {
+    "bbox": {
+      "root": "lingo-u8819-raw11-bbox-gap1-draft",
+      "matrixExact": [
+        "1",
+        "0",
+        "0",
+        "131/461",
+        "0",
+        "60654/2305"
+      ],
+      "criterion": "Original hook maxY moved to followingH minY-1. Conservative globalverticalBBox separation1."
+    },
+    "actual": {
+      "root": "lingo-u8819-raw11-actualP-gap1-draft",
+      "matrixExact": [
+        "1",
+        "0",
+        "0",
+        "2465/4096",
+        "0",
+        "1498889/102400"
+      ],
+      "criterion": "Exact closedP minimum squared edge distance642548131281/639631360000>1; a feasible positiveYscale, not a globally maximal-scale proof."
+    }
+  },
+  "preservation": {
+    "wholeRawPAndQSameAffine": true,
+    "other23RawAnd41PExact": true,
+    "sourceHeadFixed": true,
+    "sourceFlagsPreserved": true,
+    "empty16Retained": true,
+    "newP": 0,
+    "trim": 0,
+    "bridge": 0,
+    "newEngine": 0
+  },
+  "evidence": {
+    "originalClock": {
+      "path": "docs/hanja-official-media-compare-u8819-2026-10-29/native-clock-review.json",
+      "SHA256": "31f687be172285ba7d9f6ec5ed801dafdc3f098bb8dc7b94b41cc21b863eef39"
+    },
+    "nativeContact": {
+      "path": "docs/hanja-source-raw-compare-u8819-hkcs-contact-2026-10-29/native-contact-review.json",
+      "SHA256": "987c6e75d5bb5f3de0e90368efdf86347624cb6bc191b624db7a324eeba5509c"
+    },
+    "previousP1P1Contact": {
+      "path": "docs/hanja-source-raw-compare-u8819-hkcs-individual-2026-10-26/roof-hook-contact-certificate.json",
+      "SHA256": "f4f4a0d2124a3badcbc04b8c3548f66a74c7db298fe28f5d6a3d4d50dcbb24e3"
+    }
+  },
+  "locallyAuthoredRoot": true,
+  "mixedParts": false,
+  "originalWhole": false,
+  "isOriginalEngineCapture": false,
+  "sourceTraceDescribesAuthoredWhole": false,
+  "nativeApproval": false,
+  "runtimeApplied": false
+}

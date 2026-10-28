@@ -1,0 +1,87 @@
+{
+  "schema": "hanja-bounded-static-candidate-preparation/v1",
+  "glyph": "蠙",
+  "checks": {
+    "materializer": {
+      "passed": true,
+      "glyph": "蠙",
+      "variants": [
+        "original",
+        "bbox",
+        "actual"
+      ],
+      "shape": [
+        24,
+        24,
+        43
+      ],
+      "onlyRaw11Changed": true,
+      "other23RawExact": true,
+      "sourceFlagsPreserved": true,
+      "sourceTopHeadFixed": true,
+      "engine": 0,
+      "privateFetch": 0,
+      "server": 0,
+      "nativeApproval": false
+    },
+    "comparisonContract": {
+      "guardPass": true,
+      "glyph": "蠙",
+      "variants": [
+        "original",
+        "bbox",
+        "actual"
+      ],
+      "catalog": 20,
+      "domesticSelectionClips": 20,
+      "raw": 24,
+      "calls": 24,
+      "P": 43,
+      "wholeCurrentPrefixContract": "PASS",
+      "HTTP": 0,
+      "server": 0,
+      "sourceGroupingApproved": false,
+      "nativeApproval": false,
+      "runtimeApplied": false
+    }
+  },
+  "files": [
+    {
+      "path": "docs/hanja-authored-ownstroke-u8819-roof-hook-separated-2026-10-29/recipe.json",
+      "SHA256": "d357a3a6b7e81ffb29cb3c7fc717267675af4c23a2e93c7140af2abb061b4fe6"
+    },
+    {
+      "path": "docs/hanja-authored-ownstroke-u8819-roof-hook-separated-2026-10-29/public-contact-math.json",
+      "SHA256": "f03b7f2482185d187e9297141bbed227821d4f1e60963ab74c90bb889e06e577"
+    },
+    {
+      "path": "docs/hanja-authored-ownstroke-u8819-roof-hook-separated-2026-10-29/materialize-draft.py",
+      "SHA256": "3332fdd6c0ea2d2191543c0fa93e4b160f38bd018a8d9a92539464b5d92b7bb5"
+    },
+    {
+      "path": "docs/hanja-authored-ownstroke-u8819-roof-hook-separated-2026-10-29/roof-hook-pair.html",
+      "SHA256": "6752202fee2982bfd46640a5e28480a6e5bf7ad485eb190fc7183191fc89a4a6"
+    },
+    {
+      "path": "docs/hanja-authored-ownstroke-u8819-roof-hook-separated-2026-10-29/compare.py",
+      "SHA256": "340bbcd92a761514f084d1177f8ac41db7719e94317de59b0fa1af04a6531057"
+    },
+    {
+      "path": "docs/hanja-authored-ownstroke-u8819-roof-hook-separated-2026-10-29/config.json",
+      "SHA256": "05d9d23725400e2b3f801609adfd43dae4777cc9a6693bab266725ecf901b272"
+    }
+  ],
+  "sourceGeometry": "원본 raw11의 두 P와 Q 전체에 같은 양의 행렬만 적용. 다른23raw/41P 불변.",
+  "preferredCandidate": "actual",
+  "actualMinimumSquaredGap": "642548131281/639631360000",
+  "scope": {
+    "exactMinimumGapNumericalClaim": "exact rational closed-polygon squared distance > 1",
+    "scaleOptimality": false,
+    "shapeApproval": false,
+    "mappingApproval": false,
+    "nativeApproval": false,
+    "runtimeApplied": false
+  },
+  "serverStarted": false,
+  "buildExecuted": false
+}
