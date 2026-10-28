@@ -1,0 +1,92 @@
+{
+  "schema": "hanja-locally-authored-terminal-overrides/v1",
+  "date": "2026-10-28",
+  "glyph": "燄",
+  "locallyAuthoredRoot": true,
+  "authored": true,
+  "mixedParts": true,
+  "originalWhole": false,
+  "publicCanonicalRoot": false,
+  "root": "local_u71c4_terminal0_20261028",
+  "originalRoot": "u71c4",
+  "originalSource": {
+    "path": "docs/hanja-goal-glyphwiki-batch725-2026-10-12/sources.json",
+    "SHA256": "6b71a63de83e55275b3ad82463ae3a5e25ba2e50d0dab5128a608fcb50ba59c0"
+  },
+  "baselineFull5": {
+    "path": "docs/hanja-source-full5-three-candidates-2026-10-28/engine-whole-u71c4.json",
+    "SHA256": "0c217263017c7fa574185ab550dac4b16aa561bb5a63cf77a24625a57a65f30d"
+  },
+  "allowedLogicalSlot": 2,
+  "allowedRawGroupsZeroBased": [
+    1,
+    2
+  ],
+  "changedNumericSourceCell": {
+    "originalOwner": "cdp-8b6c-03",
+    "localOwner": "local_cdp-8b6c-03_terminal0_20261028",
+    "rowOneBased": 3,
+    "fieldOneBased": 3,
+    "from": "4",
+    "to": "0",
+    "before": "2:22:4:159:40:153:73:133:82",
+    "after": "2:22:0:159:40:153:73:133:82",
+    "coordinateTokensUnchanged": true
+  },
+  "referenceRewires": [
+    {
+      "originalOwner": "u4eba-03-itaiji-001",
+      "localOwner": "local_u4eba-03-itaiji-001_terminal0_20261028",
+      "rowOneBased": 1,
+      "referenceFieldOneBased": 8,
+      "from": "cdp-8b6c-03",
+      "to": "local_cdp-8b6c-03_terminal0_20261028",
+      "allNumericCellsUnchanged": true
+    },
+    {
+      "originalOwner": "u81fd-j",
+      "localOwner": "local_u81fd-j_terminal0_20261028",
+      "rowOneBased": 1,
+      "referenceFieldOneBased": 8,
+      "from": "u4eba-03-itaiji-001",
+      "to": "local_u4eba-03-itaiji-001_terminal0_20261028",
+      "allNumericCellsUnchanged": true
+    },
+    {
+      "originalOwner": "u71c4",
+      "localOwner": "local_u71c4_terminal0_20261028",
+      "rowOneBased": 1,
+      "referenceFieldOneBased": 8,
+      "from": "u81fd-j",
+      "to": "local_u81fd-j_terminal0_20261028",
+      "allNumericCellsUnchanged": true
+    }
+  ],
+  "records": {
+    "local_cdp-8b6c-03_terminal0_20261028": {
+      "name": "local_cdp-8b6c-03_terminal0_20261028",
+      "related": "u2008a",
+      "data": "2:0:7:89:18:68:68:16:100$1:0:2:79:40:159:40$2:22:0:159:40:153:73:133:82"
+    },
+    "local_u4eba-03-itaiji-001_terminal0_20261028": {
+      "name": "local_u4eba-03-itaiji-001_terminal0_20261028",
+      "related": "u4eba",
+      "data": "99:0:0:0:0:200:200:local_cdp-8b6c-03_terminal0_20261028"
+    },
+    "local_u81fd-j_terminal0_20261028": {
+      "name": "local_u81fd-j_terminal0_20261028",
+      "related": "u81fd",
+      "data": "99:0:0:0:0:200:200:local_u4eba-03-itaiji-001_terminal0_20261028:0:0:0$99:0:0:5:80:200:191:u81fc-var-003:0:0:0"
+    },
+    "local_u71c4_terminal0_20261028": {
+      "name": "local_u71c4_terminal0_20261028",
+      "related": "u71c4",
+      "data": "99:0:0:4:0:97:200:local_u81fd-j_terminal0_20261028$99:0:0:18:0:198:200:u708e-02"
+    }
+  },
+  "originalRecordsEdited": false,
+  "sourceCoordinatesInventedOrChanged": false,
+  "authoredGeometryApproved": false,
+  "nativeApproval": false,
+  "runtimeApplied": false
+}
