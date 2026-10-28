@@ -1,0 +1,11 @@
+*** Begin Patch
+*** Update File: lib/hanja-strokes.ts
+@@
+ import { HANJA_DICTIONARY_GLYPHWIKI_BATCH1526_STROKES } from './hanja-stroke-dictionary-glyphwiki-batch1526.ts'
++import { HANJA_DICTIONARY_GLYPHWIKI_BATCH1528_STROKES } from './hanja-stroke-dictionary-glyphwiki-batch1528.ts'
+ import { HANJA_DICTIONARY_GLYPHWIKI_BATCH1518_STROKES } from './hanja-stroke-dictionary-glyphwiki-batch1518.ts'
+@@
+   ...HANJA_DICTIONARY_GLYPHWIKI_BATCH1526_STROKES,
++  ...HANJA_DICTIONARY_GLYPHWIKI_BATCH1528_STROKES,
+   ...HANJA_DICTIONARY_GLYPHWIKI_BATCH1518_STROKES,
+*** End Patch
