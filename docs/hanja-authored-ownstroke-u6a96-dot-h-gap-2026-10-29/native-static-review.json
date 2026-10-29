@@ -1,0 +1,78 @@
+{
+  "schema": "hanja-bounded-native-static-review/v1",
+  "glyph": "檖",
+  "reviewedAt": "2026-10-29",
+  "reviewer": "ROOT",
+  "status": "pass-changed-raw17-contact-static-only",
+  "nativeBrowserPanel": true,
+  "configSHA256": "f17c5cfa489ce27c27ab509b0291d8b420b5c8580d0265f5395008911d829a67",
+  "fixtureSHA256": "d667c0b8cadab7c8a939e29edd438c686b92d26b780c6385ff00125606f1bb3b",
+  "recipeSHA256": "a05a95a8abc6c27e1461499daae2ca687453964277b2a3aedda94d7e058fc319",
+  "views": [
+    {
+      "route": "/whole",
+      "panels": [
+        "domestic17 whole",
+        "original default whole",
+        "authored candidate whole"
+      ],
+      "px": 520
+    },
+    {
+      "route": "/public-pair",
+      "panels": [
+        "original whole",
+        "candidate whole",
+        "original raw17",
+        "candidate raw17",
+        "original raw4+17+18",
+        "candidate raw4+17+18"
+      ],
+      "px": 520
+    }
+  ],
+  "sourceShape": {
+    "raw": 20,
+    "calls": 21,
+    "P": 40
+  },
+  "changedRawOneBased": 17,
+  "matrixExact": [
+    "212/239",
+    "0",
+    "0",
+    "1",
+    "12582/1195",
+    "0"
+  ],
+  "indexConvention": {
+    "historicalPairZeroBased": [
+      3,
+      16
+    ],
+    "actualPairOneBased": [
+      4,
+      17
+    ]
+  },
+  "observations": [
+    "ROOT directly confirmed the candidate removes the unwanted original dot raw4 to horizontal raw17 contact and shows the authored gap1.",
+    "The horizontal raw17 retains its own contact with vertical raw18.",
+    "The whole shape is appropriate within the inspected changed-contact scope; this does not approve every one of17 source roles."
+  ],
+  "approvalScope": "Changed raw17 whole-positiveX placement, dot4/H17 separation and H17/V18 contact only. Full17 mapping, originalclock direction correspondence and actual temporal renderer remain pending.",
+  "oldHoldPreserved": true,
+  "originalWhole": false,
+  "isOriginalEngineCapture": false,
+  "full17MappingApproved": false,
+  "temporalApproved": false,
+  "runtimeApplied": false,
+  "privateBodiesSaved": false,
+  "cleanup": {
+    "rootServerPID": 25410,
+    "port": 58791,
+    "serverStopped": true,
+    "source": "ROOT handoff confirms server25410/58791 stopped; no tab id was supplied.",
+    "tabIdentityConfirmed": false
+  }
+}

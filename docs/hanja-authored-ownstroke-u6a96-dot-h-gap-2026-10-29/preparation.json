@@ -1,0 +1,74 @@
+{
+  "schema": "hanja-public-source-whole-affine-static-preparation/v1",
+  "glyph": "檖",
+  "date": "2026-10-29",
+  "status": "unapproved-static-candidate-ready-for-root-direct-review",
+  "sourceRoot": "u6a96",
+  "locallyAuthoredRoot": "lingo-u6a96-raw17-whole-X-gap1-draft",
+  "counts": {
+    "catalogLogical": 17,
+    "sourceRaw": 20,
+    "sourceDrawingCalls": 21,
+    "sourcePolygons": 40
+  },
+  "indexing": {
+    "legacyRawContactZeroBased": [
+      3,
+      16
+    ],
+    "actualOneBasedPair": [
+      4,
+      17
+    ],
+    "sourceVariantFailureNotTransferred": true,
+    "twoWalkingDotsAndTopStartSweepUnchanged": true
+  },
+  "inputs": {
+    "docs/hanja-goal-glyphwiki-batch672-2026-10-11/engine-whole-u6a96.json": "4d80b42a99238926942a87a33a5af38c3f5838a04a3fd350a73aa54101523a4d",
+    "docs/hanja-goal-glyphwiki-batch672-2026-10-11/progressive-review.json": "a9e8e2fd77d90d2f38cbeabd76b4e3ac524e17f96b547a90b4dcbe0076c7d8b7",
+    "docs/hanja-authored-ownstroke-u6a96-dot-h-gap-2026-10-29/recipe.pending.json": "a05a95a8abc6c27e1461499daae2ca687453964277b2a3aedda94d7e058fc319",
+    "docs/hanja-authored-ownstroke-u6a96-dot-h-gap-2026-10-29/fixture.pending.json": "d667c0b8cadab7c8a939e29edd438c686b92d26b780c6385ff00125606f1bb3b",
+    "docs/hanja-authored-ownstroke-u6a96-dot-h-gap-2026-10-29/materialize.py": "b9c914f7cf3020f6a08ea6366f31938e62a296558f13a911c45ed3ee4800d887",
+    "docs/hanja-authored-ownstroke-u6a96-dot-h-gap-2026-10-29/compare.py": "0d983fe6592ae6e2589336b8650c0f0a787cac0082baa4dd1f4202174bade1ca",
+    "docs/hanja-authored-ownstroke-u6a96-dot-h-gap-2026-10-29/config.json": "f17c5cfa489ce27c27ab509b0291d8b420b5c8580d0265f5395008911d829a67",
+    "docs/hanja-authored-ownstroke-u6a96-dot-h-gap-2026-10-29/public-pair.html": "e4f50a42c841aeb8bbaa6f93f341c5c115b535d1be3aeead8b3b79c2d9a2b473"
+  },
+  "checks": {
+    "materializerExit": 0,
+    "actualStaticPageSelection": "PASS",
+    "sourceEngineRuns": 0,
+    "privateFetches": 0,
+    "serverStarted": 0,
+    "wholeChangedRaw": 17,
+    "unchangedOtherRaw": 19,
+    "rawAndTracePreservedExceptCommonWholeAffine": true,
+    "removedRaw4ContactArea": "48919/8280",
+    "newRaw4ContactArea": "0",
+    "wholeFilledBBoxXGapToRaw4": "1",
+    "raw18ContactAreaBefore": "32",
+    "raw18ContactAreaAfter": "32",
+    "newUnexpectedContactsIncludingBoundary": [],
+    "method": "Exact rational clipping of every public polygon against old/new raw17 rectangles. New rectangle is a subset of original H rectangle; an invertible positive whole affine transforms the entire P and line guide together. This is not partial deletion/cropping."
+  },
+  "limits": [
+    "Original default whole HOLD remains preserved; explicit authored geometry only.",
+    "Existing static direction3pens/whole review is reused. Complete original17-clock and full mapping must be checked before temporal geometry approval.",
+    "No default-source failure transferred to alternate roots, and alternate wrong dot counts/sweep origin are not reused.",
+    "Exact gap/contact proofs do not establish fresh native whole compatibility, macro order or temporal continuity."
+  ],
+  "review": {
+    "whole": "/whole",
+    "publicControls": "/public-pair",
+    "required": "ROOT inspect whole, raw17 horizontal shape/length, visible raw4 separation, and preserved raw17+18 joint.",
+    "startup": "python3 docs/hanja-authored-ownstroke-u6a96-dot-h-gap-2026-10-29/compare.py --config-sha f17c5cfa489ce27c27ab509b0291d8b420b5c8580d0265f5395008911d829a67 --port 0"
+  },
+  "approval": {
+    "whole": false,
+    "mapping": false,
+    "temporal": false,
+    "runtime": false,
+    "registration": false
+  },
+  "sharedChanges": 0,
+  "build": false
+}
