@@ -1,0 +1,96 @@
+{
+  "schema": "hanja-fixed-source-whole-positive-affine-recipe/v1",
+  "glyph": "檖",
+  "date": "2026-10-29",
+  "status": "math-ready-pending-root-static-review",
+  "baseFixture": {
+    "path": "docs/hanja-authored-ownstroke-u6a96-dot-h-gap-2026-10-29/fixture.pending.json",
+    "SHA256": "d667c0b8cadab7c8a939e29edd438c686b92d26b780c6385ff00125606f1bb3b"
+  },
+  "originalSource": {
+    "file": "docs/hanja-goal-glyphwiki-batch672-2026-10-11/engine-whole-u6a96.json",
+    "sha256": "4d80b42a99238926942a87a33a5af38c3f5838a04a3fd350a73aa54101523a4d",
+    "root": "u6a96",
+    "rawGroups": 20,
+    "drawingCalls": 21,
+    "polygons": 40
+  },
+  "changedRawOneBased": 10,
+  "matrixExact": [
+    "1",
+    "0",
+    "0",
+    "8749/9215",
+    "0",
+    "6990/1843"
+  ],
+  "anchor": {
+    "originalFirstGuideY": "75",
+    "fixed": true
+  },
+  "criterion": {
+    "sourceWholeHookXRange": [
+      "1157/10",
+      "1567/10"
+    ],
+    "sourceBottom20MinimumYWithinThatXStrip": "15969/95",
+    "originalWholeHookMaximumY": "172",
+    "candidateMaximumY": "15874/95",
+    "verticalClearanceWithinHookXStrip": "1",
+    "derivation": "Keep original Q startY75 fixed; scale=(15874/95-75)/(172-75)=8749/9215, translationY=75*(1-scale)=6990/1843. X unchanged. This is a conservative public-source vertical clearance criterion, not a private fit or exact minimum Euclidean distance claim."
+  },
+  "terminalVersusBody": {
+    "raw10TerminalCall2VsRaw20BeforePositivePpairAreaSum": "2260021/3126200",
+    "raw10BodyCall1VsRaw20BeforePositivePpairAreaSum": "0",
+    "afterWholeRaw10Vs20PositivePpairAreaSum": "0"
+  },
+  "contactGraph": {
+    "before": [
+      9,
+      11,
+      12,
+      20
+    ],
+    "after": [
+      9,
+      11,
+      12
+    ],
+    "removed": [
+      20
+    ],
+    "added": [],
+    "other19RawCompared": true,
+    "retainedPositivePpairAreaSums": {
+      "raw9": "47454985624409181/11420292332131400",
+      "raw11": "21125606976862449350567926457407/479721665209355061122527594000",
+      "raw12": "8016787201420907455370936131/88475580467935483834000000"
+    },
+    "method": "Exact Fraction source polygon coordinates; simple polygon ears and convex clipping; sum of positive polygon-pair areas is not claimed as union area."
+  },
+  "preserve": [
+    "Raw10 whole4P plus both original quadratic guides transformed together; same flags/order/P count/X width.",
+    "Other19 current-v3 raw groups/traces unchanged, including prior approved raw17 positiveX gap correction.",
+    "Original source rows except10/17 stay exact.",
+    "No local trim, new filled P, guide reversal or bridge."
+  ],
+  "identity": {
+    "locallyAuthoredRoot": "lingo-u6a96-raw17-X-raw10-Y-gap1-v4-draft",
+    "originalWhole": false,
+    "isOriginalEngineCapture": false,
+    "mixedParts": false
+  },
+  "approval": {
+    "static": false,
+    "roleMappingV3ReusedUnchangedOther16": true,
+    "newLogical9Static": false,
+    "temporal": false,
+    "runtime": false
+  },
+  "requiredViews": [
+    "Whole domestic/original/prior/candidate",
+    "logical9 current and prefix9",
+    "lowerDL11 prefix11",
+    "finalprefix17 and raw10/raw20 public pair"
+  ]
+}
