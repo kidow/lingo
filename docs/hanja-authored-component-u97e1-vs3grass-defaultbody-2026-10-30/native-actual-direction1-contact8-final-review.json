@@ -1,0 +1,45 @@
+{
+  "glyph": "韡",
+  "reviewedAt": "2026-10-30",
+  "status": "PASS",
+  "scope": "Isolated actual StrokeOutlines for an explicit mixed-source dictionary20 variant, preserving catalog21. Not an assertion that official21 stroke order was established.",
+  "inputs": {
+    "fixtureSHA256": "5cf8fbeb85614b9602b86f5b2132c7293fd65c535bc10d4a2c45168df3edc041",
+    "geometrySHA256": "3e4ef908cfceecddcaf1e70ba3cd460efc7eae13ccf557722c434c67e4087be1",
+    "rendererSHA256": "37306a42416754fe932a76d09caf2075dbfdde10c92a1c90c71f00eb961ebb2e",
+    "helperSHA256": "180be55e2caa9bf323aec0ebdd562c8e70d2411f349b91429d9df468f6d6b51d",
+    "discreteHarnessSHA256": "3d4e3dd5830e5b34ef342848bfae697966b0695d26ef1e007f36a8a8f5681dc9",
+    "finalHarnessSHA256": "f29b532076a86cada1a23074a7a27698e405cf67ef2cb51b9a54d90c67f44fe1",
+    "finalProfileSHA256": "21f0df5cff1480c5e9a544e51c0cd3aa7c1368cdbf79b5eb80b94203a87e0bee"
+  },
+  "nativeReview": {
+    "browser": "Codex browser panel",
+    "discreteTab": "321",
+    "freshDiscreteViews": 44,
+    "groups": {"pen1Compact": 9, "pen1Main520": 3, "pen8FormerFailures": 3, "pen8PhaseBoundaries": 6, "pen8ContactCompact": 11, "pen8CompoundCompact": 9, "pen8Main520": 3},
+    "observations": "Pen1 now reveals downward along the original dominant source axis. Pen8 retains the original V boundary and grows the H head from proven strict contact before extending right. Reviewed starts, phase changes and endpoints have no detached H fragment, duplicate paint or missing final source outline.",
+    "observerRepair": {
+      "initialNaturalResult": "Visual end PASS; requestedFrame remained false because the natural start clock was incorrectly frozen as a fixed sample. This was not accepted as final PASS.",
+      "change": "Only the 韡 ref fixedClockSample predicate now excludes natural mode. Observer assertions, tolerances, renderer, controls and timings are unchanged; discrete44 evidence is reused under byte-preservation proof.",
+      "proof": "../hanja-display-contact-u97e1-pen8-2026-10-30/observer-natural-clock-check.json"
+    },
+    "selectedPenNaturalPlayback": {"tab": "322", "pen": 8, "views": 4, "observedProgress": [0.0826875, 1, 0.06907500000149003, 1], "status": "PASS", "scope": "Selected pen start/end and replay start/end after observer correction; not whole-glyph autoplay."},
+    "finalStableBadChecks": [],
+    "runtimeErrors": [],
+    "consoleErrors": [],
+    "privatePixelsPersisted": false
+  },
+  "reusedBaselineEvidence": {
+    "file": "native-actual-cardinal-baseline-hold-review.json",
+    "unchangedViews": 168,
+    "groups": {"unaffectedPens18Compact": 162, "unchangedPen2And5Boundaries": 6},
+    "condition": "Original paths and other22 masks unchanged. The pen1 display-direction correction and pen8 contact policy were reviewed fresh. Original192 HOLD is not blanket-reclassified. Q coverage is N/A because Q count is0."
+  },
+  "focusedTests": {"passed": 13, "failed": 0, "durationMs": 127.784125, "scope": "New 韡 helper5 and unchanged 舝 guards8; reused unchanged run."},
+  "runtimeAppliedAtNativeReview": false,
+  "actualAppUIFresh": false,
+  "wholeGlyphNaturalAutoplayTest": false,
+  "originalMicroclockEquivalence": false,
+  "buildRun": false,
+  "wholeProjectTypeCheckRun": false
+}

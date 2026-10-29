@@ -1,0 +1,40 @@
+{
+  "schema": "hanja-observer-natural-clock-isolation-check/v1",
+  "date": "2026-10-30",
+  "glyph": "韡",
+  "cause": "Natural start numeric currentTime was misclassified as a fixed board snapshot; SVG parent ref retained start time while child renderer advanced.",
+  "change": "Only U97e1 ref fixedClockSample adds mode!=='natural'&&; fixed board snapshots remain unchanged.",
+  "HBeforeSHA256": "3d4e3dd5830e5b34ef342848bfae697966b0695d26ef1e007f36a8a8f5681dc9",
+  "HAfterSHA256": "f29b532076a86cada1a23074a7a27698e405cf67ef2cb51b9a54d90c67f44fe1",
+  "profileBeforeSHA256": "df5c8b67884774666b976ac571cc27743014688561b115f6e8967546f12cc2d7",
+  "profileAfterSHA256": "21f0df5cff1480c5e9a544e51c0cd3aa7c1368cdbf79b5eb80b94203a87e0bee",
+  "files": [
+    "docs/hanja-display-contact-u97e1-pen8-2026-10-30/observer-natural-clock.pending.patch",
+    "docs/hanja-display-contact-u97e1-pen8-2026-10-30/observer-natural-clock-profile.pending.patch",
+    "docs/hanja-display-contact-u97e1-pen8-2026-10-30/observer-natural-clock-check.json"
+  ],
+  "checks": {
+    "exactForwardInverse": true,
+    "refOnlyOneCondition": true,
+    "observerFunctionByteUnchanged": true,
+    "allControlsRenderingClockFunctionsByteUnchanged": true,
+    "oldFailureReproduced": true,
+    "naturalEndExactPass": true,
+    "fixedBoardSnapshotPreserved": true,
+    "wrongNaturalEndStillRejected": true,
+    "epsilonChanged": false,
+    "SSR": 0
+  },
+  "native": {
+    "old44DiscreteVisualEvidenceEligibleForReuse": true,
+    "naturalFirstAndReplayVisualPASSButRequestedFrameHOLDPreserved": true,
+    "requiredFreshNaturalViews": 4,
+    "actualTemporalApproved": false
+  },
+  "sharedFilesChanged": false,
+  "RChanged": false,
+  "helperChanged": false,
+  "SSRRepeated": false,
+  "server": 0,
+  "runtimeApplied": false
+}

@@ -1,0 +1,122 @@
+{
+  "schema": "hanja-exact-wei8-renderer-pending-integration/v1",
+  "date": "2026-10-30",
+  "glyph": "韡",
+  "correctedFixture": {
+    "path": "docs/hanja-authored-component-u97e1-vs3grass-defaultbody-2026-10-30/fixtures-execution-direction1-down.json",
+    "SHA256": "5cf8fbeb85614b9602b86f5b2132c7293fd65c535bc10d4a2c45168df3edc041"
+  },
+  "geometrySHA256": "3e4ef908cfceecddcaf1e70ba3cd460efc7eae13ccf557722c434c67e4087be1",
+  "R": {
+    "path": "components/hanja/stroke-outlines.tsx",
+    "beforeSHA256": "fc6821a8b532302702be06077828b85827850906251523ae22eac678e5d17fce",
+    "afterSHA256": "37306a42416754fe932a76d09caf2075dbfdde10c92a1c90c71f00eb961ebb2e",
+    "patch": "docs/hanja-display-contact-u97e1-pen8-2026-10-30/renderer.pending.patch",
+    "patchSHA256": "d5fb67b6761198c68c9640245e47e44f4e8d8b0b7bd9310ad213086a1956a9cf"
+  },
+  "production": {
+    "patch": "docs/hanja-display-contact-u97e1-pen8-2026-10-30/production.pending.patch",
+    "patchSHA256": "7e1894bc55b6343c1fc56c083cc6f01c876b0e87c3999b3a1217ebd26bcca4c2",
+    "helper": {
+      "path": "lib/hanja-stroke-contact-phase-u97e1-pen8.ts",
+      "SHA256": "180be55e2caa9bf323aec0ebdd562c8e70d2411f349b91429d9df468f6d6b51d"
+    },
+    "test": {
+      "path": "lib/hanja-stroke-contact-phase-u97e1-pen8.test.ts",
+      "SHA256": "34c81f8ffc3f278abc5ded2fc35413df89b4662399f88c9b241932cdb8657b1a"
+    },
+    "docImportOnlyNormalized": true
+  },
+  "fingerprint": "d22489facaebd816c2a69757bbac6bfdd3f517d9427525ae4653d0553ef3b869",
+  "API": {
+    "input": "REVIEWED_U97E1_PEN8_INPUT",
+    "context": "makeReviewedU97e1Pen8Context(input,strokes)",
+    "sample": "sampleReviewedU97e1Pen8Frame(context,progress)",
+    "fingerprint": "U97E1_PEN8_FINGERPRINT",
+    "frameFields": [
+      "pen",
+      "progress",
+      "phase",
+      "fingerprint",
+      "baseOutline",
+      "activeOutline",
+      "mode",
+      "local",
+      "rect"
+    ],
+    "phases": [
+      "blank",
+      "v-down",
+      "v-complete",
+      "left-head",
+      "right-body",
+      "complete"
+    ],
+    "unknownContextOrChangedSource": "null",
+    "p0": "both original D hidden",
+    "p1": "original V/H D each once; no clip",
+    "sharedRendererPatch": "not written until ROOT provides actual R after 舝"
+  },
+  "DOM": {
+    "context": "u97e1-sourceP38-pen8-contact",
+    "prefix": "data-u97e1-pen8-contact-",
+    "outlineStroke": 8,
+    "ownerFrameSuffix": "-u97e1-pen8-contact-frame-phase-count-manual-elapsed",
+    "fields": [
+      "context",
+      "fingerprint",
+      "progress",
+      "phase",
+      "frame",
+      "status"
+    ],
+    "status": "source-bound",
+    "rejectedStatus": "rejected",
+    "parts": [
+      "complete-V",
+      "full",
+      "source-strip"
+    ],
+    "clipIdSuffix": "-rect",
+    "clipRectIdSuffix": "-rect-box",
+    "clipPathUnits": "userSpaceOnUse",
+    "sourceD1Each": true,
+    "p0": "no colored path",
+    "p1": "V+H direct original D, no defs/clip"
+  },
+  "loaderRequired": {
+    "importAlias": {
+      "file": "lib/hanja-stroke-contact-phase-u97e1-pen8.ts",
+      "from": "from'./hanja-stroke-outline.ts'",
+      "to": "from'@/lib/hanja-stroke-outline'",
+      "exactOccurrences": 1
+    },
+    "expectedClosure": "previous actual 舝 closure +1; H collector must confirm",
+    "HChanged": false,
+    "HpatchWritten": false
+  },
+  "checks": {
+    "exactForwardInverse": true,
+    "Rsyntax": true,
+    "existingNamedFunctionBodiesUnchanged": 421,
+    "existingU97ceBodyUnchanged": true,
+    "contextNameCollision": false,
+    "focusedHelperTests5Reused": true,
+    "selectedVirtualProductionRoots": 3,
+    "selectedDiagnostics": 0,
+    "transitiveUnchangedModulesNotDeclaredPassing": true,
+    "fullProjectTypeCheck": false,
+    "SSR": 0,
+    "HTTP": 0,
+    "server": 0
+  },
+  "limits": {
+    "authorContactDisplayNotPublisherMicroclock": true,
+    "sourceGuideGapUnchanged": true,
+    "actualTemporalApproved": false,
+    "nativeApproval": false,
+    "runtimeApplied": false,
+    "sharedFilesActuallyWritten": false
+  },
+  "next": "ROOT applies new helper/test then exact renderer patch; H/profile agent uses new context only after actual pins."
+}
