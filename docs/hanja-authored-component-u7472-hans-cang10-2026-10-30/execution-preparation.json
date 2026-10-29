@@ -1,0 +1,99 @@
+{
+  "schema": "hanja-selected-source-execution-preparation/v1",
+  "date": "2026-10-30",
+  "glyph": "瑲",
+  "status": "source-selected-and-actual-gate-PASS-temporal-unapproved",
+  "files": {
+    "docs/hanja-authored-component-u7472-hans-cang10-2026-10-30/execution-source-plan.pending.json": "1c17d8cbd12e1ba8a9b48b7f6a9fdb8839c69beb8de63e322190d1c6dbd301a5",
+    "docs/hanja-authored-component-u7472-hans-cang10-2026-10-30/prepare-execution-draft.py": "f2f89bf4e504cb264e2fba4d686cf01a246a198acd1b679785211eb526f0cba1",
+    "docs/hanja-authored-component-u7472-hans-cang10-2026-10-30/fixtures-execution-draft.json": "c15216756392966259d42798776ca7a881a235714a9b70e6f214a720a5fdef8a",
+    "docs/hanja-authored-component-u7472-hans-cang10-2026-10-30/execution-draft-check.json": "b76dd8e91fa09fa193e342084dbb7fd30480a49823fff83defd3b19ce94eb06f"
+  },
+  "fixture": {
+    "path": "docs/hanja-authored-component-u7472-hans-cang10-2026-10-30/fixtures-execution-draft.json",
+    "SHA256": "c15216756392966259d42798776ca7a881a235714a9b70e6f214a720a5fdef8a",
+    "key": "strokes",
+    "geometrySHA256": "cfbf5d321e00d7853e5c6e3a28e9675bf99c0e94f5f55837258f8c0aeace30f6",
+    "logical": 14,
+    "masks": 14,
+    "filledSubpaths": 18,
+    "curves": 11,
+    "cardinals": 3,
+    "sourceAffineMasks": 10,
+    "compounds": 0
+  },
+  "sourceSelection": {
+    "recipientRawLogicalOrder": [
+      1,
+      3,
+      2,
+      4
+    ],
+    "recipientRawGroupsAndTracePreserved": true,
+    "recipientEmptyRaw5ProvenanceRetained": true,
+    "donorComplete10OriginalDAndGuidePreserved": true,
+    "donorFilledKinds": {
+      "C": 9,
+      "Q": 1,
+      "quadraticSourceStroke": 3
+    },
+    "allDonorPointsAndGuidesSameExactAffine": true,
+    "frame": "SVG1024 y-down /10→source100; filledmatrixC=M200/2; maskonlyT=10C; exactT*N=C; noYflip"
+  },
+  "actualGateCheck": {
+    "actualOutlineStartClipPass": true,
+    "gateMasks": 11,
+    "sourceAffineMasks": 10,
+    "cardinals": 3,
+    "selectedDonorDAndGuideOriginalBytesExact10": true,
+    "originalKinds": {
+      "C": 9,
+      "Q": 1
+    },
+    "coverageSourcePinsUnchanged": 3,
+    "coverageGeometryRerun": false,
+    "SSR": 0,
+    "server": 0
+  },
+  "coverageReuse": {
+    "path": "docs/hanja-authored-component-u7472-hans-cang10-2026-10-30/source-mask-coverage-preflight.json",
+    "SHA256": "48b43fdc16bbae7746008c12b0d58d5b9358be8877c3ff392ce13f31265a329a",
+    "counts": {
+      "masks": 11,
+      "pass": 11,
+      "outlier": 0,
+      "unproved": 0
+    },
+    "originalInputSHA256": {
+      "docs/hanja-authored-component-u7472-hans-cang10-2026-10-30/donor-source-record.json": "fefd99037c0d6b54e2a42809634f905b031370099628e6b1d47653d4fec6f155",
+      "docs/hanja-authored-component-u7472-hans-cang10-2026-10-30/recipe.json": "9c0e8572a355973c37cd7f4edf4b40ad2700e9ecd6ef25de10bb1cf1abe10b57",
+      "docs/hanja-goal-glyphwiki-batch910-2026-10-13/engine-proof.json": "af8725be5086be13abba604572e76bad4ed1abf342557f3287556e9d81462e6e"
+    },
+    "all3SourcePinsVerifiedUnchanged": true,
+    "sourceWidthPaddingPolicyUnchanged": true,
+    "geometryCoverageRerun": false,
+    "QFilledParserAlreadySupported": true
+  },
+  "limits": {
+    "boundedSourceFontDifference": "Source14macro static compatibility is bounded: donor body H9 internal right gap, font weight/proportions and complete donor brush spacing differ from publisher; no contour/connectivity identity.",
+    "sourceContourIdentity": false,
+    "publisherMicroclockEquivalent": false,
+    "initialApproved": false,
+    "transitionApproved": false,
+    "endingApproved": false,
+    "actualRendererVerified": false,
+    "runtimeApplied": false,
+    "newEngine": false,
+    "newP": false,
+    "newGuide": false,
+    "newBridge": false,
+    "sourcePrivateAssetFetch": 0,
+    "serverStarts": 0,
+    "sharedHChanged": false,
+    "sharedRChanged": false,
+    "registryChanged": false,
+    "buildRun": false,
+    "wholeProjectTypecheckRun": false
+  },
+  "next": "ROOT가麤corrected Hbase 확정후 신규瑲 exact Hcase/profile를 별도준비. 새native는leading/release/ending과declaredsourcefont차이를실제확인해야함."
+}
