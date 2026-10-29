@@ -1,0 +1,253 @@
+{
+  "schema": "hanja-root-bounded-actual-Q-contact-review/v1",
+  "date": "2026-10-30",
+  "glyph": "盌",
+  "status": "all-planned-observations-complete-new-terminal-seam-hold",
+  "reviewer": "ROOT direct CUA",
+  "inputs": {
+    "H": {
+      "path": "scripts/hanja-actual-component-review.mjs",
+      "SHA256": "5bb2fc8e934ae690cda0dc2adaee0d25277bfc5402d17650ef0857421b1555ab"
+    },
+    "profile": {
+      "path": "docs/hanja-source-execution-u76cc-original-2026-10-29/actual-profile-Q-contact-start.json",
+      "SHA256": "56f1c85b2ac1c098fde54d756e310acfa301cc129ec28ba18888a950d428329c"
+    },
+    "R": {
+      "path": "components/hanja/stroke-outlines.tsx",
+      "SHA256": "6290c4be6cb0bdb2da97316f2010265bb35a618f646d4ec96bec4f0df659f7ec"
+    },
+    "QHelper": {
+      "path": "lib/hanja-stroke-contact-head-u76cc.ts",
+      "SHA256": "f58710447df95443c8804aa206e3d653bacd716a434faa111c780a171ec6744c"
+    },
+    "fold7Helper": {
+      "path": "lib/hanja-stroke-fold-contact-u55f8-u76cc.ts",
+      "SHA256": "a9c8033d2ce41fe513a78cad1f842ce415a5ac2ab815a4cd16d6dcbdfe46f50f"
+    },
+    "fixture": {
+      "path": "docs/hanja-source-execution-u76cc-original-2026-10-29/fixtures-execution-draft-width22.json",
+      "SHA256": "60f2b219228cfbd9a04363daf46541ababd2c0da6af8dc1d0072ae9e0600084d"
+    },
+    "geometrySHA256": "92d33e5d5498253de98ed0104a975bd713b2287498734a8fa293c587078c7dd5"
+  },
+  "startup": {
+    "SSR": 1,
+    "CJS": 394,
+    "ESM": 394
+  },
+  "freshObserved": {
+    "oldFailureSamples": {
+      "views": 2,
+      "CSS": 520,
+      "logicalProgresses": {
+        "pen2": 0.25,
+        "pen4": 0.375
+      },
+      "attached": true,
+      "discardedMainWholeCaptures": {
+        "views": 2,
+        "reason": "Whole main was captured after oldFAIL button; target sample was not confirmed. Both discarded and recaptured at correct sample positions.",
+        "counted": false
+      }
+    },
+    "QlocalCompact": {
+      "targets": [
+        2,
+        4
+      ],
+      "perTarget": 9,
+      "views": 18,
+      "CSS": 300,
+      "passed": true
+    },
+    "newHeadPhase": {
+      "targets": [
+        2,
+        4
+      ],
+      "perTarget": 3,
+      "views": 6,
+      "CSS": 300,
+      "passed": true
+    },
+    "logicalWholeCompact": {
+      "pens": [
+        2,
+        4
+      ],
+      "perPen": 9,
+      "views": 18,
+      "CSS": 150,
+      "passed": true
+    },
+    "affectedSourceGate": {
+      "targets": [
+        2,
+        4
+      ],
+      "perTarget": 3,
+      "views": 6,
+      "CSS": 300,
+      "passed": true
+    },
+    "aggregate": {
+      "views": 68,
+      "CSS": 240,
+      "stableStates": 69,
+      "bad": [],
+      "errors": [],
+      "passed": true
+    },
+    "mainStates": {
+      "names": [
+        "prefix1",
+        "prefix2",
+        "prefix3",
+        "prefix4",
+        "prefix5",
+        "idle",
+        "done",
+        "selected4zero"
+      ],
+      "views": 8,
+      "CSS": 520,
+      "passed": true
+    },
+    "finiteViews": 126,
+    "natural": {
+      "CSS": 520,
+      "runs": [
+        {
+          "pen": 2,
+          "start": {
+            "observed": true,
+            "progress": 0.17015,
+            "bad": [],
+            "errors": []
+          },
+          "end": {
+            "observed": true,
+            "progress": 1,
+            "bad": [],
+            "errors": []
+          }
+        },
+        {
+          "pen": 4,
+          "start": {
+            "observed": true,
+            "progress": 0.12645,
+            "bad": [],
+            "errors": []
+          },
+          "end": {
+            "observed": true,
+            "progress": 1,
+            "bad": [],
+            "errors": []
+          }
+        },
+        {
+          "pen": 7,
+          "start": {
+            "observed": true,
+            "progress": 0.1108125,
+            "bad": [],
+            "errors": []
+          },
+          "end": {
+            "observed": true,
+            "progress": 1,
+            "bad": [],
+            "errors": []
+          }
+        }
+      ],
+      "observedViews": 6,
+      "plannedViews": 6
+    },
+    "observedTotalViews": 132,
+    "additionalDiagnosis": {
+      "views": 2,
+      "countedInPlanned225": false,
+      "states": [
+        "natural4 ended",
+        "current4 global1"
+      ],
+      "observation": "Very thin white diagonal near lower-right V to left hook join; exactprefix4 did not show the line.",
+      "causeUnresolved": true,
+      "overallApprovalHeld": true
+    }
+  },
+  "reusedObserved": {
+    "record": {
+      "path": "docs/hanja-source-execution-u76cc-original-2026-10-29/native-actual-fold-contact-review.json",
+      "SHA256": "a08d69e3052ec6c67ac50b998c87dd4fc1b3b0e1f81ece56c6ece4ba72bc2450"
+    },
+    "sourceVersion": {
+      "R": "632b3d66a3cd8425d222eb7fedd3a7df7d404410f887011a9897e861f590a77e",
+      "H": "d41ff4d1450ca6520d6f3616d5ecadc7bae38a16b66f0ce1351927a699c0bfc8",
+      "profile": "4fe74a54c653b87e7246e31a063931eabf8750dae800ea2a3a595639a5595d21"
+    },
+    "unchangedEightPenCompact": {
+      "views": 72
+    },
+    "unaffectedFourGenericQGate": {
+      "views": 12
+    },
+    "sourceFullroundResidual": {
+      "views": 6,
+      "allBlank": true
+    },
+    "fold7OldFailureCritical": {
+      "views": 3,
+      "allAttached": true
+    },
+    "reusedTotalViews": 93,
+    "justification": [
+      "Original complete filled P, guides, flags, widths, source weights and logical boundaries unchanged.",
+      "New Q policy selects only exact2m2/4m2; old7 scoped fold helper bytes and its context/phase unchanged.",
+      "Original source guide fullround coverage evidence remains valid independently of the new authored source-head display mask.",
+      "Affected2/4 gate frames excluded from reuse and freshly observed above."
+    ],
+    "notReusedAsPass": [
+      "Old pen2/4 compact18 affected views and old main2 failed/suspected views."
+    ],
+    "actualPreviousOverallStatus": "HOLD preserved"
+  },
+  "counts": {
+    "freshFinite": 126,
+    "reusedUnchanged": 93,
+    "combinedFinite": 219,
+    "freshNaturalObserved": 6,
+    "combinedObservedTotal": 225,
+    "plannedAfterAllSixNaturalViews": 225
+  },
+  "limits": {
+    "boundedActualComponent": true,
+    "publisherOutlineIdentity": false,
+    "publisherMicroclockEquivalent": false,
+    "authorHeadAreaThenYPrefixClock": true,
+    "sourceGeometryGuideWidthFlagsWeightsUnchanged": true,
+    "productUIApproved": false,
+    "fullAutomaticGlyphApproved": false,
+    "allTenNaturalRunsClaimed": false,
+    "pen5NaturalNotClaimed": true,
+    "originalSmallUPPAndFontDifferencesRetained": true
+  },
+  "session": {
+    "PID": 92219,
+    "port": 60961,
+    "session": 78573,
+    "tab": 285,
+    "serverStopped": false,
+    "tabClosed": false,
+    "cleanup": "ROOT keeps current4 global1 for read-only terminal-seam diagnosis"
+  },
+  "actualTemporalApproved": false,
+  "runtimeApplied": false,
+  "registrationApplied": false,
+  "builds": 0,
+  "wholeProjectTypeChecks": 0
+}

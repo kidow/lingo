@@ -1,0 +1,186 @@
+{
+  "schema": "hanja-two-Q-actual-H-preparation/v1",
+  "date": "2026-10-30",
+  "status": "pending-root-H-application-and-native-renderer-review",
+  "Hpatch": {
+    "path": "docs/hanja-display-contact-u76cc-pen2-2026-10-30/actual-H-integration.pending.patch",
+    "SHA256": "a1b6682cce65a65123451e2bb801ee292ff0c5d8554f72193ead5b5bf0cae966",
+    "beforeSHA256": "252b7e45c36601621eb2cd00c269dd7f8d621a8c05e870271a02c1b1f1b435da",
+    "afterSHA256": "5bb2fc8e934ae690cda0dc2adaee0d25277bfc5402d17650ef0857421b1555ab"
+  },
+  "profile": {
+    "path": "docs/hanja-source-execution-u76cc-original-2026-10-29/actual-profile-Q-contact-start.json",
+    "SHA256": "56f1c85b2ac1c098fde54d756e310acfa301cc129ec28ba18888a950d428329c",
+    "inputPins": 1144,
+    "inputPinMismatches": []
+  },
+  "R": {
+    "path": "components/hanja/stroke-outlines.tsx",
+    "SHA256": "6290c4be6cb0bdb2da97316f2010265bb35a618f646d4ec96bec4f0df659f7ec"
+  },
+  "newQHelper": {
+    "path": "lib/hanja-stroke-contact-head-u76cc.ts",
+    "SHA256": "f58710447df95443c8804aa206e3d653bacd716a434faa111c780a171ec6744c",
+    "fingerprint": "ab4df1aec224719759b942499c76963f142db9e47b4ea549c16ce8ff7678bc1d"
+  },
+  "existingFold7PolicyPreserved": {
+    "kind": "source-P-y-contact-band-u55f8-u76cc",
+    "context": "u55f8-u76cc-exact-fold-contact",
+    "fingerprint": "d8531a0626babc6ea91bd07bde2cca5e7ba1c6306d4ba630566ac6bf06b337dd",
+    "helper": "lib/hanja-stroke-fold-contact-u55f8-u76cc.ts",
+    "helperSHA256": "a9c8033d2ce41fe513a78cad1f842ce415a5ac2ab815a4cd16d6dcbdfe46f50f",
+    "targets": [
+      {
+        "pen": 7,
+        "mask": 2
+      }
+    ],
+    "sourcePAndGuidesUnchanged": true,
+    "publisherMicroclockEquivalent": false
+  },
+  "sourceQContactPolicy": {
+    "kind": "source-contact-head-y-body-u76cc",
+    "context": "u76cc-exact-two-Q-contact-head",
+    "fingerprint": "ab4df1aec224719759b942499c76963f142db9e47b4ea549c16ce8ff7678bc1d",
+    "helper": "lib/hanja-stroke-contact-head-u76cc.ts",
+    "helperSHA256": "f58710447df95443c8804aa206e3d653bacd716a434faa111c780a171ec6744c",
+    "targets": [
+      {
+        "pen": 2,
+        "mask": 2
+      },
+      {
+        "pen": 4,
+        "mask": 2
+      }
+    ],
+    "headPhases": [
+      {
+        "pen": 2,
+        "mask": 2,
+        "headPhase": 0.15307976882505603,
+        "headPhaseExact": "8537400/55770923"
+      },
+      {
+        "pen": 4,
+        "mask": 2,
+        "headPhase": 0.3026340156164053,
+        "headPhaseExact": "77136300/254883113"
+      }
+    ],
+    "sourcePAndGuidesUnchanged": true,
+    "publisherMicroclockEquivalent": false
+  },
+  "validation": {
+    "actualGuardPositive": true,
+    "guardNegativeCases": 4,
+    "actualTopLevelDispatcherAndGeometry": true,
+    "wrongRootRejected": true,
+    "actualFixturePayloadFields": 10,
+    "browserFlagAndPrivateContextInitialized": true,
+    "actualClientSourceCurveProjection": true,
+    "HAndBrowserSyntax": true,
+    "HForwardInverseExact": true,
+    "actualResourceCollector": {
+      "R": "6290c4be6cb0bdb2da97316f2010265bb35a618f646d4ec96bec4f0df659f7ec",
+      "actualClosure": 394,
+      "dependencies": 393,
+      "constantLines": 3,
+      "SSR": 0,
+      "transpilation": 0,
+      "server": 0
+    },
+    "controls": {
+      "controls": 6,
+      "compact": [
+        9,
+        9
+      ],
+      "phase": [
+        3,
+        3
+      ],
+      "oldRisk": [
+        0.25,
+        0.375
+      ],
+      "realHelperPrivateContext": true,
+      "DOMOrNativeClaim": false
+    },
+    "newHControlChangesDoNotAlterResourceGraph": true,
+    "closure393And395Rejected": true,
+    "SSR": 0,
+    "server": 0,
+    "build": 0,
+    "wholeProjectTypecheck": 0
+  },
+  "observer": {
+    "scope": "Exact Wan Q2m2/Q4m2 private policies only; old 7-fold observer retained.",
+    "sourcePAndSourceClipComparedToPrivateFrames": true,
+    "maskRectCSSCanonicalProbeReused": true,
+    "sameDocumentOpaquePriorAndKnownThirdPeerRequired": true,
+    "requestedFrameUsesExistingFixedTimestampSnapshotAndRIdenticalElapsedOperationOrder": true,
+    "originalMicroclockClaim": false,
+    "residualButton": "Four unchanged generic curves only; source full-round proofs for two custom source-head targets remain preserved, not recreated as generic masks."
+  },
+  "freshNative": {
+    "affectedCompact": {
+      "pens": [
+        2,
+        4
+      ],
+      "perPen": 9,
+      "views": 18
+    },
+    "affectedSourceGateFrames": 6,
+    "newHeadPhaseBoundaryFrames": 6,
+    "oldFailureMain": [
+      {
+        "pen": 2,
+        "progress": 0.25
+      },
+      {
+        "pen": 4,
+        "progress": 0.375
+      }
+    ],
+    "aggregate68": {
+      "total": 68,
+      "changedPens": [
+        2,
+        4
+      ],
+      "previousAggregateNativeEvidenceExists": false
+    },
+    "wholeStates14": true,
+    "naturalPens": [
+      2,
+      4,
+      5
+    ],
+    "source5OriginalSmallUPStillRequiresActualReview": true,
+    "reuse": {
+      "unchangedCompact72": true,
+      "fold7Critical3": true,
+      "unaffectedGates12": true,
+      "fullroundResidual6": true,
+      "nativeHoldRecord": "docs/hanja-source-execution-u76cc-original-2026-10-29/native-actual-fold-contact-review.json"
+    },
+    "criticalFirst": "Q2 p.25 and Q4 p.375; completed-H strict contact head then Y body; Q4m3 width22/gate remains exact."
+  },
+  "history": {
+    "previousActualHold": {
+      "path": "docs/hanja-source-execution-u76cc-original-2026-10-29/native-actual-fold-contact-review.json",
+      "SHA256": "a08d69e3052ec6c67ac50b998c87dd4fc1b3b0e1f81ece56c6ece4ba72bc2450"
+    },
+    "newReceiptPath": "docs/hanja-source-execution-u76cc-original-2026-10-29/native-actual-Q-contact-review.json",
+    "previousProfilePath": "docs/hanja-source-execution-u76cc-original-2026-10-29/actual-profile-fold-contact-start.json",
+    "previousProfileBytesUnmodified": true
+  },
+  "approval": {
+    "prototype44Passed": true,
+    "actualRendererTemporalApproved": false,
+    "runtimeApplied": false,
+    "registrationApplied": false
+  }
+}

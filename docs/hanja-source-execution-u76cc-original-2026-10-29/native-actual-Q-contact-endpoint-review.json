@@ -1,0 +1,203 @@
+{
+  "schema": "hanja-root-bounded-actual-Q-contact-endpoint-review/v1",
+  "date": "2026-10-30",
+  "glyph": "盌",
+  "status": "pass-bounded-actual-Q-contact-with-strict-review-endpoints",
+  "reviewer": "ROOT direct CUA",
+  "inputs": {
+    "H": {
+      "path": "scripts/hanja-actual-component-review.mjs",
+      "SHA256": "5eb4cc9ff1b41bb351307e3c6b93919c59a5fce3b5b1f033a59fc8cd37c483d5"
+    },
+    "profile": {
+      "path": "docs/hanja-source-execution-u76cc-original-2026-10-29/actual-profile-Q-contact-start.json",
+      "SHA256": "cd947899a59f655134d502eb5afb43c3f9c85075fd7d8188f28718fe3baafb12"
+    },
+    "R": {
+      "path": "components/hanja/stroke-outlines.tsx",
+      "SHA256": "6290c4be6cb0bdb2da97316f2010265bb35a618f646d4ec96bec4f0df659f7ec"
+    },
+    "QHelper": {
+      "path": "lib/hanja-stroke-contact-head-u76cc.ts",
+      "SHA256": "f58710447df95443c8804aa206e3d653bacd716a434faa111c780a171ec6744c"
+    },
+    "fold7Helper": {
+      "path": "lib/hanja-stroke-fold-contact-u55f8-u76cc.ts",
+      "SHA256": "a9c8033d2ce41fe513a78cad1f842ce415a5ac2ab815a4cd16d6dcbdfe46f50f"
+    },
+    "oldRegisteredFoldHelper": {
+      "path": "lib/hanja-stroke-fold-contact-u85da-u7f5d.ts",
+      "SHA256": "46c20a920336955f26c7b81a77594d5c594dc688180c45d4fc8617d7d43fe1fc"
+    },
+    "fixture": {
+      "path": "docs/hanja-source-execution-u76cc-original-2026-10-29/fixtures-execution-draft-width22.json",
+      "SHA256": "60f2b219228cfbd9a04363daf46541ababd2c0da6af8dc1d0072ae9e0600084d"
+    },
+    "geometrySHA256": "92d33e5d5498253de98ed0104a975bd713b2287498734a8fa293c587078c7dd5"
+  },
+  "startup": {
+    "SSR": 1,
+    "CJS": 394,
+    "ESM": 394
+  },
+  "endpointFollowup": {
+    "endingGrid": {
+      "gridEntries": 30,
+      "nativeViewedEntries": [
+        3,
+        6,
+        9,
+        12,
+        15,
+        18,
+        21,
+        24,
+        27,
+        30
+      ],
+      "logicalProgress": 1,
+      "views": 10,
+      "CSS": 240,
+      "passed": true,
+      "other20EntriesNotFreshNativeClaims": true
+    },
+    "codeGuard": {
+      "states": 31,
+      "scope": "All30 ending entries plus main state",
+      "bad": [],
+      "errors": [],
+      "notNativeViewCount": true
+    },
+    "naturalEnds": {
+      "views": 3,
+      "CSS": 520,
+      "runs": [
+        {
+          "pen": 2,
+          "controllerProgress": 1,
+          "renderedQLogicalProgress": 1,
+          "maskedInkCount": 0,
+          "bad": [],
+          "errors": []
+        },
+        {
+          "pen": 4,
+          "controllerProgress": 1,
+          "renderedQLogicalProgress": 1,
+          "maskedInkCount": 0,
+          "previousThinWhiteJoinLineAbsent": true,
+          "bad": [],
+          "errors": []
+        },
+        {
+          "pen": 7,
+          "controllerProgress": 1,
+          "bad": [],
+          "errors": []
+        }
+      ],
+      "passed": true
+    },
+    "naturalStarts": {
+      "freshNativeViews": 0,
+      "actionsAndAXOnly": true,
+      "previousThreeNativeStartsReused": true
+    },
+    "freshNativeViews": 13
+  },
+  "historyAndReuse": {
+    "previousActualHold": {
+      "path": "docs/hanja-source-execution-u76cc-original-2026-10-29/native-actual-Q-contact-review-before-endpoint.json",
+      "SHA256": "4e6579f1a6b93bd229a47c819fb17c53c2515aa6b837ab58ac608912ea32c07a",
+      "H": "5bb2fc8e934ae690cda0dc2adaee0d25277bfc5402d17650ef0857421b1555ab",
+      "firstNewRendererObservationViews": 132,
+      "unchangedPreviousRendererViewsReused": 93,
+      "totalObservationLedger": 225,
+      "statusRemains": "HOLD preserved; terminal endpoint issue was not overwritten as PASS."
+    },
+    "originalFoldActualHold": {
+      "path": "docs/hanja-source-execution-u76cc-original-2026-10-29/native-actual-fold-contact-review.json",
+      "SHA256": "a08d69e3052ec6c67ac50b998c87dd4fc1b3b0e1f81ece56c6ece4ba72bc2450"
+    },
+    "profileBeforeEndpoint": {
+      "path": "docs/hanja-source-execution-u76cc-original-2026-10-29/actual-profile-Q-contact-before-endpoint.json",
+      "SHA256": "56f1c85b2ac1c098fde54d756e310acfa301cc129ec28ba18888a950d428329c"
+    },
+    "reuseByFunction": [
+      {
+        "function": "p0,intermediate progress,authored head phase and original source-gate boundaries",
+        "basis": "Exact expression, R/helper/sourceP/guide/width/weight/gate inputs unchanged.",
+        "status": "Existing bounded observations reused."
+      },
+      {
+        "function": "Exact requested p1 endings including affected final generic Q",
+        "basis": "Review clock construction changed only at p===1. Old endpoint observations are superseded by fresh10 p1 grid states and3 natural ends.",
+        "status": "New13 endpoint observations establish strict completion."
+      },
+      {
+        "function": "Original source full-round residual coverage",
+        "basis": "Same original P/guide/width; all6 blank residual observations retained separately from the authored display policy.",
+        "status": "Existing6 native residual observations reused."
+      },
+      {
+        "function": "Fold7 critical H/V contact",
+        "basis": "Same separate a9c helper,sourcecontext,andphase; old3 native critical views plus new natural7 endpoint retained.",
+        "status": "No geometry/policy expansion."
+      }
+    ],
+    "actualObservationLedger": 238,
+    "ledgerFormula": "Old225 observation ledger plus13 fresh endpoint views. This is not238 unique states and not225 newly approved views.",
+    "uniqueNativeStateCountNotInferred": true
+  },
+  "diagnosis": {
+    "sourcePJoinGap": false,
+    "positiveFilledIntersectionArea": "733/4640",
+    "sourceGuideEndpointAndNextUnpaddedStart": [
+      81.58780832168529,
+      31.886516649130623
+    ],
+    "before": {
+      "requested1RenderedLogical": "0.9999999999999999",
+      "lastGenericGuideDash": "0.999999999999999 2",
+      "lastGenericMaskRemained": true,
+      "manualPrefix1DirectPNoLine": true
+    },
+    "repair": "Exact current Q profile p===1 requests use drawEnd+G/2 strictly inside the same-stroke hold; p0/intermediate expressions remain bit identical, next-stroke exposure impossible by focused checks.",
+    "RGeometryPolicyUnchanged": true,
+    "epsilon": 0,
+    "antialiasMechanismClaimed": false,
+    "whiteLineResolvedAtActualNatural4End": true,
+    "report": {
+      "path": "docs/hanja-display-contact-u76cc-pen2-2026-10-30/review-endpoint-diagnosis.json",
+      "SHA256": "005cb9289fca8aeadaa83658585dd772b5c3c07014e3a8df2f8d50735fd4799b"
+    }
+  },
+  "limits": {
+    "boundedActualComponent": true,
+    "sourceFontWeightPositionContactDifferencesRetained": true,
+    "source5OriginalSmallUPPAndAllOriginalGeometryRetained": true,
+    "publisherOutlineIdentity": false,
+    "publisherMicroclockEquivalent": false,
+    "authoredHeadAreaThenYPrefixClock": true,
+    "productUIApproved": false,
+    "fullAutomaticGlyphApproved": false,
+    "allTenNaturalRunsClaimed": false,
+    "natural5NotFreshlyClaimed": true
+  },
+  "cleanup": {
+    "PID": 4852,
+    "port": 62630,
+    "session": 19335,
+    "tab": 287,
+    "serverStopped": true,
+    "tabClosed": true,
+    "exitCode": 130,
+    "rootAllReviewServersStopped": true
+  },
+  "actualTemporalApproved": true,
+  "runtimeApplied": false,
+  "registrationApplied": false,
+  "privatePixelsSaved": false,
+  "builds": 0,
+  "wholeProjectTypeChecks": 0
+}

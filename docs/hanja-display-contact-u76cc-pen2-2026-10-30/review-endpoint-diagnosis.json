@@ -1,0 +1,200 @@
+{
+  "schema": "hanja-exact-review-endpoint-diagnosis/v1",
+  "date": "2026-10-30",
+  "glyph": "盌",
+  "cause": "Exact requested logical1 time was rounded through R elapsed subtraction to0.9999999999999999, leaving the final generic Q mask; exact manual prefix1 restored original P directly.",
+  "sourceGeometry": {
+    "gap": false,
+    "bodyToNextBodyPositiveArea": "733/4640",
+    "sourceGuideEndAndNextUnpaddedStart": [
+      81.58780832168529,
+      31.886516649130623
+    ]
+  },
+  "historicalReview": {
+    "path": "docs/hanja-source-execution-u76cc-original-2026-10-29/native-actual-Q-contact-review-before-endpoint.json",
+    "SHA256": "4e6579f1a6b93bd229a47c819fb17c53c2515aa6b837ab58ac608912ea32c07a",
+    "overallStatus": "HOLD",
+    "original225EvidenceRetained": true,
+    "archiveExactPriorBytes": true
+  },
+  "profileArchive": {
+    "path": "docs/hanja-source-execution-u76cc-original-2026-10-29/actual-profile-Q-contact-before-endpoint.json",
+    "SHA256": "56f1c85b2ac1c098fde54d756e310acfa301cc129ec28ba18888a950d428329c"
+  },
+  "repair": {
+    "scope": "Only current exact Wan Q profile and requested p===1; show/board/natural initial1/final1.",
+    "formula": "time=((pen-1)*(D+G)+D)+G/2; drawEnd<time<nextStrokeStart",
+    "Hpatch": {
+      "path": "docs/hanja-display-contact-u76cc-pen2-2026-10-30/review-endpoint-H.patch",
+      "SHA256": "68bac230c46d247725913ca3b3c89e61db3c966be06bb24c43de61abd061bd0e"
+    },
+    "profilePatch": {
+      "path": "docs/hanja-display-contact-u76cc-pen2-2026-10-30/review-endpoint-profile.patch",
+      "SHA256": "06526f19f1cb0e14006ed16c2ce4243620da7b34b6e9ae1bbca4fd590ad29785"
+    },
+    "afterH": "5eb4cc9ff1b41bb351307e3c6b93919c59a5fce3b5b1f033a59fc8cd37c483d5",
+    "afterProfile": "cd947899a59f655134d502eb5afb43c3f9c85075fd7d8188f28718fe3baafb12",
+    "sourceRHelperGeometryWeightsGatesUnchanged": true,
+    "epsilon": 0,
+    "p0AndIntermediateExpressionsBitIdentical": true,
+    "noNextStrokeExposure": true
+  },
+  "verification": {
+    "tenStrokeHoldChecks": {
+      "rows": [
+        {
+          "pen": 1,
+          "oldRaw": 1,
+          "endRaw": 1.1384615384615384,
+          "nextRaw": -0.13846153846153833,
+          "allSegmentsExactOne": true
+        },
+        {
+          "pen": 2,
+          "oldRaw": 0.9999999999999999,
+          "endRaw": 1.1384615384615384,
+          "nextRaw": -0.13846153846153847,
+          "allSegmentsExactOne": true
+        },
+        {
+          "pen": 3,
+          "oldRaw": 0.9999999999999999,
+          "endRaw": 1.1384615384615384,
+          "nextRaw": -0.13846153846153847,
+          "allSegmentsExactOne": true
+        },
+        {
+          "pen": 4,
+          "oldRaw": 0.9999999999999999,
+          "endRaw": 1.1384615384615384,
+          "nextRaw": -0.13846153846153847,
+          "allSegmentsExactOne": true
+        },
+        {
+          "pen": 5,
+          "oldRaw": 1.0000000000000004,
+          "endRaw": 1.1384615384615389,
+          "nextRaw": -0.13846153846153741,
+          "allSegmentsExactOne": true
+        },
+        {
+          "pen": 6,
+          "oldRaw": 1.0000000000000004,
+          "endRaw": 1.1384615384615389,
+          "nextRaw": -0.13846153846153847,
+          "allSegmentsExactOne": true
+        },
+        {
+          "pen": 7,
+          "oldRaw": 1.0000000000000004,
+          "endRaw": 1.1384615384615389,
+          "nextRaw": -0.13846153846153847,
+          "allSegmentsExactOne": true
+        },
+        {
+          "pen": 8,
+          "oldRaw": 0.9999999999999993,
+          "endRaw": 1.1384615384615377,
+          "nextRaw": -0.13846153846153847,
+          "allSegmentsExactOne": true
+        },
+        {
+          "pen": 9,
+          "oldRaw": 0.9999999999999993,
+          "endRaw": 1.1384615384615377,
+          "nextRaw": -0.13846153846153847,
+          "allSegmentsExactOne": true
+        },
+        {
+          "pen": 10,
+          "oldRaw": 0.9999999999999993,
+          "endRaw": 1.1384615384615377,
+          "nextRaw": -0.13846153846153847,
+          "allSegmentsExactOne": true
+        }
+      ],
+      "p0AndAllIntermediateExpressionsBitIdentical": true,
+      "epsilon": 0,
+      "RChanged": false,
+      "gateChanged": false,
+      "nextStrokeExposed": false
+    },
+    "HGuardPayloadSyntax": {
+      "H": "5eb4cc9ff1b41bb351307e3c6b93919c59a5fce3b5b1f033a59fc8cd37c483d5",
+      "HModuleSyntax0": true,
+      "BrowserModuleSyntax0": true,
+      "cases": [
+        {
+          "glyph": "盌",
+          "fixtureGuard": true,
+          "negatives": 4,
+          "route7Fields": true,
+          "flags": {
+            "ao": false,
+            "wan": true,
+            "Q": true,
+            "Qcontext": true,
+            "scoped": true,
+            "context": true,
+            "outline": true,
+            "affine": false
+          },
+          "closure394": true,
+          "closure393And395Rejected": true
+        }
+      ],
+      "SSR": 0,
+      "server": 0
+    },
+    "forwardInverseExact": true,
+    "resource394UnchangedGraphReused": true,
+    "server": 0,
+    "SSR": 0,
+    "build": 0
+  },
+  "requiredNative": {
+    "tenExactLogicalEndStates": true,
+    "naturalEndPens": [
+      2,
+      4,
+      7
+    ],
+    "boardExactEndpointTargets": true,
+    "unchangedP0MidPhaseAndSourceBoundaryEvidenceReused": true,
+    "rerunWholeReview": false
+  },
+  "actualTemporalApproved": false,
+  "runtimeApplied": false,
+  "pixelAntialiasCauseClaimed": false,
+  "confirmedSubsequentFacts": {
+    "cleanup": {
+      "PID": 92219,
+      "session": 78573,
+      "tab": 285,
+      "serverStopped": true,
+      "tabClosed": true,
+      "exitCode": 130
+    },
+    "DOMComparison": {
+      "current4Global1": {
+        "logicalProgress": "0.9999999999999999",
+        "lastGuide": {
+          "pathLength": "1",
+          "dasharray": "0.999999999999999 2",
+          "dashoffset": "0"
+        },
+        "lastInkHasMask": true
+      },
+      "exactPrefix4": {
+        "logicalProgress": "1",
+        "fourPathsHaveNoMaskDashClip": true
+      },
+      "sourceFilledIntersectionArea": "733/4640",
+      "sourceGuidesEndpointEqual": true,
+      "sourceGeometryGap": false,
+      "reviewEndpointTimeRoundingConfirmed": true,
+      "antialiasMechanismNotClaimed": true
+    }
+  }
+}
