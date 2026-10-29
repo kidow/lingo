@@ -1,0 +1,165 @@
+{
+  "schema": "hanja-source-execution-support-and-coverage-plan/v1",
+  "date": "2026-10-30",
+  "glyph": "瑲",
+  "status": "existing-renderer-compatible-by-source-contract-native-temporal-unapproved",
+  "input": {
+    "donor": {
+      "path": "docs/hanja-authored-component-u7472-hans-cang10-2026-10-30/donor-source-record.json",
+      "SHA256": "fefd99037c0d6b54e2a42809634f905b031370099628e6b1d47653d4fec6f155"
+    },
+    "recipe": {
+      "path": "docs/hanja-authored-component-u7472-hans-cang10-2026-10-30/recipe.json",
+      "SHA256": "9c0e8572a355973c37cd7f4edf4b40ad2700e9ecd6ef25de10bb1cf1abe10b57"
+    },
+    "originalRecipient": {
+      "path": "docs/hanja-goal-glyphwiki-batch910-2026-10-13/engine-proof.json",
+      "SHA256": "af8725be5086be13abba604572e76bad4ed1abf342557f3287556e9d81462e6e"
+    },
+    "originalClock": {
+      "path": "docs/hanja-official-media-compare-u7472-2026-10-30/native-original-clock-review.json",
+      "SHA256": "782e699ee6eed0a374a12ac14e87f1a71700bbef0032151f9cebd28b15eda7a0"
+    },
+    "boundedStatic": {
+      "path": "docs/hanja-authored-component-u7472-hans-cang10-2026-10-30/native-static-review.json",
+      "SHA256": "c21f1098ffe42ea92eed2b3774bf0bc6bab684ff2e829155f60fea38bcbb7902"
+    },
+    "existingReferenceGenerator": {
+      "path": "docs/hanja-authored-component-u55f8-ja-ao-bbox-gap1-v2-2026-10-29/prepare-execution-draft.py",
+      "SHA256": "fa0c40c835be215de4f037145ffd137d4c275a0a16f0d7ef8cacfd0410b16264"
+    }
+  },
+  "proposedCounts": {
+    "logical": 14,
+    "masks": 14,
+    "filledPaths": 18,
+    "curves": 11,
+    "cardinals": 3,
+    "sourceAffineCurves": 10,
+    "compounds": 0
+  },
+  "sourceContracts": {
+    "recipient玉": {
+      "logicalToRawOneBased": [
+        1,
+        3,
+        2,
+        4
+      ],
+      "groupsTraceAndOriginalFlagsUnchanged": true,
+      "filledPolygons": 8,
+      "cardinalLogical": [
+        1,
+        2,
+        3
+      ],
+      "QLogical4": {
+        "width": 14,
+        "padding": 7,
+        "originalSourceQ": true
+      }
+    },
+    "complete倉": {
+      "logical": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "sourceStrokeOneBased": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "filledCommands": [
+        "M",
+        "C",
+        "Z"
+      ],
+      "originalDBytesPreservedInSourceFacts": true,
+      "originalGuideDBytesPreservedInSourceFacts": true,
+      "samePositiveAffineAllFilledAndGuides": true,
+      "sourceCoordinateFrame": "SVG1024 y-down",
+      "unplacedMaskSource100": "SVG coordinates divided by10; no Y flip.",
+      "filledOriginalSVGToPlaced100Matrix": [
+        0.07213872832369943,
+        0,
+        0,
+        0.09610318331503842,
+        25.165491329479767,
+        3.1824917672886937
+      ],
+      "revealTransformFromUnplacedSource100": [
+        0.7213872832369943,
+        0,
+        0,
+        0.9610318331503842,
+        25.165491329479767,
+        3.1824917672886937
+      ],
+      "revealTransformExact": [
+        "3120/4325",
+        "0",
+        "0",
+        "8755/9110",
+        "435363/17300",
+        "11597/3644"
+      ],
+      "radiusSource100": 6.4,
+      "widthSource100": 12.8,
+      "upstreamWidthSVG128": true,
+      "authoredBackwardPadSource100": 6.4,
+      "paddingUsesOriginalFirstLDirectionOnly": true,
+      "newCubicGuide": false,
+      "newFilledPath": false
+    }
+  },
+  "existingRendererSupport": {
+    "outlineCStrings": true,
+    "polylineMLRevealPath": true,
+    "optionalRevealTransformExisting": true,
+    "noNewRendererFieldNeeded": true,
+    "existingSourceReference": "嗸 complete AnimCJK original C +polyline source128 path",
+    "requiredConditions": [
+      "Transform original filled C controls once into placed100 outline; retain original source D and command trace.",
+      "Keep revealPath in unplaced source100 and apply the exact same whole affine through existing revealTransform.",
+      "Use existing source128 padded/start-gate generator, not a new curve or timing engine.",
+      "Preserve all original guide points; backward padding is an authored mask extension only.",
+      "Use new closed full-fixture H case with ten exact sourceAffine fields; do not expand generic allowlists."
+    ]
+  },
+  "coverage": {
+    "path": "docs/hanja-authored-component-u7472-hans-cang10-2026-10-30/source-mask-coverage-preflight.json",
+    "SHA256": "48b43fdc16bbae7746008c12b0d58d5b9358be8877c3ff392ce13f31265a329a",
+    "verifier": "docs/hanja-authored-component-u7472-hans-cang10-2026-10-30/source-mask-coverage-preflight.py",
+    "verifierSHA256": "909697c8ce1ece3bb759e2d21fd7d74be788e0898463a491878d92c9831950cf",
+    "masks": 11,
+    "passed": 11,
+    "outliers": 0,
+    "unproved": 0,
+    "fullRoundOnly": true
+  },
+  "limitations": [
+    "Source14macro static compatibility is bounded: donor body H9 internal right gap, font weight/proportions and complete donor brush spacing differ from publisher; no contour/connectivity identity.",
+    "Full-round source tube coverage is not initial/transition/final-mask or native temporal approval.",
+    "Upstream SVG CSS3337/3339 dash and timing are not claimed equivalent to product pathLength1 authored weights.",
+    "Actual fixture/gates/weights and isolated H case have not been generated by this support-only unit.",
+    "No source point, original guide, engine, renderer, registry or running server was changed."
+  ],
+  "nativeActualTemporalApproved": false,
+  "runtimeApplied": false,
+  "sharedFilesChanged": false
+}
