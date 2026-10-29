@@ -1,0 +1,65 @@
+{
+  "schema": "hanja-public-source-curve-coverage-preflight/v1",
+  "date": "2026-10-29",
+  "glyph": "韎",
+  "scope": "Two unchanged public-Q source masks13/14 only; all15 original-line masks remain cardinal policy. No source omission or geometry edit. Mapping/start/release/native unapproved.",
+  "inputSHA256": {
+    "docs/hanja-source-execution-u97ce-original-2026-10-29/prepare-execution-draft.mjs": "23434ed832316926998cbe2fb48ce1aedb2de4d355ee72557286888875eae742",
+    "docs/hanja-source-execution-u97ce-original-2026-10-29/fixtures-execution-draft.json": "4abd27633d09ecc8af34c6b9106dbd54dffd8cbb6c3e013d79fcf8db1adbabbd",
+    "docs/hanja-source-execution-u97ce-original-2026-10-29/execution-draft-check.json": "f5b6d866810da824aa6731856c3b4e9bf57987a02d4c958c6bce14ff468cca0c",
+    "docs/hanja-source-execution-u97ce-original-2026-10-29/coverage-preflight.mjs": "6073ae756ca9ac0d073500cbd51ac63a807287a9901702af6f02d98b0761b736"
+  },
+  "method": "Polygon fan triangles conservatively cover each original finite filled polygon. At each triangle center distance to actual padded line segment and4097 evaluated original Q points gives an upper distance bound; plus triangle radius (1-Lipschitz) proves every triangle point within full round guide radius7. No original P/Q flattening. Concave fan may include outside ink and unresolved is not insufficient width.",
+  "numerics": {
+    "margin": 1e-8,
+    "formalIntervalProof": false,
+    "depthLimit": 16,
+    "nodeLimitPerMask": 60000,
+    "QEvaluationsPerMask": 4097
+  },
+  "counts": {
+    "curveMasks": 2,
+    "pass": 2,
+    "unproved": 0
+  },
+  "units": [
+    {
+      "logical": 13,
+      "mask": 1,
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "radius": 7,
+      "width": 14,
+      "padding": 7,
+      "nodes": 769,
+      "maxDepth": 3,
+      "maxAcceptedUpperDistance": 6.990320878298915,
+      "sourceOutlinePreserved": true,
+      "sourceQGuidePreserved": true,
+      "nativeApproval": false
+    },
+    {
+      "logical": 14,
+      "mask": 1,
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "radius": 7,
+      "width": 14,
+      "padding": 7,
+      "nodes": 837,
+      "maxDepth": 4,
+      "maxAcceptedUpperDistance": 6.986005690403203,
+      "sourceOutlinePreserved": true,
+      "sourceQGuidePreserved": true,
+      "nativeApproval": false
+    }
+  ],
+  "cardinalPolicy": {
+    "masks": 15,
+    "allOriginalPAndFlagsRetained": true,
+    "nativeStartContactAndEndingReviewRequired": true
+  },
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "sharedFilesChanged": false,
+  "serverStarts": 0,
+  "buildRun": false
+}

@@ -1,0 +1,84 @@
+{
+  "schema": "hanja-original-source-initial-support-plan/v1",
+  "glyph": "韎",
+  "fixture": {
+    "path": "docs/hanja-source-execution-u97ce-original-2026-10-29/fixtures-execution-draft.json",
+    "SHA256": "4abd27633d09ecc8af34c6b9106dbd54dffd8cbb6c3e013d79fcf8db1adbabbd",
+    "geometrySHA256": "5280dce5fe36506fbdcdcb9da0f4f609cec8e0a2f421a33a4801d25d3db5ca7d"
+  },
+  "counts": {
+    "logical": 14,
+    "raw": 17,
+    "masks": 17,
+    "P": 28,
+    "curves": 2,
+    "cardinal": 15,
+    "boundaries": 3
+  },
+  "curveFullround": {
+    "pass": 2,
+    "unproved": 0,
+    "width": 14,
+    "padding": 7,
+    "earlyRevealApproved": false
+  },
+  "callBoundary": {
+    "count": 3,
+    "allPositiveFilledIntersection": true,
+    "logical8": {
+      "rawBefore": 10,
+      "rawAfter": 11,
+      "guideGapSource200": 15.57,
+      "guideGap100": 7.785,
+      "afterGuideStartToPriorFilledDistanceSquaredSource200": "36481/400",
+      "afterGuideStartToPriorFilledDistance100": 4.775,
+      "sourceHBounds100": [
+        7.6,
+        75,
+        50.85,
+        82
+      ],
+      "priorVBounds100": [
+        12.4,
+        63.5,
+        18.4,
+        82
+      ],
+      "noBridge": true,
+      "fullFilledTouchDoesNotApproveInitialReveal": true
+    }
+  },
+  "priorityNative": [
+    {
+      "logical": 8,
+      "masks": [
+        1,
+        2
+      ],
+      "reason": "원V하강→원H오른 표시경계에서H의원시작은V발보다왼쪽; guidegap을보존하므로0+연결/조각확인필수"
+    },
+    {
+      "logical": [
+        2,
+        5
+      ],
+      "reason": "H→V 원P양의접촉/guide끝점동일이나genericcardinal0+표시는별도확인필수"
+    },
+    {
+      "logical": [
+        13,
+        14
+      ],
+      "reason": "Q14/7 fullround피복성공은initial gate/release방향승인을대체하지않음"
+    }
+  ],
+  "sourcePAndGuidesAndFlagsPreserved": true,
+  "sourceWhiteCellsFilled": false,
+  "sourceGeometryChanged": false,
+  "mappingApproved": false,
+  "initialSupportApproved": false,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "serversStarted": 0,
+  "sharedFilesChanged": false
+}

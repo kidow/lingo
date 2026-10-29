@@ -1,0 +1,116 @@
+{
+  "schema": "hanja-original-clock-native-review/v1",
+  "date": "2026-10-29",
+  "glyph": "韎",
+  "reviewer": "ROOT 직접 브라우저 패널 관찰",
+  "inputs": {
+    "config": "docs/hanja-official-media-compare-u97ce-2026-10-29/config-all.json",
+    "configSHA256": "3834fbfb6548e791926f95e65d1f3c28cc18ca8bffe4e8dfd2bb3c5c03465807",
+    "clock": "docs/hanja-official-media-compare-u97ce-2026-10-29/clock.py",
+    "clockSHA256": "fba3ac72121906e4b3bdb8dd8145da80122b5e23cbb1ec6d87543ddb166064a4",
+    "svg": {
+      "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/9700/97ce.svg",
+      "bytes": 6852,
+      "sha256": "99ac301eb3fd90ba838d2cc2080e8de4c23dd20f148a5dd3ac092b0ede7cf4e6"
+    },
+    "css": {
+      "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/libs/opmGna.svg.ani.min.css",
+      "bytes": 804,
+      "sha256": "5c427b5157bb10b0f03e2b42207c55cb2149098044c3a254cd6d0a8d22f8af18"
+    }
+  },
+  "observed": {
+    "strokes": 14,
+    "progress": [
+      0.1,
+      0.5,
+      1
+    ],
+    "frameCount": 42,
+    "size": 520,
+    "roles": [
+      {
+        "stroke": 1,
+        "role": "상부왼V하강"
+      },
+      {
+        "stroke": 2,
+        "role": "H오른→짧은V하강"
+      },
+      {
+        "stroke": 3,
+        "role": "바닥H오른"
+      },
+      {
+        "stroke": 4,
+        "role": "box왼V"
+      },
+      {
+        "stroke": 5,
+        "role": "boxH→오른V하강"
+      },
+      {
+        "stroke": 6,
+        "role": "box바닥H"
+      },
+      {
+        "stroke": 7,
+        "role": "아래H"
+      },
+      {
+        "stroke": 8,
+        "role": "왼V하강→바닥H오른"
+      },
+      {
+        "stroke": 9,
+        "role": "중앙긴V"
+      },
+      {
+        "stroke": 10,
+        "role": "오른위H"
+      },
+      {
+        "stroke": 11,
+        "role": "오른아래H"
+      },
+      {
+        "stroke": 12,
+        "role": "오른긴V"
+      },
+      {
+        "stroke": 13,
+        "role": "DL"
+      },
+      {
+        "stroke": 14,
+        "role": "DR"
+      }
+    ],
+    "originalPathAttributesUnchanged": true,
+    "errors": []
+  },
+  "decision": {
+    "originalMacroDirectionsPassed": true,
+    "sourceMappingApproved": false,
+    "wholeShapeApproved": false,
+    "microclockEquivalent": false,
+    "productTemporalApproved": false,
+    "runtimeApplied": false
+  },
+  "sourceConflictToResolve": {
+    "priorWholeHOLDPreserved": true,
+    "priorDescription": "상부오른V추가",
+    "freshClockRole2IncludesShortDownV": true,
+    "raw2WholeCallOmissionApproved": false,
+    "reason": "공개raw1H+raw2V가새원문2의H→shortV역할일가능성. raw2필수역할확인없이제외불가; 원래V의길이·하부H접촉차이인지ROOT정적대조필요"
+  },
+  "execution": {
+    "rootReportedPID": 71253,
+    "port": 60563,
+    "session75082Exit": 130,
+    "tab228Closed": true,
+    "rootReportedServerStopped": true,
+    "privateMediaSaved": false,
+    "screenshotsSaved": false
+  }
+}

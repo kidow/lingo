@@ -1,0 +1,56 @@
+{
+  "schema": "hanja-original-whole-static-native-review/v1",
+  "date": "2026-10-29",
+  "glyph": "韎",
+  "reviewer": "ROOT 직접 브라우저 패널 관찰",
+  "inputs": {
+    "config": "docs/hanja-source-raw-compare-u97ce-original-2026-10-29/config.json",
+    "configSHA256": "2737a0a32d68a27484371addaeec4da111fa9f08460484da606818f37dc94962",
+    "adapter": "docs/hanja-source-raw-compare-u97ce-original-2026-10-29/compare.py",
+    "adapterSHA256": "308da6f89a6fac3d44d8b48895ecfc60e2296f06c75d801b06049ada35387a97",
+    "source": "docs/hanja-goal-glyphwiki-batch563-2026-10-11/engine-whole-u97ce.json",
+    "sourceSHA256": "a420b9781f8efa339375a37632219ad97af1e37040e764b5fd50998af06203fb",
+    "clock": "docs/hanja-official-media-compare-u97ce-2026-10-29/native-clock-review.json",
+    "clockSHA256": "01562c4eecb8eaff4dfa766a37db0c0be14ef710e79ba330330c28fd467bbf4b"
+  },
+  "observed": {
+    "wholePanels": 2,
+    "size": 520,
+    "wholeRoleShapePassed": true,
+    "domestic2VsRaw2SinglePairReviewed": true,
+    "raw2VRolePassed": true,
+    "sourceUpperVLonger": true,
+    "fontWeightDifferent": true,
+    "bothReachBaseH": true,
+    "upperFoldTopologyMatches": true
+  },
+  "history": {
+    "supersededEvidence": {
+      "path": "docs/hanja-goal-glyphwiki-batch563-2026-10-11/progressive-review.json",
+      "SHA256": "f386524895549b49d35a0375ee5ea1a2dabc25f99ebc1e6c963167e994b5ee3f"
+    },
+    "priorClaim": "원raw2가추가V이므로전체부적합",
+    "newBoundedFinding": "fresh원문2H→V와원본raw2V단독역할직접대조로이추가V판정은boundedcomponentrole falsepositive",
+    "historyPreserved": true,
+    "raw2OmissionRejected": true
+  },
+  "decision": {
+    "boundedWholeShapePassed": true,
+    "domesticOutlineIdentity": false,
+    "all14MappingApproved": false,
+    "temporalApproved": false,
+    "runtimeApplied": false,
+    "authorGeometryRequired": false,
+    "sourceOriginalPAndGuidesPreserved": true
+  },
+  "execution": {
+    "originalServerStillRunningAtRecord": true,
+    "rootReportedPID": 76226,
+    "port": 61226,
+    "session": 39738,
+    "tab": 230,
+    "childServersStarted": 0,
+    "privateMediaSaved": false,
+    "screenshotsSaved": false
+  }
+}

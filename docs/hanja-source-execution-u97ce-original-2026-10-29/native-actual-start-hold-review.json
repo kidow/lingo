@@ -1,0 +1,140 @@
+{
+  "schema": "hanja-isolated-actual-component-initial-hold-review/v1",
+  "date": "2026-10-29",
+  "glyph": "韎",
+  "status": "HOLD-logical8-detached-H-tail",
+  "reviewer": "ROOT direct Codex browser panel",
+  "inputs": {
+    "fixture": {
+      "path": "docs/hanja-source-execution-u97ce-original-2026-10-29/fixtures-execution-draft.json",
+      "SHA256": "4abd27633d09ecc8af34c6b9106dbd54dffd8cbb6c3e013d79fcf8db1adbabbd",
+      "geometrySHA256": "5280dce5fe36506fbdcdcb9da0f4f609cec8e0a2f421a33a4801d25d3db5ca7d"
+    },
+    "profile": {
+      "path": "docs/hanja-source-execution-u97ce-original-2026-10-29/actual-profile-start.json",
+      "SHA256": "105f4c021fa81d824b718acc1c73aa79563916c86eff896223325defc051e981"
+    },
+    "actualHelper": {
+      "path": "scripts/hanja-actual-component-review.mjs",
+      "SHA256": "07f62d06a21b1b275ad098ccc331e72223537210cc698b2f96b5e87372aa8ae8"
+    },
+    "renderer": {
+      "path": "components/hanja/stroke-outlines.tsx",
+      "SHA256": "55db76b01618110165dd5f22d512428550512feb180757814b734e80ffa304d1"
+    },
+    "staticWhole": {
+      "path": "docs/hanja-source-raw-compare-u97ce-original-2026-10-29/native-original-whole-review.json",
+      "SHA256": "a57365842074f69bffb99be8f724c7b8e8b9ddff846feb7bda1f3302f52852de"
+    },
+    "clock": {
+      "path": "docs/hanja-official-media-compare-u97ce-2026-10-29/native-clock-review.json",
+      "SHA256": "01562c4eecb8eaff4dfa766a37db0c0be14ef710e79ba330330c28fd467bbf4b"
+    },
+    "staticMapping": {
+      "path": "docs/hanja-source-raw-compare-u97ce-original-2026-10-29/native-mapping-review.json",
+      "SHA256": "0da1b69a980fb9e6d2060f61d20e1f51f92864c717d15b21d5f4217bfc46f19d"
+    }
+  },
+  "observed": {
+    "logical": 8,
+    "viewPixels": 520,
+    "mainGlobalProgress": [
+      0.2455066079295154,
+      0.27599118942731277,
+      0.31409691629955944
+    ],
+    "correspondingSecondHLocalProgress": [
+      0.01,
+      0.05,
+      0.1
+    ],
+    "completedVToNewHDetached": true,
+    "visibleWhiteGapShrinksAcrossSamples": true,
+    "exactJoinThresholdNotEstablished": true,
+    "compactPensVisited": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "compactPensNotVisited": [
+      13,
+      14
+    ],
+    "all14CompactPassed": false,
+    "allRequestedNativePassed": false
+  },
+  "sourceFacts": {
+    "logical8SourceRaw": [
+      10,
+      11
+    ],
+    "mask1": {
+      "direction": "down",
+      "bounds100": [
+        12.4,
+        63.5,
+        18.4,
+        82
+      ],
+      "weight": 13.5
+    },
+    "mask2": {
+      "direction": "right",
+      "bounds100": [
+        7.6,
+        75,
+        50.85,
+        82
+      ],
+      "weight": 43.25
+    },
+    "boundaryGlobal": 0.23788546255506607,
+    "genericHClipRightAtSamples": [
+      8.0325,
+      9.7625,
+      11.925
+    ],
+    "priorVMinX": 12.4,
+    "sourceGuideGap100": 7.785,
+    "noNewBridge": true,
+    "sourceGeometryChanged": false
+  },
+  "interpretation": [
+    "Observed finite failure of the current left-to-right H reveal: the new H tail is exposed before visibly joining completed V.",
+    "Guide endpoint distance alone was not used as a failure proof; ROOT directly observed these three main520 frames.",
+    "The original source whole shape and static14role/order approvals remain independent and unchanged.",
+    "No exact join time, full previous-ink-union topology proof, implicit retracing, repaired direction, or every-frame claim."
+  ],
+  "decision": {
+    "originalShapeAndStaticOrderPreserved": true,
+    "newDisplayPolicyRequired": true,
+    "filledPAndOriginalGuidesMustRemainPreserved": true,
+    "nativeApproval": false,
+    "registrationAuthorized": false,
+    "runtimeApplied": false,
+    "productionFilesGenerated": false
+  },
+  "next": {
+    "assignee": "ROOT delegated display-policy preparation to agent2",
+    "requirement": "Grounded source-specific display treatment and fresh ROOT affected initial/transition validation; no guessed bridge, new filled geometry, activation or same-source width-only loop."
+  },
+  "cleanup": {
+    "childServers": 0,
+    "serverSession": 16626,
+    "PID": 95102,
+    "port": 63188,
+    "exitCode": 130,
+    "tab": "234",
+    "rootServerStopped": true,
+    "tabClosed": true
+  }
+}

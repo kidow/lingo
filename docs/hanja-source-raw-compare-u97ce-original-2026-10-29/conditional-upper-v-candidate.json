@@ -1,0 +1,124 @@
+{
+  "schema": "hanja-public-source-conditional-local-candidate/v1",
+  "glyph": "韎",
+  "date": "2026-10-29",
+  "source": {
+    "path": "docs/hanja-goal-glyphwiki-batch563-2026-10-11/engine-whole-u97ce.json",
+    "SHA256": "a420b9781f8efa339375a37632219ad97af1e37040e764b5fd50998af06203fb",
+    "raw": 17,
+    "calls": 17,
+    "P": 28
+  },
+  "originalClockPending": false,
+  "sourceWholeHOLDPreserved": true,
+  "currentRuntimeApplied": false,
+  "raw2": {
+    "kind": "cdDrawLine",
+    "args": [
+      78.395,
+      37,
+      78.395,
+      65,
+      22,
+      32
+    ],
+    "P": 2,
+    "role": "상부H1 오른끝에서 하부H4로 이어지는세로",
+    "topHRightEndpointPreservedByKeepingRaw1": true
+  },
+  "exactContact": {
+    "raw2Contacts": [
+      {
+        "raw": 1,
+        "contact": true,
+        "positive": true,
+        "pairAreas": [
+          "12",
+          "20"
+        ]
+      },
+      {
+        "raw": 4,
+        "contact": true,
+        "positive": true,
+        "pairAreas": [
+          "48",
+          "0",
+          "0",
+          "0"
+        ]
+      }
+    ],
+    "remainingRawCount": 16,
+    "retainedP": 26,
+    "omittedWholeCallP": 2,
+    "newContactsAfterPureWholeCallOmission": 0
+  },
+  "positiveAffineOnlyFeasibility": {
+    "removesExistingVRole": false,
+    "reason": "양의 비퇴화 affine는 원세로P를존재하지않게할수없음; H1우측역할과전체V원형을동시에보존한채V를없애는교정은성립하지않음"
+  },
+  "singleConditionalProposal": {
+    "operation": "명시적 locally authored whole-call2 omission",
+    "notOriginalWhole": true,
+    "isPositiveAffine": false,
+    "sourceGeometryPerRetainedCallUnchanged": true,
+    "retainedRawOneBased": [
+      1,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17
+    ],
+    "retainedRawCount": 16,
+    "retainedP": 26,
+    "omittedCallOneBased": 2,
+    "omittedP": 2,
+    "preservedTopRightHCallOneBased": 1,
+    "preservedGuideAndFlagsOfRemainingCalls": true,
+    "noPartialPTrimming": true,
+    "noFlagChange": true,
+    "newBridge": false,
+    "newContactPairs": 0,
+    "lostContactRawPairs": [
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        4
+      ]
+    ],
+    "geometryMaterialized": false,
+    "status": "HOLD-DO-NOT-MATERIALIZE-FRESH-CLOCK-ROLE2-REQUIRES-V",
+    "freshClockConditionMet": false,
+    "blockingReason": "ROOT확인: noextraV는1+2이외추가V없음을뜻함. 원문2H→V는명확히존재하므로raw2부재추정금지. 원본whole/raw2정적위치대조선행.",
+    "condition": "ROOT원문14clock과current역할대조로해당세로역할부재를먼저확인하고명시적저자가설로승인할때만정적후보를생성",
+    "mappingApproved": false,
+    "wholeShapeApproved": false,
+    "nativeApproval": false,
+    "runtimeApplied": false
+  },
+  "limits": [
+    "현재는공개원본의접촉사실과조건부제안만; 경로/기하파일생성0",
+    "획수14를맞추기위해삭제한것으로간주하지않음; 실제역할부재근거가없으면후보생성하지않음",
+    "이제안의원P제외는명시적으로고지하며wholeenginecapture로사칭하지않음"
+  ],
+  "serversStarted": 0,
+  "sourceEngineRuns": 0,
+  "sharedFilesChanged": false,
+  "buildRun": false,
+  "freshClockEvidence": {"path":"docs/hanja-official-media-compare-u97ce-2026-10-29/native-clock-review.json","SHA256":"01562c4eecb8eaff4dfa766a37db0c0be14ef710e79ba330330c28fd467bbf4b"}
+}
