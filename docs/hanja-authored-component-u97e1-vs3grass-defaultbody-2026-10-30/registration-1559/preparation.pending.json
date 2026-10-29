@@ -1,0 +1,76 @@
+{
+  "schema": "hanja-conditional-registration-preparation/v1",
+  "date": "2026-10-30",
+  "glyph": "韡",
+  "batch": 1559,
+  "status": "BLOCKED-PENDING-ROOT-FINAL-NATIVE-RECEIPT",
+  "capsule": {
+    "path": "docs/hanja-authored-component-u97e1-vs3grass-defaultbody-2026-10-30/registration-1559/capsule.pending.json",
+    "SHA256": "cb9f81336c5d84b7ecba45e001c6d2f0cb0e03195e4f37cb3b37441f312879a2"
+  },
+  "conditionalFourFiles": {
+    "path": "docs/hanja-authored-component-u97e1-vs3grass-defaultbody-2026-10-30/registration-1559/four-files.pending.patch",
+    "SHA256": "d838d05f5f3229961b9a37be6f7b471d48ea2ecfe54cfac021c04e1402bc663a",
+    "applyAllowed": false,
+    "allProductionFlags": false,
+    "targets": [
+      {
+        "path": "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch1559.json",
+        "SHA256": "41a0c8a4a5c1b50245b77d36b629024714747b2af84a3583911c590480c9062e"
+      },
+      {
+        "path": "lib/hanja-stroke-dictionary-glyphwiki-batch1559.ts",
+        "SHA256": "e6e5d1444311a1eb0f4ea0ff62388538548d8d8fd2e1b7811d68f5aafcc9809e"
+      },
+      {
+        "path": "lib/hanja-stroke-dictionary-glyphwiki-batch1559.test.ts",
+        "SHA256": "3c18c7ed158ad818d8a1ba6d42fa84c060f148f50fa749819397be5f36e158c9"
+      },
+      {
+        "path": "public/hanja-strokes/sources/glyphwiki-batch1559-NOTICE.md",
+        "SHA256": "1468cccb10c81401aae999b034b772a6d4bfe82bd89e7f0815e68cdb7272140a"
+      }
+    ]
+  },
+  "conditionalRegistry": {
+    "path": "docs/hanja-authored-component-u97e1-vs3grass-defaultbody-2026-10-30/registration-1559/variant-registry.pending.patch",
+    "SHA256": "90882531e5b361f09be79dd2e9210a9ab8dc4adadfcc49967a1a38adf06a24ac",
+    "applyAllowed": false,
+    "target": "lib/hanja-stroke-variants.ts",
+    "beforeSHA256": "b7b8141b56e26502c2115859068024f5fd6b157d551281f38998c4d3eb9a1a28",
+    "afterSHA256": "4903a2aa3e72ef53559020842f23eb933e2ebdc23517644172f743778f083bf6",
+    "exactVariantPin": {
+      "glyph": "韡",
+      "catalogStrokes": 21,
+      "playbackStrokes": 20,
+      "form": "사전",
+      "candidateSha256": "5cf8fbeb85614b9602b86f5b2132c7293fd65c535bc10d4a2c45168df3edc041",
+      "pathsSha256": "1806a8e3d3db9fc02461258408ba20af4d7e7f0822ec4db8345b9e83bdc0be91"
+    },
+    "ordinaryResolverChanges": 0,
+    "generalCountValidationChanges": 0
+  },
+  "pending": {
+    "finalNativeReview": null,
+    "finalProfile": null,
+    "finalR": null,
+    "finalH": null,
+    "post1558OrdinarySHA256": null
+  },
+  "validation": {
+    "focusedVirtualTests": 3,
+    "pass": 3,
+    "fail": 0,
+    "scope": "Pending loader/source/count/hostile-input contracts only; not native PASS or live resolver activation.",
+    "liveApprovedResolverTestRequired": true,
+    "liveStudyLabelRequired": "사전 자형 · 재생 20획 (배정 21획)",
+    "newBuild": 0,
+    "newFullTypecheck": 0,
+    "newSSR": 0,
+    "newServer": 0,
+    "registryForwardInverseExact": true
+  },
+  "actualSharedWrites": false,
+  "registrationAuthorized": false,
+  "runtimeApplied": false
+}
