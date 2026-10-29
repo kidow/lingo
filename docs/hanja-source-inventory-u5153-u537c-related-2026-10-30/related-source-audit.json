@@ -1,0 +1,223 @@
+{
+  "schema": "hanja-official-related-source-bounded-audit/v1",
+  "date": "2026-10-30",
+  "status": "new-official-complete-source-declarations-found-native-unapproved",
+  "APIrecordSet": {
+    "path": "docs/hanja-source-inventory-u5153-u537c-related-2026-10-30/api-records.json",
+    "SHA256": "0e89d8514b7860736e7aa90de997ec415ef7b0959dcb30096cd82dc4e5778995"
+  },
+  "officialDocumentation": {
+    "URL": "https://zht.glyphwiki.org/wiki/GlyphWiki:高度な活用方法@25",
+    "version": 25,
+    "documentedRelatedEndpoint": "https://glyphwiki.org/api/related?code=<4or5hex>",
+    "documentedGlyphEndpoint": "https://glyphwiki.org/api/glyph?name=<name>{@version}",
+    "actualField": "related_glyphs",
+    "APIPageNamedGlyphWikiAPIDoesNotExist": true
+  },
+  "currentRelatedListCounts": [
+    {
+      "code": "5153",
+      "groups": 33,
+      "includingAliases": 65
+    },
+    {
+      "code": "537c",
+      "groups": 12,
+      "includingAliases": 31
+    }
+  ],
+  "scope": {
+    "relatedCodesQueried": [
+      "5153",
+      "537c"
+    ],
+    "relatedRequests": 2,
+    "rootDeclarationsQueried": 8,
+    "closureDeclarationsQueried": 12,
+    "originalGlyphResponseBytes": 3589,
+    "allQueriedRootClosuresComplete": true,
+    "newDefinitionNamesEnumeratedButNotFetched": true,
+    "notAllRelatedRootBodiesExhausted": true,
+    "oldFixedDumpRereadOrDownloaded": false,
+    "old403RootGETRetried": false
+  },
+  "rootLeafCounts": [
+    {
+      "name": "u5153-j",
+      "version": 2,
+      "leafCount": 10,
+      "closureComplete": true
+    },
+    {
+      "name": "u5153-t",
+      "version": 2,
+      "leafCount": 11,
+      "closureComplete": true
+    },
+    {
+      "name": "u5153-var-002",
+      "version": 2,
+      "leafCount": 11,
+      "closureComplete": true
+    },
+    {
+      "name": "u5153-g06",
+      "version": 4,
+      "leafCount": 12,
+      "closureComplete": true
+    },
+    {
+      "name": "u5153-03-var-003",
+      "version": 1,
+      "leafCount": 11,
+      "closureComplete": true
+    },
+    {
+      "name": "u537c-g",
+      "version": 2,
+      "leafCount": 11,
+      "closureComplete": true
+    },
+    {
+      "name": "u2ff0-u5143-u5371",
+      "version": 1,
+      "leafCount": 13,
+      "closureComplete": true
+    },
+    {
+      "name": "hkcs_m537c",
+      "version": 2,
+      "leafCount": 11,
+      "closureComplete": true
+    }
+  ],
+  "priority": {
+    "root": "u537c-g",
+    "version": 2,
+    "sourceRecord": {
+      "path": "docs/hanja-source-original-u537c-g-2026-10-30/source-record.json",
+      "SHA256": "1dc2ee0fe90b87bc2b02576928bf30fac00e4c335cc7a4020cbafd05163712c8"
+    },
+    "completeClosure": [
+      "u537c-g@2",
+      "u5140-10@1",
+      "u5371-j@2"
+    ],
+    "rootOriginalDataUnchanged": true,
+    "genuinelyUncachedWholeRoot": true,
+    "wholeRootOnlyNotComponentBboxFit": true,
+    "leftOriginal3Rows": true,
+    "lastLeftGuide": {
+      "row": "3:32:5:61:37:61:178:181:178",
+      "downThenRight": true,
+      "terminalFlag": 5
+    },
+    "publicGuideScope": {
+      "wrapBottomY": 178,
+      "wrapRightEndX": 181,
+      "rightNominalControlMaxY": 163.04,
+      "rightNominalControlMaxX": 175.24,
+      "description": "Original whole declaration has a lower/right reach outside the right component control envelope. This is not compiled filled-P or visual approval."
+    },
+    "left3PlusRight8RawLeavesNotLogical9Approval": true,
+    "requiresOriginalWholeNativeBeforeMapping": true
+  },
+  "jin": {
+    "oldCacheNotRelatedCatalogExhaustive": true,
+    "oldKnownComponents": [
+      "u5153-g03",
+      "u5153-var-003",
+      "u6701",
+      "u6701-g"
+    ],
+    "newReadCompleteRoots": [
+      {
+        "name": "u5153-j",
+        "version": 2,
+        "leafCount": 10,
+        "closureComplete": true
+      },
+      {
+        "name": "u5153-t",
+        "version": 2,
+        "leafCount": 11,
+        "closureComplete": true
+      },
+      {
+        "name": "u5153-var-002",
+        "version": 2,
+        "leafCount": 11,
+        "closureComplete": true
+      },
+      {
+        "name": "u5153-g06",
+        "version": 4,
+        "leafCount": 12,
+        "closureComplete": true
+      },
+      {
+        "name": "u5153-03-var-003",
+        "version": 1,
+        "leafCount": 11,
+        "closureComplete": true
+      }
+    ],
+    "bestLimitedRoleLead": {
+      "root": "u5153-j",
+      "version": 2,
+      "child": "u5142-j@3",
+      "shortV": "1:12:32:48:52:48:102",
+      "followingH": "1:0:0:15:102:185:102",
+      "shortVPureVertical": true,
+      "sourceGuideControlSeparationPotential": {
+        "leftMaxX": 98.35,
+        "rightMinX": 99.65,
+        "gap": 1.3,
+        "filledSeparationApproved": false
+      },
+      "importantLimitation": "Each half longDL source starts at y17 above firstH y52; native comparison may retain the prior protruding-head objection. Ten source leaves are not an approved eight-logical mapping."
+    },
+    "otherReadLimits": {
+      "u5153_t": "shortV source39->25 and102->93 slants remain; complete11leaves",
+      "u5153_var_002": "shortV source52->44 and33->29 slants; complete11leaves",
+      "u5153_g06": "complete12leaves and nontrivial original99 stretch flags; no ordinary-affine or compatibility inference",
+      "u5153_03_var_003": "complete11leaf direct declaration, shortVs remain slanted"
+    },
+    "MM": {
+      "priorInventoryRecommendationSuperseded": true,
+      "alreadyNativeHOLD": true,
+      "doNotDownloadOrReviewAgain": true,
+      "receipt": {
+        "path": "docs/hanja-authored-component-u61af-mm-jin8-2026-10-30/native-static-partial-hold-review.json",
+        "SHA256": "aaa68e13f151eca9c0d95daccdd8afe69cb0a64f2376de65eeb1955f759e20f6"
+      }
+    }
+  },
+  "otherWuLeads": {
+    "u2ff0_u5143_u5371": {
+      "version": 1,
+      "leafCount": 13,
+      "status": "not prioritized",
+      "reason": "Original complete 元5primitive declaration plus危8; the last 元 source guide rises right and does not establish the required long outer wrapping role."
+    },
+    "hkcs_m537c": {
+      "version": 2,
+      "leafCount": 11,
+      "status": "not prioritized",
+      "reason": "Original leftlast type3 ends x94/y160 before rootcaller; nominal worldrightend81.49/y160 while right component control envelope reaches x185.44/y184. Thus the guide extent does not match the enclosing requirement; no refit or P claim."
+    }
+  },
+  "versionLimits": [
+    "New current related aliases do not retroactively collapse distinct historical a7dd captured definitions.",
+    "Per-record API versions are frozen separately; no global fixed archive claim.",
+    "Raw KAGE leaf count is not logical stroke count or native order approval."
+  ],
+  "engineRunsByThisAudit": 0,
+  "geometryRetuning": false,
+  "server": 0,
+  "sharedRendererOrRegistryEdited": false,
+  "privateMediaFetchedOrSaved": false,
+  "mappingApproved": false,
+  "actualTemporalApproved": false,
+  "runtimeApplied": false
+}
