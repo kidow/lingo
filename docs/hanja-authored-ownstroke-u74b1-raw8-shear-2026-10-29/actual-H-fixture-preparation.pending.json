@@ -1,0 +1,65 @@
+{
+  "schema": "hanja-exact-fixture-H-preparation-pending/v1",
+  "glyph": "璱",
+  "recordedAt": "2026-10-30",
+  "baseH": {
+    "path": "scripts/hanja-actual-component-review.mjs",
+    "SHA256": "9a8d724d8b2c6ca1ceaa47ec2ec1c25772162d55230b092bd90b43bf2284d264"
+  },
+  "currentR": {
+    "path": "components/hanja/stroke-outlines.tsx",
+    "SHA256": "632b3d66a3cd8425d222eb7fedd3a7df7d404410f887011a9897e861f590a77e"
+  },
+  "expectedClosureModules": 393,
+  "fixture": {
+    "path": "docs/hanja-authored-ownstroke-u74b1-raw8-shear-2026-10-29/fixtures-execution-draft.json",
+    "SHA256": "0a157580936b75fa032577a21267426a2da22f970a350e2e35eb450b318dad28",
+    "geometrySHA256": "7388edef116519d8850ea0e3b18940cf06ec697cc86e35552e6a41aaf627eb9d"
+  },
+  "pendingProfile": "docs/hanja-authored-ownstroke-u74b1-raw8-shear-2026-10-29/profile-overrides.pending.json",
+  "guard": "docs/hanja-authored-ownstroke-u74b1-raw8-shear-2026-10-29/u74b1-fixture-guard.snippet.js",
+  "check": {
+    "positiveActualSnippetReturnedOriginalStrokes": true,
+    "negativeCases": 6,
+    "syntax": "PASS",
+    "sourceFieldTargets": 7,
+    "cardinalTargets": 12,
+    "pairBoundaries": [
+      {
+        "pen": 15,
+        "boundary": 0.41278686120078034,
+        "nextMask": 2
+      },
+      {
+        "pen": 15,
+        "boundary": 0.6620719994184021,
+        "nextMask": 3
+      }
+    ],
+    "only8HasSourceTransform": true,
+    "profileDisabled": true,
+    "Hintegration": false,
+    "actualRoutesExecuted": false,
+    "SSR": 0,
+    "server": 0,
+    "geometryCoverageRerun": false,
+    "inputSHA256": {
+      "docs/hanja-authored-ownstroke-u74b1-raw8-shear-2026-10-29/u74b1-fixture-guard.snippet.js": "ffb4f7701f94f41b41b7c27e52ef05092c79c4254d5ad65f277efaef96994314",
+      "docs/hanja-authored-ownstroke-u74b1-raw8-shear-2026-10-29/profile-overrides.pending.json": "05d5c0292b56ed14fb37778d1b4b9f198a55e86ab9730d56999e3d8d01e0135c"
+    }
+  },
+  "integrationRequirements": [
+    "Add exact root/profile fixture guard dispatch only",
+    "Actual resources-generated JSON must convey root/sharedVersion/temporalPolicy/curveTargets/pairProgress and select current393 exact closure",
+    "Browser sourceAffine observer permits only exact logical8/mask1 transform, allother16raw noTransform; do not expand Su4 rounding exception",
+    "Preserve existing immutable render clock/target progress projection",
+    "Include all7curve gates/fullround, original15 compound2boundaries, aggregate91,21states and native17compact; static evidence does not approve temporal"
+  ],
+  "status": "pending-Hintegration-and-final-shared-pins; disabled profile overlay only",
+  "sharedFilesWritten": false,
+  "build": 0,
+  "fullTypecheck": 0,
+  "SSR": 0,
+  "server": 0
+}
+

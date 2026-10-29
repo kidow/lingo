@@ -1,0 +1,157 @@
+{
+  "schema": "hanja-isolated-actual-native-review/v1",
+  "glyph": "璱",
+  "reviewedAt": "2026-10-30",
+  "reviewer": "ROOT direct browser observation",
+  "status": "PASS-bounded-isolated-actual-native-review",
+  "inputs": {
+    "component": {
+      "path": "components/hanja/stroke-outlines.tsx",
+      "SHA256": "632b3d66a3cd8425d222eb7fedd3a7df7d404410f887011a9897e861f590a77e"
+    },
+    "H": {
+      "path": "scripts/hanja-actual-component-review.mjs",
+      "SHA256": "252b7e45c36601621eb2cd00c269dd7f8d621a8c05e870271a02c1b1f1b435da"
+    },
+    "profile": {
+      "path": "docs/hanja-authored-ownstroke-u74b1-raw8-shear-2026-10-29/actual-profile-start.json",
+      "SHA256": "fb4a25d742bf3f0d5de9dc012ab954a9b8500109a4f7e6ab26cd29143f829e30"
+    },
+    "fixture": {
+      "path": "docs/hanja-authored-ownstroke-u74b1-raw8-shear-2026-10-29/fixtures-execution-draft.json",
+      "SHA256": "0a157580936b75fa032577a21267426a2da22f970a350e2e35eb450b318dad28",
+      "geometrySHA256": "7388edef116519d8850ea0e3b18940cf06ec697cc86e35552e6a41aaf627eb9d"
+    },
+    "mapping": {
+      "path": "docs/hanja-authored-ownstroke-u74b1-raw8-shear-2026-10-29/native-mapping-review.json",
+      "SHA256": "87b0257993ebd43ae04065fec114db43f21334294a36b0049307849d940e21b7"
+    },
+    "coverage": {
+      "path": "docs/hanja-authored-ownstroke-u74b1-raw8-shear-2026-10-29/coverage-preflight.json",
+      "SHA256": "0eb640f55641a4ae3b842bab9e07e5c7ff2334b1934a26ad7a5099b300038ae4"
+    }
+  },
+  "startup": {
+    "actualSSR": 1,
+    "CJSModules": 393,
+    "ESMModules": 393,
+    "serverPID": 64704,
+    "port": 57638,
+    "session": 38411,
+    "tab": 283
+  },
+  "nativeViews": {
+    "gateRelease": {
+      "curveMasks": 7,
+      "framesPerMask": 3,
+      "views": 21,
+      "CSS": 300,
+      "result": "PASS"
+    },
+    "compact": {
+      "pens": 17,
+      "framesPerPen": 9,
+      "views": 153,
+      "CSS": 150,
+      "result": "PASS"
+    },
+    "aggregate": {
+      "initial": 34,
+      "boundary": 6,
+      "ending": 51,
+      "views": 91,
+      "CSS": 240,
+      "result": "PASS",
+      "stableDOMStates": 92,
+      "bad": [],
+      "errors": []
+    },
+    "fullRoundResidual": {
+      "curveMasks": 7,
+      "views": 7,
+      "CSS": 300,
+      "blank": true,
+      "result": "PASS"
+    },
+    "mainStates": {
+      "prefixes": [
+        7,
+        8,
+        9,
+        14,
+        15,
+        16
+      ],
+      "idle": true,
+      "done": true,
+      "selectedZero": 15,
+      "views": 9,
+      "CSS": 520,
+      "result": "PASS"
+    },
+    "natural": {
+      "completedRuns": [
+        {"pen":8,"endMode":"natural-ended","endProgress":1,"endBad":[],"endErrors":[],"startAndEndNativeVisualPass":true},
+        {"pen":15,"startProgress":0.096225,"startBad":[],"startErrors":[],"endMode":"natural-ended","endProgress":1,"endBad":[],"endErrors":[],"startAndEndNativeVisualPass":true}
+      ],
+      "startObserved": [
+        {
+          "pen": 8,
+          "progress": 0.0908875,
+          "CSS": 520,
+          "bad": [],
+          "errors": [],
+          "nativeVisualPass": true
+        }
+      ],
+      "views": 4,
+      "CSS": 520,
+      "remaining": []
+    },
+    "totalNativeViews": 285
+  },
+  "scope": {
+    "logicalPens": 17,
+    "masks": 19,
+    "filledP": 40,
+    "curves": 7,
+    "cardinals": 12,
+    "changedOriginalRaw": [
+      8
+    ],
+    "sourceAffineMask": {
+      "pen": 8,
+      "mask": 1,
+      "width": 14,
+      "padding": 7
+    },
+    "other16OriginalRawUnchanged": true,
+    "originalClockAndMappingReused": true,
+    "sourceOrCoverageRerun": false
+  },
+  "limits": [
+    "Raw8 retains triangular wedge, small noncollinear Q residual and stroke-thickness differences from publisher H",
+    "Lower central line end slopes and relative shape sizes accepted only within bounded macro review",
+    "No exact publisher font, outline identity or microclock identity claim",
+    "Original P, source guides and raw8 matrix unchanged"
+  ],
+  "cleanup": {
+    "complete": true,
+    "serverActive": false,
+    "tabActive": false,
+    "exitCode": 130,
+    "PID": 64704,
+    "session": 38411,
+    "tab": 283
+  },
+  "approval": {
+    "boundedNativeFramesSoFar": true,
+    "actualTemporalApproved": true,
+    "fullAutomaticGlyphProductUI": false,
+    "actualAppUI": false,
+    "exactPublisherFont": false,
+    "microclockEquivalent": false,
+    "runtimeApplied": false
+  }
+}
+
