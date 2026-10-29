@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-30",
+  "glyph": "瑲",
+  "status": "bounded-actual-component-PASS",
+  "reviewer": "Codex root, CUA browser panel tab312",
+  "profileSHA256": "d534a26ef8b679c6fc1a269288e3af43de9ddc4fcf7f3d3e4cd380bf04ff6f39",
+  "H_SHA256": "27cd4a15e092b8d7aa88dbcaaa37fc93cf8522bb5e3b5fcd9c3bbb941a57ca59",
+  "R_SHA256": "3015b3127a4e933cdb978059c11e0017e0aba4f6eb8abf0013ec5d845e8eb03b",
+  "fixtureSHA256": "c15216756392966259d42798776ca7a881a235714a9b70e6f214a720a5fdef8a",
+  "geometrySHA256": "cfbf5d321e00d7853e5c6e3a28e9675bf99c0e94f5f55837258f8c0aeace30f6",
+  "freshViews": {
+    "all14Compact9": 126,
+    "curveStartRelease3": {"pens": [4,5,6,7,8,9,10,11,12,13,14], "views": 33},
+    "all11CurveFullRoundResidual": 11,
+    "selectedPen13Natural": {"start": 0.08433750000298022, "end": 1, "replayStart": 0.08635000000149011, "replayEnd": 1, "views": 4},
+    "total": 174
+  },
+  "findings": [
+    "All fourteen logical strokes were observed from zero through exact completion. The roof, inner horizontal turns, long descending enclosure and bottom mouth retain their observed order and direction.",
+    "Eleven curve start-release boundaries were checked independently. Initial ink stays within its own source head; no future detached tail or neighboring stroke was observed.",
+    "All eleven full-round residual views were blank. Source-affine transforms remained applied while dash/start clips were removed for this coverage view.",
+    "Selected pen13 natural playback and replay both completed with stable checks true and errors empty. This is selected-stroke playback, not whole-glyph autoplay or product UI verification."
+  ],
+  "coverageReuse": "Unchanged source pins and original 11/11 exact source-curve coverage proof retained; no geometry rerun.",
+  "sourceGeometryChanged": false,
+  "sourceStaticReviewRetained": "native-static-review.json, complete-source font differences remain disclosed",
+  "runtimeAppliedAtReview": false,
+  "buildRun": false,
+  "wholeProjectTypecheckRun": false,
+  "privateSourcePixelsPersisted": false
+}
