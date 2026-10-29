@@ -1,0 +1,109 @@
+{
+  "schema": "hanja-existing-original-clock-readiness/v1",
+  "glyph": "麤",
+  "recordedAt": "2026-10-30",
+  "catalog": {
+    "path": "content/hanja/characters/special.json",
+    "SHA256": "05e3e8a73b974b420c944a34b19f1fc89e5147d203148d3f8787ca8b9a78baf9",
+    "strokes": 33,
+    "correctionEntry": false
+  },
+  "metadata": {
+    "path": "docs/hanja-goal-glyphwiki-batch934-2026-10-13/metadata.json",
+    "SHA256": "5adb14ea6455cc718ee2c4143695f633060c8235a0726d67b9fdb73b73a60a4d",
+    "catalogStrokes": 33,
+    "domesticClips": 33,
+    "originalSVG": {
+      "bytes": 15736,
+      "SHA256": "06d966b94eba80adcb1e4b27110a5ad74eb114b2e8826c571acbbe376c4dcac3"
+    }
+  },
+  "publicSourceCount": {
+    "id": "u9ea4",
+    "path": "docs/hanja-goal-glyphwiki-batch934-2026-10-13/engine-proof.json",
+    "bytes": 139994,
+    "SHA256": "ea2d736fc5593c331ece4d6fc08be32a23bbe6116ff9d97b2a66a229a425f22d",
+    "raw": 39,
+    "calls": 48,
+    "P": 99,
+    "nondrawingRaw": []
+  },
+  "readiness": "READY-fixed-runtime-RAM-original-clock; metadata clipcount pinned but originaltimed paths not fetched or directly observed by this child",
+  "configs": [
+    {
+      "path": "docs/hanja-official-media-compare-u9ea4-2026-10-30/config-first.json",
+      "SHA256": "fb86c0749af1bf1c246c24e16a7f2920ce47cb3df23965f46ef291dc6384fc64",
+      "selected": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "guardPass": true,
+      "commonSyntheticValidatorPass": true,
+      "command": "rtk proxy python3 docs/hanja-official-media-compare-u9ea4-2026-10-30/clock.py --config docs/hanja-official-media-compare-u9ea4-2026-10-30/config-first.json --config-sha fb86c0749af1bf1c246c24e16a7f2920ce47cb3df23965f46ef291dc6384fc64 --port 0"
+    },
+    {
+      "path": "docs/hanja-official-media-compare-u9ea4-2026-10-30/config-middle.json",
+      "SHA256": "f38e0139f34117721e0e1b586c0d072bcf83a7dab09c628e9ee1231e02b73957",
+      "selected": [
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32
+      ],
+      "guardPass": true,
+      "commonSyntheticValidatorPass": true,
+      "command": "rtk proxy python3 docs/hanja-official-media-compare-u9ea4-2026-10-30/clock.py --config docs/hanja-official-media-compare-u9ea4-2026-10-30/config-middle.json --config-sha f38e0139f34117721e0e1b586c0d072bcf83a7dab09c628e9ee1231e02b73957 --port 0"
+    },
+    {
+      "path": "docs/hanja-official-media-compare-u9ea4-2026-10-30/config-rest.json",
+      "SHA256": "422592ae587a09b33e5c93a3955409e321b3f1d247644c7164b29f3205bec2d3",
+      "selected": [
+        33
+      ],
+      "guardPass": true,
+      "commonSyntheticValidatorPass": true,
+      "command": "rtk proxy python3 docs/hanja-official-media-compare-u9ea4-2026-10-30/clock.py --config docs/hanja-official-media-compare-u9ea4-2026-10-30/config-rest.json --config-sha 422592ae587a09b33e5c93a3955409e321b3f1d247644c7164b29f3205bec2d3 --port 0"
+    }
+  ],
+  "wrapper": {
+    "path": "docs/hanja-official-media-compare-u9ea4-2026-10-30/clock.py",
+    "SHA256": "df97d4f26f675f47a2b23867f36af6106d426df1eb76c3b55b29894c3d4dbcb7",
+    "sharedUnchanged": true,
+    "splitMax16": true
+  },
+  "guard": "Startup requires original SVG/CSS byte hashes and parsed original timedpath count exactly 33; original CSS/timing/geometry remain RAM-only and original attributes unchanged. Public source rawcount does not define domestic stroke membership.",
+  "originalClockEvidenceFound": false,
+  "sourceRolesApproved": false,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "HTTP": 0,
+  "server": 0,
+  "newEngine": 0,
+  "privateAssetsSaved": false
+}
