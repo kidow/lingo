@@ -1,0 +1,150 @@
+{
+  "schema": "hanja-exact-source-H-preparation/v1",
+  "date": "2026-10-30",
+  "glyph": "齕",
+  "status": "disabled-isolated-review-pending",
+  "harness": {
+    "path": "scripts/hanja-actual-component-review.mjs",
+    "beforeSHA256": "1d9a2dba249edec296f817216ad40bded1af7b1ee9a3e6c4523f37583ead418d",
+    "afterSHA256": "e5ac2ed3f49a41b9644c58d199d710b4f4805c77cdd467312f6a8a21de7f8d82",
+    "patch": "docs/hanja-authored-component-u9f55-gw-chi-g01-original-qi-2026-10-30/actual-H-integration.pending.patch",
+    "patchSHA256": "f083c1a3a010dc2f93e1709a997f4e4e00394781516dad01fadafd856de553ad",
+    "hunks": 20,
+    "forwardInverseExact": true,
+    "base": "After exact 爗 future H1d9a2dba; collector400 estimate withdrawn by ROOT actual399 observation",
+    "sharedWritten": false
+  },
+  "profile": {
+    "path": "docs/hanja-authored-component-u9f55-gw-chi-g01-original-qi-2026-10-30/actual-profile-start.pending.json",
+    "SHA256": "430e17b53aacd7eadd8878c4e9de03ef44c04e3cb12aa2a70742d525748497af",
+    "flags": [
+      false,
+      false,
+      true
+    ],
+    "ordinarySHA256": "0b40395915b28aee5c17638f9d2d49adef35c8f79f019123cfc5cb5d6e9b60f0",
+    "variantSHA256": "4903a2aa3e72ef53559020842f23eb933e2ebdc23517644172f743778f083bf6",
+    "R": "37306a42416754fe932a76d09caf2075dbfdde10c92a1c90c71f00eb961ebb2e",
+    "inputPins": 1327,
+    "expectedClosure": 399
+  },
+  "source": {
+    "fixture": "docs/hanja-authored-component-u9f55-gw-chi-g01-original-qi-2026-10-30/fixtures-execution-draft.json",
+    "fixtureSHA256": "46f39790bd91d641eae4cf703cde1f25d184fe68a7e3738b9007cba41720b6a0",
+    "geometrySHA256": "575fa6fe49e13bb96a641b3bbe7177f1a05712495aefbeb5ec1d3b1469d3c9a2",
+    "logical": 18,
+    "masks": 22,
+    "P": 48,
+    "Q": 11,
+    "cardinal": 11,
+    "pairCount": 4,
+    "sourceAffineQ": 9,
+    "preservedEmptyRaw17": true,
+    "retainedQi4Raw13P": true,
+    "wholeAuthorCapture": false
+  },
+  "checks": {
+    "guard": {
+      "PASS": true,
+      "negativeCases": 4,
+      "foreignProfile": true,
+      "foreignRoot": true,
+      "changedBody": true,
+      "removedAffine": true
+    },
+    "syntax": {
+      "H": true,
+      "browser": true
+    },
+    "actualSetup": {
+      "actualSetup": true,
+      "buttons": 18,
+      "labels": [
+        "齕 5m1 start-release3",
+        "齕 6m1 start-release3",
+        "齕 7m1 start-release3",
+        "齕 8m1 start-release3",
+        "齕 10m1 start-release3",
+        "齕 11m1 start-release3",
+        "齕 12m1 start-release3",
+        "齕 13m1 start-release3",
+        "齕 14m2 start-release3",
+        "齕 16m1 start-release3",
+        "齕 18m3 start-release3",
+        "齕 aggregate102 initial36-boundary12-ending54",
+        "齕 aggregate initial36",
+        "齕 aggregate source-boundary12",
+        "齕 aggregate ending54",
+        "齕 compound pen14 compact9",
+        "齕 compound pen18 compact9",
+        "齕 all-curve full-round residual"
+      ],
+      "pens": 18,
+      "masks": 22,
+      "P": 48,
+      "curves": 11,
+      "cardinals": 11,
+      "pairs": 4,
+      "UIOnlyButtonStub": true,
+      "existingNonTargetFlagsFalse": true
+    },
+    "actualGeneratedRoutes": {
+      "actualGeneratedRoute": true,
+      "fields": 14,
+      "strokesExact": true,
+      "curves": 11,
+      "cardinals": 11,
+      "pairs": 4,
+      "sourceAffineTargets": 9
+    },
+    "collector": {
+      "expected": 399,
+      "inheritedFromROOTActualF399": true,
+      "sameRAndDependencyImports": true,
+      "newImport": false,
+      "actualSSRRun": false
+    },
+    "topEntryExplicit": true,
+    "sourceAffineGuideObserver": {
+      "onlyExact9DonorQ": true,
+      "retainedQi2QGeneric": true,
+      "outlineTransformsForbidden": true,
+      "Su4ExceptionExpanded": false,
+      "computedMatrixToleranceChanged": false
+    }
+  },
+  "priorityReview": [
+    "Logical14 V413 foot diamond/natural V→NE handoff at exactboundary .5438276602332509",
+    "Logical18 original H→DL→Q→H-UP-decoration at three original call boundaries",
+    "All18 compact,11gate3,11blankresidual,aggregate102 and22states under unchanged source geometry"
+  ],
+  "requiredFreshNative": {
+    "pens": 18,
+    "compact9": 162,
+    "gate3": 33,
+    "fullRoundResidualBlank": 11,
+    "initial": 36,
+    "boundary": 12,
+    "ending": 54,
+    "aggregate": 102,
+    "states": 22,
+    "naturalPens": [
+      14,
+      18
+    ]
+  },
+  "startup": "node scripts/hanja-actual-component-review.mjs --profile docs/hanja-authored-component-u9f55-gw-chi-g01-original-qi-2026-10-30/actual-profile-start.pending.json --profile-sha 430e17b53aacd7eadd8878c4e9de03ef44c04e3cb12aa2a70742d525748497af --port 0",
+  "flagsNote": "Profile stays false/false/true pending ROOT isolated review enablement. Pin changes at enablement require its new profile SHA.",
+  "scope": {
+    "nativeApproved": false,
+    "runtimeApplied": false,
+    "SSRRun": false,
+    "serverRun": false,
+    "buildRun": false,
+    "fullTypecheckRun": false,
+    "sourceCoverageRerun": false,
+    "sharedHWritten": false,
+    "sharedRWritten": false
+  },
+  "recommendedCommitMessage": "chore(hanja): prepare isolated g01 He actual component review"
+}
