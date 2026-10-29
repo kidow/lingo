@@ -1,0 +1,54 @@
+{
+  "schema": "hanja-fixed-fixture-dispatch-repair/v1",
+  "status": "root-startup-failure-preserved-correction-pending",
+  "beforeH": "3fced26ea053bf9981ad81610ee18b9087e7004f7580537afa713bf7efc3fb82",
+  "failedProfile": {
+    "path": "docs/hanja-authored-component-u55f8-ja-ao-bbox-gap1-v2-2026-10-29/actual-profile-fold-contact-start.json",
+    "SHA256": "fc8db04a6ba0aa36c86dabdd78b0e03df2a160bf15e69011a2e97f60dd974054"
+  },
+  "failure": {
+    "reportedBy": "ROOT",
+    "actualRoot": "lingo-u55f8-completeJaAo11-gap1-logical14-source128-mask-draft",
+    "wrongFallbackExpectedRoot": "u5b76-ue0102",
+    "function": "plainU5b76FixedFixture",
+    "serverStarted": false,
+    "nativeViews": 0,
+    "cause": "New corrected profile paths were allowed in guards but omitted from the actual top-level fixture dispatcher."
+  },
+  "repair": {
+    "Hpatch": {
+      "path": "docs/hanja-display-contact-u55f8-u76cc-folds-2026-10-29/scoped-extension/fixture-dispatch-H.patch",
+      "SHA256": "8625e00c94143e79e9daefa31487aa4e0ec6aaa8d34d433b7215d267c0a25064"
+    },
+    "afterH": "d41ff4d1450ca6520d6f3616d5ecadc7bae38a16b66f0ce1351927a699c0bfc8",
+    "profilesPatch": {
+      "path": "docs/hanja-display-contact-u55f8-u76cc-folds-2026-10-29/scoped-extension/fixture-dispatch-profiles.patch",
+      "SHA256": "ee43d2ae5efc863d041a6e20c1f845d7f89283676900e19ffd6dde43178d69e5"
+    },
+    "profiles": [
+      {
+        "path": "docs/hanja-authored-component-u55f8-ja-ao-bbox-gap1-v2-2026-10-29/actual-profile-fold-contact-start.json",
+        "SHA256": "bf571b5d98d72977b10817abb98b3902482fb28c636f7219433976aeda38a6b4"
+      },
+      {
+        "path": "docs/hanja-source-execution-u76cc-original-2026-10-29/actual-profile-fold-contact-start.json",
+        "SHA256": "4fe74a54c653b87e7246e31a063931eabf8750dae800ea2a3a595639a5595d21"
+      }
+    ],
+    "scope": "Only two exact profile-path OR terms in top-level dispatcher; old paths and all other branches preserved.",
+    "rendererHelperGeometryUnchanged": true
+  },
+  "checks": {
+    "actualTopLevelDispatcherBothOldFailuresReproduced": true,
+    "actualTopLevelDispatcherBothCorrectedStrokesExact": true,
+    "foreignRootRejectedBoth": true,
+    "HModuleSyntax": true,
+    "HAndProfilesForwardInverseExact": true,
+    "unchangedGuardPayloadResource393ChecksReused": true,
+    "SSR": 0,
+    "server": 0,
+    "build": 0
+  },
+  "actualTemporalApproved": false,
+  "runtimeApplied": false
+}

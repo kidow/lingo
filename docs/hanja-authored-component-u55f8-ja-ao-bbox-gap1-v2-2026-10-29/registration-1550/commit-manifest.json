@@ -1,0 +1,62 @@
+{
+  "schema": "hanja-owned-registration-commit-manifest/v1",
+  "batch": 1550,
+  "scope": "嗸1550 only; production4, ordinary registry, approved source/receipt closure. No1551activation.",
+  "production": [
+    {
+      "path": "lib/hanja-stroke-dictionary-glyphwiki-batch1550.ts",
+      "SHA256": "8d33bd217e868bd14f989f24d1ddadb43c4edd3f6b90d66d29d551cf609b797c"
+    },
+    {
+      "path": "lib/hanja-stroke-dictionary-glyphwiki-batch1550.test.ts",
+      "SHA256": "89f6a8d47b007fcc5a6ec1fac2ed9a344694001a128eeeb3f2ff9cfb03ae6919"
+    },
+    {
+      "path": "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch1550.json",
+      "SHA256": "f0922622a49edb67c8c5bc0f59855ce939e545b4290473a0dd80cdec4bee19b5"
+    },
+    {
+      "path": "public/hanja-strokes/sources/u55f8/NOTICE.md",
+      "SHA256": "7ccf1368dc5629e02be6bda8be563bdbac8b21f53b4ed640bf0916ee17ed4389"
+    }
+  ],
+  "registry": {
+    "path": "lib/hanja-strokes.ts",
+    "expectedSHA256": "97bc701c08419b23e23c7791001539c805352fdd542a2153c57c1bb47f75a21c"
+  },
+  "requiredUntrackedSource": [
+    {
+      "path": "docs/hanja-authored-component-u55f8-ja-ao-bbox-gap1-v2-2026-10-29/actual-profile-fold-contact-start.json",
+      "SHA256": "bf571b5d98d72977b10817abb98b3902482fb28c636f7219433976aeda38a6b4"
+    },
+    {
+      "path": "docs/hanja-authored-component-u55f8-ja-ao-bbox-gap1-v2-2026-10-29/native-actual-fold-contact-review.json",
+      "SHA256": "486398e7a3e6322e04577877dc36f4ed0198b1fccb29358a2b36add85dff8e91"
+    },
+    {
+      "path": "docs/hanja-display-contact-u55f8-u76cc-folds-2026-10-29/scoped-extension/fixture-dispatch-startup-failure.json",
+      "SHA256": "9998bca441e1f0dd99914c14872770f55f7c69e752f97a1851a1f75708a89548"
+    }
+  ],
+  "ownedRegistrationDocuments": [
+    "docs/hanja-authored-component-u55f8-ja-ao-bbox-gap1-v2-2026-10-29/registration-1550/production.approved.patch",
+    "docs/hanja-authored-component-u55f8-ja-ao-bbox-gap1-v2-2026-10-29/registration-1550/registry.pending.patch",
+    "docs/hanja-authored-component-u55f8-ja-ao-bbox-gap1-v2-2026-10-29/registration-1550/capsule.approved.json",
+    "docs/hanja-authored-component-u55f8-ja-ao-bbox-gap1-v2-2026-10-29/registration-1550/production-preparation.json",
+    "docs/hanja-authored-component-u55f8-ja-ao-bbox-gap1-v2-2026-10-29/registration-1550/commit-manifest.json"
+  ],
+  "pendingHistoricalDocuments": [
+    "docs/hanja-authored-component-u55f8-ja-ao-bbox-gap1-v2-2026-10-29/registration-1550/module.pending.ts",
+    "docs/hanja-authored-component-u55f8-ja-ao-bbox-gap1-v2-2026-10-29/registration-1550/test.pending.ts",
+    "docs/hanja-authored-component-u55f8-ja-ao-bbox-gap1-v2-2026-10-29/registration-1550/bundle.pending.json",
+    "docs/hanja-authored-component-u55f8-ja-ao-bbox-gap1-v2-2026-10-29/registration-1550/NOTICE.pending.md",
+    "docs/hanja-authored-component-u55f8-ja-ao-bbox-gap1-v2-2026-10-29/registration-1550/capsule.pending.json",
+    "docs/hanja-authored-component-u55f8-ja-ao-bbox-gap1-v2-2026-10-29/registration-1550/closure.pending.json"
+  ],
+  "historicalSharedSnapshotsExcluded": [
+    "components/hanja/stroke-outlines.tsx",
+    "scripts/hanja-actual-component-review.mjs"
+  ],
+  "sourceClosureAllTrackedOrManifest": true,
+  "commitMessage": "feat(hanja): apply reviewed 嗸 stroke animation"
+}

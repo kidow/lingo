@@ -1,0 +1,159 @@
+{
+  "schema": "hanja-root-bounded-actual-fold-contact-review/v1",
+  "glyph": "嗸",
+  "status": "pass-bounded-actual-fold-contact-review",
+  "reviewer": "ROOT direct CUA",
+  "inputs": {
+    "H": {
+      "path": "scripts/hanja-actual-component-review.mjs",
+      "SHA256": "d41ff4d1450ca6520d6f3616d5ecadc7bae38a16b66f0ce1351927a699c0bfc8"
+    },
+    "profile": {
+      "path": "docs/hanja-authored-component-u55f8-ja-ao-bbox-gap1-v2-2026-10-29/actual-profile-fold-contact-start.json",
+      "SHA256": "bf571b5d98d72977b10817abb98b3902482fb28c636f7219433976aeda38a6b4"
+    },
+    "R": {
+      "path": "components/hanja/stroke-outlines.tsx",
+      "SHA256": "632b3d66a3cd8425d222eb7fedd3a7df7d404410f887011a9897e861f590a77e"
+    },
+    "helper": {
+      "path": "lib/hanja-stroke-fold-contact-u55f8-u76cc.ts",
+      "SHA256": "a9c8033d2ce41fe513a78cad1f842ce415a5ac2ab815a4cd16d6dcbdfe46f50f"
+    },
+    "oldHelper": {
+      "path": "lib/hanja-stroke-fold-contact-u85da-u7f5d.ts",
+      "SHA256": "46c20a920336955f26c7b81a77594d5c594dc688180c45d4fc8617d7d43fe1fc"
+    },
+    "fixture": {
+      "path": "docs/hanja-authored-component-u55f8-ja-ao-bbox-gap1-v2-2026-10-29/fixtures-execution-draft.json",
+      "SHA256": "314725854294450f222facc1bfcd3dfd62dc8f037297992d2ca3441c37ade30c"
+    },
+    "geometrySHA256": "250c2cfd344809677863b6a31d4a1253b9b61e26e4fcfaf24388526d8131851a"
+  },
+  "startup": {
+    "SSR": 1,
+    "CJS": 393,
+    "ESM": 393
+  },
+  "observed": {
+    "oldFailureTargets": {
+      "pen": 13,
+      "verticalLocal": [
+        0.01,
+        0.05,
+        0.1
+      ],
+      "views": 3,
+      "CSS": 520,
+      "clipCSS": 516,
+      "completedHConnected": true,
+      "detachedDotOrTriangle": false
+    },
+    "compact": {
+      "pens": 14,
+      "perPen": 9,
+      "views": 126,
+      "CSS": 150,
+      "passed": true
+    },
+    "aggregate": {
+      "initial": 28,
+      "boundary": 3,
+      "ending": 42,
+      "views": 73,
+      "CSS": 240,
+      "passed": true,
+      "transientGuard": {
+        "requestedFrameFailures": 6,
+        "nativeShapeFailure": false,
+        "subsequentStableStates": 74,
+        "stableBad": [],
+        "stableErrors": [],
+        "resolution": "Settled rerender observation; no source/profile/fixture modification."
+      }
+    },
+    "sourceAffineStartRelease": {
+      "guides": 11,
+      "perGuide": 3,
+      "views": 33,
+      "CSS": 300,
+      "passed": true
+    },
+    "fullroundResidual": {
+      "guides": 11,
+      "views": 11,
+      "CSS": 300,
+      "allBlank": true
+    },
+    "mainStates": {
+      "names": [
+        "prefix12",
+        "prefix13",
+        "prefix14",
+        "idle",
+        "done",
+        "selected13zero"
+      ],
+      "views": 6,
+      "CSS": 520,
+      "passed": true
+    },
+    "natural": {
+      "pen": 13,
+      "start": {
+        "observed": true,
+        "progress": 0.1014875,
+        "CSS": 520,
+        "bad": [],
+        "errors": []
+      },
+      "end": {
+        "observed": true,
+        "mode": "natural-ended",
+        "pen": 13,
+        "progress": 1,
+        "CSS": 520,
+        "bad": [],
+        "errors": []
+      }
+    },
+    "totalNativeSVGViews": 254,
+    "errors": []
+  },
+  "limits": {
+    "boundedActualComponentOnly": true,
+    "productUIApproved": false,
+    "publisherOutlineIdentity": false,
+    "publisherMicroclockEquivalent": false,
+    "fontDifferences": "Previously recorded bounded static differences retained; upper short6H versus publisher/source and authored gap1 placement limitations remain.",
+    "sourcePAndGuidesUnchanged": true,
+    "all14NaturalRunsClaimed": false,
+    "fullAutomaticGlyphApproved": false
+  },
+  "history": {
+    "baselineHold": {
+      "path": "docs/hanja-authored-component-u55f8-ja-ao-bbox-gap1-v2-2026-10-29/source-native-baseline-hold.json",
+      "SHA256": "b2ce602c588b1ffd43bfc5e3a08e42ff94a0f046f97659e8f03b3728c9234c4e"
+    },
+    "fixtureDispatchFailure": {
+      "path": "docs/hanja-display-contact-u55f8-u76cc-folds-2026-10-29/scoped-extension/fixture-dispatch-startup-failure.json",
+      "SHA256": "9998bca441e1f0dd99914c14872770f55f7c69e752f97a1851a1f75708a89548"
+    },
+    "baselineFailuresPreserved": true
+  },
+  "session": {
+    "PID": 49133,
+    "port": 55660,
+    "session": 47090,
+    "tab": 280,
+    "serverStopped": true,
+    "tabClosed": true,
+    "cleanup": "ROOT confirmed server/wrapper stopped and tab closed",
+    "exitCode": 130
+  },
+  "actualTemporalApproved": true,
+  "runtimeApplied": false,
+  "registrationApplied": false,
+  "builds": 0,
+  "fullProjectTypeChecks": 0
+}
