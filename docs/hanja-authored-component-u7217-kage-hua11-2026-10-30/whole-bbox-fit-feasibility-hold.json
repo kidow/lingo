@@ -1,0 +1,74 @@
+{
+  "schema": "hanja-whole-component-affine-feasibility/v1",
+  "glyph": "爗",
+  "date": "2026-10-30",
+  "status": "HOLD-original-bbox-fit-retains-new-contact",
+  "inputs": {
+    "candidate": {
+      "path": "docs/hanja-authored-component-u7217-kage-hua11-2026-10-30/engine-authored-whole.json",
+      "SHA256": "957b55a9be23432afbb3dc3bf5ec69d59920fa8a07242464c41e3b668e97339c"
+    },
+    "recipient": {
+      "path": "docs/hanja-goal-glyphwiki-batch727-2026-10-12/engine-proof.json",
+      "SHA256": "550651abb20f3b7c5e6d1af1606c9337ad1788606b795c3097195eb1053e2df7"
+    },
+    "nativeContactHOLD": {
+      "path": "docs/hanja-authored-component-u7217-kage-hua11-2026-10-30/native-contact-hold-review.json",
+      "SHA256": "2a593048fbbe698b93ffa3d2599c208b8363b476a471d7c6477e6eeef68d1e1f"
+    }
+  },
+  "result": {
+    "sourceWholeHuaBBox": [
+      "669/10",
+      "313/5",
+      "1873/10",
+      "939/5"
+    ],
+    "targetOriginalWholeHuaBBox": [
+      "67",
+      "633/10",
+      "1879/10",
+      "939/5"
+    ],
+    "postCaptureWholeComponentMatrixExact": [
+      "1209/1204",
+      "0",
+      "0",
+      "1245/1252",
+      "-2141/12040",
+      "21/20"
+    ],
+    "determinantExact": "1505205/1507408",
+    "targetBBoxReached": true,
+    "newCrossPairs": [
+      [
+        12,
+        7
+      ]
+    ],
+    "checkedPairs": 99,
+    "samePositiveAffineAllDonorPAndGuideRequired": true,
+    "sourceInternalContactGraphPreservedByInvertibleAffine": true,
+    "individualStretchOrOffset": false,
+    "nativeApproved": false
+  },
+  "limits": [
+    "One deterministic source-derived bbox fit only; no extra offset trials",
+    "Matrix would apply equally to every complete華 P and original guide coordinate; fire+日 remain exact",
+    "Analysis did not generate an executable fixture or new engine capture",
+    "Exact same new raw12↔raw7 contact remains, therefore no new static candidate is proposed"
+  ],
+  "additionalInventory": {
+    "sourceRoot": "u83ef-var-005",
+    "grass4": true,
+    "body": "cdp-8bf8-var-008",
+    "bodyPrimitives": 8,
+    "middleHSplit": true,
+    "rejectedAsRequestedContinuous7Body": true,
+    "conclusion": "Does not provide requested11 total; retain as noncandidate inventory fact only"
+  },
+  "engine": 0,
+  "server": 0,
+  "nativeApproval": false,
+  "runtimeApplied": false
+}
