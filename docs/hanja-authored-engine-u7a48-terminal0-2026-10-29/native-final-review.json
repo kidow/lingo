@@ -1,0 +1,149 @@
+{
+  "schema": "hanja-isolated-actual-component-native-review/v1",
+  "date": "2026-10-29",
+  "glyph": "穈",
+  "status": "pass-bounded-actual-component-review",
+  "reviewer": "ROOT direct Codex browser panel",
+  "fixtureSHA256": "09a79f5990b06aa22fa87b950405bf6c031876f5161727b42e752cee01b7ff23",
+  "geometrySHA256": "5385b67238d8ac3984bb982ea4a6acdc32f3c05da9b02d3f82d65cf9250f2eb7",
+  "profileSHA256": "bbe647c8cae52d7dffe2f5b90141b8fbd0bab46b30f8dcc8530d46e0797461e5",
+  "rendererSHA256": "55db76b01618110165dd5f22d512428550512feb180757814b734e80ffa304d1",
+  "actualHelperSHA256": "27b09b08fef879a85bf78c8593e3b66150df391cd729d01e4d4b3b35a768ddde",
+  "inputs": {
+    "fixture": "docs/hanja-authored-engine-u7a48-terminal0-2026-10-29/fixtures-execution-draft.json",
+    "profile": "docs/hanja-authored-engine-u7a48-terminal0-2026-10-29/actual-profile-start.json",
+    "sourceClock": {
+      "path": "docs/hanja-official-media-compare-u7a48-2026-10-29/native-clock-review.json",
+      "SHA256": "b28dd0d050117fac043b958e67d5064359668e3c833264d994a09e03654bc3f2",
+      "logical": 16,
+      "frames": 48
+    },
+    "staticMapping": {
+      "path": "docs/hanja-authored-engine-u7a48-terminal0-2026-10-29/native-mapping-review.json",
+      "SHA256": "c3ed0445614bc47302f07b84d8bb2e25109159c2e7a93b7ea22d00f3eb1f45cb",
+      "current": 16,
+      "prefix": 16
+    },
+    "staticWhole": {
+      "path": "docs/hanja-authored-engine-u7a48-terminal0-2026-10-29/native-static-review.json",
+      "SHA256": "67802eb0bfe3f12facc74c55dfde6536542d3c2f9b8e176db8f602bcbccbdd13"
+    },
+    "coverage": {
+      "path": "docs/hanja-authored-engine-u7a48-terminal0-2026-10-29/coverage-preflight.json",
+      "SHA256": "c4568de48c8cfde99f677cedf34af3b69cfd62dd3ecaf788fbbe6e8410b2bc56"
+    },
+    "actualAuthoredCapture": {
+      "path": "docs/hanja-authored-engine-u7a48-terminal0-2026-10-29/engine-authored-terminal0.json",
+      "SHA256": "c6b7ea8b88b0db58bd7268a22807724fd4410167b49337f6ca340e721578e148"
+    },
+    "captureReceipt": {
+      "path": "docs/hanja-authored-engine-u7a48-terminal0-2026-10-29/capture.json",
+      "SHA256": "3a0b06d7372e1c02fa3a1aa130829ce9be98a7a735dfe3371957252bf1f01381"
+    }
+  },
+  "requiredCounts": {
+    "compact": 144,
+    "gateFrames": 21,
+    "residual": 7,
+    "aggregate": 95,
+    "initial": 32,
+    "boundary": 15,
+    "ending": 48,
+    "mainStatesIfAllRun": 20,
+    "natural": [
+      3,
+      11,
+      12,
+      16
+    ]
+  },
+  "checks": {
+    "newSSRChecks": 1,
+    "CJS": 390,
+    "ESM": 390,
+    "ordinaryMatrixChecks": 0,
+    "all16PensCompact9": 144,
+    "gateReleaseTriples": 7,
+    "gateFrames": 21,
+    "visuallyBlankFullRoundResiduals": 7,
+    "aggregateSamples": 95,
+    "aggregateGuardRecords": 96,
+    "initialFrames": 32,
+    "boundaryFrames": 15,
+    "endingFrames": 48,
+    "allAggregateFramesObservedNormal": true,
+    "wholeStates520px": 20,
+    "prefixStates": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16
+    ],
+    "idleState": true,
+    "doneState": true,
+    "separateSelectedZeroStateObserved": true,
+    "naturalStartAndProgress1EndPens": [
+      3,
+      11,
+      12,
+      16
+    ],
+    "naturalModeAtEnd": "natural-ended",
+    "bad": [],
+    "errors": [],
+    "allNaturalStartsAndEndsDirect520": true
+  },
+  "sourceScope": {
+    "logical": 16,
+    "raw": 16,
+    "masks": 21,
+    "P": 41,
+    "originalP": 42,
+    "curves": 7,
+    "cardinals": 14,
+    "changedRow": 11,
+    "oldEndFlag": 2005,
+    "newEndFlag": 2000,
+    "mixedParts": false,
+    "originalEngineCapture": false,
+    "actualLocallyAuthoredEngineCapture": true,
+    "sourceTraceDescribesAuthoredWhole": true,
+    "sourceTraceDescribesReplacement": true,
+    "allOther15RawExact": true,
+    "firstRaw11LineAndQuadraticExact": true,
+    "manualSourcePTrimOrDeletion": false,
+    "newBridge": 0,
+    "newGuide": 0
+  },
+  "nativeApproval": true,
+  "registrationAuthorized": true,
+  "actualAppUI": false,
+  "runtimeApplied": false,
+  "limits": [
+    "Bounded finite isolated actual-component observations only; no every-frame/all-layout or original publisher microclock proof.",
+    "Explicit locally authored supported-engine terminal0 穈: original public HKCS root hkcs_m7a48@2 and fixed top@1/禾@1 are retained as provenance. Only source row11 end flag2005 becomes2000, preserving the upper2000 prefix and all original coordinates/type fields. The pinned engine was actually evaluated in one new VM with8vendor evaluations and one makeGlyph call on a separately named authored three-record closure. Its actual full5 has16raw/21calls/41P versus original42P; other15raw and the first raw11 V/round-corner Q calls are exact. Only the generated raw11 terminal line/cap differs (old3P→new2P); no manual polygon trim/deletion, donor transplant, guessed cropping or bridge. Original16clock48 and direct16current+16prefix32 roles support Vdown→shallowright at11 without a pointed UP spike. Source font differences remain, including more angled logical12 head and thin internal sourceP seams at4/8. Final16logical/21masks/41P normalize200to100 once,7original authored-engine Q guides use declared width14/padding7 source-start policy and14cardinal masks. This is actual authored engine output, not an original GlyphWiki whole, publisher geometry/microclock identity, exhaustive motion or fresh applicationUI/whole natural-autoplay proof."
+  ],
+  "cleanup": {
+    "serverSession": 10518,
+    "PID": 73920,
+    "port": 60908,
+    "exitCode": 130,
+    "tab": "229",
+    "serverStopped": true,
+    "tabClosed": true,
+    "childServers": 0
+  }
+}

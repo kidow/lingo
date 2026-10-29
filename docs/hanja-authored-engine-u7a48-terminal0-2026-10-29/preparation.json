@@ -1,0 +1,107 @@
+{
+  "schema": "hanja-static-authored-engine-preview-preparation/v1",
+  "glyph": "穈",
+  "date": "2026-10-29",
+  "status": "ready-for-root-whole-and-logical16-role-review",
+  "config": {
+    "path": "docs/hanja-authored-engine-u7a48-terminal0-2026-10-29/config.json",
+    "SHA256": "ef6306dccfdecefe599bdc3c7fcc8835b4a4ff7033622f758d8135039bdaa02c"
+  },
+  "adapter": {
+    "path": "docs/hanja-authored-engine-u7a48-terminal0-2026-10-29/compare.py",
+    "SHA256": "b2437f8c8738f8c66e2e2bf33749e804e3eb7cd1e0feee4651eceff1e340f7ce"
+  },
+  "sourceOriginal": {
+    "path": "docs/hanja-actual-engine-capture-u7a48-hkcs-2026-10-26/engine-whole-hkcs_m7a48.json",
+    "SHA256": "911dc61d82647fc17df009c7499c0e8b8d36c7280a636ef5296716bf264ec3fa",
+    "raw": 16,
+    "calls": 21,
+    "P": 42,
+    "wholeHOLDPreserved": true
+  },
+  "sourceCandidate": {
+    "path": "docs/hanja-authored-engine-u7a48-terminal0-2026-10-29/engine-authored-terminal0.json",
+    "SHA256": "c6b7ea8b88b0db58bd7268a22807724fd4410167b49337f6ca340e721578e148",
+    "raw": 16,
+    "calls": 21,
+    "P": 41,
+    "isActualLocallyAuthoredEngineCapture": true,
+    "originalRoot": false
+  },
+  "originalClock": {
+    "path": "docs/hanja-official-media-compare-u7a48-2026-10-29/native-clock-review.json",
+    "SHA256": "b28dd0d050117fac043b958e67d5064359668e3c833264d994a09e03654bc3f2",
+    "observedFrames": 48
+  },
+  "pendingLogicalRawGroupsOneBased": [
+    [
+      1
+    ],
+    [
+      2
+    ],
+    [
+      3
+    ],
+    [
+      4
+    ],
+    [
+      5
+    ],
+    [
+      6
+    ],
+    [
+      7
+    ],
+    [
+      8
+    ],
+    [
+      9
+    ],
+    [
+      10
+    ],
+    [
+      11
+    ],
+    [
+      12
+    ],
+    [
+      13
+    ],
+    [
+      14
+    ],
+    [
+      15
+    ],
+    [
+      16
+    ]
+  ],
+  "assumption": "One source row per logical pen follows macro source/order hypothesis; ROOT current/prefix direct comparison required. Internal row3/6/10/11 primitive folds remain one logical row without guide reconstruction.",
+  "contracts": {
+    "wholePanels": 3,
+    "mappingCurrentPages": 16,
+    "mappingPrefixPages": 16,
+    "actualPageSelection": "PASS",
+    "independentRawCurrentPrefix": "PASS",
+    "unchanged15RowsExactGuard": true,
+    "raw11FirstVandQExactGuard": true,
+    "terminal0ActualEngineArgsGuard": true,
+    "sourceEngineRunsDuringPreview": 0,
+    "HTTP": 0,
+    "server": 0
+  },
+  "requiredNext": [
+    "ROOT whole3panels and pen11 current/prefix.",
+    "If whole accepted, all16current+16prefix role mapping; preserve originalclock48.",
+    "No progressive animation approval from static inspection."
+  ],
+  "nativeApproval": false,
+  "runtimeApplied": false
+}

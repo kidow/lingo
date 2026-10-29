@@ -1,0 +1,77 @@
+{
+  "schema": "hanja-authored-engine-terminal-feasibility/v1",
+  "glyph": "穈",
+  "date": "2026-10-29",
+  "status": "pending-one-exact-authored-engine-execution-then-root-static-review",
+  "original": {
+    "source": {
+      "path": "docs/hanja-source-alternative-u7a48-hkcs-2026-10-26/sources.json",
+      "SHA256": "7f8345f1a7fe9863fa5d609f83290fce845cb13b667243de145f56f705717c1e",
+      "root": "hkcs_m7a48"
+    },
+    "full5": {
+      "path": "docs/hanja-actual-engine-capture-u7a48-hkcs-2026-10-26/engine-whole-hkcs_m7a48.json",
+      "SHA256": "911dc61d82647fc17df009c7499c0e8b8d36c7280a636ef5296716bf264ec3fa"
+    },
+    "sourceRows": 16,
+    "sourceCalls": 21,
+    "sourceP": 42
+  },
+  "nativeClock": {
+    "path": "docs/hanja-official-media-compare-u7a48-2026-10-29/native-clock-review.json",
+    "SHA256": "b28dd0d050117fac043b958e67d5064359668e3c833264d994a09e03654bc3f2",
+    "frames": 48,
+    "pen11": "Vdown then shallow curve/horizontalright, no pointedUP"
+  },
+  "enginePrimaryEvidence": {
+    "repository": "https://github.com/kamichikoichi/kage-engine",
+    "revision": "49232bac0348fe815f4200d4116ab7917e0db47f",
+    "files": [
+      {
+        "url": "https://raw.githubusercontent.com/kamichikoichi/kage-engine/49232bac0348fe815f4200d4116ab7917e0db47f/kagedf.js",
+        "SHA256": "e6d7cb5eeacda24705306302fd85a01c78f2adcdfdba43d1cac1d3616b6bf847",
+        "scope": "type3 exact dispatch",
+        "facts": [
+          "a3%1000==5 special branch final cdDrawLine end5; non5 final receivesa3.",
+          "Both branches calculate identical tx1/ty1/tx2/ty2 and issue same first line and corner quadratic for fixed coordinates/startflag/highflag. This codefact is not an actual output equality claim."
+        ]
+      },
+      {
+        "url": "https://raw.githubusercontent.com/kamichikoichi/kage-engine/49232bac0348fe815f4200d4116ab7917e0db47f/kagecd.js",
+        "SHA256": "489fdd76e307642f6adaa99d280a41b1dda0760b4ca64b4711f0f49c08d9c860",
+        "scope": "cdDrawLine argument normalization",
+        "facts": [
+          "a1=ta1%1000; a2=ta2%100; opt1=floor(ta1/1000); opt2=floor(ta2/100).",
+          "Terminal2000 selects base0; start2006 and high2000 preserved through type3 dispatch."
+        ]
+      }
+    ]
+  },
+  "candidate": {
+    "sourcePath": "docs/hanja-authored-engine-u7a48-terminal0-2026-10-29/sources.pending.json",
+    "root": "lingo-u7a48-hkcs-terminal0-author-draft",
+    "changedSourceRow": 11,
+    "endFlagFrom": 2005,
+    "endFlagTo": 2000,
+    "coordinatesOrSourceTypesChanged": false,
+    "sourcePTrimOrDeletion": false,
+    "newFilledBridge": false
+  },
+  "requiredExactChecks": [
+    "Run pinned public engine8 once on explicit authored three-record closure; fresh code-derived header only, not stitched original capture.",
+    "Compare all16 raw rows and all trace kinds/args against original; only permitted final raw11 terminal parameter/associated generated filled shape may differ; report any adjustment side effects.",
+    "Preserve source whole/first2raw11 primitives if exact actual output demonstrates equality; do not assume copiedP identity.",
+    "ROOT compare original/candidate/domestic whole and pen11 current/prefix before any mapping or animation approval.",
+    "Keep originalfour/default andHKwhole HOLD artifacts unchanged."
+  ],
+  "limits": [
+    "Explicit authored source-engine terminal variant, not discovered official whole or original GlyphWiki root.",
+    "No donor P transplantation or resemblance-based reuse.",
+    "Fresh P count/geometry/body contact/whole approval unknown until executed and observed.",
+    "No private publisher coordinates,SVG,CSS,images used in source modification."
+  ],
+  "engineExecution": 0,
+  "server": 0,
+  "nativeApproval": false,
+  "runtimeApplied": false
+}

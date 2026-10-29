@@ -1,0 +1,49 @@
+{
+  "schema": "hanja-pending-profile-finalization-json-patch/v1",
+  "profilePath": "docs/hanja-authored-engine-u7a48-terminal0-2026-10-29/actual-profile-start.json",
+  "expectedProfileSHA256": "fe29b5c4d75ee69e75c62d6f00ef6b3b31b319f7d118b57c0c87df204caa5d01",
+  "expectedH": "27b09b08fef879a85bf78c8593e3b66150df391cd729d01e4d4b3b35a768ddde",
+  "ordinaryBefore": "b60fd31097a27469e775fbfd70fb8b33cba5d8c4d052eeba1080f14a12d5b9f5",
+  "ordinaryAfter": null,
+  "ordinaryRefreshRequiredAfter1544Registration": true,
+  "operations": [
+    {
+      "op": "test",
+      "path": "/profileFinalized",
+      "value": false
+    },
+    {
+      "op": "test",
+      "path": "/executionEnabled",
+      "value": false
+    },
+    {
+      "op": "test",
+      "path": "/sharedWindowPending",
+      "value": true
+    },
+    {
+      "op": "test",
+      "path": "/inputSHA256/lib~1hanja-strokes.ts",
+      "value": "b60fd31097a27469e775fbfd70fb8b33cba5d8c4d052eeba1080f14a12d5b9f5"
+    },
+    {
+      "op": "replace",
+      "path": "/profileFinalized",
+      "value": true
+    },
+    {
+      "op": "replace",
+      "path": "/executionEnabled",
+      "value": true
+    },
+    {
+      "op": "replace",
+      "path": "/sharedWindowPending",
+      "value": false
+    }
+  ],
+  "executionBlockedUntilOrdinaryAfterProvided": true,
+  "nativeApproval": false,
+  "runtimeApplied": false
+}

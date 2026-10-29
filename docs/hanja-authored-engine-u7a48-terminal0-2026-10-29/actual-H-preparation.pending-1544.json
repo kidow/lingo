@@ -1,0 +1,60 @@
+{
+  "schema": "hanja-isolated-actual-H-case-preparation/v1",
+  "glyph": "穈",
+  "date": "2026-10-29",
+  "status": "pure-checks-pass-pending-root-isolated-execution",
+  "expectedBeforeH": "b5c4f146e6f8f543f2a363c0d3c8a98b73d5cc60a287e3f2dcbde8649533ae9e",
+  "expectedAfterH": "27b09b08fef879a85bf78c8593e3b66150df391cd729d01e4d4b3b35a768ddde",
+  "transport": {
+    "path": "docs/hanja-authored-engine-u7a48-terminal0-2026-10-29/actual-H-integration.pending-1544.patch",
+    "SHA256": "534fb10c611521a36fef0b5f1620d11534c3f5b3e60b44aadd5843b94637c1e5",
+    "hunks": 16,
+    "originalIndexSorted": true,
+    "forwardExact": true,
+    "inverseExact": true
+  },
+  "profile": {
+    "path": "docs/hanja-authored-engine-u7a48-terminal0-2026-10-29/actual-profile-start.json",
+    "SHA256": "fe29b5c4d75ee69e75c62d6f00ef6b3b31b319f7d118b57c0c87df204caa5d01",
+    "flags": {
+      "profileFinalized": false,
+      "executionEnabled": false,
+      "sharedWindowPending": true
+    },
+    "ordinaryAtPreparation": "b60fd31097a27469e775fbfd70fb8b33cba5d8c4d052eeba1080f14a12d5b9f5"
+  },
+  "fixture": {
+    "path": "docs/hanja-authored-engine-u7a48-terminal0-2026-10-29/fixtures-execution-draft.json",
+    "SHA256": "09a79f5990b06aa22fa87b950405bf6c031876f5161727b42e752cee01b7ff23",
+    "geometrySHA256": "5385b67238d8ac3984bb982ea4a6acdc32f3c05da9b02d3f82d65cf9250f2eb7",
+    "pens": 16,
+    "masks": 21,
+    "P": 41,
+    "curves": 7,
+    "cardinals": 14,
+    "pairBoundaries": 5
+  },
+  "pureChecks": {
+    "nodeSyntax": "PASS",
+    "exactGuard": "PASS",
+    "guardNegative": 4,
+    "actualGeneratedFixtureFields": 7,
+    "generatedPredicateNegative": 4,
+    "localBaselineClosureSelected": true,
+    "closure390": "PASS",
+    "closure391Rejected": true,
+    "execution": "context-mode child_process rtk proxy node",
+    "verifierPath": "docs/hanja-authored-engine-u7a48-terminal0-2026-10-29/verify-pending-H-predicate.mjs",
+    "verifierSHA256": "3ff2c2890630660da444a7283dc0ed8a2c74c8b673640c43af8c57d1940b5a19"
+  },
+  "sharedHChanged": false,
+  "rendererChanged": false,
+  "registryChanged": false,
+  "sourcePGuideOrFlagsChanged": false,
+  "SSR": 0,
+  "serverStarts": 0,
+  "buildRun": false,
+  "actualDOM": false,
+  "nativeApproval": false,
+  "runtimeApplied": false
+}

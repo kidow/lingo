@@ -1,0 +1,49 @@
+{
+  "schema": "hanja-public-authored-primitive-contact-check/v1",
+  "glyph": "穈",
+  "sourceRawOneBased": 11,
+  "primitiveP": [
+    3,
+    2,
+    2
+  ],
+  "sourceCallKinds": [
+    "cdDrawLine",
+    "cdDrawCurve",
+    "cdDrawLine"
+  ],
+  "sourceGuideEndpointsExactlyContinuous": true,
+  "adjacentContact": [
+    {
+      "priorMask": 1,
+      "nextMask": 2,
+      "positiveIntersectionExists": true,
+      "sumPositiveEarCellAreas200": "30",
+      "sumIsNotUnionAreaClaim": true,
+      "strictCommonSeed200": [
+        "172868/1113",
+        "103150/1113"
+      ]
+    },
+    {
+      "priorMask": 2,
+      "nextMask": 3,
+      "positiveIntersectionExists": true,
+      "sumPositiveEarCellAreas200": "35",
+      "sumIsNotUnionAreaClaim": true,
+      "strictCommonSeed200": [
+        "1003/6",
+        "593/6"
+      ]
+    }
+  ],
+  "normalization": "source200; finalexecutiondividesonce",
+  "scope": "Existing primitive boundaries only. Early reveal growth/native approval not inferred from contact.",
+  "sourcePOrGuideChanged": false,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "inputSHA256": {
+    "docs/hanja-authored-engine-u7a48-terminal0-2026-10-29/engine-authored-terminal0.json": "c6b7ea8b88b0db58bd7268a22807724fd4410167b49337f6ca340e721578e148",
+    "docs/hanja-authored-engine-u7a48-terminal0-2026-10-29/verify-raw11-contact.py": "3ec6587ecf409179e6fdd166fd124e7544202136bde08e33e357df97e6db8983"
+  }
+}
