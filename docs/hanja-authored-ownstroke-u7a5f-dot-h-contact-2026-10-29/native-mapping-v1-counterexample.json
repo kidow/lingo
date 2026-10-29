@@ -1,0 +1,46 @@
+{
+  "schema": "hanja-source-logical-mapping-native-counterexample/v1",
+  "glyph": "穟",
+  "date": "2026-10-29",
+  "reviewer": "ROOT direct Codex browser panel",
+  "inputs": {
+    "config": {
+      "file": "docs/hanja-authored-ownstroke-u7a5f-dot-h-contact-2026-10-29/mapping-config.json",
+      "sha256": "4a6377189fc3cd0420a0fa3391090dcb5afd928a665cf8a92af2b609b06f587c"
+    },
+    "adapter": {
+      "file": "docs/hanja-authored-ownstroke-u7a5f-dot-h-contact-2026-10-29/compare-mapping.py",
+      "sha256": "fae6b5b4a557f8b99efeaac0cb4e769eea01de61ceea872996166dd2a25507a2"
+    },
+    "mapping": {
+      "file": "docs/hanja-authored-ownstroke-u7a5f-dot-h-contact-2026-10-29/mapping.pending.json",
+      "sha256": "d71c20388ccb80ecefd16f2a887b8477b3206c6603d3516dc79902a2b0aa6132"
+    },
+    "originalClock": {
+      "file": "docs/hanja-official-media-compare-u7a5f-2026-10-29/native-clock-review.json",
+      "sha256": "abcff2c570ed3954b5664f317697f7d751f1d0b7dd98d45c6e9552cf9549cda8"
+    }
+  },
+  "observed": {
+    "current520Pairs": [
+      17,
+      18
+    ],
+    "pen17": "원문 H→V 대비 후보에는 lower-left 사선 조각이 과포함된다.",
+    "pen18": "원문 risingNE 초기 조각이 후보에는 누락된다."
+  },
+  "decision": {
+    "v1Mapping": "HOLD-confirmed-role-mismatch",
+    "v2MappingStillUnapprovedAtObservation": true,
+    "geometryChangeApproved": false,
+    "temporal": false,
+    "runtime": false
+  },
+  "cleanup": {
+    "serverSession": 29552,
+    "port": 59408,
+    "parentOwnsShutdown": true,
+    "childServerStarted": 0
+  },
+  "next": "Keep existing v1 files immutable. ROOT will inspect separate v2 all18 current/prefix. No automatic mapping adoption."
+}

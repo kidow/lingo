@@ -1,0 +1,22 @@
+{
+  "schema": "hanja-source-index-clarification/v1",
+  "glyph": "穟",
+  "appliesTo": {
+    "recipe": "docs/hanja-authored-ownstroke-u7a5f-dot-h-contact-2026-10-29/recipe.pending.json",
+    "recipeSHA256": "e676f2d9181623ca79502deff82fda36644e358cdb248e4ab57e74af3eb4f774",
+    "preparation": "docs/hanja-authored-ownstroke-u7a5f-dot-h-contact-2026-10-29/preparation.json",
+    "preparationSHA256": "f1ca8db4ebcaf4dd13a0622c0141fecf8d7dcbf874d5c5c1ed0472b26a5cc3df"
+  },
+  "correction": "The legacy review field finalSweepRaw:20 uses zero-based indexing. Top-start longDR is one-based raw21. The earlier recipe/preparation phrase raw20 top-start is an indexing error; raw20 is a shortDL, raw21 is the longDR from top. Both complete groups and traces are unmodified in the reviewed candidate.",
+  "correctedTopStart": {
+    "sourceRawZeroBased": 20,
+    "sourceRawOneBased": 21,
+    "guideStart": [
+      144.7414,
+      58.08
+    ]
+  },
+  "geometryAffected": false,
+  "staticCandidateAffected": false,
+  "nativeApprovalExpanded": false
+}

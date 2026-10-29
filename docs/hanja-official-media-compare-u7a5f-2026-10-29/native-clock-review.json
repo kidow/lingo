@@ -1,0 +1,61 @@
+{
+  "schema": "hanja-original-clock-native-review/v1",
+  "glyph": "穟",
+  "date": "2026-10-29",
+  "reviewer": "ROOT direct in-app browser panel",
+  "inputs": {
+    "docs/hanja-official-media-compare-u7a5f-2026-10-29/clock.py": "a6835304ee2f4379cf7203b7cd546ce1804cbd4537d040856bb4bd8d5d8ff093",
+    "docs/hanja-official-media-compare-u7a5f-2026-10-29/config-first16.json": "41c2433f09d836f6de72bdbceb0c4af29e444844431bebf9d4a1b3ebf626dfe7",
+    "docs/hanja-official-media-compare-u7a5f-2026-10-29/config-remaining2.json": "5851997d888bc373d39516df505a99d29723f83f6cbcbfd78ff19967f6f45002"
+  },
+  "observed": {
+    "originalPens": 18,
+    "clockProgress": [
+      0.1,
+      0.5,
+      1
+    ],
+    "directFrames": 54,
+    "allCompleted": true,
+    "macroRolesOneBased": [
+      "grain top shortDL right-to-left",
+      "H left-to-right",
+      "V down",
+      "DL",
+      "DR",
+      "upper-left DL",
+      "top H then DR",
+      "body H",
+      "upper inside DL",
+      "big bend from top down then left hook",
+      "middle DL",
+      "lower DL",
+      "right shortDL",
+      "longDR from top below body H",
+      "left-upper DR point",
+      "left-middle DR point",
+      "H then V only",
+      "risingNE from lower-left then bend near V endpoint and long right/DR sweep"
+    ],
+    "critical": {
+      "pen17": "Only H→V; no lower-left rising piece is part of this pen.",
+      "pen18": "Starts lower-left rising NE, bends near V endpoint then continues long DR/right sweep.",
+      "pen14": "TOPSTART confirmed, not lower-body start."
+    }
+  },
+  "scope": {
+    "originalMacroDirectionOnly": true,
+    "candidateMappingApproved": false,
+    "sourceGuideEquivalence": false,
+    "microRetracingInferred": false,
+    "runtimeApproved": false,
+    "sourceTemporalIdentity": false
+  },
+  "cleanup": {
+    "serverSession": 29045,
+    "port": 59328,
+    "parentReportedStopped": true,
+    "childServerStarted": 0
+  },
+  "next": "Prepare separate mapping v2: test exact public raw10 risingNE plus raw11 longDR as logical18; do not silently change live old mapping server."
+}

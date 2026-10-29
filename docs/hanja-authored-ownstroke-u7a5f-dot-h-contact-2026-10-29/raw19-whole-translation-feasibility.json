@@ -1,0 +1,142 @@
+{
+  "schema": "hanja-public-source-whole-positive-affine-feasibility/v1",
+  "glyph": "穟",
+  "date": "2026-10-29",
+  "status": "mathematically-feasible-native-unapproved",
+  "basis": {
+    "source": {
+      "file": "docs/hanja-goal-glyphwiki-batch673-2026-10-11/engine-whole-u7a5f-var-001.json",
+      "sha256": "c79599a17df0b5054ac829d4641c1cbc0343e96d72595e21dcd4ef66b0fb081e"
+    },
+    "recipientCandidate": {
+      "file": "docs/hanja-authored-ownstroke-u7a5f-dot-h-contact-2026-10-29/fixture.pending.json",
+      "sha256": "43a265b8400f69423c0e0c512cf7f76c2bef796f0580a419318ed08c8f34efc3"
+    },
+    "nativeMapping": {
+      "file": "docs/hanja-authored-ownstroke-u7a5f-dot-h-contact-2026-10-29/native-mapping-v2-review.json",
+      "sha256": "562cb1f7a44b943b15f391117f3e95592b797b2c0d8cbacac6e4ab179bc44939"
+    },
+    "originalClock": {
+      "file": "docs/hanja-official-media-compare-u7a5f-2026-10-29/native-clock-review.json",
+      "sha256": "abcff2c570ed3954b5664f317697f7d751f1d0b7dd98d45c6e9552cf9549cda8"
+    }
+  },
+  "scope": {
+    "onlyNewTargetRawOneBased": 19,
+    "retainPriorRaw8WholeXAffine": true,
+    "wholeRaw19FilledPAndQUseOneTransform": true,
+    "partialDeletion": false,
+    "newFilledBridge": false,
+    "sourceBytesModified": false
+  },
+  "plan": {
+    "sourceBand": [
+      "152.6",
+      "158.6"
+    ],
+    "DLBandMaxX": "21671/190",
+    "terminalP4MinX": "1137/10",
+    "chosenWholeXTranslation": "-129/95",
+    "guaranteedSlabXGap": "1",
+    "matrix": [
+      "1",
+      "0",
+      "0",
+      "1",
+      "-129/95",
+      "0"
+    ]
+  },
+  "policyNote": "The common-band gap1 is a conservative exact X separation inside the terminal-P y slab, not a claim that the global Euclidean minimum distance equals1. Original raw19 Q shape and direction are translated together; fresh static approval remains required.",
+  "contactGraph": {
+    "contactPairs": [
+      {
+        "rawOneBased": 17,
+        "PoneBased": 1,
+        "before": [
+          {
+            "positive": true,
+            "strictWitness": [
+              "1499/10",
+              "225/2"
+            ],
+            "properEdgeCrossings": 2,
+            "boundary": false
+          }
+        ],
+        "after": [
+          {
+            "positive": true,
+            "strictWitness": [
+              "28223/190",
+              "225/2"
+            ],
+            "properEdgeCrossings": 2,
+            "boundary": false
+          }
+        ],
+        "newContact": false,
+        "removedContact": false
+      },
+      {
+        "rawOneBased": 17,
+        "PoneBased": 4,
+        "before": [
+          {
+            "positive": true,
+            "strictWitness": [
+              "1137/10",
+              "763/5"
+            ],
+            "properEdgeCrossings": 2,
+            "boundary": false
+          }
+        ],
+        "after": [
+          {
+            "positive": false,
+            "strictWitness": null,
+            "properEdgeCrossings": 0,
+            "boundary": false
+          }
+        ],
+        "newContact": false,
+        "removedContact": true
+      }
+    ],
+    "newContacts": []
+  },
+  "checks": {
+    "determinant": "1",
+    "sourceRaw19Polygons": 1,
+    "unchangedOtherRaw": 20,
+    "retainedIntendedMainBodyContact": true,
+    "removedOnlyExistingTerminalP4Contact": true,
+    "newContactsIncludingBoundary": 0,
+    "oldRaw17BodyP1AndRaw19PositiveWitnessBefore": [
+      "1499/10",
+      "225/2"
+    ],
+    "oldRaw17BodyP1AndRaw19PositiveWitnessAfter": [
+      "28223/190",
+      "225/2"
+    ]
+  },
+  "reproducibility": {
+    "method": "Exact rational y-slab clipping for displacement; exhaustive polygon-pair vertex-inside/proper-edge/boundary contact graph before/after one whole translation.",
+    "allSourcePolygonsOffZero": true,
+    "sourceGuideDeltaUnchanged": true,
+    "engineRuns": 0
+  },
+  "approval": {
+    "static": false,
+    "mappingAfterCorrection": false,
+    "temporal": false,
+    "runtime": false,
+    "registration": false
+  },
+  "next": "If ROOT chooses this single candidate, materialize a separate authored fixture and static compare; preserve original v2 fixture/config/native records.",
+  "sharedChanges": 0,
+  "serversStarted": 0,
+  "build": false
+}

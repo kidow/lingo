@@ -1,0 +1,207 @@
+{
+  "schema": "hanja-source-logical-mapping-hypothesis/v2",
+  "glyph": "穟",
+  "status": "pending-root-current-prefix-v2-review",
+  "nativeApproved": false,
+  "runtimeApplied": false,
+  "logical": 18,
+  "raw": 21,
+  "filledP": 42,
+  "rawGroupsOneBased": [
+    [
+      1
+    ],
+    [
+      2
+    ],
+    [
+      3
+    ],
+    [
+      4
+    ],
+    [
+      5
+    ],
+    [
+      12
+    ],
+    [
+      13,
+      14
+    ],
+    [
+      15
+    ],
+    [
+      16
+    ],
+    [
+      17
+    ],
+    [
+      18
+    ],
+    [
+      19
+    ],
+    [
+      20
+    ],
+    [
+      21
+    ],
+    [
+      6
+    ],
+    [
+      7
+    ],
+    [
+      8,
+      9
+    ],
+    [
+      10,
+      11
+    ]
+  ],
+  "evidence": {
+    "fixedSource": {
+      "file": "docs/hanja-goal-glyphwiki-batch673-2026-10-11/engine-whole-u7a5f-var-001.json",
+      "sha256": "c79599a17df0b5054ac829d4641c1cbc0343e96d72595e21dcd4ef66b0fb081e"
+    },
+    "static": {
+      "file": "docs/hanja-authored-ownstroke-u7a5f-dot-h-contact-2026-10-29/native-static-review.json",
+      "sha256": "04a1a6d6f76ceaa2064b26bde825f091e6c0c219b20df2937c1bdff58377bff3"
+    },
+    "oldDirectionPens": [
+      5,
+      14,
+      17
+    ],
+    "original18ClockCompleted": true,
+    "clockConfigFolder": "docs/hanja-official-media-compare-u7a5f-2026-10-29/",
+    "sourceClock": {
+      "file": "docs/hanja-official-media-compare-u7a5f-2026-10-29/native-clock-review.json",
+      "sha256": "abcff2c570ed3954b5664f317697f7d751f1d0b7dd98d45c6e9552cf9549cda8"
+    }
+  },
+  "rolesHypothesis": [
+    "DL禾top",
+    "H",
+    "V",
+    "DL",
+    "DRpoint",
+    "DLupper-right",
+    "H→DRupper-right",
+    "H",
+    "DL",
+    "curvedDleft-hook",
+    "DL",
+    "DL",
+    "shortDL",
+    "longDRfrom-top",
+    "DRpoint",
+    "DRpoint",
+    "H→D only",
+    "risingNE→longDR/right sweep"
+  ],
+  "sourcePCountsPerLogical": [
+    3,
+    2,
+    1,
+    1,
+    2,
+    3,
+    4,
+    2,
+    1,
+    4,
+    1,
+    1,
+    3,
+    2,
+    2,
+    2,
+    3,
+    5
+  ],
+  "sourceTraceCallCountsPerLogical": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    2,
+    1,
+    1,
+    2,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    2,
+    2
+  ],
+  "indexing": {
+    "legacyFinalSweepRaw20IsZeroBased": true,
+    "actualTopStartLongDRRawOneBased": 21,
+    "actualRaw20IsShortDL": true,
+    "legacyRawPair4And7AreZeroBased": true,
+    "actualChangedHOneBased": 8,
+    "actualContactDotOneBased": 5
+  },
+  "limits": [
+    "Full original18 clock54 macro frames were directly reviewed by ROOT; all18 candidate currents/prefixes remain pending in this v2.",
+    "The old17[8,9,10]/18[11] hypothesis conflicts with direct source macro evidence; it remains preserved as historical rejected grouping.",
+    "Exact interior witness establishes positive filled contact only; the raw10→11 guide gap remains unresolved for actual temporal display.",
+    "Original raw17 contains two Q calls; later temporal proof must preserve each source call rather than silently join controls.",
+    "No new source P/Q or engine replay."
+  ],
+  "supersedesOnlyHypothesis": {
+    "file": "docs/hanja-authored-ownstroke-u7a5f-dot-h-contact-2026-10-29/mapping.pending.json",
+    "sha256": "d71c20388ccb80ecefd16f2a887b8477b3206c6603d3516dc79902a2b0aa6132",
+    "changedLogicalPens": [
+      17,
+      18
+    ],
+    "geometryChanged": false,
+    "oldFilesUnmodified": true
+  },
+  "handoff18": {
+    "sourceRawOneBased": [
+      10,
+      11
+    ],
+    "publicGuideEndStart": {
+      "firstEnd": [
+        92.95,
+        154
+      ],
+      "nextStart": [
+        91.57,
+        152
+      ],
+      "deltaExact": [
+        "-69/50",
+        "-2"
+      ]
+    },
+    "originalGuidesContinuous": false,
+    "filledContact": {
+      "interiorWitness": [
+        "183/2",
+        "154"
+      ],
+      "strictInteriorWitnessCount": 49,
+      "method": "Exact rational point-in-public-polygon at quarter-unit finite grid, strict interior; witness proves positive-area contact only, no temporal continuity."
+    },
+    "macroDirectionEvidence": "ROOT original18clock p.1/.5/1: risingNE from lower-left then bends near V endpoint to long right sweep. This supports role grouping, not source guide continuity or exact source temporal identity.",
+    "fakeBridgeAdded": false,
+    "animationPolicyApproved": false
+  }
+}

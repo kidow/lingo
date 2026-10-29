@@ -1,0 +1,49 @@
+{
+  "schema": "hanja-authored-whole-native-static-review/v1",
+  "glyph": "穟",
+  "date": "2026-10-29",
+  "reviewer": "ROOT direct Codex browser panel",
+  "status": "PASS-limited-static-raw8-whole-affine",
+  "inputs": {
+    "docs/hanja-authored-ownstroke-u7a5f-dot-h-contact-2026-10-29/config.json": "4926f50216ca5b693df4ba69965abee32f567bced0cfc619ece36284f465d7c4",
+    "docs/hanja-authored-ownstroke-u7a5f-dot-h-contact-2026-10-29/compare.py": "77539aa2569c4fd4c0cad2c4fb1e9acbc71394410bfab0e54c61a344ab23cd31",
+    "docs/hanja-authored-ownstroke-u7a5f-dot-h-contact-2026-10-29/recipe.pending.json": "e676f2d9181623ca79502deff82fda36644e358cdb248e4ab57e74af3eb4f774",
+    "docs/hanja-authored-ownstroke-u7a5f-dot-h-contact-2026-10-29/fixture.pending.json": "43a265b8400f69423c0e0c512cf7f76c2bef796f0580a419318ed08c8f34efc3",
+    "docs/hanja-authored-ownstroke-u7a5f-dot-h-contact-2026-10-29/public-pair.html": "095bb3306eba76293fd5039a271d2011bc955b60218bee7d12b4d5d869b2062e"
+  },
+  "observed": {
+    "whole520Panels": 3,
+    "wholeIdentities": [
+      "domestic18",
+      "original-var001",
+      "authored-candidate"
+    ],
+    "publicPair520Panels": 6,
+    "publicPanels": [
+      "original whole",
+      "candidate whole",
+      "original raw8",
+      "candidate raw8",
+      "original raw5+8+9",
+      "candidate raw5+8+9"
+    ],
+    "rootObservation": "원본 gap이 사라지고 raw5 점과 raw8 가로의 접촉이 생겼으며 raw9 기존 접촉은 유지된다. 후보 전체 형태가 작고 합당한 형태로 보였다."
+  },
+  "approval": {
+    "raw8WholeAffineStaticOnly": true,
+    "originalWholeIdentity": false,
+    "originalEngineCapture": false,
+    "fullLogicalMapping": false,
+    "temporal": false,
+    "runtime": false,
+    "registration": false
+  },
+  "scope": "Only the declared raw8 whole positive X affine has direct finite static acceptance. Existing source var001 top-start evidence is reused, not newly observed or generalized to other roots.",
+  "cleanup": {
+    "serverSession": 23858,
+    "port": 58564,
+    "parentOwnsShutdown": true,
+    "childServerStarted": 0
+  },
+  "next": "Inspect existing original18clock evidence; if incomplete prepare existing pinned original clock wrapper before declaring18logical mapping."
+}

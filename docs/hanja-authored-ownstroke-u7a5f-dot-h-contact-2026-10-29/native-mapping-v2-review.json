@@ -1,0 +1,106 @@
+{
+  "schema": "hanja-authored-static-logical-mapping-native-review/v1",
+  "glyph": "穟",
+  "date": "2026-10-29",
+  "reviewer": "ROOT direct Codex browser panel",
+  "inputs": {
+    "config": {
+      "file": "docs/hanja-authored-ownstroke-u7a5f-dot-h-contact-2026-10-29/mapping-v2-config.json",
+      "sha256": "86ec5d92ab6758c2c1cdc6a4bb0f5fe66e6d21e7ec5b91cf518e5b59ed1350bf"
+    },
+    "adapter": {
+      "file": "docs/hanja-authored-ownstroke-u7a5f-dot-h-contact-2026-10-29/compare-mapping-v2.py",
+      "sha256": "bbfc1cfe7caa6df259709cb8ffa7f72560916d9f4e7a4594337bdbf6237343c5"
+    },
+    "mapping": {
+      "file": "docs/hanja-authored-ownstroke-u7a5f-dot-h-contact-2026-10-29/mapping-v2.pending.json",
+      "sha256": "dfbc8784b8664988fee42253bfa1385a27a7cc2d807f33143c14a217d950c3d0"
+    },
+    "fixture": {
+      "file": "docs/hanja-authored-ownstroke-u7a5f-dot-h-contact-2026-10-29/fixture.pending.json",
+      "sha256": "43a265b8400f69423c0e0c512cf7f76c2bef796f0580a419318ed08c8f34efc3"
+    },
+    "originalClock": {
+      "file": "docs/hanja-official-media-compare-u7a5f-2026-10-29/native-clock-review.json",
+      "sha256": "abcff2c570ed3954b5664f317697f7d751f1d0b7dd98d45c6e9552cf9549cda8"
+    },
+    "publicContact": {
+      "file": "docs/hanja-authored-ownstroke-u7a5f-dot-h-contact-2026-10-29/public-topology-analysis.json",
+      "sha256": "331b2062e3a057b4e0ceaa3ea0a92fc09065e3ca16105d79767e6efa7c3fd8f7"
+    }
+  },
+  "observed": {
+    "currentLogicalPens": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ],
+    "prefixLogicalPens": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ],
+    "staticRoleMapping": "PASS-bounded-all18-current-and-prefix",
+    "newShapeConflict": "Source logical10/raw17 terminal P4 and logical12/raw19 overlap where the domestic reference visibly keeps a white gap.",
+    "publicExactConflict": {
+      "sourcePairs": [
+        "raw17P4",
+        "raw19P1"
+      ],
+      "area": "289/6175",
+      "strictInteriorWitness": [
+        "1137/10",
+        "763/5"
+      ],
+      "minimumFilledDistance": "0"
+    }
+  },
+  "approval": {
+    "staticRoleMappingOnly": true,
+    "finalWholeShape": false,
+    "sourceOriginalWholeIdentity": false,
+    "originalEngineCapture": false,
+    "guideContinuity": false,
+    "temporal": false,
+    "runtime": false,
+    "registration": false
+  },
+  "status": "HOLD-final-shape-terminal-contact; bounded-v2-role-mapping-PASS",
+  "limits": [
+    "Every raw/source role was directly inspected, but this does not approve the extra contact.",
+    "Original source top-start longDR is one-based raw21; no default lower-start failure transferred.",
+    "V2 filled geometry and separate source guides stay unchanged in this historical record.",
+    "Any later correction requires fresh ROOT whole/current contact comparison."
+  ],
+  "next": "One explicit whole raw19 positive-affine feasibility is recorded separately; do not activate v2."
+}

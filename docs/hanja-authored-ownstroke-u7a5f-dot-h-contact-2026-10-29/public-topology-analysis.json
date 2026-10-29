@@ -1,0 +1,179 @@
+{
+  "schema": "hanja-public-source-topology-and-policy-analysis/v1",
+  "glyph": "穟",
+  "date": "2026-10-29",
+  "inputs": {
+    "source": {
+      "file": "docs/hanja-goal-glyphwiki-batch673-2026-10-11/engine-whole-u7a5f-var-001.json",
+      "sha256": "c79599a17df0b5054ac829d4641c1cbc0343e96d72595e21dcd4ef66b0fb081e"
+    },
+    "candidate": {
+      "file": "docs/hanja-authored-ownstroke-u7a5f-dot-h-contact-2026-10-29/fixture.pending.json",
+      "sha256": "43a265b8400f69423c0e0c512cf7f76c2bef796f0580a419318ed08c8f34efc3"
+    },
+    "mappingV2": {
+      "file": "docs/hanja-authored-ownstroke-u7a5f-dot-h-contact-2026-10-29/mapping-v2.pending.json",
+      "sha256": "dfbc8784b8664988fee42253bfa1385a27a7cc2d807f33143c14a217d950c3d0"
+    },
+    "originalClock": {
+      "file": "docs/hanja-official-media-compare-u7a5f-2026-10-29/native-clock-review.json",
+      "sha256": "abcff2c570ed3954b5664f317697f7d751f1d0b7dd98d45c6e9552cf9549cda8"
+    },
+    "renderer": {
+      "file": "components/hanja/stroke-outlines.tsx",
+      "sha256": "55db76b01618110165dd5f22d512428550512feb180757814b734e80ffa304d1"
+    },
+    "outlineHelper": {
+      "file": "lib/hanja-stroke-outline.ts",
+      "sha256": "b4d289d1911c4d43934dfad39c4cfbe22a246303bb7012114d16786688c36c40"
+    }
+  },
+  "finalSweep18": {
+    "sourceRawOneBased": [
+      10,
+      11
+    ],
+    "guideQEnd": [
+      92.95,
+      154
+    ],
+    "guideCStart": [
+      91.57,
+      152
+    ],
+    "guideDeltaExact": [
+      "-69/50",
+      "-2"
+    ],
+    "guidesContinuous": false,
+    "filledQtoCContact": {
+      "interiorWitness": [
+        "183/2",
+        "154"
+      ],
+      "strictInteriorWitnessCount": 49,
+      "method": "Exact rational point-in-public-polygon at quarter-unit finite grid, strict interior; witness proves positive-area contact only, no temporal continuity."
+    },
+    "CStartSupport": {
+      "sourceForwardVector": [
+        "207/20",
+        "20"
+      ],
+      "CMinimumProjection": "100212/25",
+      "CSeed": [
+        "464/5",
+        "762/5"
+      ],
+      "seedInsideCompletedRaw9": true,
+      "seedInsidePrecedingRaw10": false,
+      "CPolygonsProjectionMonotonicity": [
+        {
+          "polygonOneBased": 1,
+          "projectionMin": "100212/25",
+          "projectionMax": "1104323/200",
+          "openBands": 21,
+          "twoCrossingsEveryOpenBand": true,
+          "bad": []
+        },
+        {
+          "polygonOneBased": 2,
+          "projectionMin": "1050267/200",
+          "projectionMax": "1104323/200",
+          "openBands": 2,
+          "twoCrossingsEveryOpenBand": true,
+          "bad": []
+        }
+      ],
+      "sharedEdge": [
+        [
+          "1781/10",
+          "852/5"
+        ],
+        [
+          "1789/10",
+          "367/2"
+        ]
+      ],
+      "footMinIsSharedEdgeEndpoint": true
+    },
+    "interpretation": [
+      "The public C minimum-projection vertex is outside preceding Q but strictly inside already completed raw9 (logical17 vertical). It must not be called a globally detached fragment from these facts.",
+      "Each C polygon has two boundary crossings in every open band between exact projected vertex levels; terminal P2 shares its minimum endpoint edge with main P1. This is a source half-plane strip topology fact only.",
+      "The actual renderer intersects an advancing round tube with a start aperture; connectedness of a whole-P half-plane prefix does not prove connectedness of that smaller tube intersection.",
+      "The original Q→C endpoint gap remains. No bridge or guide extension between separate source curves has been added."
+    ]
+  },
+  "additionalStaticContact": {
+    "logicalPens": [
+      10,
+      12
+    ],
+    "sourceRawOneBased": [
+      17,
+      19
+    ],
+    "fullBodyP1ContactHasSeparateInteriorWitness": {
+      "hookP": 1,
+      "DLP": 1,
+      "strictInteriorVertexCount": 5,
+      "witness": [
+        "706/5",
+        "1221/10"
+      ]
+    },
+    "terminalP4Contact": {
+      "terminalP4_DLarea": "289/6175",
+      "intersectionVertices": 3,
+      "method": "Exact Fraction Sutherland-Hodgman against verified convex original terminalP4; unchanged source polygon points.",
+      "strictInteriorWitness": [
+        "1137/10",
+        "763/5"
+      ],
+      "minimumFilledSetDistance": "0",
+      "sourcePointsUnchanged": true
+    },
+    "referenceObservationProvidedByRoot": "국내 논리10 hook 왼끝과 논리12 lowerDL 끝에는 white gap이 보인다는 관찰을 ROOT가 비교 중이다. 이 수학 기록은 국내원문 픽셀 판정이나 새 native HOLD를 대신하지 않는다.",
+    "noGeometryCorrectionPrepared": true
+  },
+  "existingPolicyOptions": [
+    {
+      "name": "Sequential source-original guides plus standard padded start gate",
+      "candidateOnly": true,
+      "sourceFields": [
+        "original filled P",
+        "original single continuous Q or C call per mask",
+        "source normalization once",
+        "explicit source-start gate"
+      ],
+      "reusedCode": [
+        "outlineSegmentProgress",
+        "outlineStartClip"
+      ],
+      "conditions": [
+        "Complete root-native static v2 role/contact review first.",
+        "Full-round coverage for every curve, source-start/ending and exact compound boundaries directly verified.",
+        "Separate raw17 two source calls, raw13/14 fold and final raw10/11 handoff need native checks; no inferred guide joining."
+      ],
+      "notEstablished": [
+        "original publisher microclock equality",
+        "all-progress connectedness",
+        "actual renderer pass"
+      ]
+    },
+    {
+      "name": "Existing exact-glyph mixed-guide/phase helpers",
+      "candidateOnly": false,
+      "applicableNow": false,
+      "reason": "u6030/u6621/u7e98 factories require their own exact source identities and policies. A similar Q→C appearance does not satisfy those closed guards. No generic helper reuse or renderer change is authorized by these facts."
+    }
+  ],
+  "recommendation": "원본 가이드를 유지하는 일반 순차 start-gate 후보를 우선 검토하되, 현재 발견된 hook말단↔lowerDL의 별도 정적 접촉 판정을 ROOT가 먼저 끝낸다. 실제 초기·전환 문제가 관찰되기 전 새 가이드나 단계별 P 정책을 만들지 않는다.",
+  "nativeApproval": false,
+  "temporalApproval": false,
+  "runtimeApplied": false,
+  "geometryChanges": 0,
+  "sourceEngineRuns": 0,
+  "sharedChanges": 0,
+  "serverStarted": 0,
+  "build": false
+}
