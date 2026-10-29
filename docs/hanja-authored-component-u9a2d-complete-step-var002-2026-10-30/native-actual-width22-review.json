@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-30",
+  "glyph": "騭",
+  "status": "bounded-actual-component-PASS",
+  "reviewer": "Codex root, CUA browser panel tab313",
+  "profileSHA256": "1bc2de159e069422d430331db0fffab9fc90a3a8b434910cde47939bd1f669e5",
+  "H_SHA256": "ddd5294b8273b4e8be5b79a9d5e55b3cee6dce9ad10e9fd8ba16db5e888cfbaf",
+  "R_SHA256": "3015b3127a4e933cdb978059c11e0017e0aba4f6eb8abf0013ec5d845e8eb03b",
+  "fixtureSHA256": "5a89f69d21f0c1bf8db899b368dde2dad9f6941bcab8cdaf36a066461f72ffc3",
+  "geometrySHA256": "ac2dbc2b38889effc6d8cec87cea14b407f6e55980d132471ca1255fb5d4bff8",
+  "freshViews": {
+    "all20Compact9": 180,
+    "all11CurveStartRelease3": 33,
+    "sourceBoundaries": {"pens": [1,2,16], "boundaries": 4, "beforeExactAfterViews": 12},
+    "all11CurveFullRoundResidual": 11,
+    "selectedPen16Natural": {"start": 0.10348750000149012, "end": 1, "replayStart": 0.08193750000074487, "replayEnd": 1, "views": 4},
+    "total": 240
+  },
+  "findings": [
+    "All twenty logical strokes were observed from zero through exact completion, preserving original source order and the observed plain central vertical, long descending curve and four final dots.",
+    "Eleven source-start release boundaries and all four compound-mask boundaries were checked independently. No detached future tail or cross-stroke exposure was observed.",
+    "All eleven full-round source residual views were blank. The terminal16m3 display width22/padding11 covers its original foot while the other ten curves retain14/7.",
+    "Selected pen16 natural playback and replay completed with stable checks true and errors empty. Product UI and whole-glyph autoplay are not claimed."
+  ],
+  "coverageReuse": "Existing width22 eleven-curve coverage PASS retained; original width14 foot outlier and earlier triangulation inconclusive evidence are preserved separately.",
+  "sourceGeometryChanged": false,
+  "sourceStaticReviewRetained": "native-static-review.json, complete step-var002 source font differences remain disclosed",
+  "runtimeAppliedAtReview": false,
+  "buildRun": false,
+  "wholeProjectTypecheckRun": false,
+  "privateSourcePixelsPersisted": false
+}

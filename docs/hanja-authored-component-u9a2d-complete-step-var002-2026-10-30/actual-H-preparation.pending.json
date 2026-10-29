@@ -1,0 +1,157 @@
+{
+  "schema": "hanja-exact-KAGE-width22-H-preparation/v1",
+  "date": "2026-10-30",
+  "glyph": "騭",
+  "status": "pending-native-source-review-no-temporal-approval",
+  "harness": {
+    "path": "scripts/hanja-actual-component-review.mjs",
+    "beforeSHA256": "27cd4a15e092b8d7aa88dbcaaa37fc93cf8522bb5e3b5fcd9c3bbb941a57ca59",
+    "afterSHA256": "ddd5294b8273b4e8be5b79a9d5e55b3cee6dce9ad10e9fd8ba16db5e888cfbaf",
+    "baseAfterQiangPatch": {
+      "path": "docs/hanja-authored-component-u7472-hans-cang10-2026-10-30/actual-H-integration.pending.patch",
+      "SHA256": "8a8f58bb45120d49e7233e356ba9544ca0779d26e8471eed7de41dc1a8359e47",
+      "beforeSHA256": "91993c6292d08c4e83b0d217bf444fc4486a4acbc53347feff36985cc3a3d5df",
+      "afterSHA256": "27cd4a15e092b8d7aa88dbcaaa37fc93cf8522bb5e3b5fcd9c3bbb941a57ca59"
+    },
+    "patch": "docs/hanja-authored-component-u9a2d-complete-step-var002-2026-10-30/actual-H-integration.pending-qiang.patch",
+    "patchSHA256": "325f7c9adfbe46f3807f1d8d91b4670ea4fb046c80e871e7f7c9801cfe95597b",
+    "hunks": 17,
+    "oldPositionsAscending": [
+      1113,
+      573623,
+      947673,
+      1378306,
+      1385732,
+      2879285,
+      2963935,
+      2976640,
+      3001249,
+      3014175,
+      3023415,
+      3029541,
+      3032211,
+      3073226,
+      3097855,
+      3161912,
+      3319818
+    ],
+    "forwardInverseExact": true,
+    "sharedHWritten": false
+  },
+  "profile": {
+    "path": "docs/hanja-authored-component-u9a2d-complete-step-var002-2026-10-30/actual-profile-width22-start.pending.json",
+    "SHA256": "e1afcb712299c44ff738086d7d1d74bc0e5156d58825df6b4a2f8d010c6fb452",
+    "profileFinalized": false,
+    "executionEnabled": false,
+    "sharedWindowPending": true,
+    "ordinarySHA256": "43a525210824042b0ef12841de0d01774f2a0d7c133c3f8bf3a6d4bad725bb18",
+    "ordinaryRepinRequiredBeforeRootExecution": true
+  },
+  "fixture": {
+    "path": "docs/hanja-authored-component-u9a2d-complete-step-var002-2026-10-30/fixtures-execution-draft-width22.json",
+    "SHA256": "5a89f69d21f0c1bf8db899b368dde2dad9f6941bcab8cdaf36a066461f72ffc3",
+    "geometrySHA256": "ac2dbc2b38889effc6d8cec87cea14b407f6e55980d132471ca1255fb5d4bff8",
+    "logical": 20,
+    "masks": 24,
+    "P": 45,
+    "Q": 11,
+    "cardinal": 13,
+    "sourceTransforms": 0,
+    "wideOnly": {
+      "pen": 16,
+      "mask": 3,
+      "width": 22,
+      "padding": 11
+    }
+  },
+  "sourceCaptureFlags": {
+    "locallyAuthoredRoot": true,
+    "mixedParts": true,
+    "mixedFont": false,
+    "originalWhole": false,
+    "isOriginalEngineCapture": false,
+    "isActualLocallyAuthoredEngineCapture": true,
+    "sourceTraceDescribesAuthoredWhole": true
+  },
+  "validation": {
+    "actualGuardAndPayload": {
+      "Hsyntax": true,
+      "browserSyntax": true,
+      "actualFixtureGuard": true,
+      "guardNegatives": 6,
+      "generatedPayloadFields": 7,
+      "payloadStrokesExact": true,
+      "foreignRouteRejected": 4,
+      "explicitTopEntry": true,
+      "SSR": 0,
+      "server": 0
+    },
+    "actualPaddingExpression": {
+      "actualPaddingExpressionCases": 11,
+      "rootPredicateForeignRejected": 4,
+      "zhi16m3Only22Padding11": true,
+      "oldKuoYiLuoWanWeiScopesPreserved": true
+    },
+    "actualSourceCollectorBeforeSSR": {
+      "actualSourceCollector": 397,
+      "dependencies": 396,
+      "newHelper": true,
+      "sourceHBeforeSSRProbeSHA": "ddd5294b8273b4e8be5b79a9d5e55b3cee6dce9ad10e9fd8ba16db5e888cfbaf",
+      "SSR": 0,
+      "server": 0
+    },
+    "existingRootScopesPreserved": true,
+    "sourcePAndQFlagsUnchanged": true,
+    "sourceTrajectoryRewritten": false,
+    "sourceCoverageRerun": false
+  },
+  "sourceEvidence": {
+    "static": {
+      "path": "docs/hanja-authored-component-u9a2d-complete-step-var002-2026-10-30/native-static-review.json",
+      "SHA256": "71be46932b951603ffc195eadb65f059e53481e9c0dff65c0f15af080b02dc8c"
+    },
+    "coverage": {
+      "path": "docs/hanja-authored-component-u9a2d-complete-step-var002-2026-10-30/coverage-width22-preflight.json",
+      "SHA256": "e880244974819025679e415b579a346750b573445f206d6d95ddf673e78d5678",
+      "counts": {
+        "curveMasks": 11,
+        "freshMasks": 1,
+        "reusedMasks": 10,
+        "pass": 11,
+        "unproved": 0,
+        "outlier": 0
+      }
+    }
+  },
+  "requiredNative": {
+    "allCompactPens": 20,
+    "compactFrames": 180,
+    "gateFrames": 33,
+    "residualFrames": 11,
+    "aggregateFrames": 112,
+    "initial": 40,
+    "boundary": 12,
+    "ending": 60,
+    "mainStates": 24,
+    "naturalSuggested": [
+      1,
+      2,
+      8,
+      10,
+      16
+    ]
+  },
+  "scope": {
+    "sourceWholeFontVariation": "Upper H/V4/7 contacts V8 as complete-font variation, originalpublishergap/contouridentity notclaimed; nativeactualrenderer remainsunapproved",
+    "exactPublisherConnectivity": false,
+    "sourceOriginalRootClaim": false,
+    "newP": false,
+    "newBridge": false,
+    "actualNativeApproved": false,
+    "runtimeApplied": false,
+    "SSRByChild": 0,
+    "serverByChild": 0,
+    "buildRun": false,
+    "wholeProjectTypecheckRun": false
+  }
+}
