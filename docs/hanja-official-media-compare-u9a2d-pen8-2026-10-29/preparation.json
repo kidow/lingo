@@ -1,0 +1,82 @@
+{
+  "schema": "hanja-original-clock-and-conditional-source-preparation/v1",
+  "glyph": "騭",
+  "date": "2026-10-29",
+  "scope": "Original domestic pen8 only; no fresh engine execution before native observation",
+  "catalogStrokes": 20,
+  "domesticClips": 20,
+  "selected": [
+    8
+  ],
+  "clock": {
+    "wrapper": "docs/hanja-official-media-compare-u9a2d-pen8-2026-10-29/clock.py",
+    "wrapperSHA256": "556a43eab89b0c56ad5ffc2a8465e03156e3ab04b651075ed56d9eb1492b27ea",
+    "config": "docs/hanja-official-media-compare-u9a2d-pen8-2026-10-29/config-pen8.json",
+    "configSHA256": "9249f51552c6c2e17cc589a5da7b7ce5ba8b2fecfaa1558d02994ab314cdbc88",
+    "checkOnly": {
+      "pass": true,
+      "HTTP": 0,
+      "server": 0,
+      "privateFetch": 0,
+      "whole20SyntheticShapeValidatorPass": true,
+      "selected20Rejected": true,
+      "firstAttempt": "failed actual wrapper byte SHA; config corrected to actual file bytes",
+      "nativeOriginalClockVerified": false
+    }
+  },
+  "source": {
+    "file": "docs/hanja-goal-glyphwiki-batch887-2026-10-13/sources.json",
+    "SHA256": "122fcaa599c8ed47abbf599efbdd18f21cdd9e32d5874d55f402aac896eb1abd",
+    "full5": "docs/hanja-goal-glyphwiki-batch887-2026-10-13/engine-proof.json",
+    "full5SHA256": "23b29e6c792a549d354e261f416e61668ce9dc1de86819118250c2c366ff1063",
+    "oneBasedRaw": 9,
+    "publicComponentChain": [
+      "u9a2d",
+      "u965f",
+      "u6b65"
+    ],
+    "componentRow": 5,
+    "originalComponentRow": "1:0:4:104:79:104:142",
+    "rawOriginal": [
+      1,
+      0,
+      4,
+      130.4,
+      45.105,
+      130.4,
+      76.29,
+      null,
+      null,
+      null,
+      null
+    ],
+    "conditionalChange": "end4 to0 only after domestic8 native direction/shape evidence"
+  },
+  "engineBranch": {
+    "url": "https://raw.githubusercontent.com/kamichikoichi/kage-engine/49232bac0348fe815f4200d4116ab7917e0db47f/kagedf.js",
+    "SHA256": "e6d7cb5eeacda24705306302fd85a01c78f2adcdfdba43d1cac1d3616b6bf847",
+    "lines": [
+      107,
+      131
+    ],
+    "type1End4": "Shortened cdDrawLine plus cdDrawCurve ending end+10",
+    "type1End0": "Single cdDrawLine through the original end point",
+    "sourceTypeStartCoordinatesCanStayExact": true,
+    "existingFirstVCallOrPolygonsExactClaim": false,
+    "otherRawExact": "Must be checked by one future actual capture; not assumed",
+    "freshCaptureCount": 0
+  },
+  "approval": {
+    "nativeClock": false,
+    "sourceChange": false,
+    "whole": false,
+    "mapping": false,
+    "temporal": false,
+    "runtimeApplied": false
+  },
+  "privacy": {
+    "privateBodyInputs": 0,
+    "privateSaved": 0,
+    "publicEngineBytesSaved": 0
+  }
+}
