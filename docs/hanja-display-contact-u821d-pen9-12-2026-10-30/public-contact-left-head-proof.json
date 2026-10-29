@@ -1,0 +1,111 @@
+{
+  "schema": "hanja-independent-original-P-contact-left-head-right-summary/v1",
+  "glyph": "舝",
+  "date": "2026-10-30",
+  "status": "PASS-exact-public-math-only",
+  "verifier": {
+    "path": "docs/hanja-display-contact-u821d-pen9-12-2026-10-30/verify-public-contact-left-head.py",
+    "SHA256": "e8920a20dc645332668056399aa75602ea8f7697b14eee37b25c20861e13467e",
+    "runCount": 1,
+    "detailedExactResultAvailableFromStdout": true
+  },
+  "inputSHA256": {
+    "docs/hanja-source-mapping-u821d-vs0-original13-2026-10-30/fixtures-execution-draft.json": "ac23edc46f2c28bf52744ed23ab3d208b5816e3f9b3a6008f0b1cc579e18f0bb",
+    "docs/hanja-source-mapping-u821d-vs0-original13-2026-10-30/execution-draft-check.json": "d915a8da37abc381db51da4afec31698a6f80f602f2758e5950b5fe9862559e3",
+    "docs/hanja-authored-ownstroke-u6030-raw6-head-gap-2026-10-29/verify-contact-strip-growth.py": "945d1d0f0297b056cd6e10049ee01a38271c1989e6676b528532656f411252ea",
+    "docs/hanja-display-contact-u9ea4-Q-2026-10-30/verify-independent-x-contact.py": "7b4df4a3645417484ba764427321733b1dd3de19755adf44d4d8fa2c3cb65e92"
+  },
+  "geometrySHA256": "e86568deb0fdc4e077a603c6e20ee08778e786f91a17380e0dc66de5b2353d7a",
+  "targets": [
+    {
+      "pen": 9,
+      "mask": 2,
+      "referenceFamily": "麤 Q left-head then right",
+      "P": 3,
+      "priorP": 3,
+      "cutX": 30,
+      "anchor": "Unchanged predecessor Q endpoint x=30",
+      "positivePriorIntersectionAreaExact": "18517475797/2153844000",
+      "positiveContactLengthExact": "349/560",
+      "headPhase": 0.2611654078282369,
+      "eventAndSlabMidpointSections": 53,
+      "outlineSHA256": "67a3ed2051653693ed7aaf037ff001b1b93d5d3821673fd9c615b9a4083c71a6",
+      "priorOutlineSHA256": "4bbab2fe2b83803003b15858c06dfb605ff1e3b50881435edefa660117ab8479",
+      "bounds": [
+        19.35,
+        54.2,
+        77,
+        61.9
+      ],
+      "exactStrictSeedRule": "At cutX take midpoint of the longest positive intersection between current and prior merged vertical sections; verified strictly inside both with positive rational edge-distance squared.",
+      "allOriginalPolygonsSimplePositiveWinding": true,
+      "allMergedXSectionsSingleInterval": true,
+      "allInteriorSectionsPositiveLength": true,
+      "headPhaseBasis": "Exact source-union area on left of cut divided by exact full-union area, converted once to binary64 per target.",
+      "probeClipCount": 11,
+      "probeEveryNonzeroClipPositivePriorIntersection": true
+    },
+    {
+      "pen": 12,
+      "mask": 2,
+      "referenceFamily": "韎 H left-head then right",
+      "P": 2,
+      "priorP": 1,
+      "cutX": 22.5,
+      "anchor": "Unchanged predecessor V sourceguide x=22.5",
+      "positivePriorIntersectionAreaExact": "12",
+      "positiveContactLengthExact": "2",
+      "headPhase": 0.16216216216216217,
+      "eventAndSlabMidpointSections": 11,
+      "outlineSHA256": "d7f919346f535373e50f2db74b848ab9327029a34c7c80661ee2405291f6ffa6",
+      "priorOutlineSHA256": "55eafdca612e7cca527d7e87f7eb697a04b2104f97133d576eccd3e8b33b9845",
+      "bounds": [
+        6,
+        76.5,
+        94,
+        83.5
+      ],
+      "exactStrictSeedRule": "At cutX take midpoint of the longest positive intersection between current and prior merged vertical sections; verified strictly inside both with positive rational edge-distance squared.",
+      "allOriginalPolygonsSimplePositiveWinding": true,
+      "allMergedXSectionsSingleInterval": true,
+      "allInteriorSectionsPositiveLength": true,
+      "headPhaseBasis": "Exact source-union area on left of cut divided by exact full-union area, converted once to binary64 per target.",
+      "probeClipCount": 11,
+      "probeEveryNonzeroClipPositivePriorIntersection": true
+    }
+  ],
+  "growthProof": "For every p>0 the visible source x-strip includes cutX and a left-sided open neighborhood of a strict prior/current seed, giving positive-area predecessor contact. All vertical fibres are one merged interval and every interior fibre has positive length; exhaustive polygon vertex/edge-crossing event and slab checks imply connected source-strip growth. Left head expands to minX, then right body expands to maxX. No extra filled shape or source trajectory is introduced.",
+  "displayContract": {
+    "oneColoredOriginalDPerTarget": true,
+    "clip": "one full-Y x-rect",
+    "p0": "hidden, zero-width clip, no source ink",
+    "p1": "retain owner group; remove clip; paint original sourceD once",
+    "previousMask": "complete opaque original predecessor D in the same logical-stroke/frame owner",
+    "priorDOMValidationImplemented": false,
+    "helperImplemented": false,
+    "rendererImplemented": false
+  },
+  "baselineObservation": {
+    "reviewer": "ROOT",
+    "scope": "9m2 and12m2, each local .01/.05/.1, six actual main views",
+    "result": "HOLD visual detached left head, despite bad[]/errors[]",
+    "oldSourceUnchanged": true
+  },
+  "limits": {
+    "sourcePGuideFlagsWeightAndOriginalBoundaryChanged": false,
+    "originalGuideGapsRemain": [
+      9,
+      12
+    ],
+    "privateCoordinatesUsed": false,
+    "newP": false,
+    "newGuide": false,
+    "newBridge": false,
+    "authorDisplayClock": true,
+    "publisherMicroclockEquivalent": false,
+    "actualNativeApproval": false,
+    "runtimeApproval": false,
+    "sharedChanges": false,
+    "serverStarted": false
+  }
+}
