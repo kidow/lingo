@@ -1,0 +1,151 @@
+{
+  "schema": "hanja-strict-approved-registration-preparation/v1",
+  "batch": 1556,
+  "glyph": "瑲",
+  "status": "approved-native-sealed-patches-ready-ROOT-activation",
+  "finalNative": {
+    "path": "docs/hanja-authored-component-u7472-hans-cang10-2026-10-30/native-actual-source-affine-review.json",
+    "SHA256": "088fbe0ccd30564d525640d654bfac3f847a7ffde6bbafc751791f0233036668"
+  },
+  "actualProfile": {
+    "path": "docs/hanja-authored-component-u7472-hans-cang10-2026-10-30/actual-profile-start.pending.json",
+    "SHA256": "d534a26ef8b679c6fc1a269288e3af43de9ddc4fcf7f3d3e4cd380bf04ff6f39"
+  },
+  "fixture": {
+    "path": "docs/hanja-authored-component-u7472-hans-cang10-2026-10-30/fixtures-execution-draft.json",
+    "SHA256": "c15216756392966259d42798776ca7a881a235714a9b70e6f214a720a5fdef8a"
+  },
+  "geometrySHA256": "cfbf5d321e00d7853e5c6e3a28e9675bf99c0e94f5f55837258f8c0aeace30f6",
+  "counts": {
+    "logical": 14,
+    "masks": 14,
+    "P": 18,
+    "curves": 11,
+    "cardinal": 3,
+    "sourceAffine": 10
+  },
+  "prepared4ProductionFiles": [
+    {
+      "path": "lib/hanja-stroke-dictionary-glyphwiki-batch1556.ts",
+      "SHA256": "a25f763a3853ecb175317ad735304cf082eea2b50f67fe12ef32c67c4312f050",
+      "bytes": 46699
+    },
+    {
+      "path": "lib/hanja-stroke-dictionary-glyphwiki-batch1556.test.ts",
+      "SHA256": "72a972e43603ffc0c2da8b2a2ab62ce523bc70456154deff68a660413cfc407e",
+      "bytes": 6574
+    },
+    {
+      "path": "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch1556.json",
+      "SHA256": "d314f1d216d1f29db58aa7a95238668047399f8c01644358950f505603919541",
+      "bytes": 26566
+    },
+    {
+      "path": "public/hanja-strokes/sources/u7472/NOTICE.md",
+      "SHA256": "a36534c873461e7364796ddf814e089dd02eed2f05894eb4323127e36dee154a",
+      "bytes": 2077
+    }
+  ],
+  "patches": {
+    "fourFiles": {
+      "path": "docs/hanja-authored-component-u7472-hans-cang10-2026-10-30/registration-1556/four-approved-files.pending.patch",
+      "SHA256": "ee17bb25ddb8aeb11d1647b99bdfd12afbc4b2c21745d322c1fba3779a00ffc3"
+    },
+    "ordinaryRegistry": {
+      "path": "docs/hanja-authored-component-u7472-hans-cang10-2026-10-30/registration-1556/ordinary-registry-integration.pending.patch",
+      "SHA256": "54373cad6be1df4319afa7f6be981e7c315601833929b37eb36e81480d6ce87e",
+      "beforeSHA256": "43a525210824042b0ef12841de0d01774f2a0d7c133c3f8bf3a6d4bad725bb18",
+      "afterSHA256": "aed648dbcd0f091f0d3e3163e0f3655fae93f1aa53adce4c516bdb22abf5a4d5",
+      "forwardInverseExact": true
+    }
+  },
+  "capsuleSnapshot": {
+    "path": "docs/hanja-authored-component-u7472-hans-cang10-2026-10-30/registration-1556/capsule.pending.json",
+    "SHA256": "fb6542a373ef3895868faeef0f5f2fb52dd46ae63f7fba0c17b8caf1e44345eb",
+    "historicalPreparedRuntimeFalse": true,
+    "notALiveRuntimeGate": true
+  },
+  "checks": {
+    "virtual3Tests": {
+      "exit": 0,
+      "pass": 3,
+      "fail": 0
+    },
+    "selectedSemantic2": {
+      "exit": 0,
+      "result": {
+        "selectedFiles": [
+          "hanja-stroke-dictionary-glyphwiki-batch1556.ts",
+          "hanja-stroke-dictionary-glyphwiki-batch1556.test.ts"
+        ],
+        "diagnostics": [],
+        "projectBuild": false,
+        "wholeProjectDiagnosticScan": false
+      }
+    },
+    "sourcePins": {
+      "immutablePaths": 21,
+      "allCurrentHashMatch": true,
+      "allGitTracked": true,
+      "requiredUntracked": []
+    },
+    "sourceCoverageAndNativeRerun": 0,
+    "projectBuild": false,
+    "wholeProjectTypecheck": false
+  },
+  "runtimeActivation": {
+    "by": "ROOT only",
+    "exactModuleTwoFields": [
+      "GLYPHWIKI_BATCH1556_SOURCE_INPUT.runtimeApplied",
+      "GLYPHWIKI_BATCH1556_RUNTIME_APPLIED"
+    ],
+    "activeModuleSHA256": "05fa30ec16808261421e944af83b7a3448c90215779d1e7fe31dca6ffa43fbfb",
+    "pendingModuleSHA256": "a25f763a3853ecb175317ad735304cf082eea2b50f67fe12ef32c67c4312f050",
+    "capsuleSnapshotRemainsHistorical": true,
+    "actualResolverFocused3RequiredAfterRootRegistry": true
+  },
+  "sharedHistoricalSnapshots": {
+    "rendererR": "3015b3127a4e933cdb978059c11e0017e0aba4f6eb8abf0013ec5d845e8eb03b",
+    "reviewHarnessH": "27cd4a15e092b8d7aa88dbcaaa37fc93cf8522bb5e3b5fcd9c3bbb941a57ca59",
+    "notCurrentLiveFileRequirements": true
+  },
+  "ownedCommitManifest": [
+    "docs/hanja-authored-component-u7472-hans-cang10-2026-10-30/registration-1556/capsule.pending.json",
+    "docs/hanja-authored-component-u7472-hans-cang10-2026-10-30/registration-1556/four-approved-files.pending.patch",
+    "docs/hanja-authored-component-u7472-hans-cang10-2026-10-30/registration-1556/ordinary-registry-integration.pending.patch",
+    "docs/hanja-authored-component-u7472-hans-cang10-2026-10-30/registration-1556/approved-preparation.json",
+    "lib/hanja-stroke-dictionary-glyphwiki-batch1556.ts",
+    "lib/hanja-stroke-dictionary-glyphwiki-batch1556.test.ts",
+    "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch1556.json",
+    "public/hanja-strokes/sources/u7472/NOTICE.md",
+    "lib/hanja-strokes.ts"
+  ],
+  "sourceClosure": [
+    "docs/hanja-authored-component-u7472-hans-cang10-2026-10-30/recipe.json",
+    "docs/hanja-authored-component-u7472-hans-cang10-2026-10-30/donor-source-record.json",
+    "docs/hanja-authored-component-u7472-hans-cang10-2026-10-30/fixture-static-draft.json",
+    "docs/hanja-authored-component-u7472-hans-cang10-2026-10-30/native-static-review.json",
+    "docs/hanja-authored-component-u7472-hans-cang10-2026-10-30/execution-source-plan.pending.json",
+    "docs/hanja-authored-component-u7472-hans-cang10-2026-10-30/source-mask-coverage-preflight.json",
+    "docs/hanja-authored-component-u7472-hans-cang10-2026-10-30/source-mask-coverage-preflight.py",
+    "docs/hanja-goal-glyphwiki-batch910-2026-10-13/engine-proof.json",
+    "docs/hanja-goal-glyphwiki-batch910-2026-10-13/sources.json",
+    "docs/hanja-official-media-compare-u7472-2026-10-30/native-original-clock-review.json",
+    "docs/hanja-authored-component-u55f8-ja-ao-bbox-gap1-v2-2026-10-29/prepare-execution-draft.py",
+    "docs/hanja-authored-component-u81dd-u51e1-2026-10-28/prepare-execution-draft.py",
+    "lib/hanja-stroke-outline.ts",
+    "docs/hanja-authored-component-u7472-hans-cang10-2026-10-30/prepare-execution-draft.py",
+    "docs/hanja-authored-component-u7472-hans-cang10-2026-10-30/fixtures-execution-draft.json",
+    "docs/hanja-authored-component-u7472-hans-cang10-2026-10-30/execution-draft-check.json",
+    "docs/hanja-authored-component-u7472-hans-cang10-2026-10-30/public-contact-check.json",
+    "docs/hanja-authored-component-u7472-hans-cang10-2026-10-30/native-actual-source-affine-review.json",
+    "docs/hanja-authored-component-u7472-hans-cang10-2026-10-30/actual-profile-start.pending.json",
+    "docs/hanja-source-inventory-u7472-2026-10-30/animcjk-COPYING.txt",
+    "docs/hanja-source-inventory-u7472-2026-10-30/animcjk-ARPHICPL.txt"
+  ],
+  "sourceAlreadyTrackedNoNewSourceAssets": true,
+  "serverStarts": 0,
+  "engineInvocations": 0,
+  "actualProductionWrittenByThisChild": false,
+  "ordinaryRegistryWrittenByThisChild": false
+}
