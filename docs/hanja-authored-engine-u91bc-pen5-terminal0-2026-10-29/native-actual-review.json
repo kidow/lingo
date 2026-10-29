@@ -1,0 +1,41 @@
+{
+  "schema": "hanja-native-actual-authored-engine-review-v1",
+  "date": "2026-10-29",
+  "glyph": "醼",
+  "status": "pass-bounded-actual-terminal19-up31",
+  "reviewer": "ROOT direct Codex browser panel",
+  "inputs": {
+    "R": "3b542198be38f4aeca52635c94507ceba8e76192260be9f6c6913a9f3244c972",
+    "H": "800cb6996830ba3884ab19fb7638a72f593e325cfcd36d3a0f1a1dbf970bed1e",
+    "profile": "7c4a93585d3e31c953fe7d3c8dc38611d8717227b1ffd1d1549d34e2cdfd0ff2",
+    "geometry": "7544f4f013ec63952cccc223948d50f8b8eb82e84b2057dfdb5882e375460a0d"
+  },
+  "counts": {"logical": 23, "originalCalls": 30, "displayMasks": 31, "P": 54, "Q": 9},
+  "startup": {"SSR": 1, "CJS": 391, "ESM": 391, "ordinaryMatrixChecks": 0},
+  "observed": {
+    "compact": {"pens": "1 through 23", "statesPerPen": 9, "totalFrames": 207, "size": 150, "visualPass": true},
+    "curveStartRelease": {"pens": [4, 5, 17, 18, 19, 20, 21, 22, 23], "statesPerGate": 3, "totalFrames": 27, "size": 300, "visualPass": true, "bad": [], "errors": []},
+    "sourceBoundaries": {"boundaries": 8, "statesPerBoundary": 3, "totalFrames": 24, "size": 240, "visualPass": true, "guardStates": 25, "bad": [], "errors": [], "lastRowFullyRecaptured": true},
+    "aggregateGuard": {"requestedStates": 139, "guardStates": 140, "bad": [], "errors": [], "all139FramesDirectlyViewed": false, "note": "Code observer check only; direct visual coverage is separately listed above."},
+    "terminal19Main": {"values": [0.8233215547728152, 0.875, 0.9999], "CSSSize": 520, "visualPass": true, "observation": "Original upward tail grows from the completed horizontal body; no isolated tail or completion-only pop."},
+    "main": {"CSSSize": 520, "prefixes": [18, 19, 20], "idleWhole": true, "doneWhole": true, "selectedPen19Zero": true, "visualPass": true},
+    "natural": {"pens": [19, 5, 3, 23], "secondsEach": 8, "CSSSize": 520, "startAndEndedDirectlyViewed": true, "bad": [], "errors": []}
+  },
+  "sourceScope": {
+    "engineCaptureAndWholeMappingReused": true,
+    "pen5AuthoredTerminal0": true,
+    "pen19OriginalUpwardTailPreserved": true,
+    "originalPOrQEditedByDisplaySplit": false,
+    "bodyTailSplitIsDisplayOnly": true,
+    "sourceFontContactDifferencesRetained": true,
+    "publisherGeometryIdentity": false,
+    "publisherMicroclockEquivalent": false,
+    "allMainPrefix0Through23Repeated": false,
+    "actualTemporalApproved": true,
+    "fullAppUIReviewed": false,
+    "runtimeApplied": false
+  },
+  "cleanup": {"PID": 33686, "port": 52322, "session": 40939, "tab": "247", "exitCode": 130, "serverStopped": true, "tabClosed": true},
+  "builds": 0,
+  "fullProjectTypeChecks": 0
+}

@@ -1,0 +1,165 @@
+{
+  "schema": "hanja-public-source-contact-terminal-feasibility/v1",
+  "glyph": "醼",
+  "sourceCallContact": [
+    {
+      "rawOneBased": 6,
+      "logical": 5,
+      "Pcounts": [
+        2,
+        2,
+        2
+      ],
+      "exactGuideContinuity": true,
+      "pairs": [
+        {
+          "priorMask": 1,
+          "nextMask": 2,
+          "positiveContact": true,
+          "sumPositiveEarAreas100": "243/40",
+          "sumIsNotUnionAreaClaim": true,
+          "strictSeed100": [
+            "557/20",
+            "547/10"
+          ]
+        },
+        {
+          "priorMask": 2,
+          "nextMask": 3,
+          "positiveContact": true,
+          "sumPositiveEarAreas100": "14653199/1394000",
+          "sumIsNotUnionAreaClaim": true,
+          "strictSeed100": [
+            "27311/800",
+            "68711/1200"
+          ]
+        }
+      ]
+    },
+    {
+      "rawOneBased": 21,
+      "logical": 19,
+      "Pcounts": [
+        3,
+        2,
+        3
+      ],
+      "exactGuideContinuity": true,
+      "pairs": [
+        {
+          "priorMask": 1,
+          "nextMask": 2,
+          "positiveContact": true,
+          "sumPositiveEarAreas100": "15/2",
+          "sumIsNotUnionAreaClaim": true,
+          "strictSeed100": [
+            "2441/30",
+            "193/3"
+          ]
+        },
+        {
+          "priorMask": 2,
+          "nextMask": 3,
+          "positiveContact": true,
+          "sumPositiveEarAreas100": "63/5",
+          "sumIsNotUnionAreaClaim": true,
+          "strictSeed100": [
+            "437/5",
+            "673/10"
+          ]
+        }
+      ]
+    }
+  ],
+  "terminal19": {
+    "raw": 21,
+    "mask": 3,
+    "sourceKind": "cdDrawLine",
+    "sourceFlags": [
+      6,
+      5
+    ],
+    "originalGuide100": [
+      "34697/400",
+      "68",
+      "36591/400",
+      "68"
+    ],
+    "sourceGuideHasUPLeg": false,
+    "P": 3,
+    "bodyP": 2,
+    "tailP": 1,
+    "bodyBounds100": [
+      "867/10",
+      "65",
+      "1889/20",
+      "71"
+    ],
+    "tailBounds100": [
+      "1769/20",
+      "105/2",
+      "1849/20",
+      "65"
+    ],
+    "bodyXMonotone": {
+      "criticalSections": 7,
+      "singleIntervalAllSections": true,
+      "violations": []
+    },
+    "tailYMonotone": {
+      "criticalSections": 3,
+      "singleIntervalAllSections": true,
+      "violations": []
+    },
+    "bodyFirstLeftEdgeMid100": [
+      "867/10",
+      "68"
+    ],
+    "bodyFirstLeftStrictPriorInterior": false,
+    "bodyPriorPositiveSharedVerticalIntervals100": [
+      [
+        "65",
+        "71"
+      ]
+    ],
+    "bodyTailPositiveArea": false,
+    "bodyTailSharedHorizontalBaseIntervals100": [
+      [
+        "1769/20",
+        "1829/20"
+      ]
+    ],
+    "bodyRightWeightExact": "31/4",
+    "tailUPWeightExact": "25/2",
+    "localAuthorBodyShareExact": "31/81",
+    "localAuthorBodyShare": 0.38271604938271603,
+    "existingAlgorithm": "lib/hanja-stroke-original-terminal-u7e9a.ts",
+    "stagedAxesIndependentlyProven": true,
+    "strictInteriorAssumptionMatched": false,
+    "priorSharedBoundaryAlternativeProof": true,
+    "existingTargetIdentityReusable": false,
+    "authorClockExplicit": true,
+    "sourcePGuideFlagsUnchanged": true,
+    "fullRoundHGuideDiagnostic": {
+      "maxDistanceSquared100": "38591321/160000",
+      "safeIntegerRadius100": 16,
+      "safeWidth": 32,
+      "QwidthPolicyMatchesSourceKind": false,
+      "coverageDoesNotProveUPGrowth": true
+    }
+  },
+  "sharedFilesChanged": false,
+  "engineRuns": 0,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "history": {
+    "firstStrictInteriorSeedAssertionFailed": true,
+    "notTreatedAsPass": true,
+    "positiveSharedBoundaryAlternativeIndependentlyVerified": true
+  },
+  "inputSHA256": {
+    "docs/hanja-authored-engine-u91bc-pen5-terminal0-2026-10-29/engine-authored-pen5-terminal0.json": "1b9a63002d478c88338bb6fce74eaae51dc377461742b9f1318fe28367b50cda",
+    "docs/hanja-authored-engine-u91bc-pen5-terminal0-2026-10-29/verify-call-contact-terminal19.py": "8a7d8d543e0a8d11bc42710721817d5f7f8f07f25b2a474c1af014691f077cad",
+    "lib/hanja-stroke-original-terminal-u7e9a.ts": "965f0d491eea70aa1da198a88a6d1417dc17da9b51dbab36c4db919ea1d69170"
+  }
+}

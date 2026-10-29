@@ -1,0 +1,82 @@
+{
+  "schema": "hanja-isolated-rebased-H-case-preparation/v1",
+  "glyph": "醼",
+  "date": "2026-10-29",
+  "status": "pure-checks-pass-disabled-awaiting-root-actual19-first",
+  "expectedBeforeH": "4277e845ba348761023c541f47593311c854a638caca6acf112b5413702c60d5",
+  "expectedAfterH": "439450cad00b60e0f0a40754003f0395c39a861325bc6d410f750770ed3c1329",
+  "rendererSHA256": "3b542198be38f4aeca52635c94507ceba8e76192260be9f6c6913a9f3244c972",
+  "helper": {
+    "path": "lib/hanja-stroke-contact-phase-u97ce-pen8.ts",
+    "SHA256": "6a4a9a63e1f11575601d9a6861b3e0a321b99dd038ace6622ec83473eb5ab6e6"
+  },
+  "expectedClosure": 391,
+  "transport": {
+    "path": "docs/hanja-authored-engine-u91bc-pen5-terminal0-2026-10-29/actual-H-integration.rebased-4277-R391.patch",
+    "SHA256": "6c6d5eda1ca0726e33fdd053b35f5d2ba5e747c7c9d4b39358e8ede8fc773f90",
+    "hunks": 16,
+    "originalIndexSorted": true,
+    "forwardExact": true,
+    "inverseExact": true,
+    "preservesEntireWei4277ObserverBaseline": true
+  },
+  "profile": {
+    "path": "docs/hanja-authored-engine-u91bc-pen5-terminal0-2026-10-29/actual-profile-terminal19-up31-start.json",
+    "SHA256": "48e70bcc7feaba935cf6c67effdc45e73141f7a806ea2d3e018ef0d3549e2d2c",
+    "profileFinalized": false,
+    "executionEnabled": false,
+    "sharedWindowPending": true
+  },
+  "pureChecks": {
+    "nodeSyntax": "PASS",
+    "exactGuard": "PASS",
+    "guardNegative": 4,
+    "actualGeneratedFixtureFields": 7,
+    "generatedPredicateNegative": 4,
+    "localBaselineClosureSelected": true,
+    "closure391": "PASS",
+    "closure392Rejected": true,
+    "verifierPath": "docs/hanja-authored-engine-u91bc-pen5-terminal0-2026-10-29/verify-rebased-H-predicate.mjs",
+    "verifierSHA256": "55e39e71d3cae969e0f7a3c5e762c143580e26591c04a120643058358c281c7e"
+  },
+  "immutableReuse": {
+    "geometrySHA256": "7544f4f013ec63952cccc223948d50f8b8eb82e84b2057dfdb5882e375460a0d",
+    "sourceP54": true,
+    "sourceQAndFlagsUnchanged": true,
+    "all9QCoverageReused": true,
+    "staticRoles46AndClock70EvidenceReused": true
+  },
+  "firstNativeRisk": {
+    "pen": 19,
+    "masks": 4,
+    "boundaries": [
+      {
+        "pen": 19,
+        "boundary": 0.47349823320885515,
+        "nextMask": 2
+      },
+      {
+        "pen": 19,
+        "boundary": 0.7137809187319607,
+        "nextMask": 3
+      },
+      {
+        "pen": 19,
+        "boundary": 0.8233215547728152,
+        "nextMask": 4
+      }
+    ],
+    "priorContactIsPositiveSharedEdgeNotStrictInterior": true,
+    "AAOrInitialRevealNotApproved": true,
+    "originalCompletionHOLDNotClaimedFixed": true
+  },
+  "oldProvisionalArtifactHistoricalOnly": true,
+  "sharedHChanged": false,
+  "rendererChanged": false,
+  "registryChanged": false,
+  "SSR": 0,
+  "serverStarts": 0,
+  "buildRun": false,
+  "nativeApproval": false,
+  "runtimeApplied": false
+}
