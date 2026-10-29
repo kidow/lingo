@@ -1,0 +1,92 @@
+{
+  "schema": "hanja-source-Q-contact-head-feasibility/v1",
+  "glyph": "盌",
+  "target": {
+    "pen": 2,
+    "mask": 2
+  },
+  "status": "positive-source-conditions-display-candidate-not-approved",
+  "source": {
+    "fixture": {
+      "path": "docs/hanja-source-execution-u76cc-original-2026-10-29/fixtures-execution-draft-width22.json",
+      "SHA256": "60f2b219228cfbd9a04363daf46541ababd2c0da6af8dc1d0072ae9e0600084d"
+    },
+    "geometrySHA256": "92d33e5d5498253de98ed0104a975bd713b2287498734a8fa293c587078c7dd5",
+    "sourceOutlineSHA256": "1c4e689c9dac2fa71818d6cefe39db35ad2ddad47af75fa9a95cb54c6ad1cb70",
+    "priorOutlineSHA256": "dd9306cf74efcc01eab70aa70a329255e69234f567d069701d9488b1c159dc1a",
+    "guideSHA256": "63fd6e8198286a8ab9e5ddc7112454f3f438612053ca8e2204eea8d7f3fae2fd",
+    "width": 14,
+    "weight": 73.67381474682007,
+    "logicalBoundary": 0.2353824813225519,
+    "originalPGuideWeightFlagsUnchanged": true
+  },
+  "evidence": {
+    "rootReport": "Corrected 7-fold review independently passed; pen2 compact p.25 suspected detached triangle and ROOT main520 p.25 confirmed. All remaining Q risks under separate ROOT investigation.",
+    "actualTemporalApproved": false
+  },
+  "exactSourceChecks": {
+    "HBodyArea": "1728059/386880",
+    "HHeadArea": "6",
+    "bodyHeadArea": "2282917/105400",
+    "simpleBody": true,
+    "simpleHead": true,
+    "headConvex": true,
+    "intersectionSeed": [
+      "221/5",
+      "78/5"
+    ],
+    "seedStrictHAndHead": true,
+    "headBodySourcePolygons": [
+      22,
+      5
+    ],
+    "bodyYMonotoneCriticalSlices": true,
+    "disconnectedSliceLevels": [],
+    "QTrajectoryOrNativeApproval": false
+  },
+  "bodyTopChecks": {
+    "bodyMinY": "297/20",
+    "topVertices": 1,
+    "allBodyTopInCompletedHead": true,
+    "allBodyTopInCompletedH": true,
+    "bodyMaxY": "1179/20"
+  },
+  "reusedPath": {
+    "module": "lib/hanja-stroke-contact-head-u51de-base.ts",
+    "scope": "Existing source clip-head homothety from strict prior contact seed, then original body coordinate prefix; not generic Q-guide or vertical-fold substitution.",
+    "inputConditions": [
+      "head strictconvex source polygon",
+      "seed strictinside completed prior H and original head",
+      "body simple and connected critical Y slices",
+      "initial body point in completed head",
+      "head/body positive area contact"
+    ],
+    "newWholeSourceContextRequired": true
+  },
+  "candidate": {
+    "head": "Clip original 5-vertex head from seed (221/5,78/5) by positive homothety, retaining completed original H.",
+    "body": "Retain completed source head while revealing original 22-vertex body by increasing-Y half-plane prefix; source DL macro role respected.",
+    "paint": "Original filled P only once; source clip shapes do not redraw or bridge ink.",
+    "guide": "Original Q retained as source evidence; proposed authored display clock does not claim original Q time equivalence.",
+    "phaseAllocation": "Not yet selected; old logical H/Q boundary must be retained.",
+    "rootPrototypeRequired": true
+  },
+  "limits": {
+    "existingU51deContextNotReusableDirectly": true,
+    "newGeometry": false,
+    "newGuide": false,
+    "newBridge": false,
+    "publisherMicroclockEquivalent": false,
+    "sourceOrderApprovalNotExpanded": true,
+    "nativeApproval": false,
+    "runtimeApplied": false
+  },
+  "verifier": {
+    "existingExactHelper": "docs/hanja-authored-ownstroke-u6030-raw6-head-gap-2026-10-29/verify-contact-strip-growth.py",
+    "SHA256": "945d1d0f0297b056cd6e10049ee01a38271c1989e6676b528532656f411252ea",
+    "moduleSourceRead": true,
+    "focusedPublicSourceMathRuns": 2,
+    "server": 0,
+    "build": 0
+  }
+}

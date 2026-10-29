@@ -1,0 +1,130 @@
+{
+  "schema": "hanja-two-source-Q-contact-head-prototype-plan/v1",
+  "glyph": "盌",
+  "sourceFixture": {
+    "path": "docs/hanja-source-execution-u76cc-original-2026-10-29/fixtures-execution-draft-width22.json",
+    "SHA256": "60f2b219228cfbd9a04363daf46541ababd2c0da6af8dc1d0072ae9e0600084d",
+    "geometrySHA256": "92d33e5d5498253de98ed0104a975bd713b2287498734a8fa293c587078c7dd5"
+  },
+  "sourceMath": {
+    "path": "docs/hanja-display-contact-u76cc-pen2-2026-10-30/source-contact-2-4-feasibility.json",
+    "SHA256": "8fc6ac42326e5c6795545ddaa7d8e18b164c127a79b81aacb780a32bd277db70"
+  },
+  "reusedPolicyModule": {
+    "path": "lib/hanja-stroke-contact-head-u51de-base.ts",
+    "SHA256": "58fdeffcd0c6944811ab31e943197147d82ce9270dbc9903c910a169b62d905f"
+  },
+  "policies": [
+    {
+      "pen": 2,
+      "headArea": "81/2",
+      "bodyArea": "98291/400",
+      "unionArea": "55770923/210800",
+      "headPhaseExact": "8537400/55770923",
+      "headPhase": 0.15307976882505603,
+      "bodyBounds": [
+        6.05,
+        14.85,
+        48.6,
+        58.95
+      ],
+      "mask": 2,
+      "seed": [
+        44.2,
+        15.6
+      ],
+      "headVertices": [
+        [
+          42.7,
+          14.6
+        ],
+        [
+          45.7,
+          12.1
+        ],
+        [
+          51.2,
+          16.6
+        ],
+        [
+          48.7,
+          18.1
+        ],
+        [
+          42.7,
+          20.6
+        ]
+      ],
+      "sourceHBoundary": 0.2353824813225519
+    },
+    {
+      "pen": 4,
+      "headArea": "81/2",
+      "bodyArea": "23117/200",
+      "unionArea": "254883113/1904600",
+      "headPhaseExact": "77136300/254883113",
+      "headPhase": 0.3026340156164053,
+      "bodyBounds": [
+        79.3,
+        12.7,
+        85.85,
+        34.5
+      ],
+      "mask": 2,
+      "seed": [
+        81.2,
+        12.8
+      ],
+      "headVertices": [
+        [
+          79.7,
+          11.8
+        ],
+        [
+          82.7,
+          9.3
+        ],
+        [
+          88.2,
+          13.8
+        ],
+        [
+          85.7,
+          15.3
+        ],
+        [
+          79.7,
+          17.8
+        ]
+      ],
+      "sourceHBoundary": 0.3536320590631682
+    }
+  ],
+  "authorHeadPhaseRule": "sourceHeadArea/(sourceBodyArea+sourceHeadArea-sourceOverlapArea); all exact fractions recorded, binary64 used consistently in prototype and future helper.",
+  "sourceHAndQMaskBoundariesUnchanged": true,
+  "sourcePGuideFlagsWidthsWeightsUnchanged": true,
+  "sourceQRetainedNotReplacedOrBridged": true,
+  "original4m3Width22Pad11Retained": true,
+  "original7ScopedFoldHelperUnchanged": true,
+  "priorGenericFunctions": {
+    "path": "lib/hanja-stroke-outline.ts",
+    "SHA256": "b4d289d1911c4d43934dfad39c4cfbe22a246303bb7012114d16786688c36c40",
+    "copiedFunctions": [
+      "outlineSegmentProgress",
+      "outlineClip",
+      "outlineStartClip"
+    ]
+  },
+  "prototype": {
+    "path": "docs/hanja-display-contact-u76cc-pen2-2026-10-30/prototype.html",
+    "SHA256": "275e7f5d0bc68c8b5140f8bca8afb98b0e6e0c90d1995f05a18adde3c93ca217"
+  },
+  "limits": {
+    "authorDisplayClock": true,
+    "publisherMicroclockEquivalent": false,
+    "actualTemporalApproved": false,
+    "nativePrototypeApproved": false,
+    "runtimeApplied": false,
+    "sharedFilesChanged": false
+  }
+}

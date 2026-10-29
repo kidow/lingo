@@ -1,0 +1,105 @@
+{
+  "schema": "hanja-two-Q-source-contact-head-pending-integration/v1",
+  "date": "2026-10-30",
+  "status": "prototype-approved-pending-root-actual-renderer-review",
+  "helper": {
+    "path": "lib/hanja-stroke-contact-head-u76cc.ts",
+    "SHA256": "f58710447df95443c8804aa206e3d653bacd716a434faa111c780a171ec6744c",
+    "fingerprint": "ab4df1aec224719759b942499c76963f142db9e47b4ea549c16ce8ff7678bc1d",
+    "test": {
+      "path": "lib/hanja-stroke-contact-head-u76cc.test.ts",
+      "SHA256": "4e02f93a2177763cf1cf7344de074b20b28976b5a69af539d487e3ba9aa657eb"
+    }
+  },
+  "policies": [
+    {
+      "pen": 2,
+      "mask": 2,
+      "headPhaseExact": "8537400/55770923",
+      "headPhase": 0.15307976882505603,
+      "sourceHBoundary": 0.2353824813225519
+    },
+    {
+      "pen": 4,
+      "mask": 2,
+      "headPhaseExact": "77136300/254883113",
+      "headPhase": 0.3026340156164053,
+      "sourceHBoundary": 0.3536320590631682
+    }
+  ],
+  "API": {
+    "input": "REVIEWED_U76CC_Q_CONTACT_INPUT",
+    "context": "makeReviewedU76ccQContactContext",
+    "select": "reviewedU76ccQContactPolicy",
+    "sample": "sampleReviewedU76ccQContactFrame",
+    "prior": "verifyReviewedU76ccQContactPrior",
+    "DOMPrefix": "data-q-contact-",
+    "contextId": "u76cc-exact-two-Q-contact-head",
+    "policyKind": "source-contact-head-y-body-u76cc",
+    "frameUsesExistingFoldFrameSuffix": true
+  },
+  "prototype": {
+    "path": "docs/hanja-display-contact-u76cc-pen2-2026-10-30/native-prototype-review.json",
+    "SHA256": "57914e003223961bbf16347af71dd6ebfb8caa77d10d185f5629f450792fb3d0"
+  },
+  "patches": {
+    "production": {
+      "path": "docs/hanja-display-contact-u76cc-pen2-2026-10-30/production.pending.patch",
+      "SHA256": "a01a91c7c48da1870517f61427e7b1fae2941955d5379c141d819e769da11422"
+    },
+    "renderer": {
+      "path": "docs/hanja-display-contact-u76cc-pen2-2026-10-30/renderer.pending.patch",
+      "SHA256": "9f9a10e43455ae42dab34bccb5a6bf615210ab7cb17bb89498bc8d40acd83c1d",
+      "beforeSHA256": "632b3d66a3cd8425d222eb7fedd3a7df7d404410f887011a9897e861f590a77e",
+      "afterSHA256": "6290c4be6cb0bdb2da97316f2010265bb35a618f646d4ec96bec4f0df659f7ec",
+      "forwardInverseExact": true
+    }
+  },
+  "scope": {
+    "onlyExactWhole10Logical16Mask28P": true,
+    "targets": [
+      {
+        "pen": 2,
+        "mask": 2
+      },
+      {
+        "pen": 4,
+        "mask": 2
+      }
+    ],
+    "oldRegisteredHelpersUnchanged": true,
+    "sourcePGuideWidthFlagsWeightBoundaryUnchanged": true,
+    "pen4ThirdQ22SourcePeerStrict": true,
+    "canonicalMaskAndRectCSSReusedFromU51de": true,
+    "actualSharedFilesChanged": false
+  },
+  "checks": {
+    "newHelperVirtualFocused5Passed": true,
+    "oldU51deFocused6Passed": true,
+    "newHelperTestRSelectedSemanticDiagnostics": 0,
+    "canonicalCSSChangedROnlySemanticDiagnostics": 0,
+    "initialTestHarnessCorrection": "Absent nextElementSibling represented as null, matching actual DOM; no helper weakening.",
+    "initialSemanticCorrection": "SVGDefsElement parentNode type follows existing SVG contract.",
+    "build": 0,
+    "wholeProjectTypecheck": 0,
+    "server": 0,
+    "SSR": 0
+  },
+  "futureResource": {
+    "previous393": true,
+    "newHelperOnly1": true,
+    "expected394": true,
+    "actualCollectorPendingHIntegration": true,
+    "sourceImportAlias": {
+      "from": "from './hanja-stroke-outline.ts'",
+      "to": "from '@/lib/hanja-stroke-outline'",
+      "occurrences": 1
+    }
+  },
+  "approval": {
+    "prototypeSpatialNaturalApproved": true,
+    "actualRendererTemporalApproved": false,
+    "runtimeApplied": false,
+    "registrationApplied": false
+  }
+}

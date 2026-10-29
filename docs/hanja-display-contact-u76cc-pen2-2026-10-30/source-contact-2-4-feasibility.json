@@ -1,0 +1,159 @@
+{
+  "schema": "hanja-source-Q-two-contact-head-feasibility/v1",
+  "glyph": "盌",
+  "targets": [
+    {
+      "pen": 2,
+      "mask": 2,
+      "sourceChecks": {
+        "HBodyArea": "1728059/386880",
+        "HHeadArea": "6",
+        "bodyHeadArea": "2282917/105400",
+        "simpleBody": true,
+        "simpleHead": true,
+        "headConvex": true,
+        "intersectionSeed": [
+          "221/5",
+          "78/5"
+        ],
+        "seedStrictHAndHead": true,
+        "headBodySourcePolygons": [
+          22,
+          5
+        ],
+        "bodyYMonotoneCriticalSlices": true,
+        "disconnectedSliceLevels": [],
+        "QTrajectoryOrNativeApproval": false
+      },
+      "bodyTop": {
+        "bodyMinY": "297/20",
+        "topVertices": 1,
+        "allBodyTopInCompletedHead": true,
+        "allBodyTopInCompletedH": true,
+        "bodyMaxY": "1179/20"
+      }
+    },
+    {
+      "pen": 4,
+      "mask": 2,
+      "sourceChecks": {
+        "HBodyArea": "19299/6800",
+        "HHeadArea": "6",
+        "bodyHeadArea": "21198189/952300",
+        "simpleBody": true,
+        "simpleHead": true,
+        "headConvex": true,
+        "intersectionSeed": [
+          "406/5",
+          "64/5"
+        ],
+        "seedStrictHAndHead": true,
+        "headBodySourcePolygons": [
+          22,
+          5
+        ],
+        "bodyYMonotoneCriticalSlices": false,
+        "disconnectedSliceLevels": [
+          "1169/40",
+          "117/4",
+          "148/5",
+          "599/20",
+          "30",
+          "601/20"
+        ],
+        "QTrajectoryOrNativeApproval": false
+      },
+      "bodyTop": {
+        "bodyMinY": "127/10",
+        "topVertices": 1,
+        "allBodyTopInCompletedHead": true,
+        "allBodyTopInCompletedH": false,
+        "bodyMaxY": "69/2"
+      },
+      "actual375GateDisjoint": {
+        "HHeadArea": "6",
+        "HBodyArea": "19299/6800",
+        "bodyHeadArea": "21198189/952300",
+        "headConvex": true,
+        "headSimple": true,
+        "bodySimple": true,
+        "localProgress": 0.05865989812161327,
+        "gateCutJS": 14.349493032031848,
+        "minimumHeadHProjectionExact": "179521709990765013/12500000000000000",
+        "minimumAllPHProjectionExact": "179521709990765013/12500000000000000",
+        "gateToContactProjectionGap": "153047090366913/12500000000000000",
+        "gateToContactProjectionGapFloat": 0.01224376722935304,
+        "gateClippedSourcePHasNoHContact": true,
+        "scope": "A strict disjoint upper bound: actual dash/round coverage is a subset of the source-P start half-plane. Combined with ROOT nonzero-head observation, confirms detachment; does not assert exact curved visible-area."
+      },
+      "bodyPrefix": {
+        "originalBodyTriangleCount": 20,
+        "criticalYEvents": 36,
+        "levelsChecked": 71,
+        "maximumPieces": 20,
+        "allPositiveAreaBodyPrefixesEdgeConnectedToCompletedHead": true,
+        "failures": [],
+        "method": "Exact rational positive-ear triangles clipped by increasing-Y half-plane; positive-area head overlap or positive-length shared-edge connectivity. Events include body vertices and head/body intersection vertices; interval midpoints checked. Bounded polygon topology certificate, not original Q timing."
+      }
+    }
+  ],
+  "inputs": {
+    "fixture": {
+      "path": "docs/hanja-source-execution-u76cc-original-2026-10-29/fixtures-execution-draft-width22.json",
+      "SHA256": "60f2b219228cfbd9a04363daf46541ababd2c0da6af8dc1d0072ae9e0600084d"
+    },
+    "geometrySHA256": "92d33e5d5498253de98ed0104a975bd713b2287498734a8fa293c587078c7dd5",
+    "actualH": "d41ff4d1450ca6520d6f3616d5ecadc7bae38a16b66f0ce1351927a699c0bfc8",
+    "actualProfile": "4fe74a54c653b87e7246e31a063931eabf8750dae800ea2a3a595639a5595d21",
+    "nativeHold": {
+      "path": "docs/hanja-source-execution-u76cc-original-2026-10-29/native-actual-fold-contact-review.json",
+      "SHA256": "a08d69e3052ec6c67ac50b998c87dd4fc1b3b0e1f81ece56c6ece4ba72bc2450"
+    },
+    "existingContactPolicyModule": {
+      "path": "lib/hanja-stroke-contact-head-u51de-base.ts",
+      "SHA256": "58fdeffcd0c6944811ab31e943197147d82ce9270dbc9903c910a169b62d905f"
+    },
+    "exactPolygonHelper": {
+      "path": "docs/hanja-authored-ownstroke-u6030-raw6-head-gap-2026-10-29/verify-contact-strip-growth.py",
+      "SHA256": "945d1d0f0297b056cd6e10049ee01a38271c1989e6676b528532656f411252ea"
+    }
+  },
+  "conditions": {
+    "bothHeadsOriginalConvex5Vertex": true,
+    "bothSeedsStrictInsidePriorHAndHead": true,
+    "bothBodiesOriginal22VertexSimple": true,
+    "bothBodyInitialPointsInCompletedHead": true,
+    "body2YMonotone": true,
+    "body4YMonotone": false,
+    "body4NeverthelessAllTestedCriticalPrefixesPositiveEdgeConnected": true,
+    "body4CriticalLevels": 71
+  },
+  "candidate": {
+    "policy": "Strict prior H receipt → original convex source head clip growth from actual contact seed → retain full head and source body increasing-Y prefix. Paint original source P once.",
+    "seeds": {
+      "pen2": [
+        "221/5",
+        "78/5"
+      ],
+      "pen4": [
+        "406/5",
+        "64/5"
+      ]
+    },
+    "sourceGeometryGuideFlagsWeightsBoundariesUnchanged": true,
+    "sourceQNotReplacedOrBridged": true,
+    "body4NotClaimedYMonotone": true,
+    "existingU51deInputContextNotDirectlyReusable": true,
+    "newTwoTargetWholeFixtureContextRequired": true,
+    "authorHeadBodyPhaseNotYetSelected": true,
+    "publisherMicroclockEquivalent": false,
+    "rootPrototypeRequired": true
+  },
+  "status": "candidate-source-conditions-proved-native-pending",
+  "actualTemporalApproved": false,
+  "runtimeApplied": false,
+  "sharedFilesChanged": false,
+  "newEngine": 0,
+  "server": 0,
+  "build": 0
+}
