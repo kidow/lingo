@@ -1,0 +1,97 @@
+{
+  "schema": "hanja-complete-public-donor-whole-static-preparation/v1",
+  "date": "2026-10-30",
+  "glyph": "齕",
+  "root": "authored-u9f55-complete-u9f52-g01-originalQi",
+  "config": {
+    "path": "docs/hanja-authored-component-u9f55-gw-chi-g01-original-qi-2026-10-30/config.json",
+    "SHA256": "afb9ac0d48e8da3ac81cb443c34f2de45154c7a8bceee317d44462c6f653193d"
+  },
+  "adapter": {
+    "path": "docs/hanja-authored-component-u9f55-gw-chi-g01-original-qi-2026-10-30/compare.py",
+    "SHA256": "e2a7f95763f363bad3d3bef49e95f6b99e93c8d2f85dddd970b43a47ab284875"
+  },
+  "recipe": {
+    "path": "docs/hanja-authored-component-u9f55-gw-chi-g01-original-qi-2026-10-30/recipe.pending.json",
+    "SHA256": "3d4742c53bb5788fed2c7065f6936c5dca8d852dfabad72bfab4da574422535f"
+  },
+  "fixture": {
+    "path": "docs/hanja-authored-component-u9f55-gw-chi-g01-original-qi-2026-10-30/fixtures-static-draft.json",
+    "SHA256": "4682d1a3ace40454a8746dc349cca2fcfe5f55fd26b8e1d4a8ef159bc629566e"
+  },
+  "sourcePacket": {
+    "path": "docs/hanja-source-original-u9f52-g01-2026-10-30/source-record.json",
+    "SHA256": "4cb3482b84d33bff835637758a935f0cdbdc4cd31ea03398d1b97731f28d6261"
+  },
+  "originalCapture": {
+    "path": "docs/hanja-source-original-u9f52-g01-2026-10-30/engine-proof.json",
+    "SHA256": "2b2aa4abc892868b44b28e7711a8a99605feb98de291111b4889631f11e41c87"
+  },
+  "publicContact": {
+    "path": "docs/hanja-authored-component-u9f55-gw-chi-g01-original-qi-2026-10-30/public-contact-check.json",
+    "SHA256": "2f314697b2f79d9b0ca802cf1216ec6a6b15783106c81cb6aac68a84e815c91d"
+  },
+  "verification": {
+    "actualOriginalCapture": {
+      "recordCount": 1,
+      "root": "u9f52-g01",
+      "version": 6,
+      "g04Excluded": true,
+      "VM": 1,
+      "makeGlyph": 1,
+      "engine8SHA": true
+    },
+    "checkOnly": {
+      "status": "PASS-CODE-ONLY",
+      "wholePanels": 3,
+      "wholeRaw": 21,
+      "wholeCalls": 22,
+      "wholeP": 48,
+      "retainedPaintedRaw": 4,
+      "retainedP": 13,
+      "retainedEmptyRaw": 1,
+      "HTTP": 0,
+      "engine": 0,
+      "server": 0
+    },
+    "newCrossContacts": [],
+    "removedOriginalCrossContacts": [
+      {
+        "componentRawOneBased": 6,
+        "retainedRecipientRawOneBased": 18,
+        "positiveArea": true,
+        "sumPairIntersectionAreaExact": "19/300",
+        "boundaryOnly": false,
+        "nonSimpleUnresolved": false
+      }
+    ],
+    "source5Vto16NEGuideEndpoint": [
+      24,
+      176
+    ],
+    "sourceVtoNEPositivePContact": true,
+    "sourceBothHumanTierPairsPositivePContact": true
+  },
+  "startup": "python3 docs/hanja-authored-component-u9f55-gw-chi-g01-original-qi-2026-10-30/compare.py --config-sha afb9ac0d48e8da3ac81cb443c34f2de45154c7a8bceee317d44462c6f653193d --port 0",
+  "URL": "/whole",
+  "reviewOrder": [
+    "Whole domestic / original recipient / explicit author candidate at520 before any mapping",
+    "Original 413-foot P still extends to donor x12/y186; no harmless protrusion claim",
+    "Both 人 tiers and lower risingNE scope require direct ROOT assessment",
+    "Old original left/right microcontact disappears; new crosscontact0",
+    "Donor16raw is not a forced15stroke mapping; only after whole approval investigate source grouping"
+  ],
+  "sourceClassification": {
+    "mixedParts": true,
+    "originalDonorCaptured": true,
+    "authorWholeEngineCapture": false,
+    "privateCoordinateFitting": false
+  },
+  "sourceWholeApproved": false,
+  "mappingApproved": false,
+  "actualTemporalApproved": false,
+  "runtimeApplied": false,
+  "privateMediaSaved": false,
+  "commitBy": "ROOT",
+  "recommendedCommitMessage": "chore(hanja): prepare complete g01 Chi donor for He"
+}

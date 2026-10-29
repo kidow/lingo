@@ -1,0 +1,18 @@
+*** Begin Patch
+*** Update File: docs/hanja-authored-component-u9f55-gw-chi-g01-original-qi-2026-10-30/compare-mapping.py
+@@
+ sys.dont_write_bytecode=True
++ET.register_namespace('','http://www.w3.org/2000/svg')
+@@
+-  require(len(root[0])==len(wanted),'selected original raw groups exact');return ET.tostring(root,encoding='unicode')
++  require(len(root[0])==len(wanted),'selected original raw groups exact')
++  expectedP=sum(len(sources['author']['groups'][n-1]['polygons'])for n in wanted);actualP=root.findall('.//{http://www.w3.org/2000/svg}path');require(expectedP>0 and len(actualP)==expectedP and all(p.get('d','').strip() for p in actualP),'nonempty public P exactly once')
++  svg=ET.tostring(root,encoding='unicode');require(svg.startswith('<svg ') and '<ns0:'not in svg,'HTML SVG default namespace');return svg
+@@
+-   sel=select_mapping('/compare','pen='+str(pen)+'&view='+view);require(page_mapping('/compare',sel,sources,{'viewBox':'0 0 200 200','transform':'matrix(1 0 0 1 0 0)','strokes':[{'d':'M0 0 L1 1'}for _ in range(18)]}).count('<section>')==2,'two source comparison panels')
++   sel=select_mapping('/compare','pen='+str(pen)+'&view='+view);rendered=page_mapping('/compare',sel,sources,{'viewBox':'0 0 200 200','transform':'matrix(1 0 0 1 0 0)','strokes':[{'d':'M0 0 L1 1'}for _ in range(18)]});require(rendered.count('<section>')==2 and rendered.count('<svg ')==2 and rendered.count('</svg>')==2 and '<ns0:'not in rendered,'two actual HTML SVGs including nonempty source P')
+*** Update File: docs/hanja-authored-component-u9f55-gw-chi-g01-original-qi-2026-10-30/config-mapping.json
+@@
+-  "adapterSHA256": "3d0333751315cf30582350504ae8053890bae6ad0bc02df9fa22a4411f1816d6",
++  "adapterSHA256": "8fdc21e2a8a395fe2446fcf1b7f54e4be1e30b1eac6b3610c55a17bd72eff302",
+*** End Patch
