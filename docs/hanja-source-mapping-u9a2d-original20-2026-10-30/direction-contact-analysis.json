@@ -1,0 +1,226 @@
+{
+  "schema": "hanja-public-source-direction-contact-analysis/v1",
+  "date": "2026-10-30",
+  "glyph": "騭",
+  "mapping": {
+    "path": "docs/hanja-source-mapping-u9a2d-original20-2026-10-30/mapping-hypothesis.json",
+    "SHA256": "b5036aef64af0880369702e9581572b1b9d0ff26622ba587e3990be059c914c0"
+  },
+  "status": "HOLD-upper-join-and-lower-gap-unresolved",
+  "exactOff0PContact": {
+    "pairs": [
+      {
+        "rawPair": [
+          5,
+          8
+        ],
+        "filledContact": true,
+        "minimumBoundaryDistanceSquared": "0",
+        "distanceSquaredFloat": 0
+      },
+      {
+        "rawPair": [
+          7,
+          8
+        ],
+        "filledContact": true,
+        "minimumBoundaryDistanceSquared": "0",
+        "distanceSquaredFloat": 0
+      },
+      {
+        "rawPair": [
+          8,
+          9
+        ],
+        "filledContact": true,
+        "minimumBoundaryDistanceSquared": "0",
+        "distanceSquaredFloat": 0
+      },
+      {
+        "rawPair": [
+          5,
+          9
+        ],
+        "filledContact": true,
+        "minimumBoundaryDistanceSquared": "0",
+        "distanceSquaredFloat": 0
+      },
+      {
+        "rawPair": [
+          9,
+          11
+        ],
+        "filledContact": false,
+        "minimumBoundaryDistanceSquared": "515524/11453",
+        "distanceSquaredFloat": 45.012136558107045
+      },
+      {
+        "rawPair": [
+          9,
+          10
+        ],
+        "filledContact": false,
+        "minimumBoundaryDistanceSquared": "19321/100",
+        "distanceSquaredFloat": 193.21
+      },
+      {
+        "rawPair": [
+          1,
+          2
+        ],
+        "filledContact": true,
+        "minimumBoundaryDistanceSquared": "0",
+        "distanceSquaredFloat": 0
+      },
+      {
+        "rawPair": [
+          2,
+          3
+        ],
+        "filledContact": true,
+        "minimumBoundaryDistanceSquared": "0",
+        "distanceSquaredFloat": 0
+      },
+      {
+        "rawPair": [
+          17,
+          18
+        ],
+        "filledContact": true,
+        "minimumBoundaryDistanceSquared": "0",
+        "distanceSquaredFloat": 0
+      }
+    ],
+    "allOff0": true
+  },
+  "guideFacts": {
+    "logical1": {
+      "Hraw1End": [
+        68.4,
+        19.86
+      ],
+      "DLraw2Start": [
+        68.4,
+        19.86
+      ],
+      "handoffExact": true
+    },
+    "logical2": {
+      "raw3ActualQCalls": [
+        [
+          44.65,
+          43.125,
+          69.35,
+          55.5,
+          65.76719823490966,
+          63.667373760551335,
+          7,
+          0
+        ],
+        [
+          65.76719823490966,
+          63.667373760551335,
+          61.75,
+          72.825,
+          51.75,
+          72.825,
+          2,
+          514
+        ]
+      ],
+      "internalQHandoffExact": true,
+      "macro": "DR then leftward lower hook"
+    },
+    "logical16": {
+      "Hraw17End": [
+        171,
+        149.6
+      ],
+      "raw18FirstQStart": [
+        171,
+        149.6
+      ],
+      "handoffExact": true,
+      "raw18ActualQCalls": [
+        [
+          171,
+          149.6,
+          172,
+          166.7,
+          169.48259394876604,
+          173.47601795457138,
+          22,
+          0
+        ],
+        [
+          169.48259394876604,
+          173.47601795457138,
+          166,
+          182.85,
+          156,
+          182.85,
+          2,
+          14
+        ]
+      ],
+      "internalQHandoffExact": true,
+      "macro": "Hright→down curve→leftward hook"
+    },
+    "logical8V": {
+      "raw9Start": [
+        130.4,
+        45.105
+      ],
+      "raw9End": [
+        130.4,
+        76.29
+      ]
+    },
+    "logical10LongDL": {
+      "raw11Q": [
+        174.625,
+        55.5,
+        149.25,
+        93.615,
+        76.025,
+        99.06,
+        0,
+        7
+      ],
+      "atX130_4": {
+        "tApprox": 0.567633091787413,
+        "yApprox": 88.24415721738835
+      },
+      "approximationScope": "Only diagnostic Q-line crossing, exact filled separation is independently rationally certified"
+    }
+  },
+  "conflicts": [
+    {
+      "id": "upper-connection",
+      "nativeEvidence": "Prior ROOT partial whole/prefix8 observed a white gap between upper structure and lower8. Historical text calls upper stem6 but latest all20 canonical roles identify centerV4=raw5 and H7=raw8; no new native coordinate inference.",
+      "publicFact": "raw9 native8 filled touches both raw5 native4 and raw8 native7",
+      "resolved": false
+    },
+    {
+      "id": "lower-connection",
+      "nativeEvidence": "Prior ROOT pen8/direct partial static record says native8 endpoint meets long lower diagonal; new54 native frames identify that diagonal as10, not9.",
+      "publicFact": "raw9 native8 and raw11 native10 do not touch; minimum filled boundary distance squared515524/11453 source200²",
+      "resolved": false
+    }
+  ],
+  "nonConflicts": {
+    "short9AndLong10Directions": "Raw10/11 both upper-right→lower-left Q macro; role separation now certain from native9 and10",
+    "horse16Macro": "Actual H+twoQ source chain is continuous and left-hook macro matches native16, without claiming timing or filled equality"
+  },
+  "limits": [
+    "Contact and exact squared distance use actual filled off0 polygon boundaries, not bbox-only or guide distance",
+    "Q crossing decimal is approximate diagnostic; no nearest-distance or original-clock identity claim",
+    "No gap bridge, retracing policy, source P/guide/terminal correction introduced",
+    "Original20 clock60views is reused across3receipts, no new browser/engine/server execution"
+  ],
+  "approval": {
+    "geometryCorrection": false,
+    "temporal": false,
+    "runtime": false
+  }
+}
