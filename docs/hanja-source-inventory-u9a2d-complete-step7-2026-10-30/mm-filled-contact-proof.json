@@ -1,0 +1,30 @@
+{
+  "schema": "hanja-exact-original-filled-curve-separation/v1",
+  "glyph": "步",
+  "inputs": {
+    "sourceInventory": {
+      "path": "docs/hanja-source-inventory-u9a2d-complete-step7-2026-10-30/public-sources.json",
+      "SHA256": "5856cbb28d47cc808d956630ce329749415d6fd7a69ca2b844721cdbea74643a"
+    },
+    "sourceCanonicalRecordSHA256": "b5e451d5f09883d44819eae0cf73a6a8a629636c57acb437125dfb66a16c21d0"
+  },
+  "result": {
+    "source": "MM步7",
+    "pair": [
+      5,
+      7
+    ],
+    "exactBoundaryControlHullIntersections": 0,
+    "filledDisjoint": true,
+    "firstPointsOutsideOppositeWinding": true,
+    "path5Pieces": 1244,
+    "path7Pieces": 1802,
+    "epsilonForSubdivision": "1/1000",
+    "originalDUnchanged": true,
+    "positiveAffineCannotCreateMissingContact": true,
+    "nativeApproval": false
+  },
+  "method": "Original closed M/L/Q/C/Z commands are subdivided by exact rational de Casteljau until every control is within1/1000 of chord; all opposite curve-piece convex hulls are disjoint and first point winding is outside each other. Both actual filled regions are disjoint. Analysis polylines are not productgeometry.",
+  "scope": "This missing internal contact persists under every one common positive invertible affine of the complete source; no candidate placement generated",
+  "nativeApproval": false
+}
