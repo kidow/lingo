@@ -1,0 +1,138 @@
+{
+  "schema": "hanja-two-exact-case-H-preparation/v1",
+  "cases": [
+    {
+      "glyph": "嗸",
+      "profile": "docs/hanja-authored-component-u55f8-ja-ao-bbox-gap1-v2-2026-10-29/actual-profile-source128-start.json",
+      "profileSHA256": "454ae640616c80ec1974f507c48e53989d0b6a4ece5ed92c22ddef5f2a4bb13e",
+      "fixture": "docs/hanja-authored-component-u55f8-ja-ao-bbox-gap1-v2-2026-10-29/fixtures-execution-draft.json",
+      "fixtureSHA256": "314725854294450f222facc1bfcd3dfd62dc8f037297992d2ca3441c37ade30c",
+      "geometrySHA256": "250c2cfd344809677863b6a31d4a1253b9b61e26e4fcfaf24388526d8131851a",
+      "pens": 14,
+      "masks": 15,
+      "P": 16,
+      "curves": 11,
+      "cardinal": 4,
+      "criticalFirst": "logical13 H->V Vlocal .01/.05/.1",
+      "source": "Ja Ao11 original filledC with original L medians / source128 width12.8 pad6.4 positive sourceAffine; original4mouthcardinals",
+      "startCommand": "node scripts/hanja-actual-component-review.mjs --profile docs/hanja-authored-component-u55f8-ja-ao-bbox-gap1-v2-2026-10-29/actual-profile-source128-start.json --profile-sha 454ae640616c80ec1974f507c48e53989d0b6a4ece5ed92c22ddef5f2a4bb13e --port 0"
+    },
+    {
+      "glyph": "盌",
+      "profile": "docs/hanja-source-execution-u76cc-original-2026-10-29/actual-profile-width22-start.json",
+      "profileSHA256": "547aef4408167ba0d42a58b732e0613ebc96b4d0371034c2d2f2db86520183bd",
+      "fixture": "docs/hanja-source-execution-u76cc-original-2026-10-29/fixtures-execution-draft-width22.json",
+      "fixtureSHA256": "60f2b219228cfbd9a04363daf46541ababd2c0da6af8dc1d0072ae9e0600084d",
+      "geometrySHA256": "92d33e5d5498253de98ed0104a975bd713b2287498734a8fa293c587078c7dd5",
+      "pens": 10,
+      "masks": 16,
+      "P": 28,
+      "curves": 6,
+      "cardinal": 10,
+      "criticalFirst": "logical7 H->V Vlocal3;4m3 width22/pad11 residual/release/full; logical5 terminalUP originalP and natural playback",
+      "source": "Unchanged13raw16calls28P; only4m3 author displaywidth22/pad11, other5Q14/7",
+      "startCommand": "node scripts/hanja-actual-component-review.mjs --profile docs/hanja-source-execution-u76cc-original-2026-10-29/actual-profile-width22-start.json --profile-sha 547aef4408167ba0d42a58b732e0613ebc96b4d0371034c2d2f2db86520183bd --port 0"
+    }
+  ],
+  "pendingPatch": {
+    "path": "docs/hanja-actual-component-snippets-2026-10-29/u55f8-u76cc-H-integration.pending.patch",
+    "SHA256": "c93aee16c209df21f3eea881b9610495efaf198c6e146bfa938ab15b6a4c5731",
+    "bytes": 377513,
+    "hunks": 16,
+    "baseH": "fb44db7253c7e5930a6c61e48c1da7c8377a5357474b686cc375af4bce305538",
+    "afterH": "8c32bff8363491056aa2b174c69b6b0240f81bc1495510afd370406b2dce8d62",
+    "exactForwardInverse": true
+  },
+  "sharedPins": {
+    "R": "931416a9e1fd8bf04e6ca0fbc5ce3a28f15cc2f6c1f0925fb21dd13e5a9dbe92",
+    "helper": "46c20a920336955f26c7b81a77594d5c594dc688180c45d4fc8617d7d43fe1fc",
+    "ordinary": "aeef73afe90c290a70ee7d62b96dfac0c03fb30a48f92dd34858a9f55f625816"
+  },
+  "resourceVerification": {
+    "source": "Actual unchanged H resources collection prefix and canonical source-data injections, executed for each new exact root without transpile/SSR",
+    "cases": [
+      {
+        "glyph": "嗸",
+        "R": "931416a9e1fd8bf04e6ca0fbc5ce3a28f15cc2f6c1f0925fb21dd13e5a9dbe92",
+        "actualClosure": 392,
+        "dependencies": 391,
+        "constantLines": 3,
+        "SSR": 0,
+        "transpilation": 0,
+        "server": 0
+      },
+      {
+        "glyph": "盌",
+        "R": "931416a9e1fd8bf04e6ca0fbc5ce3a28f15cc2f6c1f0925fb21dd13e5a9dbe92",
+        "actualClosure": 392,
+        "dependencies": 391,
+        "constantLines": 3,
+        "SSR": 0,
+        "transpilation": 0,
+        "server": 0
+      }
+    ],
+    "actualClosure": 392,
+    "registeredDictionaryImportsExcludedByConstantsShim": true,
+    "expected394InferenceRejected": true,
+    "SSR": 0,
+    "server": 0
+  },
+  "checks": {
+    "H": "8c32bff8363491056aa2b174c69b6b0240f81bc1495510afd370406b2dce8d62",
+    "HModuleSyntax0": true,
+    "BrowserModuleSyntax0": true,
+    "cases": [
+      {
+        "glyph": "嗸",
+        "fixtureGuard": true,
+        "negatives": 4,
+        "route7Fields": true,
+        "flags": {
+          "ao": true,
+          "wan": false,
+          "outline": true,
+          "affine": true
+        },
+        "closure392": true,
+        "closure391And393Rejected": true
+      },
+      {
+        "glyph": "盌",
+        "fixtureGuard": true,
+        "negatives": 4,
+        "route7Fields": true,
+        "flags": {
+          "ao": false,
+          "wan": true,
+          "outline": true,
+          "affine": false
+        },
+        "closure392": true,
+        "closure391And393Rejected": true
+      }
+    ],
+    "SSR": 0,
+    "server": 0
+  },
+  "inputSHA256Counts": [
+    1120,
+    1125
+  ],
+  "inputPinMismatches": [],
+  "historicalProfilesPreserved": {
+    "docs/hanja-authored-component-u85da-vs3-grass-vs2-body-2026-10-29/actual-profile-fold-contact-start.json": "934688bf284b5c16e3133496533a9070c48469be6190033e49bd2d4f538729c6",
+    "docs/hanja-source-execution-u7f5d-original-2026-10-29/actual-profile-fold-contact-start.json": "680d55e8242b33f3ba2cca933fb4d680be5345e92b37892fd0f93c7edc5e421b"
+  },
+  "baselineHelpersKeptUnchanged": true,
+  "futureFoldHelper89PendingNotApplied": true,
+  "existingSu4RoundingExceptionNotExpanded": true,
+  "newParser": false,
+  "sharedHActuallyWritten": false,
+  "sharedRActuallyWritten": false,
+  "registrationWritten": false,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "builds": 0,
+  "fullProjectTypeChecks": 0
+}

@@ -1,0 +1,44 @@
+{
+  "schema": "hanja-client-projection-repair/v1",
+  "reason": "Six Wan curveTargets used sourceFieldSHA/width while unchanged browser contract requires sourceFieldSHA256/revealWidth.",
+  "beforeH": "8c32bff8363491056aa2b174c69b6b0240f81bc1495510afd370406b2dce8d62",
+  "afterH": "9a8d724d8b2c6ca1ceaa47ec2ec1c25772162d55230b092bd90b43bf2284d264",
+  "Hpatch": {
+    "path": "docs/hanja-source-execution-u76cc-original-2026-10-29/client-curve-projection-H.patch",
+    "SHA256": "80068c2ee66db3d825cd2390a8ab92f95d26e474a5e65321fa66adef29728418"
+  },
+  "profilePatch": {
+    "path": "docs/hanja-source-execution-u76cc-original-2026-10-29/client-curve-projection-profiles.patch",
+    "SHA256": "88b223b94b5a09b13f93e434002c05875da0cfeb48b93b3a2b955165b367bafc"
+  },
+  "profiles": [
+    {
+      "path": "docs/hanja-authored-component-u55f8-ja-ao-bbox-gap1-v2-2026-10-29/actual-profile-source128-start.json",
+      "before": "454ae640616c80ec1974f507c48e53989d0b6a4ece5ed92c22ddef5f2a4bb13e",
+      "after": "2ede31be27632895a3a6abc6d7e0a145d9d52bbb76677637d238885b9e498413",
+      "archive": "docs/hanja-authored-component-u55f8-ja-ao-bbox-gap1-v2-2026-10-29/actual-profile-source128-before-curve-projection.json"
+    },
+    {
+      "path": "docs/hanja-source-execution-u76cc-original-2026-10-29/actual-profile-width22-start.json",
+      "before": "547aef4408167ba0d42a58b732e0613ebc96b4d0371034c2d2f2db86520183bd",
+      "after": "99d791fd00714f6ed93c97f00a80837848f10f4a1cf6f99549920949ea58ad23",
+      "archive": "docs/hanja-source-execution-u76cc-original-2026-10-29/actual-profile-width22-before-curve-projection.json"
+    }
+  ],
+  "verification": {
+    "actualClientPrefixOldWanRejected": true,
+    "actualClientPrefixAoAndFixedWanPassed": true,
+    "strictGuardNegativeCases": 8,
+    "actualFixtureRouteFields": 8,
+    "HAndBrowserSyntax": true,
+    "resource392GraphUnchangedReused": true,
+    "profileForwardInverseExact": true,
+    "HForwardInverseExact": true,
+    "geometryWeightGateRendererHelperUnchanged": true,
+    "SSR": 0,
+    "servers": 0,
+    "build": 0
+  },
+  "nativeApproval": false,
+  "runtimeApplied": false
+}

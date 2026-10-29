@@ -1,0 +1,58 @@
+{
+  "schema": "hanja-root-browser-baseline-initialization-failure/v1",
+  "glyph": "盌",
+  "date": "2026-10-29",
+  "status": "browser-initialization-failed-native-unobserved",
+  "inputs": {
+    "H": "8c32bff8363491056aa2b174c69b6b0240f81bc1495510afd370406b2dce8d62",
+    "R": "931416a9e1fd8bf04e6ca0fbc5ce3a28f15cc2f6c1f0925fb21dd13e5a9dbe92",
+    "helper": "46c20a920336955f26c7b81a77594d5c594dc688180c45d4fc8617d7d43fe1fc",
+    "profile": {
+      "path": "docs/hanja-source-execution-u76cc-original-2026-10-29/actual-profile-width22-start.json",
+      "SHA256": "547aef4408167ba0d42a58b732e0613ebc96b4d0371034c2d2f2db86520183bd"
+    },
+    "geometry": "92d33e5d5498253de98ed0104a975bd713b2287498734a8fa293c587078c7dd5"
+  },
+  "startup": {
+    "SSR": 1,
+    "CJS": 392,
+    "ESM": 392
+  },
+  "observed": {
+    "error": "Error: 盌 client curve projection differs from fixed source segment",
+    "function": "setupU97b9DonorStartControls",
+    "browserLocation": "browser.js:5306:558",
+    "controls": 0,
+    "ProbeError": true,
+    "nativeSVGViews": 0
+  },
+  "codeCause": {
+    "requiredClientKeys": [
+      "sourceFieldSHA256",
+      "revealWidth"
+    ],
+    "wrongPreparedKeys": [
+      "sourceFieldSHA",
+      "width"
+    ],
+    "affectedProjectionRows": 6,
+    "sourceSegmentGeometryWeightGateUnchanged": true
+  },
+  "limits": {
+    "sourceShapeFailureNotInferred": true,
+    "actualTemporalApproved": false,
+    "runtimeApplied": false,
+    "newFoldHelperApplied": false
+  },
+  "cleanup": {
+    "PID": 24925,
+    "port": 51143,
+    "session": 33804,
+    "tab": "273",
+    "serverStopped": true,
+    "tabClosed": true,
+    "exitCode": 130
+  },
+  "builds": 0,
+  "fullProjectTypeChecks": 0
+}
