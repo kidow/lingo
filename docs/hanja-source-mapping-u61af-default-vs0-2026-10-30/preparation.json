@@ -1,0 +1,45 @@
+{
+  "schema": "hanja-original-whole-static-preparation/v1",
+  "glyph": "憯",
+  "status": "ready-for-root-default-static-review",
+  "files": {
+    "docs/hanja-source-mapping-u61af-default-vs0-2026-10-30/mapping-hypothesis.json": "31d41e245c2067edfa929b1ca4bf03af68ff84ce21c7d3bbf508aedf75992f52",
+    "docs/hanja-source-mapping-u61af-default-vs0-2026-10-30/source-boundary-analysis.json": "10f32e29bc7b954c3f68d646b699bd3969baf4e3b9ace45ed78316d875434cb7",
+    "docs/hanja-source-mapping-u61af-default-vs0-2026-10-30/verify-source-contacts.py": "b42c933e1c8dd6a36fa917a3c8c3e4115d59cc187e940743ce99ba01d3a85124",
+    "docs/hanja-source-mapping-u61af-default-vs0-2026-10-30/compare.py": "db04958a91e0827e5c750ab6a83c5cad81632985687c9079b02fefc8da8c97f9",
+    "docs/hanja-source-mapping-u61af-default-vs0-2026-10-30/config.json": "37028f81d33f9e26abe7482f8d0c19d10a6df2842299119679999837acb30cd3"
+  },
+  "checks": {
+    "exactOff0FinishedContact8Boundaries": true,
+    "source19RawOnce15Logical": true,
+    "sourceOriginalThreeFieldNoFabricatedHeader": true,
+    "codeOnlyExit": 0,
+    "result": {
+      "status": "PASS-code-only",
+      "sourceRaw19": true,
+      "sourceCalls21": true,
+      "sourceP41": true,
+      "logical15": true,
+      "sourceSelections30": true,
+      "wholeOriginal": true,
+      "originalPointAndGuideEdits": 0,
+      "HTTP": 0,
+      "server": 0,
+      "nativeApproval": false
+    }
+  },
+  "startup": "python3 docs/hanja-source-mapping-u61af-default-vs0-2026-10-30/compare.py --config-sha 37028f81d33f9e26abe7482f8d0c19d10a6df2842299119679999837acb30cd3 --port 0",
+  "requiredNative": [
+    "Original defaultwhole",
+    "All15current and15prefix",
+    "5/9 exactV+Hleft-extension finishedshape versus observednative",
+    "7V→NE finishedcontact with separated originalguide"
+  ],
+  "sourceRawOrPChanged": false,
+  "sourceGuideChanged": false,
+  "mixedParts": false,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "newEngine": 0,
+  "server": 0
+}
