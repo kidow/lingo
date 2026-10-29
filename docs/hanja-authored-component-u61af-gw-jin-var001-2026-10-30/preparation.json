@@ -1,0 +1,83 @@
+{
+  "schema": "hanja-complete-public-donor-whole-static-preparation/v1",
+  "date": "2026-10-30",
+  "glyph": "憯",
+  "root": "authored-u61af-complete-u5153-var001",
+  "config": {
+    "path": "docs/hanja-authored-component-u61af-gw-jin-var001-2026-10-30/config.json",
+    "SHA256": "2fab9f8f338d7553ad8ec47e0763fc4686ece2fe51b5ec473b3cf335dd1bcf0f"
+  },
+  "adapter": {
+    "path": "docs/hanja-authored-component-u61af-gw-jin-var001-2026-10-30/compare.py",
+    "SHA256": "64db1369661a10afb8605d7b7b7a3e3ba7b14bd50b6ee031fee093584d756e05"
+  },
+  "recipe": {
+    "path": "docs/hanja-authored-component-u61af-gw-jin-var001-2026-10-30/recipe.pending.json",
+    "SHA256": "ee61527a38b0923f7e3b32339b3a0d739f58d8677c51f4abfbf48fe025a5dc6c"
+  },
+  "fixture": {
+    "path": "docs/hanja-authored-component-u61af-gw-jin-var001-2026-10-30/fixtures-static-draft.json",
+    "SHA256": "6792296026f0d7b65c2ce4ba99858c88f9b3073d74766e5a28eb16a6f7465267"
+  },
+  "publicContact": {
+    "path": "docs/hanja-authored-component-u61af-gw-jin-var001-2026-10-30/public-contact-check.json",
+    "SHA256": "1471d10f338510bf2213eff3d0420e97c160f3486e481b4728a700e39944f5fe"
+  },
+  "verification": {
+    "actualOriginalCapture": {
+      "VM": 1,
+      "makeGlyph": 1,
+      "engine8SHA": true
+    },
+    "checkOnly": {
+      "status": "PASS-CODE-ONLY",
+      "wholePanels": 3,
+      "sourceGroups": 19,
+      "sourceCalls": 21,
+      "sourceP": 39,
+      "retainedRaw": 8,
+      "retainedP": 12,
+      "HTTP": 0,
+      "engine": 0,
+      "server": 0
+    },
+    "newPositiveContacts": [
+      {
+        "componentRawOneBased": 10,
+        "retainedRecipientRawOneBased": 16,
+        "positiveArea": true,
+        "sumPairIntersectionAreaExact": "6534129411371/1027616928000",
+        "boundaryOnly": false,
+        "nonSimpleUnresolved": false
+      },
+      {
+        "componentRawOneBased": 11,
+        "retainedRecipientRawOneBased": 17,
+        "positiveArea": true,
+        "sumPairIntersectionAreaExact": "17382501376788655912947221/635099382085031441250000",
+        "boundaryOnly": false,
+        "nonSimpleUnresolved": false
+      }
+    ]
+  },
+  "startup": "python3 docs/hanja-authored-component-u61af-gw-jin-var001-2026-10-30/compare.py --config-sha 2fab9f8f338d7553ad8ec47e0763fc4686ece2fe51b5ec473b3cf335dd1bcf0f --port 0",
+  "URL": "/whole",
+  "reviewOrder": [
+    "Whole domestic / original recipient / explicit author candidate at520",
+    "New donor raw10 vs retained original 日 raw16 and donor raw11 vs recipient raw17 need visual acceptance or HOLD",
+    "Donor short-V head gaps and V→NE source guide gap remain; no temporal approval",
+    "Only after whole approval prepare logical source mapping"
+  ],
+  "sourceClassification": {
+    "mixedParts": true,
+    "originalDonorCaptured": true,
+    "authorWholeEngineCapture": false,
+    "privateCoordinateFitting": false
+  },
+  "sourceWholeApproved": false,
+  "mappingApproved": false,
+  "actualTemporalApproved": false,
+  "runtimeApplied": false,
+  "commitBy": "ROOT",
+  "recommendedCommitMessage": "chore(hanja): prepare original var001 Jin whole candidate for Can"
+}

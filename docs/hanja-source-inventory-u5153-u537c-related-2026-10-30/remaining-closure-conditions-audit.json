@@ -1,0 +1,144 @@
+{
+  "schema": "hanja-remaining-complete-Jin-closure-conditions-audit/v1",
+  "date": "2026-10-30",
+  "scope": "Existing33 related canonical groups, original public declaration checks only; no new engine or native review",
+  "rootVar001NativeHOLDReportedByROOT": {
+    "newRecipientRiContacts": 2,
+    "bothShortVHeadsDetachedBelowFirstH": true,
+    "retuningForbidden": true
+  },
+  "criteria": {
+    "shortV": "Original short-V source must be vertical and have head at firstH/foot at followingH, not an independently invented guide.",
+    "longDL": "Original longDL must start at first-H level rather than project above it.",
+    "limitation": "Source endpoint tests do not certify filledP contact; source style/flags require actual capture/native if any candidate survives."
+  },
+  "survivingNewConfirmedWholeCandidateIDs": [],
+  "sourceConditions": {
+    "u5153-j@2 / u5142-j@3": {
+      "shortV": [
+        48,
+        52,
+        48,
+        102
+      ],
+      "HLevels": [
+        52,
+        102
+      ],
+      "longDLHeadY": 17,
+      "firstHY": 52,
+      "status": "existing-protruding-head mismatch; excluded"
+    },
+    "u5153-var-001@1": {
+      "shortVSourceHeadsY": 48,
+      "firstHY": 36,
+      "status": "ROOT nativeHOLD; excluded without retuning"
+    },
+    "otherFreshCompleteRoots": "Short upper-V declarations slant or curve rather than pureV, omit the shortV role, or keep source head gaps. No new confirmed source satisfies all three conditions in current available definitions."
+  },
+  "literalMissingClosures": [
+    {
+      "root": "hkcs_m5153",
+      "missing": [
+        "hkcs_m5142-p02-s00"
+      ],
+      "definitions": [
+        "hkcs_m5153@1",
+        "hkcs_m5142-p01-s00@1"
+      ]
+    },
+    {
+      "root": "lp_lps-00007444",
+      "missing": [
+        "lp_lpy-00007444"
+      ],
+      "definitions": [
+        "lp_lps-00007444@1"
+      ]
+    },
+    {
+      "root": "lp_lps-00100833",
+      "missing": [
+        "lp_lpy-00100833"
+      ],
+      "definitions": [
+        "lp_lps-00100833@1"
+      ]
+    },
+    {
+      "root": "lp_lps-00128499",
+      "missing": [
+        "lp_lpy-00128499"
+      ],
+      "definitions": [
+        "lp_lps-00128499@1"
+      ]
+    },
+    {
+      "root": "lp_lps-00134746",
+      "missing": [
+        "lp_lpy-00134746@1"
+      ],
+      "definitions": [
+        "lp_lps-00134746@1"
+      ]
+    },
+    {
+      "root": "lp_lps-00148598",
+      "missing": [
+        "lp_lpy-00148598"
+      ],
+      "definitions": [
+        "lp_lps-00148598@1"
+      ]
+    }
+  ],
+  "literalMissingRootCount": 6,
+  "independentUnresolvedPaths": [
+    {
+      "root": "hkcs_m5153",
+      "child": "hkcs_m5142-p02-s00",
+      "leftChildAlreadyFailsSourceConditions": true
+    },
+    {
+      "root": "lp_lps-00134746",
+      "child": "lp_lpy-00134746@1",
+      "currentRelatedAlias": "u5153-t",
+      "historicalDefinitionNotVerified": true
+    }
+  ],
+  "otherFourLPWrappers": "Current related aliases point to already-read j/g/var002/ue0102; historical byte equality is not claimed.",
+  "smallRemainingAPIResults": [
+    {
+      "requested": "hkcs_m5142-p02-s00",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "requested": "lp_lpy-00007444",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "requested": "lp_lpy-00100833",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "requested": "lp_lpy-00128499",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "requested": "lp_lpy-00134746@1",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "requested": "lp_lpy-00148598",
+      "error": "HTTP Error 403: Forbidden"
+    }
+  ],
+  "networkConclusion": "All6 documented API requests returned403 once; no retry, old GET endpoint, corpus download, or alternative proxy attempted.",
+  "notUniversalSourceExhaustion": true,
+  "engineInvocations": 0,
+  "server": 0,
+  "sharedEdits": 0,
+  "nativeApproved": false,
+  "runtimeApplied": false
+}

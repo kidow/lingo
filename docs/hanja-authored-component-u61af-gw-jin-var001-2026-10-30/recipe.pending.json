@@ -1,0 +1,118 @@
+{
+  "schema": "hanja-explicit-whole-component-positive-affine-draft/v1",
+  "date": "2026-10-30",
+  "glyph": "憯",
+  "root": "authored-u61af-complete-u5153-var001",
+  "recipient": {
+    "path": "docs/hanja-goal-glyphwiki-batch909-2026-10-13/engine-whole-u61af.json",
+    "SHA256": "60313eb6e3c2a2a7344a803535ea87439311ae9e9171bae6f6a1ad2acae6f11c"
+  },
+  "donor": {
+    "path": "docs/hanja-source-original-u5153-var001-2026-10-30/engine-proof.json",
+    "SHA256": "52d58c3d668345f4facd41e0b5988995fb5342ec6fb41c993442bb06802df3fe"
+  },
+  "sourcePacket": {
+    "path": "docs/hanja-source-original-u5153-var001-2026-10-30/source-record.json",
+    "SHA256": "1125853eaac0600146e028f974e45ea3b0e3c2caf5cfdc2cc308593fbf597e12"
+  },
+  "retainedRecipientRawOneBased": [
+    1,
+    2,
+    3,
+    15,
+    16,
+    17,
+    18,
+    19
+  ],
+  "omittedRecipientComponentRawOneBased": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14
+  ],
+  "donorOriginalRawOneBased": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+  ],
+  "placement": {
+    "kind": "single-positive-axis-affine-of-whole-original-donor",
+    "sourceFilledBounds": [
+      11.8,
+      24,
+      191.8,
+      187.7
+    ],
+    "targetPublicOldComponentBounds": [
+      57.8,
+      15.1,
+      186.4,
+      115.7
+    ],
+    "matrix": [
+      0.7144444444444444,
+      0,
+      0,
+      0.6145387904703726,
+      49.36955555555555,
+      0.3510690287110574
+    ],
+    "matrixDerivation": "a=(186.4-57.8)/(191.8-11.8);d=(115.7-15.1)/(187.7-24);e=57.8-11.8*a;f=15.1-24*d",
+    "determinant": 0.4390538247471662,
+    "frame": "source200-y-down",
+    "allFilledPAndOriginalCallGuidesSameAffine": true,
+    "privateCoordinateFitting": false
+  },
+  "output": {
+    "path": "docs/hanja-authored-component-u61af-gw-jin-var001-2026-10-30/fixtures-static-draft.json",
+    "SHA256": "6792296026f0d7b65c2ce4ba99858c88f9b3073d74766e5a28eb16a6f7465267"
+  },
+  "sourceKeys": [
+    "groups",
+    "trace",
+    "defaults",
+    "engineRevision",
+    "engineHashes"
+  ],
+  "counts": {
+    "retainedRaw": 8,
+    "retainedP": 12,
+    "donorRaw": 11,
+    "donorP": 27,
+    "wholeRaw": 19,
+    "wholeP": 39,
+    "wholeCalls": 21
+  },
+  "mixedParts": true,
+  "locallyAuthoredRoot": true,
+  "originalWhole": false,
+  "authorWholeEngineCapture": false,
+  "originalDonorEngineCapture": true,
+  "newBridge": false,
+  "sourceDirectionsApproved": false,
+  "mappingApproved": false,
+  "nativeStaticApproved": false,
+  "actualTemporalApproved": false,
+  "runtimeApplied": false,
+  "limitations": [
+    "Whole donor is an independent original GlyphWiki complete source; no Korean logical order claim.",
+    "Original short-V head gap and V-to-rising-call guide gaps are preserved.",
+    "Whole bbox placement is an explicit public-coordinate author hypothesis; contact changes need public math and ROOT visual review."
+  ]
+}
