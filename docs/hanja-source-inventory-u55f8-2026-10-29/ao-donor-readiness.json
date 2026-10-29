@@ -1,0 +1,86 @@
+{
+  "schema": "hanja-existing-public-donor-evidence-assessment/v1",
+  "date": "2026-10-29",
+  "recipient": "嗸",
+  "requestedComponent": "complete 敖11",
+  "status": "direction-evidence-available-filled-original-component-and-placement-unverified",
+  "inputs": {
+    "public/hanja-strokes/dictionary-reviewed-special2-batch10.json": "d691bcee9c22ff7683979f7dc912102ce7be198ac6a368f21fb821a3fe1edae9",
+    "public/hanja-strokes/textbook-reviewed.json": "975d517db71eed058d7e74cfd87447bfc39f495e3dd29fb1568024eeb3b7905d",
+    "docs/hanja-special2-batch10-2026-09-18/review.json": "0ac3e1aa14e6eedcf855b88c032b364788033e8b6502f0df99a72c3e9e1dadde",
+    "docs/hanja-special2-batch10-2026-09-18/originals.json": "90e7e47e69e844a1db2e569c565644b239de4b3572bc9cb703a61344efaa326c",
+    "docs/hanja-g3-batch4-followup-2026-09-15/review.json": "eea87116382a413b51dc7cca70085b704fe7cd0a4c0652ad682bd0359983564d"
+  },
+  "registeredCandidateFacts": [
+    {
+      "glyph": "敖",
+      "logicalPens": 11,
+      "originalSourceIndices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "componentRelevantPen": 4,
+      "path": "M28.2 45.7 L33.4 48.9 L34.4 52.4",
+      "recordedDirection": "DR",
+      "reviewMethod": "Existing pinned domestic dictionary whole-glyph order/direction/boundary/form comparison; not new direct review."
+    },
+    {
+      "glyph": "熬",
+      "logicalPens": 15,
+      "proposedComponentIndices": "1..11 hypothesis, not an extracted source component identity proof",
+      "componentRelevantPen": 4,
+      "path": "M28.6 37.4 L34.8 43.3",
+      "recordedDirection": "DR"
+    },
+    {
+      "glyph": "傲",
+      "logicalPens": 13,
+      "proposedComponentIndices": "3..13 hypothesis; placement and complete-component identity unverified",
+      "componentRelevantPen": 6,
+      "path": "M41.1 44.8 L46.6 49.7",
+      "recordedReview": "Vivasam source-video full13 sequence comparison; notes specifically validate diagonal dot6 before lowerH7."
+    }
+  ],
+  "publicGeometryProvenance": {
+    "corpus": "animCJK graphicsJa.txt",
+    "revision": "ec5e17cca76c87587790bcbce5ea0b4d4fb753d6",
+    "url": "https://raw.githubusercontent.com/parsimonhi/animCJK/ec5e17cca76c87587790bcbce5ea0b4d4fb753d6/graphicsJa.txt",
+    "SHA256": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+    "license": "Arphic Public License; retain fixed source notices.",
+    "existingStoredData": "Runtime entries and batch10 originals retain medians/centerline paths, not original filled D/P.",
+    "originalFilledRecordLocallyEstablished": false
+  },
+  "recipientExistingCounterexample": {
+    "path": "docs/hanja-goal-glyphwiki-batch741-2026-10-12/review.json",
+    "pen": 4,
+    "sourceRaw": "cdDrawLine [59,55.32,59,73.545,0,32]",
+    "observedDomesticDirection": "curved downward-right dot",
+    "originalDirection": "short vertical down",
+    "bothWholeRootsSame": true
+  },
+  "supportedConclusions": [
+    "Existing reviewed donor fourth-dot direction is not the same documented vertical-only source counterexample.",
+    "Registration alone is not accuracy or recipient reuse approval.",
+    "A complete filled 敖11 donor with exact source record and placement has not been established by the current centerline data."
+  ],
+  "missing": [
+    "Exact pinned public 敖 filled11 D/P and original medians record.",
+    "Complete-component boundary/identity and ordering evidence in the chosen original source.",
+    "Fresh ROOT original敖11 clock if required and recipient whole placement/contact/macro compatibility.",
+    "Actual growth/transition review for any future candidate."
+  ],
+  "next": "Obtain the exact complete 敖 record from the already pinned public Ja corpus without inventing geometry; preserve license. Root then directly reviews original11 and recipient compatibility before an explicit authored mixed replacement.",
+  "newGeometry": false,
+  "newEngineRuns": 0,
+  "newServers": 0,
+  "runtimeApplied": false
+}

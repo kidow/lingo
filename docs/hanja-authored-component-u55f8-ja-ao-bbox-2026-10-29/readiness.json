@@ -1,0 +1,110 @@
+{
+  "schema": "hanja-authored-static-component-preflight/v1",
+  "glyph": "嗸",
+  "status": "HOLD-new-mouth-contact-diagnostic-only",
+  "recipeSHA256": "4128c2c549936fb326ed5f412ff05ac1fde794b37f01773b742bb2b336f464ae",
+  "fixtureSHA256": "5f6c322be2e8d9c456f03fcd332a89cddb5181d2576419ed25cae40a10943e3d",
+  "existingDeriver": {
+    "path": "docs/hanja-authored-component-u81dd-u51e1-2026-10-28/prepare-execution-draft.py",
+    "SHA256": "2020181cb1d346ad104cb53dd926326564bd9df7efbd75507a51d674996b3bff"
+  },
+  "derivationCodeSHA256": "3e44cdbfa6eeb8639312ea792bc945d400acb4dd4e14a6d3a71e082050fe02fb",
+  "allOriginalControlAndMedianRoundtripsExact": true,
+  "allCommandCountsPreserved": true,
+  "sourceM_C_ZOnly": true,
+  "mouthOriginalGroupsAndTraceExact": true,
+  "contactMethod": "Existing Fraction exact segment/nonzero-polygon membership plus existing convex-hull fan. Full D control hull is conservative; actual C endpoint strict-inside witness is separately identified.",
+  "contactPreflight": {
+    "originalUpperMouthContacts": [],
+    "candidateHullPreflight": [
+      {
+        "donorPath": 1,
+        "controlHullPossibleMouthRaw": [],
+        "sourceBoundaryEndpointInsideMouth": []
+      },
+      {
+        "donorPath": 2,
+        "controlHullPossibleMouthRaw": [],
+        "sourceBoundaryEndpointInsideMouth": []
+      },
+      {
+        "donorPath": 3,
+        "controlHullPossibleMouthRaw": [],
+        "sourceBoundaryEndpointInsideMouth": []
+      },
+      {
+        "donorPath": 4,
+        "controlHullPossibleMouthRaw": [],
+        "sourceBoundaryEndpointInsideMouth": []
+      },
+      {
+        "donorPath": 5,
+        "controlHullPossibleMouthRaw": [],
+        "sourceBoundaryEndpointInsideMouth": []
+      },
+      {
+        "donorPath": 6,
+        "controlHullPossibleMouthRaw": [
+          14
+        ],
+        "sourceBoundaryEndpointInsideMouth": [
+          {
+            "sourceCommand": "C",
+            "sourceEndpoint": [
+              "315",
+              "-18"
+            ],
+            "placedEndpoint": [
+              "545891/9190",
+              "564831/4235"
+            ],
+            "mouthRaw": 14,
+            "mouthPolygonsStrictInterior": [
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "donorPath": 7,
+        "controlHullPossibleMouthRaw": [],
+        "sourceBoundaryEndpointInsideMouth": []
+      },
+      {
+        "donorPath": 8,
+        "controlHullPossibleMouthRaw": [],
+        "sourceBoundaryEndpointInsideMouth": []
+      },
+      {
+        "donorPath": 9,
+        "controlHullPossibleMouthRaw": [],
+        "sourceBoundaryEndpointInsideMouth": []
+      },
+      {
+        "donorPath": 10,
+        "controlHullPossibleMouthRaw": [],
+        "sourceBoundaryEndpointInsideMouth": []
+      },
+      {
+        "donorPath": 11,
+        "controlHullPossibleMouthRaw": [
+          15
+        ],
+        "sourceBoundaryEndpointInsideMouth": []
+      }
+    ],
+    "exactEndpointWitnessCount": 1,
+    "wholeContactApproved": false
+  },
+  "limits": [
+    "Original source upper-to-mouth polygon contacts are empty. Candidate donor6 has an actual source boundary endpoint strictly inside mouthraw14: new contact HOLD.",
+    "Candidate donor11 control hull reaches mouthraw15; exact filled contact is unestablished, not claimed clear.",
+    "No original source whole/99-transform/engine-capture or publisher geometry identity.",
+    "Nonuniform mask transformation, timing and runtime parser support were not designed or implemented.",
+    "Root whole/current/contact and complete14 macro clock review are still required."
+  ],
+  "newEngineRuns": 0,
+  "newServers": 0,
+  "nativeApproval": false,
+  "runtimeApplied": false
+}

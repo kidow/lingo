@@ -1,0 +1,40 @@
+{
+  "schema": "hanja-authored-static-component-preflight/v1",
+  "glyph": "嗸",
+  "status": "PASS-exact-envelope-separation-only-native-static-pending",
+  "recipeSHA256": "ed39ebd1846cce96c8ce758dca0e8c745f4086015b9527d29ee390306fac6a9a",
+  "fixtureSHA256": "e2d9e162e7016f841d5c2070bd3ea27eaeca105b5ebd2c1fc53b41b5bc31ac67",
+  "previousHold": {
+    "path": "docs/hanja-authored-component-u55f8-ja-ao-bbox-2026-10-29/readiness.json",
+    "SHA256": "064e7810bf29560b46a8b941b4e6a058d60a539305d33f3e8c8d18fd24b4dfb2",
+    "preserved": true
+  },
+  "allOriginalControlAndMedianRoundtripsExact": true,
+  "allCommandCountsPreserved": true,
+  "sourceM_C_ZOnly": true,
+  "mouthOriginalGroupsAndTraceExact": true,
+  "derivationCodeSHA256": "fc0bec5eb1fc72b2454d18106b4d086e4f35b1f1de0f71164b5b283d0d8eea1d",
+  "envelopeProofCodeSHA256": "617068b4b6d6137a9ee2e6b5d1c5da60564ddaf35f612ebeb5d2c489a16394ec",
+  "envelopeProof": {
+    "allSourceCommandsM_C_Z": true,
+    "originalControlPointsChecked": 356,
+    "allPlacedControlsInsideTargetRectExact": true,
+    "allOriginalMouthVerticesAtOrBelow126_5Exact": true,
+    "upperMaxYExact": "251/2",
+    "mouthMinYExact": "253/2",
+    "verticalEnvelopeGapExact": "1",
+    "allCrossComponentFilledContactImpossible": true,
+    "proof": "M/C/Z curves stay in convex hull of control/endpoints. Each closed donor path and its filled set stay inside y<=251/2. All original mouth polygon vertices/segments/fill stay inside y>=253/2; closed halfplanes separated by1."
+  },
+  "limits": [
+    "Gap1 is an explicit author constraint in source200 units, not the original publisher gap.",
+    "Complete original Ja sourceD/medians share the same author affine; source font differences remain.",
+    "Envelope separation proves no upper-to-mouth filled contact, not approved overall shape, source-order transfer or temporal behavior.",
+    "Original first bbox-fit HOLD remains preserved; no automatic registration.",
+    "No mask/anisotropic runtime policy or parser was implemented."
+  ],
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "newEngineRuns": 0,
+  "newServers": 0
+}

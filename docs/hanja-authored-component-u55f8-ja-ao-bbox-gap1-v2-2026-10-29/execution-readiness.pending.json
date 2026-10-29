@@ -1,0 +1,133 @@
+{
+  "schema": "hanja-authored-static-to-runtime-readiness/v1",
+  "date": "2026-10-29",
+  "glyph": "嗸",
+  "candidate": 2,
+  "status": "filled-C-supported-source-mask-policy-and-native-mapping-pending",
+  "inputRefs": {
+    "recipe": {
+      "path": "docs/hanja-authored-component-u55f8-ja-ao-bbox-gap1-v2-2026-10-29/recipe.json",
+      "SHA256": "ed39ebd1846cce96c8ce758dca0e8c745f4086015b9527d29ee390306fac6a9a"
+    },
+    "fixture": {
+      "path": "docs/hanja-authored-component-u55f8-ja-ao-bbox-gap1-v2-2026-10-29/fixture-static-draft.json",
+      "SHA256": "e2d9e162e7016f841d5c2070bd3ea27eaeca105b5ebd2c1fc53b41b5bc31ac67"
+    },
+    "gapProof": {
+      "path": "docs/hanja-authored-component-u55f8-ja-ao-bbox-gap1-v2-2026-10-29/readiness.json",
+      "SHA256": "c5f6b431181ffa781bb8b850f10eb779c76376ede5688ccccdaf542f2ba1d428"
+    },
+    "sourceFrame": {
+      "path": "docs/hanja-source-inventory-u55f8-2026-10-29/ao-donor-display-frame-review.json",
+      "SHA256": "96be14d1b2d9433871307e4cac937e5b7ef6eb98c7efb02765406011e194a56e"
+    }
+  },
+  "inspectedRuntimeSnapshot": {
+    "component": {
+      "path": "components/hanja/stroke-outlines.tsx",
+      "SHA256": "931416a9e1fd8bf04e6ca0fbc5ce3a28f15cc2f6c1f0925fb21dd13e5a9dbe92"
+    },
+    "outlineType": {
+      "path": "lib/hanja-stroke-outline.ts",
+      "SHA256": "b4d289d1911c4d43934dfad39c4cfbe22a246303bb7012114d16786688c36c40"
+    },
+    "snapshotNotRegistrationOrFutureHBinding": true
+  },
+  "filledOutlineFacts": {
+    "originalDonorCommands": [
+      "M",
+      "C",
+      "Z"
+    ],
+    "all11DAlreadyTransformedWithoutControlInsertion": true,
+    "rendering": "Current R directly passes segment.outline to SVG path d, including full completion and masked ink. The product does not parse C into polygons.",
+    "existingRendererSupportsSVGCurveCommands": true,
+    "newProductionParserNeededForM_C_Z": false,
+    "staticDoesNotApproveAnimatedMask": true
+  },
+  "sourceParsingReuse": {
+    "path": "docs/hanja-authored-component-u81dd-u51e1-2026-10-28/prepare-execution-draft.py",
+    "SHA256": "2020181cb1d346ad104cb53dd926326564bd9df7efbd75507a51d674996b3bff",
+    "functions": [
+      "source_commands",
+      "placed_d"
+    ],
+    "supportedCommands": [
+      "M",
+      "L",
+      "Q",
+      "C",
+      "Z"
+    ],
+    "alreadyUsedForCurrentCandidate": true,
+    "unsupportedCommandsMustFail": true,
+    "samplingOrFlatteningRequired": false
+  },
+  "maskFacts": {
+    "filledCubicDoesNotRequireCubicGuide": true,
+    "reason": "The fixed upstream SVG uses the original median M/L polylines as clip guides over cubic filled D. A guide curve must be justified separately; deriving a new cubic from the outline is not authorized.",
+    "originalMedianCounts": [
+      2,
+      3,
+      2,
+      3,
+      2,
+      6,
+      5,
+      4,
+      2,
+      5,
+      3
+    ],
+    "originalSourceSVG": {
+      "viewBox": [
+        0,
+        0,
+        1024,
+        1024
+      ],
+      "width": 128,
+      "linecap": "round",
+      "pathLength": 3333,
+      "dasharray": 3337,
+      "initialDashoffset": 3339
+    },
+    "currentGenericR": {
+      "viewBox": [
+        0,
+        0,
+        100,
+        100
+      ],
+      "revealPath": "SVG path string",
+      "revealTransform": "Optional source-mask transform; filled D already placed.",
+      "revealWidth": "Per-segment source-space width",
+      "linecap": "round",
+      "pathLength": 1,
+      "dasharray": "p 2",
+      "dashoffset": 0
+    },
+    "existingPositiveSourceAffinePathAvailable": true,
+    "notEquivalentToUpstreamMicroclock": true,
+    "nonuniformMaskMustShareExactSourceToPlacedFrame": true,
+    "policyNotChosen": true,
+    "sourceWidth128NotAutomaticallyReplacedByMM20OrKAGE14": true
+  },
+  "requiredBeforeExecution": [
+    "ROOT complete current/prefix14 role and whole/contact approval; static bbox/gap proof is not direction/temporal approval.",
+    "Choose and record an explicit source guide frame and width/padding/display-clock policy based on unchanged original median; do not invent a cubic guide.",
+    "Derive filled100 and exact source-mask transform with one documented normalization and prove all original C control/median frame equivalence.",
+    "Conservative full-round coverage of all11 source polylines against original cubic fills; inspect start, fold, hook, transition and final growth in actual R.",
+    "Retained original口3 has compound13 H→V; its actual source-start connectivity remains fresh-review scope."
+  ],
+  "implemented": {
+    "newRuntimeFixture": false,
+    "newMaskPolicy": false,
+    "newProductionParser": false,
+    "newRenderer": false,
+    "newEngine": false,
+    "newServer": false
+  },
+  "nativeApproval": false,
+  "runtimeApplied": false
+}

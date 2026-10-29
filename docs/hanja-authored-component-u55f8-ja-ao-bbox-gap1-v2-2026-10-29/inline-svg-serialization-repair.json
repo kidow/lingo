@@ -1,0 +1,64 @@
+{
+  "schema": "hanja-static-inline-svg-serialization-repair/v1",
+  "glyph": "嗸",
+  "date": "2026-10-29",
+  "candidate": 2,
+  "actualFailure": {
+    "reviewer": "ROOT direct in-app browser",
+    "route": "/whole",
+    "tab": "257",
+    "publisherAndOriginalSVGCount": 2,
+    "candidateSVGRendered": false,
+    "cause": "ElementTree emitted ns0:svg/ns0:path into text/html; browser did not parse these prefixed tags as SVG foreign content.",
+    "wholeNativeApproval": false
+  },
+  "repair": {
+    "defaultSVGNamespaceRegistered": true,
+    "outputStartsStandardSVG": true,
+    "unprefixedPathTags": true,
+    "SVGShapeValidationOnly": true,
+    "actualBrowserRecheckPending": true
+  },
+  "fixedConfigSHA256": "bcade574c2b7d4d448060528dc05aa8b3d8d8b4f182bc2c9b5298704e90666cf",
+  "fixedAdapterSHA256": "e1bbeed51be0d381cafe36312f97acf2ab4d7a4f4e73605a463ce163ba7c4f8d",
+  "unchanged": {
+    "recipeSHA256": "ed39ebd1846cce96c8ce758dca0e8c745f4086015b9527d29ee390306fac6a9a",
+    "fixtureSHA256": "e2d9e162e7016f841d5c2070bd3ea27eaeca105b5ebd2c1fc53b41b5bc31ac67",
+    "originalDAndMatrixAndMedians": true,
+    "sourceMouthP": true,
+    "geometryAndGapProof": true
+  },
+  "checkOnly": {
+    "codeCheck": "PASS",
+    "donorPaths": 11,
+    "mouthRaw": 4,
+    "mouthP": 5,
+    "wholePaths": 16,
+    "standardInlineSVGTags": true,
+    "staticSelections": 28,
+    "originalSourceUnchanged": true,
+    "crossComponentEnvelopeGap": 1,
+    "HTTP": 0,
+    "engine": 0,
+    "server": 0
+  },
+  "previousCandidate1": {
+    "path": "docs/hanja-authored-component-u55f8-ja-ao-bbox-2026-10-29/compare.py",
+    "sameNamespaceOmission": true,
+    "changed": false,
+    "status": "HOLD-existing-new-contact-and-inline-SVG-serialization-not-repaired"
+  },
+  "cleanup": {
+    "PID": 75917,
+    "port": 52866,
+    "session": 6583,
+    "tab": "257",
+    "exitCode": 130,
+    "confirmedStopped": true,
+    "confirmedTabClosed": true,
+    "childServers": 0
+  },
+  "newEngineRuns": 0,
+  "nativeApproval": false,
+  "runtimeApplied": false
+}

@@ -1,0 +1,154 @@
+{
+  "schema": "hanja-authored-static-component-native-review/v1",
+  "date": "2026-10-29",
+  "glyph": "嗸",
+  "candidate": 2,
+  "status": "PASS-bounded-whole-macro-placement-and14-role-correspondence-only",
+  "reviewer": "ROOT direct in-app browser panel",
+  "inputs": {
+    "docs/hanja-authored-component-u55f8-ja-ao-bbox-gap1-v2-2026-10-29/config.json": "bcade574c2b7d4d448060528dc05aa8b3d8d8b4f182bc2c9b5298704e90666cf",
+    "docs/hanja-authored-component-u55f8-ja-ao-bbox-gap1-v2-2026-10-29/compare.py": "e1bbeed51be0d381cafe36312f97acf2ab4d7a4f4e73605a463ce163ba7c4f8d",
+    "docs/hanja-authored-component-u55f8-ja-ao-bbox-gap1-v2-2026-10-29/recipe.json": "ed39ebd1846cce96c8ce758dca0e8c745f4086015b9527d29ee390306fac6a9a",
+    "docs/hanja-authored-component-u55f8-ja-ao-bbox-gap1-v2-2026-10-29/fixture-static-draft.json": "e2d9e162e7016f841d5c2070bd3ea27eaeca105b5ebd2c1fc53b41b5bc31ac67",
+    "docs/hanja-authored-component-u55f8-ja-ao-bbox-gap1-v2-2026-10-29/readiness.json": "c5f6b431181ffa781bb8b850f10eb779c76376ede5688ccccdaf542f2ba1d428",
+    "docs/hanja-authored-component-u55f8-ja-ao-bbox-gap1-v2-2026-10-29/logical14-role-hypothesis.json": "999bcc0dc255a24c91506aa8f027af0d4c91866cd5e777699c504ec099d77b5e",
+    "docs/hanja-official-media-compare-u55f8-2026-10-29/native-clock-review.json": "ecca76701105be6524eea7d486c610ddc86a32a1b532e8e7d89caa660091b4ac"
+  },
+  "observed": {
+    "whole": {
+      "route": "/whole",
+      "fullPageCaptures": 1,
+      "panels": 3,
+      "allSVGSizeCSS": 520,
+      "allInkVisible": true
+    },
+    "mapping": {
+      "logicalPens": 14,
+      "views": [
+        "current",
+        "prefix"
+      ],
+      "pairedSelections": 28,
+      "fullPage": true,
+      "allSVGSizeCSS": 520,
+      "allInkVisible": true
+    },
+    "parentReportedReviewUnits": 31,
+    "roleCorrespondence": [
+      {
+        "pen": 1,
+        "originalRole": "horizontal right",
+        "staticCandidateRoleSupported": true
+      },
+      {
+        "pen": 2,
+        "originalRole": "vertical down",
+        "staticCandidateRoleSupported": true
+      },
+      {
+        "pen": 3,
+        "originalRole": "horizontal right",
+        "staticCandidateRoleSupported": true
+      },
+      {
+        "pen": 4,
+        "originalRole": "curved downward-right dot",
+        "staticCandidateRoleSupported": true
+      },
+      {
+        "pen": 5,
+        "originalRole": "horizontal right",
+        "staticCandidateRoleSupported": true
+      },
+      {
+        "pen": 6,
+        "originalRole": "horizontal right then vertical down then left hook",
+        "staticCandidateRoleSupported": true
+      },
+      {
+        "pen": 7,
+        "originalRole": "down-left",
+        "staticCandidateRoleSupported": true
+      },
+      {
+        "pen": 8,
+        "originalRole": "right component down-left",
+        "staticCandidateRoleSupported": true
+      },
+      {
+        "pen": 9,
+        "originalRole": "horizontal right",
+        "staticCandidateRoleSupported": true
+      },
+      {
+        "pen": 10,
+        "originalRole": "long down-left",
+        "staticCandidateRoleSupported": true
+      },
+      {
+        "pen": 11,
+        "originalRole": "down-right",
+        "staticCandidateRoleSupported": true
+      },
+      {
+        "pen": 12,
+        "originalRole": "口 left vertical down",
+        "staticCandidateRoleSupported": true
+      },
+      {
+        "pen": 13,
+        "originalRole": "口 horizontal right then right vertical down",
+        "staticCandidateRoleSupported": true
+      },
+      {
+        "pen": 14,
+        "originalRole": "口 bottom horizontal right",
+        "staticCandidateRoleSupported": true
+      }
+    ],
+    "specificSupportedRoles": {
+      "4": "curved DR dot",
+      "6": "H then down/left hook",
+      "7": "DL",
+      "8": "DL",
+      "9": "H",
+      "10": "DL",
+      "11": "DR",
+      "12": "V",
+      "13": "H then V",
+      "14": "H"
+    },
+    "fontAndPlacementDifferences": [
+      "Candidate stroke6 horizontal is shorter than publisher.",
+      "Candidate upper component is flatter than publisher under the explicit author scaling.",
+      "Brush style differs. These differences were accepted only for bounded static macro shape/roles, not original geometry identity."
+    ]
+  },
+  "approval": {
+    "authorMacroPlacement": true,
+    "static14RoleOrderCorrespondence": true,
+    "originalPublisherGeometryIdentity": false,
+    "original99TransformIdentity": false,
+    "originalWholeEngineCapture": false,
+    "sourceMicroclockIdentity": false,
+    "temporal": false,
+    "runtime": false
+  },
+  "cleanup": {
+    "PID": 77715,
+    "port": 53990,
+    "session": 36865,
+    "tab": "259",
+    "exitCode": 130,
+    "confirmedStopped": true,
+    "confirmedTabClosed": true,
+    "childServers": 0
+  },
+  "limits": [
+    "Actual animation starts, folds, hooks, full-round coverage, final reveal and replay remain unreviewed.",
+    "Original11 donor source D/median uses a declared common author affine; retained mouth originalP unchanged.",
+    "Current/prefix role correspondence does not establish the guide timing or renderer mask policy."
+  ],
+  "newEngineRuns": 0,
+  "runtimeApplied": false
+}

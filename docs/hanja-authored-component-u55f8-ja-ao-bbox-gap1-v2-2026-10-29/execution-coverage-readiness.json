@@ -1,0 +1,97 @@
+{
+  "schema": "hanja-authored-complete-donor-execution-readiness/v1",
+  "date": "2026-10-29",
+  "glyph": "嗸",
+  "status": "source-frame-and-full-round-coverage-complete-actual-review-pending",
+  "inputs": {
+    "docs/hanja-authored-component-u55f8-ja-ao-bbox-gap1-v2-2026-10-29/prepare-execution-draft.py": "fa0c40c835be215de4f037145ffd137d4c275a0a16f0d7ef8cacfd0410b16264",
+    "docs/hanja-authored-component-u55f8-ja-ao-bbox-gap1-v2-2026-10-29/fixtures-execution-draft.json": "314725854294450f222facc1bfcd3dfd62dc8f037297992d2ca3441c37ade30c",
+    "docs/hanja-authored-component-u55f8-ja-ao-bbox-gap1-v2-2026-10-29/execution-draft-check.json": "5c4617c35033c5faf70736555ad0b621c1be766eb29c6b9cbade450d9578252d",
+    "docs/hanja-authored-component-u55f8-ja-ao-bbox-gap1-v2-2026-10-29/coverage-preflight.py": "a2fbaec4609faebe6de49dc05c0a25985c5517a42dc7b32575a7df25ffe6df1f",
+    "docs/hanja-authored-component-u55f8-ja-ao-bbox-gap1-v2-2026-10-29/coverage-preflight.json": "3ca06d449ceeb62b4be9eb0364a739762d8d6d0ddb0d199aa4e66bb2c3e71b8c",
+    "docs/hanja-authored-component-u55f8-ja-ao-bbox-gap1-v2-2026-10-29/native-static-review.json": "2e01a33199d56b37eccc597dead15b996b44e7a79ed0c10743cdb9eb735964f3"
+  },
+  "geometrySHA256": "250c2cfd344809677863b6a31d4a1253b9b61e26e4fcfaf24388526d8131851a",
+  "counts": {
+    "logical": 14,
+    "masks": 15,
+    "filledSubpaths": 16,
+    "sourceAffineMasks": 11,
+    "mouthCardinalMasks": 4
+  },
+  "sourceMaskPolicy": {
+    "originalMedianPolylines": true,
+    "newCubicGuide": false,
+    "width": 12.8,
+    "padding": 6.4,
+    "sourceWidthBeforeNormalization": 128,
+    "affineTransportsBothGuideAndWidth": true,
+    "startGate": "Existing source-start half-plane only, authored length-clock and padding; original SVG microclock not claimed."
+  },
+  "fullRoundCoverage": {
+    "masks": 11,
+    "pass": 11,
+    "outlier": 0,
+    "unproved": 0
+  },
+  "compound13Risk": {
+    "priorRaw": 14,
+    "nextRaw": 15,
+    "priorBounds": [
+      24.45,
+      66.25,
+      75.5,
+      68.25
+    ],
+    "nextBounds": [
+      72.5,
+      63.75,
+      81,
+      92.7
+    ],
+    "boundary": 0.7241770715096482,
+    "initialDownCutAtLocal": [
+      {
+        "p": 0.01,
+        "cutY": 64.0395
+      },
+      {
+        "p": 0.05,
+        "cutY": 65.1975
+      },
+      {
+        "p": 0.1,
+        "cutY": 66.645
+      }
+    ],
+    "firstTwoCutsBeforePriorFilledTop": true,
+    "actualFailureObserved": false,
+    "next": "ROOT first reviews compound13 local.01/.05/.1 in actual renderer before broad all14/11curve validation; no implicit serif policy adoption."
+  },
+  "reviewPlan": {
+    "compactSamples126": 126,
+    "startGateSamples": 33,
+    "fullRoundResidualMasks": 11,
+    "initialSamples": 28,
+    "boundarySamples": 3,
+    "endingSamples": 42,
+    "aggregateSamples": 73,
+    "mainStatesIfSelectedZeroIncluded": 18,
+    "proposedNaturalPens": [
+      6,
+      8,
+      10,
+      13
+    ]
+  },
+  "limits": [
+    "Curve/outline frame equality and full-round tube coverage are not start/ending/natural approval.",
+    "No shared H/R/registry, parser or renderer changes. No new engine.",
+    "OriginalC shapes were never sampled or flattened into new product outlines; sampling in coverage is only for concrete boundary witnesses."
+  ],
+  "actualProfileReady": false,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "newServers": 0,
+  "buildRun": false
+}

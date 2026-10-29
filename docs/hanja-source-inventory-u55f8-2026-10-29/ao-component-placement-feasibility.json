@@ -1,0 +1,136 @@
+{
+  "schema": "hanja-complete-component-placement-feasibility/v1",
+  "date": "2026-10-29",
+  "recipient": "嗸",
+  "status": "declaration-box-direct-fullSVG-fit-not-supported-static-candidate-not-created",
+  "sourceInputs": {
+    "docs/hanja-goal-glyphwiki-batch741-2026-10-12/sources.json": "9769886d5795ba19c3048c8c44c19e4899a55f63ee30b8de861f0bf48a7f26f2",
+    "docs/hanja-goal-glyphwiki-batch741-2026-10-12/engine-whole-u55f8.json": "a569a023239afa92474c47b5c530c4d5f7f244285e055e7a50fafc6086cc2070",
+    "docs/hanja-source-inventory-u55f8-2026-10-29/ao-donor-source-record.json": "5d3045fdd4793b30f6c7217048dbcfd49079c8dc3fc7078c8f6f5f786f4b8420"
+  },
+  "originalRecipientBoundaries": {
+    "rootDeclaration": "99:0:0:0:-3:200:240:u6556-03$99:0:0:12:118:188:190:u53e3",
+    "upper": {
+      "source": "u6556-03",
+      "declaredBox": [
+        0,
+        -3,
+        200,
+        240
+      ],
+      "originalRawOneBased": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "logicalCount": 11,
+      "filledEnvelope": [
+        12.4,
+        13,
+        188.7,
+        133.8
+      ]
+    },
+    "lower": {
+      "source": "u53e3",
+      "declaredBox": [
+        12,
+        118,
+        188,
+        190
+      ],
+      "originalRawOneBased": [
+        13,
+        14,
+        15,
+        16
+      ],
+      "logicalCount": 3,
+      "filledEnvelope": [
+        42.9,
+        126.5,
+        162,
+        188.4
+      ],
+      "preservationRequired": "All original P/guide/flags/paint primitive order unchanged."
+    }
+  },
+  "donor": {
+    "glyph": "敖",
+    "filledPaths": 11,
+    "medians": 11,
+    "originalCoordinateFrame": "graphicsJa y-up, display x unchanged/y900-y",
+    "displaySVGViewBox": [
+      0,
+      0,
+      1024,
+      1024
+    ],
+    "displayControlEnvelope": [
+      70,
+      74,
+      989,
+      921
+    ]
+  },
+  "naiveDeclarationBoxFit": {
+    "matrixFromDisplayExact": [
+      "25/128",
+      "0",
+      "0",
+      "243/1024",
+      "0",
+      "-3"
+    ],
+    "determinantPositive": true,
+    "placedControlEnvelope": [
+      13.671875,
+      14.560546875,
+      193.1640625,
+      215.5576171875
+    ],
+    "concreteFilledEndpointOutside200": {
+      "sourcePathOneBased": 6,
+      "sourceEndpoint": [
+        315,
+        -18
+      ],
+      "displayEndpoint": [
+        315,
+        918
+      ],
+      "placedEndpoint": [
+        61.5234375,
+        214.845703125
+      ],
+      "reason": "An actual original C endpoint, not merely an exterior control point, would exceed world200 bottom."
+    },
+    "contactClaim": false,
+    "geometryGenerated": false
+  },
+  "reason": "The declared KAGE99 box maps a specialized u6556-03 source whose upper content uses only a subset of the local200 frame. It does not authorize fitting an unrelated full1024 standalone Ja glyph into the same box.",
+  "possibleNextAuthorChoice": "If explicitly selected, fit the complete donor display control envelope into the fixed public recipient upper filled envelope as an authored positive affine. This would be a new placement hypothesis, not original whole identity; root whole/current and contact review required.",
+  "constraints": {
+    "originalDAndMediansImmutable": true,
+    "sourceM_C_ZSupportedOnly": true,
+    "newFilledGeometry": false,
+    "mixedProvenanceRequired": true,
+    "runtimeNonUniformMaskDesignNotStarted": true,
+    "privateCoordinateFit": false,
+    "originalWholeClaim": false
+  },
+  "staticRecipeCreated": false,
+  "serverStarted": false,
+  "newEngineRuns": 0,
+  "sharedCodeChanged": false,
+  "runtimeApplied": false
+}
