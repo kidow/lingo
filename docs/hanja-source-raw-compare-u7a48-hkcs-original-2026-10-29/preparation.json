@@ -1,0 +1,178 @@
+{
+  "schema": "hanja-existing-source-review-preparation/v1",
+  "glyph": "穈",
+  "id": "u7a48",
+  "catalogStrokes": 16,
+  "grade": "특급",
+  "currentCodeCheck": {
+    "resolver": "hanjaStrokeData({glyph:穈,strokes:16})",
+    "applied": false,
+    "registeredGlyphEntries": 0
+  },
+  "source": {
+    "path": "docs/hanja-actual-engine-capture-u7a48-hkcs-2026-10-26/engine-whole-hkcs_m7a48.json",
+    "SHA256": "911dc61d82647fc17df009c7499c0e8b8d36c7280a636ef5296716bf264ec3fa",
+    "root": "hkcs_m7a48",
+    "rootVersion": 2,
+    "rawGroups": 16,
+    "calls": 21,
+    "polygons": 42,
+    "unchanged": true
+  },
+  "priorHold": {
+    "record": "docs/hanja-source-raw-compare-u7a48-hkcs-whole-2026-10-26/native-whole-review.json",
+    "SHA256": "4889aa0dd42caf9ab440aa0c96766fd488c78c8f7abf2640c7359e621bd022da",
+    "reason": "내부 우측11 끝의 상향 돌기가 원문 오른쪽 종료와 다름",
+    "priorSelectedSourceIsDifferentFromHK": true
+  },
+  "targetSource": {
+    "oneBasedRaw": 11,
+    "calls": [
+      {
+        "kind": "cdDrawLine",
+        "args": [
+          156,
+          72,
+          156,
+          90,
+          2000,
+          1
+        ],
+        "polygonCount": 3
+      },
+      {
+        "kind": "cdDrawCurve",
+        "args": [
+          156,
+          90,
+          156,
+          100,
+          166,
+          100,
+          20001,
+          2001
+        ],
+        "polygonCount": 2
+      },
+      {
+        "kind": "cdDrawLine",
+        "args": [
+          166,
+          100,
+          180,
+          100,
+          2006,
+          5
+        ],
+        "polygonCount": 3
+      }
+    ],
+    "terminalCallOneBased": 3,
+    "terminalPolygonOneBased": 3,
+    "terminalPolygonBounds": [
+      175,
+      78,
+      182,
+      95
+    ],
+    "rightGuideY": 100,
+    "terminalEndFlag": 5,
+    "sourceGeometryChanged": false
+  },
+  "mapping": {
+    "all16Unapproved": true,
+    "staticDirectionsPreviouslyObserved": [
+      6,
+      7,
+      10,
+      11
+    ],
+    "actualTimedFramesPreviouslyApproved": 0,
+    "noRadicalInference": true
+  },
+  "jev": {
+    "reused": true,
+    "model": "jev-1.14.0",
+    "choice": "other_unknown",
+    "confidence": 0.99,
+    "use": "이미 동일 관찰·질문의 후보 우선순위만 재사용; code fact 재질문0"
+  },
+  "nextReview": [
+    "원문16 실제 clock에서11의 down→right 종료와 상향 동작 유무 확인",
+    "원 HK raw11 V/Q/rightL 원형을 단독·누적·whole로 대조",
+    "원형태가 계속 다르면 원P 일부삭제나 flag변조 대신 별도 공개 원형/명시적인 전체component 저자 후보의 근거를 확보"
+  ],
+  "files": {
+    "docs/hanja-official-media-compare-u7a48-2026-10-29/clock.py": "df9e2e5fe8d478a7547ad65e4b6d2e5757571f8bb1c78eacad1bb73afcdcc3a2",
+    "docs/hanja-official-media-compare-u7a48-2026-10-29/config-all.json": "d13c913e3d296fa8134c75ecf02432eaf12a1b75140202332ee515c662d4d4a4",
+    "docs/hanja-source-raw-compare-u7a48-hkcs-original-2026-10-29/compare.py": "84ce8cda373f7d64f91b3822f86b7d2f98f7e4ef8646771dd24245eff2eb071c",
+    "docs/hanja-source-raw-compare-u7a48-hkcs-original-2026-10-29/config.json": "90028587533522ec7c8d5af8a72ee4acc279e73c47e85328cbdd3dfa0cc49cec"
+  },
+  "checks": [
+    {
+      "tool": "docs/hanja-official-media-compare-u7a48-2026-10-29/clock.py",
+      "exit": 0,
+      "result": {
+        "guardPass": true,
+        "glyph": "穈",
+        "catalog": 16,
+        "domestic": 16,
+        "selected": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16
+        ],
+        "timedPathsNotYetFetched": true,
+        "commonValidatorSynthetic16ShapePassed": true,
+        "selectedCount17Rejected": true,
+        "originalClockVerified": false,
+        "HTTP": 0,
+        "server": 0,
+        "privateFetch": 0,
+        "nativeApproval": false
+      }
+    },
+    {
+      "tool": "docs/hanja-source-raw-compare-u7a48-hkcs-original-2026-10-29/compare.py",
+      "exit": 0,
+      "result": {
+        "guardPass": true,
+        "glyph": "穈",
+        "catalog": 16,
+        "domesticSelectionClips": 16,
+        "raw": 16,
+        "calls": 21,
+        "P": 42,
+        "wholeCurrentPrefixContract": "PASS",
+        "HTTP": 0,
+        "server": 0,
+        "sourceGroupingApproved": false,
+        "nativeApproval": false,
+        "runtimeApplied": false
+      }
+    }
+  ],
+  "scope": {
+    "runtimeApplied": false,
+    "nativeApproval": false,
+    "sourceMappingApproved": false,
+    "newGeometry": false,
+    "sharedFilesChanged": false,
+    "serversStarted": 0,
+    "privateMediaFetched": 0,
+    "buildRun": false
+  }
+}
