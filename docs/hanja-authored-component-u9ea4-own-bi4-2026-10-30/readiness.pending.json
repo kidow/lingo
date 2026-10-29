@@ -1,0 +1,85 @@
+{
+  "glyph": "麤",
+  "recordedAt": "2026-10-30",
+  "status": "ready-for-ROOT-static-review-unapproved",
+  "config": "config.pending.json",
+  "configSHA256": "528a55d208a2f6615cf5143910e38095d5d0b3191817f138060c1d347dbc5e57",
+  "files": {
+    "recipe.pending.json": "4f4ef20b7ed0a6743b091690eb6c5386043a5513da6b3057cbbd15a4badbad85",
+    "fixtures-draft.json": "a8ab249667cea76c8516693b358e45f0e07cb6a7b9e2b7406f83079813183ca4",
+    "materialize-draft.py": "d1bae1479cbd90674bb0237354f99075cdf528c80461ba866b474bbef7922132",
+    "compare.py": "ac12824cb631b6084c4f6f34ab18d6f7b23cccbf033a0af5a50f3609acbe2c9a",
+    "config.pending.json": "528a55d208a2f6615cf5143910e38095d5d0b3191817f138060c1d347dbc5e57"
+  },
+  "counts": {
+    "raw": 39,
+    "calls": 48,
+    "P": 96,
+    "logicalHypothesis": 33,
+    "nonTargetRawExact": 24
+  },
+  "checks": {
+    "actualMaterializerPass": true,
+    "actualSharedWholePagePanels": 3,
+    "actualCurrentPrefixPairPages": 66,
+    "negativeQueriesRejected": 6,
+    "selected39RawOnce": true,
+    "actualSavedBinary64AsDecimalFractionContactPairs": 741,
+    "all96PolygonsSimple": true,
+    "newContacts": 0,
+    "removedContactRawPairs": [
+      [
+        24,
+        26
+      ],
+      [
+        37,
+        39
+      ]
+    ],
+    "VtoRiseFilledContactRawPairs": [
+      [
+        10,
+        11
+      ],
+      [
+        23,
+        24
+      ],
+      [
+        36,
+        37
+      ]
+    ],
+    "VtoRiseGuideGapsPreserved": true
+  },
+  "inspectionPriority": {
+    "whole": "/whole",
+    "lostContactPrefixes": [
+      "/mapping?pen=20&mode=prefix",
+      "/mapping?pen=22&mode=prefix",
+      "/mapping?pen=31&mode=prefix",
+      "/mapping?pen=33&mode=prefix"
+    ],
+    "allCurrentPrefix": "/mapping?pen=1..33&mode=current|prefix"
+  },
+  "scope": {
+    "original99PAndHoldPreserved": true,
+    "firstDotsVPreserved": true,
+    "completeBi5RawOnly": true,
+    "sourcePartialTrim": false,
+    "newP": false,
+    "newEngine": false,
+    "privateMediaSaved": false,
+    "privateHTTPExecutedByChild": 0,
+    "serversStartedByChild": 0,
+    "nativeViewsByChild": 0,
+    "shapeApproved": false,
+    "mappingApproved": false,
+    "nativeTemporalApproved": false,
+    "runtimeApplied": false,
+    "buildRun": false,
+    "wholeProjectTypecheckRun": false
+  },
+  "command": "rtk proxy python3 docs/hanja-authored-component-u9ea4-own-bi4-2026-10-30/compare.py --config-sha 528a55d208a2f6615cf5143910e38095d5d0b3191817f138060c1d347dbc5e57 --port 0"
+}
