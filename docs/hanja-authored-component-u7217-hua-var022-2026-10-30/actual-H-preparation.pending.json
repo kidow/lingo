@@ -1,0 +1,121 @@
+{
+  "schema": "hanja-exact-source-H-preparation/v1",
+  "date": "2026-10-30",
+  "glyph": "爗",
+  "status": "disabled-isolated-review-pending",
+  "harness": {
+    "path": "scripts/hanja-actual-component-review.mjs",
+    "beforeSHA256": "bb71466cc01378886b289beff67da4defdbd1faac04dc64d286caca694fb6c2a",
+    "afterSHA256": "1d9a2dba249edec296f817216ad40bded1af7b1ee9a3e6c4523f37583ead418d",
+    "patch": "docs/hanja-authored-component-u7217-hua-var022-2026-10-30/actual-H-integration.pending.patch",
+    "patchSHA256": "a47b86fca93b4445a6ca6255a730d2b97bc978b0f535fcf7ec4b6184cf2fd15e",
+    "hunks": 17,
+    "positionsAscending": [
+      1113,
+      574339,
+      989420,
+      1422539,
+      1431255,
+      2925119,
+      3021050,
+      3035423,
+      3061720,
+      3076292,
+      3085641,
+      3092290,
+      3095172,
+      3136723,
+      3161671,
+      3226644,
+      3387956
+    ],
+    "forwardInverseExact": true,
+    "base": "After exact 卼G pending transport, now ROOT actual bb714",
+    "sharedWritten": false
+  },
+  "profile": {
+    "path": "docs/hanja-authored-component-u7217-hua-var022-2026-10-30/actual-profile-start.pending.json",
+    "SHA256": "53ea2fe20a75fc5134d7f48fc3f821d0cefe18d32c6163b74d0df495f4bfe433",
+    "flags": [
+      false,
+      false,
+      true
+    ],
+    "ordinarySHA256": "d63654f7f7640e36219ad6f7e69af1f3487cc0af96ce78f55251740545f76cba",
+    "variantSHA256": "4903a2aa3e72ef53559020842f23eb933e2ebdc23517644172f743778f083bf6",
+    "R": "37306a42416754fe932a76d09caf2075dbfdde10c92a1c90c71f00eb961ebb2e",
+    "inputPins": 1310,
+    "currentInputDrift": []
+  },
+  "source": {
+    "fixture": "docs/hanja-authored-component-u7217-hua-var022-2026-10-30/fixtures-execution-draft.json",
+    "fixtureSHA256": "50f9e4b08d739ee8e86693e6ea41f4c16f210bd97de74e27283b16792dec5264",
+    "geometrySHA256": "3669349890ba1c84e955679e90a268488903ff390ed0584fd89c18fd791311f6",
+    "logical": 19,
+    "masks": 21,
+    "P": 35,
+    "Q": 4,
+    "cardinal": 17,
+    "pairCount": 2
+  },
+  "checks": {
+    "guard": {
+      "guard": true,
+      "negatives": 4,
+      "pens": 19,
+      "masks": 21
+    },
+    "syntaxAndActualSetup": {
+      "Hsyntax": true,
+      "browserSyntax": true,
+      "actualSetupFunctionExecuted": true,
+      "UIOnlyButtonStub": true,
+      "buttons": 11,
+      "labels": [
+        "爗 1m1 start-release3",
+        "爗 2m1 start-release3",
+        "爗 3m2 start-release3",
+        "爗 4m1 start-release3",
+        "爗 aggregate101 initial38-boundary6-ending57",
+        "爗 aggregate initial38",
+        "爗 aggregate source-boundary6",
+        "爗 aggregate ending57",
+        "爗 compound pen3 compact9",
+        "爗 compound pen6 compact9",
+        "爗 all-curve full-round residual"
+      ]
+    },
+    "actualGeneratedRoutes": {
+      "actualGeneratedFixtureRow": true,
+      "projection7": true,
+      "strokesExact": true,
+      "foreignContextsRejected": 4,
+      "localBaselineClosureSelected": true
+    },
+    "collector": {
+      "expected": 399,
+      "inheritedFromExactGValidatedGraph": true,
+      "sameRAndDependencyInputs": true,
+      "newImport": false,
+      "actualSSRRun": false
+    },
+    "topEntryExplicit": true,
+    "fullFieldBinding": true,
+    "allQWidth14Padding7": true
+  },
+  "risks": [
+    "Logical3 original V/Q and6 original H/V call boundary direct actual review required despite exact guide endpoint equality.",
+    "Fullround Q coverage does not approve initial clock or contact transitions."
+  ],
+  "scope": {
+    "nativeApproved": false,
+    "runtimeApplied": false,
+    "SSRRun": false,
+    "serverRun": false,
+    "buildRun": false,
+    "fullTypecheckRun": false,
+    "originalSourceCoverageRerun": false,
+    "sharedHWritten": false,
+    "sharedRWritten": false
+  }
+}

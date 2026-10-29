@@ -1,0 +1,50 @@
+{
+  "glyph": "爗",
+  "reviewedAt": "2026-10-30",
+  "result": "PASS-ISOLATED-ACTUAL-COMPONENT",
+  "runtimeAppliedAtReview": false,
+  "actualProductUIReviewed": false,
+  "wholeGlyphAutoplayReviewed": false,
+  "browser": "Codex in-app browser tab 333",
+  "serverPort": 57780,
+  "pins": {
+    "h": "1d9a2dba249edec296f817216ad40bded1af7b1ee9a3e6c4523f37583ead418d",
+    "renderer": "37306a42416754fe932a76d09caf2075dbfdde10c92a1c90c71f00eb961ebb2e",
+    "profile": "27e318cf1c6887458e6cf56b895ce7afd71805cad9f9f4189386e9ea744b06ca",
+    "fixture": "50f9e4b08d739ee8e86693e6ea41f4c16f210bd97de74e27283b16792dec5264",
+    "geometry": "3669349890ba1c84e955679e90a268488903ff390ed0584fd89c18fd791311f6"
+  },
+  "discreteViews": {
+    "allNineteenPensCompact9": 171,
+    "initial": 38,
+    "sourceBoundary": 6,
+    "ending": 57,
+    "fourCurveStartRelease3": 12,
+    "fourFullRoundResidualBlank": 4,
+    "pen5Zoom0125And025": 2,
+    "totalObservationsWithOverlappingEndpoints": 290
+  },
+  "selectedPenNaturalPlayback": {
+    "durationSeconds": 8,
+    "displayPixels": 520,
+    "pens": [3, 6],
+    "observedFirstStartEndAndReplayStartEndPerPen": true,
+    "views": 8,
+    "startProgress": [0.06075000000149012, 0.0703750000014902, 0.05776250000149048, 0.06410000000149012],
+    "allEndProgress": 1,
+    "bad": [],
+    "errors": []
+  },
+  "findings": [
+    "All 19 logical directions, starts, source handoffs and completions were reviewed without detached fragments or lost ink.",
+    "Pen5 initial triangular head was enlarged at 0.125 and 0.25 and confirmed to grow as one connected source piece.",
+    "Two independent grass horizontals retain the source gap; this is not one continuous horizontal split into two.",
+    "The complete authored Hua source and retained original fire/day source remain unchanged from the approved static mapping.",
+    "Original whole-glyph geometry and publisher microclock equivalence are not claimed."
+  ],
+  "startupNotes": [
+    "A proposed module-count increment to400 failed against actual399 and was reverted before native review.",
+    "A later local listener permission failure was resolved by the already authorized local server permission; no production build was run."
+  ],
+  "privatePublisherMaterialSaved": false
+}
