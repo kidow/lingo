@@ -1,0 +1,51 @@
+{
+  "schema": "hanja-original-whole-static-preparation/v1",
+  "glyph": "舝",
+  "sourceRoot": "u821d-ue0100",
+  "status": "ready-for-root-entire-VS0-static-review",
+  "files": {
+    "docs/hanja-source-mapping-u821d-vs0-original13-2026-10-30/whole-variant-differences.json": "3722e910d446907416fb41ce1e61a7a1fdbd0020268c93fe609060581df4418a",
+    "docs/hanja-source-mapping-u821d-vs0-original13-2026-10-30/mapping-hypothesis.json": "54fa9bdd4141accad09762c8a349ebfbc43fa8808db5873ce90695066e4c7646",
+    "docs/hanja-source-mapping-u821d-vs0-original13-2026-10-30/source-boundary-analysis.json": "3a6184b7c6e0dc66d6bc446477d8d7702116863c63d3e9c623ea70c319eb13fe",
+    "docs/hanja-source-mapping-u821d-vs0-original13-2026-10-30/verify-source-contacts.py": "4e49e670a0e2f38267e99eda56d3395e0bdedd3e1a0e134353b6934b2ce2f564",
+    "docs/hanja-source-mapping-u821d-vs0-original13-2026-10-30/compare.py": "ae1587e8690417d29525b9cbcc60bfcaaa3045ae546c9b1de04c5eb01daddb08",
+    "docs/hanja-source-mapping-u821d-vs0-original13-2026-10-30/config.json": "51adb6d2f86e3ffd6fbe4c91c62c2ddc5a4504f42f8d46a205fac1fb01bbf8de"
+  },
+  "checks": {
+    "original20RawOnce13Logical": true,
+    "original20calls42P": true,
+    "defaultRaw1to13GroupAndTraceExact": true,
+    "changedRaw14to20MetadataPinned": true,
+    "VS1SameWholeDeduplicated": true,
+    "all7FinishedContacts": true,
+    "codeOnlyExit": 0,
+    "result": {
+      "status": "PASS-code-only",
+      "sourceRaw20": true,
+      "sourceCalls20": true,
+      "sourceP42": true,
+      "logical13": true,
+      "sourceSelections26": true,
+      "wholeOriginal": true,
+      "originalPointAndGuideEdits": 0,
+      "HTTP": 0,
+      "server": 0,
+      "nativeApproval": false
+    }
+  },
+  "startup": "python3 docs/hanja-source-mapping-u821d-vs0-original13-2026-10-30/compare.py --config-sha 51adb6d2f86e3ffd6fbe4c91c62c2ddc5a4504f42f8d46a205fac1fb01bbf8de --port 0",
+  "nativeRequired": [
+    "Whole source font/layout comparison",
+    "All13 current and13prefix",
+    "Exactvertical12 source[45,138]→[45,165] versus native",
+    "9/12 finishedcontact with unresolved unchanged sourceguidegaps"
+  ],
+  "defaultPartial8SVG_HOLDPreserved": true,
+  "sourceGeometryEdited": false,
+  "mixedParts": false,
+  "newEngine": 0,
+  "privateFetch": 0,
+  "server": 0,
+  "nativeApproval": false,
+  "runtimeApplied": false
+}
