@@ -1,0 +1,3 @@
+GlyphWiki Project and contributors. LicenseRef-GlyphWiki: https://glyphwiki.org/wiki/GlyphWiki:データ・記事のライセンス@18
+
+These are unchanged original public declarations and complete closures for u83ef-t and u83ef-var-009 from the existing fixed GlyphWiki archive snapshot a7dd7f3d911936770fa742e8c37d16bee7e2173c, archive SHA2567ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62. The full63801771-byte archive was verified once in RAM and was not saved. Only seven required original records/dump lines are retained. No new glyph geometry, source points, guide, bridge, engine capture or native approval is asserted.
