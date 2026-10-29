@@ -1,0 +1,147 @@
+{
+  "schema": "hanja-complete-donor-static-preparation/v1",
+  "date": "2026-10-30",
+  "glyph": "齕",
+  "status": "ready-for-ROOT-whole-then18-current-prefix-only",
+  "inventory": {
+    "existingRoots": [
+      "u9f55",
+      "u9f55-ue0100"
+    ],
+    "defaultAndVS0ByteEqual": true,
+    "oldLeftContact": [
+      6,
+      18
+    ],
+    "existingOriginalDirectionConflict": "Native14 Vdown→bottomNErise versus originalraw5V+raw16H. Raw15 is DRdot, not the vertical start.",
+    "original18Clock": {
+      "path": "docs/hanja-official-media-compare-u9f55-2026-10-24/official-temporal-native-review.json",
+      "SHA256": "d11dd10ff053209366c9208dc246669cddf4ec3117aace4b0fc9e78015803493",
+      "views": 54,
+      "replayed": 0
+    },
+    "newOriginalClockViews": 0
+  },
+  "proposal": {
+    "donor": "Complete original animCJKJa齒15D+15medians, one common explicit positive display affine",
+    "replacedRecipient": "Entire original first99齒 component raw1..16/34P explicitly removed",
+    "retainedRecipient": "Entire second99乞 component raw18..21/13P/6calls identity preserved",
+    "blankOriginal17MetadataRetained": true,
+    "originalEngineHeadersUnchanged": true,
+    "noMixedEngineWholeHeader": true,
+    "originalWhole": false,
+    "sourceShapeOrFontIdentityClaimed": false
+  },
+  "publicMath": {
+    "matrixExact": [
+      "319/2700",
+      "0",
+      "0",
+      "59/311",
+      "-209/540",
+      "1919/311"
+    ],
+    "newCrossContacts": 0,
+    "newPairsChecked": 60,
+    "unprovedPairs": 0,
+    "originalCrossContactRemoved": [
+      [
+        6,
+        18
+      ]
+    ],
+    "removalNativeApproval": false,
+    "donorInternalRelationsPreservedByPositiveAffine": true,
+    "rightInternalRelationsPreservedByExactSourceIdentity": true
+  },
+  "mapping": {
+    "donorLogical1to15OriginalDAndMedianSameIndex": true,
+    "logical16Raw": [
+      18
+    ],
+    "logical17Raw": [
+      19
+    ],
+    "logical18Raw": [
+      21,
+      20
+    ],
+    "lastHAndFoldExactEndpoint": [
+      164.3664,
+      86.14
+    ],
+    "basis": "Existing direct18clock directions plus actual source21Hend/source20foldstart, not arithmetic row joining.",
+    "nativeMappingApproved": false
+  },
+  "checks": {
+    "checkOnly": {
+      "codeCheck": "PASS",
+      "donorOriginalD": 15,
+      "retainedOriginalP": 13,
+      "logical18": true,
+      "filledPaths": 28,
+      "retainedKageCalls": 6,
+      "wholeSources": 2,
+      "currentAndPrefixSelections": 36,
+      "retainedRightPChildrenByteUnchanged": true,
+      "engine": 0,
+      "HTTP": 0,
+      "server": 0,
+      "nativeApproval": false
+    },
+    "exitCode": 0,
+    "newEngine": 0,
+    "server": 0,
+    "privateFetch": 0
+  },
+  "files": [
+    {
+      "path": "docs/hanja-authored-component-u9f55-ja-chi15-original-qi-2026-10-30/source-record.json",
+      "SHA256": "1fb7b8046fa475fcafadd77a4e425df2bdf24b9f03435a776580a018ccb45c6f"
+    },
+    {
+      "path": "docs/hanja-authored-component-u9f55-ja-chi15-original-qi-2026-10-30/recipe.pending.json",
+      "SHA256": "010ad4d6679526c64b12b7f96931a1408166121072757690ba8dd7068a568dac"
+    },
+    {
+      "path": "docs/hanja-authored-component-u9f55-ja-chi15-original-qi-2026-10-30/public-contact-proof.json",
+      "SHA256": "97d89dfa08e6cf8ed3ef60191e2d0fdb9b271efd932ff8d3f096d9059c6b8059"
+    },
+    {
+      "path": "docs/hanja-authored-component-u9f55-ja-chi15-original-qi-2026-10-30/verify-contact.py",
+      "SHA256": "b7b90687d73ec3b6c525236631825033d8243c5d0603cc6b8ad922d485a4afbb"
+    },
+    {
+      "path": "docs/hanja-authored-component-u9f55-ja-chi15-original-qi-2026-10-30/readiness.pending.json",
+      "SHA256": "2b8941489318a3711a29170dfd1f2a930c0aab160fd2be54865d327b0a540aab"
+    },
+    {
+      "path": "docs/hanja-authored-component-u9f55-ja-chi15-original-qi-2026-10-30/compare.py",
+      "SHA256": "1aec740ef68ef6811723dc7e32628a32e466c96e1380e9ebab5dde68a1df53a4"
+    },
+    {
+      "path": "docs/hanja-authored-component-u9f55-ja-chi15-original-qi-2026-10-30/config.json",
+      "SHA256": "c22a8ad510807ab9107a8cee7fdd8ef725d4f87b000c5d4cf72d4d3a9dfe083f"
+    }
+  ],
+  "startup": {
+    "command": "python3 docs/hanja-authored-component-u9f55-ja-chi15-original-qi-2026-10-30/compare.py --config-sha c22a8ad510807ab9107a8cee7fdd8ef725d4f87b000c5d4cf72d4d3a9dfe083f --port 0",
+    "routes": [
+      "/whole",
+      "/compare?pen=14&view=current",
+      "/compare?pen=15&view=prefix",
+      "/compare?pen=18&view=current"
+    ],
+    "requiredNative": "Whole first, then18current/prefix; original clock54 already confirmed and must not be replayed."
+  },
+  "approval": {
+    "whole": false,
+    "staticMapping": false,
+    "temporal": false,
+    "runtime": false
+  },
+  "sharedHAndRUnchanged": true,
+  "privateMediaSaved": false,
+  "build": false,
+  "wholeTypecheck": false
+}

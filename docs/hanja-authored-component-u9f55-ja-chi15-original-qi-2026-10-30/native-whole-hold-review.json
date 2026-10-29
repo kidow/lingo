@@ -1,0 +1,79 @@
+{
+  "schema": "hanja-root-bounded-static-donor-hold-review/v1",
+  "date": "2026-10-30",
+  "glyph": "齕",
+  "status": "HOLD-complete-donor-enclosure-structure-mismatch",
+  "reviewer": "ROOT 브라우저 패널 직접 관찰",
+  "inputs": {
+    "config": {
+      "path": "docs/hanja-authored-component-u9f55-ja-chi15-original-qi-2026-10-30/config.json",
+      "SHA256": "c22a8ad510807ab9107a8cee7fdd8ef725d4f87b000c5d4cf72d4d3a9dfe083f"
+    },
+    "adapter": {
+      "path": "docs/hanja-authored-component-u9f55-ja-chi15-original-qi-2026-10-30/compare.py",
+      "SHA256": "1aec740ef68ef6811723dc7e32628a32e466c96e1380e9ebab5dde68a1df53a4"
+    },
+    "recipe": {
+      "path": "docs/hanja-authored-component-u9f55-ja-chi15-original-qi-2026-10-30/recipe.pending.json",
+      "SHA256": "010ad4d6679526c64b12b7f96931a1408166121072757690ba8dd7068a568dac"
+    },
+    "donor": {
+      "path": "docs/hanja-authored-component-u9f55-ja-chi15-original-qi-2026-10-30/source-record.json",
+      "SHA256": "1fb7b8046fa475fcafadd77a4e425df2bdf24b9f03435a776580a018ccb45c6f"
+    },
+    "contact": {
+      "path": "docs/hanja-authored-component-u9f55-ja-chi15-original-qi-2026-10-30/public-contact-proof.json",
+      "SHA256": "97d89dfa08e6cf8ed3ef60191e2d0fdb9b271efd932ff8d3f096d9059c6b8059"
+    },
+    "original18Clock": {
+      "path": "docs/hanja-official-media-compare-u9f55-2026-10-24/official-temporal-native-review.json",
+      "SHA256": "d11dd10ff053209366c9208dc246669cddf4ec3117aace4b0fc9e78015803493",
+      "replayed": 0
+    }
+  },
+  "observed": {
+    "wholeSVGViews": 3,
+    "currentPrefixRoutes": 36,
+    "panelsPerRoute": 2,
+    "currentPrefixSVGViews": 72,
+    "totalNativeSVGViews": 75,
+    "decisiveSelections": [
+      "전체",
+      "14획 current/prefix",
+      "15획 current/prefix",
+      "18획 current/prefix"
+    ],
+    "newCrossContactAbsent": true,
+    "removedOldLeftRightContact": "원문도 좌우 부품이 분리되어 있으므로 기존 raw6↔18 접촉이 사라진 점 자체는 불합격 이유가 아니다.",
+    "structureMismatch": {
+      "original14": "왼쪽 V→NErise가 위 人쌍 높이에서 시작해 위·아래 두 단 전체를 감싼다.",
+      "original15": "오른쪽 V도 두 단 전체를 감싼다.",
+      "candidate14and15": "일본어 donor 테두리는 가운데 H 아래의 아래 人쌍만 감싸 위 人쌍이 테두리 밖에 남는다.",
+      "directionAloneSufficient": false,
+      "fontThicknessExemption": false
+    }
+  },
+  "limits": [
+    "14획 V→NE 방향은 맞지만 감싸는 범위의 구조가 다르다.",
+    "전체 donor Ja는 승인하지 않으며 개별 획을 끌어 늘리지 않는다.",
+    "동일 whole-fit을 반복하지 않고 Ko/중문 완전15획 source는 별도로 조사할 수 있다."
+  ],
+  "approval": {
+    "wholeShape": false,
+    "sourceMapping": false,
+    "temporal": false,
+    "runtime": false
+  },
+  "cleanup": {
+    "PID": 27339,
+    "port": 49528,
+    "session": 98588,
+    "tab": 290,
+    "serverStopped": true,
+    "tabClosed": true,
+    "exitCode": 130
+  },
+  "originalSourceChanged": false,
+  "privateMediaSaved": false,
+  "newEngine": 0
+}
