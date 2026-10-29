@@ -1,0 +1,73 @@
+{
+  "schema": "hanja-native-actual-contact-review-v1",
+  "date": "2026-10-29",
+  "glyph": "韎",
+  "reviewer": "ROOT via Codex browser panel",
+  "status": "pass-bounded-actual-contact-reveal",
+  "inputs": {
+    "R": "3b542198be38f4aeca52635c94507ceba8e76192260be9f6c6913a9f3244c972",
+    "H": "4277e845ba348761023c541f47593311c854a638caca6acf112b5413702c60d5",
+    "profile": "532db02f434aecfd7bf31c558191daf1ec3b6e8f2b663b0105afccfa1b55a9aa",
+    "geometry": "5280dce5fe36506fbdcdcb9da0f4f609cec8e0a2f421a33a4801d25d3db5ca7d"
+  },
+  "startup": {"SSR": 1, "CJS": 391, "ESM": 391, "ordinaryMatrixChecks": 0},
+  "observed": {
+    "pen8ContactCompact": {"states": 11, "size": 300, "visualPass": true, "bad": [], "errors": []},
+    "pen8PhaseBoundaries": {"states": 6, "size": 300, "visualPass": true, "bad": [], "errors": []},
+    "oldFailureThree": {"states": 3, "size": 300, "visualPass": true, "bad": [], "errors": []},
+    "oldFailureMain": {"size": 520, "values": [0.2455066079295154, 0.27599118942731277, 0.31409691629955944], "visualPass": true},
+    "newCurveCompact": {"pens": [13, 14], "statesPerPen": 9, "size": 150, "visualPass": true, "bad": [], "errors": []},
+    "newCurveStartRelease": {"pens": [13, 14], "statesPerPen": 3, "size": 300, "visualPass": true, "bad": [], "errors": []},
+    "aggregate": {
+      "states": 79, "guardStates": 80, "size": 240,
+      "scope": "initial28, source-boundary9, ending42",
+      "allFramesDirectlyViewed": true, "visualPass": true, "errors": [],
+      "pending": {"labels": "sample58 through sample78", "count": 21, "onlyFailedCheck": "contact8:progress", "allOtherChecksPass": true}
+    },
+    "main": {"size": 520, "exactPrefixes": [7, 8, 9], "idleWhole": true, "doneWhole": true, "selectedPen8Zero": true, "visualPass": true},
+    "natural": {"pens": [8, 13, 14, 2], "secondsEach": 8, "size": 520, "startAndEndedViewed": true, "bad": [], "errors": []}
+  },
+  "observerFollowup": {
+    "H": "f0506bc7e2257d62753fa66d8c86d60b6705a4fc4a8e54878fa1e60bada27646",
+    "profile": "f87b622b240cc82f9614d46680f31d60c2e8795bcf5d22d68d05f5cb7fe5061e",
+    "changedScope": "Observer only; original R, geometry and direct visual evidence unchanged",
+    "aggregateGuardStates": 80,
+    "previousProgressFailuresResolved": 21,
+    "remaining": {"labels": ["sample76", "sample77", "sample78"], "onlyFailedCheck": "contact8:requestedFrame", "allOtherChecksPass": true},
+    "errors": [],
+    "observedElapsed": [7626.623333333332, 7626.666662333332, 7626.666666666665],
+    "observedPen8Progress": [1, 1, 1],
+    "cleanup": {"PID": 24493, "port": 50921, "session": 60449, "tab": "243", "exitCode": 130, "serverStopped": true, "tabClosed": true}
+  },
+  "observerFinal": {
+    "H": "d3c509e60e3fcae86e3c1c86bc8542d66de700b5ac54a9508782d2b9c92fc5e4",
+    "profile": "d112fa5ba1c80807ac82083fef761a667fadb557e5119aa2ac8a6771aea6015e",
+    "changedScope": "Observer only; source R and geometry unchanged",
+    "reason": "Use an immutable requested-time snapshot and compare its independently recomputed target-pen progress with target progress from the R frame. Irrelevant later-pen elapsed differences do not change completed pen8 progress.",
+    "aggregateGuardStates": 80,
+    "bad": [],
+    "errors": [],
+    "allPreviousProgressAndRequestedFrameFailuresResolved": true,
+    "toleranceIncreased": false,
+    "nativeImagesRepeated": false,
+    "startup": {"SSR": 1, "CJS": 391, "ESM": 391, "ordinaryMatrixChecks": 0},
+    "cleanup": {"PID": 28003, "port": 51490, "session": 81627, "tab": "245", "exitCode": 130, "serverStopped": true, "tabClosed": true}
+  },
+  "reused": {
+    "originalClockAndStaticMapping": true,
+    "previousCompactPens": [1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12],
+    "reason": "Original geometry, guides, flags and ordinary policies are unchanged; the new scoped branch only handles logical pen8.",
+    "fullMainPrefix0Through14Repeated": false
+  },
+  "limits": {
+    "originalPOrGuideEdited": false,
+    "publisherGeometryIdentity": false,
+    "sourceMicroclockEquivalent": false,
+    "actualTemporalApproved": true,
+    "runtimeApplied": false,
+    "note": "The source-bound contact reveal passes direct visual review and the corrected immutable-time aggregate observer. This is bounded candidate approval, not publisher timing identity or full application UI verification."
+  },
+  "cleanup": {"PID": 15753, "port": 49673, "session": 10812, "tab": "241", "exitCode": 130, "serverStopped": true, "tabClosed": true},
+  "builds": 0,
+  "fullProjectTypeChecks": 0
+}

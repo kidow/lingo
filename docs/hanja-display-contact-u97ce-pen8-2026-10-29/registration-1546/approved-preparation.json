@@ -1,0 +1,70 @@
+{
+  "schema": "hanja-approved-registration-preparation/v1",
+  "glyph": "韎",
+  "batch": 1546,
+  "catalogStrokes": 14,
+  "playbackStrokes": 14,
+  "registrationAuthorized": true,
+  "runtimeApplied": false,
+  "finalNativeReview": {
+    "path": "docs/hanja-display-contact-u97ce-pen8-2026-10-29/native-actual-review.json",
+    "SHA256": "eb3790fcff6bc836ab5d987e226768f09bea909ee5e7118e5bb822cca677614f"
+  },
+  "actualReviewProfile": {
+    "path": "docs/hanja-display-contact-u97ce-pen8-2026-10-29/actual-profile-contact-start.json",
+    "SHA256": "d112fa5ba1c80807ac82083fef761a667fadb557e5119aa2ac8a6771aea6015e"
+  },
+  "fixture": {
+    "path": "docs/hanja-source-execution-u97ce-original-2026-10-29/fixtures-execution-draft.json",
+    "SHA256": "4abd27633d09ecc8af34c6b9106dbd54dffd8cbb6c3e013d79fcf8db1adbabbd",
+    "geometrySHA256": "5280dce5fe36506fbdcdcb9da0f4f609cec8e0a2f421a33a4801d25d3db5ca7d",
+    "key": "strokes"
+  },
+  "files": [
+    {
+      "path": "lib/hanja-stroke-dictionary-glyphwiki-batch1546.ts",
+      "SHA256": "98c4f532b78e2d95a76df095e98a71cf4458c29c90a7d7961265dbcfa84d3835",
+      "bytes": 23810
+    },
+    {
+      "path": "lib/hanja-stroke-dictionary-glyphwiki-batch1546.test.ts",
+      "SHA256": "5d25cb0555af60f4136a1441f12a8b2a9226e70fd9010239c2c4c3fb37f915f0",
+      "bytes": 6607
+    },
+    {
+      "path": "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch1546.json",
+      "SHA256": "e5d42729e643791048082700f39df1afc6a4d844c7df3aaeb9a74a3e55eedc77",
+      "bytes": 15453
+    },
+    {
+      "path": "public/hanja-strokes/sources/u97ce/NOTICE.md",
+      "SHA256": "072d9031f410a6c6c23bf4bf379bc0a880f29558cc5c7ba544f7e1c605dedd34",
+      "bytes": 3222
+    }
+  ],
+  "registry": {
+    "path": "lib/hanja-strokes.ts",
+    "beforeSHA256": "ef3ff3fc339ec9e1727d3ac826fddae5ef12aec344e5c7ddd91127d06b0fb2b5",
+    "afterSHA256": "0d4ff6f9200041977435b35b89582b11683b2b1eaf32703d3467f855c348c183"
+  },
+  "activation": "ROOT applies source patch then registry patch; set SOURCE_INPUT.runtimeApplied and GLYPHWIKI_BATCH1546_RUNTIME_APPLIED true only after actual wiring, then run three focused tests once.",
+  "testCommand": "node --experimental-strip-types --test lib/hanja-stroke-dictionary-glyphwiki-batch1546.test.ts",
+  "expectedCountAfterRootResolverCheck": {
+    "applied": 5961,
+    "pending": 17
+  },
+  "checks": {
+    "immutableEvidencePins": true,
+    "registryExactForwardInverse": true,
+    "actualFocusedTestsPendingRootActivation": true,
+    "builds": 0,
+    "fullProjectTypeChecks": 0,
+    "newLoaderRAM": {
+      "syntaxFiles": 2,
+      "strictLoaderPositive": true,
+      "getterRejectedWithoutInvocation": true,
+      "changedContactSourceRejected": true,
+      "frozen": true
+    }
+  }
+}

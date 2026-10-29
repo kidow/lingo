@@ -1,0 +1,30 @@
+*** Begin Patch
+*** Update File: components/hanja/stroke-outlines.tsx
+@@
+-import {REVIEWED_U7E98_MIXED_GUIDE_INPUT,makeReviewedU7e98MixedGuideContext,sampleReviewedU7e98MixedGuideFrame,type ReviewedU7e98MixedGuideContext} from '@/lib/hanja-stroke-mixed-guide-u7e98'
++import {REVIEWED_U97CE_PEN8_INPUT,makeReviewedU97cePen8Context,sampleReviewedU97cePen8Frame,type ReviewedU97cePen8Context} from '@/lib/hanja-stroke-contact-phase-u97ce-pen8'
++import {REVIEWED_U7E98_MIXED_GUIDE_INPUT,makeReviewedU7e98MixedGuideContext,sampleReviewedU7e98MixedGuideFrame,type ReviewedU7e98MixedGuideContext} from '@/lib/hanja-stroke-mixed-guide-u7e98'
+@@
+-  const u7e98MixedGuideContext=makeReviewedU7e98MixedGuideContext(REVIEWED_U7E98_MIXED_GUIDE_INPUT,strokes)
++  const u97cePen8Context=makeReviewedU97cePen8Context(REVIEWED_U97CE_PEN8_INPUT,strokes)
++  const u7e98MixedGuideContext=makeReviewedU7e98MixedGuideContext(REVIEWED_U7E98_MIXED_GUIDE_INPUT,strokes)
+@@
+-  const u7e98MixedGuideFrame=id+'-u7e98-mixed-guide-frame-'+phase+'-'+count+'-'+String(manual)+'-'+String(elapsed)
++  const u97cePen8Frame=id+'-u97ce-pen8-contact-frame-'+phase+'-'+count+'-'+String(manual)+'-'+String(elapsed)
++  const u7e98MixedGuideFrame=id+'-u7e98-mixed-guide-frame-'+phase+'-'+count+'-'+String(manual)+'-'+String(elapsed)
+@@
+-      if(u7e98MixedGuideContext&&(stroke===0||stroke===1||stroke===11))return <U7e98MixedGuideOutline key={stroke} context={u7e98MixedGuideContext} pen={stroke===0?1:stroke===1?2:12} progress={Number.isFinite(progress)?Math.max(0,Math.min(1,progress)):NaN} clipId={id+'-u7e98-mixed-'+stroke} frameId={u7e98MixedGuideFrame}/>
++      if(u97cePen8Context&&stroke===7)return <U97cePen8ContactOutline key={stroke} context={u97cePen8Context} progress={Number.isFinite(progress)?Math.max(0,Math.min(1,progress)):NaN} clipId={id+'-u97ce-pen8-contact-'+stroke} frameId={u97cePen8Frame}/>
++      if(u7e98MixedGuideContext&&(stroke===0||stroke===1||stroke===11))return <U7e98MixedGuideOutline key={stroke} context={u7e98MixedGuideContext} pen={stroke===0?1:stroke===1?2:12} progress={Number.isFinite(progress)?Math.max(0,Math.min(1,progress)):NaN} clipId={id+'-u7e98-mixed-'+stroke} frameId={u7e98MixedGuideFrame}/>
+@@
+-function U7e98MixedGuideOutline({context,pen,progress,clipId,frameId}:{context:ReviewedU7e98MixedGuideContext;pen:1|2|12;progress:number;clipId:string;frameId:string}){
++function U97cePen8ContactOutline({context,progress,clipId,frameId}:{context:ReviewedU97cePen8Context;progress:number;clipId:string;frameId:string}){
++ const frame=sampleReviewedU97cePen8Frame(context,progress);if(!frame)return <g data-outline-stroke={8} data-u97ce-pen8-contact-status="rejected"/>
++ return <g data-outline-stroke={8} data-u97ce-pen8-contact-context="u97ce-sourceP28-pen8-contact" data-u97ce-pen8-contact-fingerprint={frame.fingerprint} data-u97ce-pen8-contact-progress={String(progress)} data-u97ce-pen8-contact-phase={frame.phase} data-u97ce-pen8-contact-frame={frameId} data-u97ce-pen8-contact-status="source-bound">
++  {frame.baseOutline&&<path id={clipId+'-base'} d={frame.baseOutline} data-u97ce-pen8-contact-part="complete-V"/>}
++  {frame.activeOutline&&(frame.mode==='full'?<path id={clipId+'-active'} d={frame.activeOutline} data-u97ce-pen8-contact-part="full"/>:frame.mode==='rect'&&frame.rect?<><defs><clipPath id={clipId+'-rect'} clipPathUnits="userSpaceOnUse"><rect id={clipId+'-rect-box'} {...frame.rect}/></clipPath></defs><path id={clipId+'-active'} d={frame.activeOutline} clipPath={'url(#'+clipId+'-rect)'} data-u97ce-pen8-contact-part="source-strip"/></>:null)}
++ </g>
++}
++
++function U7e98MixedGuideOutline({context,pen,progress,clipId,frameId}:{context:ReviewedU7e98MixedGuideContext;pen:1|2|12;progress:number;clipId:string;frameId:string}){
+*** End Patch

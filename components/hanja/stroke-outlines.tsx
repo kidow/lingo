@@ -1,3 +1,4 @@
+import {REVIEWED_U97CE_PEN8_INPUT,makeReviewedU97cePen8Context,sampleReviewedU97cePen8Frame,type ReviewedU97cePen8Context} from '@/lib/hanja-stroke-contact-phase-u97ce-pen8'
 import {REVIEWED_U7E98_MIXED_GUIDE_INPUT,makeReviewedU7e98MixedGuideContext,sampleReviewedU7e98MixedGuideFrame,type ReviewedU7e98MixedGuideContext} from '@/lib/hanja-stroke-mixed-guide-u7e98'
 import {REVIEWED_U6621_MIXED_GUIDE_INPUT,makeReviewedU6621MixedGuideContext,sampleReviewedU6621MixedGuideFrame,type ReviewedU6621MixedGuideContext} from '@/lib/hanja-stroke-mixed-guide-u6621'
 import {REVIEWED_U6030_MIXED_GUIDE_INPUT,makeReviewedU6030MixedGuideContext,sampleReviewedU6030MixedGuideFrame,type ReviewedU6030MixedGuideContext} from '@/lib/hanja-stroke-mixed-guide-u6030'
@@ -398,7 +399,9 @@ export function StrokeOutlines({ strokes, clock, phase, count, manual }: {
 }) {
   const id = useId()
   const [elapsed, setElapsed] = useState(0)
+  const u97cePen8Context=makeReviewedU97cePen8Context(REVIEWED_U97CE_PEN8_INPUT,strokes)
   const u7e98MixedGuideContext=makeReviewedU7e98MixedGuideContext(REVIEWED_U7E98_MIXED_GUIDE_INPUT,strokes)
+  const u97cePen8Frame=id+'-u97ce-pen8-contact-frame-'+phase+'-'+count+'-'+String(manual)+'-'+String(elapsed)
   const u7e98MixedGuideFrame=id+'-u7e98-mixed-guide-frame-'+phase+'-'+count+'-'+String(manual)+'-'+String(elapsed)
   const u6621MixedGuideContext=makeReviewedU6621MixedGuideContext(REVIEWED_U6621_MIXED_GUIDE_INPUT,strokes)
   const u6621MixedGuideFrame=id+'-u6621-mixed-guide-frame-'+phase+'-'+count+'-'+String(manual)+'-'+String(elapsed)
@@ -786,6 +789,7 @@ export function StrokeOutlines({ strokes, clock, phase, count, manual }: {
     {strokes.map((segments, stroke) => {
       const progress = phase === 'idle' || phase === 'done' ? 1 : manual ? (stroke < count ? 1 : 0)
         : (elapsed - stroke * (STROKE_DURATION + STROKE_GAP)) / STROKE_DURATION
+      if(u97cePen8Context&&stroke===7)return <U97cePen8ContactOutline key={stroke} context={u97cePen8Context} progress={Number.isFinite(progress)?Math.max(0,Math.min(1,progress)):NaN} clipId={id+'-u97ce-pen8-contact-'+stroke} frameId={u97cePen8Frame}/>
       if(u7e98MixedGuideContext&&(stroke===0||stroke===1||stroke===11))return <U7e98MixedGuideOutline key={stroke} context={u7e98MixedGuideContext} pen={stroke===0?1:stroke===1?2:12} progress={Number.isFinite(progress)?Math.max(0,Math.min(1,progress)):NaN} clipId={id+'-u7e98-mixed-'+stroke} frameId={u7e98MixedGuideFrame}/>
       if(u6621MixedGuideContext&&(stroke===6||stroke===7))return <U6621MixedGuideOutline key={stroke} context={u6621MixedGuideContext} pen={stroke===6?7:8} progress={Number.isFinite(progress)?Math.max(0,Math.min(1,progress)):NaN} clipId={id+'-u6621-mixed-'+stroke} frameId={u6621MixedGuideFrame}/>
       if(u6030MixedGuideContext&&(stroke===5||stroke===6))return <U6030MixedGuideOutline key={stroke} context={u6030MixedGuideContext} pen={stroke===5?6:7} progress={Number.isFinite(progress)?Math.max(0,Math.min(1,progress)):NaN} clipId={id+'-u6030-mixed-'+stroke} frameId={u6030MixedGuideFrame}/>
@@ -11833,6 +11837,14 @@ function U9008HkcsContactFootOutline({policy,progress,priorProgress,logicalProgr
  const group=useRef<SVGGElement>(null),ink=useRef<SVGPathElement>(null),foot=useRef<SVGPathElement>(null),body=useRef<SVGRectElement>(null),mask=useRef<SVGMaskElement>(null),measurement=useRef<SVGPathElement>(null)
  useLayoutEffect(()=>{const result=commitReviewedU9008HkcsContactFoot(policy,progress,clipId,{group:group.current,ink:ink.current,foot:foot.current,body:body.current,mask:mask.current,measurement:measurement.current},priorProgress,logicalProgress,frameId);group.current?.setAttribute('data-u9008-hkcs-contact-foot-preview-guard-status',result.status);group.current?.setAttribute('data-u9008-hkcs-contact-foot-preview-guard-error',result.error??'');return result.cleanup},[policy,progress,priorProgress,logicalProgress,clipId,frameId])
  return <g ref={group} data-stroke-start-gate={policy.id} data-stroke-reveal-policy={policy.kind} data-stroke-reveal-progress={String(progress)} data-u9008-hkcs-contact-foot-context="u9008-hkcs-original-10-contact-foot" data-u9008-hkcs-contact-foot-clip={clipId} data-u9008-hkcs-contact-foot-fingerprint={policy.proofFingerprint} data-u9008-hkcs-contact-foot-prior-progress={String(priorProgress)} data-u9008-hkcs-contact-foot-logical-progress={String(logicalProgress)} data-u9008-hkcs-contact-foot-frame={frameId}><defs><path ref={measurement} id={clipId+'-u9008-foot-measure'} d={policy.segment.revealPath??undefined} fill="none" stroke="none" visibility="hidden"/><mask ref={mask} id={clipId+'-u9008-foot-mask'} maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse" x="0" y="0" width="100" height="100" style={{maskType:'luminance'}}><path ref={foot} id={clipId+'-u9008-foot-foot'} d="" fill="white" stroke="none" fillRule="nonzero" visibility="hidden"/><rect ref={body} id={clipId+'-u9008-foot-body'} x={policy.segment.bounds[0]} y={policy.segment.bounds[1]} width="0" height={policy.segment.bounds[3]-policy.segment.bounds[1]} fill="white" stroke="none" fillRule="nonzero" visibility="hidden"/></mask></defs><path ref={ink} d={policy.segment.outline} mask={'url(#'+clipId+'-u9008-foot-mask)'} visibility="hidden"/></g>
+}
+
+function U97cePen8ContactOutline({context,progress,clipId,frameId}:{context:ReviewedU97cePen8Context;progress:number;clipId:string;frameId:string}){
+ const frame=sampleReviewedU97cePen8Frame(context,progress);if(!frame)return <g data-outline-stroke={8} data-u97ce-pen8-contact-status="rejected"/>
+ return <g data-outline-stroke={8} data-u97ce-pen8-contact-context="u97ce-sourceP28-pen8-contact" data-u97ce-pen8-contact-fingerprint={frame.fingerprint} data-u97ce-pen8-contact-progress={String(progress)} data-u97ce-pen8-contact-phase={frame.phase} data-u97ce-pen8-contact-frame={frameId} data-u97ce-pen8-contact-status="source-bound">
+  {frame.baseOutline&&<path id={clipId+'-base'} d={frame.baseOutline} data-u97ce-pen8-contact-part="complete-V"/>}
+  {frame.activeOutline&&(frame.mode==='full'?<path id={clipId+'-active'} d={frame.activeOutline} data-u97ce-pen8-contact-part="full"/>:frame.mode==='rect'&&frame.rect?<><defs><clipPath id={clipId+'-rect'} clipPathUnits="userSpaceOnUse"><rect id={clipId+'-rect-box'} {...frame.rect}/></clipPath></defs><path id={clipId+'-active'} d={frame.activeOutline} clipPath={'url(#'+clipId+'-rect)'} data-u97ce-pen8-contact-part="source-strip"/></>:null)}
+ </g>
 }
 
 function U7e98MixedGuideOutline({context,pen,progress,clipId,frameId}:{context:ReviewedU7e98MixedGuideContext;pen:1|2|12;progress:number;clipId:string;frameId:string}){

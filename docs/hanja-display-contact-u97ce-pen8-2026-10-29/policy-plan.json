@@ -1,0 +1,82 @@
+{
+  "schema": "hanja-original-P-contact-display-policy-plan/v1",
+  "glyph": "韎",
+  "logical": 8,
+  "status": "PROTOTYPE-READY-NATIVE-UNAPPROVED",
+  "counts": {
+    "logical": 14,
+    "masks": 17,
+    "P": 28
+  },
+  "sourceGeometrySHA256": "5280dce5fe36506fbdcdcb9da0f4f609cec8e0a2f421a33a4801d25d3db5ca7d",
+  "prototype": {
+    "path": "docs/hanja-display-contact-u97ce-pen8-2026-10-29/pen8-contact-display.html",
+    "SHA256": "a864d8649b0faba915f3c75585493f0df597033d73f4aea5acc0b1b81ca536e2"
+  },
+  "math": {
+    "path": "docs/hanja-display-contact-u97ce-pen8-2026-10-29/public-contact-phase-math.json",
+    "SHA256": "8f9cc953fb2149effadf3883bb7444cff2e52a44e8dd479782adbcfeb2c7df7d"
+  },
+  "provenance": {
+    "sourceOriginalPUnchanged": true,
+    "sourceOriginalGuideFlagsUnchanged": true,
+    "newFilledP": 0,
+    "newGuideBridge": 0,
+    "sourceClockIdentity": false,
+    "locallyAuthoredDisplay": true,
+    "macroDirection": "Vdown then Hright body",
+    "leftHeadExcursionIsAuthorDisplay": true,
+    "policyFamily": {
+      "path": "lib/hanja-stroke-mixed-guide-u7e98-pen12.ts",
+      "SHA256": "9bfe268bfec499ccd966709be902a334da17f417cab684491f31997a6dcddced"
+    },
+    "priorIndependentPrototype": {
+      "path": "docs/hanja-source-phase-u7e98-pen12-contact-2026-10-29/native-prototype-review.json",
+      "SHA256": "0b6d7a8b4905b7059c287165acc0b4cfd72a116dc64b1c3d68cf4bdcfc965287"
+    },
+    "priorGlyphApprovalTransferred": false
+  },
+  "preserved": {
+    "allOriginalP": true,
+    "allGuideAndFlags": true,
+    "originalVPhaseEnd": 0.23788546255506607,
+    "sourceWeights": true,
+    "other13LogicalGenericRendering": true,
+    "noNewP": true,
+    "noBridge": true,
+    "noWholeFontOrContactCorrection": true
+  },
+  "display": {
+    "V": "기존sourceV하강clip완료까지동일",
+    "leftHead": "원H strict접촉seed x15.41에서왼쪽최솟값7.6까지rect clip만확장",
+    "rightBody": "왼head를유지하고seed x15.41에서원H오른끝50.85까지확장",
+    "headEnd": 0.34230852461550354,
+    "leftHeadFractionExact": "781/5700",
+    "publisherMicroclockEquivalent": false,
+    "authorDisplay": true
+  },
+  "rendererFinding": {
+    "existingGenericCardinalBBoxCannotExpressContactSeedPhase": true,
+    "broadNewGenericFieldNotProposed": true,
+    "followingNativePassOnly": "기존纘pen12패턴처럼해당14/17/28geometry일치시만동작하는독립helper+sharedR분기1개부분patch제안",
+    "proposedAPI": "makeReviewedU97cePen8Context(input,strokes) / sampleReviewedU97cePen8Frame(context,progress)",
+    "unknownContextFailClosed": true,
+    "helperWouldReturnPriorVOriginalAndActiveHOriginalOnePaint": true,
+    "sharedRendererActualChanged": false,
+    "sharedHActualChanged": false
+  },
+  "requiredRootNative": [
+    "compact11:기존실패Hlocal.01/.05/.1의분리소실직접확인",
+    "VEnd/headEnd각±1e-8/at 경계6의연결확인",
+    "8초자연재생start/end·완료원P유지",
+    "whole14/28P그대로,모든macro및원문font차이보존"
+  ],
+  "oldFailPreserved": {
+    "path": "docs/hanja-display-contact-u97ce-pen8-2026-10-29/native-original-policy-hold-review.json",
+    "SHA256": "8f7a1f91d67e86457c42d6d3a604fa7c03d34af4eec5081a9caf4f2866877904"
+  },
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "SSR": 0,
+  "server": 0
+}
