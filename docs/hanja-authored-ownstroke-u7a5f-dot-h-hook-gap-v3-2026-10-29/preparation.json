@@ -1,0 +1,124 @@
+{
+  "schema": "hanja-public-source-whole-affine-static-preparation/v2",
+  "glyph": "穟",
+  "date": "2026-10-29",
+  "status": "ready-for-root-native-static-v3-review-unapproved",
+  "inputs": {
+    "docs/hanja-authored-ownstroke-u7a5f-dot-h-hook-gap-v3-2026-10-29/recipe.pending.json": "35f2477186173c6dfa78de156e446658ed0c93ad84f69672adfa44a7c68fd79a",
+    "docs/hanja-authored-ownstroke-u7a5f-dot-h-hook-gap-v3-2026-10-29/fixture.pending.json": "91c1c1c9beb89afac088476cd530bac2d95a5c81c8e6fecea7e486e41da1e71a",
+    "docs/hanja-authored-ownstroke-u7a5f-dot-h-hook-gap-v3-2026-10-29/materialize.py": "ade26ebbee94ee260044bdb7a6045385dbc3e0de4b41188a3253145969b03114",
+    "docs/hanja-authored-ownstroke-u7a5f-dot-h-hook-gap-v3-2026-10-29/compare.py": "d7ced699020e4354363bcc00ffa0c4d11d498ac90829059cc6d362ed1f8347d2",
+    "docs/hanja-authored-ownstroke-u7a5f-dot-h-hook-gap-v3-2026-10-29/config.json": "159bbcaa9c620fe040f4957da8446e1a6f1da2107fab4253fb4b41f7b108ffd3",
+    "docs/hanja-authored-ownstroke-u7a5f-dot-h-hook-gap-v3-2026-10-29/public-pair.html": "d7a2af885adbec22eabc5c29904813ca98846e94d74c0399e382e403c7d56ad9"
+  },
+  "counts": {
+    "logical": 18,
+    "raw": 21,
+    "calls": 22,
+    "polygons": 42
+  },
+  "changes": {
+    "preservedPriorRaw8Affine": true,
+    "newRaw19WholeTranslation": "-129/95 X",
+    "unchangedOther20RawAndTraceExact": true,
+    "raw19WholePGuideSameTransform": true,
+    "sourceYOffFlagsUnchanged": true,
+    "newEngineCapture": false
+  },
+  "checks": {
+    "materializerExit": 0,
+    "actualWholePage3Panels": true,
+    "actual18Current18PrefixPages3Panels": true,
+    "HTTP": 0,
+    "server": 0,
+    "publicPInverseMaxNumericError": 2.842170943040401e-14,
+    "QInverseMaxNumericError": 1.4210854715202004e-14,
+    "exactRationalPlan": {
+      "file": "docs/hanja-authored-ownstroke-u7a5f-dot-h-contact-2026-10-29/raw19-whole-translation-feasibility.json",
+      "sha256": "d5310b2cd51f4f5c13913700cb3daa27d3f3a44780e523c855d36c079a859ce3"
+    },
+    "actualStoredContactGraph": {
+      "contactPairs": [
+        {
+          "rawOneBased": 17,
+          "PoneBased": 1,
+          "before": [
+            {
+              "positive": true,
+              "strictWitness": [
+                "1499/10",
+                "225/2"
+              ],
+              "properEdgeCrossings": 2,
+              "boundary": false
+            }
+          ],
+          "after": [
+            {
+              "positive": true,
+              "strictWitness": [
+                "1485421052631579/10000000000000",
+                "225/2"
+              ],
+              "properEdgeCrossings": 2,
+              "boundary": false
+            }
+          ],
+          "newContact": false,
+          "removedContact": false
+        },
+        {
+          "rawOneBased": 17,
+          "PoneBased": 4,
+          "before": [
+            {
+              "positive": true,
+              "strictWitness": [
+                "1137/10",
+                "763/5"
+              ],
+              "properEdgeCrossings": 2,
+              "boundary": false
+            }
+          ],
+          "after": [
+            {
+              "positive": false,
+              "strictWitness": null,
+              "properEdgeCrossings": 0,
+              "boundary": false
+            }
+          ],
+          "newContact": false,
+          "removedContact": true
+        }
+      ],
+      "newContacts": []
+    },
+    "sourceOldV2FixtureAndConfigUnchanged": true
+  },
+  "review": {
+    "startup": "python3 docs/hanja-authored-ownstroke-u7a5f-dot-h-hook-gap-v3-2026-10-29/compare.py --config-sha 159bbcaa9c620fe040f4957da8446e1a6f1da2107fab4253fb4b41f7b108ffd3 --port 0",
+    "whole": "/whole",
+    "current12": "/mapping?pen=12&mode=current",
+    "prefix12": "/mapping?pen=12&mode=prefix",
+    "publicOnly": "/public-pair",
+    "required": "ROOT directly review domestic/priorv2/newv3 whole, logical12 and prefix12 for terminal white gap and retained intended body contact."
+  },
+  "approval": {
+    "static": false,
+    "finalWhole": false,
+    "mappingAfterNewGeometry": false,
+    "temporal": false,
+    "runtime": false,
+    "registration": false
+  },
+  "limits": [
+    "Retain all v2 source/native records unchanged as historical HOLD.",
+    "Raw19 source shape remains one invertible whole positive affine, not a local correction or new connector.",
+    "Common-band X gap1 does not claim exact global Euclidean distance1.",
+    "Static math is not native whole acceptance or actual animation validation."
+  ],
+  "sharedChanges": 0,
+  "build": false
+}

@@ -1,0 +1,57 @@
+{
+  "schema": "hanja-authored-whole-native-static-review/v2",
+  "glyph": "穟",
+  "date": "2026-10-29",
+  "reviewer": "ROOT direct Codex browser panel",
+  "status": "PASS-bounded-whole-two-affine-shape-and-logical12",
+  "inputs": {
+    "docs/hanja-authored-ownstroke-u7a5f-dot-h-hook-gap-v3-2026-10-29/config.json": "159bbcaa9c620fe040f4957da8446e1a6f1da2107fab4253fb4b41f7b108ffd3",
+    "docs/hanja-authored-ownstroke-u7a5f-dot-h-hook-gap-v3-2026-10-29/compare.py": "d7ced699020e4354363bcc00ffa0c4d11d498ac90829059cc6d362ed1f8347d2",
+    "docs/hanja-authored-ownstroke-u7a5f-dot-h-hook-gap-v3-2026-10-29/recipe.pending.json": "35f2477186173c6dfa78de156e446658ed0c93ad84f69672adfa44a7c68fd79a",
+    "docs/hanja-authored-ownstroke-u7a5f-dot-h-hook-gap-v3-2026-10-29/fixture.pending.json": "91c1c1c9beb89afac088476cd530bac2d95a5c81c8e6fecea7e486e41da1e71a",
+    "docs/hanja-authored-ownstroke-u7a5f-dot-h-hook-gap-v3-2026-10-29/public-pair.html": "d7a2af885adbec22eabc5c29904813ca98846e94d74c0399e382e403c7d56ad9"
+  },
+  "observed": {
+    "whole520Panels": 3,
+    "wholeIdentities": [
+      "domestic18",
+      "prior-authored-v2",
+      "new-authored-v3"
+    ],
+    "publicPair520Panels": 6,
+    "logical12Current520Panels": 3,
+    "logical12Prefix520Panels": 3,
+    "rootObservation": "말단 겹침이 없어지고 white gap이 보이며 의도한 mainbody 접촉은 유지된다. 기존 raw8 점·가로 접촉도 불변으로 확인했다."
+  },
+  "reused": {
+    "sourceClock": {
+      "file": "docs/hanja-official-media-compare-u7a5f-2026-10-29/native-clock-review.json",
+      "sha256": "abcff2c570ed3954b5664f317697f7d751f1d0b7dd98d45c6e9552cf9549cda8",
+      "pens": 18,
+      "frames": 54
+    },
+    "v2AllRoles": {
+      "file": "docs/hanja-authored-ownstroke-u7a5f-dot-h-contact-2026-10-29/native-mapping-v2-review.json",
+      "sha256": "562cb1f7a44b943b15f391117f3e95592b797b2c0d8cbacac6e4ab179bc44939",
+      "current": 18,
+      "prefix": 18,
+      "exceptFreshlyCheckedRaw19Translation": true
+    }
+  },
+  "approval": {
+    "authoredTwoAffineWholeStaticOnly": true,
+    "logical12CurrentPrefixAfterRaw19Translation": true,
+    "staticRoleMappingWithBoundedReuse": true,
+    "originalWholeIdentity": false,
+    "originalEngineCapture": false,
+    "sourceMicroclockEquivalent": false,
+    "actualTemporal": false,
+    "runtime": false,
+    "registration": false
+  },
+  "limits": [
+    "Only declared raw8 positiveX affine and raw19 whole X translation are statically accepted.",
+    "Original source is provenance; no source engine replay, publisher geometry identity or original temporal identity claimed.",
+    "Actual source-mask start, handoff, ending, residual and natural playback remain required."
+  ]
+}

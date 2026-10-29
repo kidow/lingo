@@ -1,0 +1,72 @@
+{
+  "schema": "hanja-fixed-source-whole-positive-affine-recipe/v2",
+  "glyph": "穟",
+  "date": "2026-10-29",
+  "source": {
+    "file": "docs/hanja-goal-glyphwiki-batch673-2026-10-11/engine-whole-u7a5f-var-001.json",
+    "sha256": "c79599a17df0b5054ac829d4641c1cbc0343e96d72595e21dcd4ef66b0fb081e",
+    "root": "u7a5f-var-001",
+    "rawGroups": 21,
+    "drawingCalls": 22,
+    "polygons": 42
+  },
+  "priorCandidate": {
+    "file": "docs/hanja-authored-ownstroke-u7a5f-dot-h-contact-2026-10-29/fixture.pending.json",
+    "sha256": "43a265b8400f69423c0e0c512cf7f76c2bef796f0580a419318ed08c8f34efc3",
+    "recipe": {
+      "file": "docs/hanja-authored-ownstroke-u7a5f-dot-h-contact-2026-10-29/recipe.pending.json",
+      "sha256": "e676f2d9181623ca79502deff82fda36644e358cdb248e4ab57e74af3eb4f774"
+    },
+    "indexCorrection": {
+      "file": "docs/hanja-authored-ownstroke-u7a5f-dot-h-contact-2026-10-29/source-index-correction.json",
+      "sha256": "f11de683a94755180509ee0fe2ee5e78b36645e85df4ecce5c073fea18fc8629"
+    }
+  },
+  "changesFromOriginal": [
+    {
+      "rawOneBased": 8,
+      "matrix": [
+        "655/498",
+        "0",
+        "0",
+        "1",
+        "-28103/996",
+        "0"
+      ],
+      "status": "retain earlier ROOT finite static acceptance"
+    },
+    {
+      "rawOneBased": 19,
+      "matrix": [
+        "1",
+        "0",
+        "0",
+        "1",
+        "-129/95",
+        "0"
+      ],
+      "status": "new whole translation; ROOT static review required"
+    }
+  ],
+  "feasibility": {
+    "file": "docs/hanja-authored-ownstroke-u7a5f-dot-h-contact-2026-10-29/raw19-whole-translation-feasibility.json",
+    "sha256": "d5310b2cd51f4f5c13913700cb3daa27d3f3a44780e523c855d36c079a859ce3"
+  },
+  "authorChoice": "Translate original whole raw19 P and Q left by129/95 source units; preserve raw8 prior affine and every other complete raw. No local patch, crop, new bridge or engine replay.",
+  "identity": {
+    "locallyAuthoredRoot": "lingo-u7a5f-var001-raw8-Xcontact-raw19-Xgap-draft",
+    "authored": true,
+    "mixedParts": false,
+    "originalWhole": false,
+    "isOriginalEngineCapture": false,
+    "sourceTraceDescribesAuthoredRecipient": false
+  },
+  "approval": {
+    "static": false,
+    "finalWhole": false,
+    "mappingAfterNewGeometry": false,
+    "temporal": false,
+    "runtime": false,
+    "registration": false
+  }
+}
