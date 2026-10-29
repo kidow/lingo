@@ -1,0 +1,125 @@
+{
+  "schema": "hanja-existing-source-review-preparation/v1",
+  "glyph": "韎",
+  "id": "u97ce",
+  "catalogStrokes": 14,
+  "grade": "특급",
+  "currentCodeCheck": {
+    "applied": false,
+    "registeredGlyphEntries": 0
+  },
+  "source": {
+    "path": "docs/hanja-goal-glyphwiki-batch563-2026-10-11/engine-whole-u97ce.json",
+    "SHA256": "a420b9781f8efa339375a37632219ad97af1e37040e764b5fd50998af06203fb",
+    "root": "u97ce",
+    "rawGroups": 17,
+    "calls": 17,
+    "polygons": 28,
+    "unchanged": true
+  },
+  "priorHold": {
+    "fourOriginalWholesStillIncompatible": true,
+    "rawNumbering": "구 progressive raw1은 zero-based. 본 도구의 one-based raw2 우측 세로와 동일.",
+    "actualTimedFramesPreviouslyApproved": 0,
+    "chainScreening": "hkcs_m97ce 및 dkw와 hs chain은 상부H 다음 우측V를 유지; 새capture/whole 호환 성공 근거 없음"
+  },
+  "targetSource": {
+    "oneBasedRaw": 2,
+    "kind": "cdDrawLine",
+    "args": [
+      78.395,
+      37,
+      78.395,
+      65,
+      22,
+      32
+    ],
+    "polygonCount": 2,
+    "noOmissionOrGeometryCorrection": true
+  },
+  "jev": {
+    "reused": true,
+    "model": "jev-1.14.0",
+    "choice": "other_unknown",
+    "confidence": 0.89,
+    "choiceProbability": 0.92,
+    "topTwoGap": 0.84,
+    "purpose": "동일 기존 관찰의 읽기 순서만 재사용"
+  },
+  "files": {
+    "docs/hanja-official-media-compare-u97ce-2026-10-29/clock.py": "fba3ac72121906e4b3bdb8dd8145da80122b5e23cbb1ec6d87543ddb166064a4",
+    "docs/hanja-official-media-compare-u97ce-2026-10-29/config-all.json": "3834fbfb6548e791926f95e65d1f3c28cc18ca8bffe4e8dfd2bb3c5c03465807",
+    "docs/hanja-source-raw-compare-u97ce-original-2026-10-29/compare.py": "308da6f89a6fac3d44d8b48895ecfc60e2296f06c75d801b06049ada35387a97",
+    "docs/hanja-source-raw-compare-u97ce-original-2026-10-29/config.json": "2737a0a32d68a27484371addaeec4da111fa9f08460484da606818f37dc94962"
+  },
+  "checks": [
+    {
+      "tool": "docs/hanja-official-media-compare-u97ce-2026-10-29/clock.py",
+      "exit": 0,
+      "result": {
+        "guardPass": true,
+        "glyph": "韎",
+        "catalog": 14,
+        "domestic": 14,
+        "selected": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "timedPathsNotYetFetched": true,
+        "commonValidatorSynthetic14ShapePassed": true,
+        "selectedCount17Rejected": true,
+        "originalClockVerified": false,
+        "HTTP": 0,
+        "server": 0,
+        "privateFetch": 0,
+        "nativeApproval": false
+      }
+    },
+    {
+      "tool": "docs/hanja-source-raw-compare-u97ce-original-2026-10-29/compare.py",
+      "exit": 0,
+      "result": {
+        "guardPass": true,
+        "glyph": "韎",
+        "catalog": 14,
+        "domesticSelectionClips": 14,
+        "raw": 17,
+        "calls": 17,
+        "P": 28,
+        "wholeCurrentPrefixContract": "PASS",
+        "HTTP": 0,
+        "server": 0,
+        "sourceGroupingApproved": false,
+        "nativeApproval": false,
+        "runtimeApplied": false
+      }
+    }
+  ],
+  "nextReview": [
+    "원문14 전체 실제 clock으로 상부韋의 시작·순서·열린 형태를 확인",
+    "고정원본 whole 및 one-based raw1/2 단독으로 원문과 대조",
+    "원문에 없는 세로를 임의생략해14개를 강제하지 않음; 전체 호환 공개source 또는 별도 명시적인 저자 가설 근거가 필요"
+  ],
+  "scope": {
+    "all14MappingApproved": false,
+    "temporalApproved": false,
+    "runtimeApplied": false,
+    "sourceGeometryChanged": false,
+    "sharedFilesChanged": false,
+    "serversStarted": 0,
+    "privateMediaFetched": 0,
+    "buildRun": false
+  }
+}

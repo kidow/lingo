@@ -1,0 +1,62 @@
+{
+  "schema": "hanja-public-filled-pair-native-review/v1",
+  "date": "2026-10-29",
+  "glyph": "釃",
+  "reviewer": "ROOT 직접 브라우저 패널 관찰",
+  "inputs": {
+    "config": "docs/hanja-source-raw-compare-u91c3-original-2026-10-29/config.json",
+    "configSHA256": "a78e6a40f7f22212364233ba6292b2d68150f72b0831c8731c02187852c379a9",
+    "adapter": "docs/hanja-source-raw-compare-u91c3-original-2026-10-29/compare.py",
+    "adapterSHA256": "93fa6d2dfd7bb3db2f8be552045dafd92f0ef087d631dd2657f43c9534b462fc",
+    "pair": "docs/hanja-source-raw-compare-u91c3-original-2026-10-29/pen24-filled-pair.html",
+    "pairSHA256": "b3c5f427cd738f47fd7f9802a35313b2559f188331bf8259ae73346c4143c8a5",
+    "source": "docs/hanja-goal-glyphwiki-batch685-2026-10-11/engine-whole-u91c3.json",
+    "sourceSHA256": "ec7007c097699d75e610a0510178f11d14820a361707521c2517941a81d6cbfa",
+    "contact": "docs/hanja-source-inventory-u91c3-2026-10-29/pen24-filled-contact-review.json",
+    "contactSHA256": "39ae8b26d454fe1cdf69c0922747c2b8ea007e053b526221af935575fc11ba7d"
+  },
+  "observed": {
+    "views": [
+      "공개 원본 whole",
+      "raw28/29 filled pair"
+    ],
+    "pairDisplayedSize": [
+      522,
+      602
+    ],
+    "filledPairTouches": true,
+    "guideEndpointsRemainApart": true,
+    "wholeWhiteCellSeamsVisible": [
+      "왼쪽 酉의 hook 주변",
+      "오른쪽 하단 비 주변",
+      "그 외 원source 내부 whitecell 이음"
+    ],
+    "wholeFontAndProportionsDiffer": true
+  },
+  "decision": {
+    "targetFilledContactVisualPassed": true,
+    "bridgeRequired": false,
+    "guideGapAloneProvesMissingPath": false,
+    "wholeDomesticShapeApproved": false,
+    "all26MappingApproved": false,
+    "temporalRuntimeApproved": false,
+    "runtimeApplied": false,
+    "sourceWhiteGapsFilled": false
+  },
+  "relatedClock": {
+    "path": "docs/hanja-official-media-compare-u91c3-2026-10-29/native-pen24-review.json",
+    "SHA256": "77ac18901534bcc1914bf29d9756c711c5eb713316385ed59e6a3fe961e58923",
+    "scope": "논리24 V하강→오른상향 진행3프레임만"
+  },
+  "execution": {
+    "rootReportedProcessesStopped": [
+      66086,
+      77023
+    ],
+    "rootReportedPort": 49825,
+    "childServersStarted": 0,
+    "privateMediaSaved": false,
+    "screenshotsSaved": false
+  },
+  "next": "ROOT 전체26 원문clock 및 개별논리매핑 검토 필요"
+}
