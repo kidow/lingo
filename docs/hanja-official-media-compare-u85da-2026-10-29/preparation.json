@@ -1,0 +1,154 @@
+{
+  "schema": "hanja-existing-source-review-preparation/v1",
+  "glyph": "藚",
+  "id": "u85da",
+  "catalogStrokes": 19,
+  "grade": "특급",
+  "currentCodeCheck": {
+    "applied": false,
+    "registeredGlyphEntries": 0
+  },
+  "existingEvidence": {
+    "path": "docs/hanja-goal-glyphwiki-batch665-2026-10-11/progressive-review.json",
+    "SHA256": "149bc81e3542f9d52d3ddaa586120048dd65e77e46199f3a20e2cd695696674e"
+  },
+  "sourceFacts": [
+    {
+      "file": "docs/hanja-goal-glyphwiki-batch665-2026-10-11/engine-whole-u85da.json",
+      "SHA256": "c2ffaa2a835c460f1a7d3c82bff434a1fa9f1fd7f59ee6ba88a8d1558597925e",
+      "raw": 20,
+      "calls": 22,
+      "P": 37,
+      "Q": 4
+    },
+    {
+      "file": "docs/hanja-goal-glyphwiki-batch665-2026-10-11/engine-whole-u85da-ue0100.json",
+      "SHA256": "a3d526ed74d42dc508c22c09e27be872638ecdf338b92914651e5a0a9c6850d4",
+      "raw": 20,
+      "calls": 22,
+      "P": 37,
+      "Q": 4
+    },
+    {
+      "file": "docs/hanja-goal-glyphwiki-batch665-2026-10-11/engine-whole-u85da-ue0101.json",
+      "SHA256": "a3d526ed74d42dc508c22c09e27be872638ecdf338b92914651e5a0a9c6850d4",
+      "raw": 20,
+      "calls": 22,
+      "P": 37,
+      "Q": 4
+    },
+    {
+      "file": "docs/hanja-goal-glyphwiki-batch665-2026-10-11/engine-whole-u85da-ue0102.json",
+      "SHA256": "dad8074649c0b09e55ef04fb3108435690cd82cc518e7e4d3d99df224801cb1f",
+      "raw": 20,
+      "calls": 20,
+      "P": 31,
+      "Q": 2
+    },
+    {
+      "file": "docs/hanja-goal-glyphwiki-batch665-2026-10-11/engine-whole-u85da-ue0103.json",
+      "SHA256": "a9ef4fe7700ad3f2aeb00cc3703ce24b21e91e507a25022bfaecd7fafee0266e",
+      "raw": 21,
+      "calls": 23,
+      "P": 39,
+      "Q": 4
+    }
+  ],
+  "priorObservation": {
+    "wholeVariantsReviewed": 5,
+    "compatibleWholeRoots": [],
+    "directionsObservedOnly": [
+      10,
+      11
+    ],
+    "actualTimedFramesApproved": 0,
+    "defaultVS0VS1": "연결艹 및 중앙西형 곡선/접힘",
+    "VS2": "중앙罒 세로쌍은 맞지만 연결艹",
+    "VS3": "상단분리艹는 맞지만 중앙西형 곡선/접힘",
+    "wholeHOLDPreserved": true
+  },
+  "jev": {
+    "reused": true,
+    "model": "jev-1.14.0",
+    "choice": "other_unknown",
+    "confidence": 0.92,
+    "choiceProbability": 0.94,
+    "topTwoGap": 0.88,
+    "use": "동일 기존 관찰의 읽기 순서만; 기하·필순 승인 아님"
+  },
+  "files": {
+    "docs/hanja-official-media-compare-u85da-2026-10-29/clock.py": "e8e3244f82c3a2065361bea231ad68c6f8fa64c4f32096476ace13422e6c45d5",
+    "docs/hanja-official-media-compare-u85da-2026-10-29/config-first.json": "54b4c53d6042ac887f996f448081b2cf34531a74fc255d0af1632f2494f0fe0a",
+    "docs/hanja-official-media-compare-u85da-2026-10-29/config-rest.json": "989a14b156ff34ec2dc23474d50e0602d789d00c9f3ac017d14cd2361992f05a"
+  },
+  "checks": [
+    {
+      "config": "config-first.json",
+      "guardPass": true,
+      "glyph": "藚",
+      "catalog": 19,
+      "domestic": 19,
+      "selected": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "timedPathsNotYetFetched": true,
+      "commonValidatorSynthetic19ShapePassed": true,
+      "selectedCount17Rejected": true,
+      "originalClockVerified": false,
+      "HTTP": 0,
+      "server": 0,
+      "privateFetch": 0,
+      "nativeApproval": false
+    },
+    {
+      "config": "config-rest.json",
+      "guardPass": true,
+      "glyph": "藚",
+      "catalog": 19,
+      "domestic": 19,
+      "selected": [
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "timedPathsNotYetFetched": true,
+      "commonValidatorSynthetic19ShapePassed": true,
+      "selectedCount17Rejected": true,
+      "originalClockVerified": false,
+      "HTTP": 0,
+      "server": 0,
+      "privateFetch": 0,
+      "nativeApproval": false
+    }
+  ],
+  "nextReview": [
+    "원문19 clock에서1..4의 상단분리역할과10/11 중앙세로를 포함해 전체19 방향 직접확인",
+    "원문 역할 확인 후 고정VS2/VS3 whole 및 해당원primitive 정적대조",
+    "한 원본이 전체형태와 맞지 않으면 기존wholeHOLD 유지; 원P교환·새guide·부수추정으로 임의합성하지 않음"
+  ],
+  "scope": {
+    "sourceGroupingApproved": false,
+    "temporalApproved": false,
+    "runtimeApplied": false,
+    "sourceGeometryChanged": false,
+    "sharedFilesChanged": false,
+    "privateMediaFetched": 0,
+    "serversStarted": 0,
+    "buildRun": false
+  }
+}
