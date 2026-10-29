@@ -1,0 +1,76 @@
+{
+  "schema": "hanja-public-historical-source-lookup-readiness/v1",
+  "date": "2026-10-30",
+  "target": "u9f52@4",
+  "status": "unresolved-source-not-recovered",
+  "fixedReference": {
+    "source": {
+      "path": "docs/hanja-source-inventory-u9f55-applied-chi-components-2026-10-30/source-declarations.json",
+      "SHA256": "6c2b97f211f5e62b80a3a8ee52ffd1eec25501b91e25c013590e03bd95be4cd7"
+    },
+    "caller": "u9f67",
+    "exactDeclaration": "99:0:0:0:73:200:195:u9f52@4"
+  },
+  "attempts": [
+    {
+      "url": "https://glyphwiki.org/wiki/u9f52@4",
+      "method": "web open",
+      "result": "tool URL not accessible; no HTTP body obtained"
+    },
+    {
+      "url": "https://glyphwiki.org/json/u9f52@4",
+      "method": "web open",
+      "result": "tool URL not accessible; this path was not assumed to be correct API"
+    },
+    {
+      "url": "https://glyphwiki.org/json?name=u9f52%404",
+      "method": "documented JSON query pattern",
+      "result": "HTTP403",
+      "retries": 0
+    },
+    {
+      "url": "https://glyphwiki.org/get_source.cgi?name=u9f52%404",
+      "method": "documented get_source export query pattern",
+      "result": "HTTP403",
+      "retries": 0
+    }
+  ],
+  "mirrorChecks": [
+    {
+      "url": "https://api.github.com/repos/tomcumming/glyphwiki-database/git/trees/a7dd7f3d911936770fa742e8c37d16bee7e2173c",
+      "revision": "a7dd7f3d911936770fa742e8c37d16bee7e2173c",
+      "result": "tree contains LICENSE.txt,README_en.txt,README_ja.txt,dump_newest_only.txt only; no dump_all_versions.txt",
+      "newestOnlyBlob": "21cc12a1ff3d8d67a5191b416902ce217293071d"
+    },
+    {
+      "url": "https://api.github.com/repos/ge9/kage-afdko-toolkit/contents/glyphwiki",
+      "result": "directory contains .gitignore and Makefile only; historical DB/dump not present as checked-in content",
+      "historicalBodyObtained": false
+    }
+  ],
+  "revisionContract": {
+    "reference": "https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/README_en.txt",
+    "allVersionsFile": "dump_all_versions.txt",
+    "versionSyntax": "name@integer",
+    "meaning": "@1 oldest, higher integer newer. Identical shapes can have different metadata versions.",
+    "latestOnlyMayStandForAt4": false,
+    "allVersionsCorpusDownloaded": false
+  },
+  "nextRequiredEvidence": "A version-labelled u9f52@4 record from official export or a public all-versions mirror with provenance/hash. Then recover exact referenced child closure before any engine capture or geometry claim.",
+  "scope": {
+    "newestDataRelabelled": false,
+    "sourceEdits": 0,
+    "geometryAnalysisBeforeRecovery": false,
+    "newEngineRuns": 0,
+    "serverRuns": 0,
+    "sharedChanges": 0
+  },
+  "approval": {
+    "sourceRecovered": false,
+    "shape": false,
+    "mapping": false,
+    "temporal": false,
+    "runtime": false,
+    "registration": false
+  }
+}
