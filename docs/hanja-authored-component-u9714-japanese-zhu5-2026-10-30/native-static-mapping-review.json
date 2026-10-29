@@ -1,0 +1,138 @@
+{
+  "schema": "hanja-root-bounded-static-mapping-review/v1",
+  "glyph": "霔",
+  "reviewedAt": "2026-10-30",
+  "reviewer": "ROOT direct browser fullPage observation",
+  "status": "PASS-bounded-static-macro-and-logical-mapping-only",
+  "inputs": {
+    "config": {
+      "path": "docs/hanja-authored-component-u9714-japanese-zhu5-2026-10-30/config.pending.json",
+      "SHA256": "5110e23f56a5ed36e1a50b38c219ead67583c9ef5982d8c260d3c5c30c6e6ae8"
+    },
+    "adapter": {
+      "path": "docs/hanja-authored-component-u9714-japanese-zhu5-2026-10-30/compare.py",
+      "SHA256": "b0d40c0b317d4ea9b3b091977b7b1ce417ee7d040b7495813b813ee786ba7855"
+    },
+    "fixture": {
+      "path": "docs/hanja-authored-component-u9714-japanese-zhu5-2026-10-30/fixtures-draft.json",
+      "SHA256": "954d6924a6fa5ab7b02ce6c420f0ea67a93fc2d4847cc3a1fd4ac42818687311"
+    },
+    "recipe": {
+      "path": "docs/hanja-authored-component-u9714-japanese-zhu5-2026-10-30/recipe.pending.json",
+      "SHA256": "db76979a3a94af84fa4122d2a6b7a95a15560b6e91f2ce1693172903382d3ff7"
+    },
+    "originalClock": {
+      "path": "docs/hanja-official-media-compare-u9714-2026-10-29/native-clock-review.json",
+      "SHA256": "8e8cbcf9a09894e95fc4fa3fa1fd6b4dc358d1804b77c1ee03f6ae5de0ccea6c"
+    }
+  },
+  "nativeViews": {
+    "capture": "fullPage only; all selected ink and cumulative source ink directly visible",
+    "whole": {
+      "views": 3,
+      "result": "PASS-bounded-macro"
+    },
+    "logicalCurrent": {
+      "pens": 16,
+      "routes": 16,
+      "SVG": 32,
+      "result": "PASS-bounded-roles"
+    },
+    "logicalPrefix": {
+      "pens": 16,
+      "routes": 16,
+      "SVG": 32,
+      "result": "PASS-bounded-order"
+    },
+    "totalValidSVG": 67,
+    "excludedOldAttempts": {
+      "wholeClipSVG": 3,
+      "firstTwoCanonicalCroppedOrBlankSVG": 8,
+      "countedForApproval": false
+    }
+  },
+  "logicalRawGroupsOneBased": [
+    [
+      1
+    ],
+    [
+      2
+    ],
+    [
+      3,
+      4
+    ],
+    [
+      5
+    ],
+    [
+      6
+    ],
+    [
+      7
+    ],
+    [
+      8
+    ],
+    [
+      9
+    ],
+    [
+      10
+    ],
+    [
+      11
+    ],
+    [
+      12,
+      13
+    ],
+    [
+      14
+    ],
+    [
+      15
+    ],
+    [
+      17
+    ],
+    [
+      16
+    ],
+    [
+      18
+    ]
+  ],
+  "observedRoles": {
+    "canonical3": "Hright→down-left terminal",
+    "canonical11": "water leading/downturn/longNErise",
+    "canonical12": "new curvedDRdot",
+    "canonical13": "Hright",
+    "canonical14": "Hright",
+    "canonical15": "Vdown",
+    "canonical16": "Hright"
+  },
+  "limits": [
+    "Public source font weight/proportion/serif differ from publisher brush; no exactfont or publisher outline identity claim",
+    "Original source3H/4DL compound andwater12/13 compound still require actual temporal review",
+    "Water12/13 source guide endpoints differ despite positive filled contact; no invented guide bridge or microclock equivalence",
+    "All source constituent P/Q and public caller-affine preserved; no new engine"
+  ],
+  "cleanup": {
+    "PID": 8232,
+    "port": 63131,
+    "session": 76798,
+    "tab": 288,
+    "serverStopped": true,
+    "tabClosed": true,
+    "exitCode": 130
+  },
+  "approval": {
+    "boundedStaticWhole": true,
+    "staticMapping": true,
+    "actualTemporal": false,
+    "exactPublisherFont": false,
+    "microclockEquivalent": false,
+    "runtimeApplied": false
+  }
+}
