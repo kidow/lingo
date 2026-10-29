@@ -1,0 +1,95 @@
+{
+  "schema": "hanja-actual-H-exact-case-preparation/v1",
+  "glyph": "檖",
+  "date": "2026-10-29",
+  "status": "pending-post1538-1539-final-helper-rebase-and-profile-pin",
+  "base": {
+    "file": "scripts/hanja-actual-component-review.mjs",
+    "SHA256": "07bd4ee214cc05b912e6b81c0356daa78ef47f55bd0d055aa3f7629461c8ea9a",
+    "origin": "Actualaccb plus穟 observer-rebased artifact applied only in RAM"
+  },
+  "afterSHA256": "ccf5d6f340f93bbb5e14321718ecb3314fbe59b94accfec4c4f3b54e619e2068",
+  "patch": {
+    "file": "docs/hanja-authored-ownstroke-u6a96-hook-sweep-gap-v4-2026-10-29/actual-H-integration.pending-07bd.patch",
+    "SHA256": "207cff355e595125faa09a3f42a2d0a8bef86d19e0a0e1f5edfd8c2031ef6492",
+    "hunks": 16,
+    "oldPositionsSorted": true,
+    "nativeForwardExact": true,
+    "nativeInverseExact": true
+  },
+  "profile": {
+    "dataOverlay": "docs/hanja-authored-ownstroke-u6a96-hook-sweep-gap-v4-2026-10-29/profile-overrides.pending.json",
+    "SHA256": "97ac8b8844d59794dd1f1d9ba7454e05871965946e90a7a9a8fc3510940fd824",
+    "futureFinalProfilePath": "docs/hanja-authored-ownstroke-u6a96-hook-sweep-gap-v4-2026-10-29/actual-profile-width16-22-start.json",
+    "finalProfileWritten": false,
+    "profileFinalized": false,
+    "executionEnabled": false,
+    "currentRegistryPinMustRefreshAfter1539": true
+  },
+  "fixture": {
+    "file": "docs/hanja-authored-ownstroke-u6a96-hook-sweep-gap-v4-2026-10-29/fixtures-execution-width16-22-draft.json",
+    "SHA256": "38a913ee556f5987dc06a180714da2069200b776742d7daa3db0b507e00378ce",
+    "key": "strokes",
+    "geometrySHA256": "0129e3ddb4ace759f3696dc21d32afcb7ac4ca8a2b36ac808e9b03274659d253",
+    "logical": 17,
+    "masks": 21,
+    "P": 40,
+    "curves": 15,
+    "cardinals": 6
+  },
+  "widthPolicy": {
+    "9:1": [
+      16,
+      8
+    ],
+    "9:2": [
+      22,
+      11
+    ],
+    "other13Curves": [
+      14,
+      7
+    ],
+    "exactRoot": "lingo-u6a96-whole-hookgap-v4-logical17-width16-22-start-draft",
+    "Su4ComputedMatrixExceptionBytesUnchanged": true
+  },
+  "checks": {
+    "syntax": "PASS",
+    "actualFixtureGuard": "PASS",
+    "guardNegatives": 7,
+    "actualGeneratedFixtureJSON": "PASS-seven-fields-and-strokes",
+    "closure390SelectorAndRawAssertion": "PASS",
+    "exactRootNegatives": "PASS",
+    "actualSetupControls": "PASS",
+    "buttons": 41,
+    "gateTriples": 15,
+    "compoundButtons": 4,
+    "aggregate": {
+      "initial": 34,
+      "boundary": 12,
+      "ending": 51,
+      "total": 97
+    },
+    "controlTargetNegative": "PASS",
+    "actualGuideFunctionModel": "PASS",
+    "guideEarlyLatePositive": 6,
+    "guideNegativeWrongWidthOwnerOtherMaskRoot": true,
+    "actualBrowserDOMTested": false,
+    "callbacksExecuted": false
+  },
+  "reuse": {
+    "original17Clock51": true,
+    "all17Roles34": true,
+    "v4ChangedStatic": true,
+    "combinedFullround15": true,
+    "unmodified13CoverageReexecuted": false
+  },
+  "harnessCorrection": "Negative guide test initially lacked unrelated existing MixedDisplay flags; added their false harness values and reran the incomplete model. No product source change for this.",
+  "sharedFilesWritten": 0,
+  "isolatedSSR": 0,
+  "serversStarted": 0,
+  "build": false,
+  "fullTypecheck": false,
+  "nativeActual": false,
+  "runtimeApplied": false
+}

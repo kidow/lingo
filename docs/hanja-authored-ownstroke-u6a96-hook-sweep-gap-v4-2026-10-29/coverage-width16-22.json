@@ -1,0 +1,152 @@
+{
+  "schema": "hanja-public-source-curve-coverage-preflight/v1",
+  "date": "2026-10-29",
+  "glyph": "檖",
+  "scope": "Only changed9m1 width16/pad8 and9m2 width22/pad11 under unchanged sourceP/Q. Other13 curves reuse original successful coverage. Fullround only; no start/release/native approval.",
+  "inputSHA256": {
+    "docs/hanja-authored-ownstroke-u6a96-hook-sweep-gap-v4-2026-10-29/prepare-execution-width16-22.mjs": "c2807f2602c282254270563b67b6090e56838a7d8cdc9328a8407ab194400414",
+    "docs/hanja-authored-ownstroke-u6a96-hook-sweep-gap-v4-2026-10-29/fixtures-execution-width16-22-draft.json": "38a913ee556f5987dc06a180714da2069200b776742d7daa3db0b507e00378ce",
+    "docs/hanja-authored-ownstroke-u6a96-hook-sweep-gap-v4-2026-10-29/execution-width16-22-check.json": "16d5e0228b32a24e88eb5a915c8284d67daaaa7f1d28bf91b6d7325b8697444f",
+    "docs/hanja-authored-ownstroke-u6a96-hook-sweep-gap-v4-2026-10-29/coverage-width16-22.mjs": "32b9b43f87608cb967195531831619847618ef66fe312230591ce13fc6c1d10b"
+  },
+  "method": "Positive-ear triangles preserve originalpolygonarea within boundednumericmargin and avoid concavefan exteriorregions. At each triangle center distance to actual padded line segment and4097 evaluated original Q/C points gives an upper distance bound; plus triangle radius (1-Lipschitz) proves every triangle point within the actual per-mask full round radius. No original P/Q/C flattening. Unresolved triangulated regions do not aloneprove insufficientwidth.",
+  "numerics": {
+    "margin": 1e-8,
+    "formalIntervalProof": false,
+    "depthLimit": 16,
+    "nodeLimitPerMask": 60000,
+    "BezierEvaluationsPerMask": 4097
+  },
+  "counts": {
+    "curveMasks": 2,
+    "pass": 2,
+    "unproved": 0,
+    "outlier": 0
+  },
+  "units": [
+    {
+      "logical": 9,
+      "mask": 1,
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "radius": 8,
+      "width": 16,
+      "padding": 8,
+      "nodes": 101,
+      "maxDepth": 2,
+      "maxAcceptedUpperDistance": 7.93225526432844,
+      "sourceOutlinePreserved": true,
+      "sourceBezierGuidePreserved": true,
+      "curveDegree": 2,
+      "nativeApproval": false
+    },
+    {
+      "logical": 9,
+      "mask": 2,
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "radius": 11,
+      "width": 22,
+      "padding": 11,
+      "nodes": 50,
+      "maxDepth": 3,
+      "maxAcceptedUpperDistance": 10.857165651413307,
+      "sourceOutlinePreserved": true,
+      "sourceBezierGuidePreserved": true,
+      "curveDegree": 2,
+      "nativeApproval": false
+    }
+  ],
+  "cardinalPolicy": {
+    "masks": 6,
+    "declaredWholeAffinesMaintained": true,
+    "nativeStartContactAndEndingReviewRequired": true
+  },
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "sharedFilesChanged": false,
+  "serverStarts": 0,
+  "buildRun": false,
+  "reusedUnchangedCoverage": {
+    "path": "docs/hanja-authored-ownstroke-u6a96-hook-sweep-gap-v4-2026-10-29/coverage-preflight.json",
+    "SHA256": "ec721aaaaa935481d45856f3de638d2fd32485415446cf70d1419a628dc58905",
+    "fixturePath": "docs/hanja-authored-ownstroke-u6a96-hook-sweep-gap-v4-2026-10-29/fixtures-execution-draft.json",
+    "fixtureSHA256": "e6f7f5930b014968d330f2672202f1d3a512329b56d179bd6520dc8b0a3d7a89",
+    "units": [
+      {
+        "logical": 3,
+        "mask": 1,
+        "status": "PASS-CONSERVATIVE-COVERAGE"
+      },
+      {
+        "logical": 4,
+        "mask": 1,
+        "status": "PASS-CONSERVATIVE-COVERAGE"
+      },
+      {
+        "logical": 5,
+        "mask": 1,
+        "status": "PASS-CONSERVATIVE-COVERAGE"
+      },
+      {
+        "logical": 6,
+        "mask": 2,
+        "status": "PASS-CONSERVATIVE-COVERAGE"
+      },
+      {
+        "logical": 8,
+        "mask": 1,
+        "status": "PASS-CONSERVATIVE-COVERAGE"
+      },
+      {
+        "logical": 10,
+        "mask": 1,
+        "status": "PASS-CONSERVATIVE-COVERAGE"
+      },
+      {
+        "logical": 11,
+        "mask": 1,
+        "status": "PASS-CONSERVATIVE-COVERAGE"
+      },
+      {
+        "logical": 12,
+        "mask": 1,
+        "status": "PASS-CONSERVATIVE-COVERAGE"
+      },
+      {
+        "logical": 13,
+        "mask": 1,
+        "status": "PASS-CONSERVATIVE-COVERAGE"
+      },
+      {
+        "logical": 14,
+        "mask": 1,
+        "status": "PASS-CONSERVATIVE-COVERAGE"
+      },
+      {
+        "logical": 15,
+        "mask": 1,
+        "status": "PASS-CONSERVATIVE-COVERAGE"
+      },
+      {
+        "logical": 17,
+        "mask": 1,
+        "status": "PASS-CONSERVATIVE-COVERAGE"
+      },
+      {
+        "logical": 17,
+        "mask": 2,
+        "status": "PASS-CONSERVATIVE-COVERAGE"
+      }
+    ],
+    "strokesByteEquivalent": true,
+    "reexecuted": false
+  },
+  "combinedCounts": {
+    "curveMasks": 15,
+    "pass": 15,
+    "unproved": 0,
+    "outlier": 0,
+    "freshChanged": 2,
+    "reusedUnchanged": 13
+  },
+  "sourceOutlineAndQSuffixUnchangedForBothPolicies": true
+}
