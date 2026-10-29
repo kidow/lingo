@@ -1,0 +1,51 @@
+{
+  "schema": "hanja-original-whole-static-preparation/v1",
+  "glyph": "舝",
+  "status": "ready-for-root-original13-static-review",
+  "files": {
+    "docs/hanja-source-mapping-u821d-original13-2026-10-30/mapping-hypothesis.json": "1aba512582fb03c399192e0fef9dfe51ea2d8cef47c72909e7d7f1408d1cc494",
+    "docs/hanja-source-mapping-u821d-original13-2026-10-30/source-boundary-analysis.json": "205b367e82533cd5dedf14533463021f9e6186476cb2209abe104176cef2cd40",
+    "docs/hanja-source-mapping-u821d-original13-2026-10-30/verify-source-contacts.py": "4e49e670a0e2f38267e99eda56d3395e0bdedd3e1a0e134353b6934b2ce2f564",
+    "docs/hanja-source-mapping-u821d-original13-2026-10-30/compare.py": "cfefcf75f7915ca314839d12f8f2ff786f4c85814acfb85d0de9a72236494078",
+    "docs/hanja-source-mapping-u821d-original13-2026-10-30/config.json": "4ce3949db6eb7694a1326bd1d7f441fcf5d4fd2232c1053eea7f98b4b737dcbc"
+  },
+  "checks": {
+    "source20rawOnce13Logical": true,
+    "source20calls43P": true,
+    "all7FinishedContacts": true,
+    "exactSourceGuideJoins5": true,
+    "unresolvedSourceGuideGaps": [
+      9,
+      12
+    ],
+    "codeOnlyExit": 0,
+    "result": {
+      "status": "PASS-code-only",
+      "sourceRaw20": true,
+      "sourceCalls20": true,
+      "sourceP43": true,
+      "logical13": true,
+      "sourceSelections26": true,
+      "wholeOriginal": true,
+      "originalPointAndGuideEdits": 0,
+      "HTTP": 0,
+      "server": 0,
+      "nativeApproval": false
+    }
+  },
+  "startup": "python3 docs/hanja-source-mapping-u821d-original13-2026-10-30/compare.py --config-sha 4ce3949db6eb7694a1326bd1d7f441fcf5d4fd2232c1053eea7f98b4b737dcbc --port 0",
+  "requiredNative": [
+    "Originalwhole2pairedSVG",
+    "All13current plus13prefix2pairedSVG",
+    "Logical9 finishedDL→NE union andlogical12 V/Hleftdecoration union",
+    "Originalguidegap is not silently solved by finishedcontact"
+  ],
+  "oldStrictCompilerOrHOLDModified": false,
+  "originalPOrGuideModified": false,
+  "mixedParts": false,
+  "newEngine": 0,
+  "privateFetch": 0,
+  "server": 0,
+  "nativeApproval": false,
+  "runtimeApplied": false
+}
