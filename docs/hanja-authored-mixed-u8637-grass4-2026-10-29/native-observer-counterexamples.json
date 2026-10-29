@@ -1,0 +1,93 @@
+{
+  "glyph": "蘷",
+  "date": "2026-10-29",
+  "reviewer": "ROOT",
+  "status": "observer-only-known-computed-c-serialization-mismatch",
+  "actualHarnessSHA256": "8dea9ac45737aa49f486c7968a4cc978add9226d1c188e1b70e1821c522751aa",
+  "profileSHA256": "04389300471e154b997b5c6e989e038142b07742e687409d2f42b5b74adc43a4",
+  "fixtureSHA256": "e42656da4804728b7b98f22620170bcea9cb67fe6cc95a5b788dc7472bef4bdd",
+  "geometrySHA256": "cb29328d45cacfb80322cfa58b56ae7a65f394f68f419dde486ebfeffadbef20",
+  "renderedAggregate123VisuallyNormal": true,
+  "observedBad": [
+    {
+      "sample": 3,
+      "bad": "noTransform2"
+    },
+    {
+      "sample": 7,
+      "bad": "noTransform4"
+    },
+    {
+      "sample": 63,
+      "bad": "noTransform2"
+    },
+    {
+      "sample": 64,
+      "bad": "noTransform2"
+    },
+    {
+      "sample": 65,
+      "bad": "noTransform2"
+    },
+    {
+      "sample": 69,
+      "bad": "noTransform4"
+    },
+    {
+      "sample": 70,
+      "bad": "noTransform4"
+    },
+    {
+      "sample": 71,
+      "bad": "noTransform4"
+    }
+  ],
+  "errors": [],
+  "actualV2": {
+    "attribute": "matrix(0.53956834532374098 0.0000000000000000 -0.032604248354870607 0.15861966824644549 11.685861263595758 5.5007849526066348)",
+    "computed": "matrix(0.539568, 0, -0.0326043, 0.15862, 11.6859, 5.50078)"
+  },
+  "actualV4": {
+    "attribute": "matrix(0.53956834532374098 0.0000000000000000 -0.032604248354870607 0.15861966824644549 39.685861263595761 5.5007849526066348)",
+    "computed": "matrix(0.539568, 0, -0.0326043, 0.15862, 39.6859, 5.50078)"
+  },
+  "inlineTransformTranslateRotateScale": [
+    "",
+    "",
+    "",
+    ""
+  ],
+  "sourceC": -0.03260424835487061,
+  "computedC": -0.0326043,
+  "expectedPrecision6": -0.0326042,
+  "float32Precision6": -0.0326042,
+  "float32CauseEstablished": false,
+  "natural16EndedAtOne": true,
+  "remainingRootStatesAndNaturalsNotCoveredHere": false,
+  "correctionScope": "Exact蘷root/V2V4 sourceidentity/transformliteral/path/width20/pad10 only. Only componentc sourceexact→observedexact pair accepted; no new tolerance. Sourceattrs/owners/clip/inline/othermatrixcomponents and Su4exception unchanged.",
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "pixelsSaved": false,
+  "privateBodiesSaved": false,
+  "visualChecks": {
+    "compactFrames": 189,
+    "gateFrames": 42,
+    "fullroundResidualsBlank": 14,
+    "aggregateFrames": 123,
+    "initialFrames": 42,
+    "boundaryFrames": 18,
+    "endingFrames": 63,
+    "states": 24,
+    "allVisualPass": true,
+    "naturalStartedAndEndedAtOne": [
+      16,
+      2,
+      20,
+      21
+    ],
+    "natural2ObserverBad": [
+      "noTransform2"
+    ],
+    "allErrorsEmpty": true
+  }
+}
