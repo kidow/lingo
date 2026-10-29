@@ -1,0 +1,118 @@
+{
+  "schema": "hanja-original-clock-preparation/v1",
+  "glyph": "憯",
+  "catalogStrokes": 15,
+  "domesticClips": 15,
+  "sourceBatch": 909,
+  "clock": {
+    "path": "docs/hanja-official-media-compare-u61af-2026-10-29/clock.py",
+    "SHA256": "92f0e3ccd833fe80c575134d11a7651d168603760db117cac3c3a5138ae04423",
+    "configPath": "docs/hanja-official-media-compare-u61af-2026-10-29/config-all.json",
+    "configSHA256": "250f1dedb703af53c3d9813630f18010dd0bb74d7a7fd8bf73451b057e113432",
+    "selectedStrokes": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ]
+  },
+  "metadata": {
+    "path": "docs/hanja-goal-glyphwiki-batch909-2026-10-13/metadata.json",
+    "SHA256": "3b20eef63473e3a8c0835942547406ac62acc59386f745ddd06ead6763c4ba89"
+  },
+  "existingReview": {
+    "path": "docs/hanja-goal-glyphwiki-batch909-2026-10-13/review.json",
+    "SHA256": "1d1c7cdc36c09e81f9b5d34f273792fd6b7c75423825b6b7d8d0b6191fb4332b",
+    "wholeVariantsReviewed": 5,
+    "compatibleWholeRoots": [],
+    "dictionaryDirectionStrokes": [
+      5
+    ],
+    "progressiveFramesReviewed": 0,
+    "progressiveFramesApproved": 0,
+    "nativeApproval": false,
+    "scope": "Prior whole5 plus domestic5 static direction comparison only; no .1/.5/1 original clock evidence. Do not upgrade old direction metadata to fresh temporal approval.",
+    "hold": "held:no compatible whole;G original count15 has wrong domestic upper fold",
+    "priorObservedReason": "브라우저 패널에서 국내 자형과 전체 원본5종 및 국내5획을 대조했다. 국내 위쪽 짧은 세로획은 맨 위 가로에서 아래 가로까지 곧게 내린 뒤 가로로 이어지는데 G는 짧은 기울어진 세로·왼쪽 꺾임으로 다르다. 다른 원본도 짧은 획의 꺾임 또는 위로 돌출된 자형이 달라 호환 원본이 없다. G의 연속 경계4곳을 묶으면 숫자15가 되지만 자형·경계 승인 근거가 아니므로 새 컴파일러를 만들지 않았다. 기존VS0 후보는 비연속 日폐합[14,18]도 포함한다. 진행·확대·재생은 미검토다.",
+    "releaseCondition": "Obtain compatible intact original whole with correct domestic upper fold and15 consecutive pen boundaries;complete native review."
+  },
+  "originalWholes": [
+    {
+      "root": "u61af",
+      "path": "docs/hanja-goal-glyphwiki-batch909-2026-10-13/engine-whole-u61af.json",
+      "SHA256": "60313eb6e3c2a2a7344a803535ea87439311ae9e9171bae6f6a1ad2acae6f11c",
+      "raw": 19,
+      "compatibleWholeApproved": false
+    },
+    {
+      "root": "u61af-g",
+      "path": "docs/hanja-goal-glyphwiki-batch909-2026-10-13/engine-whole-u61af-g.json",
+      "SHA256": "7b8a5f06605549b65f4e1c89fd30ed23446f1fadd4b768dff4a00267d52743ab",
+      "raw": 19,
+      "compatibleWholeApproved": false
+    },
+    {
+      "root": "u61af-ue0100",
+      "path": "docs/hanja-goal-glyphwiki-batch909-2026-10-13/engine-whole-u61af-ue0100.json",
+      "SHA256": "54436372d0c809bc1fd74a045f1f95eb4a9069bf9cfbbc57ee50199a875bc92c",
+      "raw": 19,
+      "compatibleWholeApproved": false
+    },
+    {
+      "root": "u61af-ue0101",
+      "path": "docs/hanja-goal-glyphwiki-batch909-2026-10-13/engine-whole-u61af-ue0101.json",
+      "SHA256": "c7a106adfa9d81738cf8ea83244fe3838646d74e7aafd1ccae539ffb15c42e58",
+      "raw": 19,
+      "compatibleWholeApproved": false
+    },
+    {
+      "root": "u61af-ufe00",
+      "path": "docs/hanja-goal-glyphwiki-batch909-2026-10-13/engine-whole-u61af-ufe00.json",
+      "SHA256": "beebd6b11542ce28fd1a1b1e499ca142c6044a468b2b764e11f98cd994e943e2",
+      "raw": 19,
+      "compatibleWholeApproved": false
+    }
+  ],
+  "numericCandidateLimitations": {
+    "GConsecutive15IsNotShapeOrBoundaryApproval": true,
+    "VS0NonContiguousZeroBasedGroup": [
+      14,
+      18
+    ],
+    "noSourceOmissionOrNewGuideAuthorized": true
+  },
+  "nativePlan": {
+    "strokeCount": 15,
+    "progress": [
+      0.1,
+      0.5,
+      1
+    ],
+    "frames": 45,
+    "firstReviewFullOriginalSequence": true,
+    "priorIssue5NeedsFreshDirectReview": true,
+    "doNotInferSourceRawIndexFromRadicalOrCatalogNumber": true
+  },
+  "startup": "python3 docs/hanja-official-media-compare-u61af-2026-10-29/clock.py --config docs/hanja-official-media-compare-u61af-2026-10-29/config-all.json --config-sha 250f1dedb703af53c3d9813630f18010dd0bb74d7a7fd8bf73451b057e113432 --port 0",
+  "checks": {"checkOnlyExit": 0, "sameCommonValidator": true, "synthetic15TimedRowsPassed": true, "selectedCount17Rejected": true, "all5ExistingWholeSourcePinsPassed": true, "HTTP": 0, "server": 0, "privateFetch": 0},
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "privateFetch": 0,
+  "HTTP": 0,
+  "server": 0,
+  "engineRuns": 0,
+  "sharedFilesChanged": false,
+  "builds": 0,
+  "fullProjectTypeChecks": 0
+}
