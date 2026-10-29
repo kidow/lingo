@@ -1,0 +1,53 @@
+{
+  "glyph": "舝",
+  "reviewedAt": "2026-10-30",
+  "status": "PASS",
+  "scope": "Isolated actual StrokeOutlines component; source/static approval remains separately pinned. Not a product UI or whole-glyph autoplay assertion.",
+  "inputs": {
+    "harnessSHA256": "b853f1ef1268be0b94d74f378f1353c419bb5642bf619ab57e39779699405cd1",
+    "rendererSHA256": "fc6821a8b532302702be06077828b85827850906251523ae22eac678e5d17fce",
+    "helperSHA256": "82d7f5c2a2afcd5b9a51b2f558f2bb9507731b362fa99cb633c770f88b6b1b9c",
+    "profileSHA256": "8353090351280be38d1b884410c1690fa350c62484982c043c53afd089db7755",
+    "geometrySHA256": "e86568deb0fdc4e077a603c6e20ee08778e786f91a17380e0dc66de5b2353d7a"
+  },
+  "nativeReview": {
+    "browser": "Codex browser panel",
+    "tab": "319",
+    "privatePixelsPersisted": false,
+    "freshDiscreteViews": 54,
+    "groups": {
+      "formerFailureLocal00100501At520": 6,
+      "headPhaseBeforeExactAfter": 6,
+      "sourceBoundaryBeforeExactAfter": 6,
+      "contactCompact": 18,
+      "wholeCompoundCompact": 18
+    },
+    "findings": "Pens 9 and 12 grow the left head from strict prior contact before expanding right. No detached initial fragment, abrupt phase pop, extra paint, missing final outline or completion mismatch observed in the reviewed frames.",
+    "selectedPenNaturalPlayback": {
+      "pen": 12,
+      "views": 4,
+      "observedProgress": [0.11810000000074508, 1, 0.07661249999776465, 1],
+      "scope": "Selected pen start/end and replay start/end; not whole-glyph playback.",
+      "status": "PASS"
+    },
+    "finalStableBadChecks": [],
+    "runtimeErrors": [],
+    "consoleErrors": []
+  },
+  "reusedEvidence": {
+    "baseline": "native-actual-baseline-hold-review.json",
+    "unchangedViews": 140,
+    "groups": {"unaffectedPens": 99, "unchangedCurveStartRelease": 30, "originalCurveBlankResidual": 11},
+    "condition": "Exact fixture, original path/guide/weight and unaffected renderer branches unchanged. The baseline's six failed views are replaced by fresh review, never reclassified as baseline PASS. Custom contact paths are not claimed to pass a generic curve residual control."
+  },
+  "focusedTests": {
+    "command": "node --experimental-transform-types --test lib/hanja-stroke-contact-left-head-u821d.test.ts lib/hanja-stroke-contact-fold-Q-up-u9ea4.test.ts",
+    "passed": 17,
+    "failed": 0,
+    "durationMs": 129.305666,
+    "reusedUnchangedRun": true
+  },
+  "runtimeAppliedAtNativeReview": false,
+  "buildRun": false,
+  "wholeProjectTypeCheckRun": false
+}

@@ -1,0 +1,193 @@
+{
+  "schema": "hanja-two-exact-left-head-contact-pending-integration/v1",
+  "date": "2026-10-30",
+  "glyph": "舝",
+  "status": "math-and-focused-tests-PASS-actual-native-pending",
+  "source": {
+    "fixture": {
+      "path": "docs/hanja-source-mapping-u821d-vs0-original13-2026-10-30/fixtures-execution-draft.json",
+      "SHA256": "ac23edc46f2c28bf52744ed23ab3d208b5816e3f9b3a6008f0b1cc579e18f0bb"
+    },
+    "geometrySHA256": "e86568deb0fdc4e077a603c6e20ee08778e786f91a17380e0dc66de5b2353d7a",
+    "pens": 13,
+    "masks": 20,
+    "P": 42,
+    "unchangedFields": [
+      "outline",
+      "bounds",
+      "direction",
+      "weight",
+      "revealPath",
+      "revealWidth",
+      "revealStartGate"
+    ],
+    "guideGapsPreserved": [
+      9,
+      12
+    ],
+    "originalWholeVS0": true
+  },
+  "helper": {
+    "path": "lib/hanja-stroke-contact-left-head-u821d.ts",
+    "SHA256": "82d7f5c2a2afcd5b9a51b2f558f2bb9507731b362fa99cb633c770f88b6b1b9c",
+    "test": "lib/hanja-stroke-contact-left-head-u821d.test.ts",
+    "testSHA256": "fb8b30508c72f6b54a39584cc39f6717c006896bc4e0595b1534a0a8cbb7d424",
+    "fingerprint": "fa221a53ddd8f1b052718c03702b31f8f89a69d50aa6cccfdb857d8b0ea227ef",
+    "productionPatch": "docs/hanja-display-contact-u821d-pen9-12-2026-10-30/production.pending.patch",
+    "productionPatchSHA256": "734934d78191d11e04b7c7d413f1ff9474bb31a4a67dc3240ea6ced89e980294",
+    "exports": {
+      "input": "REVIEWED_U821D_CONTACT_INPUT",
+      "context": "makeReviewedU821dContactContext(input,strokes)",
+      "select": "reviewedU821dContactPolicy(context,zeroBasedPen,zeroBasedMask)",
+      "sample": "sampleReviewedU821dContactFrame(policy,segment,progress,previousMaskProgress)",
+      "prior": "verifyReviewedU821dContactPrior(policy,g,previousMaskProgress,logicalProgress,frameId)"
+    },
+    "privateBrands": [
+      "context WeakMap",
+      "policy WeakMap",
+      "live full13/20/42 exact descriptors binding"
+    ],
+    "targets": [
+      {
+        "pen": 9,
+        "mask": 2,
+        "id": "u821d-left-head-contact-9-2",
+        "kind": "source-P-left-head-then-right-u821d",
+        "cutX": 30,
+        "headPhase": 0.2611654078282369,
+        "bounds": [
+          19.35,
+          54.2,
+          77,
+          61.9
+        ]
+      },
+      {
+        "pen": 12,
+        "mask": 2,
+        "id": "u821d-left-head-contact-12-2",
+        "kind": "source-P-left-head-then-right-u821d",
+        "cutX": 22.5,
+        "headPhase": 0.16216216216216217,
+        "bounds": [
+          6,
+          76.5,
+          94,
+          83.5
+        ]
+      }
+    ]
+  },
+  "renderer": {
+    "path": "components/hanja/stroke-outlines.tsx",
+    "beforeSHA256": "3015b3127a4e933cdb978059c11e0017e0aba4f6eb8abf0013ec5d845e8eb03b",
+    "afterSHA256": "fc6821a8b532302702be06077828b85827850906251523ae22eac678e5d17fce",
+    "patch": "docs/hanja-display-contact-u821d-pen9-12-2026-10-30/renderer.pending.patch",
+    "patchSHA256": "18663979328d6c3cafa1b6d709d8dee3423b04d65f2a128a4069f7a0bb6e6e14",
+    "hunks": 6,
+    "ascendingNativeOldBlocks": [
+      0,
+      73135,
+      104622,
+      106870,
+      118982,
+      369599
+    ],
+    "exactForwardInverse": true,
+    "oldU9ea4QBodyByteUnchanged": true,
+    "dispatchOnlyTargets": true,
+    "sourceGeometryModified": false,
+    "actualSharedApplied": false
+  },
+  "DOM": {
+    "prefix": "data-source-x-contact-",
+    "context": "u821d-exact-left-head-right",
+    "displayClock": "original-P-left-head-then-right",
+    "kind": "source-P-left-head-then-right-u821d",
+    "frameExpression": "existing exactFoldFrame: id-fold-contact-frame-phase-count-manual-elapsed",
+    "parentAttrs": [
+      "owner=policy.id",
+      "frame=frameId",
+      "logical-progress=String(clamped logicalProgress)"
+    ],
+    "groupAttrs": [
+      "data-stroke-start-gate=policy.id",
+      "data-stroke-reveal-policy=policy.kind",
+      "data-stroke-reveal-progress=String(local progress)",
+      "context",
+      "fingerprint",
+      "pen",
+      "mask=2",
+      "previous-progress",
+      "frame",
+      "logical-progress",
+      "display-clock"
+    ],
+    "tree": "g > defs > clipPath(units=userSpaceOnUse,id=clipId+-source-x-contact-clip) > rect(no id); g second child path(original D exactly once)",
+    "inkAttrs": [
+      "ink",
+      "committed",
+      "progress",
+      "phase",
+      "direct-original",
+      "source-full",
+      "one-p",
+      "ua-read"
+    ],
+    "phase": [
+      "empty",
+      "left-head",
+      "right",
+      "full"
+    ],
+    "p0": "custom group retained, source path hidden, clip height0",
+    "p1": "custom group retained, original sourceD once and no clip-path",
+    "prior": "immediately preceding completed source path, sourceD exact, opaque and same logical owner/current frame; clones/getters/hidden/transforms/foreign owner or frame rejected"
+  },
+  "math": {
+    "path": "docs/hanja-display-contact-u821d-pen9-12-2026-10-30/public-contact-left-head-proof.json",
+    "SHA256": "9e996e9c6c6c63a5e0c4e7a00ea5e7d02ee03e4d114771904596cc8645ec18d8"
+  },
+  "validation": {
+    "focused": {
+      "focusedTests": 8,
+      "exactWholeBinding": true,
+      "hostileGetterKeyOrderReject": true,
+      "monotonicSamplesPerTarget": 999,
+      "strictPriorDOM": true,
+      "oneColoredDOneRect": true,
+      "SSR": 0,
+      "server": 0,
+      "actualSharedWrites": 0
+    },
+    "semantic": {
+      "focusedSemanticRoots": 3,
+      "diagnostics": [],
+      "build": false,
+      "wholeProjectTypecheck": false
+    },
+    "SSR": 0,
+    "server": 0,
+    "build": false,
+    "wholeProjectTSC": false,
+    "fullRoundSourceCoverageRerun": false
+  },
+  "expectedClosure": {
+    "before": 397,
+    "after": 398,
+    "newRuntimeModule": 1,
+    "actualCollectorNotYetRun": true
+  },
+  "scope": {
+    "authorDisplayClock": true,
+    "publisherMicroclockEquivalent": false,
+    "nativeActualApproved": false,
+    "runtimeRegistered": false,
+    "existingBaselineHOLDPreserved": true,
+    "newP": 0,
+    "newGuide": 0,
+    "newBridge": 0,
+    "HpatchPrepared": false
+  },
+  "focusedCommand": "rtk proxy node --experimental-strip-types --test lib/hanja-stroke-contact-left-head-u821d.test.ts"
+}

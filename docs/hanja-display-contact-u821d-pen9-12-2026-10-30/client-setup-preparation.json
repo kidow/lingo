@@ -1,0 +1,74 @@
+{
+  "schema": "hanja-exact-client-setup-count-fix/v1",
+  "glyph": "舝",
+  "date": "2026-10-30",
+  "failure": {
+    "stage": "actual browser setup",
+    "message": "Error: 舝 exact client projection requires6 curveTargets and6 pairProgress",
+    "actualCause": "corrected10 generic curve targets were tested against original11 expectation; the6/6 error text was a stale generic literal, not the evaluated pair requirement",
+    "rootServerClosed": true,
+    "nativeApproval": false
+  },
+  "H": {
+    "beforeSHA256": "e58504fde4175861498958e86bc5fa0fae0ad8a0132b281658e8548931a6ba93",
+    "afterSHA256": "b853f1ef1268be0b94d74f378f1353c419bb5642bf619ab57e39779699405cd1",
+    "hunks": 1,
+    "onlyFunction": "setupU97b9DonorStartControls",
+    "correctedExactCase": "U821dContactExact",
+    "correctedCounts": {
+      "curve": 10,
+      "pair": 7,
+      "pens": 13
+    },
+    "originalBaselineCounts": {
+      "curve": 11,
+      "pair": 7,
+      "pens": 13
+    },
+    "otherCasesPreserved": true,
+    "exactForwardInverse": true
+  },
+  "profile": {
+    "path": "docs/hanja-source-mapping-u821d-vs0-original13-2026-10-30/actual-profile-contact-start.pending.json",
+    "beforeSHA256": "7f2e46b997348509a9958240ca9feb1bc249413a4b4fb4ec9a8f3d98463982e9",
+    "afterSHA256": "8353090351280be38d1b884410c1690fa350c62484982c043c53afd089db7755",
+    "onlyTwoHPins": true,
+    "rootExecutionFlagsUnchanged": [
+      true,
+      true,
+      false
+    ]
+  },
+  "validation": {
+    "actualSetupFunctionExecuted": true,
+    "actualFiniteSetupFunctionExecuted": true,
+    "oldFailureReproduced": true,
+    "newCompleteSetupPASS": true,
+    "buttons": 92,
+    "hasPen13Compact": true,
+    "hasInitial26": true,
+    "hasEnding39": true,
+    "hasContactControls": true,
+    "payloadCurves": 10,
+    "payloadPairs": 7,
+    "strictNegatives": 5,
+    "actualBrowserDOM": false,
+    "SSR": 0,
+    "server": 0,
+    "method": "Actual AST-extracted setup(), finite setup(), button() and two exact source controls executed with real payload/fixture/helper branded context; minimal DOM provides createElement/append only. Event callbacks are registered and not executed; this is not actual browser or render approval.",
+    "actualSetupSourceSHA256": "c1efdf6f74bf0154e1202780b61f2fa82e52d9a2af9eede3fb9a949a33a50879",
+    "actualFiniteSetupAfterSHA256": "ead60d0e08b98fe6c5cfc288023f9e2508b37ef5a3a0a336df60a3d6f967a778",
+    "ordinarySHA256": "0b12d07b92c18780c06e0659b7acd0ac5b50c642a0e8385b680fd37e897dc8a0",
+    "rendererSHA256": "fc6821a8b532302702be06077828b85827850906251523ae22eac678e5d17fce"
+  },
+  "scope": {
+    "sourcePGuideFieldsChanged": false,
+    "helperChanged": false,
+    "rendererChanged": false,
+    "serverStarted": false,
+    "SSRRepeated": false,
+    "sharedHWritten": false,
+    "actualProfileWritten": false,
+    "nativeRuntimeApproved": false
+  }
+}

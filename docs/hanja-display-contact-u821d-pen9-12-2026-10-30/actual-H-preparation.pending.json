@@ -1,0 +1,112 @@
+{
+  "schema": "hanja-exact-two-source-x-contact-H-preparation/v1",
+  "date": "2026-10-30",
+  "glyph": "舝",
+  "status": "pending-isolated-actual-native",
+  "harness": {
+    "path": "scripts/hanja-actual-component-review.mjs",
+    "beforeSHA256": "ae36cec7e097a3a5a85fb350310c15e2cb294087dda77b8b2ce83f8b656a97f2",
+    "afterSHA256": "dc1f4b25f4b37349c20d491868cd9540f2a7f0f0b643b28c673d31a3b5e244f3",
+    "patch": "docs/hanja-display-contact-u821d-pen9-12-2026-10-30/actual-H-integration.pending.patch",
+    "patchSHA256": "f723febe2169d494622958890a8253616dc5bd9465543b7c397fb61fc7f4db8a",
+    "hunks": 12,
+    "oldBlockPositions": [
+      1113,
+      581317,
+      969452,
+      1390978,
+      1396297,
+      2952383,
+      3020165,
+      3032664,
+      3060595,
+      3106891,
+      3195905,
+      3355800
+    ],
+    "ascendingNativeHunks": true,
+    "exactForwardInverse": true,
+    "actualSharedApplied": false
+  },
+  "profile": {
+    "path": "docs/hanja-source-mapping-u821d-vs0-original13-2026-10-30/actual-profile-contact-start.pending.json",
+    "SHA256": "96d8a48a6c0fe8ad899bfc8af66aeb60180ae246581be9fccd51c5f7dee194ac",
+    "profileFinalized": false,
+    "executionEnabled": false,
+    "sharedWindowPending": true,
+    "ordinarySHA256": "0b12d07b92c18780c06e0659b7acd0ac5b50c642a0e8385b680fd37e897dc8a0",
+    "rendererSHA256": "fc6821a8b532302702be06077828b85827850906251523ae22eac678e5d17fce",
+    "helperSHA256": "82d7f5c2a2afcd5b9a51b2f558f2bb9507731b362fa99cb633c770f88b6b1b9c",
+    "closureModules": 398
+  },
+  "validation": {
+    "actualGuardAndGeneratedPayload": {
+      "Hsyntax": true,
+      "browserSyntax": true,
+      "actualFixtureGuard": true,
+      "guardNegatives": 6,
+      "generatedPayloadFields": 8,
+      "payloadStrokesExact": true,
+      "foreignRouteRejected": 4,
+      "explicitTopEntry": true,
+      "SSR": 0,
+      "server": 0
+    },
+    "actualSourceCollectorBeforeSSR": {
+      "actualSourceCollector": 398,
+      "dependencies": 397,
+      "newHelper": true,
+      "sourceHBeforeSSRProbeSHA": "dc1f4b25f4b37349c20d491868cd9540f2a7f0f0b643b28c673d31a3b5e244f3",
+      "SSR": 0,
+      "server": 0
+    },
+    "newFlagBeforeRuntimeUse": true,
+    "exactSourcePGuideWeightGateUnchanged": true,
+    "genericCollectorExcludesOnlyTwoExactOwnedTargets": true,
+    "oldRequestedFrameFunctionBytePreserved": true,
+    "baselineHoldFileUnchanged": true
+  },
+  "nativeReview": {
+    "baseline": {
+      "path": "docs/hanja-source-mapping-u821d-vs0-original13-2026-10-30/native-actual-baseline-hold-review.json",
+      "SHA256": "8d7ff35c39c751662ec4ba81386e228cfb21e272ebd8291729f7cfbeb078b0cf",
+      "total146HOLD": true,
+      "failedStarts6NotReusableAsPASS": true,
+      "reuseEligible140": {
+        "unaffectedCompact99": true,
+        "unchangedRelease30": true,
+        "originalSourceResidual11": true
+      },
+      "reusedGenericResidualNotCustomPolicyProof": true
+    },
+    "requiredFresh": {
+      "oldFailure9And12Local3Each": true,
+      "contactCompact9Each": true,
+      "headPhaseBeforeExactAfterEach": true,
+      "sourceBoundaryBeforeExactAfterEach": true,
+      "sourceOwnerP0P1": true,
+      "main520WholePrefixAndSelectedZero": true,
+      "natural9And12StartEnd": true
+    },
+    "actualNativeApproved": false,
+    "runtimeApplied": false
+  },
+  "scope": {
+    "sourceOriginalVS0Whole": true,
+    "newAuthorDisplayClockOnly": true,
+    "sourceGuideGapPreserved": [
+      9,
+      12
+    ],
+    "publisherMicroclockEquivalent": false,
+    "newP": 0,
+    "newGuide": 0,
+    "newBridge": 0,
+    "serverByChild": 0,
+    "SSRByChild": 0,
+    "build": false,
+    "wholeProjectTSC": false
+  },
+  "checkCLI": "rtk proxy node --experimental-strip-types scripts/hanja-actual-component-review.mjs --profile docs/hanja-source-mapping-u821d-vs0-original13-2026-10-30/actual-profile-contact-start.pending.json --profile-sha 96d8a48a6c0fe8ad899bfc8af66aeb60180ae246581be9fccd51c5f7dee194ac --check-new",
+  "startCLI": "rtk proxy node --experimental-strip-types scripts/hanja-actual-component-review.mjs --profile docs/hanja-source-mapping-u821d-vs0-original13-2026-10-30/actual-profile-contact-start.pending.json --profile-sha 96d8a48a6c0fe8ad899bfc8af66aeb60180ae246581be9fccd51c5f7dee194ac --port PORT"
+}
