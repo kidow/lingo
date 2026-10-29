@@ -1,0 +1,279 @@
+{
+  "glyph": "麤",
+  "date": "2026-10-30",
+  "schema": "hanja-public-source-fold-UP-feasibility/v1",
+  "fixture": {
+    "path": "docs/hanja-authored-component-u9ea4-own-bi4-2026-10-30/fixtures-execution-draft.json",
+    "SHA256": "f1af68d82ade4ba49583dedb35961d287b350e2328a74a5d8b7d9c01d45700a9",
+    "geometrySHA256": "ba36772c9da2de0f910ce6e0ec8d2029f230bb3e547e1cd16be11ccaa2696a13",
+    "logical": 33,
+    "masks": 48,
+    "P": 96
+  },
+  "mathHelper": {
+    "path": "docs/hanja-authored-ownstroke-u6030-raw6-head-gap-2026-10-29/verify-contact-strip-growth.py",
+    "SHA256": "945d1d0f0297b056cd6e10049ee01a38271c1989e6676b528532656f411252ea",
+    "method": "AST pure function reuse with Fraction of actual saved normalized M/L/Z coordinates"
+  },
+  "foldTargets": [
+    {
+      "pen": 4,
+      "mask": 2,
+      "sourceP": 2,
+      "bodyVertices": 4,
+      "headVertices": 5,
+      "origin": "91/5",
+      "bounds": [
+        "81",
+        "147/10",
+        "179/2",
+        "29"
+      ],
+      "negativeExtent": "7/2",
+      "positiveExtent": "54/5",
+      "seed": [
+        "165/2",
+        "91/5"
+      ],
+      "sharedOriginInterval": [
+        [
+          "81",
+          "84"
+        ]
+      ],
+      "conditions": {
+        "bodyConvex": true,
+        "headConvex": true,
+        "sharedOriginIntervalPositive": true,
+        "seedStrictPrior": true,
+        "seedStrictHead": true,
+        "bodyAtOrigin": true,
+        "wholeBoundsCoverBothP": true
+      },
+      "proof": "두 convex 원P가 priorH 내부의 동일 origin 단면을 양의길이로 공유한다. origin을 포함하는 모든 양의높이 band와 각P의 교집합은 convex이며 공통단면을 유지하여 연결된다. clip은 원P만 노출하며 fullbounds에서 두P 전부 피복한다."
+    },
+    {
+      "pen": 15,
+      "mask": 2,
+      "sourceP": 2,
+      "bodyVertices": 4,
+      "headVertices": 5,
+      "origin": "243/4",
+      "bounds": [
+        "206/5",
+        "229/4",
+        "487/10",
+        "727/10"
+      ],
+      "negativeExtent": "7/2",
+      "positiveExtent": "239/20",
+      "seed": [
+        "849/20",
+        "243/4"
+      ],
+      "sharedOriginInterval": [
+        [
+          "206/5",
+          "437/10"
+        ]
+      ],
+      "conditions": {
+        "bodyConvex": true,
+        "headConvex": true,
+        "sharedOriginIntervalPositive": true,
+        "seedStrictPrior": true,
+        "seedStrictHead": true,
+        "bodyAtOrigin": true,
+        "wholeBoundsCoverBothP": true
+      },
+      "proof": "두 convex 원P가 priorH 내부의 동일 origin 단면을 양의길이로 공유한다. origin을 포함하는 모든 양의높이 band와 각P의 교집합은 convex이며 공통단면을 유지하여 연결된다. clip은 원P만 노출하며 fullbounds에서 두P 전부 피복한다."
+    },
+    {
+      "pen": 26,
+      "mask": 2,
+      "sourceP": 2,
+      "bodyVertices": 4,
+      "headVertices": 5,
+      "origin": "302/5",
+      "bounds": [
+        "343/4",
+        "569/10",
+        "375/4",
+        "727/10"
+      ],
+      "negativeExtent": "7/2",
+      "positiveExtent": "123/10",
+      "seed": [
+        "697/8",
+        "302/5"
+      ],
+      "sharedOriginInterval": [
+        [
+          "343/4",
+          "177/2"
+        ]
+      ],
+      "conditions": {
+        "bodyConvex": true,
+        "headConvex": true,
+        "sharedOriginIntervalPositive": true,
+        "seedStrictPrior": true,
+        "seedStrictHead": true,
+        "bodyAtOrigin": true,
+        "wholeBoundsCoverBothP": true
+      },
+      "proof": "두 convex 원P가 priorH 내부의 동일 origin 단면을 양의길이로 공유한다. origin을 포함하는 모든 양의높이 band와 각P의 교집합은 convex이며 공통단면을 유지하여 연결된다. clip은 원P만 노출하며 fullbounds에서 두P 전부 피복한다."
+    }
+  ],
+  "UPTargets": [
+    {
+      "pen": 11,
+      "mask": 3,
+      "sourceP": 3,
+      "bodyBounds": [
+        "67",
+        "198/5",
+        "91",
+        "218/5"
+      ],
+      "UPBounds": [
+        "87",
+        "351/10",
+        "90",
+        "198/5"
+      ],
+      "seedInPriorQAndBody": [
+        "16751/250",
+        "208/5"
+      ],
+      "sourceAreas": [
+        "88",
+        "24/5",
+        "27/4"
+      ],
+      "individualExactBodyPhase": "1856/1991",
+      "individualBodyPhaseNumber": 0.9321948769462581,
+      "conditions": {
+        "bodyConvex": true,
+        "capConvex": true,
+        "UPConvex": true,
+        "priorQStrictBodySeed": true,
+        "priorQBodyEdgePositive": true,
+        "bodyCapSharedEdgePositive": true,
+        "bodyUPSharedEdgePositive": true,
+        "bodyRectExcludesUPArea": true,
+        "bodyRectCoversBodyCap": true,
+        "UPRectCoversUP": true,
+        "UPBottomEqualsBodyTop": true,
+        "pairOverlapAreaZero": true
+      },
+      "proof": "body사각형과 convexcap은 전체 공통수직edge로 이어진 x단조 union이다. 왼쪽에서 증가하는 bodyrect prefix는 완료Q에 접촉하며 UP 내부를 노출하지 않는다. body완료 후 원UP convexP의 양의길이 아래edge에서 위로 증가하는 strip은 매순간 body에 접촉한다. 원coloredD는1회 paint하고 rect2개의 clip union만 사용한다."
+    },
+    {
+      "pen": 22,
+      "mask": 3,
+      "sourceP": 3,
+      "bodyBounds": [
+        "7099/200",
+        "1747905882352941/20000000000000",
+        "9427/200",
+        "9238352941176471/100000000000000"
+      ],
+      "UPBounds": [
+        "9039/200",
+        "817835294117647/10000000000000",
+        "933/20",
+        "1747905882352941/20000000000000"
+      ],
+      "seedInPriorQAndBody": [
+        "1774999411764705883/50000000000000000",
+        "2247235294117647/25000000000000"
+      ],
+      "sourceAreas": [
+        "266122352941177161/5000000000000000",
+        "290315294117647521/100000000000000000",
+        "32660470588235277/8000000000000000"
+      ],
+      "individualExactBodyPhase": "38575686274509902/41381568627451077",
+      "individualBodyPhaseNumber": 0.9321948769462584,
+      "conditions": {
+        "bodyConvex": true,
+        "capConvex": true,
+        "UPConvex": true,
+        "priorQStrictBodySeed": true,
+        "priorQBodyEdgePositive": true,
+        "bodyCapSharedEdgePositive": true,
+        "bodyUPSharedEdgePositive": true,
+        "bodyRectExcludesUPArea": true,
+        "bodyRectCoversBodyCap": true,
+        "UPRectCoversUP": true,
+        "UPBottomEqualsBodyTop": true,
+        "pairOverlapAreaZero": true
+      },
+      "proof": "body사각형과 convexcap은 전체 공통수직edge로 이어진 x단조 union이다. 왼쪽에서 증가하는 bodyrect prefix는 완료Q에 접촉하며 UP 내부를 노출하지 않는다. body완료 후 원UP convexP의 양의길이 아래edge에서 위로 증가하는 strip은 매순간 body에 접촉한다. 원coloredD는1회 paint하고 rect2개의 clip union만 사용한다."
+    },
+    {
+      "pen": 33,
+      "mask": 3,
+      "sourceP": 3,
+      "bodyBounds": [
+        "80",
+        "4365705882352941/50000000000000",
+        "92",
+        "2308735294117647/25000000000000"
+      ],
+      "UPBounds": [
+        "90",
+        "8164941176470589/100000000000000",
+        "183/2",
+        "4365705882352941/50000000000000"
+      ],
+      "seedInPriorQAndBody": [
+        "4000251764705882353/50000000000000000",
+        "1796635294117647/20000000000000"
+      ],
+      "sourceAreas": [
+        "2769411764705883/50000000000000",
+        "3021176470588233/1000000000000000",
+        "1699411764705879/400000000000000"
+      ],
+      "individualExactBodyPhase": "38939607843137262/41771960784313727",
+      "individualBodyPhaseNumber": 0.9321948769462582,
+      "conditions": {
+        "bodyConvex": true,
+        "capConvex": true,
+        "UPConvex": true,
+        "priorQStrictBodySeed": true,
+        "priorQBodyEdgePositive": true,
+        "bodyCapSharedEdgePositive": true,
+        "bodyUPSharedEdgePositive": true,
+        "bodyRectExcludesUPArea": true,
+        "bodyRectCoversBodyCap": true,
+        "UPRectCoversUP": true,
+        "UPBottomEqualsBodyTop": true,
+        "pairOverlapAreaZero": true
+      },
+      "proof": "body사각형과 convexcap은 전체 공통수직edge로 이어진 x단조 union이다. 왼쪽에서 증가하는 bodyrect prefix는 완료Q에 접촉하며 UP 내부를 노출하지 않는다. body완료 후 원UP convexP의 양의길이 아래edge에서 위로 증가하는 strip은 매순간 body에 접촉한다. 원coloredD는1회 paint하고 rect2개의 clip union만 사용한다."
+    }
+  ],
+  "authorClock": {
+    "UPBodyPhaseExact": "1856/1991",
+    "UPBodyPhase": 0.9321948769462581,
+    "basis": "상부 donor의 exact body+cap/wholeP area비를3개positive-affine completecomponent에공통으로사용하는 새authorclock. 하부 serialized binary64의 개별exactarea비는미세하게다르며동일하다고주장하지않음.",
+    "foldFormula": "y=origin-(origin-minY)*p; height=(maxY-minY)*p",
+    "UPFormula": "b=min(1,p/lambda);u=max(0,(p-lambda)/(1-lambda));body=(B0,B1,(B2-B0)*b,B3-B1);UP=(U0,U3-(U3-U1)*u,U2-U0,(U3-U1)*u)"
+  },
+  "scope": {
+    "sourcePChanged": false,
+    "guideChanged": false,
+    "flagsChanged": false,
+    "weightsChanged": false,
+    "maskBoundariesChanged": false,
+    "newBridge": false,
+    "privatePublisherCoordinatesUsed": false,
+    "originalPublisherMicroclockEquivalent": false,
+    "actualNativeApproved": false,
+    "runtimeApplied": false,
+    "sharedFilesChanged": false
+  }
+}
