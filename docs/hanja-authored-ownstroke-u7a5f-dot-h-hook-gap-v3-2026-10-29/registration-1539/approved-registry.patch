@@ -1,0 +1,16 @@
+*** Begin Patch
+*** Update File: /Users/kidow/Documents/dev/kidow/lingo/lib/hanja-strokes.ts
+@@
+ import { HANJA_DICTIONARY_GLYPHWIKI_BATCH1535_STROKES } from './hanja-stroke-dictionary-glyphwiki-batch1535.ts'
+ import { HANJA_DICTIONARY_GLYPHWIKI_BATCH1536_STROKES } from './hanja-stroke-dictionary-glyphwiki-batch1536.ts'
++import { HANJA_DICTIONARY_GLYPHWIKI_BATCH1539_STROKES } from './hanja-stroke-dictionary-glyphwiki-batch1539.ts'
+ import { HANJA_DICTIONARY_GLYPHWIKI_BATCH1537_STROKES } from './hanja-stroke-dictionary-glyphwiki-batch1537.ts'
+ import { HANJA_DICTIONARY_GLYPHWIKI_BATCH1499_STROKES } from './hanja-stroke-dictionary-glyphwiki-batch1499.ts'
+@@
+   ...HANJA_DICTIONARY_GLYPHWIKI_BATCH1535_STROKES,
+   ...HANJA_DICTIONARY_GLYPHWIKI_BATCH1536_STROKES,
+-  ...HANJA_DICTIONARY_GLYPHWIKI_BATCH1537_STROKES,
++  ...HANJA_DICTIONARY_GLYPHWIKI_BATCH1539_STROKES, ...HANJA_DICTIONARY_GLYPHWIKI_BATCH1537_STROKES,
+   ...HANJA_DICTIONARY_GLYPHWIKI_BATCH1499_STROKES,
+   ...HANJA_DICTIONARY_GLYPHWIKI_BATCH1498_STROKES,
+*** End Patch

@@ -1,0 +1,97 @@
+{
+  "schema": "hanja-actual-H-exact-case-preparation/v1",
+  "glyph": "穟",
+  "date": "2026-10-29",
+  "base": {
+    "file": "scripts/hanja-actual-component-review.mjs",
+    "sha256": "8dea9ac45737aa49f486c7968a4cc978add9226d1c188e1b70e1821c522751aa"
+  },
+  "afterSHA256": "c12ff4d2e6dd2c18023f956f35526dbf21bdd085b673e92ce1d9d843f5612e63",
+  "patch": {
+    "file": "docs/hanja-authored-ownstroke-u7a5f-dot-h-hook-gap-v3-2026-10-29/actual-H-integration.patch",
+    "sha256": "7a0e04207e921e6450be34ed881aeee6c9d369ff63c89e056cceafba0f1b537c",
+    "hunks": 16,
+    "nativeApplyOrdered": true,
+    "forwardInverseExact": true
+  },
+  "profile": {
+    "file": "docs/hanja-authored-ownstroke-u7a5f-dot-h-hook-gap-v3-2026-10-29/actual-profile-start.json",
+    "sha256": "2ea7d02393fd5a95b37f01c5a60778f8bf8510fd596cfa61e648f63b2573428c",
+    "profileFinalized": false,
+    "executionEnabled": false,
+    "sharedWindowPending": true
+  },
+  "fixture": {
+    "file": "docs/hanja-authored-ownstroke-u7a5f-dot-h-hook-gap-v3-2026-10-29/fixtures-execution-width18-22.json",
+    "sha256": "84b39b58f59a3463cb14f3b35a332a9ddafcc75566b82eb7509868da6e48c08a",
+    "key": "strokes",
+    "geometrySHA256": "ecb6b209d2d68a54db9ac960c48f166b965debbfc8970be21d95f578c9566ebc"
+  },
+  "coverage": {
+    "file": "docs/hanja-authored-ownstroke-u7a5f-dot-h-hook-gap-v3-2026-10-29/coverage-width18-22-preflight.json",
+    "sha256": "9c154b47c0dbd6363c148796986236322fab1ffb60b42d5656535e3fdbe91657",
+    "pass": 16,
+    "unproved": 0,
+    "outlier": 0,
+    "reused15": true
+  },
+  "checks": {
+    "nodeSyntaxExit": 0,
+    "guardPositive": true,
+    "guardNegatives": 4,
+    "actualRouteStatementExecuted": true,
+    "payloadFields": [
+      "root",
+      "sharedVersion",
+      "temporalPolicy",
+      "curveTargets",
+      "pairProgress",
+      "expectedMaskCounts"
+    ],
+    "baselineClosure390": true,
+    "missingLeafRejected": true,
+    "actualSetupExecuted": true,
+    "buttons": 42,
+    "gateTriples": 16,
+    "compoundPens": [
+      7,
+      10,
+      17,
+      18
+    ],
+    "aggregateFrames": 102,
+    "initial": 36,
+    "boundary": 12,
+    "ending": 54,
+    "residualControl": true,
+    "sharedHUnchanged": true,
+    "isolatedSSR": 0,
+    "build": false,
+    "fullTypecheck": false
+  },
+  "widthGuard": {
+    "10:1": [
+      18,
+      9
+    ],
+    "10:2": [
+      22,
+      11
+    ],
+    "other14Curves": [
+      14,
+      7
+    ],
+    "Su4NumericExceptionUnchanged": true
+  },
+  "sourceApproval": {
+    "staticWholeAndRoles": true,
+    "sourceMicroclockEquivalent": false,
+    "nativeActual": false,
+    "runtime": false,
+    "registration": false
+  },
+  "rootNext": "After 蘷 review server stops, ROOT alone applies patch, confirms H afterSHA and current registry/variant metadata, finalizes the three execution flags, then runs isolated390 startup and required native checks.",
+  "sharedFilesWritten": 0,
+  "serversStarted": 0
+}

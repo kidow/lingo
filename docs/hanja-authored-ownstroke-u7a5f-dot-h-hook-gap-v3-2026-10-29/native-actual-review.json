@@ -1,0 +1,145 @@
+{
+  "schema": "hanja-isolated-actual-component-native-review/v1",
+  "date": "2026-10-29",
+  "glyph": "穟",
+  "status": "pass-bounded-actual-component-review",
+  "reviewer": "ROOT direct Codex browser panel",
+  "fixtureSHA256": "84b39b58f59a3463cb14f3b35a332a9ddafcc75566b82eb7509868da6e48c08a",
+  "geometrySHA256": "ecb6b209d2d68a54db9ac960c48f166b965debbfc8970be21d95f578c9566ebc",
+  "profileSHA256": "fd7fc874e7b62a3058a522a0ddea7e4926bc298fd66d54bdc182d3ecf4c357ac",
+  "rendererSHA256": "55db76b01618110165dd5f22d512428550512feb180757814b734e80ffa304d1",
+  "actualHelperSHA256": "07bd4ee214cc05b912e6b81c0356daa78ef47f55bd0d055aa3f7629461c8ea9a",
+  "inputs": {
+    "fixture": "docs/hanja-authored-ownstroke-u7a5f-dot-h-hook-gap-v3-2026-10-29/fixtures-execution-width18-22.json",
+    "profile": "docs/hanja-authored-ownstroke-u7a5f-dot-h-hook-gap-v3-2026-10-29/actual-profile-start.json",
+    "sourceClock": {
+      "path": "docs/hanja-official-media-compare-u7a5f-2026-10-29/native-clock-review.json",
+      "SHA256": "abcff2c570ed3954b5664f317697f7d751f1d0b7dd98d45c6e9552cf9549cda8"
+    },
+    "boundedMapping": {
+      "path": "docs/hanja-authored-ownstroke-u7a5f-dot-h-contact-2026-10-29/native-mapping-v2-review.json",
+      "SHA256": "562cb1f7a44b943b15f391117f3e95592b797b2c0d8cbacac6e4ab179bc44939"
+    },
+    "freshCorrectedWhole": {
+      "path": "docs/hanja-authored-ownstroke-u7a5f-dot-h-hook-gap-v3-2026-10-29/native-static-review.json",
+      "SHA256": "8efc46a77880b6b187e4423c0e205b044845d816df12aae213f00c871b6054cf"
+    },
+    "coverage": {
+      "path": "docs/hanja-authored-ownstroke-u7a5f-dot-h-hook-gap-v3-2026-10-29/coverage-width18-22-preflight.json",
+      "SHA256": "9c154b47c0dbd6363c148796986236322fab1ffb60b42d5656535e3fdbe91657"
+    }
+  },
+  "checks": {
+    "newSSRChecks": 1,
+    "CJS": 390,
+    "ESM": 390,
+    "ordinaryMatrixChecks": 0,
+    "all18PensCompact9": 162,
+    "gateReleaseTriples": 16,
+    "gateFrames": 48,
+    "visuallyBlankFullRoundResiduals": 16,
+    "aggregateSamples": 102,
+    "aggregateGuardRecords": 103,
+    "initialFrames": 36,
+    "boundaryFrames": 12,
+    "endingFrames": 54,
+    "allAggregateFramesObservedNormal": true,
+    "wholeStates520px": 21,
+    "prefixStates": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ],
+    "idleState": true,
+    "doneState": true,
+    "separateSelectedZeroStateObserved": false,
+    "separateSelectedZeroStateRequiredOrSubstituted": false,
+    "naturalStartAndProgress1EndPens": [
+      10,
+      12,
+      18,
+      7
+    ],
+    "naturalModeAtEnd": "natural-ended",
+    "bad": [],
+    "errors": []
+  },
+  "sourceScope": {
+    "logical": 18,
+    "masks": 22,
+    "P": 42,
+    "Q": 15,
+    "C": 1,
+    "curves": 16,
+    "cardinals": 6,
+    "raw8WholeAffine": [
+      "655/498",
+      "0",
+      "0",
+      "1",
+      "-28103/996",
+      "0"
+    ],
+    "raw19WholeAffine": [
+      "1",
+      "0",
+      "0",
+      "1",
+      "-129/95",
+      "0"
+    ],
+    "widthPaddingByMask": {
+      "10:1": [
+        18,
+        9
+      ],
+      "10:2": [
+        22,
+        11
+      ],
+      "other14Curves": [
+        14,
+        7
+      ]
+    },
+    "originalEngineCapture": false,
+    "actualLocallyAuthoredEngineCapture": false,
+    "mixedParts": false,
+    "sourceMicroclockIdentity": false,
+    "allOther19OriginalRawUnchanged": true
+  },
+  "nativeApproval": true,
+  "registrationAuthorized": true,
+  "actualAppUI": false,
+  "runtimeApplied": false,
+  "limits": [
+    "Bounded finite isolated actual component review only; no every-frame or all-layout proof.",
+    "Only21whole states were directly observed: prefix0..18 plusidle/done. A separate selected-zero state was not run and is not claimed.",
+    "Original18 clock54 and static roles are independent evidence, not publisher microclock identity.",
+    "Original whole HOLD and failed14/7 and16/8 coverage records remain historical.",
+    "Two explicit whole source affines are authored geometry; no new source engine run, new bridge, private source media redistribution or fresh applicationUI claim."
+  ],
+  "cleanup": {
+    "serverSession": 74095,
+    "tab": "209",
+    "serverStopped": true,
+    "tabClosed": true,
+    "childServerStarts": 0
+  }
+}

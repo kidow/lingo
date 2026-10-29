@@ -1,0 +1,35 @@
+{
+  "schema": "hanja-exact-H-observer-preserving-rebase/v1",
+  "glyph": "穟",
+  "date": "2026-10-29",
+  "beforeH": "accb775e4a12710180710f75fc2c5e9eb666115f3a546505c3d36f6320f11519",
+  "afterH": "07bd4ee214cc05b912e6b81c0356daa78ef47f55bd0d055aa3f7629461c8ea9a",
+  "patch": {
+    "file": "docs/hanja-authored-ownstroke-u7a5f-dot-h-hook-gap-v3-2026-10-29/actual-H-integration.observer-rebased.patch",
+    "sha256": "7a0e04207e921e6450be34ed881aeee6c9d369ff63c89e056cceafba0f1b537c",
+    "hunks": 16,
+    "forwardInverseExact": true
+  },
+  "profile": {
+    "file": "docs/hanja-authored-ownstroke-u7a5f-dot-h-hook-gap-v3-2026-10-29/actual-profile-start.json",
+    "beforeSHA256": "2ea7d02393fd5a95b37f01c5a60778f8bf8510fd596cfa61e648f63b2573428c",
+    "afterSHA256": "b27ff722db385ba7e3ee98735f91db912dd4d44cb1c89bd2621a803272334fa8",
+    "changedOnly": [
+      "adapterSHA256",
+      "inputSHA256.scripts/hanja-actual-component-review.mjs"
+    ],
+    "executionFlagsStillPending": true
+  },
+  "reusedChecks": {
+    "exactSourceGuard": true,
+    "actualRouteFullStatement": true,
+    "resourceClosure390": true,
+    "gate16Compound4Aggregate102": true,
+    "reason": "Guard/route/closure/setup byte-identical to earlier successful checks; observer transform helper is outside those changes."
+  },
+  "observerHelperBytePreserved": true,
+  "fixtureAndWidthsChanged": false,
+  "sharedHWritten": false,
+  "serversStarted": 0,
+  "build": false
+}

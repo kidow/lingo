@@ -1,0 +1,58 @@
+{
+  "schema": "hanja-approved-registration-patch-preparation/v1",
+  "date": "2026-10-29",
+  "batch": 1539,
+  "glyph": "穟",
+  "status": "ROOT-approved-native-production-patch-ready-no-live-registration",
+  "finalNative": {
+    "path": "docs/hanja-authored-ownstroke-u7a5f-dot-h-hook-gap-v3-2026-10-29/native-actual-review.json",
+    "SHA256": "b4105e3b229b988f36779d068e0519c1a4a122f39f1d54b4ad164a8e80d0c7b3"
+  },
+  "ordinaryDictionary": {
+    "catalog": 18,
+    "domestic": 18,
+    "playback": 18,
+    "variantRegistryUsed": false,
+    "wrongCount17and19Rejected": true
+  },
+  "productionFiles": {
+    "lib/hanja-stroke-dictionary-glyphwiki-batch1539.ts": "0effee8a5c9e9256810335a475a1594ea38fb20ebf76c1aa70675256fa71543a",
+    "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch1539.json": "cf60c535a5e67deea22cbdaf8522e42d820d7f8d5dfb4ceb27c15d2f8cf7b4c7",
+    "lib/hanja-stroke-dictionary-glyphwiki-batch1539.test.ts": "f275db970ee74233cefdf2244b148729a9d61d30c8e9c074da81681bd25e0164",
+    "public/hanja-strokes/sources/u7a5f/NOTICE.md": "efcb5a0b9562d592a0ddaddc3d959f0e3402007922495eded130de1e518c6d62"
+  },
+  "bundlePatch": {
+    "path": "docs/hanja-authored-ownstroke-u7a5f-dot-h-hook-gap-v3-2026-10-29/registration-1539/approved-bundle.patch",
+    "SHA256": "279fdab8b3a486f6b30e5ebe663e7f3234a027e0d732505d287de966a7b0117d"
+  },
+  "registryPatch": {
+    "path": "docs/hanja-authored-ownstroke-u7a5f-dot-h-hook-gap-v3-2026-10-29/registration-1539/approved-registry.patch",
+    "SHA256": "ff42794999db4679699ece29b3876d6ab0f7d021e96cc660e6a852edd1dda446",
+    "beforeSHA256": "28eaeb1f1aa20941f7ddfd3257cfcc3a754b13c1ac9f1a03d47b066cf1c7962e",
+    "afterSHA256": "c0ca8165b1f54b876a2a395624c5e4e3451d9ee5191014da49fe688fd527a8a1",
+    "forwardInverseExact": true
+  },
+  "checks": {
+    "focusedThreeTestsRAMRegistryOverlay": "3PASS",
+    "semanticModule": "0diagnostics",
+    "initialSemanticTestIssue": "TS2339 live HanjaStrokeData union: added explicit outlines in live narrowing.",
+    "affectedTestSemanticRecheck": "0diagnostics",
+    "affectedFirstRuntimeTestRecheck": "1PASS",
+    "otherTwoUnchangedSuccessesReused": true,
+    "strictIndependentJSONAndKeyOrder": true,
+    "frozenSourceInputAndData": true,
+    "hostileGettersRejectedWithoutReads": true,
+    "actualProductionWrites": 0,
+    "sharedRegistryWrites": 0,
+    "serversStarted": 0,
+    "NextBuild": false,
+    "wholeProjectTypecheck": false
+  },
+  "parentNext": [
+    "ROOT applies production four-file patch and ordinary registry patch only after current review server constraints allow.",
+    "Confirm exact produced hashes and actual live resolver18; keep historical native H/profile hashes intact.",
+    "Commit only this hanja unit."
+  ],
+  "liveRuntimeApplied": false,
+  "registrationFlagsInsideUnappliedPatchOnly": true
+}
