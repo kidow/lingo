@@ -1,0 +1,113 @@
+{
+  "schema": "hanja-registration-pending-preparation/v1",
+  "date": "2026-10-30",
+  "batch": 1553,
+  "glyph": "藯",
+  "status": "pending-final-native-no-activation",
+  "collisions": {
+    "productionFilesExist": false,
+    "registryEntryExists": false
+  },
+  "source": {
+    "fixture": {
+      "path": "docs/hanja-authored-component-u85ef-u85da-grass-2026-10-30/fixtures-execution-draft-width20-18.json",
+      "SHA256": "39859cc026ba7367ae2f70edc404f8f164745ea6d21a7c26513491de57d3e5e2"
+    },
+    "geometrySHA256": "0fb60444fa5dd7e1375f8425d92d1c472c5fee89edd4166ffbf4a63beb035807",
+    "counts": {
+      "logical": 19,
+      "masks": 25,
+      "P": 51,
+      "curves": 10,
+      "cardinal": 15
+    },
+    "mixedParts": true,
+    "originalWhole": false,
+    "sourcePGuideFlagsChanged": false,
+    "localDisplayPolicies": [
+      "exact fold5 contact growth",
+      "terminal17m3 original body-H then UP"
+    ],
+    "publisherMicroclockEquivalent": false
+  },
+  "registry": {
+    "path": "lib/hanja-strokes.ts",
+    "beforeSHA256": "eff88107ad7b2261fed536e47fc6b7f16164912a18276074157289a803b14c01",
+    "pendingAfterSHA256": "762ef8b3b6f3fa551985fc3399634df75d48b39d4cdd03174edda8af1d3d980e",
+    "sites": 2,
+    "actualEdited": false
+  },
+  "proposedProductionFiles": [
+    "lib/hanja-stroke-dictionary-glyphwiki-batch1553.ts",
+    "lib/hanja-stroke-dictionary-glyphwiki-batch1553.test.ts",
+    "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch1553.json",
+    "public/hanja-strokes/sources/u85ef/NOTICE.md"
+  ],
+  "files": [
+    {
+      "path": "docs/hanja-authored-component-u85ef-u85da-grass-2026-10-30/registration-1553/capsule.pending.json",
+      "SHA256": "e32c748931668336df03160d678d3bddde55a28714c8d23b325553ae20e31e94",
+      "bytes": 26444
+    },
+    {
+      "path": "docs/hanja-authored-component-u85ef-u85da-grass-2026-10-30/registration-1553/bundle.pending.json",
+      "SHA256": "dfa63db34acde4ac4713ced263150e6bfdb5eef6847fdd63326d5228c530751f",
+      "bytes": 18808
+    },
+    {
+      "path": "docs/hanja-authored-component-u85ef-u85da-grass-2026-10-30/registration-1553/module.pending.ts",
+      "SHA256": "fd8b4c036fbd19e79d805f21b7e57df0b4c1b48e0213a7905f5d6e679e4b859d",
+      "bytes": 31890
+    },
+    {
+      "path": "docs/hanja-authored-component-u85ef-u85da-grass-2026-10-30/registration-1553/test.pending.ts",
+      "SHA256": "bf523ed6eefd16f5cb0f0afdea92e2ce5cbe867b9777e3d1a2735e57fdb8a316",
+      "bytes": 3962
+    },
+    {
+      "path": "docs/hanja-authored-component-u85ef-u85da-grass-2026-10-30/registration-1553/NOTICE.pending.md",
+      "SHA256": "597ee544d3e41f9f68a1ca14963ab0a3e5593fbd2823157f9682080f7fc1f376",
+      "bytes": 1411
+    },
+    {
+      "path": "docs/hanja-authored-component-u85ef-u85da-grass-2026-10-30/registration-1553/production.pending.patch",
+      "SHA256": "e217229858210010c1779483ec452eb7c0634e0a75b53b4c8e0361c80e17de45",
+      "bytes": 57125
+    },
+    {
+      "path": "docs/hanja-authored-component-u85ef-u85da-grass-2026-10-30/registration-1553/registry.pending.patch",
+      "SHA256": "f3d6d4b80112f128de4e427df702c22e280155da537fee9dd9ddf02c98fac9b3",
+      "bytes": 1229
+    }
+  ],
+  "validation": {
+    "virtualFocusedTests": {
+      "passed": 3,
+      "failed": 0,
+      "scope": "pending capsule/source bindings, exact original guide paths/counts/widths, strict loader shape/getter/arity/freeze; not live resolver activation"
+    },
+    "selectedSemantic": {
+      "roots": 2,
+      "diagnostics": 0,
+      "virtualJSONDependency": true
+    },
+    "registryPatch": {
+      "forwardExact": true,
+      "inverseExact": true
+    },
+    "SSRRun": false,
+    "buildRun": false,
+    "fullTscRun": false,
+    "serverRun": false
+  },
+  "requiredFinalization": [
+    "ROOT final actual-native receipt with exact corrected profile/H/R/helper/geometry binding",
+    "Corrected actual profile immutable SHA at final review",
+    "Actual resource collector count and bounded finite/natural/endpoints approved by ROOT",
+    "After ROOT registry apply: live19 resolver, wrong count rejection and uniqueness1"
+  ],
+  "warning": "Do not apply production.pending.patch or registry.pending.patch. The module and its capsule are intentionally false; final-native/profile pins, reviewed native scope, activation resolver tests and ROOT authorization must be finalized first.",
+  "registrationAuthorized": false,
+  "runtimeApplied": false,
+  "actualTemporalApproved": false
+}

@@ -1,0 +1,7 @@
+# 藯 explicit mixed original components — pending actual renderer approval
+
+GlyphWiki Project and contributors. LicenseRef-GlyphWiki: https://glyphwiki.org/wiki/GlyphWiki:データ・記事のライセンス@18
+
+Fixed snapshot a7dd7f3d911936770fa742e8c37d16bee7e2173c, archive SHA256 7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62. Donor grass4 is the complete captured u85da-ue0103 component (a9ef4fe7700ad3f2aeb00cc3703ce24b21e91e507a25022bfaecd7fafee0266e); retained recipient body16 is the complete captured u85ef component proof (c06d36ad1776672a03fc2a6c1c8c2bf9f565d15ce4dbdb0a1086e3cacd87ee90). Exact source records, aliases and provenance remain pinned by capsule.pending.json. This is an explicit locally assembled mixed whole, not a newly captured original whole.
+
+All filled P, original guides and flags are retained. Prepared width20/pad10 at10m2 and width18/pad9 at14m2 are author display choices; other Q masks use14/7. Separate exact fold5 and body-H-then-UP17 display phases do not represent the publisher microclock; no UP guide, filled bridge, trimming or redrawn controls are introduced. Original publisher font/shape identity, full automatic glyph and product UI are not claimed. Generic baseline HOLD is preserved. Final ROOT actual-native evidence, live resolver validation and ROOT activation are required; registration/runtime remain false in this pending document.
