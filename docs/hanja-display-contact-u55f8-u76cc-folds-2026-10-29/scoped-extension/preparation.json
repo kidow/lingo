@@ -1,0 +1,154 @@
+{
+  "schema": "hanja-scoped-two-fold-contact-preparation/v1",
+  "date": "2026-10-29",
+  "status": "pending-root-application-after-confirmed-two-baseline-holds",
+  "supersedes": {
+    "folder": "docs/hanja-display-contact-u55f8-u76cc-folds-2026-10-29/pending-extension/",
+    "proposedHelperSHA256": "89c918429e93c533d013d3c5e27cde9c90f76522cd5e920c233167e2900529c8",
+    "status": "DO-NOT-APPLY: would alter immutable live helper46 and existing fingerprint098. No old production pin relaxation allowed."
+  },
+  "proof": {
+    "path": "docs/hanja-display-contact-u55f8-u76cc-folds-2026-10-29/contact-proof.json",
+    "SHA256": "efad21c73928a53f522b8a31e74cecf5485379011675da0970f081ff8c9443ff"
+  },
+  "immutableOldContract": {
+    "helper": {
+      "path": "lib/hanja-stroke-fold-contact-u85da-u7f5d.ts",
+      "SHA256": "46c20a920336955f26c7b81a77594d5c594dc688180c45d4fc8617d7d43fe1fc"
+    },
+    "test": {
+      "path": "lib/hanja-stroke-fold-contact-u85da-u7f5d.test.ts",
+      "SHA256": "b02bd77ba4fe8c71d1b4a33df0274b5b3257600bca6a444497217d3b6738292a"
+    },
+    "fingerprint": "098695742f228e006811e4b76622b0482e495fdc6b8073c0732167b673f5a644",
+    "sourcesUnchanged": true,
+    "production1548and1549Unchanged": true,
+    "rendererOldFoldComponentExact": true,
+    "RandHHistoricalPinExceptionOnly": true
+  },
+  "newHelper": {
+    "path": "lib/hanja-stroke-fold-contact-u55f8-u76cc.ts",
+    "SHA256": "a9c8033d2ce41fe513a78cad1f842ce415a5ac2ab815a4cd16d6dcbdfe46f50f",
+    "fingerprint": "d8531a0626babc6ea91bd07bde2cca5e7ba1c6306d4ba630566ac6bf06b337dd",
+    "targets": [
+      {
+        "glyph": "嗸",
+        "pen": 13,
+        "mask": 2,
+        "fixture": {
+          "glyph": "嗸",
+          "fixture": "docs/hanja-authored-component-u55f8-ja-ao-bbox-gap1-v2-2026-10-29/fixtures-execution-draft.json",
+          "SHA256": "314725854294450f222facc1bfcd3dfd62dc8f037297992d2ca3441c37ade30c",
+          "geometrySHA256": "250c2cfd344809677863b6a31d4a1253b9b61e26e4fcfaf24388526d8131851a",
+          "pens": [
+            13
+          ],
+          "logical": 14,
+          "masks": 15,
+          "P": 16
+        }
+      },
+      {
+        "glyph": "盌",
+        "pen": 7,
+        "mask": 2,
+        "fixture": {
+          "glyph": "盌",
+          "fixture": "docs/hanja-source-execution-u76cc-original-2026-10-29/fixtures-execution-draft-width22.json",
+          "SHA256": "60f2b219228cfbd9a04363daf46541ababd2c0da6af8dc1d0072ae9e0600084d",
+          "geometrySHA256": "92d33e5d5498253de98ed0104a975bd713b2287498734a8fa293c587078c7dd5",
+          "pens": [
+            7
+          ],
+          "logical": 10,
+          "masks": 16,
+          "P": 28
+        }
+      }
+    ],
+    "factory": "makeReviewedAoWanFoldContactContext",
+    "input": "REVIEWED_AO_WAN_FOLD_CONTACT_INPUT",
+    "policy": "reviewedAoWanFoldContactPolicy",
+    "sample": "sampleReviewedAoWanFoldContactFrame",
+    "prior": "verifyReviewedAoWanFoldContactPrior",
+    "DOMContext": "u55f8-u76cc-exact-fold-contact",
+    "DOMPolicyKind": "source-P-y-contact-band-u55f8-u76cc",
+    "samePrivateWeakMapAndStrictPriorContract": true,
+    "fullSourceBinding": true
+  },
+  "newTest": {
+    "path": "lib/hanja-stroke-fold-contact-u55f8-u76cc.test.ts",
+    "SHA256": "518f0176778162ae18f6bbf98de72f6cc2f4ec79b07202228792f5b9fd06480f"
+  },
+  "patches": {
+    "production": {
+      "path": "docs/hanja-display-contact-u55f8-u76cc-folds-2026-10-29/scoped-extension/production.pending.patch",
+      "SHA256": "be47275b8bf830dd5af307592887f5eba58621914a1026b7783273436f27f9a5"
+    },
+    "renderer": {
+      "path": "docs/hanja-display-contact-u55f8-u76cc-folds-2026-10-29/scoped-extension/renderer.pending.patch",
+      "SHA256": "b742868076bb945de2e1dd738d10fc14357f6b4eb38617e8ceb07925792db1b8",
+      "beforeSHA256": "931416a9e1fd8bf04e6ca0fbc5ce3a28f15cc2f6c1f0925fb21dd13e5a9dbe92",
+      "afterSHA256": "632b3d66a3cd8425d222eb7fedd3a7df7d404410f887011a9897e861f590a77e",
+      "forwardInverseExact": true
+    }
+  },
+  "Rdispatch": {
+    "newContextFactory": true,
+    "oldFactoryAndImportUnchanged": true,
+    "oldPriorityFirst": true,
+    "newTargetsOnlyOnExactWholeFixture": true,
+    "oldComponentBytesUnchanged": true,
+    "newScopedComponentStrictDOMEquivalent": true,
+    "sharedDOMFieldNamesPreserved": true,
+    "sourceFilledPUnchanged": true
+  },
+  "resourceContract": {
+    "newHelperModules": 1,
+    "previousExpected": 392,
+    "newExpected": 393,
+    "newImport": "@/lib/hanja-stroke-fold-contact-u55f8-u76cc",
+    "sourceAliasRewrite": {
+      "from": "from './hanja-stroke-outline.ts'",
+      "to": "from '@/lib/hanja-stroke-outline'",
+      "occurrences": 1
+    },
+    "HProfileManagedBySeparateAgent": true
+  },
+  "checks": {
+    "newScopedTests": {
+      "pass": 5,
+      "fail": 0
+    },
+    "existingProductionTests1548and1549": {
+      "pass": 6,
+      "fail": 0,
+      "sharedHelperLivePinStill46": true
+    },
+    "selectedNew2FileSemantic": {
+      "diagnostics": 0
+    },
+    "rendererTSXParse": {
+      "diagnostics": 0
+    },
+    "rendererSemanticAfterRootActualApply": true,
+    "geometryProofReused": true,
+    "sharedFilesUnchanged": true,
+    "build": false,
+    "wholeTypecheck": false
+  },
+  "approval": {
+    "baselineInitialFailureConfirmedByRootBothTargets": true,
+    "newActualRendererTemporalApproved": false,
+    "runtimeApplied": false,
+    "registration": false
+  },
+  "scope": {
+    "newFilledP": 0,
+    "newGuide": 0,
+    "newEngine": 0,
+    "newServer": 0,
+    "sourceGuideFlagsWeightsUnchanged": true,
+    "old4ContractUnchanged": true
+  }
+}

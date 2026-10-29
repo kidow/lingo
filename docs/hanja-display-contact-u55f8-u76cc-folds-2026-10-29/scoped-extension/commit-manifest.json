@@ -1,0 +1,58 @@
+{
+  "schema": "hanja-owned-commit-manifest/v1",
+  "scope": "Exact scoped 嗸13m2/盌7m2 public contact proof, helper, tests and R dispatch only",
+  "files": [
+    {
+      "path": "lib/hanja-stroke-fold-contact-u55f8-u76cc.ts",
+      "SHA256": "a9c8033d2ce41fe513a78cad1f842ce415a5ac2ab815a4cd16d6dcbdfe46f50f"
+    },
+    {
+      "path": "lib/hanja-stroke-fold-contact-u55f8-u76cc.test.ts",
+      "SHA256": "518f0176778162ae18f6bbf98de72f6cc2f4ec79b07202228792f5b9fd06480f"
+    },
+    {
+      "path": "components/hanja/stroke-outlines.tsx",
+      "SHA256": "632b3d66a3cd8425d222eb7fedd3a7df7d404410f887011a9897e861f590a77e"
+    },
+    {
+      "path": "docs/hanja-display-contact-u55f8-u76cc-folds-2026-10-29/verify-contact.py",
+      "SHA256": "80fee1505ae0be4ca3e98a199b03936870840eea9204a194e3564e109073879a"
+    },
+    {
+      "path": "docs/hanja-display-contact-u55f8-u76cc-folds-2026-10-29/contact-proof.json",
+      "SHA256": "efad21c73928a53f522b8a31e74cecf5485379011675da0970f081ff8c9443ff"
+    },
+    {
+      "path": "docs/hanja-display-contact-u55f8-u76cc-folds-2026-10-29/scoped-extension/production.pending.patch",
+      "SHA256": "be47275b8bf830dd5af307592887f5eba58621914a1026b7783273436f27f9a5"
+    },
+    {
+      "path": "docs/hanja-display-contact-u55f8-u76cc-folds-2026-10-29/scoped-extension/renderer.pending.patch",
+      "SHA256": "b742868076bb945de2e1dd738d10fc14357f6b4eb38617e8ceb07925792db1b8"
+    },
+    {
+      "path": "docs/hanja-display-contact-u55f8-u76cc-folds-2026-10-29/scoped-extension/preparation.json",
+      "SHA256": "6fcda1996b7fd27f67cfaf8362f8c51851bd99dbf6d22beeee9e307dd96ec4ae"
+    },
+    {
+      "path": "docs/hanja-display-contact-u55f8-u76cc-folds-2026-10-29/scoped-extension/root-application.json",
+      "SHA256": "0b230c53cfb537a4285ff1f3fa0cb138dda761a50798dbde6d27cf9fcaa64fde"
+    }
+  ],
+  "manifestPath": "docs/hanja-display-contact-u55f8-u76cc-folds-2026-10-29/scoped-extension/commit-manifest.json",
+  "excluded": [
+    {
+      "path": "docs/hanja-display-contact-u55f8-u76cc-folds-2026-10-29/pending-extension/",
+      "reason": "Superseded incompatible oldhelper-extension experiment; preserve locally, do not apply or include."
+    },
+    {
+      "path": "scripts/hanja-actual-component-review.mjs",
+      "reason": "Separate agent H/profile repair unit."
+    },
+    {
+      "path": "candidate actual profiles",
+      "reason": "Separate agent H/profile repair unit."
+    }
+  ],
+  "commitMessage": "fix(hanja): scope Ao and Wan fold-contact policies"
+}

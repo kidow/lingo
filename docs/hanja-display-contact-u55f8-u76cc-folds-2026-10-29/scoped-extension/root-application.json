@@ -1,0 +1,59 @@
+{
+  "schema": "hanja-scoped-fold-contact-root-application/v1",
+  "date": "2026-10-29",
+  "status": "applied-code-unit-awaiting-candidate-native-review",
+  "inputs": {
+    "renderer": {
+      "path": "components/hanja/stroke-outlines.tsx",
+      "SHA256": "632b3d66a3cd8425d222eb7fedd3a7df7d404410f887011a9897e861f590a77e"
+    },
+    "newHelper": {
+      "path": "lib/hanja-stroke-fold-contact-u55f8-u76cc.ts",
+      "SHA256": "a9c8033d2ce41fe513a78cad1f842ce415a5ac2ab815a4cd16d6dcbdfe46f50f"
+    },
+    "newTest": {
+      "path": "lib/hanja-stroke-fold-contact-u55f8-u76cc.test.ts",
+      "SHA256": "518f0176778162ae18f6bbf98de72f6cc2f4ec79b07202228792f5b9fd06480f"
+    },
+    "oldHelper": {
+      "path": "lib/hanja-stroke-fold-contact-u85da-u7f5d.ts",
+      "SHA256": "46c20a920336955f26c7b81a77594d5c594dc688180c45d4fc8617d7d43fe1fc"
+    },
+    "proof": {
+      "path": "docs/hanja-display-contact-u55f8-u76cc-folds-2026-10-29/contact-proof.json",
+      "SHA256": "efad21c73928a53f522b8a31e74cecf5485379011675da0970f081ff8c9443ff"
+    }
+  },
+  "checks": {
+    "rootActualNewFocusedTests": {
+      "passed": 5,
+      "failed": 0,
+      "durationMs": 101.249
+    },
+    "rootActualExisting1548And1549": {
+      "passed": 6,
+      "failed": 0,
+      "durationMs": 678.061166
+    },
+    "selectedNew2FileSemantic": {
+      "diagnostics": 0,
+      "reusedUnchangedVirtualInput": true
+    },
+    "oldHelperFingerprint": "098695742f228e006811e4b76622b0482e495fdc6b8073c0732167b673f5a644",
+    "old4BehaviorPreserved": true,
+    "oldProductionPinRelaxed": false,
+    "build": false,
+    "wholeProjectTypecheck": false
+  },
+  "history": {
+    "obsoleteExtensionFolder": "docs/hanja-display-contact-u55f8-u76cc-folds-2026-10-29/pending-extension/",
+    "obsoleteExtensionStatus": "Not applied. Original helper mutation would violate live production helper SHA; retained locally as superseded experiment and excluded from this code-unit commit.",
+    "pendingPreparationRetainedAsHistorical": true
+  },
+  "approval": {
+    "newGlyphActualTemporal": false,
+    "registered": false
+  },
+  "ownedServerCount": 0,
+  "HAndProfilesExcluded": true
+}
