@@ -1,0 +1,90 @@
+{
+  "schema": "hanja-bounded-actual-before-observer-review/v1",
+  "glyph": "藯",
+  "reviewedAt": "2026-10-30",
+  "reviewer": "ROOT direct browser observation",
+  "status": "R-shape-bounded-PASS-collector-duplicate-HOLD",
+  "inputs": {
+    "H": {
+      "path": "scripts/hanja-actual-component-review.mjs",
+      "SHA256": "1077f208008acf151853cd6e82c575275bcbe2c6db7ccfad97eab92cc871b7e1"
+    },
+    "profile": {
+      "path": "docs/hanja-authored-component-u85ef-u85da-grass-2026-10-30/actual-profile-fold-terminal-before-observer.json",
+      "SHA256": "9ae759bcce68826288067f763573c846cbce468a878321cee074fe4d1f84126b"
+    },
+    "R": {
+      "path": "components/hanja/stroke-outlines.tsx",
+      "SHA256": "f66b1388cd9c6228ed6949ce03c1119a6e1d4fbd0e24ee498d4dc7016d5f45e8"
+    },
+    "helper": {
+      "path": "lib/hanja-stroke-contact-fold-up-u85ef.ts",
+      "SHA256": "64cf08b66fa8178a46055937af282322c3a1ed19fcd536aa75e88d1788051cfd"
+    },
+    "fixture": {
+      "path": "docs/hanja-authored-component-u85ef-u85da-grass-2026-10-30/fixtures-execution-draft-width20-18.json",
+      "SHA256": "39859cc026ba7367ae2f70edc404f8f164745ea6d21a7c26513491de57d3e5e2",
+      "geometrySHA256": "0fb60444fa5dd7e1375f8425d92d1c472c5fee89edd4166ffbf4a63beb035807"
+    }
+  },
+  "nativeViews": {
+    "fold5OldFAIL3": {
+      "views": 3,
+      "CSS": 520,
+      "local": [
+        0.01,
+        0.05,
+        0.1
+      ],
+      "shapePass": true
+    },
+    "fold5Compact10": {
+      "views": 10,
+      "CSS": 300,
+      "shapePass": true
+    },
+    "terminal17Compact11": {
+      "views": 11,
+      "CSS": 300,
+      "shapePass": true
+    },
+    "terminal17Main": {
+      "views": 4,
+      "CSS": 520,
+      "local": [
+        0.9,
+        0.95,
+        0.99,
+        0.999
+      ],
+      "shapePass": true
+    },
+    "total": 28,
+    "geometryDirectionConnectivityBoundedPass": true
+  },
+  "guardHold": {
+    "sample0Bad": [
+      "17m3:bounds"
+    ],
+    "source": "Same original terminal ink was collected both as generic cardinal-clip and separately terminal-up-empty; generic bounds wrongly inspect only the first of two rectangles",
+    "separateFoldAndTerminalChecksAllTrue": true,
+    "RGeometryIssueClaimed": false,
+    "overallGuardApproved": false
+  },
+  "cleanup": {
+    "PID": 43803,
+    "port": 52213,
+    "session": 42397,
+    "tab": 297,
+    "serverStopped": true,
+    "tabClosed": true,
+    "exitCode": 130
+  },
+  "approval": {
+    "boundedRVisualOnly": true,
+    "actualTemporalApproved": false,
+    "runtimeApplied": false,
+    "productUI": false
+  },
+  "reuse": "Same R/helper/fixture inputs permit these28 finite visual observations to be reused after observer-only exclusion. New guard still needs direct verification."
+}

@@ -1,0 +1,108 @@
+{
+  "schema": "hanja-original-terminal-UP-display-feasibility/v1",
+  "date": "2026-10-30",
+  "glyph": "藯",
+  "target": {
+    "pen": 17,
+    "mask": 3
+  },
+  "status": "public-source-conditions-analysis-only-native-pending",
+  "fixture": {
+    "path": "docs/hanja-authored-component-u85ef-u85da-grass-2026-10-30/fixtures-execution-draft-width20-18.json",
+    "SHA256": "39859cc026ba7367ae2f70edc404f8f164745ea6d21a7c26513491de57d3e5e2",
+    "geometrySHA256": "0fb60444fa5dd7e1375f8425d92d1c472c5fee89edd4166ffbf4a63beb035807"
+  },
+  "source": {
+    "segmentSHA256": "3f709b8830588e9daa8116ce3f379e9b9d43ae44ee6260be766e30b203631ca4",
+    "priorQSHA256": "bca1be0af2c8ba373ece05da2a01e432fee6f4543c388163300b42e7567357e7",
+    "originalPGuideFlagsWeightsUnchanged": true
+  },
+  "rootObservation": {
+    "final7AndBoundary6Connected": true,
+    "mainProgresses": [
+      0.9,
+      0.95,
+      0.99,
+      0.999
+    ],
+    "observation": "At.9 only H end; at.95 entire UP triangle height appears sideways at once; grows through.99/.999. Existing source right-guide display does not establish upward timing.",
+    "actualTemporalApproved": false
+  },
+  "sourceMath": {
+    "originalPCounts": [
+      4,
+      5,
+      4
+    ],
+    "areas": [
+      "213",
+      "54/5",
+      "25"
+    ],
+    "unionArea": "1244/5",
+    "bodyToCapArea": "0",
+    "bodyToUpArea": "0",
+    "capToUpArea": "0",
+    "bodyCapContact": true,
+    "bodyUpContact": true,
+    "UPSimpleConvex": true,
+    "UPHorizontalSlicesConnected": true,
+    "UPBaseSharedWithCompletedBody": {
+      "from": [
+        "141/2",
+        "1753/20"
+      ],
+      "to": [
+        "147/2",
+        "1753/20"
+      ],
+      "length": "3"
+    },
+    "priorQToHBodyPositiveArea": "63/5",
+    "HLeftPointStrictInsidePreviousQ": false,
+    "HLeftPoint": [
+      "38",
+      "1813/20"
+    ],
+    "proposedBodyThenUPAreaPhase": "1119/1244",
+    "UPBounds": [
+      "141/2",
+      "1503/20",
+      "149/2",
+      "1753/20"
+    ],
+    "newGuide": false,
+    "nativeCandidateApproved": false
+  },
+  "candidate": {
+    "existingPath": "lib/hanja-stroke-source-hook-u51de-base.ts",
+    "method": "Complete original body rectangle and right cap by left-to-right x-prefix; then retain that body/cap while original convex UP P is clipped bottom-to-top. Original colored P union painted once.",
+    "bodyClipBounds": [
+      38,
+      87.65,
+      76.5,
+      93.65
+    ],
+    "UPClipBounds": [
+      70.5,
+      75.15,
+      74.5,
+      87.65
+    ],
+    "authorPhaseExact": "1119/1244",
+    "nativePhaseNotSelectedOrApproved": true,
+    "sourceClockMacroSupport": "ROOT original17 Vdown→bottomHright→UP terminal. New subphase is an authored display policy, not original microclock.",
+    "newGuideRequired": false,
+    "newSourcePOrBridge": false,
+    "priorCompletedOriginalQRequired": true
+  },
+  "limits": {
+    "sharedHROrHelperChanged": false,
+    "nativePrototypeApproved": false,
+    "actualRendererTemporalApproved": false,
+    "runtimeApplied": false,
+    "guideAlternative": "A newly authored H→UP guide would require independent coverage and cap/timing review. No new guide drawn in this analysis."
+  },
+  "build": 0,
+  "server": 0
+}

@@ -1,0 +1,35 @@
+{
+  "schema": "hanja-exact-terminal-generic-exclusion-observer-fix/v1",
+  "glyph": "藯",
+  "date": "2026-10-30",
+  "patch": {
+    "path": "docs/hanja-display-contact-u85ef-pen5-2026-10-30/observer-terminal-generic-exclusion.pending.patch",
+    "SHA256": "2f2da95f8c41fde3b8c9dac6df306c510e1a85ffd0e8faf238187bad7e14d2f4",
+    "before": "1077f208008acf151853cd6e82c575275bcbe2c6db7ccfad97eab92cc871b7e1",
+    "after": "f2dbaee41bd5eecdc1909be4b1b88ae19a3464b1229edc3d16a7389202e65d00",
+    "hunks": 1,
+    "forwardInverseExact": true
+  },
+  "profile": {
+    "path": "docs/hanja-authored-component-u85ef-u85da-grass-2026-10-30/actual-profile-fold-terminal-start.json",
+    "SHA256": "2e7eef1a821b2a892996733bd7e2e32b75e26a66e8b04dde03498189e4ad3902",
+    "archivedProfile": "docs/hanja-authored-component-u85ef-u85da-grass-2026-10-30/actual-profile-fold-terminal-before-observer.json",
+    "archivedSHA256": "9ae759bcce68826288067f763573c846cbce468a878321cee074fe4d1f84126b",
+    "onlyTwoHPinsChanged": true
+  },
+  "checks": {
+    "regressionCases": 8,
+    "Hsyntax": "PASS",
+    "browserSyntax": "PASS",
+    "onlyExactTerminal17GenericInkExcluded": true,
+    "customTerminalStateStillRequired": true,
+    "SSR": 0,
+    "server": 0,
+    "RGeometryChanged": false
+  },
+  "RGeometryHelperUnchanged": true,
+  "sourceMathOrOldNativeRerun": false,
+  "liveSharedFilesChangedByThisChild": false,
+  "SSR": 0,
+  "server": 0
+}

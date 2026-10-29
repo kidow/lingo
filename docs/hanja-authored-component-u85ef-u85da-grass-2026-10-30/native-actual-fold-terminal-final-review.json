@@ -1,0 +1,44 @@
+{
+  "glyph": "藯",
+  "recordedAt": "2026-10-30",
+  "reviewer": "ROOT",
+  "surface": "CUA browser panel",
+  "fixtureSHA256": "39859cc026ba7367ae2f70edc404f8f164745ea6d21a7c26513491de57d3e5e2",
+  "geometrySHA256": "0fb60444fa5dd7e1375f8425d92d1c472c5fee89edd4166ffbf4a63beb035807",
+  "rendererSHA256": "f66b1388cd9c6228ed6949ce03c1119a6e1d4fbd0e24ee498d4dc7016d5f45e8",
+  "helperSHA256": "64cf08b66fa8178a46055937af282322c3a1ed19fcd536aa75e88d1788051cfd",
+  "finalHarnessSHA256": "f2dbaee41bd5eecdc1909be4b1b88ae19a3464b1229edc3d16a7389202e65d00",
+  "finalProfileSHA256": "2e7eef1a821b2a892996733bd7e2e32b75e26a66e8b04dde03498189e4ad3902",
+  "preservedBaseline": {"path": "docs/hanja-authored-component-u85ef-u85da-grass-2026-10-30/native-actual-baseline-review.json", "SHA256": "2b70f267bcb295661c1f312a20187457699e3ab6adbf9a7bc12bc11e87262038", "observationLedger": 344, "overallRemains": "HOLD"},
+  "correctedVisualsBeforeObserverFix": {
+    "profileSHA256": "9ae759bcce68826288067f763573c846cbce468a878321cee074fe4d1f84126b",
+    "harnessSHA256": "1077f208008acf151853cd6e82c575275bcbe2c6db7ccfad97eab92cc871b7e1",
+    "observations": 28,
+    "groups": ["fold5 oldFAIL3", "fold5 compact10", "terminal17 compact11", "terminal17 global .9/.95/.99/.999"],
+    "visualResult": "PASS bounded contact and bottom-to-top UP growth",
+    "oldObserverResult": "HOLD: terminal17 original P was also counted as a generic cardinal clip, reporting 17m3:bounds",
+    "reuseCondition": "The observer-only exclusion changes no renderer, geometry, source guides, display times, requested sample values, or layout. All 28 visuals are reused; final fold5 compact10 and terminal17 compact11 DOM guards were freshly rechecked after a clean reload and were empty of bad/errors."
+  },
+  "freshVisualsUnderFinalObserver": [
+    {"group": "fold5 boundary3 and terminal17 body-UP boundary3", "count": 6, "result": "PASS"},
+    {"group": "all nineteen exact p1 endings", "count": 19, "result": "PASS", "guard": "ending57 stable58 states, bad=[], errors=[]; only p1 column was freshly captured"},
+    {"group": "pen5 and pen17 compact9", "count": 18, "result": "PASS"},
+    {"group": "natural pen5 end, natural pen17 start and end", "count": 3, "result": "PASS", "note": "pen5 start was UI/status only, not an additional native capture"}
+  ],
+  "newValidVisualObservationLedger": 74,
+  "baselineReusedVisuals": {
+    "count": 270,
+    "groups": {"seventeenUnaffectedCompact9Grids":153,"tenOriginalQStartReleaseTriples":30,"tenFullRoundResiduals":10,"unaffectedAggregateInitial34Boundary9Ending34":77},
+    "conditions": "Unchanged original P/Q/guide/width/weight/source boundaries and unchanged generic renderer branches. Affected 5/17 intervals, their source boundaries, and all exact p1 endings are excluded from aggregate reuse. No old HOLD observation is relabeled as a new pass."
+  },
+  "uniqueStatesClaimed": false,
+  "discarded": ["First final pen5 compact9 capture had stale layout bounds and was replaced by a complete later capture, counted once."],
+  "toolLimitations": ["Immediately after a large board update, pre-commit requestedFrame mismatches were observed; only stable states were accepted.","After natural playback, reusing board controls can leave the harness main clock pointing at the prior natural target. Sample frames remained valid, but the main requestedFrame guard correctly failed. A clean reload cleared that harness-only stale clock; final compact10/11 checks then had bad=[] and errors=[]. This is not claimed as a verified natural-to-board product UI flow."],
+  "decision": {"boundedActualTemporalApproved":true,"sourcePAndGuidePreserved":true,"authorDisplayTimeNotPublisherMicroclock":true,"applicationUIVerified":false,"wholeGlyphAutoplayVerified":false,"runtimeApplied":false},
+  "tests": {"scopedFocusedPassed":8,"failed":0,"durationMs":110.370167,"buildRun":false,"wholeProjectTypecheckRun":false},
+  "cleanup": [
+    {"pid":43803,"port":52213,"session":42397,"tab":297,"exitCode":130,"tabClosed":true},
+    {"pid":47119,"port":52785,"session":22324,"tab":298,"exitCode":130,"tabClosedAfterRecord":true}
+  ],
+  "privateAssetsSaved":false
+}
