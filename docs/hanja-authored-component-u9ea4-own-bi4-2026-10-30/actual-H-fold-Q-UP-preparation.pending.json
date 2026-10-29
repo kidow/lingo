@@ -1,0 +1,230 @@
+{
+  "schema": "hanja-actual-component-nine-target-H-preparation/v1",
+  "date": "2026-10-30",
+  "glyph": "麤",
+  "status": "PENDING-ROOT-apply-and-first-corrected-native-review",
+  "H": {
+    "path": "scripts/hanja-actual-component-review.mjs",
+    "beforeSHA256": "496226f1c35bed6e637fe397da8f327cbae82729647ce16c987c77972fd50a6d",
+    "afterSHA256": "91993c6292d08c4e83b0d217bf444fc4486a4acbc53347feff36985cc3a3d5df",
+    "pendingPatch": "docs/hanja-authored-component-u9ea4-own-bi4-2026-10-30/actual-H-integration-fold-Q-UP.pending.patch",
+    "pendingPatchSHA256": "613e57ae82494e3d2275845e771c1b9e8eb72e67185c18076cc8b9c719d0a8b2",
+    "forwardInverseExact": true,
+    "oldBaselineFixtureGuardBytesPreserved": true
+  },
+  "component": {
+    "path": "components/hanja/stroke-outlines.tsx",
+    "SHA256": "3015b3127a4e933cdb978059c11e0017e0aba4f6eb8abf0013ec5d845e8eb03b"
+  },
+  "helper": {
+    "path": "lib/hanja-stroke-contact-fold-Q-up-u9ea4.ts",
+    "SHA256": "75f1b1180b9c85f5c23b5fd1350a0ae387f2f133a8631fa94980eadbd3d5fc05",
+    "testPath": "lib/hanja-stroke-contact-fold-Q-up-u9ea4.test.ts",
+    "testSHA256": "90dd015e5afb03149b264c7beba04a9239548f7d4165406a4e744360acf53485",
+    "fingerprint": "92fd2113f4cf719ce5f20c083928cfa1d4df03ba9ce48f1520024e34c0953931",
+    "productionPatch": "docs/hanja-display-contact-u9ea4-nine-targets-2026-10-30/production.pending.patch",
+    "productionPatchSHA256": "7327a37c9e0de9df458e0ab5d71cfbc7d0570969b9f1f18928a3fe03e833871f"
+  },
+  "profile": {
+    "path": "docs/hanja-authored-component-u9ea4-own-bi4-2026-10-30/actual-profile-fold-Q-UP-start.json",
+    "SHA256": "8b952e0bdcb32778c97a8ffed87314fab307a04aacfd739c1d19f359bc2d22c1",
+    "inputPins": 1228,
+    "resourceClosure": 397
+  },
+  "fixture": {
+    "path": "docs/hanja-authored-component-u9ea4-own-bi4-2026-10-30/fixtures-execution-draft.json",
+    "SHA256": "f1af68d82ade4ba49583dedb35961d287b350e2328a74a5d8b7d9c01d45700a9",
+    "geometrySHA256": "ba36772c9da2de0f910ce6e0ec8d2029f230bb3e547e1cd16be11ccaa2696a13",
+    "logical": 33,
+    "masks": 48,
+    "P": 96
+  },
+  "policies": {
+    "fold": {
+      "fingerprint": "92fd2113f4cf719ce5f20c083928cfa1d4df03ba9ce48f1520024e34c0953931",
+      "helper": "lib/hanja-stroke-contact-fold-Q-up-u9ea4.ts",
+      "helperSHA256": "75f1b1180b9c85f5c23b5fd1350a0ae387f2f133a8631fa94980eadbd3d5fc05",
+      "sourcePAndGuidesUnchanged": true,
+      "publisherMicroclockEquivalent": false,
+      "kind": "source-P-y-contact-band-u9ea4",
+      "context": "u9ea4-exact-fold-contact",
+      "targets": [
+        {
+          "pen": 4,
+          "mask": 2
+        },
+        {
+          "pen": 15,
+          "mask": 2
+        },
+        {
+          "pen": 26,
+          "mask": 2
+        }
+      ],
+      "origins": [
+        {
+          "pen": 4,
+          "mask": 2,
+          "origin": 18.2,
+          "negativeExtent": 3.5,
+          "positiveExtent": 10.8
+        },
+        {
+          "pen": 15,
+          "mask": 2,
+          "origin": 60.75,
+          "negativeExtent": 3.5,
+          "positiveExtent": 11.950000000000003
+        },
+        {
+          "pen": 26,
+          "mask": 2,
+          "origin": 60.4,
+          "negativeExtent": 3.5,
+          "positiveExtent": 12.300000000000004
+        }
+      ]
+    },
+    "Q": {
+      "fingerprint": "92fd2113f4cf719ce5f20c083928cfa1d4df03ba9ce48f1520024e34c0953931",
+      "helper": "lib/hanja-stroke-contact-fold-Q-up-u9ea4.ts",
+      "helperSHA256": "75f1b1180b9c85f5c23b5fd1350a0ae387f2f133a8631fa94980eadbd3d5fc05",
+      "sourcePAndGuidesUnchanged": true,
+      "publisherMicroclockEquivalent": false,
+      "kind": "source-Q-left-head-then-right-u9ea4",
+      "context": "u9ea4-exact-left-head-Q",
+      "targets": [
+        {
+          "pen": 9,
+          "mask": 2
+        },
+        {
+          "pen": 20,
+          "mask": 2
+        },
+        {
+          "pen": 31,
+          "mask": 2
+        }
+      ],
+      "headPhases": [
+        {
+          "pen": 9,
+          "mask": 2,
+          "cutX": 31.5,
+          "headPhase": 0.14753337413561257,
+          "headPhaseExact": "21631232255/146619247216"
+        },
+        {
+          "pen": 20,
+          "mask": 2,
+          "cutX": 18.2775,
+          "headPhase": 0.14753337413561265,
+          "headPhaseExact": "504599015122172413890239044982687289/3420236391112054911631456808306820632"
+        },
+        {
+          "pen": 31,
+          "mask": 2,
+          "cutX": 62.25,
+          "headPhase": 0.14753337413561252,
+          "headPhaseExact": "98877819305627603021393670614813451/670206452505717191101003453287235754"
+        }
+      ]
+    },
+    "UP": {
+      "fingerprint": "92fd2113f4cf719ce5f20c083928cfa1d4df03ba9ce48f1520024e34c0953931",
+      "helper": "lib/hanja-stroke-contact-fold-Q-up-u9ea4.ts",
+      "helperSHA256": "75f1b1180b9c85f5c23b5fd1350a0ae387f2f133a8631fa94980eadbd3d5fc05",
+      "sourcePAndGuidesUnchanged": true,
+      "publisherMicroclockEquivalent": false,
+      "kind": "source-body-then-UP-u9ea4",
+      "context": "u9ea4-exact-terminal-up",
+      "targets": [
+        {
+          "pen": 11,
+          "mask": 3
+        },
+        {
+          "pen": 22,
+          "mask": 3
+        },
+        {
+          "pen": 33,
+          "mask": 3
+        }
+      ],
+      "bodyPhases": [
+        {
+          "pen": 11,
+          "mask": 3,
+          "bodyPhase": 0.9321948769462581,
+          "bodyPhaseExact": "1856/1991"
+        },
+        {
+          "pen": 22,
+          "mask": 3,
+          "bodyPhase": 0.9321948769462584,
+          "bodyPhaseExact": "38575686274509902/41381568627451077"
+        },
+        {
+          "pen": 33,
+          "mask": 3,
+          "bodyPhase": 0.9321948769462582,
+          "bodyPhaseExact": "38939607843137262/41771960784313727"
+        }
+      ]
+    }
+  },
+  "validation": {
+    "actualTopLevelDispatcher": true,
+    "negativeGuardCases": 6,
+    "actualFixturePayloadFields": 10,
+    "privateContextFromActualPayload": true,
+    "actualControlsExecuted": 27,
+    "controlsTargets": [
+      4,
+      9,
+      11,
+      15,
+      20,
+      22,
+      26,
+      31,
+      33
+    ],
+    "outerAndBrowserSyntaxDiagnostics": 0,
+    "actualResourceCollector": {
+      "R": "3015b3127a4e933cdb978059c11e0017e0aba4f6eb8abf0013ec5d845e8eb03b",
+      "actualClosure": 397,
+      "dependencies": 396,
+      "constantLines": 3,
+      "SSR": 0,
+      "transpilation": 0,
+      "server": 0
+    },
+    "SSRRun": false,
+    "serverRun": false,
+    "buildRun": false,
+    "wholeProjectTypecheckRun": false
+  },
+  "preservation": {
+    "old258BaselineHOLDUnchanged": true,
+    "sourcePGuideFlagsWeightsBoundariesUnchanged": true,
+    "allNineNewCustomOwnersRemovedFromGenericCollectorOnlyForExactPolicyTargets": true,
+    "originalClockSnapshotRequestedFrameLogicUnchanged": true,
+    "strictSameSlotEndpointHoldUnchanged": true,
+    "oldProfilesNotEdited": true,
+    "newNativeApproved": false
+  },
+  "startup": "node --experimental-transform-types scripts/hanja-actual-component-review.mjs --profile docs/hanja-authored-component-u9ea4-own-bi4-2026-10-30/actual-profile-fold-Q-UP-start.json --profile-sha 8b952e0bdcb32778c97a8ffed87314fab307a04aacfd739c1d19f359bc2d22c1 --port 0",
+  "ownedFiles": [
+    "docs/hanja-authored-component-u9ea4-own-bi4-2026-10-30/actual-H-integration-fold-Q-UP.pending.patch",
+    "docs/hanja-authored-component-u9ea4-own-bi4-2026-10-30/actual-profile-fold-Q-UP-start.json",
+    "docs/hanja-authored-component-u9ea4-own-bi4-2026-10-30/actual-H-fold-Q-UP-preparation.pending.json"
+  ],
+  "sourceScope": "New9target display policies only. Existing225 unaffected baseline observations may be reused as explicitly limited by ROOT; no baseline HOLD relabeling.",
+  "runtimeApplied": false,
+  "actualTemporalApproved": false,
+  "sharedFilesChanged": false
+}

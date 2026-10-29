@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-30",
+  "glyph": "麤",
+  "status": "bounded-actual-component-PASS",
+  "reviewer": "Codex root, CUA browser panel tab 309",
+  "profileSHA256": "8b952e0bdcb32778c97a8ffed87314fab307a04aacfd739c1d19f359bc2d22c1",
+  "H_SHA256": "91993c6292d08c4e83b0d217bf444fc4486a4acbc53347feff36985cc3a3d5df",
+  "R_SHA256": "3015b3127a4e933cdb978059c11e0017e0aba4f6eb8abf0013ec5d845e8eb03b",
+  "helperSHA256": "75f1b1180b9c85f5c23b5fd1350a0ae387f2f133a8631fa94980eadbd3d5fc05",
+  "geometrySHA256": "ba36772c9da2de0f910ce6e0ec8d2029f230bb3e547e1cd16be11ccaa2696a13",
+  "freshStaticSampleSets": {
+    "foldCompact10": {"pens": [4, 15, 26], "views": 30},
+    "Q_oldFAIL3": {"pens": [9, 20, 31], "views": 9},
+    "Q_headPhase3": {"pens": [9, 20, 31], "views": 9},
+    "UP_oldFAIL5": {"pens": [11, 22, 33], "views": 15},
+    "UP_phase3": {"pens": [11, 22, 33], "views": 9},
+    "Q_compact9": {"pens": [9, 20, 31], "views": 27},
+    "UP_compact9": {"pens": [11, 22, 33], "views": 27},
+    "foldBoundary3": {"pens": [4, 15, 26], "views": 9},
+    "wholeCompoundCompact9": {"pens": [4, 9, 11, 15, 20, 22, 26, 31, 33], "views": 81}
+  },
+  "freshStaticSampleCount": 216,
+  "naturalSelectedPen33": {"startProgress": 0.11966250000000037, "endProgress": 1, "replayStartProgress": 0.11558749999850988, "replayEndProgress": 1, "views": 4},
+  "findings": [
+    "All nine owned corrections were observed independently. Fold heads grow from the completed horizontal without detached future triangles; Q heads remain connected to the prior vertical; terminal UP grows from the bottom instead of exposing its full future height laterally.",
+    "Phase boundaries and exact endpoint samples retain the original filled contours. Completed prefixes remain opaque and the owned source contour is painted once.",
+    "Stable sample and natural checks passed with errors empty. Early requestedFrame false values were transient; clean-reload stable checks replaced them. A natural-to-board stale main-clock diagnostic was excluded and replaced after reload.",
+    "Cropped captures were excluded and replaced with complete frame captures. Natural pen1 exploratory captures and the mislabeled pen33 mid capture at progress1 were not counted as new independent middle frames."
+  ],
+  "reuse": {"unchangedBaselineCompactViews": 216, "unchangedBaselineResidualViews": 9, "baselineHoldPreserved": true, "scope": "Only unchanged 24 logical pens and original full-round source residuals; not a blanket PASS for baseline258."},
+  "sourceOrderAndDirectionEvidence": "Existing original33-clock source review and complete-source static135 review retained unchanged.",
+  "limitations": ["No product app UI verification or whole-glyph autoplay claim.", "Generic residual view does not prove custom display policies; original source coverage and exact endpoint/helper checks are reused.", "This receipt approves only the pinned fixture, component and nine exact-target helper."],
+  "runtimeAppliedAtReview": false,
+  "buildRun": false,
+  "wholeProjectTypecheckRun": false,
+  "privateSourcePixelsPersisted": false
+}

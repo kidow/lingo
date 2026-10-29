@@ -1,0 +1,254 @@
+{
+  "schema": "hanja-three-policy-nine-target-pending-integration/v1",
+  "date": "2026-10-30",
+  "glyph": "麤",
+  "status": "9-focused-tests-and-selected3-semantic-PASS-native-pending",
+  "helper": {
+    "path": "lib/hanja-stroke-contact-fold-Q-up-u9ea4.ts",
+    "SHA256": "75f1b1180b9c85f5c23b5fd1350a0ae387f2f133a8631fa94980eadbd3d5fc05",
+    "testPath": "lib/hanja-stroke-contact-fold-Q-up-u9ea4.test.ts",
+    "testSHA256": "90dd015e5afb03149b264c7beba04a9239548f7d4165406a4e744360acf53485",
+    "fingerprint": "92fd2113f4cf719ce5f20c083928cfa1d4df03ba9ce48f1520024e34c0953931",
+    "productionPatch": "docs/hanja-display-contact-u9ea4-nine-targets-2026-10-30/production.pending.patch",
+    "productionPatchSHA256": "7327a37c9e0de9df458e0ab5d71cfbc7d0570969b9f1f18928a3fe03e833871f"
+  },
+  "renderer": {
+    "path": "components/hanja/stroke-outlines.tsx",
+    "beforeSHA256": "1458f3a4b842a47f9d117786ea0f1641f02a717a1e4ad13f46ece13f5c7229fb",
+    "afterSHA256": "3015b3127a4e933cdb978059c11e0017e0aba4f6eb8abf0013ec5d845e8eb03b",
+    "patch": "docs/hanja-display-contact-u9ea4-nine-targets-2026-10-30/renderer.pending.patch",
+    "patchSHA256": "ff6acca67aafe9278994f72c0870222fb529c674a636d87a31c134a48756e59f",
+    "hunks": 6,
+    "forwardInverseExact": true,
+    "oldFoldComponentBytesPreserved": true,
+    "oldUPComponentBytesPreserved": true
+  },
+  "source": {
+    "fixture": "docs/hanja-authored-component-u9ea4-own-bi4-2026-10-30/fixtures-execution-draft.json",
+    "SHA256": "f1af68d82ade4ba49583dedb35961d287b350e2328a74a5d8b7d9c01d45700a9",
+    "geometrySHA256": "ba36772c9da2de0f910ce6e0ec8d2029f230bb3e547e1cd16be11ccaa2696a13",
+    "logical": 33,
+    "masks": 48,
+    "P": 96,
+    "Q": 9,
+    "cardinal": 39,
+    "sourceFieldsChanged": false
+  },
+  "math": {
+    "foldUP": {
+      "path": "docs/hanja-display-contact-u9ea4-fold-UP-2026-10-30/public-fold-UP-feasibility.json",
+      "SHA256": "3972c3a2ac06f9c4fd0e69f81cf17f889532af32e165378e5b762a1904d08a7c"
+    },
+    "Q": {
+      "path": "docs/hanja-display-contact-u9ea4-Q-2026-10-30/independent-x-contact-proof.json",
+      "SHA256": "d31d40a75a0e98a28c0b6c45c5f44dd786264001f73ce60679963baa17ad02e6"
+    }
+  },
+  "API": {
+    "input": "REVIEWED_U9EA4_DISPLAY_INPUT",
+    "context": "makeReviewedU9ea4DisplayContext(input,strokes)",
+    "fold": {
+      "select": "reviewedU9ea4FoldPolicy(context,zeroBasedPen,zeroBasedMask)",
+      "sample": "sampleReviewedU9ea4FoldFrame(policy,segment,p,previousMaskProgress)",
+      "prior": "verifyReviewedU9ea4FoldPrior(policy,g,previousMaskProgress,logicalProgress,frameId)",
+      "ids": [
+        "u9ea4-fold-contact-4-2",
+        "u9ea4-fold-contact-15-2",
+        "u9ea4-fold-contact-26-2"
+      ],
+      "kind": "source-P-y-contact-band-u9ea4",
+      "context": "u9ea4-exact-fold-contact",
+      "prefix": "data-fold-contact-",
+      "frame": "same prior fold frame: progress/previousMaskProgress/clip/phase empty|contact-prefix|full/visible/originalPDirect; originalD once, rect1",
+      "targets": [
+        {
+          "pen": 4,
+          "mask": 2,
+          "origin": 18.2,
+          "negativeExtent": 3.5,
+          "positiveExtent": 10.8
+        },
+        {
+          "pen": 15,
+          "mask": 2,
+          "origin": 60.75,
+          "negativeExtent": 3.5,
+          "positiveExtent": 11.950000000000003
+        },
+        {
+          "pen": 26,
+          "mask": 2,
+          "origin": 60.4,
+          "negativeExtent": 3.5,
+          "positiveExtent": 12.300000000000004
+        }
+      ]
+    },
+    "Q": {
+      "select": "reviewedU9ea4QPolicy(context,zeroBasedPen,zeroBasedMask)",
+      "sample": "sampleReviewedU9ea4QFrame(policy,segment,p,previousMaskProgress)",
+      "prior": "verifyReviewedU9ea4QPrior(policy,g,previousMaskProgress,logicalProgress,frameId)",
+      "ids": [
+        "u9ea4-left-head-Q-9-2",
+        "u9ea4-left-head-Q-20-2",
+        "u9ea4-left-head-Q-31-2"
+      ],
+      "kind": "source-Q-left-head-then-right-u9ea4",
+      "context": "u9ea4-exact-left-head-Q",
+      "prefix": "data-bi-q-",
+      "clipSuffix": "-bi-Q-clip",
+      "frame": "progress/previousMaskProgress/clip/phase empty|left-head|right|full/visible/originalPDirect; originalD once, rect1",
+      "targets": [
+        {
+          "pen": 9,
+          "mask": 2,
+          "cutX": 31.5,
+          "bounds": [
+            28.05,
+            37.3,
+            56.05,
+            46.7
+          ],
+          "headPhase": 0.14753337413561257,
+          "headPhaseExact": "21631232255/146619247216"
+        },
+        {
+          "pen": 20,
+          "mask": 2,
+          "cutX": 18.2775,
+          "bounds": [
+            16.60425,
+            84.52705882352942,
+            30.18425,
+            96.24941176470588
+          ],
+          "headPhase": 0.14753337413561265,
+          "headPhaseExact": "504599015122172413890239044982687289/3420236391112054911631456808306820632"
+        },
+        {
+          "pen": 31,
+          "mask": 2,
+          "cutX": 62.25,
+          "bounds": [
+            60.525,
+            84.41882352941177,
+            74.525,
+            96.25176470588235
+          ],
+          "headPhase": 0.14753337413561252,
+          "headPhaseExact": "98877819305627603021393670614813451/670206452505717191101003453287235754"
+        }
+      ]
+    },
+    "UP": {
+      "select": "reviewedU9ea4TerminalPolicy(context,zeroBasedPen,zeroBasedMask)",
+      "sample": "sampleReviewedU9ea4TerminalFrame(policy,segment,p,previousMaskProgress)",
+      "prior": "verifyReviewedU9ea4TerminalPrior(policy,g,previousMaskProgress,logicalProgress,frameId)",
+      "ids": [
+        "u9ea4-terminal-UP-11-3",
+        "u9ea4-terminal-UP-22-3",
+        "u9ea4-terminal-UP-33-3"
+      ],
+      "kind": "source-body-then-UP-u9ea4",
+      "context": "u9ea4-exact-terminal-up",
+      "prefix": "data-terminal-up-",
+      "clipSuffix": "-terminal-up-clip",
+      "frame": "progress/body/up/phase empty|body|UP|full/visible/originalPDirect; originalD once, rect2",
+      "targets": [
+        {
+          "pen": 11,
+          "mask": 3,
+          "bodyBounds": [
+            67,
+            39.6,
+            91,
+            43.6
+          ],
+          "upBounds": [
+            87,
+            35.1,
+            90,
+            39.6
+          ],
+          "bodyPhase": 0.9321948769462581,
+          "bodyPhaseExact": "1856/1991"
+        },
+        {
+          "pen": 22,
+          "mask": 3,
+          "bodyBounds": [
+            35.495,
+            87.39529411764705,
+            47.135,
+            92.38352941176471
+          ],
+          "upBounds": [
+            45.195,
+            81.7835294117647,
+            46.65,
+            87.39529411764705
+          ],
+          "bodyPhase": 0.9321948769462584,
+          "bodyPhaseExact": "38575686274509902/41381568627451077"
+        },
+        {
+          "pen": 33,
+          "mask": 3,
+          "bodyBounds": [
+            80,
+            87.31411764705882,
+            92,
+            92.34941176470588
+          ],
+          "upBounds": [
+            90,
+            81.64941176470589,
+            91.5,
+            87.31411764705882
+          ],
+          "bodyPhase": 0.9321948769462582,
+          "bodyPhaseExact": "38939607843137262/41771960784313727"
+        }
+      ]
+    },
+    "frameId": "id+'-fold-contact-frame-'+phase+'-'+count+'-'+String(manual)+'-'+String(elapsed)",
+    "parentOwner": "Each family prefix owner=policy.id/frame=frameId/logical-progress=clamped logical progress; fold/Q parent2 children, UP parent3 children",
+    "inkEndpoint": "p0 retainedcustomg hidden; p1 retainedcustomg sourceD direct clip-path removed, exact originalP; no mask/no pathLength",
+    "previousRequirement": "All previous masks same owner direct sourceD opaque, current frame/logical progresses and full source binding required"
+  },
+  "validation": {
+    "focusedTests": 9,
+    "focusedAllPass": true,
+    "focusedDurationMs": 11.048375,
+    "selectedSemantic": {
+      "selectedRoots": [
+        "lib/hanja-stroke-contact-fold-Q-up-u9ea4.ts",
+        "lib/hanja-stroke-contact-fold-Q-up-u9ea4.test.ts",
+        "components/hanja/stroke-outlines.tsx"
+      ],
+      "sourceClosure": 1937,
+      "diagnostics": [],
+      "dependencyDiagnosticsNotClaimedFixed": 61,
+      "fullProjectTypecheck": false
+    },
+    "rendererSyntax": true,
+    "SSR": false,
+    "server": false,
+    "actualNative": false
+  },
+  "resources": {
+    "before": 396,
+    "expectedWithOneHelper": 397,
+    "actualCollectorRequired": true
+  },
+  "scope": {
+    "newP": 0,
+    "newGuide": 0,
+    "newBridge": 0,
+    "sourceFlagsWeightsBoundariesUnchanged": true,
+    "publisherMicroclockEquivalent": false,
+    "actualTemporalApproved": false,
+    "runtimeApplied": false,
+    "sharedFilesWritten": false
+  }
+}
