@@ -1,0 +1,144 @@
+{
+  "glyph": "麤",
+  "recordedAt": "2026-10-30",
+  "status": "pending-risk-first-actual-review-no-temporal-approval",
+  "harness": {
+    "path": "scripts/hanja-actual-component-review.mjs",
+    "beforeSHA256": "b8910cc6ba8232133564356dbd94feac5b404cadf6e37bb7b0dcf94882875b7d",
+    "afterSHA256": "496226f1c35bed6e637fe397da8f327cbae82729647ce16c987c77972fd50a6d",
+    "patch": "docs/hanja-authored-component-u9ea4-own-bi4-2026-10-30/actual-H-integration.pending.patch",
+    "patchSHA256": "fddf99db278c46ec0e7500cdf5875d0082354c9e4b69d9cf3745cc93b333dd20",
+    "hunks": 18,
+    "oldPositionsAscending": [
+      1113,
+      542297,
+      918527,
+      1346427,
+      1353836,
+      2846274,
+      2851540,
+      2916547,
+      2928695,
+      2952524,
+      2963283,
+      2972465,
+      2978533,
+      2981095,
+      3021832,
+      3046343,
+      3109962,
+      3264922
+    ],
+    "forwardInverseExact": true,
+    "actualSharedWritten": false
+  },
+  "profile": {
+    "path": "docs/hanja-authored-component-u9ea4-own-bi4-2026-10-30/actual-profile-start.pending.json",
+    "SHA256": "e001c851b99d387598338baa3b063ed28e8f1578e83d40af9a58efccf9ae5c9f",
+    "profileFinalized": false,
+    "executionEnabled": false,
+    "sharedWindowPending": true
+  },
+  "fixture": {
+    "path": "docs/hanja-authored-component-u9ea4-own-bi4-2026-10-30/fixtures-execution-draft.json",
+    "SHA256": "f1af68d82ade4ba49583dedb35961d287b350e2328a74a5d8b7d9c01d45700a9",
+    "geometrySHA256": "ba36772c9da2de0f910ce6e0ec8d2029f230bb3e547e1cd16be11ccaa2696a13",
+    "logical": 33,
+    "masks": 48,
+    "P": 96,
+    "Q": 9,
+    "cardinal": 39
+  },
+  "coverage": {
+    "path": "docs/hanja-authored-component-u9ea4-own-bi4-2026-10-30/coverage-preflight.json",
+    "SHA256": "f026e189157624f6a15a90ca55bbc9ddefd1f20202411e2563beec84430966d0",
+    "counts": {
+      "curveMasks": 9,
+      "pass": 9,
+      "unproved": 0,
+      "outlier": 0
+    },
+    "sourceRerun": false,
+    "earlyOrTerminalApproval": false
+  },
+  "focusedValidation": {
+    "Hsyntax": true,
+    "browserSyntax": true,
+    "actualFixtureGuard": true,
+    "guardNegatives": 6,
+    "generatedPayloadFields": 7,
+    "payloadStrokesExact": true,
+    "foreignRouteRejected": 4,
+    "explicitTopEntry": true,
+    "SSR": 0,
+    "server": 0
+  },
+  "actualSourceCollectorBeforeSSR": {
+    "actualSourceCollector": 396,
+    "dependencies": 395,
+    "newHelper": true,
+    "sourceHBeforeSSRProbeSHA": "496226f1c35bed6e637fe397da8f327cbae82729647ce16c987c77972fd50a6d",
+    "SSR": 0,
+    "server": 0
+  },
+  "risks": {
+    "VtoNEGuideGaps": [
+      9,
+      20,
+      31
+    ],
+    "HtoVInitialHead": [
+      4,
+      15,
+      26
+    ],
+    "unapprovedRightPlusUPMasks": [
+      {
+        "pen": 11,
+        "mask": 3
+      },
+      {
+        "pen": 22,
+        "mask": 3
+      },
+      {
+        "pen": 33,
+        "mask": 3
+      }
+    ],
+    "rightDirectionIsPrimitiveClassificationOnly": true,
+    "terminalUPTemporalApproval": false
+  },
+  "controls": {
+    "contactRisk3": [
+      4,
+      15,
+      26,
+      9,
+      20,
+      31
+    ],
+    "UPRisk5": [
+      11,
+      22,
+      33
+    ],
+    "allCompactPens": 33,
+    "sourceBoundaryTriples": 15,
+    "aggregateFrames": 210,
+    "mainStates": 37
+  },
+  "scope": {
+    "immutableSourcePAndGuidePreserved": true,
+    "guideGapsRetained": true,
+    "noInventedBridge": true,
+    "terminalUPUnapproved": true,
+    "sourceHoldsRetained": true,
+    "SSRByChild": 0,
+    "serverByChild": 0,
+    "nativeViewsByChild": 0,
+    "sharedHWrittenByChild": false,
+    "buildRun": false,
+    "wholeProjectTypecheckRun": false
+  }
+}
