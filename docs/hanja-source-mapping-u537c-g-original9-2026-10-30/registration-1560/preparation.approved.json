@@ -1,0 +1,83 @@
+{
+  "schema": "hanja-approved-registration-preparation/v1",
+  "date": "2026-10-30",
+  "glyph": "卼",
+  "batch": 1560,
+  "status": "APPROVED-TRANSPORT-ROOT-APPLY-ONLY",
+  "catalogStrokes": 9,
+  "playbackStrokes": 9,
+  "slotCollision": false,
+  "counts": {
+    "logical": 9,
+    "catalog": 9,
+    "raw": 11,
+    "calls": 18,
+    "masks": 18,
+    "P": 36,
+    "Q": 7,
+    "cardinal": 11
+  },
+  "finalNativeReview": {
+    "path": "docs/hanja-source-mapping-u537c-g-original9-2026-10-30/native-actual-final-review.json",
+    "SHA256": "a16ae9132e438434541b1881422d9bc124350750126573fba91b29aadd71605f"
+  },
+  "capsule": {
+    "path": "docs/hanja-source-mapping-u537c-g-original9-2026-10-30/registration-1560/capsule.approved.json",
+    "SHA256": "390938f92737230329a946ab4453371d5a89e1c927524480ed03735909a0ef7c"
+  },
+  "fourFiles": {
+    "path": "docs/hanja-source-mapping-u537c-g-original9-2026-10-30/registration-1560/four-files.approved.patch",
+    "SHA256": "bfbd11eb1047e8c578c6be9ef80f5f7de2d88602b1a82d56d9324c98849eadd9",
+    "targets": [
+      {
+        "path": "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch1560.json",
+        "SHA256": "0e59474527c8d2ddb1deae73e6c16675caed92732e532fd3788a0dbdc6328c8a"
+      },
+      {
+        "path": "lib/hanja-stroke-dictionary-glyphwiki-batch1560.ts",
+        "SHA256": "32bc292cbf054142e9a0e1ee6bead730fe984a2b1935e7fd944175afa1e6d9a6"
+      },
+      {
+        "path": "lib/hanja-stroke-dictionary-glyphwiki-batch1560.test.ts",
+        "SHA256": "4ceb2193fbf154c8f323acbcd665dfcfbe414bffe97579fb3326d84c0b9f3fc7"
+      },
+      {
+        "path": "public/hanja-strokes/sources/glyphwiki-batch1560-NOTICE.md",
+        "SHA256": "f4d54e728fe182fd0fe928858796f8d4baa2a6dd260ee4e407a03cc0eeff6481"
+      }
+    ]
+  },
+  "registry": {
+    "path": "docs/hanja-source-mapping-u537c-g-original9-2026-10-30/registration-1560/ordinary-registry.pending.patch",
+    "SHA256": "4f71ecf2f436d4c8aec35706e25d3b62edb554868b9644b1ea74eddaa2b4bcc8",
+    "target": "lib/hanja-strokes.ts",
+    "beforeSHA256": "d63654f7f7640e36219ad6f7e69af1f3487cc0af96ce78f55251740545f76cba",
+    "afterSHA256": "0b40395915b28aee5c17638f9d2d49adef35c8f79f019123cfc5cb5d6e9b60f0",
+    "variantRegistryUnchanged": true,
+    "variantRegistrySHA256": "4903a2aa3e72ef53559020842f23eb933e2ebdc23517644172f743778f083bf6"
+  },
+  "focusedTestPlan": {
+    "command": "node --experimental-strip-types --test lib/hanja-stroke-dictionary-glyphwiki-batch1560.test.ts",
+    "tests": 3,
+    "scope": [
+      "live9 resolver and wrong8/10 rejection, receipt and immutable-source pins",
+      "all11raw/18calls/36P membership, guides and only8m3 width22 policy",
+      "strict loader key-order acceptance and hostile descriptors/prototype/count/geometry rejection"
+    ],
+    "runAfterRootApply": true,
+    "executedYet": false
+  },
+  "validation": {
+    "moduleParseDiagnostics": 0,
+    "testParseDiagnostics": 0,
+    "geometryExact": true,
+    "sourcePins": 24,
+    "build": 0,
+    "fullTypecheck": 0,
+    "SSR": 0,
+    "server": 0
+  },
+  "actualSharedWrites": false,
+  "actualProductionWrites": false,
+  "commit": false
+}
