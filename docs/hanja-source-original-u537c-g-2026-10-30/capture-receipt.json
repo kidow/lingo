@@ -1,0 +1,123 @@
+{
+  "schema": "hanja-actual-public-KAGE-capture-receipt/v1",
+  "date": "2026-10-30",
+  "glyph": "卼",
+  "status": "PASS-ACTUAL-ORIGINAL-CAPTURE-NATIVE-UNREVIEWED",
+  "source": {
+    "path": "docs/hanja-source-original-u537c-g-2026-10-30/source-record.json",
+    "SHA256": "1dc2ee0fe90b87bc2b02576928bf30fac00e4c335cc7a4020cbafd05163712c8"
+  },
+  "sourceRoot": "u537c-g",
+  "sourceVersions": {
+    "u537c-g": "2",
+    "u5140-10": "1",
+    "u5371-j": "2"
+  },
+  "sourceDefinitionSHA256": {
+    "u537c-g": "e7565637c141dc2916b185ee05d721405fa3a8abf104ef15520edb3e2eaef3be",
+    "u5140-10": "12e69d55b8df14661e465581ac0861141b215bdb4ab0d753c03072135f233209",
+    "u5371-j": "c5bbba88a17bdbf788c7460877d813c9309dff891b9ccf971a3add01ddaff6f7"
+  },
+  "completeReachableClosureRecords": [
+    "u537c-g",
+    "u5140-10",
+    "u5371-j"
+  ],
+  "closureRecordsExactNoUnreachableExtras": true,
+  "sourceRecordsUnmodified": true,
+  "aliasesInserted": false,
+  "sourceDataVersionRelabelled": false,
+  "actualEngine": {
+    "revision": "49232bac0348fe815f4200d4116ab7917e0db47f",
+    "actualLoadedAndVerifiedHashes": {
+      "2d.js": "dd17c52d85a6fcdf8a76e30189a24ba2f73856e0d298e80a72e0a562bcb70942",
+      "buhin.js": "6fa8e13bd964525299fa697dc40ea2c8b436d2ccb5952fe95f45d7fbf67b9456",
+      "curve.js": "77477845aff9c4d53616c91247510bd10daeb4282423bdfcde7a8bebcd21f0da",
+      "kage.js": "c36a60ff9ae7d392740d8aad62e823553dc25c991eba40482fcbc8a1a1db6d78",
+      "kagecd.js": "489fdd76e307642f6adaa99d280a41b1dda0760b4ca64b4711f0f49c08d9c860",
+      "kagedf.js": "e6d7cb5eeacda24705306302fd85a01c78f2adcdfdba43d1cac1d3616b6bf847",
+      "polygon.js": "f0afbe3b0c6f4723005ec927d2292eb991ecf5c598c16cfefb7bc55cfef75bf2",
+      "polygons.js": "111b9b0aaca536805cf92ab9d1e7be099f9e082a2169cc7c0bf49e3deee20b1a"
+    },
+    "sourceURLBase": "https://raw.githubusercontent.com/kamichikoichi/kage-engine/49232bac0348fe815f4200d4116ab7917e0db47f/",
+    "actualVMInvocations": 1,
+    "actualMakeGlyphCalls": 1,
+    "vendorEvaluations": 8
+  },
+  "existingHarness": {
+    "path": "docs/hanja-authored-component-u9a2d-complete-step-var002-2026-10-30/capture-once.mjs",
+    "SHA256": "482daed8a77105812db79bc33c2e2bc015e9f36bd2294fce8999388a1874135e",
+    "originalFileExecutedOrChanged": false,
+    "engineAndCaptureBodyUnchanged": true,
+    "RAMInputSubstitutionOnly": [
+      "inp.root",
+      "inp.records"
+    ],
+    "stdoutSuppressedFromConversation": true,
+    "resultTransport": "ctx result parsed only within functions and transferred to native Node RAM; no full geometry emitted to model"
+  },
+  "capture": {
+    "path": "docs/hanja-source-original-u537c-g-2026-10-30/engine-proof.json",
+    "SHA256": "7341d06d853004d8b6a46b6a79f19262e13de59d35348978aa3aad03678c681e",
+    "fields": [
+      "defaults",
+      "engineHashes",
+      "engineRevision",
+      "groups",
+      "trace"
+    ],
+    "raw": 11,
+    "calls": 18,
+    "P": 36,
+    "bounds": [
+      13.4,
+      17.4,
+      186.5,
+      188.6
+    ],
+    "offValues": [
+      0
+    ],
+    "groupsAndTracePolygonArraysExactlyEqual": true,
+    "originalWholePolygonArraySeparatelyReturned": false,
+    "sourceProjectionRuns": 0,
+    "bodyOrHeaderTakenFromOtherCapture": false
+  },
+  "preExecutionFailures": [
+    {
+      "stage": "node_repl dataURL import",
+      "result": "unsupported import specifier",
+      "engineHTTPRequests": 0,
+      "actualVMInvocations": 0
+    },
+    {
+      "stage": "node_repl AsyncFunction wrapper",
+      "result": "Code generation from strings disallowed",
+      "engineHTTPRequests": 0,
+      "actualVMInvocations": 0
+    },
+    {
+      "stage": "native Node stdin with local fd3 pipe",
+      "result": "fetch failed: getaddrinfo ENOTFOUND raw.githubusercontent.com",
+      "successfulEngineCodeLoads": 0,
+      "actualVMInvocations": 0,
+      "stdoutEmpty": true
+    }
+  ],
+  "successfulExecution": {
+    "environment": "context-mode javascript readonly calculation",
+    "actualVMInvocations": 1,
+    "allEightEngineHashesVerified": true,
+    "newEngineCodeFilesSaved": 0,
+    "fullArchiveOrPrivateSourceUsed": false
+  },
+  "originalWhole": true,
+  "locallyAuthoredRoot": false,
+  "mixedParts": false,
+  "newFilledGeometryAuthored": false,
+  "mappingApproved": false,
+  "nativeShapeApproved": false,
+  "actualTemporalApproved": false,
+  "runtimeApplied": false,
+  "serverRuns": 0
+}
