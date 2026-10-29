@@ -1,0 +1,53 @@
+{
+  "schema": "hanja-approved-registration-preparation/v1",
+  "batch": 1551,
+  "glyph": "盌",
+  "recordedAt": "2026-10-30",
+  "productionPatch": {
+    "path": "docs/hanja-source-execution-u76cc-original-2026-10-29/registration-1551/production.approved.patch",
+    "SHA256": "f0a8f889dcc4e94ed3c5f46a0c2b0b2a169d81e3fa263fa5be8c2b4ae1832bb4",
+    "futureFiles": {
+      "lib/hanja-stroke-dictionary-glyphwiki-batch1551.ts": "0bfb1a52552550b19d7d579efdbbaf307f98d752f3416b8fe23ffe91951c4c20",
+      "lib/hanja-stroke-dictionary-glyphwiki-batch1551.test.ts": "7593db4ff6e2fb7f0d11ecdb0af80998851aa0ec117aa875fd8653e7473f9d39",
+      "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch1551.json": "9c6b8b92db3e85de8da842683e5d98132d445ff33b025004efc5e16a2bc1e37d",
+      "public/hanja-strokes/sources/u76cc/NOTICE.md": "9f9ff2c247299c52523e3e1a2add235586008903820c670336fd58e1a7030d8a"
+    }
+  },
+  "registryPatch": {
+    "path": "docs/hanja-source-execution-u76cc-original-2026-10-29/registration-1551/registry.pending.patch",
+    "SHA256": "23f3885dbcd7081b6fd4a3e1c5eaff22166a99d32048bb55b2a241594423d4b2",
+    "before": "1fa5abde429261f7419e05b19d4de152b31a049fc8b38245dc20b5a65e774306",
+    "after": "eff88107ad7b2261fed536e47fc6b7f16164912a18276074157289a803b14c01",
+    "exactForward": true,
+    "sites": 2
+  },
+  "capsule": {
+    "path": "docs/hanja-source-execution-u76cc-original-2026-10-29/registration-1551/capsule.approved.json",
+    "SHA256": "852cf3cb895093b98c9fb7e905bd439eeed413ef5a13a8cac57bca59fdcb2319"
+  },
+  "focusedChecks": {
+    "actualHanjaDataAndOutlineModuleJSONSemantic": {
+      "diagnostics": [],
+      "sourceFiles": 68,
+      "actualDictionaryAndOutlineTypes": true,
+      "virtualFiles": 2,
+      "fullProjectTypecheck": false
+    },
+    "sourcePinsPass": true,
+    "sourceGeometryUnchanged": true,
+    "strictLoaderSameJSONBodyReused": true,
+    "actualLiveTests": "ROOT runs after registry applies",
+    "testCommand": "rtk proxy node --experimental-strip-types --test lib/hanja-stroke-dictionary-glyphwiki-batch1551.test.ts"
+  },
+  "nativeFinal": {
+    "path": "docs/hanja-source-execution-u76cc-original-2026-10-29/native-actual-Q-contact-endpoint-review.json",
+    "SHA256": "ad47f09c7cf0fbfbe58ce004a7ab266b9a4cd60107394424ccd446b0553777dd"
+  },
+  "scope": "Fresh13 exact endpoint views following preserved225 HOLD archive; ledger238 neither allfreshPASS nor unique states. Complete original P/Q plus authored Q2/4 clock and independentfold7 only.",
+  "sharedFilesChangedByThisChild": false,
+  "sourceMathRerun": false,
+  "newEngine": 0,
+  "server": 0,
+  "build": 0,
+  "fullProjectTypecheck": 0
+}
