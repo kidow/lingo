@@ -1,0 +1,90 @@
+{
+  "schema": "hanja-approved-registration-preparation/v1",
+  "date": "2026-10-30",
+  "glyph": "齕",
+  "batch": 1562,
+  "status": "APPROVED-TRANSPORT-ROOT-APPLY-ONLY",
+  "counts": {
+    "logical": 18,
+    "catalog": 18,
+    "raw": 21,
+    "paintedRaw": 20,
+    "emptyRaw": 1,
+    "calls": 22,
+    "masks": 22,
+    "P": 48,
+    "Q": 11,
+    "cardinal": 11,
+    "sourceAffineQ": 9,
+    "retainedOriginalRaw": 4,
+    "retainedOriginalCalls": 6,
+    "retainedOriginalP": 13,
+    "completeChiRaw": 16,
+    "completeChiCalls": 16,
+    "completeChiP": 35
+  },
+  "finalNativeReview": {
+    "path": "docs/hanja-authored-component-u9f55-gw-chi-g01-original-qi-2026-10-30/native-actual-final-review.json",
+    "SHA256": "5aab4938f62e0286e43d9b1f26d346b9a799f1473736a03d7b043c1d9c594646"
+  },
+  "capsule": {
+    "path": "docs/hanja-authored-component-u9f55-gw-chi-g01-original-qi-2026-10-30/registration-1562/capsule.approved.json",
+    "SHA256": "8ba4437ecf8db590434a6437e7ac240b6143d2b746d40530c883e99fbe2f46aa"
+  },
+  "fourFiles": {
+    "path": "docs/hanja-authored-component-u9f55-gw-chi-g01-original-qi-2026-10-30/registration-1562/four-files.approved.patch",
+    "SHA256": "88c2e34ea43ec517aabb49b32b4190f1f4edd32432e8c93e0c96a53b63787f77",
+    "targets": [
+      {
+        "path": "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch1562.json",
+        "SHA256": "512178d8c681d6084f5884b63558bb7eb0755095fc4e52f10c93593d7ec80ab1"
+      },
+      {
+        "path": "lib/hanja-stroke-dictionary-glyphwiki-batch1562.ts",
+        "SHA256": "47b4bf279997e129e6099cc91fdfe2d097f02fea76c63eacf195c90a84b20c0a"
+      },
+      {
+        "path": "lib/hanja-stroke-dictionary-glyphwiki-batch1562.test.ts",
+        "SHA256": "a3b9d9be61c3c2d9e05db2669d867de2cb66b6ffca492455ce87f59ba1b3d5eb"
+      },
+      {
+        "path": "public/hanja-strokes/sources/glyphwiki-batch1562-NOTICE.md",
+        "SHA256": "f83c3b5e05dd3538aa065c13b88c36b3b70067d6508445d8f5f02002c49a40c1"
+      }
+    ]
+  },
+  "registry": {
+    "path": "docs/hanja-authored-component-u9f55-gw-chi-g01-original-qi-2026-10-30/registration-1562/ordinary-registry.pending.patch",
+    "SHA256": "b00ceae6f7f14fe2dad1524bf7b9024f00019720ed4a0bd796e27227729455b0",
+    "applyAllowed": true,
+    "target": "lib/hanja-strokes.ts",
+    "beforeSHA256": "fad43ceba50ac756af2b21b26c1fceae74340ae6eef030b0a564e04af9a37999",
+    "afterSHA256": "28a25d57eba2218bf0b34ff7cf93bee4cbad701ce47391eeca462119fc083e3f",
+    "variantRegistryUnchanged": true,
+    "variantRegistrySHA256": "4903a2aa3e72ef53559020842f23eb933e2ebdc23517644172f743778f083bf6"
+  },
+  "focusedTestPlan": {
+    "command": "node --experimental-strip-types --test lib/hanja-stroke-dictionary-glyphwiki-batch1562.test.ts",
+    "tests": 3,
+    "runAfterRootApply": true,
+    "executedYet": false,
+    "scope": [
+      "live18/wrong17,19/receipt316 and immutable sourcepins",
+      "20paintedraw+blank17/22calls48P, retainedQi and exact9sourceaffineQ+2worldQ14/7",
+      "strict independent JSON loader rejects getters/prototype/count/affine mutation and accepts objectkey reorder"
+    ]
+  },
+  "validation": {
+    "moduleParseDiagnostics": 0,
+    "testParseDiagnostics": 0,
+    "historicalProfileHRendererFixtureGeometryExact": true,
+    "sourceInputs": 23,
+    "build": 0,
+    "fullTypecheck": 0,
+    "SSR": 0,
+    "server": 0
+  },
+  "actualSharedWrites": false,
+  "actualProductionWrites": false,
+  "commit": false
+}
