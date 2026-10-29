@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-30",
+  "glyph": "舝",
+  "status": "HOLD-two-detached-contact-starts",
+  "reviewer": "Codex root, CUA browser panel tab315",
+  "profileSHA256": "dec1b82e6ac49e88671981ad19c08d125420a01f1688b70c14c9d5db244414b8",
+  "H_SHA256": "6bdd887803ccac4c1281e5cbc0a23050b008bcc175abce35bf357216dc0aed69",
+  "R_SHA256": "3015b3127a4e933cdb978059c11e0017e0aba4f6eb8abf0013ec5d845e8eb03b",
+  "fixtureSHA256": "ac23edc46f2c28bf52744ed23ab3d208b5816e3f9b3a6008f0b1cc579e18f0bb",
+  "geometrySHA256": "e86568deb0fdc4e077a603c6e20ee08778e786f91a17380e0dc66de5b2353d7a",
+  "views": {
+    "failedContactStarts": {"pens": [9,12], "targetMask": 2, "localAmounts": [0.01,0.05,0.1], "views": 6, "displaySize": 520},
+    "unaffectedCompact9": {"pens": [1,2,3,4,5,6,7,8,10,11,13], "views": 99, "pen1": "Explicit original slant-L downward-bounds baseline9, not horizontal fallback."},
+    "unchangedCurveStartRelease": {"targets": ["4m1","4m2","5m1","5m2","6m1","6m2","7m1","8m2","9m1","10m1"], "views": 30},
+    "all11CurveFullRoundResidual": 11,
+    "total": 146
+  },
+  "findings": [
+    "Pen9 mask2 exposes a detached left head below and left of the completed descending stroke at all three inspected early amounts.",
+    "Pen12 mask2 exposes a detached left horizontal segment before reaching the completed upright vertical at all three inspected early amounts.",
+    "Stable checks and errors were empty, but these visual failures remain HOLD. Original guide gaps and contours were preserved.",
+    "The other eleven logical strokes and ten unchanged source-start releases passed this finite observation. All eleven original full-round residual views were blank."
+  ],
+  "reuseEligibleIfExactInputsAndRenderingUnchanged": {"compact": 99, "sourceStartRelease": 30, "originalSourceResidual": 11, "total": 140},
+  "naturalPlaybackApproved": false,
+  "runtimeApplied": false,
+  "sourceGeometryChanged": false,
+  "buildRun": false,
+  "wholeProjectTypecheckRun": false,
+  "privateSourcePixelsPersisted": false
+}

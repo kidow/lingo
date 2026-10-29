@@ -1,0 +1,79 @@
+{
+  "schema": "hanja-isolated-H-preparation/v1",
+  "glyph": "舝",
+  "status": "pending-isolated-native",
+  "beforeH": "ddd5294b8273b4e8be5b79a9d5e55b3cee6dce9ad10e9fd8ba16db5e888cfbaf",
+  "afterH": "6bdd887803ccac4c1281e5cbc0a23050b008bcc175abce35bf357216dc0aed69",
+  "rendererSHA256": "3015b3127a4e933cdb978059c11e0017e0aba4f6eb8abf0013ec5d845e8eb03b",
+  "patch": {
+    "path": "docs/hanja-source-mapping-u821d-vs0-original13-2026-10-30/actual-H-integration.pending-zhi.patch",
+    "sha256": "8972544b08007f79b2a0dca36ff3270b3c1846959aaaede209f48b0b308b7938",
+    "hunks": 18,
+    "nativeOldBlockAscending": true,
+    "exactForward": true,
+    "exactInverse": true
+  },
+  "profile": {
+    "path": "docs/hanja-source-mapping-u821d-vs0-original13-2026-10-30/actual-profile-start.pending.json",
+    "sha256": "cdb8de82e962894efecbe8c5e0b56f08cc84fbfa21ed0a4f1c86a77115c5914c",
+    "profileFinalized": false,
+    "executionEnabled": false,
+    "sharedWindowPending": true,
+    "ordinarySHA256": "aed648dbcd0f091f0d3e3163e0f3655fae93f1aa53adce4c516bdb22abf5a4d5",
+    "repinAfter1557": true
+  },
+  "focused": {
+    "Hsyntax": true,
+    "browserSyntax": true,
+    "actualFixtureGuard": true,
+    "guardNegatives": 6,
+    "generatedPayloadFields": 7,
+    "payloadStrokesExact": true,
+    "foreignRouteRejected": 4,
+    "explicitTopEntry": true,
+    "SSR": 0,
+    "server": 0
+  },
+  "collector": {
+    "actualSourceCollector": 397,
+    "dependencies": 396,
+    "newHelper": true,
+    "sourceHBeforeSSRProbeSHA": "6bdd887803ccac4c1281e5cbc0a23050b008bcc175abce35bf357216dc0aed69",
+    "SSR": 0,
+    "server": 0
+  },
+  "source": {
+    "fixtureSHA256": "ac23edc46f2c28bf52744ed23ab3d208b5816e3f9b3a6008f0b1cc579e18f0bb",
+    "geometrySHA256": "e86568deb0fdc4e077a603c6e20ee08778e786f91a17380e0dc66de5b2353d7a",
+    "pens": 13,
+    "masks": 20,
+    "P": 42,
+    "Q": 11,
+    "cardinal": 9,
+    "compounds": [
+      2,
+      4,
+      5,
+      6,
+      8,
+      9,
+      12
+    ],
+    "originalVS0Whole": true,
+    "sourcePGuideFlagsUnchanged": true
+  },
+  "limits": {
+    "nativeActual": false,
+    "runtime": false,
+    "sourceGuideGaps": [
+      9,
+      12
+    ],
+    "firstSlantedLineDownBoundsAuthorDisplay": true,
+    "noBridge": true,
+    "SSR": 0,
+    "server": 0,
+    "sharedWrites": 0
+  },
+  "startCommand": "rtk proxy node --experimental-strip-types scripts/hanja-actual-component-review.mjs --profile docs/hanja-source-mapping-u821d-vs0-original13-2026-10-30/actual-profile-start.pending.json --profile-sha cdb8de82e962894efecbe8c5e0b56f08cc84fbfa21ed0a4f1c86a77115c5914c --port PORT"
+}
