@@ -1,0 +1,50 @@
+{
+  "schema": "hanja-complete-donor-cross-contact-check/v1",
+  "date": "2026-10-30",
+  "glyph": "瑲",
+  "input": {
+    "recipient": {
+      "path": "docs/hanja-goal-glyphwiki-batch910-2026-10-13/engine-proof.json",
+      "SHA256": "af8725be5086be13abba604572e76bad4ed1abf342557f3287556e9d81462e6e"
+    },
+    "donor": {
+      "path": "docs/hanja-authored-component-u7472-hans-cang10-2026-10-30/donor-source-record.json",
+      "SHA256": "fefd99037c0d6b54e2a42809634f905b031370099628e6b1d47653d4fec6f155"
+    },
+    "recipe": {
+      "path": "docs/hanja-authored-component-u7472-hans-cang10-2026-10-30/recipe.json",
+      "SHA256": "9c0e8572a355973c37cd7f4edf4b40ad2700e9ecd6ef25de10bb1cf1abe10b57"
+    }
+  },
+  "facts": {
+    "matrixExact200": [
+      "624/4325",
+      "0",
+      "0",
+      "1751/9110",
+      "435363/8650",
+      "11597/1822"
+    ],
+    "targetActualBBox200": [
+      "135/2",
+      "129/10",
+      "1923/10",
+      "188"
+    ],
+    "sourceControlBBox1024": [
+      "119",
+      "34",
+      "984",
+      "945"
+    ],
+    "oldCrossComponentContacts": [],
+    "newControlHullPotentialContacts": [],
+    "newFilledDisjointProven": true,
+    "proof": "Every complete cubic filled contour lies in convex hull of all its original controls/endpoints. Exact convex-hull disjointness from every retained polygon proves filled disjointness; potential contact is not a proved new filled contact."
+  },
+  "methodScope": "All8 retained KAGE polygons versus10 complete source cubic-control convex hulls in exact rational affine world. All80 pairs disjoint proves no new filled cross-component contact. This does not approve publisher typography.",
+  "sourceOriginalContoursUnchanged": true,
+  "newGeometry": false,
+  "nativeApproved": false,
+  "runtimeApplied": false
+}
