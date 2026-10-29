@@ -1,0 +1,82 @@
+{
+  "schema": "hanja-approved-registration-preparation/v1",
+  "glyph": "藚",
+  "batch": 1548,
+  "catalog": 19,
+  "playback": 19,
+  "sourceMasks": 21,
+  "P": 33,
+  "finalNativeReview": {
+    "path": "docs/hanja-authored-component-u85da-vs3-grass-vs2-body-2026-10-29/native-actual-fold-contact-review.json",
+    "SHA256": "287d8e3301076114f05b189e0596ef53cc2aa58bddd53e42b6e3eaf926baf700"
+  },
+  "actualReviewProfile": {
+    "path": "docs/hanja-authored-component-u85da-vs3-grass-vs2-body-2026-10-29/actual-profile-fold-contact-start.json",
+    "SHA256": "934688bf284b5c16e3133496533a9070c48469be6190033e49bd2d4f538729c6"
+  },
+  "fixture": {
+    "path": "docs/hanja-authored-component-u85da-vs3-grass-vs2-body-2026-10-29/fixtures-execution-draft.json",
+    "SHA256": "284f8c561ecc899352750598831aa2f8b0fb21bcf078f4d5a9220968e5010b49",
+    "key": "strokes",
+    "geometrySHA256": "64df063aa2736999f9a95344c60cf1b7283b835127d5ac3a3418d8bb06725042"
+  },
+  "files": [
+    {
+      "path": "lib/hanja-stroke-dictionary-glyphwiki-batch1548.ts",
+      "SHA256": "5193a4022b0a2669591b59bda3b1254e5857fae7faccef5a7fade8a6357d4486",
+      "bytes": 30943
+    },
+    {
+      "path": "lib/hanja-stroke-dictionary-glyphwiki-batch1548.test.ts",
+      "SHA256": "72b26ea493baa86a533fed1289627497ffc8fd2c7c6a54df3d02f28f39dcb09a",
+      "bytes": 6960
+    },
+    {
+      "path": "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch1548.json",
+      "SHA256": "84a72fbc6207b890a7b071f56c1887b93ba8e24b229d949006f7a951758f3469",
+      "bytes": 18378
+    },
+    {
+      "path": "public/hanja-strokes/sources/u85da/NOTICE.md",
+      "SHA256": "b79824b6f0921ce218cf677cccd4b6d3436dd96c26751526a601547b7a28e95a",
+      "bytes": 3172
+    }
+  ],
+  "sourcePatch": {
+    "path": "docs/hanja-authored-component-u85da-vs3-grass-vs2-body-2026-10-29/registration-1548/approved-source.patch",
+    "SHA256": "a956419e8b133ba9dae66d769b41f96fbf79c47dac9964be17eed628f8f03c7d"
+  },
+  "registryPatch": {
+    "path": "docs/hanja-authored-component-u85da-vs3-grass-vs2-body-2026-10-29/registration-1548/registry.pending.patch",
+    "SHA256": "5b4bbd0a713c1d721bd026f0081a8d879af16fc74e05a9a65c4e9b64d5f77108",
+    "beforeSHA256": "f4332865c289405f9e9719aae9674a8efefc1f0a1b2789b0c8ff89bc2fd508b8",
+    "afterSHA256": "1bf7bac148e13fc069a74faba28e4f2204669021b60cc3265c434897a2cf3459"
+  },
+  "checks": {
+    "virtualFocusedTests": 3,
+    "virtualPassed": 3,
+    "virtualRuntimeFlagsSetOnlyInRAM": true,
+    "virtualRegistryOnly": true,
+    "actualSharedWrites": 0,
+    "selectedSemanticRoots": 2,
+    "semanticErrors": 0,
+    "immutableInputPinsBound": true,
+    "mutableSnapshotsOnly": [
+      "components/hanja/stroke-outlines.tsx",
+      "scripts/hanja-actual-component-review.mjs"
+    ],
+    "sourceRows": 19,
+    "masks": 21,
+    "P": 33,
+    "nativeVisualViews": 303,
+    "finalGuardStates": 102,
+    "historicalNaturalFailuresPreserved": true,
+    "builds": 0,
+    "fullProjectTypeChecks": 0
+  },
+  "activation": "ROOT waits until active review server stops, applies4AddFiles then existing registry pendingpatch; set top SOURCE_INPUT.runtimeApplied and exported RUNTIME_APPLIED true after actual wiring; run actual focused3 once and resolver/count check before commit.",
+  "testCommand": "node --experimental-strip-types --test lib/hanja-stroke-dictionary-glyphwiki-batch1548.test.ts",
+  "registrationAuthorized": true,
+  "runtimeApplied": false,
+  "productionFilesActuallyCreated": false
+}

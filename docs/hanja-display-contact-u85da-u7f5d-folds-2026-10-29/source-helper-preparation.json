@@ -1,0 +1,84 @@
+{
+  "schema": "hanja-exact-fold-contact-integration-preparation/v1",
+  "glyphs": [
+    {
+      "glyph": "藚",
+      "pens": [
+        9,
+        14
+      ],
+      "logical": 19,
+      "masks": 21,
+      "P": 33
+    },
+    {
+      "glyph": "罝",
+      "pens": [
+        2,
+        7
+      ],
+      "logical": 10,
+      "masks": 12,
+      "P": 15
+    }
+  ],
+  "status": "prototype-native-pending/integration-draft-only",
+  "prototype": {
+    "path": "docs/hanja-display-contact-u85da-u7f5d-folds-2026-10-29/prototype.html",
+    "SHA256": "999604a5c2f926005534fd5e6ce7a254d4c7f6322a9c7679647207ccf459e973"
+  },
+  "proof": {
+    "path": "docs/hanja-display-contact-u85da-u7f5d-folds-2026-10-29/contact-proof.json",
+    "SHA256": "7678a560cb4e203f7d149909193dcf534ababa2186602cf0adaf2c0d0d113656"
+  },
+  "helper": {
+    "path": "lib/hanja-stroke-fold-contact-u85da-u7f5d.ts",
+    "SHA256": "46c20a920336955f26c7b81a77594d5c594dc688180c45d4fc8617d7d43fe1fc",
+    "fingerprint": "098695742f228e006811e4b76622b0482e495fdc6b8073c0732167b673f5a644"
+  },
+  "test": {
+    "path": "lib/hanja-stroke-fold-contact-u85da-u7f5d.test.ts",
+    "SHA256": "b02bd77ba4fe8c71d1b4a33df0274b5b3257600bca6a444497217d3b6738292a"
+  },
+  "renderer": {
+    "path": "components/hanja/stroke-outlines.tsx",
+    "beforeSHA256": "3b542198be38f4aeca52635c94507ceba8e76192260be9f6c6913a9f3244c972",
+    "afterSHA256": "931416a9e1fd8bf04e6ca0fbc5ce3a28f15cc2f6c1f0925fb21dd13e5a9dbe92",
+    "exactHunks": 6,
+    "forwardAndInverse": true
+  },
+  "API": {
+    "context": "makeReviewedFoldContactContext(REVIEWED_FOLD_CONTACT_INPUT,strokes)",
+    "selector": "reviewedFoldContactPolicy(context,zeroBasedPen,zeroBasedMask)",
+    "frame": "sampleReviewedFoldContactFrame(policy,originalSegment,Vlocal,previousMaskProgress)",
+    "prior": "verifyReviewedFoldContactPrior(policy,g,previousMaskProgress,logicalProgress,frameId)"
+  },
+  "DOM": {
+    "prefix": "data-fold-contact-",
+    "context": "u85da-u7f5d-exact-fold-contact",
+    "kind": "source-P-y-contact-band-u85da-u7f5d",
+    "frame": "id+'-fold-contact-frame-'+phase+'-'+count+'-'+String(manual)+'-'+String(elapsed)",
+    "clipId": "clipId+'-fold-contact-clip'",
+    "sourceP": "original V D once; same owner defs/clipPath/rect; p0 hidden, p1 direct original custom g retained",
+    "prior": "immediate previous sibling original H path, completed/opaque/same frame/document/owner/source/transform"
+  },
+  "checks": {
+    "strictTests": 5,
+    "strictPassed": 5,
+    "selectedSemanticRoots": 2,
+    "semanticErrors": 0,
+    "rendererSyntaxErrors": 0,
+    "sourcePGuideFlagsWeightChanged": false,
+    "extraFixtureField": 0,
+    "boundsDifferenceJSOnly": true,
+    "resourcesExpected": 392,
+    "SSRNotYetRun": true,
+    "nativePrototypePending": true,
+    "actualComponentNativePending": true,
+    "sharedFilesActuallyChanged": false,
+    "builds": 0,
+    "fullProjectTypeChecks": 0
+  },
+  "runtimeApplied": false,
+  "registrationAuthorized": false
+}

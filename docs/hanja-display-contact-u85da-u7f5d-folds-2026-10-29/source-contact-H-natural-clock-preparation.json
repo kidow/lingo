@@ -1,0 +1,67 @@
+{
+  "schema": "hanja-fold-contact-natural-clock-observer-repair/v1",
+  "date": "2026-10-29",
+  "beforeH": "b7650914e12b3e6661a61167a036ad7d9f7d11bb4384800618585e38a1971ac3",
+  "afterH": "fb44db7253c7e5930a6c61e48c1da7c8377a5357474b686cc375af4bce305538",
+  "patch": {
+    "path": "docs/hanja-display-contact-u85da-u7f5d-folds-2026-10-29/source-contact-H-natural-clock.patch",
+    "SHA256": "fac8272d698ddca49734879ab0b6d0c2e64072e0dbc835d7bddc5c4a31be822e",
+    "hunks": 3,
+    "forwardExact": true,
+    "inverseExact": true
+  },
+  "cause": "Natural play renders outerSVG once then mutates same plain clock.currentTime. Ref snapshot was stale and misclassified as fixed for child RAF renders.",
+  "preserved": {
+    "RGeometryAndPolicy": true,
+    "sourceFixtureAndCoverage": true,
+    "ordinary": "f4332865c289405f9e9719aae9674a8efefc1f0a1b2789b0c8ff89bc2fd508b8",
+    "closure": 392,
+    "finiteImmutableTargetProjectionExact": true,
+    "existingWeiObserver": true
+  },
+  "changed": {
+    "naturalRenderModeAndClockReferenceStored": true,
+    "naturalEndedRequiresPausedLiveTargetExactEquality": true,
+    "naturalRunningRejectsFutureTargetProgress": true,
+    "globalElapsedExactEqualityNotRequired": true
+  },
+  "validation": {
+    "actualExtractedRequestedFrameFunctionTests": 28,
+    "HModuleSyntax0": true,
+    "BrowserModuleSyntax0": true,
+    "fullBrowserOrDOM": false,
+    "fixtureCoverageOrPriorHelperTestsRepeated": false
+  },
+  "profiles": [
+    {
+      "path": "docs/hanja-authored-component-u85da-vs3-grass-vs2-body-2026-10-29/actual-profile-fold-contact-start.json",
+      "SHA256": "934688bf284b5c16e3133496533a9070c48469be6190033e49bd2d4f538729c6"
+    },
+    {
+      "path": "docs/hanja-source-execution-u7f5d-original-2026-10-29/actual-profile-fold-contact-start.json",
+      "SHA256": "680d55e8242b33f3ba2cca933fb4d680be5345e92b37892fd0f93c7edc5e421b"
+    }
+  ],
+  "nativeEvidence": {
+    "path": "docs/hanja-authored-component-u85da-vs3-grass-vs2-body-2026-10-29/native-actual-fold-contact-review.json",
+    "SHA256": "49a1d2c9c3e23504d0de2cf51b6e480b0941eb138b578f131da56f526d2e18a6",
+    "countedRVisualSVGViews": 303,
+    "RVisualFinitePASS": true,
+    "naturalEndedObserverPASS": false
+  },
+  "requiredRootConfirmation": [
+    "Natural9 and14 end guard after changed H",
+    "Finiteaggregate stable guard under same R/fixture"
+  ],
+  "execution": {
+    "SSR": 0,
+    "server": 0,
+    "build": 0,
+    "globalTypecheck": 0,
+    "sharedHChanges": 0
+  },
+  "approval": {
+    "actualTemporal": false,
+    "runtimeApplied": false
+  }
+}

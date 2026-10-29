@@ -1,0 +1,66 @@
+{
+  "schema": "hanja-contact-H-initialization-order-repair/v1",
+  "date": "2026-10-29",
+  "beforeH": "de9d0c25caaed6f6bb05c6ff1dcf861a420b57df9f1c9ccc4606154c885f7f1b",
+  "afterH": "b7650914e12b3e6661a61167a036ad7d9f7d11bb4384800618585e38a1971ac3",
+  "patch": {
+    "path": "docs/hanja-display-contact-u85da-u7f5d-folds-2026-10-29/source-contact-H-TDZ-order.patch",
+    "SHA256": "ef370f48da221a0180b24cd2cfb95a24777307589bb2549dd9989fa44e7d13f4",
+    "hunks": 2,
+    "onlySixDeclarationRelocation": true,
+    "forwardExact": true,
+    "inverseExact": true
+  },
+  "priorActualFailure": {
+    "ROOT_SSR": 1,
+    "CJS": 392,
+    "ESM": 392,
+    "startupPassed": true,
+    "browserModuleInitializationFailed": true,
+    "error": "ReferenceError Cannot access 'U85daMixedComponentsStartExact' before initialization",
+    "location": "browser.js:20:24",
+    "controls": 0,
+    "status": "loading",
+    "animationApproval": false,
+    "cleanup": {
+      "PID": 85054,
+      "port": 58114,
+      "session": 99101,
+      "tab": 262,
+      "exitCode": 130,
+      "serverStopped": true,
+      "tabClosed": true
+    }
+  },
+  "cause": "FoldContactExact referenced existing root flags before their const initialization. Prior syntax and route checks did not execute browser module initialization.",
+  "repair": "Move unchanged6declaration block immediately after both root flags; preserve all observer/frame/route/helper/source code.",
+  "profiles": [
+    {
+      "path": "docs/hanja-authored-component-u85da-vs3-grass-vs2-body-2026-10-29/actual-profile-fold-contact-start.json",
+      "SHA256": "3953795b05b98f6a0696c03067338f786975086a292663822ce83d54917235c4"
+    },
+    {
+      "path": "docs/hanja-source-execution-u7f5d-original-2026-10-29/actual-profile-fold-contact-start.json",
+      "SHA256": "9340c8a8e237ea9457404165f1253b8829ed383d031f1ce2e86926e2228e0937"
+    }
+  ],
+  "focusedValidation": {
+    "tool": "docs/hanja-display-contact-u85da-u7f5d-folds-2026-10-29/verify-H-TDZ-order.mjs",
+    "actualSixDeclarationSubsetExecutedForBothProfiles": true,
+    "sourceBoundContextsNonNull": true,
+    "fullBrowserOrDOMTest": false,
+    "NodeFixedModuleURLAdaptationOnly": true
+  },
+  "unchangedChecksAndGeometryReused": true,
+  "childExecution": {
+    "SSR": 0,
+    "server": 0,
+    "build": 0,
+    "globalTypecheck": 0,
+    "sharedHChanges": 0
+  },
+  "approval": {
+    "actualRNative": false,
+    "runtimeApplied": false
+  }
+}

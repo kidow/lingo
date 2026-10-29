@@ -1,0 +1,21 @@
+*** Begin Patch
+*** Update File: scripts/hanja-actual-component-review.mjs
+@@
+ const U97ceContactContext=U97ceContactRuntime&&C.sourceDisplayPolicy?.fingerprint===U97ceContactRuntime.U97CE_PEN8_FINGERPRINT?U97ceContactRuntime.makeReviewedU97cePen8Context(U97ceContactRuntime.REVIEWED_U97CE_PEN8_INPUT,strokes):null;
+-const FoldContactExact=(U85daMixedComponentsStartExact||U7f5dOriginalCardinalStartExact)&&C.sourceDisplayPolicy?.kind==='source-P-y-contact-band-u85da-u7f5d'&&C.sourceDisplayPolicy?.context==='u85da-u7f5d-exact-fold-contact'&&C.sourceDisplayPolicy?.fingerprint==="098695742f228e006811e4b76622b0482e495fdc6b8073c0732167b673f5a644";
+-const FoldContactRuntime=FoldContactExact?await import('@/lib/hanja-stroke-fold-contact-u85da-u7f5d'):null;
+-const FoldContactOutlineRuntime=FoldContactExact?await import('@/lib/hanja-stroke-outline'):null;
+-const FoldContactContext=FoldContactRuntime?.makeReviewedFoldContactContext(FoldContactRuntime.REVIEWED_FOLD_CONTACT_INPUT,strokes);
+-if(FoldContactExact&&!FoldContactContext)throw Error('Exact four-fold source context unavailable');
+-const foldContactRenderInputs=new WeakMap();
+ const u97ceContactRenderInputs=new WeakMap();
+@@
+ const U7f5dOriginalCardinalStartExact=C.kind==='plain-outline'&&C.root==="lingo-u7f5d-original-logical10-cardinal12-start-draft"&&C.sharedVersion==="lingo-u7f5d-original-logical10-cardinal12-start-draft"&&C.temporalPolicy==="exact-original-source-cardinal12-no-curve-logical10-draft"&&C.glyph==="罝"&&C.pens===10;
++const FoldContactExact=(U85daMixedComponentsStartExact||U7f5dOriginalCardinalStartExact)&&C.sourceDisplayPolicy?.kind==='source-P-y-contact-band-u85da-u7f5d'&&C.sourceDisplayPolicy?.context==='u85da-u7f5d-exact-fold-contact'&&C.sourceDisplayPolicy?.fingerprint==="098695742f228e006811e4b76622b0482e495fdc6b8073c0732167b673f5a644";
++const FoldContactRuntime=FoldContactExact?await import('@/lib/hanja-stroke-fold-contact-u85da-u7f5d'):null;
++const FoldContactOutlineRuntime=FoldContactExact?await import('@/lib/hanja-stroke-outline'):null;
++const FoldContactContext=FoldContactRuntime?.makeReviewedFoldContactContext(FoldContactRuntime.REVIEWED_FOLD_CONTACT_INPUT,strokes);
++if(FoldContactExact&&!FoldContactContext)throw Error('Exact four-fold source context unavailable');
++const foldContactRenderInputs=new WeakMap();
+ const U775fLowerVStartExact=C.kind==='plain-outline'&&C.root==="lingo-u775f-raw14-gap1-logical13-source-start-draft"&&C.sharedVersion==="lingo-u775f-raw14-gap1-logical13-source-start-draft"&&C.temporalPolicy==="same-source-raw14-positiveYaffine-padded7-source-start-draft"&&C.glyph==='睟'&&C.pens===13;
+*** End Patch

@@ -1,0 +1,50 @@
+{
+  "schema": "hanja-actual-profile-contract-repair-check/v1",
+  "glyph": "藚",
+  "batch": 1548,
+  "profilePath": "docs/hanja-authored-component-u85da-vs3-grass-vs2-body-2026-10-29/actual-profile-start.json",
+  "profileSHA256": "38bd95d1d91a6bfd47121e3af57a6710c61872f8c9ae1084f8c98f050bd04332",
+  "correctedField": {
+    "name": "schema",
+    "before": "hanja-isolated-review-pending-overrides/v1",
+    "after": "hanja-actual-component-profile/v1"
+  },
+  "cause": "Pending overlay schema overwrote the valid full-profile schema during Object spread. This was a preparation contract error, not a renderer/source failure.",
+  "previousRootStartup": {
+    "stage": "profile schema validation",
+    "SSR": 0,
+    "HTTPServer": 0,
+    "engine": 0
+  },
+  "checkOnly": {
+    "schemaAndActualRequiredHeader": true,
+    "allowedProfilePath": true,
+    "fullProfileInheritedRequiredFields": true,
+    "inputPins": 1105,
+    "inputPinFailures": [],
+    "guardPositive": true,
+    "guardNegative": 3,
+    "actualHTTPPayloadFields": 6,
+    "closure391": true,
+    "missingLeafRejected": true,
+    "executionFlags": [
+      true,
+      true,
+      false
+    ],
+    "SSR": 0,
+    "server": 0
+  },
+  "fixedPins": {
+    "H": "27b059425fe9fc9010f19c1d46cb2de7e9ffb80acf61e627bddd49b53faad706",
+    "R": "3b542198be38f4aeca52635c94507ceba8e76192260be9f6c6913a9f3244c972",
+    "ordinary": "f4332865c289405f9e9719aae9674a8efefc1f0a1b2789b0c8ff89bc2fd508b8",
+    "fixture": "284f8c561ecc899352750598831aa2f8b0fb21bcf078f4d5a9220968e5010b49",
+    "geometry": "64df063aa2736999f9a95344c60cf1b7283b835127d5ac3a3418d8bb06725042"
+  },
+  "pendingOverlayHistoricalBytesPreserved": true,
+  "sourceDataChanged": false,
+  "coverageReexecuted": false,
+  "nativeApproval": false,
+  "runtimeApplied": false
+}

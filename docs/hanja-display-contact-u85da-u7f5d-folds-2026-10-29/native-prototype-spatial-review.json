@@ -1,0 +1,151 @@
+{
+  "schema": "hanja-root-native-prototype-spatial-review/v1",
+  "glyphs": [
+    {
+      "glyph": "藚",
+      "pens": [
+        9,
+        14
+      ]
+    },
+    {
+      "glyph": "罝",
+      "pens": [
+        2,
+        7
+      ]
+    }
+  ],
+  "reviewer": "ROOT direct in-app browser",
+  "date": "2026-10-29",
+  "status": "pass-bounded-prototype-spatial-display",
+  "prototype": {
+    "path": "docs/hanja-display-contact-u85da-u7f5d-folds-2026-10-29/prototype.html",
+    "SHA256": "999604a5c2f926005534fd5e6ce7a254d4c7f6322a9c7679647207ccf459e973"
+  },
+  "proof": {
+    "path": "docs/hanja-display-contact-u85da-u7f5d-folds-2026-10-29/contact-proof.json",
+    "SHA256": "7678a560cb4e203f7d149909193dcf534ababa2186602cf0adaf2c0d0d113656"
+  },
+  "sourceSpecs": [
+    {
+      "glyph": "藚",
+      "fixture": "docs/hanja-authored-component-u85da-vs3-grass-vs2-body-2026-10-29/fixtures-execution-draft.json",
+      "SHA256": "284f8c561ecc899352750598831aa2f8b0fb21bcf078f4d5a9220968e5010b49",
+      "geometrySHA256": "64df063aa2736999f9a95344c60cf1b7283b835127d5ac3a3418d8bb06725042",
+      "pens": [
+        9,
+        14
+      ],
+      "logical": 19,
+      "masks": 21,
+      "P": 33
+    },
+    {
+      "glyph": "罝",
+      "fixture": "docs/hanja-source-execution-u7f5d-original-2026-10-29/fixtures-execution-draft.json",
+      "SHA256": "658f58678fd897dd00b9423e3b1e0ebc237f90cec4ea85f8013508ccae0cea6e",
+      "geometrySHA256": "3b8edd646a71f7c34f578399945f635a3be327399aa5696cda9a3be9590d443f",
+      "pens": [
+        2,
+        7
+      ],
+      "logical": 10,
+      "masks": 12,
+      "P": 15
+    }
+  ],
+  "observed": {
+    "compact": {
+      "targets": 4,
+      "samplesPerTarget": 10,
+      "totalSVGViews": 40,
+      "CSSpx": 300,
+      "allFramesDirectlyObserved": true,
+      "progress": [
+        0,
+        0.000001,
+        0.01,
+        0.05,
+        0.1,
+        0.25,
+        0.5,
+        0.75,
+        0.9999,
+        1
+      ],
+      "pass": true
+    },
+    "main": {
+      "targets": 4,
+      "VlocalProgress": [
+        0.01,
+        0.05,
+        0.1
+      ],
+      "totalSVGViews": 12,
+      "CSSpx": 520,
+      "borderAdditional": true,
+      "allFramesDirectlyObserved": true,
+      "pass": true
+    },
+    "whole": {
+      "glyphs": 2,
+      "totalSVGViews": 2,
+      "outerCSSpx": 522,
+      "pass": true
+    },
+    "totalDirectSVGViews": 54,
+    "initialHeadAttachedToOriginalH": true,
+    "p0VHidden": true,
+    "p1OriginalPRestored": true,
+    "privateScreenshotsSaved": false,
+    "naturalPlaybackExecuted": false,
+    "wholeHVTemporalPlaybackExecuted": false
+  },
+  "approval": {
+    "boundedPrototypeSpatialDisplay": true,
+    "prototypeNatural": false,
+    "officialMicroclockEquivalence": false,
+    "actualComponentTemporal": false,
+    "registration": false,
+    "runtimeApplied": false
+  },
+  "numericPolicy": {
+    "origin": "unchanged original body firstY parsed as binary64",
+    "negativeExtent": "origin-segment.bounds[1]",
+    "positiveExtent": "segment.bounds[3]-origin",
+    "u85daPen9PositiveExtent": 14.549999999999997,
+    "originalPGuideFlagsWeightBoundaryChanged": false,
+    "CSSbodyWidth632": true,
+    "geometryNotChangedByCaptureWidth": true
+  },
+  "history": {
+    "firstPreparationSession": {
+      "PID": 63923,
+      "port": 57795,
+      "session": 43316,
+      "tab": "254",
+      "onlyButtonsAndDOMRectCountObserved": true,
+      "nativeSVGViews": 0,
+      "stoppedBeforeNumericalAndCSSRevision": true,
+      "exitCode": 130
+    },
+    "originalGenericActualHolds": {
+      "scope": "Vlocal .01/.05/.1 mainCSS520 for each of four targets; group HOLD, not a claim all12 views were detached",
+      "preserved": true
+    }
+  },
+  "cleanup": {
+    "PID": 67214,
+    "port": 60440,
+    "session": 98823,
+    "tab": "255",
+    "tabClosed": true,
+    "serverStopped": true,
+    "exitCode": 130
+  },
+  "nextRequired": "ROOT actual R full H-to-V start/boundary/completion and natural playback; prototype natural not reused",
+  "builds": 0,
+  "fullProjectTypeChecks": 0
+}

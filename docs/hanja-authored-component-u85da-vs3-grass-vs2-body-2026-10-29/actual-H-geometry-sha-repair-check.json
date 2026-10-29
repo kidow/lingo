@@ -1,0 +1,33 @@
+{
+  "schema": "hanja-actual-H-exact-function-repair-check/v1",
+  "glyph": "藚",
+  "batch": 1548,
+  "cause": "Previous positive guard test executed a corrected RAM string while the actual serialized H patch retained two old Python geometry SHA literals. The prior claim did not validate the exact emitted function. This repair validates the full function extracted from the actual H source.",
+  "beforeH": "27b059425fe9fc9010f19c1d46cb2de7e9ffb80acf61e627bddd49b53faad706",
+  "afterH": "9557ffe220b348a1990e0e73f0c9d450e0f720cb769936843f0fd4d18c765dc9",
+  "patchSHA256": "551d9b71c5dacdc66ccb3abb3871221b39a5b7ea9863f093e1fa64d288ce35ec",
+  "hunks": 1,
+  "literalReplacements": 2,
+  "oldLiteral": "dcd571ebc722d58f7a27af97c2eec6a703b0c8c326a3eae72fb2d3737804cb70",
+  "newLiteral": "64df063aa2736999f9a95344c60cf1b7283b835127d5ac3a3418d8bb06725042",
+  "forwardInverseExact": true,
+  "oldActualFunctionFailureReproduced": true,
+  "correctedFullActualFunction": {
+    "guardPositive": true,
+    "guardNegative": 3,
+    "actualHTTPPayloadFields": 6,
+    "closure391": true,
+    "missingLeafRejected": true
+  },
+  "sourceFunctionSHA256Before": "959a4a4a7c4ef00d3c7b97165e7cb236f8a65cd3e3886163f39759f5cc884d01",
+  "sourceFunctionSHA256After": "6510a34d7725563bf2a09f427fb745c63ff9b2a96489ae6efbd6aa7a73701738",
+  "newProfileSHA256": "a86badb955309cc3f2d61080bdc6770b1752b8ead9c072ea660c80e05665b69f",
+  "fixtureSHA256": "284f8c561ecc899352750598831aa2f8b0fb21bcf078f4d5a9220968e5010b49",
+  "fixtureGeometryChanged": false,
+  "sourceCountsChanged": false,
+  "coverageReexecuted": false,
+  "sharedHAppliedByChild": false,
+  "SSR": 0,
+  "server": 0,
+  "nativeApproval": false
+}

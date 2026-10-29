@@ -1,0 +1,112 @@
+{
+  "schema": "hanja-exact-four-fold-H-preparation/v1",
+  "date": "2026-10-29",
+  "glyphs": [
+    "藚",
+    "罝"
+  ],
+  "H": {
+    "before": "137f1184b81fd1b5dc31775b6f34d1b5beaf6232ec4eefd21fb25b434b7c3f3a",
+    "after": "de9d0c25caaed6f6bb05c6ff1dcf861a420b57df9f1c9ccc4606154c885f7f1b",
+    "patch": "docs/hanja-display-contact-u85da-u7f5d-folds-2026-10-29/source-contact-H-integration.patch",
+    "SHA256": "96599eb54ae40268f32340184bb695eb2ffc51b8fab39d8c0b9fe8a3132233c9",
+    "hunks": 9,
+    "bytes": 216907,
+    "mostTransportBytesAreExistingSingleLongResourceOrRouteLines": true,
+    "forwardExact": true,
+    "inverseExact": true
+  },
+  "runtime": {
+    "R": "931416a9e1fd8bf04e6ca0fbc5ce3a28f15cc2f6c1f0925fb21dd13e5a9dbe92",
+    "helper": {
+      "path": "lib/hanja-stroke-fold-contact-u85da-u7f5d.ts",
+      "SHA256": "46c20a920336955f26c7b81a77594d5c594dc688180c45d4fc8617d7d43fe1fc",
+      "fingerprint": "098695742f228e006811e4b76622b0482e495fdc6b8073c0732167b673f5a644"
+    },
+    "resourceClosure": 392,
+    "ordinary": "f4332865c289405f9e9719aae9674a8efefc1f0a1b2789b0c8ff89bc2fd508b8"
+  },
+  "profiles": [
+    {
+      "path": "docs/hanja-authored-component-u85da-vs3-grass-vs2-body-2026-10-29/actual-profile-fold-contact-start.json",
+      "SHA256": "dfb54ccbb91732bf1434a32ddaf428eece884e9bf8f70d1a899ac14d4cd0a8a0",
+      "executionAuthorizedForIsolatedReviewOnly": true,
+      "nativeApproval": false,
+      "runtimeApplied": false
+    },
+    {
+      "path": "docs/hanja-source-execution-u7f5d-original-2026-10-29/actual-profile-fold-contact-start.json",
+      "SHA256": "afa4ebd125b0546e1edb66e6121ad47852a235b1b9694200bfdfae064a6b84a5",
+      "executionAuthorizedForIsolatedReviewOnly": true,
+      "nativeApproval": false,
+      "runtimeApplied": false
+    }
+  ],
+  "targets": [
+    {
+      "glyph": "藚",
+      "pens": [
+        9,
+        14
+      ],
+      "mask": 2
+    },
+    {
+      "glyph": "罝",
+      "pens": [
+        2,
+        7
+      ],
+      "mask": 2
+    }
+  ],
+  "checks": {
+    "actualBothFixtureFunctionsReachedReturn": true,
+    "returnedOriginalStrokesReference": true,
+    "actualJSONSHA": [
+      "64df063aa2736999f9a95344c60cf1b7283b835127d5ac3a3418d8bb06725042",
+      "3b8edd646a71f7c34f578399945f635a3be327399aa5696cda9a3be9590d443f"
+    ],
+    "fixtureGuardNegative4Each": true,
+    "actualGeneratedRouteFields8": true,
+    "routeNegative4Each": true,
+    "closure392Accept391And393Reject": true,
+    "helperBothContextsAndFourPoliciesBound": true,
+    "HModuleSyntax0": true,
+    "BrowserModuleSyntax0": true,
+    "actualDOMReviewed": false
+  },
+  "observerScope": {
+    "originalHGenericValidationRetained": true,
+    "onlyExactVMasksUseContactObserver": true,
+    "privatePriorVerificationOnPositiveV": true,
+    "p0AndP1CustomGroupRetained": true,
+    "immutableFixedClockSnapshot": true,
+    "requestedFrameComparesTargetClampedLogicalProgressOnly": true,
+    "irrelevantGlobalElapsedExactEquality": false,
+    "existingWeiObserverUnchanged": true
+  },
+  "preDeliveryCorrections": [
+    "Old 藚391/componentR3b guard now allows392/R931 only for exact new profile path",
+    "New exact route forwards existing7fields together with sourceDisplayPolicy; stale oldR route condition cannot omit targets"
+  ],
+  "prototype": {
+    "path": "docs/hanja-display-contact-u85da-u7f5d-folds-2026-10-29/native-prototype-spatial-review.json",
+    "SHA256": "a0b73ad0fa9cef21ea4ab441d4d4741f8dc69e0f7fbd4305245408bf61a1e504",
+    "spatialSVGViews": 54,
+    "naturalRuns": 0,
+    "actualRTemporalApproval": false
+  },
+  "unchangedGeometryAndCoverageReused": true,
+  "execution": {
+    "sharedHChanges": 0,
+    "SSR": 0,
+    "server": 0,
+    "build": 0,
+    "globalTypecheck": 0
+  },
+  "approval": {
+    "actualRNative": false,
+    "productionRegistration": false
+  }
+}

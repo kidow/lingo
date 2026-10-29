@@ -1,0 +1,68 @@
+{
+  "schema": "hanja-public-original-component-filled-coverage-preflight/v1",
+  "date": "2026-10-29",
+  "glyph": "藚",
+  "scope": "Full round guide only; dash/start gate removed. Bounded public numerical coverage, not native temporal approval.",
+  "inputSHA256": {
+    "docs/hanja-authored-component-u85da-vs3-grass-vs2-body-2026-10-29/fixtures-execution-draft.json": "284f8c561ecc899352750598831aa2f8b0fb21bcf078f4d5a9220968e5010b49",
+    "docs/hanja-authored-component-u85da-vs3-grass-vs2-body-2026-10-29/execution-draft-check.json": "a67c3bc2453150b6f7debc46eb0941a8c5fee5c95a3003a777c3e3c459c0e16d",
+    "docs/hanja-authored-component-u85da-vs3-grass-vs2-body-2026-10-29/coverage-preflight.py": "778351d4528ec30cdae30d16481495413df2a3e2e453b7b5a51c496bd06e4b79",
+    "docs/hanja-authored-component-u81dd-u51e1-2026-10-28/coverage-preflight.py": "b11ec7c430d57ea00325e7ea0ba13b99bc852624a6874d5cd597c870bd2282a6"
+  },
+  "numerics": {
+    "margin": 1e-8,
+    "triangleDepthLimit": 16,
+    "triangleNodeLimit": 60000,
+    "QOutsideControlBoxDepthLimit": 20,
+    "formalIntervalProof": false
+  },
+  "counts": {
+    "masks": 2,
+    "pass": 2,
+    "outlier": 0,
+    "unproved": 0
+  },
+  "units": [
+    {
+      "pen": 18,
+      "mask": 1,
+      "radius": 7,
+      "revealWidth": 14,
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "coverage": {
+        "covered": true,
+        "nodes": 254,
+        "maxDepth": 3,
+        "maxAcceptedUpperDistance": 6.858300695902475
+      },
+      "coverageRegion": "Original P fan superset; possible concave exterior can leave coverage unproved.",
+      "outliers": [],
+      "nativeApproval": false
+    },
+    {
+      "pen": 19,
+      "mask": 1,
+      "radius": 7,
+      "revealWidth": 14,
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "coverage": {
+        "covered": true,
+        "nodes": 395,
+        "maxDepth": 3,
+        "maxAcceptedUpperDistance": 6.9950940546047695
+      },
+      "coverageRegion": "Original P fan superset; possible concave exterior can leave coverage unproved.",
+      "outliers": [],
+      "nativeApproval": false
+    }
+  ],
+  "limits": [
+    "Unproved fan coverage is not insufficient width.",
+    "Start/compound boundaries/endings and replay require fresh root native review.",
+    "Public source point preservation does not establish original publisher microclock identity."
+  ],
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "serverStarts": 0,
+  "buildRun": false
+}

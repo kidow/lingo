@@ -1,0 +1,142 @@
+{
+  "schema": "hanja-isolated-actual-native-hold-review/v1",
+  "date": "2026-10-29",
+  "glyph": "藚",
+  "batch": 1548,
+  "status": "HOLD-compound9-and14-early-vertical-head-detached",
+  "reviewer": "ROOT direct in-app browser panel",
+  "fixedInputs": {
+    "component": {
+      "path": "components/hanja/stroke-outlines.tsx",
+      "SHA256": "3b542198be38f4aeca52635c94507ceba8e76192260be9f6c6913a9f3244c972"
+    },
+    "adapter": {
+      "path": "scripts/hanja-actual-component-review.mjs",
+      "SHA256": "9557ffe220b348a1990e0e73f0c9d450e0f720cb769936843f0fd4d18c765dc9"
+    },
+    "profile": {
+      "path": "docs/hanja-authored-component-u85da-vs3-grass-vs2-body-2026-10-29/actual-profile-start.json",
+      "SHA256": "a86badb955309cc3f2d61080bdc6770b1752b8ead9c072ea660c80e05665b69f"
+    },
+    "fixture": {
+      "path": "docs/hanja-authored-component-u85da-vs3-grass-vs2-body-2026-10-29/fixtures-execution-draft.json",
+      "SHA256": "284f8c561ecc899352750598831aa2f8b0fb21bcf078f4d5a9220968e5010b49",
+      "geometrySHA256": "64df063aa2736999f9a95344c60cf1b7283b835127d5ac3a3418d8bb06725042"
+    },
+    "coverage": {
+      "path": "docs/hanja-authored-component-u85da-vs3-grass-vs2-body-2026-10-29/coverage-preflight.json",
+      "SHA256": "a5e4f9ca546012a1fd5f809fdb069f41587c193431ecb41228930398c05daab4"
+    }
+  },
+  "startup": {
+    "newSSRChecks": 1,
+    "CJSModules": 391,
+    "ESMModules": 391,
+    "ordinaryMatrixChecks": 0,
+    "priorFailedStartups": [
+      {
+        "stage": "actual profile schema mismatch",
+        "SSR": 0,
+        "server": 0
+      },
+      {
+        "stage": "stale Python geometry SHA literal in actual H fixture guard",
+        "SSR": 0,
+        "server": 0
+      }
+    ]
+  },
+  "observed": {
+    "compact": [
+      {
+        "pen": 9,
+        "samples": 9
+      },
+      {
+        "pen": 14,
+        "samples": 9
+      }
+    ],
+    "compactFramesViewed": 18,
+    "criticalMain": {
+      "CSSSize": 520,
+      "visibleCaptureWidth": 517,
+      "excludedRightGutterPixels": 3,
+      "allInkVisible": true,
+      "localNextVerticalProgress": [
+        0.01,
+        0.05,
+        0.1
+      ],
+      "samples": [
+        {
+          "pen": 9,
+          "globalProgress": 0.874313642380932,
+          "result": "FAIL-detached triangular nib above completed horizontal"
+        },
+        {
+          "pen": 9,
+          "globalProgress": 0.8793918790524095,
+          "result": "FAIL-detached triangular nib above completed horizontal"
+        },
+        {
+          "pen": 9,
+          "globalProgress": 0.8857396748917563,
+          "result": "FAIL-detached triangular nib above completed horizontal"
+        },
+        {
+          "pen": 14,
+          "globalProgress": 0.6795904887714662,
+          "result": "FAIL-detached triangular nib above completed horizontal"
+        },
+        {
+          "pen": 14,
+          "globalProgress": 0.6925363276089828,
+          "result": "FAIL-detached triangular nib above completed horizontal"
+        },
+        {
+          "pen": 14,
+          "globalProgress": 0.7087186261558783,
+          "result": "FAIL-detached triangular nib above completed horizontal"
+        }
+      ]
+    },
+    "DOMBad": [],
+    "errors": []
+  },
+  "unreviewed": {
+    "other17LogicalPens": true,
+    "curve2Masks": true,
+    "fullAggregate": true,
+    "naturalPlayback": true
+  },
+  "approval": {
+    "originalMacroClockRetained": true,
+    "staticWholePlacementRetained": true,
+    "staticRoleMappingRetained": true,
+    "actualStartAndTransition": false,
+    "allStrokes": false,
+    "native": false,
+    "registrationAuthorized": false,
+    "runtimeApplied": false
+  },
+  "limits": [
+    "Empty DOM observer reports do not override the directly visible detached ink failure.",
+    "No all19 compact, curve-gate/residual, aggregate or natural-playback PASS is claimed.",
+    "Public original P and source guide geometry remain unchanged; repair is assigned independently and unapproved.",
+    "Historical schema/hash preparation failures remain recorded and are not counted as successful SSR."
+  ],
+  "cleanup": {
+    "PID": 56165,
+    "port": 54794,
+    "session": 31482,
+    "tab": "251",
+    "exitCode": 130,
+    "confirmedStopped": true,
+    "confirmedTabClosed": true,
+    "childServers": 0
+  },
+  "geometryEdited": false,
+  "newEngineRuns": 0,
+  "buildRun": false
+}
