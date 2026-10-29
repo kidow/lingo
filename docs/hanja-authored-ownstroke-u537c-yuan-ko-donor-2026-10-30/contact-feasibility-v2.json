@@ -1,0 +1,111 @@
+{
+  "schema": "hanja-source-donor-affine-contact-feasibility/v1",
+  "date": "2026-10-30",
+  "glyph": "卼",
+  "candidate": 2,
+  "status": "HOLD-proven-new-contact-raw8",
+  "inputs": {
+    "sourceRecord": {
+      "path": "docs/hanja-authored-ownstroke-u537c-yuan-ko-donor-2026-10-30/source-record.json",
+      "SHA256": "500dca59c097f440e2eb5ddacde394a4b41b5fa0672623554f8a7790fab2a6ff"
+    },
+    "recipe": {
+      "path": "docs/hanja-authored-ownstroke-u537c-yuan-ko-donor-2026-10-30/recipe-v2.pending.json",
+      "SHA256": "eb2d972b928384eb592c0207fb65ba7366aac41f3f03e37eb1389d5358f8cabb"
+    },
+    "recipient": {
+      "path": "docs/hanja-goal-glyphwiki-batch744-2026-10-12/engine-proof.json",
+      "SHA256": "18e8c14d9c98003ac62219e948f632de814644139c6ecddbd4c95047079d9d43"
+    }
+  },
+  "result": {
+    "matrixExact": [
+      "181/2450",
+      "0",
+      "0",
+      "771/2410",
+      "4934/245",
+      "-25297/241"
+    ],
+    "determinantExact": "139551/5904500",
+    "targetControlBox": [
+      "278/5",
+      "23",
+      "459/5",
+      "886/5"
+    ],
+    "oldTargetToOtherContacts": [
+      [
+        3,
+        1
+      ]
+    ],
+    "newExactCubicPositiveAreaWitnesses": [
+      {
+        "raw": 1,
+        "originalPolygonOneBased": 1,
+        "point": [
+          "32235787714759525093/543933222681640960",
+          "1728647832922692387673/66881585033814016000"
+        ],
+        "oldTargetContactExists": true,
+        "strictOldFilledPInside": true,
+        "exactCubicWindingInsideByHomotopy": true,
+        "curveBoundaryDistanceLowerBound": "1/1000"
+      },
+      {
+        "raw": 8,
+        "originalPolygonOneBased": 3,
+        "point": [
+          "1291809053293132988563/14596422792210022400",
+          "59660666388344515539321/358952846216593408000"
+        ],
+        "oldTargetContactExists": false,
+        "strictOldFilledPInside": true,
+        "exactCubicWindingInsideByHomotopy": true,
+        "curveBoundaryDistanceLowerBound": "1/1000"
+      }
+    ],
+    "bboxSeparatedOtherRaw": [
+      2,
+      6,
+      7,
+      9,
+      10,
+      11,
+      12
+    ],
+    "certifiedCubicHullSeparatedOtherRaw": [
+      5
+    ],
+    "possibleButUnprovedOtherRaw": [],
+    "certificate": {
+      "epsilon": "1/1000",
+      "flatPieces": 915,
+      "maxSubdivisionDepth": 7,
+      "arithmetic": "Exact rational affine/control points/deCasteljau/control convex hull separation and winding. Analysis polygon is not product geometry.",
+      "positiveWitnessBasis": "Every source cubic fragment remains in EPS chord capsule; point farther than EPS from all chords has same nonzero winding under curve-to-chord homotopy.",
+      "separationBasis": "Every exact cubic control hull and closing line is disjoint from each original filled polygon; original polygon vertex is outside the donor winding. This excludes boundary crossing, donor-inside-original and original-inside-donor containment."
+    },
+    "allNonTargetRelationsResolved": true,
+    "shapeApproved": false,
+    "runtimeApplied": false
+  },
+  "verification": {
+    "codePath": "docs/hanja-authored-ownstroke-u537c-yuan-ko-donor-2026-10-30/verify-contact-v2.py",
+    "SHA256": "6f5d507db126ce7fe91f99bc6384d3cdd6b988bcc09ac840442e24c67cbf5141",
+    "runExit": 0,
+    "placementTrialsForThisAlternative": 1,
+    "noFurtherLoop": true
+  },
+  "preservation": {
+    "oldRaw3And4DeletedAndReplaced": true,
+    "other10Raw29PolygonsExact": true,
+    "donorCompleteD4CControlsAndWholeMedianSameAffine": true,
+    "newBridge": false,
+    "newEngine": 0,
+    "originalSourcesUnchanged": true
+  },
+  "actualStaticReviewed": false,
+  "approval": false
+}

@@ -1,0 +1,107 @@
+{
+  "schema": "hanja-explicit-same-source-donor-whole-stroke-proposal/v1",
+  "date": "2026-10-30",
+  "glyph": "卼",
+  "status": "HOLD-new-nontarget-contact-raw8",
+  "mixedParts": true,
+  "originalWhole": false,
+  "isOriginalEngineCapture": false,
+  "isActualLocallyAuthoredEngineCapture": false,
+  "sourceTraceDescribesReplacement": false,
+  "sources": {
+    "donor": {
+      "path": "docs/hanja-authored-ownstroke-u537c-yuan-ko-donor-2026-10-30/source-record.json",
+      "SHA256": "500dca59c097f440e2eb5ddacde394a4b41b5fa0672623554f8a7790fab2a6ff",
+      "originalFilledPathOneBased": 4,
+      "originalMedianOneBased": 4
+    },
+    "recipient": {
+      "path": "docs/hanja-goal-glyphwiki-batch744-2026-10-12/engine-proof.json",
+      "SHA256": "18e8c14d9c98003ac62219e948f632de814644139c6ecddbd4c95047079d9d43",
+      "root": "u537c"
+    },
+    "recipientRecords": {
+      "path": "docs/hanja-goal-glyphwiki-batch744-2026-10-12/sources.json",
+      "SHA256": "a7949acd7b11f7a924df3b2d268c72a35b040f119b7aae62514bf26d2befe305"
+    },
+    "clock": {
+      "path": "docs/hanja-official-media-compare-u537c-2026-10-29/native-clock-review.json",
+      "SHA256": "87e6e830e90996d2876fa8b22ce5339ed72e9e23ceacb5078ebb6f5f320b0d10"
+    }
+  },
+  "removedRecipientRawOneBased": [
+    3,
+    4
+  ],
+  "removedOriginalFilledPolygons": 4,
+  "replacementDonorWholeFilledPath": 4,
+  "replacementDonorMedian": 4,
+  "preservedRecipientRawOneBased": [
+    1,
+    2,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ],
+  "preservedRecipientFilledPolygons": 29,
+  "sourceDAndMedianSameMatrixExact": [
+    "181/2450",
+    "0",
+    "0",
+    "771/2410",
+    "4934/245",
+    "-25297/241"
+  ],
+  "sourceControlEnvelope": [
+    480,
+    400,
+    970,
+    882
+  ],
+  "authorTargetOriginalRaw3And4FilledUnionBox": [
+    55.6,
+    23,
+    91.8,
+    177.2
+  ],
+  "determinantExact": "139551/5904500",
+  "authorFitIsNotPublisherGeometry": true,
+  "newControlOrPathInserted": false,
+  "newBridge": false,
+  "oldRaw3And4AreDeletedAndReplacedNotPreserved": true,
+  "direction": {
+    "sourceMedianInitialDelta": [
+      3.1767346938775507,
+      12.476763485477177
+    ],
+    "originalRaw3InitialGuide": [
+      61.6,
+      25,
+      61.6,
+      157
+    ],
+    "sourceContainsInitialDownRightShoulder": true,
+    "sourceMacroVThenRightThenUp": true,
+    "exactPublisherVStartApproved": false
+  },
+  "limitations": [
+    "Candidate1 whole union-box fit new raw2 contact is preserved as historical HOLD.",
+    "Candidate2 removes raw2 contact by bbox gap9 source200 units, but introduces proven positive-area contact with original raw8 polygon3.",
+    "Original Hraw1 positive contact remains. Other7raw bbox-separated, raw5 exact original C-control hull separated; all10 non-target raw relationships resolved.",
+    "Positive affine preserves original donor initial down-right shoulder and changes thickness; exact publisher vertical start/outline identity unapproved.",
+    "No third placement trial, static tool or runtime candidate is authorized by this result."
+  ],
+  "approval": {
+    "shape": false,
+    "mapping": false,
+    "temporal": false,
+    "runtime": false
+  },
+  "candidate": 2,
+  "authorTargetMeaning": "xMin is original complete V raw3 filled minX55.6, while right edge and vertical range retain original raw3+4 union. Explicit public source author choice, not publisher geometry fit."
+}
