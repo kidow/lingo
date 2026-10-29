@@ -1,0 +1,45 @@
+{
+  "glyph": "卼",
+  "reviewedAt": "2026-10-30",
+  "result": "PASS-ISOLATED-ACTUAL-COMPONENT",
+  "runtimeAppliedAtReview": false,
+  "actualProductUIReviewed": false,
+  "wholeGlyphAutoplayReviewed": false,
+  "browser": "Codex in-app browser tab 331",
+  "serverPort": 56567,
+  "pins": {
+    "h": "bb71466cc01378886b289beff67da4defdbd1faac04dc64d286caca694fb6c2a",
+    "renderer": "37306a42416754fe932a76d09caf2075dbfdde10c92a1c90c71f00eb961ebb2e",
+    "profile": "458240c20f5863136e6ab6e5c33345ea90128ac785fad980730fb8923d70239e",
+    "fixture": "2daa92fbc5bac5b49080bf98df64f1c19018084446a4ab8bccab187c678500ed",
+    "geometry": "4c0976eb78dba184f0379607ca8700fc59cfe29ce7b616a2db494bffc3cbfafc"
+  },
+  "discreteViews": {
+    "allNinePensCompact9": 81,
+    "sevenCurveStartRelease3": 21,
+    "sevenFullRoundResidualBlank": 7,
+    "initial": 18,
+    "sourceBoundary": 27,
+    "ending": 27,
+    "totalObservationsWithOverlappingEndpoints": 181
+  },
+  "selectedPenNaturalPlayback": {
+    "durationSeconds": 8,
+    "displayPixels": 520,
+    "pens": [3, 9],
+    "observedFirstStartEndAndReplayStartEndPerPen": true,
+    "views": 8,
+    "startProgress": [0.0786875, 0.07240000000074542, 0.07666250000149012, 0.06099999999925785],
+    "allEndProgress": 1,
+    "bad": [],
+    "errors": []
+  },
+  "findings": [
+    "Start, source handoff, and completion views show no detached early fragment or missing source ink.",
+    "The complete wide left wrap and right terminal turn retain their original source roles.",
+    "Static joined-polygon hairline seams were not visible in the reviewed actual 520px selected pen completions.",
+    "Only mask 8m3 uses width22/pad11; the other masks and original source paths remain unchanged.",
+    "The initial width14 mask8m3 coverage failure remains preserved in the earlier preflight; it is not counted as a passing candidate."
+  ],
+  "privatePublisherMaterialSaved": false
+}

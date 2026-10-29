@@ -1,0 +1,123 @@
+{
+  "schema": "hanja-isolated-actual-H-pending-preparation/v1",
+  "date": "2026-10-30",
+  "glyph": "卼",
+  "status": "ready-for-ROOT-H-apply-profile-execution-flags-pending",
+  "H": {
+    "beforeSHA256": "f29b532076a86cada1a23074a7a27698e405cf67ef2cb51b9a54d90c67f44fe1",
+    "afterSHA256": "bb71466cc01378886b289beff67da4defdbd1faac04dc64d286caca694fb6c2a",
+    "patch": {
+      "path": "docs/hanja-source-mapping-u537c-g-original9-2026-10-30/actual-H-integration.pending.patch",
+      "SHA256": "c478bd7300d884a55ae9fe1a9b6188ff0911833324549cb3a37739bbd65fab8a"
+    },
+    "hunks": 17,
+    "actualSharedApplied": false
+  },
+  "profile": {
+    "path": "docs/hanja-source-mapping-u537c-g-original9-2026-10-30/actual-profile-width22-start.pending.json",
+    "SHA256": "9c55192dbe31b2c8dc2216277db911b9096135730f3a97673c08f6788c1cc98f",
+    "schema": "hanja-actual-component-profile/v1",
+    "flags": {
+      "profileFinalized": false,
+      "executionEnabled": false,
+      "sharedWindowPending": true
+    }
+  },
+  "renderer": {
+    "path": "components/hanja/stroke-outlines.tsx",
+    "SHA256": "37306a42416754fe932a76d09caf2075dbfdde10c92a1c90c71f00eb961ebb2e"
+  },
+  "ordinaryRegistry": {
+    "path": "lib/hanja-strokes.ts",
+    "SHA256": "d63654f7f7640e36219ad6f7e69af1f3487cc0af96ce78f55251740545f76cba"
+  },
+  "variantRegistry": {
+    "path": "lib/hanja-stroke-variants.ts",
+    "SHA256": "4903a2aa3e72ef53559020842f23eb933e2ebdc23517644172f743778f083bf6"
+  },
+  "sourceFixture": {
+    "path": "docs/hanja-source-mapping-u537c-g-original9-2026-10-30/fixtures-execution-draft-width22.json",
+    "SHA256": "2daa92fbc5bac5b49080bf98df64f1c19018084446a4ab8bccab187c678500ed",
+    "key": "strokes"
+  },
+  "geometrySHA256": "4c0976eb78dba184f0379607ca8700fc59cfe29ce7b616a2db494bffc3cbfafc",
+  "counts": {
+    "pens": 9,
+    "masks": 18,
+    "P": 36,
+    "Q": 7,
+    "cardinal": 11,
+    "pairProgress": 9,
+    "aggregateInitial": 18,
+    "aggregateBoundary": 27,
+    "aggregateEnding": 27,
+    "aggregateTotal": 72
+  },
+  "nativePlan": {
+    "compact": {
+      "pens": 9,
+      "framesPerPen": 9,
+      "expectedViews": 81
+    },
+    "startRelease": {
+      "curves": 7,
+      "framesPerCurve": 3,
+      "expectedViews": 21
+    },
+    "fullRoundResidual": {
+      "curves": 7,
+      "expectedBlankPanels": 7
+    },
+    "sourceBoundaries": {
+      "count": 9,
+      "framesPerBoundary": 3,
+      "expectedViews": 27
+    },
+    "aggregate": {
+      "initial": 18,
+      "boundary": 27,
+      "ending": 27,
+      "total": 72
+    },
+    "mainStates": {
+      "prefix0through9": 10,
+      "idleDone": 2,
+      "selectedZero": 1,
+      "total": 13
+    },
+    "selectedNatural": {
+      "pens": [
+        3,
+        9
+      ],
+      "secondsEach": 8,
+      "startEndEach": true,
+      "wholeGlyphAutoplayClaim": false
+    }
+  },
+  "validation": {
+    "HParseDiagnostics": 0,
+    "actualFullFixtureFunctionEnd": true,
+    "actualWholeRouteProfileProjectionFields": 7,
+    "actualResourceCollectorModules": 399,
+    "offlineClientCounts": [
+      7,
+      9,
+      9
+    ],
+    "oldStepFixtureGuardBytesPreserved": true,
+    "SSR": 0,
+    "actualClientSetup": 0,
+    "server": 0,
+    "geometryRecomputation": 0
+  },
+  "notes": [
+    "Collector at the early pre-CJS point reports397; the actual full collection before lazyload includes final alias handling and reports399. No additional loader/refactor was required.",
+    "Both existing code and new source exact guard bind actual JS geometrySHA and fixture metadata SHA, avoiding stale Python constants.",
+    "Source3/9 UP terminal P remains Hguide/flag5; native dynamic growth and polygon seams not approved.",
+    "ROOT alone applies H, then narrowly sets finalized/executionEnabled=true/sharedWindowPending=false before one actual startup."
+  ],
+  "startupCommand": "node --experimental-strip-types scripts/hanja-actual-component-review.mjs --profile docs/hanja-source-mapping-u537c-g-original9-2026-10-30/actual-profile-width22-start.pending.json --profile-sha <SHA-after-ROOT-flag-transition> --port 0",
+  "nativeApproval": false,
+  "runtimeApplied": false
+}
