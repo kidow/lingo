@@ -1,0 +1,227 @@
+{
+  "schema": "hanja-explicit-original-source-component-mix-proposal/v1",
+  "date": "2026-10-29",
+  "glyph": "藚",
+  "locallyAuthoredRoot": "lingo-u85da-vs3grass-vs2body-identity-proposal",
+  "mixedParts": true,
+  "originalWhole": false,
+  "isOriginalEngineCapture": false,
+  "isActualLocallyAuthoredEngineCapture": false,
+  "sourceTraceDescribesAuthoredWhole": false,
+  "sourceTraceDescribesOriginalPartsOnly": true,
+  "sources": {
+    "grass": {
+      "path": "docs/hanja-goal-glyphwiki-batch665-2026-10-11/engine-whole-u85da-ue0103.json",
+      "SHA256": "a9ef4fe7700ad3f2aeb00cc3703ce24b21e91e507a25022bfaecd7fafee0266e",
+      "root": "u85da-ue0103"
+    },
+    "body": {
+      "path": "docs/hanja-goal-glyphwiki-batch665-2026-10-11/engine-whole-u85da-ue0102.json",
+      "SHA256": "dad8074649c0b09e55ef04fb3108435690cd82cc518e7e4d3d99df224801cb1f",
+      "root": "u85da-ue0102"
+    },
+    "fixedRecords": {
+      "path": "docs/hanja-goal-glyphwiki-batch665-2026-10-11/sources.json",
+      "SHA256": "765bdac54a4012a4d99654525eea60b548f3a7c27e9987f3c26df13b72ac0384"
+    }
+  },
+  "parts": [
+    {
+      "source": "grass",
+      "sourceRawOneBased": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "canonicalRawOneBased": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "matrixExact": [
+        "1",
+        "0",
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      "wholeComponentEvidence": {
+        "rootChain": [
+          "u85da-ue0103",
+          "koseki-367020",
+          "ufa5e-03",
+          "u8279-k03"
+        ],
+        "topSource99": "99:0:0:0:4:199:123:ufa5e-03",
+        "scope": "Complete first source99 component, four original raw rows already in source-world200; no second application of source99 transform."
+      }
+    },
+    {
+      "source": "body",
+      "sourceRawOneBased": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "canonicalRawOneBased": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "matrixExact": [
+        "1",
+        "0",
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      "wholeComponentEvidence": {
+        "rootChain": [
+          "u85da-ue0102",
+          "juki-ba8d",
+          "u8ce3"
+        ],
+        "bodySource99": "99:0:0:1:24:199:199:u8ce3",
+        "scope": "Complete second source99 component,17 original raw rows already in source-world200; no second transform."
+      }
+    }
+  ],
+  "logicalRawGroupsOneBased": [
+    [
+      1
+    ],
+    [
+      2
+    ],
+    [
+      4
+    ],
+    [
+      3
+    ],
+    [
+      5
+    ],
+    [
+      6
+    ],
+    [
+      7
+    ],
+    [
+      8
+    ],
+    [
+      9,
+      10
+    ],
+    [
+      11
+    ],
+    [
+      12
+    ],
+    [
+      13
+    ],
+    [
+      14
+    ],
+    [
+      15,
+      16
+    ],
+    [
+      17
+    ],
+    [
+      18
+    ],
+    [
+      19
+    ],
+    [
+      20
+    ],
+    [
+      21
+    ]
+  ],
+  "originalClock": {
+    "path": "docs/hanja-official-media-compare-u85da-2026-10-29/native-all19-review.json",
+    "SHA256": "af0be368b41e892f4281727aed4bc385d434b524c8e4c27c5af755eb0705a381",
+    "logical": 19,
+    "frames": 57
+  },
+  "declaredLogicalOrder": {
+    "head": "VS3 original raw1,2,4,3 matches observed H,V,H,V; no source geometry change.",
+    "body": "VS2 original raw4..20 retained; only raw8+9 and14+15 are paired H→V according to observed publisher9 and14."
+  },
+  "counts": {
+    "sourceRaw": 21,
+    "drawingCalls": 21,
+    "P": 33,
+    "Q": 2,
+    "logical": 19,
+    "cardinal": 19
+  },
+  "compatibility": {
+    "contactsIncludeBoundary": true,
+    "oldVS2HeadToBodyContacts": [],
+    "newVS3HeadToVS2BodyContacts": [],
+    "checkedPairs": 68,
+    "bodyInternalGeometryAndContactsPreservedByExactSourceIdentity": true,
+    "headInternalGeometryAndContactsPreservedByExactSourceIdentity": true,
+    "grassClustersStrictXgapExact": "119/10",
+    "sourceEngineHeaderAndDefaultsMatch": true
+  },
+  "constraints": {
+    "sourcePAndGuidesAndFlagsChanged": false,
+    "sourceNormalizationApplications": 0,
+    "worldFrame": "source200",
+    "newBridge": 0,
+    "newEngine": 0,
+    "sourceCoordinatesAuthored": false,
+    "componentAssemblyAuthored": true,
+    "notAnOriginalEngineWhole": true
+  },
+  "approval": {
+    "wholeShape": false,
+    "logicalMapping": false,
+    "displayPolicy": false,
+    "native": false,
+    "runtime": false
+  }
+}

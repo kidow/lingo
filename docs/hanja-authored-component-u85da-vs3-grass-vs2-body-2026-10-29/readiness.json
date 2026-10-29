@@ -1,0 +1,63 @@
+{
+  "schema": "hanja-component-mix-original-parts-static-readiness/v1",
+  "date": "2026-10-29",
+  "glyph": "藚",
+  "recipe": {
+    "path": "docs/hanja-authored-component-u85da-vs3-grass-vs2-body-2026-10-29/recipe.json",
+    "SHA256": "33708a7b4b0bacee6c6ad730171895c802a60ef580554e01e463018d3786c719"
+  },
+  "publicCompatibilityProof": {
+    "method": "Exact Fraction segment intersections including collinear boundary touch plus nonzero-winding containment for every off0 polygon pair; unchanged body/head internal geometry is reused by identity.",
+    "result": {
+      "oldVS2GrassToBodyContacts": [],
+      "proposedVS3GrassToVS2BodyContacts": [],
+      "newCrossComponentContacts": [],
+      "contactIncludesBoundaryTouch": true,
+      "checkedOldGroupPairs": 51,
+      "checkedProposedGroupPairs": 68,
+      "proposedUnmodifiedPartsCounts": {
+        "headRaw": 4,
+        "bodyRaw": 17,
+        "totalRaw": 21,
+        "calls": 21,
+        "P": 33,
+        "Q": 2
+      },
+      "geometryPointsChanged": false,
+      "affine": "identity world200 for both",
+      "engineRuns": 0
+    },
+    "verificationCodeSHA256": "3af02080b96d55e55df6275b8bc5d259e47e199d859449c3982ad4501bc2380f"
+  },
+  "sourceComponentBoundaries": {
+    "grassSourceRoot": "koseki-367020",
+    "grassFirst99Complete": true,
+    "bodySourceRoot": "juki-ba8d",
+    "bodySecond99Complete": true,
+    "notAppearanceBasedPartCropping": true
+  },
+  "sourceMembership": {
+    "all21SelectedRawSlotsExactlyOnce": true,
+    "allTracePolygonsEqualOriginalGroups": true,
+    "originalPOrGuideOrFlagsEdited": false
+  },
+  "nativeOriginalClock": {
+    "path": "docs/hanja-official-media-compare-u85da-2026-10-29/native-all19-review.json",
+    "SHA256": "af0be368b41e892f4281727aed4bc385d434b524c8e4c27c5af755eb0705a381"
+  },
+  "requiredRootReview": [
+    "Whole publisher/VS2/VS3/identity mixed proposal at520.",
+    "If whole accepted, all19 current+prefix static selections before any execution policy."
+  ],
+  "scope": {
+    "sourceCoordinateChanges": 0,
+    "newEngine": 0,
+    "nativeWholeApproved": false,
+    "nativeMappingApproved": false,
+    "actualTemporalApproved": false,
+    "runtimeApplied": false,
+    "sharedChanges": 0,
+    "servers": 0,
+    "builds": 0
+  }
+}
