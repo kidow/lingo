@@ -1,0 +1,131 @@
+{
+  "schema": "hanja-root-bounded-actual-fold-contact-review/v1",
+  "glyph": "盌",
+  "status": "native-hold-Q-head-detachment-2-and-4",
+  "reviewer": "ROOT direct CUA",
+  "inputs": {
+    "H": {
+      "path": "scripts/hanja-actual-component-review.mjs",
+      "SHA256": "d41ff4d1450ca6520d6f3616d5ecadc7bae38a16b66f0ce1351927a699c0bfc8"
+    },
+    "profile": {
+      "path": "docs/hanja-source-execution-u76cc-original-2026-10-29/actual-profile-fold-contact-start.json",
+      "SHA256": "4fe74a54c653b87e7246e31a063931eabf8750dae800ea2a3a595639a5595d21"
+    },
+    "R": {
+      "path": "components/hanja/stroke-outlines.tsx",
+      "SHA256": "632b3d66a3cd8425d222eb7fedd3a7df7d404410f887011a9897e861f590a77e"
+    },
+    "helper": {
+      "path": "lib/hanja-stroke-fold-contact-u55f8-u76cc.ts",
+      "SHA256": "a9c8033d2ce41fe513a78cad1f842ce415a5ac2ab815a4cd16d6dcbdfe46f50f"
+    },
+    "oldHelper": {
+      "path": "lib/hanja-stroke-fold-contact-u85da-u7f5d.ts",
+      "SHA256": "46c20a920336955f26c7b81a77594d5c594dc688180c45d4fc8617d7d43fe1fc"
+    },
+    "fixture": {
+      "path": "docs/hanja-source-execution-u76cc-original-2026-10-29/fixtures-execution-draft-width22.json",
+      "SHA256": "60f2b219228cfbd9a04363daf46541ababd2c0da6af8dc1d0072ae9e0600084d"
+    },
+    "geometrySHA256": "92d33e5d5498253de98ed0104a975bd713b2287498734a8fa293c587078c7dd5"
+  },
+  "startup": {
+    "SSR": 1,
+    "CJS": 393,
+    "ESM": 393
+  },
+  "observed": {
+    "fold7OldFailure": {
+      "local": [
+        0.01,
+        0.05,
+        0.1
+      ],
+      "views": 3,
+      "CSS": 520,
+      "clipCSS": 516,
+      "allAttached": true
+    },
+    "compact": {
+      "pens": 10,
+      "perPen": 9,
+      "views": 90,
+      "CSS": 150,
+      "observedAll": true,
+      "overallApproved": false,
+      "reusableUnchangedEightPensViews": 72,
+      "affectedPens": [
+        2,
+        4
+      ],
+      "affectedViewsNotCountedAsPass": 18
+    },
+    "mainRisk": {
+      "views": 2,
+      "CSS": 520,
+      "pen2": {
+        "logicalProgress": 0.25,
+        "result": "Detached triangle confirmed in main magnification."
+      },
+      "pen4": {
+        "logicalProgress": 0.375,
+        "result": "Thin gap suspected in main view; public start-gate disjoint upper-bound separately confirms no H contact.",
+        "captureLimitation": "DOM reflow after full-screen operation changed capture dimensions; selected ink remained visible."
+      },
+      "passed": false
+    },
+    "sourceStartRelease": {
+      "QTargets": 6,
+      "perTarget": 3,
+      "views": 18,
+      "CSS": 300,
+      "observedTransitionOutputNormal": true,
+      "futureAffected2And4TargetsRequireFreshViews": 6
+    },
+    "fullroundResidual": {
+      "QTargets": 6,
+      "views": 6,
+      "CSS": 300,
+      "allBlank": true,
+      "doesNotResolveEarlyHeadHold": true
+    },
+    "totalNativeSVGViews": 119,
+    "naturalReview": false,
+    "genericGuardBad": [],
+    "errors": []
+  },
+  "reuse": {
+    "sourceGeometryGuideWidthFlagsUnchanged": true,
+    "unaffectedCompactViews": 72,
+    "fold7CriticalViews": 3,
+    "gateViews": 18,
+    "residualViews": 6,
+    "caution": "Not an overall PASS; six gate samples for future changed pen2/4 policies must be freshly reviewed."
+  },
+  "limits": {
+    "publisherOutlineIdentity": false,
+    "publisherMicroclockEquivalent": false,
+    "source5SmallUPTerminalDirectionNotFreshlyApproved": true,
+    "allTemporalApproved": false
+  },
+  "history": {
+    "baseline7Hold": "docs/hanja-source-execution-u76cc-original-2026-10-29/source-native-baseline-hold.json",
+    "originalWidth14FailurePreserved": true,
+    "initializationFailurePreserved": true
+  },
+  "session": {
+    "PID": 51965,
+    "port": 56250,
+    "session": 30071,
+    "tab": 281,
+    "serverStopped": true,
+    "tabClosed": true,
+    "exitCode": 130
+  },
+  "actualTemporalApproved": false,
+  "runtimeApplied": false,
+  "registrationApplied": false,
+  "builds": 0,
+  "fullProjectTypeChecks": 0
+}

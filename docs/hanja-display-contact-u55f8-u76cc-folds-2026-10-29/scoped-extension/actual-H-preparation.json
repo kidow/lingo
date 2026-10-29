@@ -1,0 +1,134 @@
+{
+  "schema": "hanja-scoped-two-fold-H-preparation/v1",
+  "status": "pending-root-actual-component-review",
+  "beforeH": "9a8d724d8b2c6ca1ceaa47ec2ec1c25772162d55230b092bd90b43bf2284d264",
+  "afterH": "3fced26ea053bf9981ad81610ee18b9087e7004f7580537afa713bf7efc3fb82",
+  "Hpatch": {
+    "path": "docs/hanja-display-contact-u55f8-u76cc-folds-2026-10-29/scoped-extension/actual-H-integration.pending.patch",
+    "SHA256": "266460a13d0889aa975c22d83623e765f56f1c9f36f19b0383c88ee794cf2dd1"
+  },
+  "profiles": [
+    {
+      "path": "docs/hanja-authored-component-u55f8-ja-ao-bbox-gap1-v2-2026-10-29/actual-profile-fold-contact-start.json",
+      "SHA256": "fc8db04a6ba0aa36c86dabdd78b0e03df2a160bf15e69011a2e97f60dd974054",
+      "glyph": "嗸",
+      "target": {
+        "pen": 13,
+        "mask": 2
+      }
+    },
+    {
+      "path": "docs/hanja-source-execution-u76cc-original-2026-10-29/actual-profile-fold-contact-start.json",
+      "SHA256": "8a14b7d918b24d93a370aa5d9bfb3bc9e04d1c89c592ecb5e7f086cd5168098e",
+      "glyph": "盌",
+      "target": {
+        "pen": 7,
+        "mask": 2
+      }
+    }
+  ],
+  "newHelper": {
+    "path": "lib/hanja-stroke-fold-contact-u55f8-u76cc.ts",
+    "SHA256": "a9c8033d2ce41fe513a78cad1f842ce415a5ac2ab815a4cd16d6dcbdfe46f50f",
+    "fingerprint": "d8531a0626babc6ea91bd07bde2cca5e7ba1c6306d4ba630566ac6bf06b337dd",
+    "targets": [
+      {
+        "glyph": "嗸",
+        "pen": 13,
+        "mask": 2,
+        "fixture": {
+          "glyph": "嗸",
+          "fixture": "docs/hanja-authored-component-u55f8-ja-ao-bbox-gap1-v2-2026-10-29/fixtures-execution-draft.json",
+          "SHA256": "314725854294450f222facc1bfcd3dfd62dc8f037297992d2ca3441c37ade30c",
+          "geometrySHA256": "250c2cfd344809677863b6a31d4a1253b9b61e26e4fcfaf24388526d8131851a",
+          "pens": [
+            13
+          ],
+          "logical": 14,
+          "masks": 15,
+          "P": 16
+        }
+      },
+      {
+        "glyph": "盌",
+        "pen": 7,
+        "mask": 2,
+        "fixture": {
+          "glyph": "盌",
+          "fixture": "docs/hanja-source-execution-u76cc-original-2026-10-29/fixtures-execution-draft-width22.json",
+          "SHA256": "60f2b219228cfbd9a04363daf46541ababd2c0da6af8dc1d0072ae9e0600084d",
+          "geometrySHA256": "92d33e5d5498253de98ed0104a975bd713b2287498734a8fa293c587078c7dd5",
+          "pens": [
+            7
+          ],
+          "logical": 10,
+          "masks": 16,
+          "P": 28
+        }
+      }
+    ],
+    "factory": "makeReviewedAoWanFoldContactContext",
+    "input": "REVIEWED_AO_WAN_FOLD_CONTACT_INPUT",
+    "policy": "reviewedAoWanFoldContactPolicy",
+    "sample": "sampleReviewedAoWanFoldContactFrame",
+    "prior": "verifyReviewedAoWanFoldContactPrior",
+    "DOMContext": "u55f8-u76cc-exact-fold-contact",
+    "DOMPolicyKind": "source-P-y-contact-band-u55f8-u76cc",
+    "samePrivateWeakMapAndStrictPriorContract": true,
+    "fullSourceBinding": true
+  },
+  "R": "632b3d66a3cd8425d222eb7fedd3a7df7d404410f887011a9897e861f590a77e",
+  "oldHelperAndProduction1548and1549Unchanged": true,
+  "baselineProfilesPreserved": [
+    "docs/hanja-authored-component-u55f8-ja-ao-bbox-gap1-v2-2026-10-29/actual-profile-source128-start.json",
+    "docs/hanja-source-execution-u76cc-original-2026-10-29/actual-profile-width22-start.json"
+  ],
+  "checks": {
+    "HForwardInverseExact": true,
+    "HAndBrowserSyntax": true,
+    "strictGuardNegativeCases": 8,
+    "actualRouteFields": 9,
+    "actualClientProjectionCounts": true,
+    "scopedRuntimeFlagAndContextInitialized": true,
+    "noTDZ": true,
+    "actualResourceCollector": [
+      {
+        "R": "632b3d66a3cd8425d222eb7fedd3a7df7d404410f887011a9897e861f590a77e",
+        "actualClosure": 393,
+        "dependencies": 392,
+        "constantLines": 3,
+        "SSR": 0,
+        "transpilation": 0,
+        "server": 0
+      },
+      {
+        "R": "632b3d66a3cd8425d222eb7fedd3a7df7d404410f887011a9897e861f590a77e",
+        "actualClosure": 393,
+        "dependencies": 392,
+        "constantLines": 3,
+        "SSR": 0,
+        "transpilation": 0,
+        "server": 0
+      }
+    ],
+    "closure392And394Rejected": true,
+    "inputPinMismatches": [],
+    "sourceGeometryWeightsGatesUnchanged": true,
+    "SSR": 0,
+    "server": 0,
+    "build": 0,
+    "wholeProjectTypecheck": 0
+  },
+  "controls": {
+    "perTargetCompactSamples": 10,
+    "oldFailureSamples": [
+      0.01,
+      0.05,
+      0.1
+    ],
+    "logicalBoundarySamples": 3,
+    "existingAggregateNaturalControlsPreserved": true
+  },
+  "actualTemporalApproved": false,
+  "runtimeApplied": false
+}
