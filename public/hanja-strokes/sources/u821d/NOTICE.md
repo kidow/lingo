@@ -1,0 +1,7 @@
+# 舝 original VS0 whole with scoped contact display
+
+GlyphWiki Project and contributors: LicenseRef-GlyphWiki, https://glyphwiki.org/wiki/GlyphWiki:データ・記事のライセンス@18 . Complete original u821d-ue0100 whole is retained as20raw20calls42P with original trace/guides/defaults, mapped to13logical20masks. Source data contains groups/trace/defaults; no engine header, locally authored source root, assembled original whole or fresh engine capture is fabricated. Original paths normalize from source200 to100 once.
+
+First slanted sourceL uses its dominant downward axis for display. Exact9m2 and12m2 preserve original P/guide/flags/weights/source gates while independently proved x-strips grow a contacted left head then the right body. One original colored D per target, no added filled shape, guide, bridge or retracing. Both original guide gaps remain. These two display clocks are authored and are not publisher microclock. Other source masks stay original.
+
+ROOT final review e526c301c370476ce1e3eb910e3202c5f21b99742de353cab445b35d771b7852 covers54 fresh discrete contact views plus4selected12natural start/end/replay views, with140unchanged baseline observations reused separately. Original146-view baselineHOLD and6failed views are preserved, never renamed PASS. Generic curve residual is not custom contact-policy proof. Sourcefont angular heads, brush weight/proportion and spacing differ from publisher; no exactfont/outline, productUI or whole-glyph autoplay equivalence. Runtime activation is ROOT's separate registry action; runtimeAppliedAtNativeReview remainsfalse.
