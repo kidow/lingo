@@ -1,0 +1,101 @@
+{
+  "schema": "hanja-isolated-generic-actual-H-preparation-pending/v1",
+  "glyph": "霔",
+  "date": "2026-10-30",
+  "H": {
+    "base": "f2dbaee41bd5eecdc1909be4b1b88ae19a3464b1229edc3d16a7389202e65d00",
+    "after": "9e7160733d3f69f54d41657207e74b340fb3a7f8503b6ef01ee061e0611f4a1c",
+    "patch": "docs/hanja-authored-component-u9714-japanese-zhu5-2026-10-30/actual-H-integration.pending.patch",
+    "SHA256": "02b3466d7ff385abdf6d3d8b1bafc0d0d440fbd73e25434d6ec17855c7809a68",
+    "hunks": 18,
+    "oldBlockIndicesAscending": true,
+    "forwardInverseExact": true
+  },
+  "profile": {
+    "path": "docs/hanja-authored-component-u9714-japanese-zhu5-2026-10-30/actual-profile-start.json",
+    "SHA256": "66c9ce57e09b3c0c1e5a8c432aaec9040991a9ed51c5dfba235b64762668a24c",
+    "profileFinalized": false,
+    "executionEnabled": false,
+    "sharedWindowPending": true,
+    "ordinaryCurrentSnapshot": "eff88107ad7b2261fed536e47fc6b7f16164912a18276074157289a803b14c01",
+    "requiresOrdinaryRefreshAfterPriorRegistration": true
+  },
+  "fixture": {
+    "path": "docs/hanja-authored-component-u9714-japanese-zhu5-2026-10-30/fixtures-execution-draft.json",
+    "SHA256": "d63f8d174914aa699d0cf3181719860b1497ae78c82ad68fa181ea442ab2cd0f",
+    "geometrySHA256": "64875f2937528d7b5a365951e616054a275291fa3458e3e67375d21d352c18a4"
+  },
+  "counts": {
+    "logical": 16,
+    "masks": 18,
+    "P": 32,
+    "curves": 7,
+    "cardinals": 11,
+    "sourceTransforms": 0
+  },
+  "sourceCompoundBoundaries": [
+    {
+      "pen": 3,
+      "boundary": 0.7942049609242304,
+      "nextMask": 2
+    },
+    {
+      "pen": 11,
+      "boundary": 0.4722856118681068,
+      "nextMask": 2
+    }
+  ],
+  "firstActualRisk": [
+    3,
+    11
+  ],
+  "checks": {
+    "actualSourceCollectorBeforeSSR": {
+      "actualSourceCollector": 395,
+      "dependencies": 394,
+      "newHelper": true,
+      "sourceHBeforeSSRProbeSHA": "9e7160733d3f69f54d41657207e74b340fb3a7f8503b6ef01ee061e0611f4a1c",
+      "SSR": 0,
+      "server": 0
+    },
+    "actualFixtureGuardAndRoute": {
+      "Hsyntax": "PASS",
+      "browserSyntax": "PASS",
+      "actualGuardReturnedOriginal": true,
+      "guardNegatives": 6,
+      "fixturePayloadFields": 7,
+      "routeForeignNegatives": 4,
+      "explicitTopEntry": true,
+      "newOnlyP1Holds16": true,
+      "originalSourceAndMicroclockUntouched": true,
+      "SSR": 0,
+      "server": 0
+    }
+  },
+  "reused": {
+    "staticNativeValidSVG": 67,
+    "curveConservativeFullroundPass": 7,
+    "sourceUnitCommit": "9a178262",
+    "sourceMathAndOriginalClockNotRepeated": true
+  },
+  "strictRequestedP1": {
+    "onlyNewExactRoot": true,
+    "sameStrokeHoldMidpoint": true,
+    "all16StrictWithinHoldChecked": true,
+    "p0AndIntermediateExpressionUnchanged": true,
+    "RGeometryAndPublisherClockUnchanged": true
+  },
+  "limits": [
+    "Whole Japanese主5 public-caller affine and source font differences remain, no publisher font identity",
+    "Source raw12/13 guide endpoint gap and twoQ11 temporal connectivity are not approved by static mapping or fullround coverage",
+    "Rain3 H→Q andwater11 Q→Q critical scenes must be observed before registration; no bridge or arbitrary mask policy added"
+  ],
+  "actualSSR": 0,
+  "actualBrowser": false,
+  "sharedHOrRWrites": false,
+  "server": 0,
+  "build": 0,
+  "fullTypecheck": 0,
+  "nativeApproval": false,
+  "runtimeApplied": false
+}
