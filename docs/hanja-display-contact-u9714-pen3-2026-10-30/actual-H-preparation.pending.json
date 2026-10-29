@@ -1,0 +1,83 @@
+{
+  "glyph": "霔",
+  "recordedAt": "2026-10-30",
+  "status": "corrected-single-Q-isolated-review-ready-no-native-approval",
+  "harness": {
+    "path": "scripts/hanja-actual-component-review.mjs",
+    "beforeSHA256": "9e7160733d3f69f54d41657207e74b340fb3a7f8503b6ef01ee061e0611f4a1c",
+    "afterSHA256": "b8910cc6ba8232133564356dbd94feac5b404cadf6e37bb7b0dcf94882875b7d",
+    "patch": "docs/hanja-display-contact-u9714-pen3-2026-10-30/actual-H-integration.pending.patch",
+    "patchSHA256": "50786cf7bb0cc1f565503a082d66986d3ca577c2a46e2d6317c2268105fecf04",
+    "hunks": 12,
+    "oldBlockPositionsAscending": true,
+    "forwardInverseExact": true,
+    "sharedWrittenByChild": false
+  },
+  "profile": {
+    "path": "docs/hanja-authored-component-u9714-japanese-zhu5-2026-10-30/actual-profile-Q-contact-cap-start.json",
+    "SHA256": "6d8074513f0c0317663a951478e9a2b6c54906b9b009ef7deda7d87681e055fd",
+    "profileFinalized": true,
+    "executionEnabled": true,
+    "sharedWindowPending": false,
+    "nativeApproval": false,
+    "runtimeApplied": false
+  },
+  "renderer": {
+    "path": "components/hanja/stroke-outlines.tsx",
+    "beforeSHA256": "f66b1388cd9c6228ed6949ce03c1119a6e1d4fbd0e24ee498d4dc7016d5f45e8",
+    "afterSHA256": "1458f3a4b842a47f9d117786ea0f1641f02a717a1e4ad13f46ece13f5c7229fb",
+    "patch": "docs/hanja-display-contact-u9714-pen3-2026-10-30/renderer.pending.patch",
+    "patchSHA256": "798582818cbb89c95fed3baa5c1577752fe20261e7df613addbe0c28e06bfb93",
+    "oldRegisteredQComponentBytesUnchanged": true
+  },
+  "helper": {
+    "path": "lib/hanja-stroke-contact-head-cap-u9714.ts",
+    "SHA256": "506ec0ba12b4bc7bec387493e261fdbb2263ad76a66c897ff389b20fac8c9fca",
+    "testPath": "lib/hanja-stroke-contact-head-cap-u9714.test.ts",
+    "testSHA256": "0938055d14c0b49c22c6c750459b5e12f533053327792307c9a270182289ef7e",
+    "fingerprint": "bfe136977794f8f95586033f0efd5b271cce1f20a0f5e7e28a6738030f4dfb88"
+  },
+  "checks": {
+    "focused": {
+      "Hsyntax": "PASS",
+      "browserSyntax": "PASS",
+      "actualFixtureGuardReturnedOriginalStrokes": true,
+      "guardNegatives": 6,
+      "actualGeneratedPayloadFields": 8,
+      "payloadStrokesExact": true,
+      "routeForeignNegatives": 4,
+      "explicitTopEntry": true,
+      "newFlagBeforeRuntime": true,
+      "SSR": 0,
+      "server": 0,
+      "sourceMathRerun": false
+    },
+    "actualSourceCollectorBeforeSSR": {
+      "actualSourceCollector": 396,
+      "dependencies": 395,
+      "newHelper": true,
+      "sourceHBeforeSSRProbeSHA": "b8910cc6ba8232133564356dbd94feac5b404cadf6e37bb7b0dcf94882875b7d",
+      "SSR": 0,
+      "server": 0
+    },
+    "genericInkCollectorExcludesExactQSubtree": true,
+    "customOriginalDAndClipValidatedByQObserver": true,
+    "sourceClockSnapshotReusesImmutableExistingContract": true,
+    "requestedFrameUsesTargetProgress": true,
+    "QRuntimeFlagBeforeAliasesAndGenericFlags": true,
+    "originalFixtureAndGuideCoverageRerun": false
+  },
+  "limits": {
+    "baseline263ObservationsAreHold": true,
+    "baselinePen3CompactDiscarded": true,
+    "correctedPen3CompactRequired": true,
+    "sourcePAndQAndFlagsWeightsBoundariesUnchanged": true,
+    "publisherMicroclockEquivalent": false,
+    "SSRExecutedByChild": 0,
+    "serversStartedByChild": 0,
+    "nativeReviewedByChild": 0,
+    "actualTemporalApproved": false,
+    "runtimeApplied": false
+  },
+  "command": "rtk proxy node scripts/hanja-actual-component-review.mjs --profile docs/hanja-authored-component-u9714-japanese-zhu5-2026-10-30/actual-profile-Q-contact-cap-start.json --profile-sha 6d8074513f0c0317663a951478e9a2b6c54906b9b009ef7deda7d87681e055fd --port 0"
+}

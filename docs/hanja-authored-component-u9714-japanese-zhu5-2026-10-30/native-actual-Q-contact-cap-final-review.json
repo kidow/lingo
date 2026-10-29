@@ -1,0 +1,38 @@
+{
+  "glyph": "霔",
+  "recordedAt": "2026-10-30",
+  "reviewer": "ROOT",
+  "surface": "CUA browser panel, tab301",
+  "profileSHA256": "6d8074513f0c0317663a951478e9a2b6c54906b9b009ef7deda7d87681e055fd",
+  "harnessSHA256": "b8910cc6ba8232133564356dbd94feac5b404cadf6e37bb7b0dcf94882875b7d",
+  "rendererSHA256": "1458f3a4b842a47f9d117786ea0f1641f02a717a1e4ad13f46ece13f5c7229fb",
+  "helperSHA256": "506ec0ba12b4bc7bec387493e261fdbb2263ad76a66c897ff389b20fac8c9fca",
+  "geometrySHA256": "64875f2937528d7b5a365951e616054a275291fa3458e3e67375d21d352c18a4",
+  "baseline": {"path": "native-actual-baseline-review.json", "sha256": "f84fe518cfb6e8aec7fad7f9320804e55ed929b2fa3a8484406f67afb95194b6", "ledger": 263, "overallPreserved": "HOLD"},
+  "freshGroups": [
+    {"name": "old failing second-Q local .01/.05/.1", "count": 3, "size": 520, "result": "PASS: original head/cap grows from preceding H without a detached fragment"},
+    {"name": "head-cap/body phase minus/exact/plus", "count": 3, "size": 300, "result": "PASS: connected transition"},
+    {"name": "Q-local compact9", "count": 9, "size": 300, "result": "PASS: bounded progression, continuous endpoint"},
+    {"name": "original H/Q boundary minus/exact/plus", "count": 3, "size": 300, "result": "PASS: preserved source boundary"},
+    {"name": "Q start-release triple", "count": 3, "size": 300, "result": "PASS: connected original ink"},
+    {"name": "whole pen3 compact9", "count": 9, "size": 150, "result": "PASS after clean reload: all nine complete frames"},
+    {"name": "natural pen3", "count": 4, "size": 520, "result": "PASS: START progress .05241250000074433, MID .7712250000014901, first END1 and replay END1; stable checks all true, errors empty"}
+  ],
+  "freshValidObservationLedger": 34,
+  "uniqueStatesClaimed": false,
+  "reuse": "Baseline source paths/guides/flags/width/weight and all non-3m2 policies are unchanged. Reuse only unaffected baseline compact grids, other Q start/residual/boundary states, and natural11. Baseline pen3 failing samples are replaced by the fresh groups; baseline overall HOLD is retained historically, never relabeled as all PASS.",
+  "unsupportedOrDiscarded": [
+    "Initial natural START capture used absent #main selector: no screenshot, zero visual credit; replaced by complete #root svg capture.",
+    "Generic actual mask residual rejects custom source-head policies. Its error is an unsupported diagnostic, not a blank residual PASS. Preserve original full-round source proof and focused helper endpoint tests instead. No new product error was observed during supported replay."
+  ],
+  "scope": "Exact 3m2 clip-only author phase. Original colored P is painted once; source H/Q geometry, guide and boundaries are unchanged. Bounded actual per-stroke review, not publisher microclock equivalence or application UI/full-glyph autoplay.",
+  "overall": "APPROVED for bounded actual component registration",
+  "actualBrowserVerified": true,
+  "actualAppUI": false,
+  "wholeGlyphAutoplayVerified": false,
+  "runtimeAppliedAtNativeReview": false,
+  "privateAssetsSaved": false,
+  "cleanup": {"pid": 64262, "port": 55048, "session": 92270, "exitCode": 130, "tab": 301, "tabClosed": true},
+  "buildRun": false,
+  "wholeProjectTypecheckRun": false
+}

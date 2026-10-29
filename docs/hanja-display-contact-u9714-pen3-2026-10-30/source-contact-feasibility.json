@@ -1,0 +1,176 @@
+{
+  "schema": "hanja-source-Q-contact-cap-feasibility/v1",
+  "date": "2026-10-30",
+  "glyph": "霔",
+  "target": {
+    "logicalOneBased": 3,
+    "maskOneBased": 2,
+    "sourceSlotOneBased": 4
+  },
+  "inputs": {
+    "fixture": {
+      "path": "docs/hanja-authored-component-u9714-japanese-zhu5-2026-10-30/fixtures-execution-draft.json",
+      "SHA256": "d63f8d174914aa699d0cf3181719860b1497ae78c82ad68fa181ea442ab2cd0f",
+      "geometrySHA256": "64875f2937528d7b5a365951e616054a275291fa3458e3e67375d21d352c18a4"
+    },
+    "oldPolicy": {
+      "path": "lib/hanja-stroke-contact-head-u76cc.ts",
+      "SHA256": "f58710447df95443c8804aa206e3d653bacd716a434faa111c780a171ec6744c",
+      "unchanged": true
+    },
+    "exactPolygonUtility": {
+      "path": "docs/hanja-authored-ownstroke-u6030-raw6-head-gap-2026-10-29/verify-contact-strip-growth.py",
+      "SHA256": "945d1d0f0297b056cd6e10049ee01a38271c1989e6676b528532656f411252ea"
+    }
+  },
+  "nativeBaseline": {
+    "reportedBy": "ROOT",
+    "criticalQlocal": [
+      0.01,
+      0.05,
+      0.1
+    ],
+    "criticalGlobal": [
+      0.7962629113149882,
+      0.8044947128780189,
+      0.8147844648318074
+    ],
+    "result": "First two critical samples show detached tiny head; .1 not reported detached. Original boundary triple connected. Source clock/static roles remain prior evidence.",
+    "allTemporalApproved": false
+  },
+  "original": {
+    "priorH": "f3c8995cf83e6ceea957ff42935058f26a65ceebc7bed618f0f4ccc5f59dc61d",
+    "sourceQ": "7379ed49c72c7477740b7d9a99d535f3a37c357640f34e5f52ab6883df4faa13",
+    "sourceQGuide": "ca673cc0c668f339a690acecbf714da114655930ab56e8c032cfec2972f5349a",
+    "sourceBounds": [
+      82.15,
+      17.6,
+      95,
+      31.45
+    ],
+    "sourceFlags": [
+      22,
+      7
+    ],
+    "sourceWeight": 19.304500935505406,
+    "sourceGate": {
+      "unit": [
+        -0.49613893835683387,
+        0.8682431421244593
+      ],
+      "minProjection": -29.123355681546144,
+      "firstProjection": -26.062798605557425,
+      "padding": 7,
+      "until": 0.36260973663014484,
+      "bounds": [
+        82.15,
+        17.6,
+        95,
+        31.45
+      ]
+    },
+    "seed": [
+      88,
+      21.1
+    ]
+  },
+  "facts": {
+    "fullUnionArea": "42503763167/673072000",
+    "headUnionArea": "1955699357/47766400",
+    "headPhaseExact": "303133400335/467541394837",
+    "headPhaseNumber": 0.64835628178053,
+    "capKernelMinCross": "723/1760",
+    "capVerticesExact": [
+      [
+        "3649/40",
+        "221/10"
+      ],
+      [
+        "37817/440",
+        "221/10"
+      ],
+      [
+        "1721/20",
+        "437/20"
+      ],
+      [
+        "1729/20",
+        "207/10"
+      ],
+      [
+        "1737/20",
+        "98/5"
+      ]
+    ],
+    "simple": [
+      true,
+      true,
+      true
+    ],
+    "convexHead": true,
+    "convexCap": false,
+    "seedRelations": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "capVertices": 5,
+    "capKernelSeed": true,
+    "capArea": "116011/17600",
+    "headArea": "81/2",
+    "headCapArea": "26699427/4342400",
+    "bodyHeadArea": "14029236793/673072000",
+    "priorHeadArea": "6",
+    "criticalLevels": 41,
+    "allBodySlicesConnected": true,
+    "bodyTopInsideHead": -1,
+    "bodyTopY": "98/5",
+    "capLevel": "221/10",
+    "bodyBottom": "629/20",
+    "capBoundarySlice": [
+      [
+        "37817/440",
+        "3649/40"
+      ]
+    ]
+  },
+  "reuseDecision": {
+    "directWanQHeadThenMinYPrefixReusable": false,
+    "reason": "The body top is outside the original convex head. Starting the body prefix at its original minimum Y can reveal a detached body tip.",
+    "oldHelperChanged": false,
+    "newClosedContextRequired": true
+  },
+  "candidate": {
+    "policy": "Original convex head and original body cap y≤22.1 grow homothetically from common strict seed; retain full head+cap then reveal source body by increasing-Y prefix starting22.1.",
+    "headClipSubpaths": 2,
+    "headCapIsOriginalBodyClip": true,
+    "headCapConvex": false,
+    "headCapStarKernelStrict": true,
+    "sourceFilledPaintCount": 1,
+    "sourcePGuideFlagsWeightsBoundariesUnchanged": true,
+    "newFilledBridge": false,
+    "newSourceGuide": false,
+    "bodyPrefixConnectedByOriginalYMonotonicity": true,
+    "bodyPrefixInitialPositiveEdgeExact": [
+      [
+        "37817/440",
+        "3649/40"
+      ]
+    ],
+    "headPhaseExact": "303133400335/467541394837",
+    "headPhaseNumber": 0.64835628178053,
+    "displayTimeAuthorChoice": true,
+    "publisherMicroclockEquivalent": false,
+    "firstActualNativeReviewRequired": true
+  },
+  "wholeFixtureCounts": {
+    "logical": 16,
+    "masks": 18,
+    "P": 32
+  },
+  "status": "PUBLIC-exact-feasibility-only-native-candidate-unapproved",
+  "actualTemporalApproved": false,
+  "runtimeApplied": false,
+  "sharedFilesChanged": false
+}

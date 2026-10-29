@@ -1,0 +1,88 @@
+{
+  "schema": "hanja-exact-Q-contact-cap-pending-integration/v1",
+  "date": "2026-10-30",
+  "glyph": "霔",
+  "target": "logical3 mask2 only",
+  "status": "public-proof-and-focused-checks-PASS-native-unapproved",
+  "fixture": {
+    "path": "docs/hanja-authored-component-u9714-japanese-zhu5-2026-10-30/fixtures-execution-draft.json",
+    "SHA256": "d63f8d174914aa699d0cf3181719860b1497ae78c82ad68fa181ea442ab2cd0f",
+    "geometrySHA256": "64875f2937528d7b5a365951e616054a275291fa3458e3e67375d21d352c18a4",
+    "counts": {
+      "logical": 16,
+      "masks": 18,
+      "P": 32
+    }
+  },
+  "math": {
+    "path": "docs/hanja-display-contact-u9714-pen3-2026-10-30/source-contact-feasibility.json",
+    "SHA256": "33a8be1e7198406a5c58b9357c5d3e5d3dbdfae4cf94a585c2640a91cb92de34",
+    "verifier": "docs/hanja-display-contact-u9714-pen3-2026-10-30/verify-source-contact.py",
+    "verifierSHA256": "f20022d4cb402af7714447e2e9b2da3277398578e525b57e4b658d45c9dea1d6"
+  },
+  "helper": {
+    "path": "lib/hanja-stroke-contact-head-cap-u9714.ts",
+    "SHA256": "506ec0ba12b4bc7bec387493e261fdbb2263ad76a66c897ff389b20fac8c9fca",
+    "testPath": "lib/hanja-stroke-contact-head-cap-u9714.test.ts",
+    "testSHA256": "0938055d14c0b49c22c6c750459b5e12f533053327792307c9a270182289ef7e",
+    "fingerprint": "bfe136977794f8f95586033f0efd5b271cce1f20a0f5e7e28a6738030f4dfb88"
+  },
+  "renderer": {
+    "path": "components/hanja/stroke-outlines.tsx",
+    "beforeSHA256": "f66b1388cd9c6228ed6949ce03c1119a6e1d4fbd0e24ee498d4dc7016d5f45e8",
+    "afterSHA256": "1458f3a4b842a47f9d117786ea0f1641f02a717a1e4ad13f46ece13f5c7229fb",
+    "patch": "docs/hanja-display-contact-u9714-pen3-2026-10-30/renderer.pending.patch",
+    "patchSHA256": "798582818cbb89c95fed3baa5c1577752fe20261e7df613addbe0c28e06bfb93",
+    "oldRegisteredQComponentBytesUnchanged": true
+  },
+  "production": {
+    "patch": "docs/hanja-display-contact-u9714-pen3-2026-10-30/production.pending.patch",
+    "SHA256": "5a9ccffc9a723a27105de92aa1001af1bca84dd0bea1eb5fd9d80526424717a4",
+    "actualFilesWritten": false
+  },
+  "API": {
+    "input": "REVIEWED_U9714_Q_CONTACT_INPUT",
+    "context": "makeReviewedU9714QContactContext(input,strokes)",
+    "policy": "reviewedU9714QContactPolicy(context,zeroBasedPen,zeroBasedMask)",
+    "sample": "sampleReviewedU9714QContactFrame(policy,segment,p,previousMaskProgress)",
+    "prior": "verifyReviewedU9714QContactPrior(policy,g,previousMaskProgress,logicalProgress,frameId)",
+    "policyId": "u9714-Q-contact-cap-3-2",
+    "policyKind": "source-contact-head-cap-y-body-u9714",
+    "DOMContext": "u9714-exact-Q-contact-head-cap",
+    "DOMPrefix": "data-q-contact-",
+    "sourceHBoundary": 0.7942049609242304,
+    "headPhase": 0.64835628178053,
+    "headPhaseExact": "303133400335/467541394837",
+    "headClipSubpaths": 2,
+    "headCapIsOriginalBodyClip": true,
+    "bodyClipYStart": 22.1,
+    "frameContract": "Same as WanQ: headPath/bodyClip/headProgress/bodyProgress/phase/visible/originalPDirect. headPath contains2 white clip-only subpaths; colored original Q D painted once; p1 original direct."
+  },
+  "validation": {
+    "sourceExactProofPassed": true,
+    "virtualFocusedPassed": 5,
+    "selectedSemanticRoots": 3,
+    "selectedSemanticDiagnostics": 0,
+    "rendererPatchForwardInverseExact": true,
+    "oldWanHelperUnchanged": true,
+    "oldWanRegisteredComponentUnchanged": true,
+    "SSRRun": false,
+    "buildRun": false,
+    "wholeProjectTypecheckRun": false,
+    "serverRun": false
+  },
+  "resources": {
+    "currentBaseline": 395,
+    "proposedWithNewHelper": 396,
+    "actualCollectorRequiredByHPreparation": true
+  },
+  "limitations": [
+    "Existing original-Q head-then-minY policy cannot be applied unchanged: the original body top is outside original head.",
+    "Head+source-body-cap homothety and subsequent bodyY-prefix are a new bounded author display phase, not publisher microclock equivalence.",
+    "New helper is private-branded to complete16logical18mask32P fixture and exactly3m2; otherglyph/target/source mutation rejected.",
+    "Root actual native review remains mandatory. Original whole fixture/P/Q/guides/flags/weights/boundaries and all old registered helpers are unchanged."
+  ],
+  "actualTemporalApproved": false,
+  "runtimeApplied": false,
+  "sharedFilesChanged": false
+}
