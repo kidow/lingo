@@ -1,0 +1,7 @@
+# 霔 mixed original Japanese 主5 and retained recipient — pending actual renderer approval
+
+GlyphWiki Project and contributors. LicenseRef-GlyphWiki: https://glyphwiki.org/wiki/GlyphWiki:データ・記事のライセンス@18
+
+Recipient u9714 fixed full proof b5ea294219f68c01236322a2079ce32d2936bf56fc2dcbc308b0b8596c305df0 retains complete raw1..13. Replacement is the complete u4e3b-02 version4 five-call component captured within u59b5-g (a10154c15cd5dbad3457b717c78a8d5f5b3e2c13db4d34632f2c23393b77bb24); original source definitions0fd1b1cf7911c7e05e0fd8b378f23d870caf48c109f6e0c8a1b3c1097f7becc2 and caller provenance are pinned by capsule.pending.json. Donor original filled P and guides share the positive caller-derived affine [113/107,0,0,113/200,-1093/107,80] in source200 frame; normalization200to100 once. This is an explicit locally authored mixed assembly, not a captured original whole 霔 or original publisher outline identity.
+
+All source P/Q/guides/flags remain unchanged.7Q use authored14/7 source-start display. New3m2 head-cap contact display grows original head and original body cap together from actual prior-H contact seed before Y-prefix; the clip does not add filled geometry or a guide. Q11 guide endpoint discontinuity remains without bridge or exact retracing claim. Baseline Q3 early-head HOLD remains historical evidence. No final actual native temporal approval, full product UI, whole glyph autoplay or publisher microclock equivalence is claimed. Registration and runtime are false until ROOT final receipt and activation.
