@@ -1,0 +1,399 @@
+{
+  "schema": "hanja-source-execution-risk-readiness/v1",
+  "date": "2026-10-30",
+  "glyph": "藯",
+  "status": "code-and-coverage-ready-static-mapping-and-native-pending",
+  "inputs": {
+    "fixture": {
+      "path": "docs/hanja-authored-component-u85ef-u85da-grass-2026-10-30/fixtures-execution-draft-width20-18.json",
+      "SHA256": "39859cc026ba7367ae2f70edc404f8f164745ea6d21a7c26513491de57d3e5e2",
+      "geometrySHA256": "0fb60444fa5dd7e1375f8425d92d1c472c5fee89edd4166ffbf4a63beb035807"
+    },
+    "originalWidthFailure": {
+      "path": "docs/hanja-authored-component-u85ef-u85da-grass-2026-10-30/coverage-preflight.json",
+      "SHA256": "c23e838d6afa126de2582f5a895ba8268c493b90777be1b3c9af50420dd9e167"
+    },
+    "fullRoundCoverage": {
+      "path": "docs/hanja-authored-component-u85ef-u85da-grass-2026-10-30/coverage-preflight-width20-18.json",
+      "SHA256": "da908091da3d4f23429947a2957e2f8acb94ed0a87a293a65de245f20e9ad3f9"
+    },
+    "foldProof": {
+      "path": "docs/hanja-authored-component-u85ef-u85da-grass-2026-10-30/fold-contact-proof.json",
+      "SHA256": "b4b25509ab1cd3d76fc3cf724df180811bff1849b7abfcd9e4ed79b23b724bd1"
+    }
+  },
+  "counts": {
+    "logical": 19,
+    "masks": 25,
+    "P": 51,
+    "Q": 10,
+    "cardinal": 15,
+    "boundaries": 6
+  },
+  "sourcePreserved": {
+    "sourceGuideFlagsAnd51OriginalFilledP": true,
+    "newEngine": 0,
+    "newP": 0,
+    "newGuide": 0,
+    "newBridge": 0,
+    "other23MaskExact": true,
+    "identityComponentAssembly": true
+  },
+  "widthPolicy": {
+    "fresh": [
+      {
+        "pen": 10,
+        "mask": 2,
+        "width": 20,
+        "padding": 10
+      },
+      {
+        "pen": 14,
+        "mask": 2,
+        "width": 18,
+        "padding": 9
+      }
+    ],
+    "other8Curves": 14,
+    "otherPadding": 7,
+    "weight": "newPadding + original Q control-polygon-length upper bound +1e-9",
+    "until": "newPadding/newWeight",
+    "originalPublisherMicroclockEquivalent": false
+  },
+  "fullRoundCoverage": {
+    "pass": 10,
+    "outlier": 0,
+    "unproved": 0,
+    "fresh": 2,
+    "reusedUnchanged": 8
+  },
+  "risks": {
+    "Vfold5": {
+      "sourceHBounds": [
+        15,
+        25.4,
+        50,
+        27.4
+      ],
+      "sourceVBounds": [
+        47,
+        22.9,
+        55.5,
+        38.3
+      ],
+      "sourceBodyOrigin": 26.4,
+      "sourceGuideStartY": 26.4466625,
+      "priorHMinY": 25.4,
+      "genericVInitials": [
+        {
+          "VLocal": 0.01,
+          "logicalGlobal": 0.8184718045458165,
+          "cutMaxY": 23.054,
+          "strictGapToPriorH": 2.346
+        },
+        {
+          "VLocal": 0.05,
+          "logicalGlobal": 0.8258062770894198,
+          "cutMaxY": 23.669999999999998,
+          "strictGapToPriorH": 1.7300000000000004
+        },
+        {
+          "VLocal": 0.1,
+          "logicalGlobal": 0.8349743677689241,
+          "cutMaxY": 24.439999999999998,
+          "strictGapToPriorH": 0.9600000000000009
+        }
+      ],
+      "exactContactBandGeometricConditions": true,
+      "policyActuallyAdopted": false,
+      "nativeInitialFailureObserved": false,
+      "sourceHelperReuse": "Existing immutable4-target and2-target helpers do not bind this exact19-row whole. Their source-bound/private-context and strict opaque prior DOM contracts must not be bypassed; only geometric method applicability proved."
+    },
+    "QInitials": {
+      "targets": [
+        {
+          "pen": 7,
+          "mask": 2,
+          "sourceRaw": 4,
+          "sourceFlags": [
+            1,
+            7
+          ]
+        },
+        {
+          "pen": 10,
+          "mask": 2,
+          "sourceRaw": 10,
+          "sourceFlags": [
+            1,
+            114
+          ]
+        },
+        {
+          "pen": 11,
+          "mask": 1,
+          "sourceRaw": 11,
+          "sourceFlags": [
+            0,
+            7
+          ]
+        },
+        {
+          "pen": 12,
+          "mask": 1,
+          "sourceRaw": 12,
+          "sourceFlags": [
+            7,
+            8
+          ]
+        },
+        {
+          "pen": 14,
+          "mask": 2,
+          "sourceRaw": 14,
+          "sourceFlags": [
+            1,
+            214
+          ]
+        },
+        {
+          "pen": 15,
+          "mask": 1,
+          "sourceRaw": 15,
+          "sourceFlags": [
+            7,
+            8
+          ]
+        },
+        {
+          "pen": 16,
+          "mask": 1,
+          "sourceRaw": 16,
+          "sourceFlags": [
+            7,
+            8
+          ]
+        },
+        {
+          "pen": 17,
+          "mask": 2,
+          "sourceRaw": 17,
+          "sourceFlags": [
+            1,
+            1
+          ]
+        },
+        {
+          "pen": 18,
+          "mask": 1,
+          "sourceRaw": 18,
+          "sourceFlags": [
+            7,
+            8
+          ]
+        },
+        {
+          "pen": 19,
+          "mask": 1,
+          "sourceRaw": 19,
+          "sourceFlags": [
+            7,
+            8
+          ]
+        }
+      ],
+      "nativeFirstPositiveFrameApproval": false
+    },
+    "compound": [
+      {
+        "pen": 5,
+        "nextMask": 2,
+        "boundary": 0.8166381864099156,
+        "sourceBefore": {
+          "root": "u85ef",
+          "raw": 5,
+          "primitive": 1
+        },
+        "sourceAfter": {
+          "root": "u85ef",
+          "raw": 6,
+          "primitive": 1
+        },
+        "guideEnd": [
+          50,
+          26.4466625
+        ],
+        "nextGuideStart": [
+          50,
+          26.4466625
+        ],
+        "exactSourceEndpointEqual": true,
+        "newBridge": false,
+        "nativeTransitionApproved": false
+      },
+      {
+        "pen": 7,
+        "nextMask": 2,
+        "boundary": 0.4100924524417291,
+        "sourceBefore": {
+          "root": "u85ef",
+          "raw": 4,
+          "primitive": 1
+        },
+        "sourceAfter": {
+          "root": "u85ef",
+          "raw": 4,
+          "primitive": 2
+        },
+        "guideEnd": [
+          15,
+          48.396649999999994
+        ],
+        "nextGuideStart": [
+          15,
+          48.396649999999994
+        ],
+        "exactSourceEndpointEqual": true,
+        "newBridge": false,
+        "nativeTransitionApproved": false
+      },
+      {
+        "pen": 10,
+        "nextMask": 2,
+        "boundary": 0.39679388408122346,
+        "sourceBefore": {
+          "root": "u85ef",
+          "raw": 10,
+          "primitive": 1
+        },
+        "sourceAfter": {
+          "root": "u85ef",
+          "raw": 10,
+          "primitive": 2
+        },
+        "guideEnd": [
+          37,
+          63.449725
+        ],
+        "nextGuideStart": [
+          37,
+          63.449725
+        ],
+        "exactSourceEndpointEqual": true,
+        "newBridge": false,
+        "nativeTransitionApproved": false
+      },
+      {
+        "pen": 14,
+        "nextMask": 2,
+        "boundary": 0.6808112098988708,
+        "sourceBefore": {
+          "root": "u85ef",
+          "raw": 14,
+          "primitive": 1
+        },
+        "sourceAfter": {
+          "root": "u85ef",
+          "raw": 14,
+          "primitive": 2
+        },
+        "guideEnd": [
+          80.65,
+          63.449725
+        ],
+        "nextGuideStart": [
+          80.65,
+          63.449725
+        ],
+        "exactSourceEndpointEqual": true,
+        "newBridge": false,
+        "nativeTransitionApproved": false
+      },
+      {
+        "pen": 17,
+        "nextMask": 2,
+        "boundary": 0.1943543421393828,
+        "sourceBefore": {
+          "root": "u85ef",
+          "raw": 17,
+          "primitive": 1
+        },
+        "sourceAfter": {
+          "root": "u85ef",
+          "raw": 17,
+          "primitive": 2
+        },
+        "guideEnd": [
+          33,
+          85.687
+        ],
+        "nextGuideStart": [
+          33,
+          85.687
+        ],
+        "exactSourceEndpointEqual": true,
+        "newBridge": false,
+        "nativeTransitionApproved": false
+      },
+      {
+        "pen": 17,
+        "nextMask": 3,
+        "boundary": 0.45523007898081636,
+        "sourceBefore": {
+          "root": "u85ef",
+          "raw": 17,
+          "primitive": 2
+        },
+        "sourceAfter": {
+          "root": "u85ef",
+          "raw": 17,
+          "primitive": 3
+        },
+        "guideEnd": [
+          38,
+          90.687
+        ],
+        "nextGuideStart": [
+          38,
+          90.687
+        ],
+        "exactSourceEndpointEqual": true,
+        "newBridge": false,
+        "nativeTransitionApproved": false
+      }
+    ],
+    "terminalUP17": {
+      "mask": 3,
+      "originalSourceRaw": 17,
+      "primitive": 3,
+      "originalKind": "cdDrawLine",
+      "originalSourceFlags": [
+        6,
+        5
+      ],
+      "sourceGuideDirection": "H right only; terminalUP exists in original filled P decoration. No invented UP guide.",
+      "originalClockRole": "心 V down→bottom H right→UP terminal hook",
+      "requiredNative": "Enlarged actual17 ending near1 and1 plus natural17; no exact UP-trajectory/microclock claim."
+    }
+  },
+  "existingSameBodyPolicyEvidence": {
+    "searchedFixedRecord": "u6170@9",
+    "existingSourceFiles": [
+      "docs/hanja-goal-glyphwiki-batch773-2026-10-13/sources.json"
+    ],
+    "alreadyAppliedExactWholeSourcePolicyEstablished": false,
+    "originalSourceAndOwn8CoverageReused": true
+  },
+  "approval": {
+    "nativeStaticMapping": false,
+    "initial": false,
+    "transitions": false,
+    "ending": false,
+    "temporal": false,
+    "runtime": false
+  },
+  "sharedFilesChanged": false,
+  "newServers": 0,
+  "build": false,
+  "wholeTypecheck": false
+}

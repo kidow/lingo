@@ -1,0 +1,182 @@
+{
+  "schema": "hanja-original-component-mix-static-preparation/v1",
+  "glyph": "藯",
+  "date": "2026-10-30",
+  "status": "ready-for-ROOT-static-whole-and-current-prefix-review",
+  "sourceInventory": {
+    "storedRecipientWhole": [
+      "u85ef"
+    ],
+    "storedOriginalWholeStatus": "HOLD connected grass3 versus originalclock4. No compatible recipient whole variant is claimed.",
+    "officialMinimalWholeProbes": {
+      "requests": [
+        "u85ef",
+        "u85ef-k",
+        "u85ef-hkcs",
+        "u85ef-ue0100"
+      ],
+      "base": "https://glyphwiki.org/api/glyph?name=",
+      "HTTP": 403,
+      "retried": false,
+      "absenceInferred": false
+    },
+    "api403DoesNotProveAbsence": true
+  },
+  "proposal": {
+    "completeDonorGrassSource": "docs/hanja-goal-glyphwiki-batch665-2026-10-11/engine-whole-u85da-ue0103.json",
+    "completeDonorGrassRaw": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "completeRecipientBodySource": "docs/hanja-goal-glyphwiki-batch773-2026-10-13/engine-proof.json",
+    "completeRecipientBodyRaw": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "donorIsAnotherGlyphComponent": true,
+    "locallyAuthoredComponentAssembly": true,
+    "identityWorldPlacement": true,
+    "sourcePGuideFlagsChanged": false,
+    "originalWhole": false,
+    "newEngineCapture": false,
+    "shapeApproved": false,
+    "mappingApproved": false,
+    "temporalApproved": false,
+    "runtimeApplied": false
+  },
+  "exactChecks": {
+    "counts": {
+      "sourceRaw": 20,
+      "drawingCalls": 25,
+      "P": 51,
+      "Q": 10,
+      "logical": 19
+    },
+    "originalRecipientFull5BodyMatchesOriginal3Field": true,
+    "bothOriginalFull5HeadersAndDefaultsEqual": true,
+    "sourceTracePolygonsExact": true,
+    "sourceAllOff0": true,
+    "crossContactMath": {
+      "arithmetic": "Exact rational original JSON decimal points; nonzero winding and segment boundary contact",
+      "originalHeadBodyContacts": [],
+      "newDonorHeadRecipientBodyContacts": [],
+      "newHeadInternalContacts": [
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4
+        ]
+      ],
+      "crossPairsOld": 48,
+      "crossPairsNew": 64,
+      "bodyInternalContactsPreserved": "All43 original bodyP and all21 bodycalls unchanged; identity preserves every internal pair set relation, no recomputation needed.",
+      "newHeadInternalContactsPreserved": "All8 headP and4calls unchanged; identity retains donor internal relations.",
+      "sourceAllOff0": true,
+      "bodyP": 43,
+      "headP": 8,
+      "newWholeP": 51
+    },
+    "raw20SelectedOnce": true,
+    "body16MembershipAndAllPairRelationsUnchanged": true,
+    "head4MembershipAndAllPairRelationsUnchanged": true,
+    "bodyFirstThreeHypothesis": [
+      {
+        "logical": 5,
+        "originalRaw": [
+          5,
+          6
+        ],
+        "role": "Hright then Vdown; source endpoint exactly shared"
+      },
+      {
+        "logical": 6,
+        "originalRaw": [
+          7
+        ],
+        "role": "Hright"
+      },
+      {
+        "logical": 7,
+        "originalRaw": [
+          4
+        ],
+        "role": "Vdown then DL; source L/Q explicit controls"
+      }
+    ]
+  },
+  "checks": {
+    "staticCheckOnly": {
+      "codeCheck": "PASS",
+      "sourceRaw": 20,
+      "logical19": true,
+      "P": 51,
+      "Q": 10,
+      "wholeSources": 2,
+      "currentAndPrefixSelections": 38,
+      "originalPChildrenByteUnchanged": true,
+      "engine": 0,
+      "HTTP": 0,
+      "server": 0,
+      "nativeApproval": false
+    },
+    "processExit": 0,
+    "actualBrowserReview": false,
+    "privateFetch": 0,
+    "newEngine": 0,
+    "newServer": 0,
+    "build": false,
+    "wholeProjectTypecheck": false
+  },
+  "files": [
+    {
+      "path": "docs/hanja-authored-component-u85ef-u85da-grass-2026-10-30/recipe.json",
+      "SHA256": "ad9bd120ad06c772b6426d3479cee39ad254621bce8c939317dd9ae58d71baf4"
+    },
+    {
+      "path": "docs/hanja-authored-component-u85ef-u85da-grass-2026-10-30/readiness.json",
+      "SHA256": "c8d4f99f8b694a1f9a61f47d19050ec4a0e78a06b6b4bc4da8cff5b403550e6b"
+    },
+    {
+      "path": "docs/hanja-authored-component-u85ef-u85da-grass-2026-10-30/verify-contact.py",
+      "SHA256": "80de2dd6e254881ef40fadd418cdfeeb81ef19174e9ce45cac4ddd835abb8c07"
+    },
+    {
+      "path": "docs/hanja-authored-component-u85ef-u85da-grass-2026-10-30/compare.py",
+      "SHA256": "0a2c86aaa60e4cccf0665643a46dd6cbdcd98fff16a874a0c87fa0c394f487cf"
+    },
+    {
+      "path": "docs/hanja-authored-component-u85ef-u85da-grass-2026-10-30/config.json",
+      "SHA256": "070402ddab24e3040a937cba6243fc486d07513d4c32af0fa9d2e25b2a2e019c"
+    }
+  ],
+  "startup": {
+    "command": "python3 docs/hanja-authored-component-u85ef-u85da-grass-2026-10-30/compare.py --config-sha 070402ddab24e3040a937cba6243fc486d07513d4c32af0fa9d2e25b2a2e019c --port 0",
+    "routes": [
+      "/whole",
+      "/compare?pen=1&view=current",
+      "/compare?pen=5&view=current",
+      "/compare?pen=7&view=prefix",
+      "/compare?pen=19&view=prefix"
+    ],
+    "requiredNative": "Whole first, then all19 current+prefix; original19clock57 already reviewed and immutable."
+  }
+}

@@ -1,0 +1,147 @@
+{
+  "schema": "hanja-public-component-boundary-evidence/v1",
+  "glyph": "藯",
+  "date": "2026-10-29",
+  "source": {
+    "file": "docs/hanja-goal-glyphwiki-batch773-2026-10-13/sources.json",
+    "SHA256": "193c4c10502689654967e9558654f6988498c16da98c4bcd4a91ff7f0d35bfe0",
+    "root": "u85ef",
+    "rootRows": [
+      "99:0:0:0:5:200:135:u8279-03",
+      "99:0:0:0:35:200:198:u6170@9"
+    ],
+    "full5": "docs/hanja-goal-glyphwiki-batch773-2026-10-13/engine-proof.json",
+    "full5SHA256": "c06d36ad1776672a03fc2a6c1c8c2bf9f565d15ce4dbdb0a1086e3cacd87ee90"
+  },
+  "components": {
+    "grass": {
+      "name": "u8279-03",
+      "box": [
+        0,
+        5,
+        200,
+        135
+      ],
+      "nominalAffine": [
+        1,
+        0,
+        0,
+        0.65,
+        0,
+        5
+      ],
+      "sourceRows": [
+        "1:0:0:13:39:187:39",
+        "1:0:0:72:13:72:64",
+        "1:0:0:128:13:128:64"
+      ],
+      "rawOneBased": [
+        1,
+        2,
+        3
+      ],
+      "originalKinds": [
+        "H",
+        "V",
+        "V"
+      ],
+      "first3CoordinatesMatchOriginalBox": true,
+      "sourceEnd0MayBeEngineAdjusted": true,
+      "polygons": 6
+    },
+    "body": {
+      "name": "u6170@9",
+      "box": [
+        0,
+        35,
+        200,
+        198
+      ],
+      "rawOneBased": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "sourceChildren": [
+        {
+          "name": "u5c09@4",
+          "directRows": 9,
+          "nestedComponent": "u5bf8-02",
+          "nestedRows": 3,
+          "totalRaw": 12
+        },
+        {
+          "name": "u5fc3-04@8",
+          "nestedComponent": "u5fc3-09",
+          "totalRaw": 4
+        }
+      ],
+      "rawMembershipCount16": true,
+      "logicalDomesticMappingApproved": false
+    }
+  },
+  "counts": {
+    "sourceRaw": 19,
+    "sourceCalls": 24,
+    "sourceP": 49,
+    "domesticClips": 19,
+    "sourceGrassRaw": 3,
+    "sourceBodyRaw": 16,
+    "replaceGrass3With4WouldProduceRaw20": true,
+    "rawCountNotLogicalApproval": true
+  },
+  "existingNativeEvidence": {
+    "path": "docs/hanja-goal-glyphwiki-batch773-2026-10-13/review.json",
+    "SHA256": "034cbfeab3762fd3f3f9fb497b403ec25e627fd5baa4d2f3d1f9685d3c6e0901",
+    "wholeViews": 1,
+    "scope": "Whole top connected3 grass versus domestic4 observed; no per-stroke direction or clock review",
+    "dictionaryDirectionStrokes": [],
+    "progressiveFrames": 0,
+    "wholeShapeCompatible": false
+  },
+  "next": {
+    "originalClockFolder": "docs/hanja-official-media-compare-u85ef-2026-10-29/",
+    "split": [
+      [
+        1,
+        16
+      ],
+      [
+        17,
+        19
+      ]
+    ],
+    "first4GrassOrderNotYetObserved": true,
+    "body15LogicalBoundaryNotYetObserved": true,
+    "donorReuseClaim": false,
+    "donorRequiredConditions": [
+      "Exact public component identity/source data and99box affine match, or independently validated authored placement",
+      "Domestic first4 order/direction and remaining15 logical roles directly observed",
+      "Whole/current/prefix and contact review before temporal candidate approval"
+    ]
+  },
+  "execution": {
+    "engine": 0,
+    "server": 0,
+    "privateFetch": 0
+  },
+  "approval": {
+    "nativeClock": false,
+    "bodyMapping": false,
+    "authoredReplacement": false,
+    "runtimeApplied": false
+  }
+}

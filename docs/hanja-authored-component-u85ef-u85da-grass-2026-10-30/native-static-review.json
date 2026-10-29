@@ -1,0 +1,179 @@
+{
+  "schema": "hanja-root-bounded-mixed-static-role-review/v1",
+  "date": "2026-10-30",
+  "glyph": "藯",
+  "status": "PASS-bounded-static-whole-and19-role-mapping",
+  "reviewer": "ROOT direct CUA",
+  "inputs": {
+    "config": {
+      "path": "docs/hanja-authored-component-u85ef-u85da-grass-2026-10-30/config.json",
+      "SHA256": "070402ddab24e3040a937cba6243fc486d07513d4c32af0fa9d2e25b2a2e019c"
+    },
+    "adapter": {
+      "path": "docs/hanja-authored-component-u85ef-u85da-grass-2026-10-30/compare.py",
+      "SHA256": "0a2c86aaa60e4cccf0665643a46dd6cbdcd98fff16a874a0c87fa0c394f487cf"
+    },
+    "recipe": {
+      "path": "docs/hanja-authored-component-u85ef-u85da-grass-2026-10-30/recipe.json",
+      "SHA256": "ad9bd120ad06c772b6426d3479cee39ad254621bce8c939317dd9ae58d71baf4"
+    },
+    "readiness": {
+      "path": "docs/hanja-authored-component-u85ef-u85da-grass-2026-10-30/readiness.json",
+      "SHA256": "c8d4f99f8b694a1f9a61f47d19050ec4a0e78a06b6b4bc4da8cff5b403550e6b"
+    },
+    "originalClock": {
+      "path": "docs/hanja-official-media-compare-u85ef-2026-10-29/native-clock-review.json",
+      "SHA256": "d661071fe91abd82def213abbe025213797a8e9d5377a3d1be8e145fbf223dde",
+      "logical": 19,
+      "frames": 57
+    },
+    "sourceParts": {
+      "grass": {
+        "path": "docs/hanja-goal-glyphwiki-batch665-2026-10-11/engine-whole-u85da-ue0103.json",
+        "SHA256": "a9ef4fe7700ad3f2aeb00cc3703ce24b21e91e507a25022bfaecd7fafee0266e",
+        "root": "u85da-ue0103"
+      },
+      "body": {
+        "path": "docs/hanja-goal-glyphwiki-batch773-2026-10-13/engine-proof.json",
+        "SHA256": "c06d36ad1776672a03fc2a6c1c8c2bf9f565d15ce4dbdb0a1086e3cacd87ee90",
+        "root": "u85ef"
+      },
+      "fixedRecords": {
+        "path": "docs/hanja-goal-glyphwiki-batch665-2026-10-11/sources.json",
+        "SHA256": "765bdac54a4012a4d99654525eea60b548f3a7c27e9987f3c26df13b72ac0384"
+      },
+      "recipientRecords": {
+        "path": "docs/hanja-goal-glyphwiki-batch773-2026-10-13/sources.json",
+        "SHA256": "193c4c10502689654967e9558654f6988498c16da98c4bcd4a91ff7f0d35bfe0"
+      },
+      "recipientThreeFieldWhole": {
+        "path": "docs/hanja-goal-glyphwiki-batch773-2026-10-13/engine-whole-u85ef.json",
+        "SHA256": "a1231281f1402f95d152877f6f933f963ce6d8daaf75d4ea4bc439e1aa783fba",
+        "full5BodyExact": true
+      }
+    }
+  },
+  "observed": {
+    "whole": {
+      "panels": 3,
+      "SVGViews": 3,
+      "CSS": 520,
+      "result": "PASS-bounded-macro-placement"
+    },
+    "currentAndPrefix": {
+      "logical": 19,
+      "routes": 38,
+      "panelsPerRoute": 2,
+      "SVGViews": 76,
+      "CSS": 520,
+      "result": "PASS-bounded-current-role-and-prefix-order"
+    },
+    "totalNativeSVGViews": 79,
+    "allSelectedInkIncluded": true,
+    "captureScope": "Full SVG union included. Some vertically stacked520x1104 outputs were display-scaled; complete source ink remained included, not cropped.",
+    "originalClockRolesReused": [
+      {
+        "logicalOneBased": 1,
+        "role": "H left grass left→right"
+      },
+      {
+        "logicalOneBased": 2,
+        "role": "V down left grass"
+      },
+      {
+        "logicalOneBased": 3,
+        "role": "H right grass left→right"
+      },
+      {
+        "logicalOneBased": 4,
+        "role": "V down right grass"
+      },
+      {
+        "logicalOneBased": 5,
+        "role": "尸 H right→right V down"
+      },
+      {
+        "logicalOneBased": 6,
+        "role": "尸 bottom H right"
+      },
+      {
+        "logicalOneBased": 7,
+        "role": "long V down→DL"
+      },
+      {
+        "logicalOneBased": 8,
+        "role": "示 upper H right"
+      },
+      {
+        "logicalOneBased": 9,
+        "role": "示 lower H right"
+      },
+      {
+        "logicalOneBased": 10,
+        "role": "示 V down→left hook"
+      },
+      {
+        "logicalOneBased": 11,
+        "role": "示 DL"
+      },
+      {
+        "logicalOneBased": 12,
+        "role": "示 DR dot"
+      },
+      {
+        "logicalOneBased": 13,
+        "role": "寸 H right"
+      },
+      {
+        "logicalOneBased": 14,
+        "role": "寸 V down→left hook"
+      },
+      {
+        "logicalOneBased": 15,
+        "role": "寸 DR dot"
+      },
+      {
+        "logicalOneBased": 16,
+        "role": "心 DL dot"
+      },
+      {
+        "logicalOneBased": 17,
+        "role": "心 V down→bottom H right→UP terminal hook"
+      },
+      {
+        "logicalOneBased": 18,
+        "role": "心 center DR dot"
+      },
+      {
+        "logicalOneBased": 19,
+        "role": "心 right DR dot"
+      }
+    ],
+    "sourceOrderAndRoles": "H/V/H/V grass4;5H→V,6H,7longV→DL,8/9示H,10VleftHook,11DL,12DRdot,13寸H,14VleftHook,15DRdot,16心DLdot,17V→H→UPmacro,18/19DRdot."
+  },
+  "limits": [
+    "Source font weight and proportions differ and are accepted only within bounded macro/role review.",
+    "17 terminalUP source decoration is not exact publisher-font identity or microclock/UP-trajectory proof.",
+    "No actual renderer generic baseline or new display policy was inspected/adopted in this static review.",
+    "Source original P and guides remain unchanged; new20/18width display and coverage do not change static filled shape."
+  ],
+  "approval": {
+    "boundedStaticWhole": true,
+    "boundedRoleMapping": true,
+    "actualRendererTemporal": false,
+    "actualAppUI": false,
+    "registered": false,
+    "runtimeApplied": false
+  },
+  "cleanup": {
+    "PID": 601,
+    "port": 62040,
+    "session": 10424,
+    "tab": 286,
+    "serverStopped": true,
+    "tabClosed": true,
+    "exitCode": 130
+  },
+  "privateMediaSaved": false,
+  "newEngineRuns": 0
+}
