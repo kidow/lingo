@@ -1,0 +1,216 @@
+{
+  "schema": "hanja-public-mixed-source-coverage-preflight/v1",
+  "glyph": "蘷",
+  "scope": "Pendingmapping/native. KAGE10Q fullround14/7 verified; same originalMM十2D/median sourceN100 width20/pad10 success reused for4positive-affine grass masks. No start/release/upguide/native approval.",
+  "inputSHA256": {
+    "docs/hanja-authored-mixed-u8637-grass4-2026-10-29/prepare-execution-draft.mjs": "51e56833055ffba12124deffdca091b7309c8e27dbbb4d3128e8e63e218c1b97",
+    "docs/hanja-authored-mixed-u8637-grass4-2026-10-29/fixtures-execution-draft.json": "e42656da4804728b7b98f22620170bcea9cb67fe6cc95a5b788dc7472bef4bdd",
+    "docs/hanja-authored-mixed-u8637-grass4-2026-10-29/execution-draft-check.json": "f67bdfecf1257a3f07b9ea022e5b56a39d366cbaca5d8ef2446f4d51268647e5",
+    "docs/hanja-authored-mixed-u8637-grass4-2026-10-29/coverage-ear-preflight.mjs": "466a7b9fbda297362a7c67694fb86aeb68cc2f129835b05fff308c124599dbd3"
+  },
+  "reusedDonorEvidence": {
+    "path": "docs/hanja-authored-mm-u850c-components-2026-10-28/coverage-preflight.json",
+    "SHA256": "a9c8a85a99724f42262dcd5097ba78d78e9c6e0d3f0e731352f9602b5fdd1fee",
+    "units": [
+      {
+        "sourceStrokeOneBased": 1,
+        "logicalMasks": [
+          1,
+          3
+        ],
+        "sourceOriginalDSHA256": "81ef7695c19106ecf3f327f40c96ff027336bd5cd7bbf6feb59e05f6c167d14b",
+        "sourceOriginalMedianSHA256": "bf349a3ff4cf80c7d3a1a31d0a049f140176a2d27baf730d0dab97fff84e1414",
+        "status": "PASS-CONSERVATIVE-COVERAGE",
+        "radiusInUnplacedSource100": 10,
+        "rerun": false
+      },
+      {
+        "sourceStrokeOneBased": 2,
+        "logicalMasks": [
+          2,
+          4
+        ],
+        "sourceOriginalDSHA256": "5d2d698df61b4c3ba2e5dd1efd456e4a1eadd894f20e51615ec9cbaee3a3cffe",
+        "sourceOriginalMedianSHA256": "7950a4789cacf0a66067bc081a9ce013fc7c5ce020d7379ca53d7fddc89503b7",
+        "status": "PASS-CONSERVATIVE-COVERAGE",
+        "radiusInUnplacedSource100": 10,
+        "rerun": false
+      }
+    ]
+  },
+  "method": "Exact sourceP positive-ear triangles; evaluated originalQ points plus triangle radius gives1-Lipschitz fullround coverage upper bound. OriginalMM D/median and sourceframe proof identity separately fixed. Unproved is not widthinsufficiency.",
+  "numerics": {
+    "margin": 1e-8,
+    "formalIntervalProof": false,
+    "depthLimit": 16,
+    "nodeLimitPerMask": 60000,
+    "BezierEvaluationsPerKAGEMask": 4097
+  },
+  "counts": {
+    "KAGECurveMasks": 10,
+    "pass": 10,
+    "unproved": 0,
+    "outlier": 0,
+    "reusedMMSourcePaths": 2,
+    "reusedMMMasks": 4
+  },
+  "units": [
+    {
+      "logical": 9,
+      "mask": 1,
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "radius": 7,
+      "width": 14,
+      "padding": 7,
+      "nodes": 246,
+      "maxDepth": 3,
+      "maxAcceptedUpperDistance": 6.929460034394258,
+      "sourceOutlinePreserved": true,
+      "sourceBezierGuidePreserved": true,
+      "curveDegree": 2,
+      "nativeApproval": false
+    },
+    {
+      "logical": 10,
+      "mask": 1,
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "radius": 7,
+      "width": 14,
+      "padding": 7,
+      "nodes": 26,
+      "maxDepth": 1,
+      "maxAcceptedUpperDistance": 6.380099373825072,
+      "sourceOutlinePreserved": true,
+      "sourceBezierGuidePreserved": true,
+      "curveDegree": 2,
+      "nativeApproval": false
+    },
+    {
+      "logical": 15,
+      "mask": 2,
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "radius": 7,
+      "width": 14,
+      "padding": 7,
+      "nodes": 67,
+      "maxDepth": 1,
+      "maxAcceptedUpperDistance": 6.9706349579492946,
+      "sourceOutlinePreserved": true,
+      "sourceBezierGuidePreserved": true,
+      "curveDegree": 2,
+      "nativeApproval": false
+    },
+    {
+      "logical": 15,
+      "mask": 3,
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "radius": 7,
+      "width": 14,
+      "padding": 7,
+      "nodes": 46,
+      "maxDepth": 1,
+      "maxAcceptedUpperDistance": 6.928930949105362,
+      "sourceOutlinePreserved": true,
+      "sourceBezierGuidePreserved": true,
+      "curveDegree": 2,
+      "nativeApproval": false
+    },
+    {
+      "logical": 16,
+      "mask": 2,
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "radius": 7,
+      "width": 14,
+      "padding": 7,
+      "nodes": 39,
+      "maxDepth": 1,
+      "maxAcceptedUpperDistance": 6.6941854414136115,
+      "sourceOutlinePreserved": true,
+      "sourceBezierGuidePreserved": true,
+      "curveDegree": 2,
+      "nativeApproval": false
+    },
+    {
+      "logical": 17,
+      "mask": 1,
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "radius": 7,
+      "width": 14,
+      "padding": 7,
+      "nodes": 110,
+      "maxDepth": 2,
+      "maxAcceptedUpperDistance": 6.9959522520047575,
+      "sourceOutlinePreserved": true,
+      "sourceBezierGuidePreserved": true,
+      "curveDegree": 2,
+      "nativeApproval": false
+    },
+    {
+      "logical": 18,
+      "mask": 1,
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "radius": 7,
+      "width": 14,
+      "padding": 7,
+      "nodes": 147,
+      "maxDepth": 2,
+      "maxAcceptedUpperDistance": 6.928299816280608,
+      "sourceOutlinePreserved": true,
+      "sourceBezierGuidePreserved": true,
+      "curveDegree": 2,
+      "nativeApproval": false
+    },
+    {
+      "logical": 19,
+      "mask": 1,
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "radius": 7,
+      "width": 14,
+      "padding": 7,
+      "nodes": 106,
+      "maxDepth": 2,
+      "maxAcceptedUpperDistance": 6.938905858763274,
+      "sourceOutlinePreserved": true,
+      "sourceBezierGuidePreserved": true,
+      "curveDegree": 2,
+      "nativeApproval": false
+    },
+    {
+      "logical": 20,
+      "mask": 2,
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "radius": 7,
+      "width": 14,
+      "padding": 7,
+      "nodes": 343,
+      "maxDepth": 3,
+      "maxAcceptedUpperDistance": 6.936959239245296,
+      "sourceOutlinePreserved": true,
+      "sourceBezierGuidePreserved": true,
+      "curveDegree": 2,
+      "nativeApproval": false
+    },
+    {
+      "logical": 21,
+      "mask": 1,
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "radius": 7,
+      "width": 14,
+      "padding": 7,
+      "nodes": 333,
+      "maxDepth": 3,
+      "maxAcceptedUpperDistance": 6.9855981923705075,
+      "sourceOutlinePreserved": true,
+      "sourceBezierGuidePreserved": true,
+      "curveDegree": 2,
+      "nativeApproval": false
+    }
+  ],
+  "logical16UpTerminalGuidePresent": false,
+  "mappingApproved": false,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "sharedFilesChanged": false,
+  "serverStarts": 0,
+  "buildRun": false
+}
