@@ -1,0 +1,73 @@
+{
+  "schema": "hanja-strict-registration-preparation/v1",
+  "date": "2026-10-29",
+  "glyph": "釃",
+  "batch": 1544,
+  "productionFilesWritten": true,
+  "registryApplied": true,
+  "files": {
+    "lib/hanja-stroke-dictionary-glyphwiki-batch1544.ts": "f7dc12adbb879319c867db04c24fa2d1564860596f51fec7cdebc8094d54863a",
+    "lib/hanja-stroke-dictionary-glyphwiki-batch1544.test.ts": "95c635812a70c1574eb08099e4faa8a00d5a4d4200753fb6fc70a454d291310b",
+    "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch1544.json": "cd097dc4dbb82cc5321e1e3cdf5462d36c32d81ef8b8a84ebc6bb5355e2ab988",
+    "public/hanja-strokes/sources/u91c3/NOTICE.md": "cbf15e967cc6684ed365e7962e9f4221b75292231f95f7a4b216925a065c6d38"
+  },
+  "registryPatch": {
+    "path": "docs/hanja-source-execution-u91c3-original-2026-10-29/registration-1544/approved-registry.patch",
+    "SHA256": "5d64d714e90fde70f3ed12d5849230ff8143ef0ad57ca21ff53e955f0c0a0d02",
+    "beforeSHA256": "b60fd31097a27469e775fbfd70fb8b33cba5d8c4d052eeba1080f14a12d5b9f5",
+    "afterSHA256": "d41efe63c29fdabff316968c18e50c65ab72343ef0f3b3154c44530f153c5604",
+    "forwardInverseExact": true
+  },
+  "nativeFinal": {
+    "path": "docs/hanja-source-execution-u91c3-original-2026-10-29/native-final-review.json",
+    "SHA256": "1154ebfb008a07d843b3ce89df8dd7d796728c0fa3efd45b567fd565fdd5df88"
+  },
+  "sourceScope": {
+    "raw": 31,
+    "masks": 37,
+    "P": 67,
+    "logical": 26,
+    "curves": 6,
+    "cardinal": 31,
+    "sourceGeometryPreserved": true,
+    "geometryAuthored": false,
+    "displayPolicyAuthored": true,
+    "mixedParts": false,
+    "newEngineRuns": 0,
+    "newBridge": 0,
+    "newGuide": 0,
+    "noWhiteCellsFilled": true
+  },
+  "nativeCounts": {
+    "compact": 234,
+    "gateFrames": 18,
+    "blankResidual": 6,
+    "aggregate": 163,
+    "aggregateGuards": 164,
+    "mainStates": 30,
+    "natural": [
+      24,
+      5,
+      26,
+      3
+    ],
+    "naturalNotRun": [
+      10,
+      14,
+      19
+    ]
+  },
+  "checks": {
+    "liveFocusedPending": false,
+    "selectedSemanticPending": false,
+    "builds": 0,
+    "extraSSR": 0,
+    "liveFocusedTests": 3,
+    "liveFocusedPassed": 3,
+    "liveFocusedFailed": 0,
+    "selectedSemanticFiles": 2,
+    "selectedSemanticDiagnostics": 0
+  },
+  "focusedCommand": "node --test lib/hanja-stroke-dictionary-glyphwiki-batch1544.test.ts",
+  "applyBy": "Four new source files already written under delegated lease; ROOT applies ordinary registry patch only, then child runs focused live3/selectedsemantic2. No child commits."
+}

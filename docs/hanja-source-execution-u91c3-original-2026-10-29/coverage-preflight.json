@@ -1,0 +1,121 @@
+{
+  "schema": "hanja-public-source-curve-coverage-preflight/v1",
+  "date": "2026-10-29",
+  "glyph": "釃",
+  "scope": "Six unchanged public-Q source masks4m2/5m2/18m2/24m2/25m1/26m2 only. Thirty-one original-line cardinal masks are not round-guide policies. Static mapping, start/release and runtime remain unapproved.",
+  "inputSHA256": {
+    "docs/hanja-source-execution-u91c3-original-2026-10-29/prepare-execution-draft.mjs": "6857543979cb79882b8f7de7fac324223871bfac85fad32ba7fc8d1681337102",
+    "docs/hanja-source-execution-u91c3-original-2026-10-29/fixtures-execution-draft.json": "68855919db4f58bfb81e0f023e089658dba73beecc5bdb36a36f76940e5b81fb",
+    "docs/hanja-source-execution-u91c3-original-2026-10-29/execution-draft-check.json": "4244c0c4ec85633a96ff364fbbae2e2665323caf64e456b15012082e0df57b9b",
+    "docs/hanja-source-execution-u91c3-original-2026-10-29/coverage-preflight.mjs": "0649d16d6cf0b7a719408b0d0a03eeafab25d61a82d4ea7ee9f7dcf13f319b5c"
+  },
+  "method": "Polygon fan triangles conservatively cover each original finite filled polygon. At each triangle center distance to actual padded line segment and4097 evaluated original Q points gives an upper distance bound; plus triangle radius (1-Lipschitz) proves every triangle point within full round guide radius7. No original P/Q flattening. Concave fan may include outside ink and unresolved is not insufficient width.",
+  "numerics": {
+    "margin": 1e-8,
+    "formalIntervalProof": false,
+    "depthLimit": 16,
+    "nodeLimitPerMask": 60000,
+    "QEvaluationsPerMask": 4097
+  },
+  "counts": {
+    "curveMasks": 6,
+    "pass": 6,
+    "unproved": 0
+  },
+  "units": [
+    {
+      "logical": 4,
+      "mask": 2,
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "radius": 7,
+      "width": 14,
+      "padding": 7,
+      "nodes": 352,
+      "maxDepth": 3,
+      "maxAcceptedUpperDistance": 6.997513596499654,
+      "sourceOutlinePreserved": true,
+      "sourceQGuidePreserved": true,
+      "nativeApproval": false
+    },
+    {
+      "logical": 5,
+      "mask": 2,
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "radius": 7,
+      "width": 14,
+      "padding": 7,
+      "nodes": 23,
+      "maxDepth": 0,
+      "maxAcceptedUpperDistance": 6.115920949445764,
+      "sourceOutlinePreserved": true,
+      "sourceQGuidePreserved": true,
+      "nativeApproval": false
+    },
+    {
+      "logical": 18,
+      "mask": 2,
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "radius": 7,
+      "width": 14,
+      "padding": 7,
+      "nodes": 264,
+      "maxDepth": 2,
+      "maxAcceptedUpperDistance": 6.931446576550998,
+      "sourceOutlinePreserved": true,
+      "sourceQGuidePreserved": true,
+      "nativeApproval": false
+    },
+    {
+      "logical": 24,
+      "mask": 2,
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "radius": 7,
+      "width": 14,
+      "padding": 7,
+      "nodes": 178,
+      "maxDepth": 2,
+      "maxAcceptedUpperDistance": 6.937293857801343,
+      "sourceOutlinePreserved": true,
+      "sourceQGuidePreserved": true,
+      "nativeApproval": false
+    },
+    {
+      "logical": 25,
+      "mask": 1,
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "radius": 7,
+      "width": 14,
+      "padding": 7,
+      "nodes": 62,
+      "maxDepth": 1,
+      "maxAcceptedUpperDistance": 6.768639416254126,
+      "sourceOutlinePreserved": true,
+      "sourceQGuidePreserved": true,
+      "nativeApproval": false
+    },
+    {
+      "logical": 26,
+      "mask": 2,
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "radius": 7,
+      "width": 14,
+      "padding": 7,
+      "nodes": 23,
+      "maxDepth": 0,
+      "maxAcceptedUpperDistance": 6.355313244976652,
+      "sourceOutlinePreserved": true,
+      "sourceQGuidePreserved": true,
+      "nativeApproval": false
+    }
+  ],
+  "cardinalPolicy": {
+    "masks": 31,
+    "allOriginalPAndFlagsRetained": true,
+    "nativeStartContactAndEndingReviewRequired": true
+  },
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "sharedFilesChanged": false,
+  "serverStarts": 0,
+  "buildRun": false
+}

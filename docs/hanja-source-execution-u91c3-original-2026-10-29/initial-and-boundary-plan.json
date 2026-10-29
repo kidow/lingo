@@ -1,0 +1,309 @@
+{
+  "schema": "hanja-original-source-initial-support-plan/v1",
+  "glyph": "釃",
+  "fixture": {
+    "path": "docs/hanja-source-execution-u91c3-original-2026-10-29/fixtures-execution-draft.json",
+    "SHA256": "68855919db4f58bfb81e0f023e089658dba73beecc5bdb36a36f76940e5b81fb",
+    "geometrySHA256": "4da3bd79cfc5e44d694cf7cb3f754ee3f195be1774fd097241b4c224a133ca66"
+  },
+  "counts": {
+    "logical": 26,
+    "raw": 31,
+    "masks": 37,
+    "P": 67,
+    "curves": 6,
+    "cardinal": 31,
+    "boundaries": 11
+  },
+  "curveFullroundCoverage": {
+    "pass": 6,
+    "unproved": 0,
+    "width14": 6,
+    "padding7": 6,
+    "doesNotApproveEarlyReveal": true
+  },
+  "sourceBoundary": {
+    "count": 11,
+    "allPositiveFilledIntersection": true,
+    "guideGapBoundaryOnlyLogical24": true,
+    "logical24": {
+      "sourceGuideGap100": 8.310704693345803,
+      "afterGuideStartDistanceSquaredToPriorFilled100": "2112749/80000",
+      "afterGuideStartDistance100": 5.139004037748949,
+      "radius7ReachesPriorFilledAtFullRoundStart": true,
+      "initialStartGateOrClippedInkContactStillUnapproved": true,
+      "noBridgeAdded": true
+    }
+  },
+  "prioritizedNativeChecks": [
+    {
+      "logical": 24,
+      "mask": 2,
+      "reason": "guide끝점간격8.31과filled접촉은별개; gate를적용한0+실제연결·미래조각 확인필요"
+    },
+    {
+      "logical": 5,
+      "masks": [
+        2,
+        3
+      ],
+      "reason": "원Q→짧은rightline+상향말단P, 마지막가중치경계.98796 부근과완료검토"
+    },
+    {
+      "logical": 26,
+      "masks": [
+        2,
+        3
+      ],
+      "reason": "원Q→rightline+상향말단P 유지; 전환및upwardP자연재생확인"
+    },
+    {
+      "logical": [
+        3,
+        10,
+        14,
+        19
+      ],
+      "reason": "filledcontact양수이나다음Vguide첫점은직전Hfilled외부의작은sourceprecision간격; 실제경계검토필요"
+    }
+  ],
+  "allCurveInitialSamples": [
+    {
+      "logical": 4,
+      "mask": 2,
+      "progress": [
+        0,
+        0.000001
+      ],
+      "release": 0.16648757680072765
+    },
+    {
+      "logical": 5,
+      "mask": 2,
+      "progress": [
+        0,
+        0.000001
+      ],
+      "release": 0.41176470585813146
+    },
+    {
+      "logical": 18,
+      "mask": 2,
+      "progress": [
+        0,
+        0.000001
+      ],
+      "release": 0.18305726401837244
+    },
+    {
+      "logical": 24,
+      "mask": 2,
+      "progress": [
+        0,
+        0.000001
+      ],
+      "release": 0.22101158721897782
+    },
+    {
+      "logical": 25,
+      "mask": 1,
+      "progress": [
+        0,
+        0.000001
+      ],
+      "release": 0.3083407978129822
+    },
+    {
+      "logical": 26,
+      "mask": 2,
+      "progress": [
+        0,
+        0.000001
+      ],
+      "release": 0.41176470585813146
+    }
+  ],
+  "allCallBoundaries": [
+    {
+      "logical": 3,
+      "maskBefore": 1,
+      "p": 0.3382589142306457,
+      "sourceBefore": [
+        3,
+        1
+      ],
+      "sourceAfter": [
+        4,
+        1
+      ],
+      "guideGap100": 0,
+      "guideEndpointsEqual": true,
+      "newBridge": false
+    },
+    {
+      "logical": 4,
+      "maskBefore": 1,
+      "p": 0.27564735301775345,
+      "sourceBefore": [
+        5,
+        1
+      ],
+      "sourceAfter": [
+        5,
+        2
+      ],
+      "guideGap100": 0,
+      "guideEndpointsEqual": true,
+      "newBridge": false
+    },
+    {
+      "logical": 5,
+      "maskBefore": 1,
+      "p": 0.6825938566430286,
+      "sourceBefore": [
+        6,
+        1
+      ],
+      "sourceAfter": [
+        6,
+        2
+      ],
+      "guideGap100": 0,
+      "guideEndpointsEqual": true,
+      "newBridge": false
+    },
+    {
+      "logical": 5,
+      "maskBefore": 2,
+      "p": 0.9879647925276097,
+      "sourceBefore": [
+        6,
+        2
+      ],
+      "sourceAfter": [
+        6,
+        3
+      ],
+      "guideGap100": 0,
+      "guideEndpointsEqual": true,
+      "newBridge": false
+    },
+    {
+      "logical": 10,
+      "maskBefore": 1,
+      "p": 0.4764733468813506,
+      "sourceBefore": [
+        11,
+        1
+      ],
+      "sourceAfter": [
+        12,
+        1
+      ],
+      "guideGap100": 0,
+      "guideEndpointsEqual": true,
+      "newBridge": false
+    },
+    {
+      "logical": 14,
+      "maskBefore": 1,
+      "p": 0.48392474398666363,
+      "sourceBefore": [
+        16,
+        1
+      ],
+      "sourceAfter": [
+        17,
+        1
+      ],
+      "guideGap100": 0,
+      "guideEndpointsEqual": true,
+      "newBridge": false
+    },
+    {
+      "logical": 18,
+      "maskBefore": 1,
+      "p": 0.36171285115207374,
+      "sourceBefore": [
+        21,
+        1
+      ],
+      "sourceAfter": [
+        21,
+        2
+      ],
+      "guideGap100": 0,
+      "guideEndpointsEqual": true,
+      "newBridge": false
+    },
+    {
+      "logical": 19,
+      "maskBefore": 1,
+      "p": 0.8174769590871409,
+      "sourceBefore": [
+        22,
+        1
+      ],
+      "sourceAfter": [
+        23,
+        1
+      ],
+      "guideGap100": 0,
+      "guideEndpointsEqual": true,
+      "newBridge": false
+    },
+    {
+      "logical": 24,
+      "maskBefore": 1,
+      "p": 0.41700759617647937,
+      "sourceBefore": [
+        28,
+        1
+      ],
+      "sourceAfter": [
+        29,
+        1
+      ],
+      "guideGap100": 8.310704693345803,
+      "guideEndpointsEqual": false,
+      "newBridge": false
+    },
+    {
+      "logical": 26,
+      "maskBefore": 1,
+      "p": 0.387505846881399,
+      "sourceBefore": [
+        31,
+        1
+      ],
+      "sourceAfter": [
+        31,
+        2
+      ],
+      "guideGap100": 0,
+      "guideEndpointsEqual": true,
+      "newBridge": false
+    },
+    {
+      "logical": 26,
+      "maskBefore": 2,
+      "p": 0.7409178317189146,
+      "sourceBefore": [
+        31,
+        2
+      ],
+      "sourceAfter": [
+        31,
+        3
+      ],
+      "guideGap100": 0,
+      "guideEndpointsEqual": true,
+      "newBridge": false
+    }
+  ],
+  "noSourceWhiteCellFilled": true,
+  "initialSupportApproved": false,
+  "staticMappingApproved": false,
+  "temporalApproved": false,
+  "runtimeApplied": false
+}
