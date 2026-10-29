@@ -1,0 +1,182 @@
+{
+  "schema": "hanja-public-source-curve-coverage-preflight/v1",
+  "date": "2026-10-30",
+  "glyph": "卼",
+  "scope": "Seven actual fixed-engine public Q calls from complete original u537c-g@2. Original world100 source controls unchanged; radius7 width14/pad7 author display draft. Other11 masks cardinal. Native source9clock/whole/mapping reused; polygon seams and initial/UP-terminal growth remain actual risks. No start/release/native approval.",
+  "inputSHA256": {
+    "docs/hanja-source-mapping-u537c-g-original9-2026-10-30/prepare-execution-draft.mjs": "46c59a1be6da97abad0c42a48939c4bb643d81bbb8520ab4735334f0f6c71192",
+    "docs/hanja-source-mapping-u537c-g-original9-2026-10-30/fixtures-execution-draft.json": "8c460edb5cc6cc5e422128c10080cf2c95c29b9f1a69e8c3b799f6c29bde8152",
+    "docs/hanja-source-mapping-u537c-g-original9-2026-10-30/execution-draft-check.json": "03b0052362911361279044f72c66dda176d089f94c44e4a7b78ab24bf9d47d0e",
+    "docs/hanja-source-mapping-u537c-g-original9-2026-10-30/coverage-preflight.mjs": "ac6857514ba5f7c2e901d8794ce9d5c5f3acdf367c436166ae48b153b62386ce"
+  },
+  "method": "Positive-ear triangles preserve originalpolygonarea within boundednumericmargin. If unchanged source polygon makes ear clipping inconclusive, the existing conservative whole-polygon fan covers its filled set and may include extra nonink; this is reported per mask and cannot establish a width failure. At each triangle center distance to actual padded line segment and4097 evaluated original Q/C points gives an upper distance bound; plus triangle radius (1-Lipschitz) proves every triangle point within full round guide radius7. No original P/Q/C flattening. Unresolved triangulated regions do not aloneprove insufficientwidth.",
+  "numerics": {
+    "margin": 1e-8,
+    "formalIntervalProof": false,
+    "depthLimit": 16,
+    "nodeLimitPerMask": 60000,
+    "BezierEvaluationsPerMask": 4097
+  },
+  "counts": {
+    "curveMasks": 7,
+    "pass": 6,
+    "unproved": 0,
+    "outlier": 1
+  },
+  "units": [
+    {
+      "logical": 2,
+      "mask": 2,
+      "metric": "world100 Euclidean; no transform",
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "radius": 7,
+      "width": 14,
+      "padding": 7,
+      "triangulation": "positive-ear",
+      "fanFallbackPolygons": [],
+      "nodes": 204,
+      "maxDepth": 3,
+      "maxAcceptedUpperDistance": 6.966103505328673,
+      "sourceOutlinePreserved": true,
+      "sourceBezierGuidePreserved": true,
+      "curveDegree": 2,
+      "nativeApproval": false
+    },
+    {
+      "logical": 3,
+      "mask": 2,
+      "metric": "world100 Euclidean; no transform",
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "radius": 7,
+      "width": 14,
+      "padding": 7,
+      "triangulation": "positive-ear",
+      "fanFallbackPolygons": [],
+      "nodes": 39,
+      "maxDepth": 1,
+      "maxAcceptedUpperDistance": 6.763136883022018,
+      "sourceOutlinePreserved": true,
+      "sourceBezierGuidePreserved": true,
+      "curveDegree": 2,
+      "nativeApproval": false
+    },
+    {
+      "logical": 4,
+      "mask": 1,
+      "metric": "world100 Euclidean; no transform",
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "radius": 7,
+      "width": 14,
+      "padding": 7,
+      "triangulation": "positive-ear",
+      "fanFallbackPolygons": [],
+      "nodes": 146,
+      "maxDepth": 2,
+      "maxAcceptedUpperDistance": 6.868903582172922,
+      "sourceOutlinePreserved": true,
+      "sourceBezierGuidePreserved": true,
+      "curveDegree": 2,
+      "nativeApproval": false
+    },
+    {
+      "logical": 5,
+      "mask": 2,
+      "metric": "world100 Euclidean; no transform",
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "radius": 7,
+      "width": 14,
+      "padding": 7,
+      "triangulation": "positive-ear",
+      "fanFallbackPolygons": [],
+      "nodes": 63,
+      "maxDepth": 2,
+      "maxAcceptedUpperDistance": 6.888882380224477,
+      "sourceOutlinePreserved": true,
+      "sourceBezierGuidePreserved": true,
+      "curveDegree": 2,
+      "nativeApproval": false
+    },
+    {
+      "logical": 7,
+      "mask": 2,
+      "metric": "world100 Euclidean; no transform",
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "radius": 7,
+      "width": 14,
+      "padding": 7,
+      "triangulation": "positive-ear",
+      "fanFallbackPolygons": [],
+      "nodes": 116,
+      "maxDepth": 2,
+      "maxAcceptedUpperDistance": 6.9092325687460425,
+      "sourceOutlinePreserved": true,
+      "sourceBezierGuidePreserved": true,
+      "curveDegree": 2,
+      "nativeApproval": false
+    },
+    {
+      "logical": 8,
+      "mask": 3,
+      "metric": "world100 Euclidean; no transform",
+      "status": "OUTLIER-CONFIRMED",
+      "radius": 7,
+      "width": 14,
+      "padding": 7,
+      "curveDegree": 2,
+      "outliers": [
+        {
+          "polygon": 2,
+          "vertex": 2,
+          "sourceFilledPoint100": [
+            61.3,
+            59.65
+          ],
+          "distanceLower": 10.03499999000001,
+          "subdivisionNodes": 1,
+          "method": "every sourceBezier control-hull bbox plus exact padded-line distance excludes radius; bounded binary64 margin1e-8, not formal interval proof"
+        },
+        {
+          "polygon": 2,
+          "vertex": 3,
+          "sourceFilledPoint100": [
+            61.3,
+            58.15
+          ],
+          "distanceLower": 10.03499999000001,
+          "subdivisionNodes": 1,
+          "method": "every sourceBezier control-hull bbox plus exact padded-line distance excludes radius; bounded binary64 margin1e-8, not formal interval proof"
+        }
+      ],
+      "confirmedOutlierVertices": 2,
+      "nativeApproval": false
+    },
+    {
+      "logical": 9,
+      "mask": 2,
+      "metric": "world100 Euclidean; no transform",
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "radius": 7,
+      "width": 14,
+      "padding": 7,
+      "triangulation": "positive-ear",
+      "fanFallbackPolygons": [],
+      "nodes": 35,
+      "maxDepth": 1,
+      "maxAcceptedUpperDistance": 6.820633094131388,
+      "sourceOutlinePreserved": true,
+      "sourceBezierGuidePreserved": true,
+      "curveDegree": 2,
+      "nativeApproval": false
+    }
+  ],
+  "cardinalPolicy": {
+    "masks": 11,
+    "declaredWholeCallerMaintained": true,
+    "nativeStartContactAndEndingReviewRequired": true
+  },
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "sharedFilesChanged": false,
+  "serverStarts": 0,
+  "buildRun": false
+}
