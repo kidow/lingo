@@ -1,0 +1,35 @@
+{
+  "date": "2026-10-30",
+  "glyph": "韡",
+  "status": "HOLD-direction1-and-contact8",
+  "reviewer": "Codex root, CUA browser panel tab316",
+  "profileSHA256": "c6d02bb3bf1cbfece2728a7f527979e1034f8b4f5981a2a7c8f0edb84a9797ed",
+  "H_SHA256": "ae36cec7e097a3a5a85fb350310c15e2cb294087dda77b8b2ce83f8b656a97f2",
+  "R_SHA256": "3015b3127a4e933cdb978059c11e0017e0aba4f6eb8abf0013ec5d845e8eb03b",
+  "fixtureSHA256": "db48e622d3f4947daeb4497cdba08630d1a9b5f416a72da21514eea1b2b15ea3",
+  "geometrySHA256": "458b63e333e79fd1ba1cdeab5e117a1c3da541be9f34651548bed1f437b82e94",
+  "views": {
+    "pen8Main520": {"Hlocal": [0.01,0.05,0.1], "views": 3},
+    "pen8BoundaryAndEarly300": 6,
+    "pen1Compact9": 9,
+    "pen1Main520": {"progress": [0.125,0.375,0.5], "views": 3},
+    "unaffectedCompact9": {"pens": [2,3,4,5,6,7,9,10,11,12,13,14,15,16,17,18,19,20], "views": 162},
+    "compoundBoundaryBeforeExactAfter": {"pens": [2,5,8], "views": 9},
+    "total": 192
+  },
+  "findings": [
+    "Pen8 Hlocal0.01 and0.05 expose a detached left horizontal fragment. At0.1 the fragment has reached the prior vertical; this later connection does not approve the earlier frames.",
+    "Pen1 uses direction left despite its original slanted-L guide being predominantly downward. The enlarged0.375/0.5 frames reveal a long thin wedge across the vertical extent before filling sideways, instead of progressing down the original stroke.",
+    "The other eighteen logical strokes and exact compound boundaries passed their finite observations. Stable checks true/errors empty do not override the two visual HOLD findings.",
+    "All masks are cardinal and there are no Q/C curves. Curve full-round coverage is not applicable and is not reported as a curve PASS."
+  ],
+  "reuseEligibleIfExactFinishedPrefixesAndRenderingUnchanged": {"unaffectedCompactViews": 162, "compound2And5BoundaryViews": 6},
+  "sourceGeometryChanged": false,
+  "runtimeApplied": false,
+  "catalogStrokes": 21,
+  "publisherPlaybackStrokes": 20,
+  "official21StrokeOrderEstablished": false,
+  "buildRun": false,
+  "wholeProjectTypecheckRun": false,
+  "privateSourcePixelsPersisted": false
+}

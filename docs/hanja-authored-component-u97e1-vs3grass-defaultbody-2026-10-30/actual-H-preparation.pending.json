@@ -1,0 +1,92 @@
+{
+  "schema": "hanja-exact-cardinal-H-pending-preparation/v1",
+  "date": "2026-10-30",
+  "glyph": "韡",
+  "HBeforeSHA256": "6bdd887803ccac4c1281e5cbc0a23050b008bcc175abce35bf357216dc0aed69",
+  "HAfterSHA256": "ae36cec7e097a3a5a85fb350310c15e2cb294087dda77b8b2ce83f8b656a97f2",
+  "profile": {
+    "path": "docs/hanja-authored-component-u97e1-vs3grass-defaultbody-2026-10-30/actual-profile-cardinal-start.pending.json",
+    "SHA256": "a0638dbe708baf73fdc4e23eb0adb741fc56558607cf36b63325b5ad5254397c"
+  },
+  "patch": {
+    "path": "docs/hanja-authored-component-u97e1-vs3grass-defaultbody-2026-10-30/actual-H-integration.pending.patch",
+    "SHA256": "98711e4a567ba78c4004a8550b81f627f064c9c691d902f388599f4b4bb4f41c"
+  },
+  "fixed": {
+    "ordinary": "aed648dbcd0f091f0d3e3163e0f3655fae93f1aa53adce4c516bdb22abf5a4d5",
+    "component": "3015b3127a4e933cdb978059c11e0017e0aba4f6eb8abf0013ec5d845e8eb03b",
+    "fixture": "db48e622d3f4947daeb4497cdba08630d1a9b5f416a72da21514eea1b2b15ea3",
+    "geometry": "458b63e333e79fd1ba1cdeab5e117a1c3da541be9f34651548bed1f437b82e94"
+  },
+  "checks": {
+    "exactForwardInverse": true,
+    "HAndBrowserSyntax": true,
+    "positiveFixture": true,
+    "negativeRejected": 7,
+    "actualTopLevelDispatch": true,
+    "actualRouteProfileFields": 7,
+    "fullOriginalResourceCollector": 397,
+    "sourceControls": {
+      "compoundPens": [
+        2,
+        5,
+        8
+      ],
+      "aggregate": 109,
+      "initial": 40,
+      "boundary": 9,
+      "ending": 60,
+      "commonButtons": 7,
+      "extraEarlyButtons": 4
+    },
+    "allProfileInputs": 1258,
+    "childSSR": 0,
+    "childHTTP": 0,
+    "childServers": 0,
+    "nativeApproval": false
+  },
+  "sourceScope": {
+    "mixedOriginalCompleteComponents": true,
+    "catalog": 21,
+    "playbackCandidate": 20,
+    "official21OrderEstablished": false,
+    "sourcePGuideFlagsUnchanged": true,
+    "newGuideBridge": false,
+    "curves": 0,
+    "cardinal": 23,
+    "P": 38,
+    "masks": 23
+  },
+  "requiredFreshNative": {
+    "allCompactPens": 20,
+    "allCompactNativeViews": 180,
+    "initial": 40,
+    "sourceBoundary": 9,
+    "ending": 60,
+    "aggregate": 109,
+    "mainStates": 24,
+    "curveGate": 0,
+    "fullRoundResidual": 0,
+    "priority": [
+      8,
+      2,
+      5
+    ],
+    "naturalSuggested": [
+      8,
+      2,
+      5,
+      20
+    ],
+    "allTemporalApproval": false
+  },
+  "files": [
+    "docs/hanja-authored-component-u97e1-vs3grass-defaultbody-2026-10-30/actual-H-integration.pending.patch",
+    "docs/hanja-authored-component-u97e1-vs3grass-defaultbody-2026-10-30/actual-profile-cardinal-start.pending.json",
+    "docs/hanja-authored-component-u97e1-vs3grass-defaultbody-2026-10-30/verify-pending-H-cardinal.cjs",
+    "docs/hanja-authored-component-u97e1-vs3grass-defaultbody-2026-10-30/actual-H-preparation.pending.json"
+  ],
+  "checkCommand": "node docs/hanja-authored-component-u97e1-vs3grass-defaultbody-2026-10-30/verify-pending-H-cardinal.cjs",
+  "startup": "node scripts/hanja-actual-component-review.mjs --profile docs/hanja-authored-component-u97e1-vs3grass-defaultbody-2026-10-30/actual-profile-cardinal-start.pending.json --profile-sha a0638dbe708baf73fdc4e23eb0adb741fc56558607cf36b63325b5ad5254397c --port 0",
+  "runtimeApplied": false
+}
