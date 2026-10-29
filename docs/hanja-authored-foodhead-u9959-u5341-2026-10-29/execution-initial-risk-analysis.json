@@ -1,0 +1,121 @@
+{
+  "schema": "hanja-mixed-source-execution-initial-risk-preflight/v1",
+  "date": "2026-10-29",
+  "glyph": "饙",
+  "reservedBatch": 1543,
+  "inputs": {
+    "docs/hanja-authored-foodhead-u9959-u5341-2026-10-29/fixtures-execution-draft.json": "b78c8f952c468c2c93114f1bd7b3b25bf66d7b31b43c35b5d0f16ec38516cb73",
+    "docs/hanja-authored-foodhead-u9959-u5341-2026-10-29/execution-draft-check.json": "42a680ebac1b46f816b7cbab8bb78840b665d1deddea535cc283abaac05e9d7c",
+    "docs/hanja-authored-foodhead-u9959-u5341-2026-10-29/prepare-execution-draft.py": "25318ded8d8856e4794464d81531d3ad49d3087561e2143afc7e74272920c3e9",
+    "docs/hanja-authored-foodhead-u9959-u5341-2026-10-29/coverage-preflight.py": "2fcd68a408fdcbaae428b346b3fff2de094685bb84614bd19d60fb1ca41b802b",
+    "docs/hanja-authored-foodhead-u9959-u5341-2026-10-29/coverage-preflight.json": "1a6ca9b938e7c1ae165bde3633b2a7306d39caa6b803961ae8c76beb04a124f1"
+  },
+  "counts": {
+    "logical": 22,
+    "sourceRaw": 24,
+    "masks": 24,
+    "P": 40,
+    "curves": 5,
+    "MMsourceAffineCurves": 1,
+    "KAGECurves": 4,
+    "cardinal": 19
+  },
+  "coverage": {
+    "pass": 5,
+    "outlier": 0,
+    "unproved": 0,
+    "reusedUnchanged": [
+      1,
+      2,
+      3
+    ],
+    "fresh": [
+      21,
+      22
+    ],
+    "sourceWidthPadding": {
+      "KAGE": [
+        14,
+        7
+      ],
+      "MMoriginalUnplaced": [
+        20,
+        10
+      ]
+    },
+    "noWidthChangesNeeded": true
+  },
+  "sourceContactScope": {
+    "first10RawAndTraceEqualAppliedFood": true,
+    "newHToNonTargetBodyContactImpossibleByControlBounds": true,
+    "bodyStrictXgapExact": "24333/8230",
+    "sourceHSlantDifferenceAcceptedOnlyStatic": true
+  },
+  "compoundHandoffs": [
+    {
+      "pen": 4,
+      "sourceRaw": [
+        5,
+        6
+      ],
+      "guideEndEqualsNextStart": true,
+      "sourcePoint200": [
+        71.42,
+        76
+      ],
+      "boundary": 0.4492886645250114
+    },
+    {
+      "pen": 17,
+      "sourceRaw": [
+        18,
+        19
+      ],
+      "guideEndEqualsNextStart": true,
+      "sourcePoint200": [
+        164.24,
+        86.32
+      ],
+      "boundary": 0.4823943661971832
+    }
+  ],
+  "requiredFreshNative": {
+    "compactAll22": true,
+    "first": [
+      3,
+      4,
+      17,
+      21,
+      22
+    ],
+    "gateTriples": 5,
+    "blankFullRoundResiduals": 5,
+    "aggregate": {
+      "initial": 44,
+      "boundary": 6,
+      "ending": 66,
+      "total": 116
+    },
+    "whole520": true,
+    "statesIfSeparateZeroRun": 26,
+    "naturalProposed": [
+      3,
+      4,
+      17,
+      22
+    ]
+  },
+  "limits": [
+    "Matching whole source and guide endpoints does not prove temporal connectedness; original filled H/V joints require actual starts/boundaries/ending review.",
+    "Original MM H1 source-normalized width20/pad10 is transported through exact positive source-affine transform; original filled D and median are unedited. Full-round coverage does not certify startup or slanted-font trajectory identity.",
+    "Existing 餗 coverage3successes are reused only after exact fullsegment equality; its native temporal approval is not transferred.",
+    "Static mapping is still a hypothesis until ROOT44pairedviews final record. Do not enable H/profile or register before that review."
+  ],
+  "nativeMappingApproved": false,
+  "actualExecutionPermission": false,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "engineRuns": 0,
+  "builds": 0,
+  "servers": 0
+}

@@ -1,0 +1,83 @@
+{
+  "schema": "hanja-strict-registration-preparation/v1",
+  "date": "2026-10-29",
+  "glyph": "饙",
+  "batch": 1543,
+  "actualProductionApplied": false,
+  "files": {
+    "lib/hanja-stroke-dictionary-glyphwiki-batch1543.ts": "e52303c63ad738887142133aa07e881b1c33903e7c05ce44c7e91857458deb2f",
+    "lib/hanja-stroke-dictionary-glyphwiki-batch1543.test.ts": "0f59b9bb84a7293afe845b9aa742bf1dba7c6abd49184f5b9bfeb54b183831ec",
+    "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch1543.json": "6ca4f17a6a813c411fc326719f98ff0d43a964fcf058291589456081e417a1d7",
+    "public/hanja-strokes/sources/u9959/NOTICE.md": "5011221dd108a980dcf1b949f08d45e1a89af39f61a8cd3ea24d0ad31c382e84"
+  },
+  "bundlePatch": {
+    "path": "docs/hanja-authored-foodhead-u9959-u5341-2026-10-29/registration-1543/approved-bundle.patch",
+    "SHA256": "77c9a21ff46af8c7e6af6c2d2d73d14bfa7174b59b15dcbdfbdd438f4f90c249"
+  },
+  "registryPatch": {
+    "path": "docs/hanja-authored-foodhead-u9959-u5341-2026-10-29/registration-1543/approved-registry.patch",
+    "SHA256": "6b65d3b804da47280349a85f5417875f384efaacc3253203edd0e16e55d9fe5b",
+    "beforeSHA256": "67bac6c566124737c109bb19778332a400d785db4e543db8825042da129cbf6e",
+    "afterSHA256": "b60fd31097a27469e775fbfd70fb8b33cba5d8c4d052eeba1080f14a12d5b9f5",
+    "forwardInverseExact": true
+  },
+  "nativeFinal": {
+    "path": "docs/hanja-authored-foodhead-u9959-u5341-2026-10-29/native-final-review.json",
+    "SHA256": "604bffa5b5a021d6f8d52f985dc229d26a99571b24e2c1805bbb5df78ab8d73b"
+  },
+  "counts": {
+    "logical": 22,
+    "masks": 24,
+    "P": 40,
+    "originalP": 41,
+    "retainedP": 39,
+    "curves": 5,
+    "cardinal": 19,
+    "MM3": [
+      20,
+      10
+    ],
+    "KAGE1_2_21_22": [
+      14,
+      7
+    ],
+    "compactFrames": 198,
+    "gateFrames": 15,
+    "blankResiduals": 5,
+    "aggregate": 116,
+    "aggregateGuardRecords": 117,
+    "wholeStates": 26,
+    "natural": [
+      3,
+      4,
+      17,
+      22
+    ]
+  },
+  "limits": {
+    "mixedParts": true,
+    "originalRoot": false,
+    "originalEngineWholeCapture": false,
+    "authoredEngineWholeCapture": false,
+    "publisherGeometryIdentity": false,
+    "publisherMicroclockIdentity": false,
+    "actualApplicationUI": false,
+    "wholeNaturalAutoplay": false
+  },
+  "checks": {
+    "focusedTests": 3,
+    "passed": 3,
+    "failed": 0,
+    "semanticPending": false,
+    "builds": 0,
+    "newSSR": 0,
+    "selectedSemanticFiles": 2,
+    "selectedSemanticDiagnostics": 0,
+    "actualFocusedTests": 3,
+    "actualFocusedPassed": 3,
+    "actualFocusedFailed": 0,
+    "initialOptionalLicenseTypeIssueCorrected": true
+  },
+  "applyBy": "ROOT only; capsule4files and ordinary registry are patch documents only.",
+  "focusedCommand": "node --test lib/hanja-stroke-dictionary-glyphwiki-batch1543.test.ts"
+}

@@ -1,0 +1,82 @@
+{
+  "schema": "hanja-isolated-H-integration-preparation/v1",
+  "date": "2026-10-29",
+  "glyph": "饙",
+  "reservedBatch": 1543,
+  "before": {
+    "path": "scripts/hanja-actual-component-review.mjs",
+    "SHA256": "fb7e4f288290e8ee8ba6b13744199ac31eca5d2a927d733f533dac3adab13765"
+  },
+  "after": {
+    "path": "scripts/hanja-actual-component-review.mjs",
+    "SHA256": "6165d4aa88df186e780a9485cbc228a6369fff722d3587e2a997ee36bbc675c0",
+    "actualApplied": false
+  },
+  "patch": {
+    "path": "docs/hanja-authored-foodhead-u9959-u5341-2026-10-29/actual-H-integration.patch",
+    "SHA256": "039e3f54aa8bd94337500ed441a40a3f5bb651b80a41f85e909c3cd4ff7159fb",
+    "hunks": 17,
+    "forwardInverseExact": true
+  },
+  "profile": {
+    "path": "docs/hanja-authored-foodhead-u9959-u5341-2026-10-29/actual-profile-start.json",
+    "SHA256": "101263d8baf411ce054df76c811a530b98831bf6014cd924c5929eeef590869d",
+    "profileFinalized": true,
+    "executionEnabled": true,
+    "sharedWindowPending": false,
+    "staticMappingApproved": true,
+    "nativeApproval": false,
+    "runtimeApplied": false,
+    "ordinaryRegistrySHA256": "67bac6c566124737c109bb19778332a400d785db4e543db8825042da129cbf6e"
+  },
+  "fixture": {
+    "path": "docs/hanja-authored-foodhead-u9959-u5341-2026-10-29/fixtures-execution-draft.json",
+    "SHA256": "b78c8f952c468c2c93114f1bd7b3b25bf66d7b31b43c35b5d0f16ec38516cb73",
+    "geometrySHA256": "9a327f15bffb1e846e1d0b2b3ee0c17fdd22a7c2ce2aeff7e05039af7073cf2c",
+    "pens": 22,
+    "masks": 24,
+    "P": 40,
+    "curves": 5,
+    "cardinal": 19
+  },
+  "sourceStaticMapping": {
+    "path": "docs/hanja-authored-foodhead-u9959-u5341-2026-10-29/native-mapping-review.json",
+    "SHA256": "37aaeb33666a2051cd47bc3e547561e9095a582a2a0f9f848cdac610cd7e41a6"
+  },
+  "checks": {
+    "guardPositive": true,
+    "guardNegative": 4,
+    "actualGeneratedRouteSixFields": true,
+    "resourceClosure390": true,
+    "missingLeafRejected": true,
+    "syntaxErrors": 0,
+    "controls": {
+      "gates": 5,
+      "releaseFrames": 15,
+      "compoundPens": 2,
+      "boundaries": 2,
+      "aggregate": 116,
+      "initial": 44,
+      "boundary": 6,
+      "ending": 66,
+      "residualWired": true
+    },
+    "originalFoodObserverByteUnchanged": true,
+    "Su4NumericPredicateByteUnchanged": true,
+    "ownCurveObserverRouting": {
+      "ownCurveRoute5": true,
+      "affineOnly3": true,
+      "rawOnly1_2_21_22": true,
+      "foreignRowRejected": true
+    }
+  },
+  "limits": [
+    "MM3 only source-affine20/10; KAGE1/2/21/22 only14/7.",
+    "Accepted static slant and retained original raw4 V-to-DL contact difference remain explicit, no publisher geometry identity.",
+    "Actual temporal review still required; strictmapping record only authorizes isolated review."
+  ],
+  "sharedEdits": 0,
+  "serverRuns": 0,
+  "SSR": 0,
+  "builds": 0
+}
