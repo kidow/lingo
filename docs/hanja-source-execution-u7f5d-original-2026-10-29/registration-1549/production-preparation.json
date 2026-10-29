@@ -1,0 +1,96 @@
+{
+  "schema": "hanja-approved-production-patch-preparation/v1",
+  "date": "2026-10-29",
+  "glyph": "罝",
+  "batch": 1549,
+  "status": "approved-exact4file-patch-ready-root-application-pending",
+  "nativeFinal": {
+    "path": "docs/hanja-source-execution-u7f5d-original-2026-10-29/native-actual-fold-contact-review.json",
+    "SHA256": "a0bbab42d2f52b08fd400a0f722f92fc97e244660d8d9072b09773102a88dea1",
+    "status": "pass-bounded-actual-fold-contact-review"
+  },
+  "sourceCounts": {
+    "logical": 10,
+    "raw": 12,
+    "calls": 12,
+    "masks": 12,
+    "P": 15,
+    "Q": 0,
+    "C": 0
+  },
+  "nativeFiniteScope": {
+    "compactPens": 10,
+    "compactViews": 90,
+    "criticalViews": 6,
+    "aggregateViews": 56,
+    "aggregateGuardStates": 57,
+    "mainViews": 9,
+    "mainPrefixes": [
+      1,
+      2,
+      3,
+      6,
+      7,
+      8
+    ],
+    "naturalPens": [
+      2,
+      7
+    ],
+    "naturalViews": 4,
+    "totalFiniteSVGViews": 165,
+    "curveGate": "not-applicable",
+    "curveFullRoundResidual": "not-applicable"
+  },
+  "curveGateAndResidual": "not-applicable; zero curves, no PASS claim",
+  "productionPatchSHA256": "8f185693f0dee11f4685558d72627fac0f9e2c840839c6ec8f740a31c0f7a6b9",
+  "productionFiles": [
+    {
+      "path": "lib/hanja-stroke-dictionary-glyphwiki-batch1549.ts",
+      "SHA256": "2e857ebf13426014c014c9d0aa71e0ec9853abf25c72082aa389c7658b90f21e"
+    },
+    {
+      "path": "lib/hanja-stroke-dictionary-glyphwiki-batch1549.test.ts",
+      "SHA256": "345f0b16acdfcafb33a310acb81eb0544391a79bbdf662bf7b3e76ad3075ad7c"
+    },
+    {
+      "path": "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch1549.json",
+      "SHA256": "4a68bfed761c0b0273e4b5cac7e37a738dbe5b4fb22262dc7da58f30ebe933b9"
+    },
+    {
+      "path": "public/hanja-strokes/sources/u7f5d/NOTICE.md",
+      "SHA256": "5c2428c06f5d8a4f49d18f2b3dc0b30054d0007259cdd83a4070aa2571bf12ed"
+    }
+  ],
+  "registry": {
+    "patchPath": "docs/hanja-source-execution-u7f5d-original-2026-10-29/registration-1549/registry.pending.patch",
+    "beforeSHA256": "1bf7bac148e13fc069a74faba28e4f2204669021b60cc3265c434897a2cf3459",
+    "afterSHA256": "aeef73afe90c290a70ee7d62b96dfac0c03fb30a48f92dd34858a9f55f625816",
+    "onlyRootMayApply": true
+  },
+  "checks": {
+    "selectedModuleAndTestSemantic": {
+      "selectedFiles": [
+        "hanja-stroke-dictionary-glyphwiki-batch1549.ts",
+        "hanja-stroke-dictionary-glyphwiki-batch1549.test.ts"
+      ],
+      "diagnostics": [],
+      "projectBuild": false,
+      "wholeProjectDiagnosticScan": false
+    },
+    "focused3": "Prepared, not run before actual root wiring; run once live after4file+registry application."
+  },
+  "approval": {
+    "registrationAuthorized": true,
+    "observedRuntimeApplied": false,
+    "productionFilesCreatedByChild": false,
+    "sharedRegistryAppliedByChild": false
+  },
+  "scopeLimits": [
+    "All12 original P/guide/flags and logical weights preserved, original source geometry normalizedonce.",
+    "Authored display only at2/7mask2 after same-frame opaque originalH; not source whole or engine capture identity.",
+    "165 bounded finite native SVGs; main exactprefixes1,2,3,6,7,8 plusidle/done/selectedzero only.",
+    "No full applicationUI, exhaustive-time or full natural autoplay claim."
+  ],
+  "suggestedCommit": "feat(hanja): activate 罝10 original-P fold-contact animation"
+}

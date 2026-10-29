@@ -1,0 +1,9 @@
+# 罝 original public polygons and bounded contact display
+
+GlyphWiki Project and contributors. LicenseRef-GlyphWiki: https://glyphwiki.org/wiki/GlyphWiki:データ・記事のライセンス@18
+
+Fixed snapshot a7dd7f3d911936770fa742e8c37d16bee7e2173c from https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/dump_newest_only.txt (SHA-256 7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62). Original VS0 full5 20ae9844348627b616a2f3400530914565154268e29b43d94134e892dc5ebc84. Historical engine revision 49232bac0348fe815f4200d4116ab7917e0db47f; no new engine run.
+
+Fixed public GlyphWiki VS0 u7f5d-ue0100 original12raw/12calls/15filled P and all source guides/flags are retained, source200to100 once, grouped10logical with compound2/7. No donor, omission, bridge, filled-P edit or new engine capture. Source-specific original-V contact y-band display only for pens2/7 mask2 after complete opaque originalH, strict same-frame source/owner/progress binding; original weights and boundaries .7863247863247863/.4647864711548753 are unchanged. ROOT actual392 component critical6, all10compact90, aggregate56/final57guards bad[]/errors[], main9 selected states and natural2/7 start/end4 passed, total165 finite SVG views. Q/C0: curve gate and full-round residual are not applicable and were not claimed PASS. Public font shape/weight/contact differences remain; this is not original publisher geometry/microclock identity or full applicationUI/full autoplay verification.
+
+Original source records and immutable source/static/clock/profile/native evidence are bound in GLYPHWIKI_BATCH1549_SOURCE_INPUT. Historical H/R snapshots remain tied to the exact native receipt; future renderer extensions do not turn them into live file pins. Source filled geometry is unmodified. No exam/government certification, private SVG/CSS/images, keys or learning records are distributed.

@@ -1,0 +1,269 @@
+*** Begin Patch
+*** Add File: /Users/kidow/Documents/dev/kidow/lingo/lib/hanja-stroke-dictionary-glyphwiki-batch1549.ts
++import type { HanjaDictionaryStrokeData } from './hanja-stroke-dictionary.ts'
++import reviewed from '../public/hanja-strokes/dictionary-reviewed-glyphwiki-batch1549.json' with { type: 'json' }
++/** Original source P is unchanged; authoring is grouping/display only, not filled geometry. */
++const EXPECTED=[{"glyph":"罝","verificationSource":"ehanja-crosschecked","verifiedAt":"2026-10-29","geometrySource":"658f58678fd897dd00b9423e3b1e0ebc237f90cec4ea85f8013508ccae0cea6e","geometryCorrection":"Fixed public GlyphWiki VS0 u7f5d-ue0100 original12raw/12calls/15filled P and all source guides/flags are retained, source200to100 once, grouped10logical with compound2/7. No donor, omission, bridge, filled-P edit or new engine capture. Source-specific original-V contact y-band display only for pens2/7 mask2 after complete opaque originalH, strict same-frame source/owner/progress binding; original weights and boundaries .7863247863247863/.4647864711548753 are unchanged. ROOT actual392 component critical6, all10compact90, aggregate56/final57guards bad[]/errors[], main9 selected states and natural2/7 start/end4 passed, total165 finite SVG views. Q/C0: curve gate and full-round residual are not applicable and were not claimed PASS. Public font shape/weight/contact differences remain; this is not original publisher geometry/microclock identity or full applicationUI/full autoplay verification.","paths":["M15.5 12.375 L15.5 31.125","M15.5 12.375 L84.5 12.375 M84.5 12.375 L84.5 31.125","M38.5 12.375 L38.5 31.125","M61.5 12.375 L61.5 31.125","M15.5 31.125 L84.5 31.125","M28.0375 40.7475 L28.0375 90.7525","M28.0375 40.7475 L71.4625 40.7475 M71.4625 40.7475 L71.4625 90.7525","M28.0375 57.1875 L71.4625 57.1875","M28.0375 73.6275 L71.4625 73.6275","M8.254999999999999 90.7525 L91.245 90.7525"],"outlines":[[{"outline":"M18.5 11.35 L18.5 38.1 L12.5 41.1 L12.5 8.35 Z","bounds":[12.5,8.35,18.5,41.1],"direction":"down","weight":18.75}],[{"outline":"M15.5 11.35 L84.5 11.35 L84.5 13.35 L15.5 13.35 Z","bounds":[15.5,11.35,84.5,13.35],"direction":"right","weight":69},{"outline":"M87.5 12.35 L87.5 35.1 L81.5 38.1 L81.5 12.35 Z M81.5 11.35 L84.5 8.85 L90 13.35 L87.5 15.35 L81.5 12.35 Z","bounds":[81.5,8.85,90,38.1],"direction":"down","weight":18.75}],[{"outline":"M41.5 11.35 L41.5 32.1 L35.5 32.1 L35.5 11.35 Z","bounds":[35.5,11.35,41.5,32.1],"direction":"down","weight":18.75}],[{"outline":"M64.5 11.35 L64.5 32.1 L58.5 32.1 L58.5 11.35 Z","bounds":[58.5,11.35,64.5,32.1],"direction":"down","weight":18.75}],[{"outline":"M15.5 30.1 L84.5 30.1 L84.5 32.1 L15.5 32.1 Z","bounds":[15.5,30.1,84.5,32.1],"direction":"right","weight":69}],[{"outline":"M31 39.7 L31 91.75 L25 91.75 L25 36.7 Z","bounds":[25,36.7,31,91.75],"direction":"down","weight":50.004999999999995}],[{"outline":"M28 39.7 L71.45 39.7 L71.45 41.7 L28 41.7 Z","bounds":[28,39.7,71.45,41.7],"direction":"right","weight":43.425000000000004},{"outline":"M74.45 40.7 L74.45 91.75 L68.45 91.75 L68.45 40.7 Z M68.45 39.7 L71.45 37.2 L76.95 41.7 L74.45 43.7 L68.45 40.7 Z","bounds":[68.45,37.2,76.95,91.75],"direction":"down","weight":50.004999999999995}],[{"outline":"M28 56.15 L71.45 56.15 L71.45 58.15 L28 58.15 Z","bounds":[28,56.15,71.45,58.15],"direction":"right","weight":43.425000000000004}],[{"outline":"M28 72.6 L71.45 72.6 L71.45 74.6 L28 74.6 Z","bounds":[28,72.6,71.45,74.6],"direction":"right","weight":43.425000000000004}],[{"outline":"M8.25 89.75 L91.2 89.75 L91.2 91.75 L8.25 91.75 Z M91.2 89.75 L79.2 90.75 L85.2 84.75 Z","bounds":[8.25,84.75,91.2,91.75],"direction":"right","weight":82.99000000000001}]],"sourceStrokeIndices":[1,2,3,4,5,6,7,8,9,10],"pathsSha256":"7f481cfd0ba0d696c4aa8bc00678c767a9c72cc1a9696911c1dd823c54613308","sourceReference":{"orderUrl":"http://img.e-hanja.kr/hanjaSvg/aniSVG/7F00/7F5D.svg","dictionarySvgUrl":"http://img.e-hanja.kr/hanjaSvg/aniSVG/7F00/7F5D.svg","dictionarySvgSha256":"8593c08aef5daad91cafc6fbdb059d4316a4bdbd9596ada521e5c01ff1cb82ff","dictionaryDirectionStrokes":"Fixed public GlyphWiki VS0 u7f5d-ue0100 original12raw/12calls/15filled P and all source guides/flags are retained, source200to100 once, grouped10logical with compound2/7. No donor, omission, bridge, filled-P edit or new engine capture. Source-specific original-V contact y-band display only for pens2/7 mask2 after complete opaque originalH, strict same-frame source/owner/progress binding; original weights and boundaries .7863247863247863/.4647864711548753 are unchanged. ROOT actual392 component critical6, all10compact90, aggregate56/final57guards bad[]/errors[], main9 selected states and natural2/7 start/end4 passed, total165 finite SVG views. Q/C0: curve gate and full-round residual are not applicable and were not claimed PASS. Public font shape/weight/contact differences remain; this is not original publisher geometry/microclock identity or full applicationUI/full autoplay verification.","orderReviewSha256":"a0bbab42d2f52b08fd400a0f722f92fc97e244660d8d9072b09773102a88dea1","directionReviewSha256":"a0bbab42d2f52b08fd400a0f722f92fc97e244660d8d9072b09773102a88dea1","geometryReviewSha256":"a0bbab42d2f52b08fd400a0f722f92fc97e244660d8d9072b09773102a88dea1"},"geometryLicense":{"spdx":"LicenseRef-GlyphWiki","url":"https://glyphwiki.org/wiki/GlyphWiki:データ・記事のライセンス@18","attribution":"GlyphWiki Project and contributors; Lingo reviewed original10-role grouping and strict original-P fold contact display only. No locally authored filled geometry.","sourceUrl":"https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/dump_newest_only.txt","sourceUrls":["https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/dump_newest_only.txt"],"revision":"Fixed snapshot a7dd7f3d911936770fa742e8c37d16bee7e2173c; original VS0 full5 20ae9844348627b616a2f3400530914565154268e29b43d94134e892dc5ebc84. All12raw12calls15P retained; no new engine capture.","modifications":"Fixed public GlyphWiki VS0 u7f5d-ue0100 original12raw/12calls/15filled P and all source guides/flags are retained, source200to100 once, grouped10logical with compound2/7. No donor, omission, bridge, filled-P edit or new engine capture. Source-specific original-V contact y-band display only for pens2/7 mask2 after complete opaque originalH, strict same-frame source/owner/progress binding; original weights and boundaries .7863247863247863/.4647864711548753 are unchanged. ROOT actual392 component critical6, all10compact90, aggregate56/final57guards bad[]/errors[], main9 selected states and natural2/7 start/end4 passed, total165 finite SVG views. Q/C0: curve gate and full-round residual are not applicable and were not claimed PASS. Public font shape/weight/contact differences remain; this is not original publisher geometry/microclock identity or full applicationUI/full autoplay verification.","editableSource":"/hanja-strokes/dictionary-reviewed-glyphwiki-batch1549.json","editableSourceDraft":"docs/hanja-source-execution-u7f5d-original-2026-10-29/fixtures-execution-draft.json"}}] as const
++function freezeDeep(v:unknown):void{if(v&&typeof v==='object'){Object.values(v).forEach(freezeDeep);Object.freeze(v)}}
++freezeDeep(EXPECTED)
++function sameJSON(a:unknown,b:unknown):boolean{
++ if(Object.is(a,b))return true
++ if(!a||!b||typeof a!=='object'||typeof b!=='object')return false
++ if(Array.isArray(b)){if(!Array.isArray(a)||Object.getPrototypeOf(a)!==Array.prototype||a.length!==b.length||Reflect.ownKeys(a).length!==b.length+1)return false;return b.every((v,i)=>{const d=Object.getOwnPropertyDescriptor(a,String(i));return !!d&&d.enumerable&&Object.hasOwn(d,'value')&&sameJSON(d.value,v)})}
++ if(Array.isArray(a)||Object.getPrototypeOf(a)!==Object.prototype)return false
++ const keys=Object.keys(b),expected=b as Record<string,unknown>;return Reflect.ownKeys(a).length===keys.length&&keys.every(k=>{const d=Object.getOwnPropertyDescriptor(a,k);return !!d&&d.enumerable&&Object.hasOwn(d,'value')&&sameJSON(d.value,expected[k])})
++}
++
++export function loadGlyphWikiBatch1549Strokes(bundle:unknown):readonly HanjaDictionaryStrokeData[]{if(arguments.length!==1||!sameJSON(bundle,EXPECTED))throw Error('Invalid reviewed original-source GlyphWiki batch1549 bundle');return EXPECTED}
++export const HANJA_DICTIONARY_GLYPHWIKI_BATCH1549_STROKES:ReturnType<typeof loadGlyphWikiBatch1549Strokes>=loadGlyphWikiBatch1549Strokes(reviewed)
++export const GLYPHWIKI_BATCH1549_SOURCE_INPUT={"schema":"hanja-original-source-display-reviewed-capsule/v1","glyph":"罝","logicalStrokes":10,"sourceMasks":12,"filledSubpaths":15,"quadraticSegments":0,"cubicSegments":0,"curveSegments":0,"cardinalSegments":12,"mixedParts":false,"originalWhole":false,"isOriginalEngineCapture":false,"isActualLocallyAuthoredEngineCapture":false,"sourceWholeGeometryPreserved":true,"locallyAuthoredGeometry":false,"displayPolicyAuthored":true,"publisherGeometryIdentity":false,"originalMicroclockEquivalence":false,"sourceTraceDescribesAuthoredWhole":false,"sourceTraceDescribesNormalizedOriginalPrimitives":true,"originalClockEvidence":{"path":"docs/hanja-official-media-compare-u7f5d-2026-10-29/native-clock-review.json","SHA256":"ab96bb989294aaac2c5223ceabd984018fd66965d2ed028b1ee52e5d395ee55a","logical":10,"uniqueSamples":30},"staticMapping":{"path":"docs/hanja-source-raw-compare-u7f5d-reassessment-2026-10-29/native-static-mapping-review.json","SHA256":"e769da243aab97274189dbb1fca03ad1b67723a88455276d8eb577d9c28e31b7"},"fixture":{"path":"docs/hanja-source-execution-u7f5d-original-2026-10-29/fixtures-execution-draft.json","SHA256":"658f58678fd897dd00b9423e3b1e0ebc237f90cec4ea85f8013508ccae0cea6e","geometrySHA256":"3b8edd646a71f7c34f578399945f635a3be327399aa5696cda9a3be9590d443f","key":"strokes"},"actualReviewProfile":{"path":"docs/hanja-source-execution-u7f5d-original-2026-10-29/actual-profile-fold-contact-start.json","SHA256":"680d55e8242b33f3ba2cca933fb4d680be5345e92b37892fd0f93c7edc5e421b"},"finalNativeReview":{"path":"docs/hanja-source-execution-u7f5d-original-2026-10-29/native-actual-fold-contact-review.json","SHA256":"a0bbab42d2f52b08fd400a0f722f92fc97e244660d8d9072b09773102a88dea1"},"publicSource":{"root":"u7f5d-ue0100","snapshot":{"url":"https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/dump_newest_only.txt","sha256":"7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62","repositoryRevision":"a7dd7f3d911936770fa742e8c37d16bee7e2173c"},"preservedFamilyRecords":["u7f5d","u7f52-03","u7f52","u4e14","u7f5d-ue0100"],"capturePath":"docs/hanja-goal-glyphwiki-batch837-2026-10-13/engine-whole-u7f5d-ue0100.json","captureSHA256":"20ae9844348627b616a2f3400530914565154268e29b43d94134e892dc5ebc84","raws":12,"calls":12,"P":15,"engineRevision":"49232bac0348fe815f4200d4116ab7917e0db47f","engineHashes":{"2d.js":"dd17c52d85a6fcdf8a76e30189a24ba2f73856e0d298e80a72e0a562bcb70942","buhin.js":"6fa8e13bd964525299fa697dc40ea2c8b436d2ccb5952fe95f45d7fbf67b9456","curve.js":"77477845aff9c4d53616c91247510bd10daeb4282423bdfcde7a8bebcd21f0da","kage.js":"c36a60ff9ae7d392740d8aad62e823553dc25c991eba40482fcbc8a1a1db6d78","kagecd.js":"489fdd76e307642f6adaa99d280a41b1dda0760b4ca64b4711f0f49c08d9c860","kagedf.js":"e6d7cb5eeacda24705306302fd85a01c78f2adcdfdba43d1cac1d3616b6bf847","polygon.js":"f0afbe3b0c6f4723005ec927d2292eb991ecf5c598c16cfefb7bc55cfef75bf2","polygons.js":"111b9b0aaca536805cf92ab9d1e7be099f9e082a2169cc7c0bf49e3deee20b1a"},"defaults":{"kMage":10,"kWidth":5,"kMinWidthT":6,"kAdjustMageStep":5},"logicalRawGroups":[[1],[2,3],[4],[5],[6],[7],[8,9],[10],[11],[12]],"callArgs":[[[31,24.75,31,62.25,12,13]],[[31,24.75,169,24.75,2,2]],[[169,24.75,169,62.25,22,23]],[[77,24.75,77,62.25,32,32]],[[123,24.75,123,62.25,32,32]],[[31,62.25,169,62.25,2,2]],[[56.075,81.495,56.075,181.505,12,32]],[[56.075,81.495,142.925,81.495,2,2]],[[142.925,81.495,142.925,181.505,22,32]],[[56.075,114.375,142.925,114.375,2,2]],[[56.075,147.255,142.925,147.255,2,2]],[[16.509999999999998,181.505,182.49,181.505,0,0]]],"allOriginalRawExact":true,"normalization200to100Applications":1,"newP":0,"newBridge":0,"newSourceGuide":0,"noSourceWhiteCellsFilled":true},"displayRules":{"sourceCompound":[{"pen":2,"boundary":0.7863247863247863,"nextMask":2},{"pen":7,"boundary":0.4647864711548753,"nextMask":2}],"contactHelper":{"helper":"lib/hanja-stroke-fold-contact-u85da-u7f5d.ts","helperSHA256":"46c20a920336955f26c7b81a77594d5c594dc688180c45d4fc8617d7d43fe1fc","fingerprint":"098695742f228e006811e4b76622b0482e495fdc6b8073c0732167b673f5a644","targets":[2,7],"mask":2,"clipPolicy":"same-frame complete opaque H -> original V y-contact band around unchanged body-startY; extents are direct JS bounds differences","existingWeightBoundaries":[{"pen":2,"boundary":0.7863247863247863,"nextMask":2},{"pen":7,"boundary":0.4647864711548753,"nextMask":2}],"sourcePGuideFlagsWeightChanged":false,"newFilledP":0,"newGuide":0,"publisherMicroclockEquivalent":false},"cardinalDataMasks":12,"genericCardinalMasks":10,"contactSourceMasks":2,"localContactTiming":true,"wholeSourceGeometryUnchanged":true},"nativeScope":{"compactPens":10,"compactViews":90,"criticalViews":6,"aggregateViews":56,"aggregateGuardStates":57,"mainViews":9,"mainPrefixes":[1,2,3,6,7,8],"naturalPens":[2,7],"naturalViews":4,"totalFiniteSVGViews":165,"curveGate":"not-applicable","curveFullRoundResidual":"not-applicable"},"runtimeAppliedAtNativeReview":false,"actualAppUIFresh":false,"wholeNaturalAutoplayTest":false,"registrationAuthorized":true,"runtimeApplied":true,"inputSHA256":{"docs/hanja-goal-glyphwiki-batch837-2026-10-13/engine-proof.json":"20ae9844348627b616a2f3400530914565154268e29b43d94134e892dc5ebc84","docs/hanja-goal-glyphwiki-batch837-2026-10-13/engine-whole-u7f5d-ue0100.json":"20ae9844348627b616a2f3400530914565154268e29b43d94134e892dc5ebc84","docs/hanja-official-media-compare-u7f5d-2026-10-29/native-clock-review.json":"ab96bb989294aaac2c5223ceabd984018fd66965d2ed028b1ee52e5d395ee55a","docs/hanja-source-raw-compare-u7f5d-reassessment-2026-10-29/native-static-mapping-review.json":"e769da243aab97274189dbb1fca03ad1b67723a88455276d8eb577d9c28e31b7","docs/hanja-source-execution-u7f5d-original-2026-10-29/prepare-execution-draft.mjs":"8f3ebecedc4422f977b976c38aa1487a2bb0a94d52091f72e2f60d97aeb355ee","docs/hanja-source-execution-u7f5d-original-2026-10-29/fixtures-execution-draft.json":"658f58678fd897dd00b9423e3b1e0ebc237f90cec4ea85f8013508ccae0cea6e","docs/hanja-source-execution-u7f5d-original-2026-10-29/execution-draft-check.json":"a83018233f8221347f621f813e328415250a94af1d21e4c4d99f6a71e961bf0d","docs/hanja-goal-glyphwiki-batch837-2026-10-13/metadata.json":"1ec2af316bcb8b90d5a246cc13f9460b94562c2d4c22221c521e268be333d476","docs/hanja-display-contact-u85da-u7f5d-folds-2026-10-29/contact-proof.json":"7678a560cb4e203f7d149909193dcf534ababa2186602cf0adaf2c0d0d113656","docs/hanja-display-contact-u85da-u7f5d-folds-2026-10-29/native-prototype-spatial-review.json":"a0b73ad0fa9cef21ea4ab441d4d4741f8dc69e0f7fbd4305245408bf61a1e504","lib/hanja-stroke-fold-contact-u85da-u7f5d.ts":"46c20a920336955f26c7b81a77594d5c594dc688180c45d4fc8617d7d43fe1fc","lib/hanja-stroke-fold-contact-u85da-u7f5d.test.ts":"b02bd77ba4fe8c71d1b4a33df0274b5b3257600bca6a444497217d3b6738292a","docs/hanja-source-execution-u7f5d-original-2026-10-29/actual-profile-fold-contact-start.json":"680d55e8242b33f3ba2cca933fb4d680be5345e92b37892fd0f93c7edc5e421b","docs/hanja-goal-glyphwiki-batch837-2026-10-13/sources.json":"2e437fe3b417c6b4a47892ec6a52345b280b35856d85f3f5295f341b170e8027","docs/hanja-goal-glyphwiki-batch837-2026-10-13/NOTICE.md":"7fb30af1cebadc39e5cdbfeadd05b4caa7d184b8444a4ab1897f97901bf422c9","docs/hanja-source-execution-u7f5d-original-2026-10-29/native-actual-fold-contact-review.json":"a0bbab42d2f52b08fd400a0f722f92fc97e244660d8d9072b09773102a88dea1","components/hanja/stroke-outlines.tsx":"931416a9e1fd8bf04e6ca0fbc5ce3a28f15cc2f6c1f0925fb21dd13e5a9dbe92","scripts/hanja-actual-component-review.mjs":"fb44db7253c7e5930a6c61e48c1da7c8377a5357474b686cc375af4bce305538"},"fixtureApprovalFlagsAreHistoricalGenerationState":true,"helperApprovalFlagsAreHistoricalPrototypeState":true} as const
++freezeDeep(GLYPHWIKI_BATCH1549_SOURCE_INPUT)
++export const GLYPHWIKI_BATCH1549_LOCAL_AUTHORED=true
++export const GLYPHWIKI_BATCH1549_REGISTRATION_AUTHORIZED=true
++export const GLYPHWIKI_BATCH1549_RUNTIME_APPLIED=true
+*** Add File: /Users/kidow/Documents/dev/kidow/lingo/lib/hanja-stroke-dictionary-glyphwiki-batch1549.test.ts
++import test from'node:test'
++import assert from'node:assert/strict'
++import{readFileSync}from'node:fs'
++import{createHash}from'node:crypto'
++import{hanjaStrokeData,HANJA_STROKES}from'./hanja-strokes.ts'
++import{loadGlyphWikiBatch1549Strokes as load,HANJA_DICTIONARY_GLYPHWIKI_BATCH1549_STROKES as expected,GLYPHWIKI_BATCH1549_SOURCE_INPUT as input,GLYPHWIKI_BATCH1549_REGISTRATION_AUTHORIZED as authorized,GLYPHWIKI_BATCH1549_RUNTIME_APPLIED as runtime}from'./hanja-stroke-dictionary-glyphwiki-batch1549.ts'
++import{REVIEWED_FOLD_CONTACT_INPUT,makeReviewedFoldContactContext as context,reviewedFoldContactPolicy as policy,sampleReviewedFoldContactFrame as frame}from'./hanja-stroke-fold-contact-u85da-u7f5d.ts'
++const snapshots=new Set(['components/hanja/stroke-outlines.tsx','scripts/hanja-actual-component-review.mjs'])
++const read=(p:string)=>JSON.parse(readFileSync(new URL('../'+p,import.meta.url),'utf8')),hash=(v:string|Uint8Array)=>createHash('sha256').update(v).digest('hex'),bundle=()=>read('public/hanja-strokes/dictionary-reviewed-glyphwiki-batch1549.json')
++test('1549 binds actual165 finite views and ordinary10 resolver without changing source geometry',()=>{
++ assert.strictEqual(load(bundle()),expected);assert(authorized&&runtime&&input.registrationAuthorized&&input.runtimeApplied);for(const[p,h]of Object.entries(input.inputSHA256)){if(snapshots.has(p))assert.match(h,/^[a-f0-9]{64}$/);else assert.equal(hash(readFileSync(new URL('../'+p,import.meta.url))),h,p)}
++ const f=read(input.fixture.path),n=read(input.finalNativeReview.path),d=expected[0];assert.equal(n.status,'pass-bounded-actual-fold-contact-review');assert(n.approval.actualTemporal&&!n.approval.runtimeApplied);assert.equal(n.inputs.R,input.inputSHA256['components/hanja/stroke-outlines.tsx']);assert.equal(n.inputs.H,input.inputSHA256['scripts/hanja-actual-component-review.mjs']);assert.equal(n.inputs.profile,input.actualReviewProfile.SHA256);assert.equal(n.inputs.geometry,input.fixture.geometrySHA256);assert.equal(n.startup.CJS,392);assert.equal(n.startup.ESM,392);assert.equal(n.observed.criticalContact.SVGViews,6);assert(n.observed.criticalContact.visualPASS);assert.equal(n.observed.compact.SVGViews,90);assert(n.observed.compact.visualPASS);assert.equal(n.observed.aggregate.directNativeSVGViews,56);assert(n.observed.aggregate.all56NativeVisualPASS);assert.equal(n.observed.aggregate.finalGuardStates,57);assert.deepEqual(n.observed.aggregate.bad,[]);assert.deepEqual(n.observed.aggregate.errors,[]);assert.equal(n.observed.main.SVGViews,9);assert.deepEqual(n.observed.main.prefixes,[1,2,3,6,7,8]);assert(n.observed.main.visualPASS);assert.deepEqual(n.observed.natural.pens,[2,7]);assert(n.observed.natural.allVisualPASS);for(const e of n.observed.natural.endGuards){assert.equal(e.mode,'natural-ended');assert.equal(e.progress,1);assert(e.PASS);assert.deepEqual(e.bad,[]);assert.deepEqual(e.errors,[])}assert.equal(n.observed.totalCountedSVGViews,165);assert.equal(n.observed.curveGate.status,'not-applicable');assert.equal(n.observed.curveFullRoundResidual.status,'not-applicable');assert.equal(n.observed.curveGate.SVGViews,0);assert.equal(n.observed.curveFullRoundResidual.SVGViews,0);assert(n.cleanup.serverStopped&&n.cleanup.tabClosed);assert.deepEqual(d.outlines,f.strokes);assert.deepEqual(d.paths,f.paths);assert.equal(hash(JSON.stringify(d.paths)),d.pathsSha256);assert.equal(hash(JSON.stringify(d.outlines)),input.fixture.geometrySHA256);
++ assert(!input.mixedParts&&!input.originalWhole&&!input.isOriginalEngineCapture&&!input.isActualLocallyAuthoredEngineCapture&&!input.locallyAuthoredGeometry&&!input.originalMicroclockEquivalence&&!input.runtimeAppliedAtNativeReview&&!input.actualAppUIFresh);assert(input.sourceWholeGeometryPreserved&&input.displayPolicyAuthored);const live=hanjaStrokeData({glyph:'罝',strokes:10});assert(live&&'outlines'in live);assert.strictEqual(live.outlines,d.outlines);assert.equal(hanjaStrokeData({glyph:'罝',strokes:9}),null);assert.equal(hanjaStrokeData({glyph:'罝',strokes:11}),null);assert.equal(HANJA_STROKES.filter(x=>x.glyph==='罝').length,1)
++})
++test('1549 preserves original12calls15P and exactly two contact targets',()=>{
++ const out=expected[0].outlines!,p=read(input.publicSource.capturePath);assert.equal(out.length,10);assert.equal(out.flat().length,12);assert.equal(out.flat().reduce((n,s)=>n+(s.outline.match(/M/g)||[]).length,0),15);assert.deepEqual(out.map(r=>r.length),[1,2,1,1,1,1,2,1,1,1]);assert.equal(p.groups.length,12);assert.equal(p.trace.flat().length,12);assert.deepEqual(p.trace.map((r:any[])=>r.map(c=>c.args)),input.publicSource.callArgs);assert.deepEqual(input.publicSource.logicalRawGroups.flat(),Array.from({length:12},(_,i)=>i+1));const sort=(v:number[][])=>v.map(x=>JSON.stringify(x)).sort();for(const[logical,row]of input.publicSource.logicalRawGroups.entries())for(const[mask,raw]of row.entries()){const s=out[logical][mask],poly=p.trace[raw-1][0].polygons;const coords=s.outline.match(/[-+]?(?:\d*\.\d+|\d+\.?\d*)(?:e[-+]?\d+)?/gi)!.map(Number),actual:number[][]=[];for(let i=0;i<coords.length;i+=2)actual.push([coords[i],coords[i+1]]);assert.deepEqual(sort(actual),sort(poly.flat().map((v:any)=>[v.x/2,v.y/2])));assert.notEqual(s.direction,'curve');assert(!Object.hasOwn(s,'revealPath')&&!Object.hasOwn(s,'revealStartGate')&&!Object.hasOwn(s,'revealTransform'))}
++ const c=context(REVIEWED_FOLD_CONTACT_INPUT,out);assert(c&&c.glyph==='罝');for(const pen of[1,6]){const q=policy(c,pen,1);assert(q);assert.equal(frame(q,out[pen][1],0,.5).phase,'empty');assert.equal(frame(q,out[pen][1],1,1).phase,'full');assert(frame(q,out[pen][1],.01,1).visible);assert.throws(()=>frame(q,out[pen][1],.01,.5));assert.equal(policy(c,pen,0),null)}assert.equal(policy(c,0,0),null);const changed=JSON.parse(JSON.stringify(out));changed[9][0].weight+=1;assert.equal(context(REVIEWED_FOLD_CONTACT_INPUT,changed),null);assert.equal(input.publicSource.newP,0);assert.equal(input.publicSource.newBridge,0);assert.equal(input.publicSource.newSourceGuide,0);assert(input.publicSource.allOriginalRawExact&&input.publicSource.noSourceWhiteCellsFilled);
++ const reject=(fn:(v:any)=>void)=>{const b=bundle();fn(b);assert.throws(()=>load(b))};reject(b=>b[0].outlines.pop());reject(b=>b[0].outlines.push(b[0].outlines[0]));reject(b=>b[0].outlines[1][1].outline+='Z');reject(b=>b[0].outlines[6][1].bounds[1]+=1);reject(b=>b[0].outlines[0][0].revealWidth=14);reject(b=>b[0].sourceStrokeIndices.pop());reject(b=>b[0].geometryCorrection+='bad')
++})
++test('1549 strict independent JSON is frozen and rejects hostile descriptors/getters',()=>{
++ const frozen=(v:any):boolean=>!v||typeof v!=='object'||Object.isFrozen(v)&&Object.values(v).every(frozen);assert(frozen(expected)&&frozen(input));const invoke=load as(...a:unknown[])=>unknown;assert.throws(()=>invoke());assert.throws(()=>invoke(bundle(),0));for(const v of[null,undefined,[],{},'x'])assert.throws(()=>load(v));
++ for(const mutate of[(v:any)=>v[0].extra=1,(v:any)=>v[0][Symbol('extra')]=1,(v:any)=>Object.defineProperty(v[0],'hidden',{value:1}),(v:any)=>Object.setPrototypeOf(v[0],null),(v:any)=>Object.setPrototypeOf(v[0],{}),(v:any)=>delete v[0].outlines[0][0]]){const b=bundle();mutate(b);assert.throws(()=>load(b))}let reads=0;const b=bundle();Object.defineProperty(b[0].outlines[0][0],'weight',{enumerable:true,get(){reads++;return 0}});assert.throws(()=>load(b));assert.equal(reads,0);const reorder=(v:any):any=>Array.isArray(v)?v.map(reorder):v&&typeof v==='object'?Object.fromEntries(Object.entries(v).reverse().map(([k,x])=>[k,reorder(x)])):v;assert.strictEqual(load(reorder(bundle())),expected)
++})
+*** Add File: /Users/kidow/Documents/dev/kidow/lingo/public/hanja-strokes/dictionary-reviewed-glyphwiki-batch1549.json
++[
++  {
++    "glyph": "罝",
++    "verificationSource": "ehanja-crosschecked",
++    "verifiedAt": "2026-10-29",
++    "geometrySource": "658f58678fd897dd00b9423e3b1e0ebc237f90cec4ea85f8013508ccae0cea6e",
++    "geometryCorrection": "Fixed public GlyphWiki VS0 u7f5d-ue0100 original12raw/12calls/15filled P and all source guides/flags are retained, source200to100 once, grouped10logical with compound2/7. No donor, omission, bridge, filled-P edit or new engine capture. Source-specific original-V contact y-band display only for pens2/7 mask2 after complete opaque originalH, strict same-frame source/owner/progress binding; original weights and boundaries .7863247863247863/.4647864711548753 are unchanged. ROOT actual392 component critical6, all10compact90, aggregate56/final57guards bad[]/errors[], main9 selected states and natural2/7 start/end4 passed, total165 finite SVG views. Q/C0: curve gate and full-round residual are not applicable and were not claimed PASS. Public font shape/weight/contact differences remain; this is not original publisher geometry/microclock identity or full applicationUI/full autoplay verification.",
++    "paths": [
++      "M15.5 12.375 L15.5 31.125",
++      "M15.5 12.375 L84.5 12.375 M84.5 12.375 L84.5 31.125",
++      "M38.5 12.375 L38.5 31.125",
++      "M61.5 12.375 L61.5 31.125",
++      "M15.5 31.125 L84.5 31.125",
++      "M28.0375 40.7475 L28.0375 90.7525",
++      "M28.0375 40.7475 L71.4625 40.7475 M71.4625 40.7475 L71.4625 90.7525",
++      "M28.0375 57.1875 L71.4625 57.1875",
++      "M28.0375 73.6275 L71.4625 73.6275",
++      "M8.254999999999999 90.7525 L91.245 90.7525"
++    ],
++    "outlines": [
++      [
++        {
++          "outline": "M18.5 11.35 L18.5 38.1 L12.5 41.1 L12.5 8.35 Z",
++          "bounds": [
++            12.5,
++            8.35,
++            18.5,
++            41.1
++          ],
++          "direction": "down",
++          "weight": 18.75
++        }
++      ],
++      [
++        {
++          "outline": "M15.5 11.35 L84.5 11.35 L84.5 13.35 L15.5 13.35 Z",
++          "bounds": [
++            15.5,
++            11.35,
++            84.5,
++            13.35
++          ],
++          "direction": "right",
++          "weight": 69
++        },
++        {
++          "outline": "M87.5 12.35 L87.5 35.1 L81.5 38.1 L81.5 12.35 Z M81.5 11.35 L84.5 8.85 L90 13.35 L87.5 15.35 L81.5 12.35 Z",
++          "bounds": [
++            81.5,
++            8.85,
++            90,
++            38.1
++          ],
++          "direction": "down",
++          "weight": 18.75
++        }
++      ],
++      [
++        {
++          "outline": "M41.5 11.35 L41.5 32.1 L35.5 32.1 L35.5 11.35 Z",
++          "bounds": [
++            35.5,
++            11.35,
++            41.5,
++            32.1
++          ],
++          "direction": "down",
++          "weight": 18.75
++        }
++      ],
++      [
++        {
++          "outline": "M64.5 11.35 L64.5 32.1 L58.5 32.1 L58.5 11.35 Z",
++          "bounds": [
++            58.5,
++            11.35,
++            64.5,
++            32.1
++          ],
++          "direction": "down",
++          "weight": 18.75
++        }
++      ],
++      [
++        {
++          "outline": "M15.5 30.1 L84.5 30.1 L84.5 32.1 L15.5 32.1 Z",
++          "bounds": [
++            15.5,
++            30.1,
++            84.5,
++            32.1
++          ],
++          "direction": "right",
++          "weight": 69
++        }
++      ],
++      [
++        {
++          "outline": "M31 39.7 L31 91.75 L25 91.75 L25 36.7 Z",
++          "bounds": [
++            25,
++            36.7,
++            31,
++            91.75
++          ],
++          "direction": "down",
++          "weight": 50.004999999999995
++        }
++      ],
++      [
++        {
++          "outline": "M28 39.7 L71.45 39.7 L71.45 41.7 L28 41.7 Z",
++          "bounds": [
++            28,
++            39.7,
++            71.45,
++            41.7
++          ],
++          "direction": "right",
++          "weight": 43.425000000000004
++        },
++        {
++          "outline": "M74.45 40.7 L74.45 91.75 L68.45 91.75 L68.45 40.7 Z M68.45 39.7 L71.45 37.2 L76.95 41.7 L74.45 43.7 L68.45 40.7 Z",
++          "bounds": [
++            68.45,
++            37.2,
++            76.95,
++            91.75
++          ],
++          "direction": "down",
++          "weight": 50.004999999999995
++        }
++      ],
++      [
++        {
++          "outline": "M28 56.15 L71.45 56.15 L71.45 58.15 L28 58.15 Z",
++          "bounds": [
++            28,
++            56.15,
++            71.45,
++            58.15
++          ],
++          "direction": "right",
++          "weight": 43.425000000000004
++        }
++      ],
++      [
++        {
++          "outline": "M28 72.6 L71.45 72.6 L71.45 74.6 L28 74.6 Z",
++          "bounds": [
++            28,
++            72.6,
++            71.45,
++            74.6
++          ],
++          "direction": "right",
++          "weight": 43.425000000000004
++        }
++      ],
++      [
++        {
++          "outline": "M8.25 89.75 L91.2 89.75 L91.2 91.75 L8.25 91.75 Z M91.2 89.75 L79.2 90.75 L85.2 84.75 Z",
++          "bounds": [
++            8.25,
++            84.75,
++            91.2,
++            91.75
++          ],
++          "direction": "right",
++          "weight": 82.99000000000001
++        }
++      ]
++    ],
++    "sourceStrokeIndices": [
++      1,
++      2,
++      3,
++      4,
++      5,
++      6,
++      7,
++      8,
++      9,
++      10
++    ],
++    "pathsSha256": "7f481cfd0ba0d696c4aa8bc00678c767a9c72cc1a9696911c1dd823c54613308",
++    "sourceReference": {
++      "orderUrl": "http://img.e-hanja.kr/hanjaSvg/aniSVG/7F00/7F5D.svg",
++      "dictionarySvgUrl": "http://img.e-hanja.kr/hanjaSvg/aniSVG/7F00/7F5D.svg",
++      "dictionarySvgSha256": "8593c08aef5daad91cafc6fbdb059d4316a4bdbd9596ada521e5c01ff1cb82ff",
++      "dictionaryDirectionStrokes": "Fixed public GlyphWiki VS0 u7f5d-ue0100 original12raw/12calls/15filled P and all source guides/flags are retained, source200to100 once, grouped10logical with compound2/7. No donor, omission, bridge, filled-P edit or new engine capture. Source-specific original-V contact y-band display only for pens2/7 mask2 after complete opaque originalH, strict same-frame source/owner/progress binding; original weights and boundaries .7863247863247863/.4647864711548753 are unchanged. ROOT actual392 component critical6, all10compact90, aggregate56/final57guards bad[]/errors[], main9 selected states and natural2/7 start/end4 passed, total165 finite SVG views. Q/C0: curve gate and full-round residual are not applicable and were not claimed PASS. Public font shape/weight/contact differences remain; this is not original publisher geometry/microclock identity or full applicationUI/full autoplay verification.",
++      "orderReviewSha256": "a0bbab42d2f52b08fd400a0f722f92fc97e244660d8d9072b09773102a88dea1",
++      "directionReviewSha256": "a0bbab42d2f52b08fd400a0f722f92fc97e244660d8d9072b09773102a88dea1",
++      "geometryReviewSha256": "a0bbab42d2f52b08fd400a0f722f92fc97e244660d8d9072b09773102a88dea1"
++    },
++    "geometryLicense": {
++      "spdx": "LicenseRef-GlyphWiki",
++      "url": "https://glyphwiki.org/wiki/GlyphWiki:データ・記事のライセンス@18",
++      "attribution": "GlyphWiki Project and contributors; Lingo reviewed original10-role grouping and strict original-P fold contact display only. No locally authored filled geometry.",
++      "sourceUrl": "https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/dump_newest_only.txt",
++      "sourceUrls": [
++        "https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/dump_newest_only.txt"
++      ],
++      "revision": "Fixed snapshot a7dd7f3d911936770fa742e8c37d16bee7e2173c; original VS0 full5 20ae9844348627b616a2f3400530914565154268e29b43d94134e892dc5ebc84. All12raw12calls15P retained; no new engine capture.",
++      "modifications": "Fixed public GlyphWiki VS0 u7f5d-ue0100 original12raw/12calls/15filled P and all source guides/flags are retained, source200to100 once, grouped10logical with compound2/7. No donor, omission, bridge, filled-P edit or new engine capture. Source-specific original-V contact y-band display only for pens2/7 mask2 after complete opaque originalH, strict same-frame source/owner/progress binding; original weights and boundaries .7863247863247863/.4647864711548753 are unchanged. ROOT actual392 component critical6, all10compact90, aggregate56/final57guards bad[]/errors[], main9 selected states and natural2/7 start/end4 passed, total165 finite SVG views. Q/C0: curve gate and full-round residual are not applicable and were not claimed PASS. Public font shape/weight/contact differences remain; this is not original publisher geometry/microclock identity or full applicationUI/full autoplay verification.",
++      "editableSource": "/hanja-strokes/dictionary-reviewed-glyphwiki-batch1549.json",
++      "editableSourceDraft": "docs/hanja-source-execution-u7f5d-original-2026-10-29/fixtures-execution-draft.json"
++    }
++  }
++]
+*** Add File: /Users/kidow/Documents/dev/kidow/lingo/public/hanja-strokes/sources/u7f5d/NOTICE.md
++# 罝 original public polygons and bounded contact display
++
++GlyphWiki Project and contributors. LicenseRef-GlyphWiki: https://glyphwiki.org/wiki/GlyphWiki:データ・記事のライセンス@18
++
++Fixed snapshot a7dd7f3d911936770fa742e8c37d16bee7e2173c from https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/dump_newest_only.txt (SHA-256 7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62). Original VS0 full5 20ae9844348627b616a2f3400530914565154268e29b43d94134e892dc5ebc84. Historical engine revision 49232bac0348fe815f4200d4116ab7917e0db47f; no new engine run.
++
++Fixed public GlyphWiki VS0 u7f5d-ue0100 original12raw/12calls/15filled P and all source guides/flags are retained, source200to100 once, grouped10logical with compound2/7. No donor, omission, bridge, filled-P edit or new engine capture. Source-specific original-V contact y-band display only for pens2/7 mask2 after complete opaque originalH, strict same-frame source/owner/progress binding; original weights and boundaries .7863247863247863/.4647864711548753 are unchanged. ROOT actual392 component critical6, all10compact90, aggregate56/final57guards bad[]/errors[], main9 selected states and natural2/7 start/end4 passed, total165 finite SVG views. Q/C0: curve gate and full-round residual are not applicable and were not claimed PASS. Public font shape/weight/contact differences remain; this is not original publisher geometry/microclock identity or full applicationUI/full autoplay verification.
++
++Original source records and immutable source/static/clock/profile/native evidence are bound in GLYPHWIKI_BATCH1549_SOURCE_INPUT. Historical H/R snapshots remain tied to the exact native receipt; future renderer extensions do not turn them into live file pins. Source filled geometry is unmodified. No exam/government certification, private SVG/CSS/images, keys or learning records are distributed.
+*** End Patch
