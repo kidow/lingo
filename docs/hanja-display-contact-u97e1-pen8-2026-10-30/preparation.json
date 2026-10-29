@@ -1,0 +1,120 @@
+{
+  "schema": "hanja-independent-exact-source-contact-helper-preparation/v1",
+  "date": "2026-10-30",
+  "glyph": "韡",
+  "status": "proof-and-helper-ready-native-unapproved-R-patch-pending-root-base",
+  "files": [
+    {
+      "path": "docs/hanja-display-contact-u97e1-pen8-2026-10-30/verify-contact-phase.py",
+      "SHA256": "641715f7738569825dc3f092d7936551ff7cab4ad072fcd3cc5fc78f24e21059"
+    },
+    {
+      "path": "docs/hanja-display-contact-u97e1-pen8-2026-10-30/public-contact-phase-math.json",
+      "SHA256": "ed0b900677e0e25fad22f2ae97bc84875beba005b8e210fc7ef44de08a08dc14"
+    },
+    {
+      "path": "docs/hanja-display-contact-u97e1-pen8-2026-10-30/hanja-stroke-contact-phase-u97e1-pen8.ts",
+      "SHA256": "64c03ead8db8286c018874c0e7ac9d0aae4d25b1e9ab37f42661d1501c0555d2"
+    },
+    {
+      "path": "docs/hanja-display-contact-u97e1-pen8-2026-10-30/hanja-stroke-contact-phase-u97e1-pen8.test.ts",
+      "SHA256": "a7067e125c25dfc22335eaef6e9f98b54a08b68ffb09731f245a18743b0a6ee3"
+    }
+  ],
+  "correctedFixture": {
+    "path": "docs/hanja-authored-component-u97e1-vs3grass-defaultbody-2026-10-30/fixtures-execution-direction1-down.json",
+    "SHA256": "5cf8fbeb85614b9602b86f5b2132c7293fd65c535bc10d4a2c45168df3edc041"
+  },
+  "geometrySHA256": "3e4ef908cfceecddcaf1e70ba3cd460efc7eae13ccf557722c434c67e4087be1",
+  "fingerprint": "d22489facaebd816c2a69757bbac6bfdd3f517d9427525ae4653d0553ef3b869",
+  "counts": {
+    "logical": 20,
+    "masks": 23,
+    "P": 38
+  },
+  "sourceEvidence": {
+    "recipient": {
+      "path": "docs/hanja-goal-glyphwiki-batch774-2026-10-13/engine-whole-u97e1.json",
+      "SHA256": "16f377d7ddd703549481b81dd6ccdfd5083b96a744b39342695da6915af591b4"
+    },
+    "grass": {
+      "path": "docs/hanja-goal-glyphwiki-batch774-2026-10-13/engine-whole-u97e1-ue0103.json",
+      "SHA256": "bff2cc8cc3423fe710072e3afe3ac50f85247c743ab69db01f3f7b4f63feeb77"
+    },
+    "fixedRecords": {
+      "path": "docs/hanja-goal-glyphwiki-batch774-2026-10-13/sources.json",
+      "SHA256": "62764572a80df3df4d85d5a90ee8713ec82ade33663d5c515cdaf340d5267edc"
+    },
+    "originalClock": {
+      "path": "docs/hanja-official-media-compare-u97e1-2026-10-29/native-all20-review.json",
+      "SHA256": "09835b0ba296d59af25af5b6194b23dee7123fb99d4f33ccd2ab52324aed0b8a"
+    }
+  },
+  "independentMath": {
+    "seedWorld100": 12.809999999999999,
+    "seedYWorld100": 80.5,
+    "strictBandSource200": [
+      "159",
+      "163"
+    ],
+    "strictClearanceSquaredSource200": "4",
+    "allCriticalSectionsConnected": true,
+    "probes": 10,
+    "originalJSVBoundary": 0.27411167512690354,
+    "leftHeadEnd": 0.3688437676254935,
+    "leftHeadFractionExact": "12919999999999997/99000000000000000"
+  },
+  "API": {
+    "input": "REVIEWED_U97E1_PEN8_INPUT",
+    "context": "makeReviewedU97e1Pen8Context(input,strokes)",
+    "sample": "sampleReviewedU97e1Pen8Frame(context,progress)",
+    "fingerprint": "U97E1_PEN8_FINGERPRINT",
+    "frameFields": [
+      "pen",
+      "progress",
+      "phase",
+      "fingerprint",
+      "baseOutline",
+      "activeOutline",
+      "mode",
+      "local",
+      "rect"
+    ],
+    "phases": [
+      "blank",
+      "v-down",
+      "v-complete",
+      "left-head",
+      "right-body",
+      "complete"
+    ],
+    "unknownContextOrChangedSource": "null",
+    "p0": "both original D hidden",
+    "p1": "original V/H D each once; no clip",
+    "sharedRendererPatch": "not written until ROOT provides actual R after 舝"
+  },
+  "checks": {
+    "exactSourceMathExit": 0,
+    "focusedTests": 5,
+    "focusedExit": 0,
+    "focusedDurationMs": 98.701167,
+    "selectedSemanticRoots": 2,
+    "diagnostics": 0,
+    "fullProjectTypeCheck": false,
+    "build": false,
+    "SSR": 0,
+    "server": 0
+  },
+  "preserved": {
+    "allOriginalPAndGuideFlags": true,
+    "sourceWeightsAndVBoundary": true,
+    "onlyOtherDirectionCorrection": "1m1 left->down from source dominant axis",
+    "baselineHOLDHistoryUnchanged": true,
+    "existingU97ceHelperUnchanged": true,
+    "noNewBridge": true,
+    "publisherMicroclockEquivalent": false
+  },
+  "nativeApproval": false,
+  "actualTemporalApproved": false,
+  "runtimeApplied": false
+}
