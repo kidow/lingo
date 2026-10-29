@@ -1,0 +1,152 @@
+{
+  "schema": "hanja-public-source-curve-coverage-preflight/v1",
+  "date": "2026-10-29",
+  "glyph": "幭",
+  "scope": "幭 VS3 Q5/C1 original fullround coverage only; whole raw18 filledP/C same positiveY before one /2. Original UP terminalP retained without invented guide; initial/handoffs/direction/native separate.",
+  "inputSHA256": {
+    "docs/hanja-authored-ownstroke-u5e6d-vs3-cubic-box-contact-2026-10-29/prepare-execution-draft.mjs": "ecee9255ac508b49d4bf6dd63fa32409a36ababee082be14d196e646425a4f18",
+    "docs/hanja-authored-ownstroke-u5e6d-vs3-cubic-box-contact-2026-10-29/fixtures-execution-draft.json": "830ef9a9192548852319e848039e7d0bf5bc5c4e204e97fff2511e5787a312cb",
+    "docs/hanja-authored-ownstroke-u5e6d-vs3-cubic-box-contact-2026-10-29/execution-draft-check.json": "745a2952c3d946348a3a12b69f8584aecab00f29b90c69dee205bf1d17fd726b",
+    "docs/hanja-authored-ownstroke-u5e6d-vs3-cubic-box-contact-2026-10-29/coverage-fan-fallback-preflight.mjs": "26a1cdb530c60511cc4961e37371bc738c0c1a2e54721083dd9dc270bda6a759",
+    "docs/hanja-authored-ownstroke-u5e6d-vs3-cubic-box-contact-2026-10-29/coverage-ear-preflight.mjs": "1354711d49bd07ceea4dc9a5ba1e00985d071fe5548f90e88aeedba3cb3f702c"
+  },
+  "method": "기존 ear 분할이 inconclusive인 원P만 기존 보수적 fan으로 fallback. Fan은 원filled외 영역을 포함할 수 있으므로 UNPROVED는 폭부족이 아님. 원Bezier4097점/원 padded선분 상계+삼각반지름1-Lipschitz, 확정vertex실패는 전체Bezier control-hull 하계로 별도확인. 원P/Q 변경0.",
+  "numerics": {
+    "margin": 1e-8,
+    "formalIntervalProof": false,
+    "depthLimit": 16,
+    "nodeLimitPerMask": 60000,
+    "BezierEvaluationsPerMask": 4097
+  },
+  "counts": {
+    "curveMasks": 6,
+    "pass": 5,
+    "unproved": 0,
+    "outlier": 1
+  },
+  "units": [
+    {
+      "logical": 2,
+      "mask": 3,
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "radius": 7,
+      "width": 14,
+      "padding": 7,
+      "nodes": 22,
+      "maxDepth": 0,
+      "maxAcceptedUpperDistance": 6.3027626411241116,
+      "sourceOutlinePreserved": true,
+      "sourceBezierGuidePreserved": true,
+      "triangulationFallbackPolygons": [
+        1
+      ],
+      "curveDegree": 2,
+      "nativeApproval": false
+    },
+    {
+      "logical": 13,
+      "mask": 2,
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "radius": 7,
+      "width": 14,
+      "padding": 7,
+      "nodes": 68,
+      "maxDepth": 2,
+      "maxAcceptedUpperDistance": 6.910343552475312,
+      "sourceOutlinePreserved": true,
+      "sourceBezierGuidePreserved": true,
+      "triangulationFallbackPolygons": [],
+      "curveDegree": 2,
+      "nativeApproval": false
+    },
+    {
+      "logical": 15,
+      "mask": 1,
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "radius": 7,
+      "width": 14,
+      "padding": 7,
+      "nodes": 83,
+      "maxDepth": 2,
+      "maxAcceptedUpperDistance": 6.926455289157572,
+      "sourceOutlinePreserved": true,
+      "sourceBezierGuidePreserved": true,
+      "triangulationFallbackPolygons": [],
+      "curveDegree": 2,
+      "nativeApproval": false
+    },
+    {
+      "logical": 16,
+      "mask": 1,
+      "status": "OUTLIER-CONFIRMED",
+      "radius": 7,
+      "width": 14,
+      "padding": 7,
+      "curveDegree": 3,
+      "outliers": [
+        {
+          "polygon": 5,
+          "vertex": 3,
+          "sourceFilledPoint100": [
+            91.2,
+            74.10326659641728
+          ],
+          "distanceLower": 8.518835606438351,
+          "subdivisionNodes": 3,
+          "method": "every sourceBezier control-hull bbox plus exact padded-line distance excludes radius; bounded binary64 margin1e-8, not formal interval proof"
+        },
+        {
+          "polygon": 5,
+          "vertex": 4,
+          "sourceFilledPoint100": [
+            92.2,
+            74.10326659641728
+          ],
+          "distanceLower": 8.577328260498838,
+          "subdivisionNodes": 3,
+          "method": "every sourceBezier control-hull bbox plus exact padded-line distance excludes radius; bounded binary64 margin1e-8, not formal interval proof"
+        }
+      ],
+      "confirmedOutlierVertices": 2,
+      "nativeApproval": false
+    },
+    {
+      "logical": 17,
+      "mask": 1,
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "radius": 7,
+      "width": 14,
+      "padding": 7,
+      "nodes": 162,
+      "maxDepth": 2,
+      "maxAcceptedUpperDistance": 6.915052209306012,
+      "sourceOutlinePreserved": true,
+      "sourceBezierGuidePreserved": true,
+      "triangulationFallbackPolygons": [],
+      "curveDegree": 2,
+      "nativeApproval": false
+    },
+    {
+      "logical": 18,
+      "mask": 1,
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "radius": 7,
+      "width": 14,
+      "padding": 7,
+      "nodes": 39,
+      "maxDepth": 1,
+      "maxAcceptedUpperDistance": 6.895953933049397,
+      "sourceOutlinePreserved": true,
+      "sourceBezierGuidePreserved": true,
+      "triangulationFallbackPolygons": [],
+      "curveDegree": 2,
+      "nativeApproval": false
+    }
+  ],
+  "cardinalMasks": 16,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "sharedFilesChanged": false,
+  "serverStarts": 0,
+  "buildRun": false
+}

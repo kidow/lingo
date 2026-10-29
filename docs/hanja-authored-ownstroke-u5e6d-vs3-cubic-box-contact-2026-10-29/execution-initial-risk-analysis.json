@@ -1,0 +1,129 @@
+{
+  "schema": "hanja-source-execution-initial-risk-analysis/v1",
+  "glyph": "幭",
+  "date": "2026-10-29",
+  "inputSHA256": {
+    "docs/hanja-authored-ownstroke-u5e6d-vs3-cubic-box-contact-2026-10-29/fixtures-execution-width32.json": "06f2b39230c5f76f22d92dde7ce498b39c61b7c9e3630243c04b63acb216a59b",
+    "docs/hanja-authored-ownstroke-u5e6d-vs3-cubic-box-contact-2026-10-29/execution-width32-check.json": "3eba74ac97356b1bf052b19a690132a4f75c5523f6d5a4854346c6e26bc44897",
+    "docs/hanja-authored-ownstroke-u5e6d-vs3-cubic-box-contact-2026-10-29/coverage-width32-preflight.json": "de33ca07522f33daae850204b45773cb6d269f587d3e4150b621880fab797343"
+  },
+  "facts": {
+    "sourceStartGateSeed": {
+      "pen": 16,
+      "mask": 1,
+      "minimumProjectionVertex100": [
+        63,
+        43.75
+      ],
+      "completedLogical12BoxBounds100": [
+        42.85,
+        42.25,
+        85.1,
+        44.25
+      ],
+      "strictlyInsideCompletedBox": true,
+      "limitation": "A minimum support seed inside earlier ink does not prove all intermediate growing regions connected."
+    },
+    "compoundGuideHandoffs": [
+      {
+        "pen": 2,
+        "fromMask": 1,
+        "toMask": 2,
+        "sourceGuideEnd100": [
+          32.11,
+          27.09
+        ],
+        "nextSourceGuideStart100": [
+          32.11,
+          27.09
+        ],
+        "equal": true
+      },
+      {
+        "pen": 2,
+        "fromMask": 2,
+        "toMask": 3,
+        "sourceGuideEnd100": [
+          32.11,
+          67.445
+        ],
+        "nextSourceGuideStart100": [
+          32.11,
+          67.445
+        ],
+        "equal": true
+      },
+      {
+        "pen": 9,
+        "fromMask": 1,
+        "toMask": 2,
+        "sourceGuideEnd100": [
+          85.114,
+          28.535
+        ],
+        "nextSourceGuideStart100": [
+          85.114,
+          28.535
+        ],
+        "equal": true
+      },
+      {
+        "pen": 13,
+        "fromMask": 1,
+        "toMask": 2,
+        "sourceGuideEnd100": [
+          41.9,
+          67.5
+        ],
+        "nextSourceGuideStart100": [
+          41.9,
+          67.5
+        ],
+        "equal": true
+      }
+    ],
+    "coverage": {
+      "curves": 6,
+      "proved": 6,
+      "unproved": 0,
+      "changedCurve": {
+        "pen": 16,
+        "mask": 1,
+        "width": 32,
+        "padding": 16
+      },
+      "other5": {
+        "width": 14,
+        "padding": 7
+      }
+    }
+  },
+  "requiredFreshNative": [
+    "All18 compact9, particularly pen16 early/late and original UP terminal macro.",
+    "6 gate release triples and6 fullround residualblank.",
+    "36initial+12compound-boundary+54ending=102 aggregateframes.",
+    "Idle/done/prefix0..18; natural2,13,16,17 start/end."
+  ],
+  "unresolved": [
+    "The preserved original cubic guide ends toward the right, while the preserved filled terminal includes an upward component. Width32 coverage alone does not establish upward temporal growth.",
+    "Large round cap may reveal future terminal before the desired phase; this is a risk, not an observed failure.",
+    "Continuous source-guide endpoints alone do not prove connected filled growth at compound handoffs."
+  ],
+  "constraints": {
+    "newFilledP": 0,
+    "newGuide": 0,
+    "newBridge": 0,
+    "sourceMicroclockEquivalent": false,
+    "actualNative": false,
+    "runtimeApplied": false
+  },
+  "focus": {
+    "first": [
+      16,
+      2,
+      13,
+      9
+    ],
+    "prohibited": "Do not invent UP guide or phase policy before actual native evidence and root instruction."
+  }
+}

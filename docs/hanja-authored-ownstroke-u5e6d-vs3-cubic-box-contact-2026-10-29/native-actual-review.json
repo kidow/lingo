@@ -1,0 +1,145 @@
+{
+  "schema": "hanja-isolated-actual-component-native-review/v1",
+  "date": "2026-10-29",
+  "glyph": "幭",
+  "status": "pass-bounded-actual-component-review",
+  "reviewer": "ROOT direct Codex browser panel",
+  "fixtureSHA256": "06f2b39230c5f76f22d92dde7ce498b39c61b7c9e3630243c04b63acb216a59b",
+  "geometrySHA256": "674250751016d2609f52e4053d51c6a10e19d15061df839ef605ed8b7129c94d",
+  "profileSHA256": "01a7c0ebafe842b73ebf723e41004d0f8e317a92adcdaaca77dbec70783e08f2",
+  "rendererSHA256": "55db76b01618110165dd5f22d512428550512feb180757814b734e80ffa304d1",
+  "actualHelperSHA256": "db7e9f0d4630af502a189478b97d5aeee0703f9793fa8db7892e94d8dc77f465",
+  "inputs": {
+    "fixture": "docs/hanja-authored-ownstroke-u5e6d-vs3-cubic-box-contact-2026-10-29/fixtures-execution-width32.json",
+    "profile": "docs/hanja-authored-ownstroke-u5e6d-vs3-cubic-box-contact-2026-10-29/actual-profile-start.json",
+    "sourceClock": {
+      "path": "docs/hanja-official-media-compare-u5e6d-2026-10-29/native-clock-review.json",
+      "SHA256": "43b4ce85ae04cc0e9131478f79d8bbb02ecacf2a68b37e5a6943d4699601a704"
+    },
+    "boundedMapping": {
+      "path": "docs/hanja-authored-ownstroke-u5e6d-vs3-cubic-box-contact-2026-10-29/native-mapping-review.json",
+      "SHA256": "9e9c4fb3708edb9f107f87ce515d51950d9bde8b054e0f46fd5eab02e8418101"
+    },
+    "freshCorrectedWhole": {
+      "path": "docs/hanja-authored-ownstroke-u5e6d-vs3-cubic-box-contact-2026-10-29/native-static-review.json",
+      "SHA256": "516249bd5543aedb1d36773235fdee0505f63e2ed07ece821b8b07490ed05c91"
+    },
+    "coverage": {
+      "path": "docs/hanja-authored-ownstroke-u5e6d-vs3-cubic-box-contact-2026-10-29/coverage-width32-preflight.json",
+      "SHA256": "de33ca07522f33daae850204b45773cb6d269f587d3e4150b621880fab797343"
+    },
+    "terminalScope": {
+      "path": "docs/hanja-authored-ownstroke-u5e6d-vs3-cubic-box-contact-2026-10-29/registration-scope.pending.json",
+      "SHA256": "f4bfeb6e9c81a0468a4d255e6317273d7bfa00c22c628ecd41e34a3cb68ea95a"
+    }
+  },
+  "checks": {
+    "newSSRChecks": 1,
+    "CJS": 390,
+    "ESM": 390,
+    "ordinaryMatrixChecks": 0,
+    "all18PensCompact9": 162,
+    "additionalCritical16Main520": [
+      0.75,
+      0.875,
+      1
+    ],
+    "gateReleaseTriples": 6,
+    "gateFrames": 18,
+    "visuallyBlankFullRoundResiduals": 6,
+    "aggregateSamples": 102,
+    "aggregateGuardRecords": 103,
+    "initialFrames": 36,
+    "boundaryFrames": 12,
+    "endingFrames": 54,
+    "allAggregateFramesObservedNormal": true,
+    "wholeStates520px": 22,
+    "prefixStates": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ],
+    "idleState": true,
+    "doneState": true,
+    "separateSelectedZeroStateObserved": true,
+    "naturalStartAndProgress1EndPens": [
+      16,
+      2,
+      13,
+      18
+    ],
+    "naturalModeAtEnd": "natural-ended",
+    "bad": [],
+    "errors": []
+  },
+  "sourceScope": {
+    "logical": 18,
+    "masks": 22,
+    "P": 40,
+    "Q": 5,
+    "C": 1,
+    "curves": 6,
+    "cardinals": 16,
+    "raw18WholeAffine": [
+      "1",
+      "0",
+      "0",
+      "995/949",
+      "0",
+      "-8602/949"
+    ],
+    "widthPaddingByMask": {
+      "16:1": [
+        32,
+        16
+      ],
+      "other5Curves": [
+        14,
+        7
+      ]
+    },
+    "originalEngineCapture": false,
+    "actualLocallyAuthoredEngineCapture": false,
+    "mixedParts": false,
+    "sourceMicroclockIdentity": false,
+    "allOther19OriginalRawUnchanged": true,
+    "explicitTerminalUpGuide": false,
+    "terminalUpTrajectoryVerified": false,
+    "terminalShapeIsPreservedSourceOutline": true
+  },
+  "nativeApproval": true,
+  "registrationAuthorized": true,
+  "actualAppUI": false,
+  "runtimeApplied": false,
+  "limits": [
+    "Bounded finite isolated actual component review only; no every-frame or all-layout proof.",
+    "Explicit locally authored fixed GlyphWiki VS3: whole raw18 original filled polygons and cubic control points share one positiveY affine restoring box-bottom contact; all other19raw remain exact. Original18-clock macro and static18-role mapping were directly reviewed. The source-start round-tube display policy retains the original terminal outline. Its explicit cubic guide does not contain an upward terminal segment: finite attached terminal growth is accepted only as rendering of the original decorative filled shape, not as a separately verified upward pen trajectory. No publisher microclock, exact terminal direction reproduction, new guide, new filled bridge, or original engine-whole identity claim.",
+    "Original VS3 whole HOLD and baseline width14 coverage failure are preserved.",
+    "No new source engine run, filled bridge, private media redistribution or fresh applicationUI claim."
+  ],
+  "cleanup": {
+    "serverSession": 37207,
+    "PID": 81800,
+    "port": 50617,
+    "tab": "217",
+    "serverStopped": true,
+    "tabClosed": true,
+    "childServerStarts": 0
+  }
+}

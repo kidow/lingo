@@ -1,0 +1,69 @@
+{
+  "schema": "hanja-strict-registration-preparation/v1",
+  "date": "2026-10-29",
+  "glyph": "幭",
+  "batch": 1541,
+  "actualProductionApplied": false,
+  "files": {
+    "lib/hanja-stroke-dictionary-glyphwiki-batch1541.ts": "b2bedf24c986014a5e3ebdfd04ffe916461c4aef4d2075ea5eafee9c03c893ef",
+    "lib/hanja-stroke-dictionary-glyphwiki-batch1541.test.ts": "0fbe45c88dc41a7016e653b861f8ef8003eca1df83b94f234bd8231adfb15db5",
+    "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch1541.json": "8698e412f2c97035ba039fd92d331c26c847b32cffeb81b3a3cb28ac54991f36",
+    "public/hanja-strokes/sources/u5e6d/NOTICE.md": "572a0113e3d8d8dac853ec99c2c9b8fe4fefbda1516889dd6bf7b016c9bec97f"
+  },
+  "bundlePatch": {
+    "path": "docs/hanja-authored-ownstroke-u5e6d-vs3-cubic-box-contact-2026-10-29/registration-1541/approved-bundle.patch",
+    "SHA256": "15fefb7c68c6af2dfa255e2cf3d50910ff77d1241a417c115eaf0afa148b489f"
+  },
+  "registryPatch": {
+    "path": "docs/hanja-authored-ownstroke-u5e6d-vs3-cubic-box-contact-2026-10-29/registration-1541/approved-registry.patch",
+    "SHA256": "15a101e2999f5fa48ec252a9cdc524300eab3f4bc35cf535678843a95c631ec6",
+    "beforeSHA256": "9f6582c2c400fff23ea87b2de555ab2eb05cc8cc648f79bf1c4d012cdaa375c7",
+    "afterSHA256": "1699fcae980934557de20c19f09e186c8bc00eddcb21381d468363b2a1cec4b5",
+    "forwardInverseExact": true
+  },
+  "nativeFinal": {
+    "path": "docs/hanja-authored-ownstroke-u5e6d-vs3-cubic-box-contact-2026-10-29/native-actual-review.json",
+    "SHA256": "1cd5214b2973f7def4f465d6d2b4f7d88cd1157bf519ef2ee47aac1b0147c441"
+  },
+  "reviewCounts": {
+    "logical": 18,
+    "masks": 22,
+    "P": 40,
+    "Q": 5,
+    "C": 1,
+    "gates": 6,
+    "width32Only": "16m1",
+    "other5width14": true,
+    "compactFrames": 162,
+    "gateFrames": 18,
+    "blankResidual": 6,
+    "aggregate": 102,
+    "wholeStates": 22,
+    "natural": [
+      16,
+      2,
+      13,
+      18
+    ]
+  },
+  "limits": {
+    "terminalUPTrajectoryVerified": false,
+    "explicitUPGuide": false,
+    "publisherMicroclock": false,
+    "actualApplicationUI": false,
+    "newEngineRuns": 0,
+    "mixedParts": false
+  },
+  "checks": {
+    "focusedTests": 3,
+    "passed": 3,
+    "failed": 0,
+    "builds": 0,
+    "SSRNew": 0,
+    "semanticPending": false,
+    "selectedSemanticFiles": 2,
+    "selectedSemanticDiagnostics": 0
+  },
+  "applyBy": "ROOT only; source bundle and registry remain patches until actual apply",
+  "focusedCommand": "node --test lib/hanja-stroke-dictionary-glyphwiki-batch1541.test.ts"
+}
