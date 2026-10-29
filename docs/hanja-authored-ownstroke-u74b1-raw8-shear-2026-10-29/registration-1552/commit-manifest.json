@@ -1,0 +1,58 @@
+{
+  "schema": "hanja-owned-registration-commit-manifest/v1",
+  "batch": 1552,
+  "scope": "璱1552 only. Single-source raw8 completeP/Q author shear; no1551activation.",
+  "production": [
+    {
+      "path": "lib/hanja-stroke-dictionary-glyphwiki-batch1552.ts",
+      "SHA256": "072c50275784e342ed22a22b6ef49f57b7a9a7cadd1a627f1ff6fcb091ee8162"
+    },
+    {
+      "path": "lib/hanja-stroke-dictionary-glyphwiki-batch1552.test.ts",
+      "SHA256": "d7f0355ab5837ab68f985b6468ebf0ed51ad6de9c2254e80a8f955c690e2640b"
+    },
+    {
+      "path": "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch1552.json",
+      "SHA256": "4e3fc1daa44d82c46e8031d97d8a4f9aa86351f791aaf7b2ba6277fce51fb7b3"
+    },
+    {
+      "path": "public/hanja-strokes/sources/u74b1/NOTICE.md",
+      "SHA256": "2d55be8ef3c81c7c672133847aeb419998ecf6b129601b24e539799c2cc32b4f"
+    }
+  ],
+  "registry": {
+    "path": "lib/hanja-strokes.ts",
+    "expectedSHA256": "1fa5abde429261f7419e05b19d4de152b31a049fc8b38245dc20b5a65e774306"
+  },
+  "requiredUntrackedSource": [
+    {
+      "path": "docs/hanja-authored-ownstroke-u74b1-raw8-shear-2026-10-29/actual-profile-start.json",
+      "SHA256": "fb4a25d742bf3f0d5de9dc012ab954a9b8500109a4f7e6ab26cd29143f829e30"
+    },
+    {
+      "path": "docs/hanja-authored-ownstroke-u74b1-raw8-shear-2026-10-29/native-actual-review.json",
+      "SHA256": "9bddce0d541cb12a0119398453136c73efafa5fc44c411e5ddbc2dd5526612d4"
+    }
+  ],
+  "ownedRegistrationDocuments": [
+    "docs/hanja-authored-ownstroke-u74b1-raw8-shear-2026-10-29/registration-1552/production.approved.patch",
+    "docs/hanja-authored-ownstroke-u74b1-raw8-shear-2026-10-29/registration-1552/registry.pending.patch",
+    "docs/hanja-authored-ownstroke-u74b1-raw8-shear-2026-10-29/registration-1552/capsule.approved.json",
+    "docs/hanja-authored-ownstroke-u74b1-raw8-shear-2026-10-29/registration-1552/production-preparation.json",
+    "docs/hanja-authored-ownstroke-u74b1-raw8-shear-2026-10-29/registration-1552/commit-manifest.json"
+  ],
+  "pendingHistoricalDocuments": [
+    "docs/hanja-authored-ownstroke-u74b1-raw8-shear-2026-10-29/registration-1552/module.pending.ts",
+    "docs/hanja-authored-ownstroke-u74b1-raw8-shear-2026-10-29/registration-1552/test.pending.ts",
+    "docs/hanja-authored-ownstroke-u74b1-raw8-shear-2026-10-29/registration-1552/bundle.pending.json",
+    "docs/hanja-authored-ownstroke-u74b1-raw8-shear-2026-10-29/registration-1552/NOTICE.pending.md",
+    "docs/hanja-authored-ownstroke-u74b1-raw8-shear-2026-10-29/registration-1552/capsule.pending.json",
+    "docs/hanja-authored-ownstroke-u74b1-raw8-shear-2026-10-29/registration-1552/closure.pending.json"
+  ],
+  "historicalSharedSnapshotsExcluded": [
+    "components/hanja/stroke-outlines.tsx",
+    "scripts/hanja-actual-component-review.mjs"
+  ],
+  "sourceClosureAllTrackedOrManifest": true,
+  "commitMessage": "feat(hanja): apply reviewed 璱 stroke animation"
+}
