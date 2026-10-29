@@ -1,0 +1,112 @@
+{
+  "schema": "hanja-single-display-mask-width-preservation-check/v1",
+  "glyph": "盌",
+  "before": {
+    "fixture": "docs/hanja-source-execution-u76cc-original-2026-10-29/fixtures-execution-draft.json",
+    "SHA256": "3dd961765beeaefda1f13ca9f35574193d2ec464cfaa5e1779d48fc5dd6baf9e",
+    "geometrySHA256": "ae646b2ed043dc3ead38e9d237b7c6f46cd6aa96c69c92027d2e1d3c0fc7af33",
+    "coverageSummary": "docs/hanja-source-execution-u76cc-original-2026-10-29/coverage-summary.json",
+    "coverageStatus": "4m3 radius7 concrete original P outliers retained"
+  },
+  "after": {
+    "fixture": "docs/hanja-source-execution-u76cc-original-2026-10-29/fixtures-execution-draft-width22.json",
+    "SHA256": "60f2b219228cfbd9a04363daf46541ababd2c0da6af8dc1d0072ae9e0600084d",
+    "geometrySHA256": "92d33e5d5498253de98ed0104a975bd713b2287498734a8fa293c587078c7dd5"
+  },
+  "onlyChangedMask": {
+    "logical": 4,
+    "mask": 3,
+    "originalRaw": 2,
+    "originalPrimitive": 2,
+    "oldWidth": 14,
+    "newWidth": 22,
+    "oldPadding": 7,
+    "newPadding": 11,
+    "oldWeight": 17.000000000999993,
+    "newWeight": 21.000000000999993,
+    "oldGateUntil": 0.4117647058581317,
+    "newGateUntil": 0.5238095237845807
+  },
+  "checks": {
+    "other15MasksByteEquivalent": true,
+    "allFilledPAndBoundsAndDirectionIdentical": true,
+    "allOriginalSourceQControlAndFlagsIdentical": true,
+    "all10OriginalGuidePathsIdentical": true,
+    "allOtherLogicalRowsIdentical": true,
+    "onlyLogical4WeightBoundariesUpdated": true,
+    "noNewGuideOrFilledP": true,
+    "oldFilesUnmodified": true
+  },
+  "sourceCounts": {
+    "logical": 10,
+    "raw": 13,
+    "calls": 16,
+    "masks": 16,
+    "P": 28,
+    "curves": 6,
+    "cardinal": 10,
+    "boundaries": 6
+  },
+  "pairProgress": [
+    {
+      "pen": 2,
+      "maskBefore": 1,
+      "p": 0.2353824813225519
+    },
+    {
+      "pen": 4,
+      "maskBefore": 1,
+      "p": 0.3536320590631682
+    },
+    {
+      "pen": 4,
+      "maskBefore": 2,
+      "p": 0.717900351731048
+    },
+    {
+      "pen": 5,
+      "maskBefore": 1,
+      "p": 0.43457639176576063
+    },
+    {
+      "pen": 5,
+      "maskBefore": 2,
+      "p": 0.636153435707166
+    },
+    {
+      "pen": 7,
+      "maskBefore": 1,
+      "p": 0.662696264212236
+    }
+  ],
+  "coverage": {
+    "changedMaskPass": true,
+    "radius": 11,
+    "width": 22,
+    "padding": 11,
+    "nodes": 50,
+    "maxDepth": 3,
+    "maxAcceptedUpperDistance": 10.894038208723043,
+    "method": "Existing positive-ear triangle area preservation plus source Q sample upper distance and triangle radius",
+    "earRoutine": {
+      "path": "docs/hanja-authored-ownstroke-u6715-points-separated-2026-10-29/coverage-preflight-width18.mjs",
+      "SHA256": "ac30e06042d970cab691ec50a4d15c172b76ff40facd568ca44654f0db4c763e"
+    },
+    "other5UnchangedMasksReused": true,
+    "totalQ": 6,
+    "totalPass": 6,
+    "sourceGeometryChanged": false
+  },
+  "requiredFreshActualReview": [
+    "4m3 exact width22/pad11 original mask start, release, fullround residual and completion",
+    "Whole logical4 H->V->leftHook phase boundaries after original source-based weight update",
+    "Logical5 original small terminal UP P with rightward final L guide: no fabricated UP trajectory; actual terminal reveal and natural playback required",
+    "Logical7 H->V early head contact is not approved from geometric similarity; inspect actual starts before any policy reuse"
+  ],
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "sharedRendererOrHChanged": false,
+  "server": 0,
+  "builds": 0,
+  "fullProjectTypeChecks": 0
+}

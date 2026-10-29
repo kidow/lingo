@@ -1,0 +1,84 @@
+{
+  "schema": "hanja-original-curve-coverage-summary/v1",
+  "glyph": "盌",
+  "fixture": {
+    "path": "docs/hanja-source-execution-u76cc-original-2026-10-29/fixtures-execution-draft.json",
+    "SHA256": "3dd961765beeaefda1f13ca9f35574193d2ec464cfaa5e1779d48fc5dd6baf9e",
+    "geometrySHA256": "ae646b2ed043dc3ead38e9d237b7c6f46cd6aa96c69c92027d2e1d3c0fc7af33"
+  },
+  "status": "BLOCKED-4m3-WIDTH14-CONCRETE-ORIGINAL-P-OUTLIERS",
+  "initialFan": {
+    "path": "docs/hanja-source-execution-u76cc-original-2026-10-29/coverage-preflight.json",
+    "curveMasks": 6,
+    "pass": 4,
+    "unproved": 2,
+    "unprovedIsNotWidthFailure": true
+  },
+  "focused2m2": {
+    "path": "docs/hanja-source-execution-u76cc-original-2026-10-29/coverage-focused-2m2.json",
+    "status": "PASS-CONSERVATIVE-COVERAGE",
+    "method": "Existing positive-ear triangles plus actual Q evaluation upper bound and triangle radius",
+    "earSource": {
+      "path": "docs/hanja-authored-ownstroke-u6715-points-separated-2026-10-29/coverage-preflight-width18.mjs",
+      "SHA256": "ac30e06042d970cab691ec50a4d15c172b76ff40facd568ca44654f0db4c763e"
+    },
+    "nodes": 195,
+    "maxDepth": 2,
+    "maxAcceptedUpperDistance": 6.943632273448634
+  },
+  "focused4m3": {
+    "status": "FAIL-RADIUS7-CONCRETE-SOURCE-P-VERTEX",
+    "originalRaw": 2,
+    "originalPrimitive": 2,
+    "sourceGuideAndPUnchanged": true,
+    "witnesses": [
+      {
+        "vertex": 24,
+        "point": [
+          62.15,
+          32.7
+        ],
+        "globalLower": 10.024999989999998,
+        "upper": 10.142215302881317,
+        "nodes": 1
+      },
+      {
+        "vertex": 25,
+        "point": [
+          62.15,
+          31.2
+        ],
+        "globalLower": 10.04847898482969,
+        "upper": 10.475067123889945,
+        "nodes": 1
+      }
+    ],
+    "radius": 7,
+    "width": 14,
+    "padding": 7,
+    "method": "Padded L exact point-segment distance minus1e-8 and complete Q control-bbox subdivision distance lower bounds minus1e-8. Every accepted bbox interval covers actual Q; these witnesses accepted by original whole Q bbox.",
+    "numerics": {
+      "margin": 1e-8,
+      "formalIntervalProof": false
+    },
+    "necessaryRadiusLowerExclusive": 10.04847898482969,
+    "sufficientAlternativeWidthNotEstablished": true,
+    "widthOrPadChanged": false
+  },
+  "counts": {
+    "Q": 6,
+    "pass": 5,
+    "concreteFailure": 1,
+    "unproved": 0
+  },
+  "reuse": {
+    "unchanged4FanSuccess": true,
+    "originalPOrQRedrawn": false,
+    "cardinalMasks": 10
+  },
+  "nativeTemporalApproved": false,
+  "runtimeApplied": false,
+  "sourceGeometryChanged": false,
+  "builds": 0,
+  "fullProjectTypeChecks": 0
+}

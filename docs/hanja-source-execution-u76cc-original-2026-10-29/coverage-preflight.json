@@ -1,0 +1,121 @@
+{
+  "schema": "hanja-public-source-curve-coverage-preflight/v1",
+  "date": "2026-10-29",
+  "glyph": "盌",
+  "scope": "Six unchanged original Q masks1m1/2m2/3m1/4m2/4m3/5m2 only; all10 line masks remain cardinal policy. Source roles statically reviewed, start/release/temporal unapproved. Logical5 source terminalUP original P has no invented UP guide and requires actual native mask review.",
+  "inputSHA256": {
+    "docs/hanja-source-execution-u76cc-original-2026-10-29/prepare-execution-draft.mjs": "be7e93f7ebce9442d66d1976ebfca699a26f61ab92bd4db0e9d24eff0b609279",
+    "docs/hanja-source-execution-u76cc-original-2026-10-29/fixtures-execution-draft.json": "3dd961765beeaefda1f13ca9f35574193d2ec464cfaa5e1779d48fc5dd6baf9e",
+    "docs/hanja-source-execution-u76cc-original-2026-10-29/execution-draft-check.json": "8e522898ecac42effcf8128648559a727156f6ff135fbecd837005f9d59fc19c",
+    "docs/hanja-source-execution-u76cc-original-2026-10-29/coverage-preflight.mjs": "927872516682a217ac9a2b0e68001b1a079213e3da32654df1fddfec158a3527"
+  },
+  "method": "Polygon fan triangles conservatively cover each original finite filled polygon. At each triangle center distance to actual padded line segment and4097 evaluated original Q points gives an upper distance bound; plus triangle radius (1-Lipschitz) proves every triangle point within full round guide radius7. No original P/Q flattening. Concave fan may include outside ink and unresolved is not insufficient width.",
+  "numerics": {
+    "margin": 1e-8,
+    "formalIntervalProof": false,
+    "depthLimit": 16,
+    "nodeLimitPerMask": 60000,
+    "QEvaluationsPerMask": 4097
+  },
+  "counts": {
+    "curveMasks": 6,
+    "pass": 4,
+    "unproved": 2
+  },
+  "units": [
+    {
+      "logical": 1,
+      "mask": 1,
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "radius": 7,
+      "width": 14,
+      "padding": 7,
+      "nodes": 350,
+      "maxDepth": 3,
+      "maxAcceptedUpperDistance": 6.980565319416082,
+      "sourceOutlinePreserved": true,
+      "sourceQGuidePreserved": true,
+      "nativeApproval": false
+    },
+    {
+      "logical": 2,
+      "mask": 2,
+      "status": "UNPROVED",
+      "radius": 7,
+      "width": 14,
+      "padding": 7,
+      "nodes": 16157,
+      "maxDepth": 16,
+      "maxAcceptedUpperDistance": 6.999997427956591,
+      "sourceOutlinePreserved": true,
+      "sourceQGuidePreserved": true,
+      "nativeApproval": false
+    },
+    {
+      "logical": 3,
+      "mask": 1,
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "radius": 7,
+      "width": 14,
+      "padding": 7,
+      "nodes": 123,
+      "maxDepth": 2,
+      "maxAcceptedUpperDistance": 6.851395672910675,
+      "sourceOutlinePreserved": true,
+      "sourceQGuidePreserved": true,
+      "nativeApproval": false
+    },
+    {
+      "logical": 4,
+      "mask": 2,
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "radius": 7,
+      "width": 14,
+      "padding": 7,
+      "nodes": 251,
+      "maxDepth": 2,
+      "maxAcceptedUpperDistance": 6.97752149601061,
+      "sourceOutlinePreserved": true,
+      "sourceQGuidePreserved": true,
+      "nativeApproval": false
+    },
+    {
+      "logical": 4,
+      "mask": 3,
+      "status": "UNPROVED",
+      "radius": 7,
+      "width": 14,
+      "padding": 7,
+      "nodes": 23,
+      "maxDepth": 16,
+      "maxAcceptedUpperDistance": 6.585207855923216,
+      "sourceOutlinePreserved": true,
+      "sourceQGuidePreserved": true,
+      "nativeApproval": false
+    },
+    {
+      "logical": 5,
+      "mask": 2,
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "radius": 7,
+      "width": 14,
+      "padding": 7,
+      "nodes": 23,
+      "maxDepth": 0,
+      "maxAcceptedUpperDistance": 5.626883702533642,
+      "sourceOutlinePreserved": true,
+      "sourceQGuidePreserved": true,
+      "nativeApproval": false
+    }
+  ],
+  "cardinalPolicy": {
+    "masks": 10,
+    "allOriginalPAndFlagsRetained": true,
+    "nativeStartContactAndEndingReviewRequired": true
+  },
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "sharedFilesChanged": false,
+  "serverStarts": 0,
+  "buildRun": false
+}

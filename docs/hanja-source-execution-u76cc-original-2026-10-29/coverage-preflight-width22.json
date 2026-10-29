@@ -1,0 +1,51 @@
+{
+  "schema": "hanja-public-source-curve-coverage-preflight/v1",
+  "date": "2026-10-29",
+  "glyph": "盌",
+  "scope": "Only4m3 display width22/pad11; original P and unpadded Q unchanged. Other5 Q radius7 successes reused; no broad width change. Actual ending mask and logical5 terminalUP native review required.",
+  "inputSHA256": {
+    "docs/hanja-source-execution-u76cc-original-2026-10-29/prepare-execution-draft-width22.mjs": "978d0b7e908afddad6436d8195669349f503cc7d5b0d47a49b8f89bd01b92193",
+    "docs/hanja-source-execution-u76cc-original-2026-10-29/fixtures-execution-draft-width22.json": "60f2b219228cfbd9a04363daf46541ababd2c0da6af8dc1d0072ae9e0600084d",
+    "docs/hanja-source-execution-u76cc-original-2026-10-29/execution-draft-check-width22.json": "8ba0fbcc6ff961c9caa4f1375f3986f8472cd1d3b5faf1a2a1eeb0440a9c1cc7",
+    "docs/hanja-source-execution-u76cc-original-2026-10-29/coverage-preflight-width22.mjs": "fdb693c5f252475d910e63a84812555fd40145dad412376508b287180b1be51f"
+  },
+  "method": "Existing positive-ear triangles preserve original P area and cover each original finite filled polygon. At each triangle center distance to actual padded line segment and4097 evaluated original Q points gives an upper distance bound; plus triangle radius (1-Lipschitz) proves every triangle point within full round guide radius11. No original P/Q flattening. Concave fan may include outside ink and unresolved is not insufficient width.",
+  "numerics": {
+    "margin": 1e-8,
+    "formalIntervalProof": false,
+    "depthLimit": 16,
+    "nodeLimitPerMask": 60000,
+    "QEvaluationsPerMask": 4097
+  },
+  "counts": {
+    "curveMasks": 1,
+    "pass": 1,
+    "unproved": 0
+  },
+  "units": [
+    {
+      "logical": 4,
+      "mask": 3,
+      "status": "PASS-CONSERVATIVE-COVERAGE",
+      "radius": 11,
+      "width": 22,
+      "padding": 11,
+      "nodes": 50,
+      "maxDepth": 3,
+      "maxAcceptedUpperDistance": 10.894038208723043,
+      "sourceOutlinePreserved": true,
+      "sourceQGuidePreserved": true,
+      "nativeApproval": false
+    }
+  ],
+  "cardinalPolicy": {
+    "masks": 10,
+    "allOriginalPAndFlagsRetained": true,
+    "nativeStartContactAndEndingReviewRequired": true
+  },
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "sharedFilesChanged": false,
+  "serverStarts": 0,
+  "buildRun": false
+}
