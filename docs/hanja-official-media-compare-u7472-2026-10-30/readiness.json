@@ -1,0 +1,74 @@
+{
+  "schema": "hanja-existing-original-clock-readiness/v1",
+  "glyph": "瑲",
+  "recordedAt": "2026-10-30",
+  "catalog": {
+    "path": "content/hanja/characters/special.json",
+    "SHA256": "05e3e8a73b974b420c944a34b19f1fc89e5147d203148d3f8787ca8b9a78baf9",
+    "strokes": 14,
+    "correctionEntry": false
+  },
+  "metadata": {
+    "path": "docs/hanja-goal-glyphwiki-batch910-2026-10-13/metadata.json",
+    "SHA256": "2d3b3a23942b53269f77a4a9cdc43e8d933650fc5a445bb444634508f9e555e3",
+    "catalogStrokes": 14,
+    "domesticClips": 14,
+    "originalSVG": {
+      "bytes": 6502,
+      "SHA256": "cb3894b71511672efefc45ce49a987441201fbdfc3d6c095cd18272c3db00204"
+    }
+  },
+  "publicSourceCount": {
+    "id": "u7472",
+    "path": "docs/hanja-goal-glyphwiki-batch910-2026-10-13/engine-proof.json",
+    "bytes": 43802,
+    "SHA256": "af8725be5086be13abba604572e76bad4ed1abf342557f3287556e9d81462e6e",
+    "raw": 17,
+    "calls": 17,
+    "P": 28,
+    "nondrawingRaw": [
+      5
+    ]
+  },
+  "readiness": "READY-fixed-runtime-RAM-original-clock; metadata clipcount pinned but originaltimed paths not fetched or directly observed by this child",
+  "configs": [
+    {
+      "path": "docs/hanja-official-media-compare-u7472-2026-10-30/config-all.json",
+      "SHA256": "8bcc3af0e4970a34285bf7399d749a31ade9be76d3ac1567b636203919cfb190",
+      "selected": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "guardPass": true,
+      "commonSyntheticValidatorPass": true,
+      "command": "rtk proxy python3 docs/hanja-official-media-compare-u7472-2026-10-30/clock.py --config docs/hanja-official-media-compare-u7472-2026-10-30/config-all.json --config-sha 8bcc3af0e4970a34285bf7399d749a31ade9be76d3ac1567b636203919cfb190 --port 0"
+    }
+  ],
+  "wrapper": {
+    "path": "docs/hanja-official-media-compare-u7472-2026-10-30/clock.py",
+    "SHA256": "1b3e4789fac92977d8896de1c86550a67de6047914e48a6da8ce2e31bab2eb2a",
+    "sharedUnchanged": true,
+    "splitMax16": true
+  },
+  "guard": "Startup requires original SVG/CSS byte hashes and parsed original timedpath count exactly 14; original CSS/timing/geometry remain RAM-only and original attributes unchanged. Public source rawcount does not define domestic stroke membership.",
+  "originalClockEvidenceFound": false,
+  "sourceRolesApproved": false,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "HTTP": 0,
+  "server": 0,
+  "newEngine": 0,
+  "privateAssetsSaved": false
+}
