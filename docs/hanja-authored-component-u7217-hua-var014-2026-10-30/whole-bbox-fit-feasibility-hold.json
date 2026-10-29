@@ -1,0 +1,71 @@
+{
+  "sourceBBoxExact": [
+    "67",
+    "633/10",
+    "1879/10",
+    "939/5"
+  ],
+  "targetOriginalBBoxExact": [
+    "67",
+    "633/10",
+    "1879/10",
+    "939/5"
+  ],
+  "wholePositiveMatrixExact": [
+    "1",
+    "0",
+    "0",
+    "1",
+    "0",
+    "0"
+  ],
+  "determinantExact": "1",
+  "originalPairs": [],
+  "newNativeCallerPairs": [
+    [
+      12,
+      7
+    ]
+  ],
+  "newWholeBBoxFitPairs": [
+    [
+      12,
+      7
+    ]
+  ],
+  "checkedNewCrossPairs": 99,
+  "retained9RawPTraceExact": true,
+  "fitTargetBBoxExact": true,
+  "matrixMustAlsoApplyToAllHuaGuides": true,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "schema": "hanja-whole-component-affine-feasibility/v1",
+  "date": "2026-10-30",
+  "glyph": "爗",
+  "status": "HOLD-new-grass-to-retained-day-contact",
+  "inputs": {
+    "candidate": {
+      "path": "docs/hanja-authored-component-u7217-hua-var014-2026-10-30/engine-authored-whole.json",
+      "SHA256": "2083e1e9b8c9ce3bf9b2fa48928ed0d0b0389b5dd11235ada9ed354b3238c580"
+    },
+    "receipt": {
+      "path": "docs/hanja-authored-component-u7217-hua-var014-2026-10-30/capture-receipt.json",
+      "SHA256": "f0e8786d56b426c83b8148d412f40841416b0bb50c870006884577261cb1e507"
+    },
+    "sourcePacket": {
+      "path": "docs/hanja-source-original-u83ef-new11-2026-10-30/source-record.json",
+      "SHA256": "4ebd0403df79dcf7673ffe041783ff7c04c3f2fb21942066eeb3ba21e84747a8"
+    },
+    "existingContactVerifier": {
+      "path": "docs/hanja-authored-component-u7217-kage-hua11-2026-10-30/verify-contact.py",
+      "SHA256": "184e333d01dd9679caa6487eb7c2fee7bd14cc1e35d539d0651c90c3434748ef"
+    }
+  },
+  "contactSemantics": "Exact Fraction filled polygon closed-set intersection, including boundary contact. No native or positive-area claim follows from this predicate.",
+  "limits": [
+    "Whole complete Hua donor only; original retained fire/day groups and trace exact.",
+    "BBox-fit is identity; source raw12/right grass V still contacts retained day raw7.",
+    "No individual movement, local trim, new bridge, new guide, source flags change, or second engine invocation.",
+    "Remaining five source declaration groups not engine-captured; no extrapolated geometry verdict."
+  ]
+}
