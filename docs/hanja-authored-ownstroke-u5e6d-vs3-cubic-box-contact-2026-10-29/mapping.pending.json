@@ -1,0 +1,184 @@
+{
+  "schema": "hanja-source-logical-mapping-hypothesis/v1",
+  "glyph": "幭",
+  "status": "pending-root-original18clock-and-all18-current-prefix",
+  "nativeApproved": false,
+  "runtimeApplied": false,
+  "logical": 18,
+  "raw": 20,
+  "sourceCalls": 22,
+  "filledP": 40,
+  "rawGroupsOneBased": [
+    [
+      2
+    ],
+    [
+      3,
+      4
+    ],
+    [
+      1
+    ],
+    [
+      5
+    ],
+    [
+      6
+    ],
+    [
+      8
+    ],
+    [
+      7
+    ],
+    [
+      9
+    ],
+    [
+      10,
+      11
+    ],
+    [
+      12
+    ],
+    [
+      13
+    ],
+    [
+      14
+    ],
+    [
+      15
+    ],
+    [
+      16
+    ],
+    [
+      17
+    ],
+    [
+      18
+    ],
+    [
+      19
+    ],
+    [
+      20
+    ]
+  ],
+  "sourcePCountsPerLogical": [
+    1,
+    6,
+    2,
+    1,
+    2,
+    2,
+    2,
+    1,
+    3,
+    1,
+    1,
+    1,
+    3,
+    2,
+    2,
+    5,
+    3,
+    2
+  ],
+  "sourceCallCountsPerLogical": [
+    1,
+    3,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    2,
+    1,
+    1,
+    1,
+    2,
+    1,
+    1,
+    1,
+    1,
+    1
+  ],
+  "roleHypotheses": [
+    "leftV",
+    "H→rightV→leftHook",
+    "centralV",
+    "leftH",
+    "leftTopV",
+    "rightH",
+    "rightTopV",
+    "boxLeftV",
+    "boxH→rightV",
+    "innerLeftV",
+    "innerRightV",
+    "boxBottomH",
+    "bodyLeftV→DL",
+    "bodyH",
+    "DRpoint",
+    "longCubicDRthenUPterminal",
+    "longDL",
+    "DRpoint"
+  ],
+  "evidence": {
+    "fixedSource": {
+      "file": "docs/hanja-goal-glyphwiki-batch568-2026-10-11/engine-whole-u5e6d-ue0103.json",
+      "sha256": "0637f8ed6659ebc24fe2116fbdc992ae55528a3b6148ea3d371512aad18beba7"
+    },
+    "candidateStatic": {
+      "file": "docs/hanja-authored-ownstroke-u5e6d-vs3-cubic-box-contact-2026-10-29/native-static-review.json",
+      "sha256": "516249bd5543aedb1d36773235fdee0505f63e2ed07ece821b8b07490ed05c91"
+    },
+    "oldStaticDirections": {
+      "file": "docs/hanja-goal-glyphwiki-batch568-2026-10-11/progressive-review.json",
+      "sha256": "48fb576eb414f78f33973802ab03ca3d41a9b4bdc168c136d7fd2211ceac5549",
+      "reviewed": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ]
+    },
+    "originalClock": {
+      "folder": "docs/hanja-official-media-compare-u5e6d-2026-10-29/",
+      "nativeReviewed": false
+    }
+  },
+  "approvalBoundaries": {
+    "firstSevenSourceOrderHypothesisOnly": true,
+    "oldStatic8to18IsNotFullClock": true,
+    "wholeSourceMismatchNotAutomaticallyCleared": true,
+    "nativeCurrentPrefixStillRequired": true,
+    "sourceGuideEquivalence": false,
+    "temporal": false
+  },
+  "sourceDirectionFacts": {
+    "sameSourceWholeCubicOneAffine": true,
+    "originalRaw18GuideAndPBothTransformed": true,
+    "sourceRaw3And4ContinuousAt": [
+      64.22,
+      54.18
+    ],
+    "raw4HasTwoCalls": true,
+    "raw15HasTwoCalls": true
+  },
+  "limits": [
+    "First seven order assignments are an explicit pending hypothesis from public roles, not approved from a radical or shape similarity.",
+    "Existing8..18 static direction evidence supplies bounded reference roles; it does not establish full original18 macro timing/order.",
+    "Retain the actual source C terminal flags0/15 and original head/terminal filled polygons; do not infer a missing guide or new bridge.",
+    "ROOT must inspect original18 clock then correct this grouping before accepting all18 current/prefix roles."
+  ]
+}

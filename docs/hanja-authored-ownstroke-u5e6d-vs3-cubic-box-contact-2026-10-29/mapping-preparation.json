@@ -1,0 +1,64 @@
+{
+  "schema": "hanja-static-mapping-and-original-clock-preparation/v1",
+  "glyph": "幭",
+  "date": "2026-10-29",
+  "status": "pending-root-original18clock-before-adopting-mapping",
+  "inputs": {
+    "docs/hanja-authored-ownstroke-u5e6d-vs3-cubic-box-contact-2026-10-29/mapping.pending.json": "e96830af658dc43dc60c91020ac49e8fa4d8d898445a6dbc6ef5312032e92259",
+    "docs/hanja-authored-ownstroke-u5e6d-vs3-cubic-box-contact-2026-10-29/compare-mapping.py": "0783e8ecffcc0f4ffc4e4cabbf4abffccd0891a32475fe674163f37fb34d8050",
+    "docs/hanja-authored-ownstroke-u5e6d-vs3-cubic-box-contact-2026-10-29/mapping-config.json": "54b50a43dc3ff26b27caf8beadc5f4d9c507897231b051c1d3ae462161d8c2ba",
+    "docs/hanja-authored-ownstroke-u5e6d-vs3-cubic-box-contact-2026-10-29/native-static-review.json": "516249bd5543aedb1d36773235fdee0505f63e2ed07ece821b8b07490ed05c91",
+    "docs/hanja-official-media-compare-u5e6d-2026-10-29/clock.py": "8559d86d51ac6556932c303181f7e67392b9035cdeaa10417b88fb74a86e2864",
+    "docs/hanja-official-media-compare-u5e6d-2026-10-29/config-first16.json": "304a0edd6ec3b71dc17ffd48182e1480eaf81b2b5753ae729bb8ce16c69e4c66",
+    "docs/hanja-official-media-compare-u5e6d-2026-10-29/config-remaining2.json": "ee8840e61de1029ff5c214707096d600c5eab913254d3e8c07d7cb5ca5244791"
+  },
+  "checks": {
+    "mappingDirectCheckExit": 0,
+    "currentPages": 18,
+    "prefixPages": 18,
+    "originalClockConfigs": 2,
+    "HTTP": 0,
+    "privateFetch": 0,
+    "server": 0,
+    "sourceRawExactlyOnce": 20,
+    "sourceCallsPreserved": 22,
+    "sourceP": 40,
+    "explicitUTF8Header": true
+  },
+  "toolIssue": {
+    "initialDirectMapperEncodingFailure": true,
+    "UTF8BytesAndASTPassed": true,
+    "explicitSourceEncodingHeaderFixedDirectExecution": true,
+    "productOrGeometryFailure": false
+  },
+  "reuse": {
+    "oldStaticDirectionPens": [
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ],
+    "scope": "Reference macro/static roles only. First7 order and all18 original timing await ROOT; no grouping approval inferred from radical similarity."
+  },
+  "startup": {
+    "clockFirst16": "python3 docs/hanja-official-media-compare-u5e6d-2026-10-29/clock.py --config docs/hanja-official-media-compare-u5e6d-2026-10-29/config-first16.json --config-sha 304a0edd6ec3b71dc17ffd48182e1480eaf81b2b5753ae729bb8ce16c69e4c66 --port 0",
+    "clockRemaining2": "python3 docs/hanja-official-media-compare-u5e6d-2026-10-29/clock.py --config docs/hanja-official-media-compare-u5e6d-2026-10-29/config-remaining2.json --config-sha ee8840e61de1029ff5c214707096d600c5eab913254d3e8c07d7cb5ca5244791 --port 0",
+    "pendingMapping": "python3 docs/hanja-authored-ownstroke-u5e6d-vs3-cubic-box-contact-2026-10-29/compare-mapping.py --config-sha 54b50a43dc3ff26b27caf8beadc5f4d9c507897231b051c1d3ae462161d8c2ba --port 0"
+  },
+  "approval": {
+    "fullOriginalClock": false,
+    "logicalMapping": false,
+    "temporal": false,
+    "runtime": false,
+    "registration": false
+  },
+  "sharedFilesChanged": 0,
+  "build": false
+}

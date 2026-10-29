@@ -1,0 +1,114 @@
+{
+  "schema": "hanja-source-logical-grouping-readiness/v1",
+  "glyph": "幭",
+  "date": "2026-10-29",
+  "status": "original18clock-complete-pending36-static-mapping-views",
+  "sourceClock": {
+    "file": "docs/hanja-official-media-compare-u5e6d-2026-10-29/native-clock-review.json",
+    "sha256": "43b4ce85ae04cc0e9131478f79d8bbb02ecacf2a68b37e5a6943d4699601a704",
+    "pens": 18,
+    "frames": 54
+  },
+  "pendingMapping": {
+    "file": "docs/hanja-authored-ownstroke-u5e6d-vs3-cubic-box-contact-2026-10-29/mapping.pending.json",
+    "sha256": "e96830af658dc43dc60c91020ac49e8fa4d8d898445a6dbc6ef5312032e92259",
+    "rawGroupsOneBased": [
+      [
+        2
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        1
+      ],
+      [
+        5
+      ],
+      [
+        6
+      ],
+      [
+        8
+      ],
+      [
+        7
+      ],
+      [
+        9
+      ],
+      [
+        10,
+        11
+      ],
+      [
+        12
+      ],
+      [
+        13
+      ],
+      [
+        14
+      ],
+      [
+        15
+      ],
+      [
+        16
+      ],
+      [
+        17
+      ],
+      [
+        18
+      ],
+      [
+        19
+      ],
+      [
+        20
+      ]
+    ]
+  },
+  "staticAcceptedWhole": {
+    "file": "docs/hanja-authored-ownstroke-u5e6d-vs3-cubic-box-contact-2026-10-29/native-static-review.json",
+    "sha256": "516249bd5543aedb1d36773235fdee0505f63e2ed07ece821b8b07490ed05c91"
+  },
+  "candidate": {
+    "file": "docs/hanja-authored-ownstroke-u5e6d-vs3-cubic-box-contact-2026-10-29/fixture.pending.json",
+    "sha256": "68f8e5fecc754e835f2d88808ff91b596a182a81df5c68563a81eb60b2d2dd04"
+  },
+  "rootObservation": "ROOT reported the listed pending1..18 roles agree with all18 original macro clock roles. This supports readiness for candidate static grouping comparison only.",
+  "facts": {
+    "logicalRows": 18,
+    "rawSlotsExactlyOnce": 20,
+    "originalCallsRetained": 22,
+    "originalP40": true,
+    "wholeRaw18AffineOnly": true,
+    "oldStatic8to18EvidenceReusedWithinScope": true
+  },
+  "criticalChecks": [
+    "Logical2 includes original raw3 H and raw4 V+hook, with every original primitive retained.",
+    "Logical9 includes source raw10H+raw11V.",
+    "Logical13 source raw15 contains a short initial line and Q down-left; full original clock macro is a long lowerDL, not proof of source timing equality.",
+    "Logical16 source raw18 C has source flags0/15 and upward terminal P. ROOT original clock confirms upward terminal macro, but the original C guide itself still ends right; no invented guide is authorized."
+  ],
+  "historicalPendingSnapshotPreserved": true,
+  "requiredNext": {
+    "candidateCurrentViews": 18,
+    "candidatePrefixViews": 18,
+    "directROOT": true
+  },
+  "approval": {
+    "originalMacroClock": true,
+    "fullStaticMapping": false,
+    "sourceGuideEquivalence": false,
+    "actualTemporal": false,
+    "runtime": false,
+    "registration": false
+  },
+  "sharedFilesChanged": 0,
+  "serversStarted": 0,
+  "build": false
+}

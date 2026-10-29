@@ -1,0 +1,433 @@
+{
+  "schema": "hanja-public-source-whole-positive-affine-feasibility/v1",
+  "glyph": "幭",
+  "date": "2026-10-29",
+  "status": "mathematically-feasible-native-unapproved",
+  "source": {
+    "file": "docs/hanja-goal-glyphwiki-batch568-2026-10-11/engine-whole-u5e6d-ue0103.json",
+    "sha256": "0637f8ed6659ebc24fe2116fbdc992ae55528a3b6148ea3d371512aad18beba7",
+    "root": "u5e6d-ue0103",
+    "rawGroups": 20,
+    "drawingCalls": 22,
+    "polygons": 40,
+    "curves": 5,
+    "cubics": 1,
+    "allPoffZero": true
+  },
+  "existingEvidence": {
+    "file": "docs/hanja-goal-glyphwiki-batch568-2026-10-11/progressive-review.json",
+    "sha256": "48fb576eb414f78f33973802ab03ca3d41a9b4bdc168c136d7fd2211ceac5549",
+    "staticDirectionPens": [
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ],
+    "full18OriginalClockStillRequired": true,
+    "rawIndicesInLegacyZeroBased": {
+      "boxBottom": 13,
+      "cubic": 17
+    },
+    "actualRawOneBased": {
+      "boxBottom": 14,
+      "cubic": 18
+    }
+  },
+  "candidate": {
+    "changedWholeRawOneBased": 18,
+    "matrixExact": [
+      "1",
+      "0",
+      "0",
+      "995/949",
+      "0",
+      "-8602/949"
+    ],
+    "determinant": "995/949",
+    "anchor": "Original cubic filled maximumY187 fixed; choose new whole minimumY87.5, one source unit above original box-bottom maximumY88.5. This is explicit authored positive wholeY placement, not official coordinates or local patch.",
+    "preservedOther19RawAndTraceExact": true,
+    "samePAndGuideAffine": true,
+    "rawFlags": [
+      0,
+      5
+    ],
+    "actualTraceFlags": [
+      0,
+      15
+    ],
+    "flagsUnchangedAndNotRelabeled": true
+  },
+  "math": {
+    "scale": "995/949",
+    "shift": "-8602/949",
+    "minimumFilledYBefore": "921/10",
+    "minimumFilledYAfter": "175/2",
+    "maximumFilledYBefore": "187",
+    "maximumFilledYAfter": "187",
+    "guideStartYBefore": "93",
+    "guideStartYAfter": "83933/949",
+    "boxAreaByCubicP": [
+      {
+        "cubicP": 1,
+        "beforeArea": "0",
+        "afterArea": "0"
+      },
+      {
+        "cubicP": 2,
+        "beforeArea": "0",
+        "afterArea": "1823029/477600"
+      },
+      {
+        "cubicP": 3,
+        "beforeArea": "0",
+        "afterArea": "0"
+      },
+      {
+        "cubicP": 4,
+        "beforeArea": "0",
+        "afterArea": "0"
+      },
+      {
+        "cubicP": 5,
+        "beforeArea": "0",
+        "afterArea": "0"
+      }
+    ],
+    "totalNewContactArea": "1823029/477600",
+    "contactGraph": {
+      "contactPairs": [
+        {
+          "rawOneBased": 14,
+          "PoneBased": 1,
+          "before": [
+            {
+              "positive": false,
+              "strictWitness": null,
+              "properEdgeCrossings": 0,
+              "boundary": false
+            },
+            {
+              "positive": false,
+              "strictWitness": null,
+              "properEdgeCrossings": 0,
+              "boundary": false
+            },
+            {
+              "positive": false,
+              "strictWitness": null,
+              "properEdgeCrossings": 0,
+              "boundary": false
+            },
+            {
+              "positive": false,
+              "strictWitness": null,
+              "properEdgeCrossings": 0,
+              "boundary": false
+            },
+            {
+              "positive": false,
+              "strictWitness": null,
+              "properEdgeCrossings": 0,
+              "boundary": false
+            }
+          ],
+          "after": [
+            {
+              "positive": false,
+              "strictWitness": null,
+              "properEdgeCrossings": 0,
+              "boundary": false
+            },
+            {
+              "positive": true,
+              "strictWitness": [
+                "126",
+                "175/2"
+              ],
+              "properEdgeCrossings": 2,
+              "boundary": false
+            },
+            {
+              "positive": false,
+              "strictWitness": null,
+              "properEdgeCrossings": 0,
+              "boundary": false
+            },
+            {
+              "positive": false,
+              "strictWitness": null,
+              "properEdgeCrossings": 0,
+              "boundary": false
+            },
+            {
+              "positive": false,
+              "strictWitness": null,
+              "properEdgeCrossings": 0,
+              "boundary": false
+            }
+          ],
+          "newContact": true,
+          "removedContact": false
+        },
+        {
+          "rawOneBased": 16,
+          "PoneBased": 1,
+          "before": [
+            {
+              "positive": true,
+              "strictWitness": [
+                "702/5",
+                "1141/10"
+              ],
+              "properEdgeCrossings": 4,
+              "boundary": false
+            },
+            {
+              "positive": false,
+              "strictWitness": null,
+              "properEdgeCrossings": 0,
+              "boundary": false
+            },
+            {
+              "positive": false,
+              "strictWitness": null,
+              "properEdgeCrossings": 0,
+              "boundary": false
+            },
+            {
+              "positive": false,
+              "strictWitness": null,
+              "properEdgeCrossings": 0,
+              "boundary": false
+            },
+            {
+              "positive": false,
+              "strictWitness": null,
+              "properEdgeCrossings": 0,
+              "boundary": false
+            }
+          ],
+          "after": [
+            {
+              "positive": true,
+              "strictWitness": null,
+              "properEdgeCrossings": 4,
+              "boundary": false
+            },
+            {
+              "positive": false,
+              "strictWitness": null,
+              "properEdgeCrossings": 0,
+              "boundary": false
+            },
+            {
+              "positive": false,
+              "strictWitness": null,
+              "properEdgeCrossings": 0,
+              "boundary": false
+            },
+            {
+              "positive": false,
+              "strictWitness": null,
+              "properEdgeCrossings": 0,
+              "boundary": false
+            },
+            {
+              "positive": false,
+              "strictWitness": null,
+              "properEdgeCrossings": 0,
+              "boundary": false
+            }
+          ],
+          "newContact": false,
+          "removedContact": false
+        },
+        {
+          "rawOneBased": 19,
+          "PoneBased": 1,
+          "before": [
+            {
+              "positive": true,
+              "strictWitness": [
+                "1549/10",
+                "309/2"
+              ],
+              "properEdgeCrossings": 4,
+              "boundary": false
+            },
+            {
+              "positive": false,
+              "strictWitness": null,
+              "properEdgeCrossings": 0,
+              "boundary": false
+            },
+            {
+              "positive": false,
+              "strictWitness": null,
+              "properEdgeCrossings": 0,
+              "boundary": false
+            },
+            {
+              "positive": false,
+              "strictWitness": null,
+              "properEdgeCrossings": 0,
+              "boundary": false
+            },
+            {
+              "positive": false,
+              "strictWitness": null,
+              "properEdgeCrossings": 0,
+              "boundary": false
+            }
+          ],
+          "after": [
+            {
+              "positive": true,
+              "strictWitness": [
+                "1549/10",
+                "22327/146"
+              ],
+              "properEdgeCrossings": 4,
+              "boundary": false
+            },
+            {
+              "positive": false,
+              "strictWitness": null,
+              "properEdgeCrossings": 0,
+              "boundary": false
+            },
+            {
+              "positive": false,
+              "strictWitness": null,
+              "properEdgeCrossings": 0,
+              "boundary": false
+            },
+            {
+              "positive": false,
+              "strictWitness": null,
+              "properEdgeCrossings": 0,
+              "boundary": false
+            },
+            {
+              "positive": false,
+              "strictWitness": null,
+              "properEdgeCrossings": 0,
+              "boundary": false
+            }
+          ],
+          "newContact": false,
+          "removedContact": false
+        }
+      ],
+      "newContacts": [
+        {
+          "rawOneBased": 14,
+          "PoneBased": 1,
+          "before": [
+            {
+              "positive": false,
+              "strictWitness": null,
+              "properEdgeCrossings": 0,
+              "boundary": false
+            },
+            {
+              "positive": false,
+              "strictWitness": null,
+              "properEdgeCrossings": 0,
+              "boundary": false
+            },
+            {
+              "positive": false,
+              "strictWitness": null,
+              "properEdgeCrossings": 0,
+              "boundary": false
+            },
+            {
+              "positive": false,
+              "strictWitness": null,
+              "properEdgeCrossings": 0,
+              "boundary": false
+            },
+            {
+              "positive": false,
+              "strictWitness": null,
+              "properEdgeCrossings": 0,
+              "boundary": false
+            }
+          ],
+          "after": [
+            {
+              "positive": false,
+              "strictWitness": null,
+              "properEdgeCrossings": 0,
+              "boundary": false
+            },
+            {
+              "positive": true,
+              "strictWitness": [
+                "126",
+                "175/2"
+              ],
+              "properEdgeCrossings": 2,
+              "boundary": false
+            },
+            {
+              "positive": false,
+              "strictWitness": null,
+              "properEdgeCrossings": 0,
+              "boundary": false
+            },
+            {
+              "positive": false,
+              "strictWitness": null,
+              "properEdgeCrossings": 0,
+              "boundary": false
+            },
+            {
+              "positive": false,
+              "strictWitness": null,
+              "properEdgeCrossings": 0,
+              "boundary": false
+            }
+          ],
+          "newContact": true,
+          "removedContact": false
+        }
+      ]
+    },
+    "headToMainOriginalPositiveContact": {
+      "positive": true,
+      "strictWitness": null,
+      "properEdgeCrossings": 3,
+      "boundary": true
+    },
+    "headToMainContactPreservedByInvertibleWholeAffine": true,
+    "inverseMaxNumericError": 2.842170943040401e-14,
+    "newUnwantedContactsIncludingBoundary": 0,
+    "existingRaw16And19PositiveContactsRetained": true,
+    "sourceBytesUnchanged": true
+  },
+  "limits": [
+    "New box contact is through original head P2 only, whose original positive contact to main P1 is preserved. Main P1 itself does not directly intersect the box in this candidate.",
+    "No exact publisher geometry or clock identity, no new engine capture, no boundary extension or new polygon.",
+    "All18 original clock, fresh candidate whole/contact and later actual temporal review remain required. Existing successful static directions8..18 can be reused only as original macro evidence."
+  ],
+  "approval": {
+    "whole": false,
+    "mapping": false,
+    "temporal": false,
+    "runtime": false,
+    "registration": false
+  },
+  "sourceEngineRuns": 0,
+  "serversStarted": 0,
+  "sharedChanges": 0,
+  "build": false
+}

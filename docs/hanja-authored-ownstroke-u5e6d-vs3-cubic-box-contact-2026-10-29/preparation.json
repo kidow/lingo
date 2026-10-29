@@ -1,0 +1,83 @@
+{
+  "schema": "hanja-public-source-whole-affine-static-preparation/v1",
+  "glyph": "幭",
+  "date": "2026-10-29",
+  "status": "ready-for-root-static-whole-contact-review-unapproved",
+  "inputs": {
+    "docs/hanja-authored-ownstroke-u5e6d-vs3-cubic-box-contact-2026-10-29/feasibility.json": "83ae83356d145cac538f9c8abdab9383d01138babc31be46e78f0c75bc838fff",
+    "docs/hanja-authored-ownstroke-u5e6d-vs3-cubic-box-contact-2026-10-29/recipe.pending.json": "16f4ed246c6ef0924ed890d1c9f9cb8da8ec619108442fce6fcd38ef0d675b4c",
+    "docs/hanja-authored-ownstroke-u5e6d-vs3-cubic-box-contact-2026-10-29/materialize.py": "2c9872f753b383a41a7a9a4310e1a7b34f9947a84ab2f6aec07531d43e9adc47",
+    "docs/hanja-authored-ownstroke-u5e6d-vs3-cubic-box-contact-2026-10-29/fixture.pending.json": "68f8e5fecc754e835f2d88808ff91b596a182a81df5c68563a81eb60b2d2dd04",
+    "docs/hanja-authored-ownstroke-u5e6d-vs3-cubic-box-contact-2026-10-29/public-pair.html": "eb32184e385f6f5856df25d0d4f41fbe2cd29f1d6b4b24dcc9612ed6cc066efe",
+    "docs/hanja-authored-ownstroke-u5e6d-vs3-cubic-box-contact-2026-10-29/compare.py": "8bb67375f428cc33fb57eea58bc81c871b5aca1dfec01c3baba6a105053449b9",
+    "docs/hanja-authored-ownstroke-u5e6d-vs3-cubic-box-contact-2026-10-29/config.json": "e69604668670d3376754688336b0b0e8d43d07b088fb4fbf07f4b7aef34a928e"
+  },
+  "counts": {
+    "catalogLogical": 18,
+    "originalRaw": 20,
+    "drawingCalls": 22,
+    "polygons": 40,
+    "quadraticCalls": 5,
+    "cubicCalls": 1,
+    "lines": 16
+  },
+  "checks": {
+    "materializerExit": 0,
+    "staticGuard": "PASS",
+    "actualWholeAndComparePages": "PASS",
+    "unchangedOther19RawAndTraceExact": true,
+    "originalPAndGuideSameAffine": true,
+    "allSourceOffZero": true,
+    "sourceRawAndTracePMatch": true,
+    "inverseMaxNumericError": 2.842170943040401e-14,
+    "restoredRaw14ContactArea": "1823029/477600",
+    "newContactThroughOriginalHeadP2Only": true,
+    "headP2ToMainP1OriginalPositiveContactPreserved": true,
+    "oldRaw16And19PositiveContactsRetained": true,
+    "newUnwantedContactsIncludingBoundary": 0,
+    "HTTP": 0,
+    "serversStarted": 0,
+    "newEngineRuns": 0,
+    "privateFetches": 0
+  },
+  "sourceEvidenceReuse": {
+    "originalWholeVs3HoldRetained": true,
+    "staticOriginalDirectionPens": [
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ],
+    "fullOriginal18ClockStillRequired": true,
+    "completeLogicalMappingNotApproved": true
+  },
+  "review": {
+    "startup": "python3 docs/hanja-authored-ownstroke-u5e6d-vs3-cubic-box-contact-2026-10-29/compare.py --config-sha e69604668670d3376754688336b0b0e8d43d07b088fb4fbf07f4b7aef34a928e --port 0",
+    "whole": "/whole",
+    "publicWholeCubicAndContact": "/public-pair",
+    "domestic16VsCubic": "/compare?source=candidate&domestic=16&raw=18&dview=single&rview=single"
+  },
+  "limits": [
+    "Original whole is not replaced in historical evidence; candidate is explicitly authored.",
+    "One whole positiveY transform includes the existing head/terminal polygons, raw geometry controls, actual C controls and flags.",
+    "New box contact through head P2 is math only until ROOT directly accepts whole/contact shape.",
+    "Original C flags0/15 and upward terminal polygon are retained; their future temporal display is not preapproved."
+  ],
+  "approval": {
+    "whole": false,
+    "sourceClock": false,
+    "mapping": false,
+    "temporal": false,
+    "runtime": false,
+    "registration": false
+  },
+  "sharedChanges": 0,
+  "build": false
+}
