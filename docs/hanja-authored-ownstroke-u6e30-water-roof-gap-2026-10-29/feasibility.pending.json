@@ -1,0 +1,100 @@
+{
+  "schema": "hanja-public-whole-affine-feasibility/v1",
+  "glyph": "渰",
+  "date": "2026-10-29",
+  "status": "exact-feasible-pending-root-static-candidate",
+  "source": {
+    "originalCapture": {
+      "path": "docs/hanja-goal-glyphwiki-batch710-2026-10-12/engine-whole-u6e30.json",
+      "SHA256": "aba23e4e7d35e35a9b70225a11cebdda9f72e6f18f9a5f957b38cf87e69eb0b9",
+      "keys": [
+        "groups",
+        "trace",
+        "defaults"
+      ]
+    },
+    "full5Proof": {
+      "path": "docs/hanja-goal-glyphwiki-batch710-2026-10-12/engine-proof.json",
+      "SHA256": "0249f2f845e8ca26004e94bcb385d36ca4cfc77d1bfbd83eb562a203fc30b8e8",
+      "engineRevision": "49232bac0348fe815f4200d4116ab7917e0db47f",
+      "engineFiles": 8
+    },
+    "separateTrace": {
+      "path": "docs/hanja-goal-glyphwiki-batch710-2026-10-12/draw-trace.json",
+      "SHA256": "c2bb03949d7b4d3a4e4084979db8507cd6027d15c7a344b0e6c03fefb2b6650f"
+    },
+    "sameGroupsTraceDefaultsCodeConfirmed": true,
+    "separateTraceCodeConfirmed": true,
+    "raw": 15,
+    "primitives": 15,
+    "P": 27
+  },
+  "reuse": {
+    "nativeReview": {
+      "path": "docs/hanja-goal-glyphwiki-batch710-2026-10-12/review.json",
+      "SHA256": "7de6ab07c60fdcfc9a3d7b285d3fdfdebda179e02f5b33bee796b73957e474f7"
+    },
+    "all12StaticDirectionsReviewed": true,
+    "progressiveFramesApproved": 0,
+    "originalWholeContactHoldPreserved": true
+  },
+  "candidate": {
+    "changedRawOneBased": 4,
+    "rawLabel": "water rising ending",
+    "wholeP": 1,
+    "wholeQ": 1,
+    "matrixExact": [
+      "285/334",
+      "0",
+      "0",
+      "1",
+      "4214/835",
+      "0"
+    ],
+    "determinantExact": "285/334",
+    "anchorX": "172/5",
+    "anchor": "Originalguide start(34.4,150) fixed; Y and originalflags unchanged.",
+    "criterion": {
+      "originalWaterFilledMaxX": "339/5",
+      "originalRoof6FilledMinX": "639/10",
+      "newWaterMaxX": "629/10",
+      "globalXGapSource200": "1",
+      "derivation": "scaleX=(62.9-34.4)/(67.8-34.4)=285/334; translationX=34.4*(1-scaleX)=4214/835. Entire original filledP and originalQ share one positive affine. No local trim/radical splice/bridge/private fit."
+    },
+    "other14RawExactRequired": true
+  },
+  "exactContactFacts": {
+    "beforeNeighbors": [
+      3,
+      6
+    ],
+    "afterNeighbors": [
+      3
+    ],
+    "newContacts": [],
+    "removed": [
+      6
+    ],
+    "all14OtherRawCompared": true,
+    "water4Roof6": {
+      "beforePositivePpairAreaSum": "133444821/28519748",
+      "afterPositivePpairAreaSum": "0",
+      "afterClosedContact": false
+    },
+    "water4OwnBase3": {
+      "beforePositivePpairAreaSum": "5866207366931/100256379960",
+      "afterPositivePpairAreaSum": "19018643692262707/356284219713800",
+      "afterClosedContact": true
+    },
+    "method": "Exact Fraction sourcepolygon ear intersections and closed contact tests; pair-area sums are not claimed union area."
+  },
+  "next": "Preserve originalwhole HOLD; materialize this one explicit authored wholeP/Q placement and compare whole/water3/roof4 with ROOT native. Do not apply or infer sourceorder/animation approval from this math.",
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "newSourceEngine": 0,
+  "newPrivateFetch": 0,
+  "newGeometryFiles": 0,
+  "sharedWrites": 0,
+  "server": 0,
+  "build": 0
+}

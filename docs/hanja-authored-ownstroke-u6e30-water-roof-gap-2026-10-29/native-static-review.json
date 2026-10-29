@@ -1,0 +1,60 @@
+{
+  "schema": "hanja-bounded-native-static-review/v1",
+  "glyph": "渰",
+  "reviewedAt": "2026-10-29",
+  "reviewer": "ROOT",
+  "status": "pass-bounded-whole-water-positiveX-correction-static",
+  "nativeBrowserPanel": true,
+  "configSHA256": "534c1fc225dc20da2cd4b794924f9a4cb2935c0764cd11a97fe4b6fda75c2c88",
+  "fixtureSHA256": "6ba8d4f411d8931a3e88ead9ec12d538da44142c1239833ff7786368879324b7",
+  "feasibilitySHA256": "28fee26fde21ac2b4c9c1a102b6e9a53af591addf3df1043367fca786a0dc685",
+  "sourceShape": {
+    "raw": 15,
+    "primitives": 15,
+    "P": 27
+  },
+  "changedRawOneBased": 4,
+  "matrixExact": [
+    "285/334",
+    "0",
+    "0",
+    "1",
+    "4214/835",
+    "0"
+  ],
+  "views": [
+    {
+      "route": "/whole",
+      "panels": 3,
+      "px": 520
+    },
+    {
+      "route": "/public-pair",
+      "panels": 6,
+      "px": 520
+    },
+    {
+      "route": "/water",
+      "panels": 3,
+      "content": "domestic3 / originalraw3+4 / candidateraw3+4",
+      "px": 520
+    }
+  ],
+  "observations": [
+    "ROOT directly observed the water-to-roof gap after the whole positiveX placement.",
+    "No new unwanted contact was seen in the inspected whole/water panels.",
+    "The public source font is visibly heavier and more slanted than the domestic font; this is an explicit font/proportion difference, not exact publisher identity."
+  ],
+  "reuse": {
+    "old12StaticDirectionsReviewed": true,
+    "originalClockFreshNotYetObserved": true
+  },
+  "approvalScope": "Bounded whole-water shape/contact correction only. Original12clock, complete12-role mapping, candidate progression and runtime are still unapproved.",
+  "wholeWaterStaticApproved": true,
+  "full12MappingApproved": false,
+  "temporalApproved": false,
+  "runtimeApplied": false,
+  "originalWhole": false,
+  "isOriginalEngineCapture": false,
+  "privateBodiesSaved": false
+}

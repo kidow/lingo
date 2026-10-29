@@ -1,0 +1,7 @@
+# 渰 batch1542 source attribution
+
+GlyphWiki Project and contributors. Fixed snapshot a7dd7f3d911936770fa742e8c37d16bee7e2173c and public provider versions u5f07@5 / u5efe-04@3. License: https://glyphwiki.org/wiki/GlyphWiki:データ・記事のライセンス@18
+
+Explicit locally authored same-source 渰: fixed public GlyphWiki original15rows/15primitive calls/27P, including nondrawing metadata row5. Whole raw4 filledP and its original Q use positiveX [285/334,0,0,1,4214/835,0] anchored at original guide headX34.4, separating water-ending from roofDL with public gap1 and retaining water-base contact; other14rows P/Q/flags exact. Direct original12clock36 plus12current+12prefix fix canonical lower order raw15,13,14. Normalize200to100once into12logical/15masks/27P,7originalQ14width/pad7/source-start gates plus8cardinals. Original water3 primitive-guide endpoint gap is preserved, not bridged. Public font remains heavier/slanted and positioned differently; inner roofH right endpoint contacts roofDR and lower廾 left onset lies near boxbottom where domestic shows white gaps. These independent source-font contacts are disclosed, not exact publisher whole-shape identity. No original/authored engine capture claim, mixed filled-font, official geometry, publisher microclock identity, all-time proof or fresh appUI test.
+
+Editable public data: public/hanja-strokes/dictionary-reviewed-glyphwiki-batch1542.json. Publisher SVG/CSS and screenshots are not redistributed.

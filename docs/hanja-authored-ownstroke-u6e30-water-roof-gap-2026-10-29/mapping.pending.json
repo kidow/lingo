@@ -1,0 +1,132 @@
+{
+  "schema": "hanja-source-logical-mapping-hypothesis/v1",
+  "glyph": "渰",
+  "status": "pending-original12clock-and-root-source-order-role-review",
+  "nativeApproved": false,
+  "runtimeApplied": false,
+  "logical": 12,
+  "sourceRaw": 15,
+  "drawingRaw": 14,
+  "sourcePrimitives": 15,
+  "P": 27,
+  "rawGroupsOneBased": [
+    [
+      1
+    ],
+    [
+      2
+    ],
+    [
+      3,
+      4
+    ],
+    [
+      6
+    ],
+    [
+      7
+    ],
+    [
+      8
+    ],
+    [
+      9
+    ],
+    [
+      10,
+      11
+    ],
+    [
+      12
+    ],
+    [
+      13
+    ],
+    [
+      14
+    ],
+    [
+      15
+    ]
+  ],
+  "retainedNondrawingRawOneBased": [
+    5
+  ],
+  "sourcePCountsPerLogical": [
+    2,
+    2,
+    3,
+    3,
+    2,
+    2,
+    1,
+    3,
+    1,
+    4,
+    2,
+    2
+  ],
+  "sourcePrimitiveCountsPerLogical": [
+    1,
+    1,
+    2,
+    1,
+    1,
+    1,
+    1,
+    2,
+    1,
+    2,
+    1,
+    1
+  ],
+  "existingEvidence": {
+    "all12StaticDirectionsPath": "docs/hanja-goal-glyphwiki-batch710-2026-10-12/review.json",
+    "SHA256": "7de6ab07c60fdcfc9a3d7b285d3fdfdebda179e02f5b33bee796b73957e474f7",
+    "boundedWaterStaticPath": "docs/hanja-authored-ownstroke-u6e30-water-roof-gap-2026-10-29/native-static-review.json",
+    "boundedWaterStaticSHA256": "e485f68aac0407157a76b838fbc74de32d304d67fa6e98ee3843350c747b618c",
+    "fullClockObserved": false,
+    "completeMappingObserved": false
+  },
+  "unresolvedCanonicalOrder": {
+    "sourceOrderHypothesisLastThree": [
+      13,
+      14,
+      15
+    ],
+    "sourcePrimitiveDescriptions": [
+      "raw13 vertical then descending-left curve",
+      "raw14 right vertical down",
+      "raw15 lower horizontal right"
+    ],
+    "approval": false,
+    "reason": "Existing review reports all12 static directions but does not preserve per-logical raw membership or last-three writing order. Own original12clock must settle this; source raw order is only a placeholder."
+  },
+  "guideRisks": [
+    {
+      "hypothesisLogical": 3,
+      "raws": [
+        3,
+        4
+      ],
+      "facts": "First original quadratic body ends(37.95,184); next rising quadratic starts(34.4,150). Whole-source filled overlap is preserved; no invented guide bridge or direction approval."
+    },
+    {
+      "hypothesisLogical": 8,
+      "raws": [
+        10,
+        11
+      ],
+      "facts": "Original H end and V start match; full2P/flags retained. Canonical membership pending direct review."
+    },
+    {
+      "hypothesisLogical": 10,
+      "raws": [
+        13
+      ],
+      "facts": "Original straight plus quadratic primitive pair. Placeholder logical index may change after own original12clock."
+    }
+  ],
+  "sourceGeometryChangedByGrouping": false,
+  "requiredNext": "ROOT original12clock first, fix any source order mismatch, then inspect12current/prefix. Fullmapping/temporal/runtime remain unapproved."
+}
