@@ -1,0 +1,139 @@
+{
+  "schema": "hanja-exact-source-contact-projection-prefix-proof/v1",
+  "glyph": "憯",
+  "status": "PASS-exact-public-math-only",
+  "fixture": {
+    "path": "docs/hanja-authored-source-u61af-dlheads-2026-10-30/fixtures-execution-draft.json",
+    "SHA256": "40aafd2a8c96a3041ad3572dc80c36ce8520ae88122249b56ed6d110e96f57cb"
+  },
+  "metric": "Exact Fraction.from_float binary64 of normalized SVG path literals; all source vertices and cross-polygon edge intersections partition projection critical cells",
+  "targets": [
+    {
+      "strictSeedBoundaryDistanceSquaredExact": "1",
+      "originProjection": 37.6,
+      "minimumProjection": 30.8,
+      "maximumProjection": 61.2,
+      "perpendicularMinimum": 24.5,
+      "perpendicularMaximum": 31.5,
+      "directionDotDerivativeEndpoints": null,
+      "pen": 5,
+      "axis": [
+        1,
+        0
+      ],
+      "origin": [
+        37.6,
+        30.5
+      ],
+      "originProjectionExact": "5291729562160333/140737488355328",
+      "minimumProjectionExact": "8669429282688205/281474976710656",
+      "maximumProjectionExact": "4306567143673037/70368744177664",
+      "negativeExtentExact": "1914029841632461/281474976710656",
+      "positiveExtentExact": "3321404725185741/140737488355328",
+      "criticalLevels": 6,
+      "allCriticalAndOpenCellSections": 11,
+      "edgeCrossingLevelsIncluded": 5,
+      "allPolygonsSimplePositive": true,
+      "strictSeedInsidePriorAndSource": true,
+      "allSectionsSinglePositiveInterval": true,
+      "bad": [],
+      "allPositiveBandPrefixesConnectedToCompletedPrior": true,
+      "newP": 0,
+      "sourceGuideUnchanged": true,
+      "sourceWeightUnchanged": true,
+      "runtimeApproved": false
+    },
+    {
+      "strictSeedBoundaryDistanceSquaredExact": "1",
+      "originProjection": 1592.8999999999999,
+      "minimumProjection": 1244.5,
+      "maximumProjection": 2719,
+      "perpendicularMinimum": 3892.2,
+      "perpendicularMaximum": 4407.75,
+      "directionDotDerivativeEndpoints": [
+        1595.6,
+        1278
+      ],
+      "pen": 7,
+      "axis": [
+        58,
+        -25
+      ],
+      "origin": [
+        48.8,
+        49.5
+      ],
+      "originProjectionExact": "56045186300300487/35184372088832",
+      "minimumProjectionExact": "175147804258205701/140737488355328",
+      "maximumProjectionExact": "191332615419068421/70368744177664",
+      "negativeExtentExact": "49032940942996247/140737488355328",
+      "positiveExtentExact": "79242242818467447/70368744177664",
+      "criticalLevels": 27,
+      "allCriticalAndOpenCellSections": 53,
+      "edgeCrossingLevelsIncluded": 16,
+      "allPolygonsSimplePositive": true,
+      "strictSeedInsidePriorAndSource": true,
+      "allSectionsSinglePositiveInterval": true,
+      "bad": [],
+      "allPositiveBandPrefixesConnectedToCompletedPrior": true,
+      "newP": 0,
+      "sourceGuideUnchanged": true,
+      "sourceWeightUnchanged": true,
+      "runtimeApproved": false
+    },
+    {
+      "strictSeedBoundaryDistanceSquaredExact": "1",
+      "originProjection": 68,
+      "minimumProjection": 62.4,
+      "maximumProjection": 93.2,
+      "perpendicularMinimum": 24.5,
+      "perpendicularMaximum": 31.5,
+      "directionDotDerivativeEndpoints": null,
+      "pen": 9,
+      "axis": [
+        1,
+        0
+      ],
+      "origin": [
+        68,
+        30.5
+      ],
+      "originProjectionExact": "68",
+      "minimumProjectionExact": "8782019273372467/140737488355328",
+      "maximumProjectionExact": "6558366957358285/70368744177664",
+      "negativeExtentExact": "788129934789837/140737488355328",
+      "positiveExtentExact": "1773292353277133/70368744177664",
+      "criticalLevels": 6,
+      "allCriticalAndOpenCellSections": 11,
+      "edgeCrossingLevelsIncluded": 5,
+      "allPolygonsSimplePositive": true,
+      "strictSeedInsidePriorAndSource": true,
+      "allSectionsSinglePositiveInterval": true,
+      "bad": [],
+      "allPositiveBandPrefixesConnectedToCompletedPrior": true,
+      "newP": 0,
+      "sourceGuideUnchanged": true,
+      "sourceWeightUnchanged": true,
+      "runtimeApproved": false
+    }
+  ],
+  "claim": "For compact finite polygon unions with one connected nonempty fiber at each projection level, every closed projection-band restriction is connected; every positive band includes the same strict source/prior seed neighborhood. Endpoint0 renders no ink and endpoint1 uses originalD.",
+  "limits": [
+    "Finite source-specific exact polygon geometry, not native raster or publisher microclock approval",
+    "Display clip timing is authored; originalP/guide/weights retained"
+  ],
+  "newEngine": 0,
+  "server": 0,
+  "actualTemporalApproved": false,
+  "runtimeApplied": false,
+  "verifier": {
+    "path": "docs/hanja-display-contact-u61af-pen5-7-9-2026-10-30/verify-contact-prefix.py",
+    "SHA256": "ccc20b3b09f9d043a5fed60e8f10dfeba679467b480e75ae7d1ef383bca04c30"
+  },
+  "baselineNativeHold": {
+    "path": "docs/hanja-authored-source-u61af-dlheads-2026-10-30/native-actual-baseline-hold.json",
+    "SHA256": "430ec125b7be1106734a62fbfcc78aebaa6c27f44e8460587a74aba672cf4548",
+    "stillNotCorrectedNativeApproved": true
+  },
+  "numericScope": "Proof uses exact rational values of actual normalized SVG binary64 literals. Runtime band/corner arithmetic is separately explicit binary64; native raster and finite observed continuity remain required."
+}
