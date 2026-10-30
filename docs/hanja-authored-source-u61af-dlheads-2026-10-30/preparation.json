@@ -1,0 +1,55 @@
+{
+  "schema": "hanja-authored-source-whole-Q-affine-preparation/v1",
+  "date": "2026-10-30",
+  "glyph": "憯",
+  "status": "ready-for-independent-contact-analysis-and-ROOT-static-review",
+  "source": {
+    "path": "docs/hanja-goal-glyphwiki-batch909-2026-10-13/engine-whole-u61af.json",
+    "SHA256": "60313eb6e3c2a2a7344a803535ea87439311ae9e9171bae6f6a1ad2acae6f11c"
+  },
+  "recipe": {
+    "path": "docs/hanja-authored-source-u61af-dlheads-2026-10-30/recipe.json",
+    "SHA256": "acfab1e5472638ae6845255f3328a6956ae5e612acd27ab12a5c2e875263573f"
+  },
+  "fixture": {
+    "path": "docs/hanja-authored-source-u61af-dlheads-2026-10-30/fixtures-authored-whole.json",
+    "SHA256": "ea08d7f1092fad884f8cd42ec4582d58b0abfbcf5951449cca240f2043360612",
+    "keys": [
+      "groups",
+      "trace",
+      "defaults"
+    ]
+  },
+  "materializer": {
+    "path": "docs/hanja-authored-source-u61af-dlheads-2026-10-30/prepare-local-transform.mjs",
+    "SHA256": "6b0e3840095dde9c5097b0f0484c1b73a8e25f5c17c9016e82c3b53ab115cb08",
+    "engine": false,
+    "writeMode": false
+  },
+  "check": {
+    "path": "docs/hanja-authored-source-u61af-dlheads-2026-10-30/local-transform-check.json",
+    "SHA256": "b1a57a53c26e2f7a0d9761a358ce7637c9d178628622f5cc83c465b6a24ebd69"
+  },
+  "counts": {
+    "raw": 19,
+    "calls": 21,
+    "P": 41,
+    "changedRaw": 2,
+    "unchangedRaw": 17
+  },
+  "checkOnlyCommand": "node docs/hanja-authored-source-u61af-dlheads-2026-10-30/prepare-local-transform.mjs --check-only",
+  "historicalUnexecutedSourceEdit": {
+    "sourceRecord": "docs/hanja-authored-source-u61af-dlheads-2026-10-30/source-record.json",
+    "captureScript": "docs/hanja-authored-source-u61af-dlheads-2026-10-30/capture-once.mjs",
+    "captureScriptSHA256": "4bd5617628cad4c9027c1e9ba1abbf66d96528aba7252d9f80c3ddea0b1e0bfa",
+    "newEngineAuthorized": false,
+    "superseded": true
+  },
+  "engineRuns": 0,
+  "serverStarts": 0,
+  "sharedWrites": false,
+  "staticApproved": false,
+  "mappingApproved": false,
+  "actualTemporalApproved": false,
+  "runtimeApplied": false
+}

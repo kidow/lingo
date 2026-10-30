@@ -1,0 +1,45 @@
+{
+  "glyph": "憯",
+  "date": "2026-10-30",
+  "status": "authored-candidate-only-unapproved",
+  "basis": {
+    "macroClock": "docs/hanja-official-media-compare-u61af-2026-10-29/native-clock-review.json",
+    "macroViewsAlreadyReviewed": 45,
+    "defaultPartialReview": "docs/hanja-source-mapping-u61af-default-vs0-2026-10-30/native-static-partial-hold-review.json",
+    "source": "docs/hanja-goal-glyphwiki-batch909-2026-10-13/sources.json"
+  },
+  "criteriaClarification": {
+    "exactZeroHorizontalDeltaRequiredByMacroEvidence": false,
+    "shortStrokeRole": "downward V followed by rightward H, with the observed head and foot contacts",
+    "smallFontSlantAutomaticallyRejected": false,
+    "priorHistoricalT1Hold": "Preserved as the former stricter source-selection filter, not a native visual rejection or proof that every authored placement is impossible.",
+    "defaultShortVSelectionsAlreadyPartiallyPassed": [5, 9],
+    "newNativeReviewStillRequired": true
+  },
+  "candidate": {
+    "kind": "locally authored whole-primitive positive affine correction",
+    "originalWhole": false,
+    "publicOriginalRawGroups": 19,
+    "changedRawOneBased": [6, 12],
+    "unchangedRawCount": 17,
+    "changes": [
+      {"raw": 6, "xUnchanged": true, "yScaleExact": "40/49", "yTranslateExact": "1035/49", "guideStartY": [17, 35], "guideEndYFixed": 115},
+      {"raw": 12, "xUnchanged": true, "yScaleExact": "37/46", "yTranslateExact": "981/46", "guideStartY": [17, 35], "guideEndYFixed": 109}
+    ],
+    "allPolygonPointsAndAllCallGuidePointsSameTransformPerRaw": true,
+    "sourceFlagsPreserved": true,
+    "newBridge": false,
+    "trimmedSourcePoints": false,
+    "newEngineRequired": false,
+    "anchorOrigin": "Public original component first horizontals at y35; each public original descending curve endpoint remains fixed.",
+    "publisherCoordinateFit": false
+  },
+  "pendingGates": [
+    "Exact 17 unchanged groups/traces and two complete affine transformations",
+    "Before/after contact graph, including separation from retained heart and day components",
+    "Fresh native whole and all15 current/prefix comparison against original macro evidence",
+    "Actual renderer starts, handoffs, completion and selected natural playback"
+  ],
+  "nativeApproved": false,
+  "runtimeApplied": false
+}

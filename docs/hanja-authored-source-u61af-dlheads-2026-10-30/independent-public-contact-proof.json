@@ -1,0 +1,439 @@
+{
+  "schema": "hanja-independent-original-whole-Q-affine-contact-check/v1",
+  "date": "2026-10-30",
+  "glyph": "憯",
+  "inputSHA256": {
+    "docs/hanja-goal-glyphwiki-batch909-2026-10-13/engine-whole-u61af.json": "60313eb6e3c2a2a7344a803535ea87439311ae9e9171bae6f6a1ad2acae6f11c",
+    "docs/hanja-authored-source-u61af-dlheads-2026-10-30/fixtures-authored-whole.json": "ea08d7f1092fad884f8cd42ec4582d58b0abfbcf5951449cca240f2043360612",
+    "docs/hanja-authored-source-u61af-dlheads-2026-10-30/recipe.json": "acfab1e5472638ae6845255f3328a6956ae5e612acd27ab12a5c2e875263573f",
+    "docs/hanja-authored-ownstroke-u6030-raw6-head-gap-2026-10-29/verify-contact-strip-growth.py": "945d1d0f0297b056cd6e10049ee01a38271c1989e6676b528532656f411252ea",
+    "docs/hanja-authored-source-u61af-dlheads-2026-10-30/prepare-local-transform.mjs": "6b0e3840095dde9c5097b0f0484c1b73a8e25f5c17c9016e82c3b53ab115cb08",
+    "docs/hanja-authored-source-u61af-dlheads-2026-10-30/verify-public-contact.py": "8734db4095fe1917ec500cf01c49233da1939e566ecfc2b344e747d07e8f4fd1"
+  },
+  "counts": {
+    "raw": 19,
+    "calls": 21,
+    "P": 41,
+    "changedWholeQRaw": [
+      6,
+      12
+    ],
+    "unchangedRawCount": 17
+  },
+  "preservation": {
+    "candidateEqualsIndependentDeclaredJSArithmetic": true,
+    "other17RawGroupsAndCallsCanonicalJSONExact": true,
+    "defaultsExact": true,
+    "allOriginalFlagsOffAndXCoordinatesPreserved": true,
+    "allChangedWholePAndOriginalQControlsSameAffine": true,
+    "newP": 0,
+    "newGuide": 0,
+    "trim": 0,
+    "newBridge": 0
+  },
+  "arithmeticCertificate": {
+    "declaredExpression": "(num*sourceY+shift)/den; binary64 multiply, add, divide in that order",
+    "sourceLiteralModel": "Original JSON decimal rational compared separately with its binary64 parse",
+    "sameExactAffineDefinition": true,
+    "singleRationalFloatConversionClaim": false,
+    "candidateAcceptanceTolerance": null,
+    "perCoordinateProof": "Stored value bit-equals declared operation order; every multiplication/addition/division error <=its own halfULP and propagated against exact rational map. No blanket epsilon.",
+    "units": [
+      {
+        "rawOneBased": 6,
+        "transformedCoordinatesChecked": 62,
+        "allStoredNumbersBitEqualDeclaredJS": true,
+        "singleRationalRoundingDifferences": [],
+        "maxAbsoluteErrorToExactRational": "11/1724034232352768",
+        "maxPropagatedErrorBoundExact": "39/3448068464705536",
+        "maxAbsoluteErrorApprox": 6.380383749682532e-15,
+        "maxBoundApprox": 1.1310680283528125e-14
+      },
+      {
+        "rawOneBased": 12,
+        "transformedCoordinatesChecked": 62,
+        "allStoredNumbersBitEqualDeclaredJS": true,
+        "singleRationalRoundingDifferences": [
+          {
+            "field": "P/0/1",
+            "declaredJS": 48.35217391304347,
+            "singleRationalRounding": 48.35217391304348,
+            "differenceULP": 1,
+            "absoluteErrorToExactRational": "47/8092405580431360",
+            "perCoordinateErrorBoundExact": "131/16184811160862720"
+          },
+          {
+            "field": "P/0/8",
+            "declaredJS": 103.93260869565216,
+            "singleRationalRounding": 103.93260869565218,
+            "differenceULP": 1,
+            "absoluteErrorToExactRational": "21/2023101395107840",
+            "perCoordinateErrorBoundExact": "121/8092405580431360"
+          },
+          {
+            "field": "P/0/15",
+            "declaredJS": 90.33913043478262,
+            "singleRationalRounding": 90.3391304347826,
+            "differenceULP": 1,
+            "absoluteErrorToExactRational": "37/4046202790215680",
+            "perCoordinateErrorBoundExact": "111/8092405580431360"
+          },
+          {
+            "field": "P/0/19",
+            "declaredJS": 57.60217391304347,
+            "singleRationalRounding": 57.60217391304348,
+            "differenceULP": 1,
+            "absoluteErrorToExactRational": "47/8092405580431360",
+            "perCoordinateErrorBoundExact": "131/16184811160862720"
+          },
+          {
+            "field": "P/0/20",
+            "declaredJS": 46.90434782608696,
+            "singleRationalRounding": 46.904347826086955,
+            "differenceULP": 1,
+            "absoluteErrorToExactRational": "11/2023101395107840",
+            "perCoordinateErrorBoundExact": "21/2023101395107840"
+          },
+          {
+            "field": "P/0/21",
+            "declaredJS": 35.160869565217396,
+            "singleRationalRounding": 35.16086956521739,
+            "differenceULP": 1,
+            "absoluteErrorToExactRational": "41/8092405580431360",
+            "perCoordinateErrorBoundExact": "201/32369622321725440"
+          },
+          {
+            "field": "P/1/2",
+            "declaredJS": 33.47173913043478,
+            "singleRationalRounding": 33.471739130434784,
+            "differenceULP": 1,
+            "absoluteErrorToExactRational": "89/16184811160862720",
+            "perCoordinateErrorBoundExact": "89/16184811160862720"
+          },
+          {
+            "field": "call/0/P/0/1",
+            "declaredJS": 48.35217391304347,
+            "singleRationalRounding": 48.35217391304348,
+            "differenceULP": 1,
+            "absoluteErrorToExactRational": "47/8092405580431360",
+            "perCoordinateErrorBoundExact": "131/16184811160862720"
+          },
+          {
+            "field": "call/0/P/0/8",
+            "declaredJS": 103.93260869565216,
+            "singleRationalRounding": 103.93260869565218,
+            "differenceULP": 1,
+            "absoluteErrorToExactRational": "21/2023101395107840",
+            "perCoordinateErrorBoundExact": "121/8092405580431360"
+          },
+          {
+            "field": "call/0/P/0/15",
+            "declaredJS": 90.33913043478262,
+            "singleRationalRounding": 90.3391304347826,
+            "differenceULP": 1,
+            "absoluteErrorToExactRational": "37/4046202790215680",
+            "perCoordinateErrorBoundExact": "111/8092405580431360"
+          },
+          {
+            "field": "call/0/P/0/19",
+            "declaredJS": 57.60217391304347,
+            "singleRationalRounding": 57.60217391304348,
+            "differenceULP": 1,
+            "absoluteErrorToExactRational": "47/8092405580431360",
+            "perCoordinateErrorBoundExact": "131/16184811160862720"
+          },
+          {
+            "field": "call/0/P/0/20",
+            "declaredJS": 46.90434782608696,
+            "singleRationalRounding": 46.904347826086955,
+            "differenceULP": 1,
+            "absoluteErrorToExactRational": "11/2023101395107840",
+            "perCoordinateErrorBoundExact": "21/2023101395107840"
+          },
+          {
+            "field": "call/0/P/0/21",
+            "declaredJS": 35.160869565217396,
+            "singleRationalRounding": 35.16086956521739,
+            "differenceULP": 1,
+            "absoluteErrorToExactRational": "41/8092405580431360",
+            "perCoordinateErrorBoundExact": "201/32369622321725440"
+          },
+          {
+            "field": "call/0/P/1/2",
+            "declaredJS": 33.47173913043478,
+            "singleRationalRounding": 33.471739130434784,
+            "differenceULP": 1,
+            "absoluteErrorToExactRational": "89/16184811160862720",
+            "perCoordinateErrorBoundExact": "89/16184811160862720"
+          }
+        ],
+        "maxAbsoluteErrorToExactRational": "21/2023101395107840",
+        "maxPropagatedErrorBoundExact": "17/1011550697553920",
+        "maxAbsoluteErrorApprox": 1.0380102574582333e-14,
+        "maxBoundApprox": 1.6805880358847588e-14
+      }
+    ]
+  },
+  "matricesExact": {
+    "6": [
+      "1",
+      "0",
+      "0",
+      "40/49",
+      "0",
+      "1035/49"
+    ],
+    "12": [
+      "1",
+      "0",
+      "0",
+      "37/46",
+      "0",
+      "981/46"
+    ]
+  },
+  "publicAnchors": {
+    "head6": [
+      96,
+      17
+    ],
+    "targetOwnH4Y": 35,
+    "end6": [
+      58.4,
+      115
+    ],
+    "head12": [
+      157.6,
+      17
+    ],
+    "targetOwnH10Y": 35,
+    "end12": [
+      118.4,
+      109
+    ],
+    "publisherCoordinatesUsed": false
+  },
+  "contactMethod": "Existing exact Fraction polygon-edge contact/nonconvex ear intersection; bbox disjoint first. Areas sum polygon-pair intersections, not union area. Original coordinate decimal rationals and exact matrix rationals; stored-candidate decimal contact classes separately checked. This is not a formal interval rendering proof.",
+  "old": {
+    "contacts": [
+      {
+        "rawPairOneBased": [
+          4,
+          6
+        ],
+        "positiveArea": true,
+        "sumPairIntersectionAreaExact": "23837761/517500",
+        "boundaryOnly": false,
+        "unresolvedNonSimplePolygonPairs": []
+      },
+      {
+        "rawPairOneBased": [
+          5,
+          6
+        ],
+        "positiveArea": true,
+        "sumPairIntersectionAreaExact": "3772362/92075",
+        "boundaryOnly": false,
+        "unresolvedNonSimplePolygonPairs": []
+      },
+      {
+        "rawPairOneBased": [
+          6,
+          7
+        ],
+        "positiveArea": true,
+        "sumPairIntersectionAreaExact": "177241/54900",
+        "boundaryOnly": false,
+        "unresolvedNonSimplePolygonPairs": []
+      },
+      {
+        "rawPairOneBased": [
+          10,
+          12
+        ],
+        "positiveArea": true,
+        "sumPairIntersectionAreaExact": "885647463/19392350",
+        "boundaryOnly": false,
+        "unresolvedNonSimplePolygonPairs": []
+      },
+      {
+        "rawPairOneBased": [
+          11,
+          12
+        ],
+        "positiveArea": true,
+        "sumPairIntersectionAreaExact": "24350771/590625",
+        "boundaryOnly": false,
+        "unresolvedNonSimplePolygonPairs": []
+      },
+      {
+        "rawPairOneBased": [
+          12,
+          13
+        ],
+        "positiveArea": true,
+        "sumPairIntersectionAreaExact": "334668/168625",
+        "boundaryOnly": false,
+        "unresolvedNonSimplePolygonPairs": []
+      }
+    ],
+    "stats": {
+      "rawPairs": 35,
+      "polygonPairs": 219,
+      "bboxDisjointPolygonPairs": 190
+    }
+  },
+  "newExactAffine": {
+    "contacts": [
+      {
+        "rawPairOneBased": [
+          4,
+          6
+        ],
+        "positiveArea": true,
+        "sumPairIntersectionAreaExact": "1579565121/51909620",
+        "boundaryOnly": false,
+        "unresolvedNonSimplePolygonPairs": []
+      },
+      {
+        "rawPairOneBased": [
+          5,
+          6
+        ],
+        "positiveArea": true,
+        "sumPairIntersectionAreaExact": "2904439232/66554985",
+        "boundaryOnly": false,
+        "unresolvedNonSimplePolygonPairs": []
+      },
+      {
+        "rawPairOneBased": [
+          6,
+          7
+        ],
+        "positiveArea": true,
+        "sumPairIntersectionAreaExact": "743222198/23591295",
+        "boundaryOnly": false,
+        "unresolvedNonSimplePolygonPairs": []
+      },
+      {
+        "rawPairOneBased": [
+          10,
+          12
+        ],
+        "positiveArea": true,
+        "sumPairIntersectionAreaExact": "30393672236013/1000608948700",
+        "boundaryOnly": false,
+        "unresolvedNonSimplePolygonPairs": []
+      },
+      {
+        "rawPairOneBased": [
+          11,
+          12
+        ],
+        "positiveArea": true,
+        "sumPairIntersectionAreaExact": "30575830688499/705351350000",
+        "boundaryOnly": false,
+        "unresolvedNonSimplePolygonPairs": []
+      },
+      {
+        "rawPairOneBased": [
+          12,
+          13
+        ],
+        "positiveArea": true,
+        "sumPairIntersectionAreaExact": "4262615009/159876450",
+        "boundaryOnly": false,
+        "unresolvedNonSimplePolygonPairs": []
+      }
+    ],
+    "stats": {
+      "rawPairs": 35,
+      "polygonPairs": 219,
+      "bboxDisjointPolygonPairs": 187
+    }
+  },
+  "newStoredCandidateDecimals": {
+    "contacts": [
+      {
+        "rawPairOneBased": [
+          4,
+          6
+        ],
+        "positiveArea": true,
+        "sumPairIntersectionAreaExact": "16775612659075918655429010702605578442456740820227568026676947023582759989/551300903535093483514522010388680651769245808000000000000000000000000000",
+        "boundaryOnly": false,
+        "unresolvedNonSimplePolygonPairs": []
+      },
+      {
+        "rawPairOneBased": [
+          5,
+          6
+        ],
+        "positiveArea": true,
+        "sumPairIntersectionAreaExact": "2047280689849830416647187945305652761099095250091035272262031/46913267835842647806670555015207852143455506000000000000000",
+        "boundaryOnly": false,
+        "unresolvedNonSimplePolygonPairs": []
+      },
+      {
+        "rawPairOneBased": [
+          6,
+          7
+        ],
+        "positiveArea": true,
+        "sumPairIntersectionAreaExact": "123818775177009583717814244064973/3930244897959183600000000000000",
+        "boundaryOnly": false,
+        "unresolvedNonSimplePolygonPairs": []
+      },
+      {
+        "rawPairOneBased": [
+          10,
+          12
+        ],
+        "positiveArea": true,
+        "sumPairIntersectionAreaExact": "46140699584055730777451358638550562405547519383168097440343450386517778807/1519026610031671974382297618434262313957405530000000000000000000000000000",
+        "boundaryOnly": false,
+        "unresolvedNonSimplePolygonPairs": []
+      },
+      {
+        "rawPairOneBased": [
+          11,
+          12
+        ],
+        "positiveArea": true,
+        "sumPairIntersectionAreaExact": "70823348314911611422924932211627749866845518236459427934889/1633818058923045629349753182354826571376624800000000000000",
+        "boundaryOnly": false,
+        "unresolvedNonSimplePolygonPairs": []
+      },
+      {
+        "rawPairOneBased": [
+          12,
+          13
+        ],
+        "positiveArea": true,
+        "sumPairIntersectionAreaExact": "4883559613908462857298504897749/183166007905138400000000000000",
+        "boundaryOnly": false,
+        "unresolvedNonSimplePolygonPairs": []
+      }
+    ],
+    "stats": {
+      "rawPairs": 35,
+      "polygonPairs": 219,
+      "bboxDisjointPolygonPairs": 187
+    }
+  },
+  "contactChanges": [],
+  "newContacts": [],
+  "lostContacts": [],
+  "newExternal忄日Contacts": [],
+  "lostExternal忄日Contacts": [],
+  "exactVsStoredContactStatusDisagreements": [],
+  "externalScope": "Changed6/12 vs retained忄1..3 and日15..19. Within兓 all changed-to-retained4..14 and changed6/12 pair included; all other pairs unchanged by identity.",
+  "sourceConfidenceOrCompatibilityClaim": false,
+  "nativeStaticApproved": false,
+  "mappingApproved": false,
+  "actualTemporalApproved": false,
+  "runtimeApplied": false,
+  "engineInvocations": 0,
+  "server": 0,
+  "sharedFilesChanged": false
+}
