@@ -1,0 +1,137 @@
+{
+  "schema": "hanja-exact-source-H-preparation/v1",
+  "date": "2026-10-30",
+  "glyph": "憯",
+  "status": "disabled-isolated-native-baseline-pending",
+  "harness": {
+    "path": "scripts/hanja-actual-component-review.mjs",
+    "beforeSHA256": "e5ac2ed3f49a41b9644c58d199d710b4f4805c77cdd467312f6a8a21de7f8d82",
+    "afterSHA256": "878df10ebbef8e19fdb73d9d6866ae82be71987ad64a85b5a39c1a5de7dd5b63",
+    "patch": "docs/hanja-authored-source-u61af-dlheads-2026-10-30/actual-H-integration.pending.patch",
+    "patchSHA256": "1f7f229d40450822b5f985070d3b1a408544cccb0e3e79522793dae9de75463e",
+    "hunks": 17,
+    "positionsAscending": [
+      1113,
+      574616,
+      1006453,
+      1440175,
+      1449260,
+      2944540,
+      3040520,
+      3055384,
+      3082444,
+      3097131,
+      3106529,
+      3113227,
+      3116207,
+      3158003,
+      3183000,
+      3248106,
+      3410547
+    ],
+    "forwardInverseExact": true,
+    "sharedWritten": false
+  },
+  "profile": {
+    "path": "docs/hanja-authored-source-u61af-dlheads-2026-10-30/actual-profile-start.pending.json",
+    "SHA256": "51004260d1df1cdfc257490b143493a8818f8926207e6ae7d5ca1b63d175594d",
+    "flags": [
+      false,
+      false,
+      true
+    ],
+    "R": "37306a42416754fe932a76d09caf2075dbfdde10c92a1c90c71f00eb961ebb2e",
+    "ordinary": "28a25d57eba2218bf0b34ff7cf93bee4cbad701ce47391eeca462119fc083e3f",
+    "variants": "4903a2aa3e72ef53559020842f23eb933e2ebdc23517644172f743778f083bf6",
+    "expectedResourceClosureModules": 399,
+    "inputPins": 1324
+  },
+  "source": {
+    "fixture": "docs/hanja-authored-source-u61af-dlheads-2026-10-30/fixtures-execution-draft.json",
+    "fixtureSHA256": "40aafd2a8c96a3041ad3572dc80c36ce8520ae88122249b56ed6d110e96f57cb",
+    "geometrySHA256": "5658697be4334ff89119b9aea9f6c592ebe47391907f7df3c41dad4ee8209ef3",
+    "logical": 15,
+    "masks": 21,
+    "P": 41,
+    "Q": 6,
+    "cardinal": 15,
+    "boundaries": 6,
+    "sourceBodyProperties": [
+      "defaults",
+      "groups",
+      "trace"
+    ],
+    "unchangedRaw": 17,
+    "changedWholeQRaw": [
+      6,
+      12
+    ],
+    "normalization": "SourceYaffine200 then /2 exactly once; no revealTransform",
+    "originalWhole": false,
+    "isOriginalEngineCapture": false,
+    "isActualLocallyAuthoredEngineCapture": false
+  },
+  "checks": {
+    "sourceGuard": {
+      "actualStrictSourceGuard": true,
+      "sourceBody3": true,
+      "source17UnchangedAndTwoExactAffines": true,
+      "negative": 4,
+      "pens": 15,
+      "masks": 21
+    },
+    "client": {
+      "Hsyntax": true,
+      "browserSyntax": true,
+      "actualSetupExecuted": true,
+      "onlyUIbuttonStub": true,
+      "buttons": 16,
+      "labels": [
+        "憯 1m1 start-release3",
+        "憯 2m1 start-release3",
+        "憯 6m1 start-release3",
+        "憯 7m2 start-release3",
+        "憯 10m1 start-release3",
+        "憯 11m2 start-release3",
+        "憯 aggregate93 initial30-boundary18-ending45",
+        "憯 aggregate initial30",
+        "憯 aggregate source-boundary18",
+        "憯 aggregate ending45",
+        "憯 compound pen5 compact9",
+        "憯 compound pen7 compact9",
+        "憯 compound pen9 compact9",
+        "憯 compound pen11 compact9",
+        "憯 compound pen13 compact9",
+        "憯 all-curve full-round residual"
+      ],
+      "actualGeneratedFixtureProjection7": true,
+      "sourceStrokesExact": true,
+      "routeNegatives": 4,
+      "localBaselineClosureSelected": true,
+      "SSR": false
+    },
+    "sourceCoverage": {
+      "pass": 6,
+      "proofRerun": false
+    },
+    "SSR": false,
+    "server": false,
+    "legacyABExcludedOnlyForThisCase": true,
+    "closedUnionContacts": 14,
+    "actualRuntimeImportDeferredToROOTStartup": true
+  },
+  "nativeRisks": [
+    "Logical5/9 vertical→left-extendingH guides jump left while sourcePcontact does not establish connected growingdisplay.",
+    "Logical7 vertical→NE originalguide gap remains; candidate source contour may appear detached at secondmask onset.",
+    "Logical11 finalUP filleddecoration with Hguide is preserved and needs actualreview.",
+    "Authoredraw6/12 fullQ-affine filledheads and source gates require fresh early/ending review."
+  ],
+  "approval": {
+    "actualTemporal": false,
+    "runtime": false
+  },
+  "sharedHWritten": false,
+  "sharedRWritten": false,
+  "build": false,
+  "fullTypecheck": false
+}
