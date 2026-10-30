@@ -73,6 +73,7 @@ export function measureReviewedU7e1dFrame(policy:ReviewedU7e1dPolicy,progress:nu
  const owner=path?.ownerSVGElement,defs=path?.parentElement,target=defs?.parentElement
  ensure(path&&owner&&defs?.localName==='defs'&&target?.localName==='g'&&target.getAttribute('data-stroke-start-gate')===policy.id,'Connected exact 縝 measurement tree required')
  const coordinates=coordinateBinding([path],owner),originalD=policy.segment.revealPath
+ ensure(typeof originalD==='string','Original source reveal guide required')
  const exact=()=>coordinates()&&path.parentElement===defs&&defs.parentElement===target&&target.getAttribute('data-stroke-start-gate')===policy.id&&path.getAttribute('data-u7e1d-measurement')==='true'&&path.getAttribute('d')===originalD&&path.getAttribute('pathLength')===null
  ensure(exact(),'Original 縝 measurement path required')
  const phase=progress===0?'empty':progress===1?'full':progress<=SHARE?'foot':'body',bodyProgress=progress<=SHARE?0:progress===1?1:(progress-SHARE)/(1-SHARE)

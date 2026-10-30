@@ -8,7 +8,7 @@ function ensure(value:unknown,message:string):asserts value {if(!value)throw new
 function sameJSON(a:unknown,b:unknown):boolean{if(Object.is(a,b))return true;if(!a||!b||typeof a!=='object'||typeof b!=='object'||Array.isArray(a)!==Array.isArray(b)||Object.getPrototypeOf(a)!==Object.getPrototypeOf(b))return false;const ak=Reflect.ownKeys(a),bk=Reflect.ownKeys(b);if(ak.length!==bk.length)return false;return bk.every(k=>{const ad=Object.getOwnPropertyDescriptor(a,k),bd=Object.getOwnPropertyDescriptor(b,k);return!!ad&&!!bd&&'value'in ad&&'value'in bd&&ad.enumerable===bd.enumerable&&sameJSON(ad.value,bd.value)})}
 function sameSegment(a:HanjaOutlineSegment,b:HanjaOutlineSegment){return sameJSON(a,b)}
 function sameWhole(strokes:HanjaOutlineStrokes){return sameJSON(strokes,FIXED_STROKES)}
-export type ReviewedU61e5Context=Readonly<{id:'u61e5-eight-initial-guides'}>
+export type ReviewedU61e5Context=Readonly<{id:'u61e5-three-initial-guides'}>
 type ReviewedU61e5InitialBase=Readonly<{initialArcMax:7;storedBounds:Readonly<Record<string,unknown>>;notRasterProof:true;notPreviousMaskConnectivityProof:true;notFullSweepProof:true}>
 export type ReviewedU61e5GrowingCertificate=ReviewedU61e5InitialBase & (Readonly<{syntax:'MQ';initialKind:'single-quadratic';T:string;K:string}>|Readonly<{syntax:'ML';initialKind:'straight-first-leg';firstLegLength:string;K:'0'}>)
 export type ReviewedU61e5Policy=Readonly<{id:string;kind:'growing-u61e5-caps';segment:HanjaOutlineSegment;certificate:ReviewedU61e5GrowingCertificate}>

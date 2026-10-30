@@ -18,7 +18,7 @@ const TARGETS=deepFreeze([{"pen":6,"mask":2,"id":"u84eb-6-2","path":"M62.8925 31
 function ownCertificate(stored:typeof TARGETS[number]['certificate']):ReviewedU84ebGrowingCertificate{
  const common={initialArcMax:7 as const,storedBounds:stored,notRasterProof:true as const,notPreviousMaskConnectivityProof:true as const,notFullSweepProof:true as const,T:stored.T,K:stored.K};
  if(stored.syntax==='MQQ'){ensure(stored.initialKind==='first-quadratic-of-two'&&stored.firstQIsNotFullGuide&&stored.secondQPreserved,'Own 蓫7 first Q/full original MQQ certificate');return deepFreeze({...common,syntax:'MQQ' as const,initialKind:'first-quadratic-of-two' as const})}
- if(stored.syntax==='MC'){ensure(stored.initialKind==='single-cubic'&&stored.lambdaBernstein.length===5&&stored.curvatureNumeratorBernstein.length===3,'Own 蓫15m2 cubic Bernstein certificate');return deepFreeze({...common,syntax:'MC' as const,initialKind:'single-cubic' as const})}
+ if(stored.syntax==='MC'){ensure(stored.initialKind==='single-cubic'&&stored.lambdaBernstein?.length===5&&stored.curvatureNumeratorBernstein?.length===3,'Own 蓫15m2 cubic Bernstein certificate');return deepFreeze({...common,syntax:'MC' as const,initialKind:'single-cubic' as const})}
  ensure(stored.syntax==='MQ'&&stored.initialKind==='single-quadratic','Own 蓫 exact MQ certificate');
  return deepFreeze({...common,syntax:'MQ' as const,initialKind:'single-quadratic' as const})
 }

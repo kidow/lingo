@@ -7,7 +7,7 @@ function same(a:unknown,b:unknown):boolean{if(Object.is(a,b))return true;if(!a||
 const CONTEXT=Object.freeze({id:'u6726-vs2-original-short-left' as const})
 export type ReviewedU6726VS2TailContext=typeof CONTEXT
 export type ReviewedU6726VS2TailPolicy=Readonly<{id:string;kind:'original-left-tail-u6726-vs2';row:typeof ROWS[number]}>
-const POLICIES=Object.freeze(ROWS.map(row=>Object.freeze({id:row.id,kind:'original-left-tail-u6726-vs2' as const,row})))
+const POLICIES:readonly ReviewedU6726VS2TailPolicy[]=Object.freeze(ROWS.map(row=>Object.freeze({id:row.id,kind:'original-left-tail-u6726-vs2' as const,row})))
 export function reviewedU6726VS2TailContext(strokes:HanjaOutlineStrokes):ReviewedU6726VS2TailContext|null{return reviewedU6726VS2Context(strokes)?CONTEXT:null}
 export function reviewedU6726VS2TailPolicy(context:ReviewedU6726VS2TailContext|null,pen:number,mask:number):ReviewedU6726VS2TailPolicy|null{return context===CONTEXT?POLICIES.find(p=>p.row.pen===pen+1&&p.row.mask===mask+1)??null:null}
 export type ReviewedU6726VS2TailFrame=Readonly<{policyId:string;progress:number;phase:'empty'|'body'|'tail'|'complete';bodyProgress:number;tailProgress:number;bodyOutline:string;tailOutline:string;bodyRect:Readonly<{x:number;y:number;width:number;height:number}>;tailRect:Readonly<{x:number;y:number;width:number;height:number}>;L:number|null;point:Readonly<{x:number;y:number}>|null;alpha:number;originalMaskCount:24;paintOriginalInkOnce:true}>

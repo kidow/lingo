@@ -1,3 +1,5 @@
+'use client'
+
 import {REVIEWED_U821D_CONTACT_INPUT,makeReviewedU821dContactContext,reviewedU821dContactPolicy,sampleReviewedU821dContactFrame,verifyReviewedU821dContactPrior,type ReviewedU821dContactPolicy} from '@/lib/hanja-stroke-contact-left-head-u821d'
 import {REVIEWED_U61AF_CONTACT_INPUT,makeReviewedU61afContactContext,reviewedU61afContactPolicy,sampleReviewedU61afContactFrame,verifyReviewedU61afContactPrior,type ReviewedU61afContactPolicy} from '@/lib/hanja-stroke-contact-u61af'
 import {REVIEWED_U97E1_PEN8_INPUT,makeReviewedU97e1Pen8Context,sampleReviewedU97e1Pen8Frame,type ReviewedU97e1Pen8Context} from '@/lib/hanja-stroke-contact-phase-u97e1-pen8'
@@ -341,7 +343,6 @@ import { reviewedU6e4cFootContext, reviewedU6e4cFootPolicy, measureReviewedU6e4c
 import { reviewedU7dc5ReuseContext } from '@/lib/hanja-stroke-source-reuse-u7dc5'
 import { reviewedU7e86Context, reviewedU7e86Policy, measureReviewedU7e86Frame, commitReviewedU7e86Mask, type ReviewedU7e86Policy } from '@/lib/hanja-stroke-start-gate-u7e86'
 import { reviewedU7e1dContext, reviewedU7e1dPolicy, measureReviewedU7e1dFrame, commitReviewedU7e1dMask, type ReviewedU7e1dPolicy } from '@/lib/hanja-stroke-start-gate-u7e1d'
-'use client'
 import { reviewedU73b9Context, reviewedU73b9Policy, measureReviewedU73b9Frame, commitReviewedU73b9Mask, type ReviewedU73b9Policy } from '@/lib/hanja-stroke-start-gate-u73b9'
 import { reviewedU7dc5FootAliasPolicy, reviewedU7d8eContext, reviewedU7d8ePolicy, measureReviewedU7d8eFrame, commitReviewedU7d8eMask, type ReviewedU7d8ePolicy } from '@/lib/hanja-stroke-start-gate-u7d8e'
 import { reviewedU7d8eClipContext, reviewedU7d8eClipPolicy, measureReviewedU7d8eClipFrame, commitReviewedU7d8eClip, REVIEWED_U7D8E_CLIP_GEOMETRY as U7D8E_CLIP, type ReviewedU7d8eClipPolicy } from '@/lib/hanja-stroke-source-clip-u7d8e'

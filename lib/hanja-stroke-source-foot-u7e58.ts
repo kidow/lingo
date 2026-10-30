@@ -12,7 +12,6 @@ function freeze<T>(value:T):Readonly<T>{if(value&&typeof value==='object'){for(c
 freeze(FIXED_STROKES);freeze(FEET)
 export type ReviewedU7e58FootContext=Readonly<{id:'u7e58-exact18-foot'}>
 export type ReviewedU7e58FootPolicy=Readonly<{id:'u7e58-1-2'|'u7e58-2-2';kind:'source-foot-x-u7e58';segment:HanjaOutlineSegment;footIndex:0|1}>
-const FOOT_SHARE=REVIEWED_U7E58_FOOT_SOURCE.footPhaseShare
 const CONTEXT:ReviewedU7e58FootContext=Object.freeze({id:'u7e58-exact18-foot'})
 freeze(FIXED_STROKES);freeze(FIXED_FULL5);freeze(FIXED_IDENTITY);freeze(FEET)
 const POLICIES:readonly ReviewedU7e58FootPolicy[]=[Object.freeze({id:'u7e58-1-2',kind:'source-foot-x-u7e58',segment:FIXED_STROKES[0][1],footIndex:0}),Object.freeze({id:'u7e58-2-2',kind:'source-foot-x-u7e58',segment:FIXED_STROKES[1][1],footIndex:1})]

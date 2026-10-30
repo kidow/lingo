@@ -8,7 +8,7 @@ function sameJSON(a:unknown,b:unknown):boolean{if(Object.is(a,b))return true;if(
 freeze(FIXED_STROKES);freeze(REVIEWED_U90B0_CONTACT_FOOT_PROOFS)
 function ensure(v:unknown,m:string):asserts v{if(!v)throw new Error(m)}
 const value=(r:readonly string[])=>Number(r[0])/Number(r[1]),point=(p:readonly (readonly string[])[])=>p.map(value)
-export type ReviewedU90b0ContactContext=Readonly<{id:'u90b0-contact-exact8'}>
+export type ReviewedU90b0ContactContext=Readonly<{id:'u90b0-contact-exact11'}>
 export type ReviewedU90b0ContactPolicy=Readonly<{id:'u90b0-1-2';kind:'contact-foot-x-u90b0';pen:0;mask:1;segment:HanjaOutlineSegment;phaseShare:number;cutX:number;maxX:number}>
 const CONTEXT:ReviewedU90b0ContactContext=Object.freeze({id:'u90b0-contact-exact11'})
 const POLICIES:readonly ReviewedU90b0ContactPolicy[]=Object.freeze([Object.freeze({id:'u90b0-1-2' as const,kind:'contact-foot-x-u90b0' as const,pen:0 as const,mask:1 as const,segment:FIXED_STROKES[0][1],phaseShare:value(REVIEWED_U90B0_CONTACT_FOOT_PROOFS[0].phaseShare),cutX:value(REVIEWED_U90B0_CONTACT_FOOT_PROOFS[0].cutX),maxX:value(REVIEWED_U90B0_CONTACT_FOOT_PROOFS[0].xRange[1])})])
@@ -79,6 +79,7 @@ export function measureReviewedU90b0ContactFrame(policy:ReviewedU90b0ContactPoli
  const owner=path?.ownerSVGElement,defs=path?.parentElement,target=defs?.parentElement
  ensure(path&&owner&&defs?.localName==='defs'&&target?.localName==='g'&&target.getAttribute('data-stroke-start-gate')===policy.id,'Connected exact 邰 measurement tree required')
  const coordinates=coordinateBinding([path],owner),originalD=policy.segment.revealPath
+ ensure(typeof originalD==='string','Exact original 邰 guide required')
  const exact=()=>coordinates()&&path.parentElement===defs&&defs.parentElement===target&&target.getAttribute('data-stroke-start-gate')===policy.id&&target.getAttribute('data-stroke-reveal-progress')===String(progress)&&path.getAttribute('data-u90b0-contact-measurement')==='true'&&path.getAttribute('d')===originalD&&path.getAttribute('pathLength')===null
  ensure(exact(),'Original 邰 measurement path required')
  const phase=progress===0?'empty':progress===1?'full':progress<=SHARE?'foot':'body',bodyProgress=progress<=SHARE?0:progress===1?1:(progress-SHARE)/(1-SHARE)

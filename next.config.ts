@@ -12,7 +12,11 @@ import type { NextConfig } from 'next'
  * /_next/image 캐시가 400 응답에도 옛 이미지를 계속 그리던 문제가 사라진다.
  */
 const nextConfig: NextConfig = {
+  // The build script uses Webpack: Turbopack rounds some reviewed JSON decimals
+  // and breaks the exact data checks. Keep their values and validators intact.
   output: 'export',
+  // Keep deployment checks strict while archived review drafts remain outside the app.
+  typescript: { tsconfigPath: 'tsconfig.build.json' },
   images: { unoptimized: true },
   /*
    * 개발 표식을 끈다. 화면이 하나뿐이라 그것이 알려 줄 것이 없는데(라우트가
