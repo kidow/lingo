@@ -1,0 +1,30 @@
+*** Begin Patch
+*** Update File: scripts/hanja-actual-component-review.mjs
+@@
+ }
+ 
++
++// Exact 憯 helper runtime dependency alias; source file and module count remain unchanged.
++if(deps['@/lib/hanja-stroke-contact-u61af']){
++ const name=deps['@/lib/hanja-stroke-contact-u61af'],file='lib/hanja-stroke-contact-u61af.ts',fixed='f60d3ba123c252202c7bf6e5fde2f133c20369516ca044ad6edf8b2e99390476';assert.equal(C.inputSHA256[file],fixed);assert.equal(sha(read(file)),fixed);assert(deps['@/lib/hanja-stroke-outline']);
++ const statement="import {outlineSegmentProgress,type HanjaOutlineSegment,type HanjaOutlineStrokes} from './hanja-stroke-outline.ts'";assert.equal(raw[name].split(statement).length,2,'Exact 憯 runtime outline import');raw[name]=raw[name].replace(statement,()=>statement.replace("from './hanja-stroke-outline.ts'","from '@/lib/hanja-stroke-outline'"));
++}
++
+ // Exact original 凞 source-only dependencies. No component replacement and no source geometry edits.
+ if(deps['@/lib/hanja-stroke-source-reveal-u51de-base']){
+*** Update File: docs/hanja-authored-source-u61af-dlheads-2026-10-30/actual-profile-contact-start.pending.json
+@@
+     "lib/hanja-stroke-cardinal-contact-u705d-hkcs-m.ts": "4ec2a615cdb035a46c2d08ae702badeddd76610e08b5744a1cd8230f8ed6b5ae",
+     "lib/hanja-stroke-logical3-u705d-hkcs-m.ts": "a40c483ee79ef249dddc0c9d80beba21c35109757f819e0ff690e9fddd6476e7",
+-    "scripts/hanja-actual-component-review.mjs": "a9b76064374d99be85203b3cba02ab0989627ff8407e642bdb1e48466ae662c7",
++    "scripts/hanja-actual-component-review.mjs": "8fd878fd044af06ec6c5ab906a61ceebc3f081ab1bd0a6b99f6fdb36055050bb",
+     "docs/hanja-source-original-u51de-base-2026-10-27/baseline-H-source-reveal-compatibility.patch": "a280c53c59ca8ba7028cf2af1e5e6af686ab124af1ab5a168c856a75979d1459",
+     "docs/hanja-source-original-u9008-hkcs-2026-10-27/source-preview-h-observer-version.patch": "ccad4c2cb268cb885e2dd5310d95bf8a8446533fdb8eb9e7eeaee931238fbbd5",
+@@
+     "docs/hanja-authored-source-u61af-dlheads-2026-10-30/native-actual-baseline-hold.json": "430ec125b7be1106734a62fbfcc78aebaa6c27f44e8460587a74aba672cf4548"
+   },
+-  "adapterSHA256": "a9b76064374d99be85203b3cba02ab0989627ff8407e642bdb1e48466ae662c7",
++  "adapterSHA256": "8fd878fd044af06ec6c5ab906a61ceebc3f081ab1bd0a6b99f6fdb36055050bb",
+   "sourceU61afContactPolicy": {
+     "kind": "source-P-contact-projection-band-u61af",
+*** End Patch

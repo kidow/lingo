@@ -1,0 +1,67 @@
+{
+  "glyph": "憯",
+  "date": "2026-10-30",
+  "status": "PASS-BOUNDED-ACTUAL-CONTACT-REPLAY",
+  "runtimeAppliedAtReview": false,
+  "actualProductUIReviewed": false,
+  "wholeGlyphAutoplayReviewed": false,
+  "browser": "Codex in-app browser tab3",
+  "server": {"pid": 53618, "port": 64636, "CJS": 400, "ESM": 400, "newSSRChecks": 1},
+  "pins": {
+    "H": "8fd878fd044af06ec6c5ab906a61ceebc3f081ab1bd0a6b99f6fdb36055050bb",
+    "R": "9c9061ab78746b0bbfd831f1daf05ce04c093923bd9d52f7c34d30e95f5f9816",
+    "profile": "aa9aafda98034adcd7b19960bb6429f06a2eb03aee148715a2b934392b6d720f",
+    "helper": "f60d3ba123c252202c7bf6e5fde2f133c20369516ca044ad6edf8b2e99390476",
+    "fixture": "40aafd2a8c96a3041ad3572dc80c36ce8520ae88122249b56ed6d110e96f57cb",
+    "geometry": "5658697be4334ff89119b9aea9f6c592ebe47391907f7df3c41dad4ee8209ef3"
+  },
+  "freshDiscreteObservations": {
+    "contactMaskTiny9ForPens5And7And9": 27,
+    "compact9ForPens5And7And9": 27,
+    "all15Initial": 30,
+    "sourceBoundaries": 18,
+    "all15Ending": 45,
+    "previousFailureZooms": [{"pen":5,"progress":0.32},{"pen":7,"progress":0.4},{"pen":9,"progress":0.32}],
+    "totalWithOverlappingEndpoints": 150
+  },
+  "naturalPlayback": {
+    "selectedPens": [5,7,9],
+    "durationSeconds": 8,
+    "displayPixels": 520,
+    "startCompletionAndReplayObserved": true,
+    "reportedObservations": 33,
+    "acceptedVisualObservations": 32,
+    "reportedProgressByPen": {
+      "5": [0.07573750000000001,1,0.0581875,0.13319999999999982,0.1936125000000002,0.2528999999999996,0.2988125,0.3434624999999996,1],
+      "7": [0.050887499999999815,0.11130000000000018,0.1715749999999998,0.21651249999999983,0.275875,0.32058749999999964,0.3665500000000002,0.4256875,1,0.0686249999970205,1],
+      "9": [0.06348749999701976,0.1384499999970194,0.19786249999701977,0.2581249999970205,0.3330749999970194,0.39259999999701906,0.4528374999970201,0.5133624999970198,1,0.06648749999925349,1,0.06006249999776628,1]
+    },
+    "exclusion": "The first pen9 end crop missed the right tip and is excluded from visual counts. Subsequent full-page pen9 completion, restart and completion were directly observed instead.",
+    "scopeNote": "One pen5 end crop omitted lower prior ink but retained the entire selected pen5. Natural progress values are DOM observations near capture, not exact screenshot timestamps.",
+    "bad": [],
+    "errors": []
+  },
+  "freshAcceptedObservations": 182,
+  "reusedEvidence": {
+    "baseline": "native-actual-baseline-hold.json",
+    "unchanged12CompactPens": 108,
+    "unchanged5CurveReleaseTargets": 15,
+    "unchangedActualViews": 123,
+    "oldGeneric6CurveResidualBlank": 6,
+    "residualScope": "Original source/full-round coverage evidence only. These are not claimed as six fresh custom-renderer residual tests; custom7 no longer uses the generic curve mask.",
+    "condition": "Same source geometry, masks and guides; the new selector is active only for exact5m2/7m2/9m2, and other12 pens delegate to unchanged generic branches."
+  },
+  "findings": [
+    "The previously detached5/9 horizontal fragments and7 rising head are now revealed from completed predecessor contact, without adding filled geometry or guides.",
+    "Reviewed tiny starts, handoffs, midframes, completions and selected natural replay show no detached source fragments or missing completion ink.",
+    "At completion each target uses the original full source outline without a display clip.",
+    "All final settled requested-frame, prior, originalP, clip, opacity, owner and source checks passed.",
+    "The old baseline visible failures remain preserved and are not counted as passes."
+  ],
+  "settlingNote": "The first ending45 status read showed transient requestedFrame failures while later board entries were committing. After settling, all46 states and all requested-frame checks were true without any code, tolerance or source change; the settled observations are the accepted evidence.",
+  "focusedChecks": {"helperTests":7,"helperPass":7,"helperFail":0,"helperDurationMs":97.487958,"selectedHelperAndTestTypeErrors":0,"selectedRendererTypeErrors":0,"buildRun":false,"wholeProjectTypecheckRun":false},
+  "sourceGeometryAuthored": true,
+  "displayTimingAuthored": true,
+  "publisherMicroclockEquivalent": false,
+  "privateMediaPersisted": false
+}

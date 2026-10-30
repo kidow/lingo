@@ -1,0 +1,69 @@
+*** Begin Patch
+*** Update File: components/hanja/stroke-outlines.tsx
+@@
+ import {REVIEWED_U821D_CONTACT_INPUT,makeReviewedU821dContactContext,reviewedU821dContactPolicy,sampleReviewedU821dContactFrame,verifyReviewedU821dContactPrior,type ReviewedU821dContactPolicy} from '@/lib/hanja-stroke-contact-left-head-u821d'
++import {REVIEWED_U61AF_CONTACT_INPUT,makeReviewedU61afContactContext,reviewedU61afContactPolicy,sampleReviewedU61afContactFrame,verifyReviewedU61afContactPrior,type ReviewedU61afContactPolicy} from '@/lib/hanja-stroke-contact-u61af'
+ import {REVIEWED_U97E1_PEN8_INPUT,makeReviewedU97e1Pen8Context,sampleReviewedU97e1Pen8Frame,type ReviewedU97e1Pen8Context} from '@/lib/hanja-stroke-contact-phase-u97e1-pen8'
+ import {REVIEWED_U97CE_PEN8_INPUT,makeReviewedU97cePen8Context,sampleReviewedU97cePen8Frame,type ReviewedU97cePen8Context} from '@/lib/hanja-stroke-contact-phase-u97ce-pen8'
+@@
+   const u9ea4DisplayContext=makeReviewedU9ea4DisplayContext(REVIEWED_U9EA4_DISPLAY_INPUT,strokes)
+   const u821dContactContext=makeReviewedU821dContactContext(REVIEWED_U821D_CONTACT_INPUT,strokes)
++  const u61afContactContext=makeReviewedU61afContactContext(REVIEWED_U61AF_CONTACT_INPUT,strokes)
+   const u85efDisplayContext=makeReviewedU85efDisplayContext(REVIEWED_U85EF_DISPLAY_INPUT,strokes)
+   const u76ccQContactContext=makeReviewedU76ccQContactContext(REVIEWED_U76CC_Q_CONTACT_INPUT,strokes)
+@@
+       const u9ea4QRowPolicy=reviewedU9ea4QPolicy(u9ea4DisplayContext,stroke,1)
+       const u821dContactRowPolicy=reviewedU821dContactPolicy(u821dContactContext,stroke,1)
++      const u61afContactRowPolicy=reviewedU61afContactPolicy(u61afContactContext,stroke,1)
+       const u76ccQRowPolicy=reviewedU76ccQContactPolicy(u76ccQContactContext,stroke,1)
+       const u9714QRowPolicy=reviewedU9714QContactPolicy(u9714QContactContext,stroke,1)
+@@
+       const u840dHkcsLogical7Policy=reviewedU840dHkcsLogical7Policy(u840dHkcsLogical7Context,stroke)
+       if(u840dHkcsLogical7Policy)return <g key={stroke} data-outline-stroke={stroke+1}><U840dHkcsLogical7Outline policy={u840dHkcsLogical7Policy} segments={segments} progress={Number.isFinite(progress)?Math.max(0,Math.min(1,progress)):NaN} clipId={id+'-'+stroke+'-u840d'}/></g>
+-      return <g key={stroke} data-outline-stroke={stroke + 1} data-source-x-contact-owner={u821dContactRowPolicy?.id} data-source-x-contact-frame={u821dContactRowPolicy?exactFoldFrame:undefined} data-source-x-contact-logical-progress={u821dContactRowPolicy?String(Number.isFinite(progress)?Math.max(0,Math.min(1,progress)):NaN):undefined} data-bi-q-owner={u9ea4QRowPolicy?.id} data-bi-q-frame={u9ea4QRowPolicy?exactFoldFrame:undefined} data-bi-q-logical-progress={u9ea4QRowPolicy?String(Number.isFinite(progress)?Math.max(0,Math.min(1,progress)):NaN):undefined} data-terminal-up-owner={u85efTerminalRowPolicy?.id} data-terminal-up-frame={u85efTerminalRowPolicy?exactFoldFrame:undefined} data-terminal-up-logical-progress={u85efTerminalRowPolicy?String(Number.isFinite(progress)?Math.max(0,Math.min(1,progress)):NaN):undefined} data-q-contact-owner={(u9714QRowPolicy??u76ccQRowPolicy)?.id} data-q-contact-frame={(u9714QRowPolicy??u76ccQRowPolicy)?exactFoldFrame:undefined} data-q-contact-logical-progress={(u9714QRowPolicy??u76ccQRowPolicy)?String(Number.isFinite(progress)?Math.max(0,Math.min(1,progress)):NaN):undefined} data-fold-contact-owner={exactFoldRowPolicy?.id} data-fold-contact-frame={exactFoldRowPolicy?exactFoldFrame:undefined} data-fold-contact-logical-progress={exactFoldRowPolicy?String(Number.isFinite(progress)?Math.max(0,Math.min(1,progress)):NaN):undefined} data-u83f0-k-source-window10-owner={u83f0KPreviewContext&&stroke===9?id+'-'+stroke+'-1-owner':undefined} data-u8609-fold-owner={u8609SourceContexts&&[5,13].includes(stroke)?id+'-u8609-fold-'+(stroke+1):undefined} data-u8609-fold-pen={u8609SourceContexts&&[5,13].includes(stroke)?String(stroke+1):undefined} data-u8b92-prior14-owner={u8b92HkcsContext&&stroke===13?id+'-u8b92-prior14':undefined} data-u8b92-prior14-pen={u8b92HkcsContext&&stroke===13?'14':undefined}>{segments.map((segment, index) => {
++      return <g key={stroke} data-outline-stroke={stroke + 1} data-source-u61af-contact-owner={u61afContactRowPolicy?.id} data-source-u61af-contact-frame={u61afContactRowPolicy?exactFoldFrame:undefined} data-source-u61af-contact-logical-progress={u61afContactRowPolicy?String(Number.isFinite(progress)?Math.max(0,Math.min(1,progress)):NaN):undefined} data-source-x-contact-owner={u821dContactRowPolicy?.id} data-source-x-contact-frame={u821dContactRowPolicy?exactFoldFrame:undefined} data-source-x-contact-logical-progress={u821dContactRowPolicy?String(Number.isFinite(progress)?Math.max(0,Math.min(1,progress)):NaN):undefined} data-bi-q-owner={u9ea4QRowPolicy?.id} data-bi-q-frame={u9ea4QRowPolicy?exactFoldFrame:undefined} data-bi-q-logical-progress={u9ea4QRowPolicy?String(Number.isFinite(progress)?Math.max(0,Math.min(1,progress)):NaN):undefined} data-terminal-up-owner={u85efTerminalRowPolicy?.id} data-terminal-up-frame={u85efTerminalRowPolicy?exactFoldFrame:undefined} data-terminal-up-logical-progress={u85efTerminalRowPolicy?String(Number.isFinite(progress)?Math.max(0,Math.min(1,progress)):NaN):undefined} data-q-contact-owner={(u9714QRowPolicy??u76ccQRowPolicy)?.id} data-q-contact-frame={(u9714QRowPolicy??u76ccQRowPolicy)?exactFoldFrame:undefined} data-q-contact-logical-progress={(u9714QRowPolicy??u76ccQRowPolicy)?String(Number.isFinite(progress)?Math.max(0,Math.min(1,progress)):NaN):undefined} data-fold-contact-owner={exactFoldRowPolicy?.id} data-fold-contact-frame={exactFoldRowPolicy?exactFoldFrame:undefined} data-fold-contact-logical-progress={exactFoldRowPolicy?String(Number.isFinite(progress)?Math.max(0,Math.min(1,progress)):NaN):undefined} data-u83f0-k-source-window10-owner={u83f0KPreviewContext&&stroke===9?id+'-'+stroke+'-1-owner':undefined} data-u8609-fold-owner={u8609SourceContexts&&[5,13].includes(stroke)?id+'-u8609-fold-'+(stroke+1):undefined} data-u8609-fold-pen={u8609SourceContexts&&[5,13].includes(stroke)?String(stroke+1):undefined} data-u8b92-prior14-owner={u8b92HkcsContext&&stroke===13?id+'-u8b92-prior14':undefined} data-u8b92-prior14-pen={u8b92HkcsContext&&stroke===13?'14':undefined}>{segments.map((segment, index) => {
+         const p = amounts[index]
+         const u51deBaseHookPolicy=reviewedU51deBaseHookPolicy(u51deBaseHookContext,stroke,index)
+@@
+         const u9ea4TerminalPolicy=reviewedU9ea4TerminalPolicy(u9ea4DisplayContext,stroke,index)
+         if(u9ea4TerminalPolicy)return <U9ea4TerminalOutline key={index} policy={u9ea4TerminalPolicy} segment={segment} progress={Number.isFinite(progress)?progress>=1?1:p:NaN} previousMaskProgress={amounts[index-1]} clipId={id+'-'+stroke+'-'+index} logicalProgress={Number.isFinite(progress)?Math.max(0,Math.min(1,progress)):NaN} frameId={exactFoldFrame}/>
++        const u61afContactPolicy=reviewedU61afContactPolicy(u61afContactContext,stroke,index)
++        if(u61afContactPolicy)return <U61afContactOutline key={index} policy={u61afContactPolicy} segment={segment} progress={Number.isFinite(progress)?progress>=1?1:p:NaN} previousMaskProgress={amounts[index-1]} clipId={id+'-'+stroke+'-'+index} logicalProgress={Number.isFinite(progress)?Math.max(0,Math.min(1,progress)):NaN} frameId={exactFoldFrame}/>
+         const u821dContactPolicy=reviewedU821dContactPolicy(u821dContactContext,stroke,index)
+         if(u821dContactPolicy)return <U821dContactOutline key={index} policy={u821dContactPolicy} segment={segment} progress={Number.isFinite(progress)?progress>=1?1:p:NaN} previousMaskProgress={amounts[index-1]} clipId={id+'-'+stroke+'-'+index} logicalProgress={Number.isFinite(progress)?Math.max(0,Math.min(1,progress)):NaN} frameId={exactFoldFrame}/>
+@@
+ }
+ 
++function U61afContactOutline({policy,segment,progress,previousMaskProgress,clipId,logicalProgress,frameId}:{policy:ReviewedU61afContactPolicy;segment:HanjaOutlineSegment;progress:number;previousMaskProgress:number;clipId:string;logicalProgress:number;frameId:string}){
++ const group=useRef<SVGGElement>(null),ink=useRef<SVGPathElement>(null),rect=useRef<SVGRectElement>(null),polygon=useRef<SVGPolygonElement>(null),clipPath=useRef<SVGClipPathElement>(null)
++ let frame:ReturnType<typeof sampleReviewedU61afContactFrame>|null=null
++ try{frame=sampleReviewedU61afContactFrame(policy,segment,progress,previousMaskProgress)}catch{}
++ useLayoutEffect(()=>{
++  const g=group.current,p=ink.current,r=rect.current,q=polygon.current,c=clipPath.current,f=frame
++  const reset=()=>{p?.setAttribute('visibility','hidden');p?.setAttribute('data-source-u61af-contact-committed','false')};reset()
++  if(!g||!p||!c||!f)return reset
++  const owner=g.ownerSVGElement,doc=g.ownerDocument,view=doc.defaultView,defs=c.parentNode as SVGDefsElement|null,key=clipId+'-source-u61af-contact-clip'
++  const previousComplete=()=>verifyReviewedU61afContactPrior(policy,g,previousMaskProgress,logicalProgress,frameId)
++  const stable=()=>{
++   const node=f.clip?.mode==='polygon'?q:r;if(!node||!owner||!view||!defs||defs.localName!=='defs'||defs.parentNode!==g||c.parentNode!==defs||node.parentNode!==c||c.children.length!==1||c.children[0]!==node||p.parentNode!==g||Array.from(g.children).filter(n=>n.localName==='path').length!==1)return false
++   if(g.getAttribute('data-stroke-start-gate')!==policy.id||g.getAttribute('data-stroke-reveal-policy')!==policy.kind||g.getAttribute('data-stroke-reveal-progress')!==String(progress)||g.getAttribute('data-source-u61af-contact-previous-progress')!==String(previousMaskProgress)||p.getAttribute('d')!==segment.outline||p.getAttribute('mask')!==null||p.getAttribute('pathLength')!==null||c.getAttribute('id')!==key||c.getAttribute('clipPathUnits')!=='userSpaceOnUse')return false
++   if(f.originalPDirect){if(p.getAttribute('clip-path')!==null)return false}else{if(p.getAttribute('clip-path')!=='url(#'+key+')')return false}
++   const b=segment.bounds;if(f.clip?.mode==='polygon'){if(node.localName!=='polygon'||node.getAttribute('points')!==f.clip.points)return false}else{const expected=f.clip??{x:b[0],y:b[1],width:b[2]-b[0],height:0};if(node.localName!=='rect'||['x','y','width','height'].some(k=>node.getAttribute(k)!==String(expected[k as keyof typeof expected])))return false}
++   for(const n of [g,p,defs,c,node]){if(!n.isConnected||n.ownerDocument!==doc||(n as SVGElement).ownerSVGElement!==owner||n.getAttribute('transform')!==null||n.getAttribute('filter')!==null||(n!==p&&n.getAttribute('clip-path')!==null)||n.getAttribute('mask')!==null)return false;const s=view.getComputedStyle(n);if(s.transform!=='none'||s.filter!=='none'||(n!==p&&s.clipPath!=='none')||!['','none'].includes(s.getPropertyValue('mask-image'))||Number(s.opacity)!==1||['translate','rotate','scale'].some(k=>!['','none'].includes(s.getPropertyValue(k))))return false}
++   const paint=view.getComputedStyle(p);return paint.stroke==='none'&&Number(paint.fillOpacity)===1&&paint.fill!=='none'&&paint.fill!=='transparent'&&paint.display!=='none'&&paint.visibility===p.getAttribute('visibility')&&paint.fillRule==='nonzero'&&(progress===0||previousComplete())
++  }
++  if(!stable())return reset
++  p.setAttribute('data-source-u61af-contact-progress',String(progress));p.setAttribute('data-source-u61af-contact-phase',f.phase);p.setAttribute('data-source-u61af-contact-direct-original',String(f.originalPDirect));p.setAttribute('data-source-u61af-contact-source-full',String(f.originalPDirect));p.setAttribute('data-source-u61af-contact-one-p','true');p.setAttribute('data-source-u61af-contact-ua-read','false')
++  if(!stable())return reset
++  p.setAttribute('data-source-u61af-contact-committed','true');p.setAttribute('visibility',f.visible?'visible':'hidden');if(!stable())reset();return reset
++ },[policy,segment,progress,previousMaskProgress,clipId,logicalProgress,frameId])
++ const b=segment.bounds,clip=frame?.clip,key=clipId+'-source-u61af-contact-clip'
++ return <g ref={group} data-stroke-start-gate={policy.id} data-stroke-reveal-policy={policy.kind} data-stroke-reveal-progress={Number.isFinite(progress)?progress:'invalid'} data-source-u61af-contact-previous-progress={String(previousMaskProgress)} data-source-u61af-contact-display-clock="original-P-contact-projection-band" data-source-u61af-contact-context="u61af-exact-contact-band" data-source-u61af-contact-fingerprint={policy.fingerprint} data-source-u61af-contact-pen={String(policy.pen)} data-source-u61af-contact-mask="2" data-source-u61af-contact-frame={frameId} data-source-u61af-contact-logical-progress={String(logicalProgress)}>
++  <defs><clipPath ref={clipPath} id={key} clipPathUnits="userSpaceOnUse">{clip?.mode==='polygon'?<polygon ref={polygon} points={clip.points}/>:<rect ref={rect} x={clip?.mode==='rect'?clip.x:b[0]} y={clip?.mode==='rect'?clip.y:b[1]} width={clip?.mode==='rect'?clip.width:b[2]-b[0]} height={clip?.mode==='rect'?clip.height:0}/>}</clipPath></defs>
++  <path ref={ink} data-source-u61af-contact-ink="true" d={segment.outline} fillRule="nonzero" clipPath={frame?.originalPDirect?undefined:'url(#'+key+')'} visibility="hidden"/>
++ </g>
++}
++
+ function U821dContactOutline({policy,segment,progress,previousMaskProgress,clipId,logicalProgress,frameId}:{policy:ReviewedU821dContactPolicy;segment:HanjaOutlineSegment;progress:number;previousMaskProgress:number;clipId:string;logicalProgress:number;frameId:string}){
+  const group=useRef<SVGGElement>(null),ink=useRef<SVGPathElement>(null),rect=useRef<SVGRectElement>(null),clipPath=useRef<SVGClipPathElement>(null)
+*** End Patch
