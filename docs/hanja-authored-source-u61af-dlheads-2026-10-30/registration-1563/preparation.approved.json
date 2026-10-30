@@ -1,0 +1,110 @@
+{
+  "schema": "hanja-approved-registration-preparation/v1",
+  "date": "2026-10-30",
+  "glyph": "憯",
+  "batch": 1563,
+  "status": "APPROVED-AWAITING-ROOT-PRODUCTION-APPLY",
+  "capsule": {
+    "path": "docs/hanja-authored-source-u61af-dlheads-2026-10-30/registration-1563/capsule.approved.json",
+    "SHA256": "af0016ad5b7aac8f002265e108f63ff652251336188b490f561322c04405ff96"
+  },
+  "approvedFourFiles": {
+    "path": "docs/hanja-authored-source-u61af-dlheads-2026-10-30/registration-1563/four-files.approved.patch",
+    "SHA256": "c709a9eb903bb49da68d1e8474d72d5cc4178116e7b2c2f009c092d7de918d60",
+    "targets": [
+      {
+        "path": "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch1563.json",
+        "SHA256": "6a1d43dae58870ba890b4ff927cb8b801ab9b1cc85d5ba335771fe9ddf56bcfc"
+      },
+      {
+        "path": "lib/hanja-stroke-dictionary-glyphwiki-batch1563.ts",
+        "SHA256": "03b1283053a18d86cc55c65c66468bdaf2d7f5121eb03b809824871d0aaa4633"
+      },
+      {
+        "path": "lib/hanja-stroke-dictionary-glyphwiki-batch1563.test.ts",
+        "SHA256": "9947ea6d665c1f255b14c1c9b3c20e1152073853d439f3ce772a215a07f6c443"
+      },
+      {
+        "path": "public/hanja-strokes/sources/glyphwiki-batch1563-NOTICE.md",
+        "SHA256": "dd8d188751b684caaa80fffbf596ca209e5095b00b51ac79c6830625533779cd"
+      }
+    ]
+  },
+  "ordinaryRegistry": {
+    "path": "docs/hanja-authored-source-u61af-dlheads-2026-10-30/registration-1563/ordinary-registry.pending.patch",
+    "SHA256": "3e7a0a7c3b6c22d96d497b3373f2faee3c0de723fe092b14b000c256e016b89c",
+    "beforeSHA256": "28a25d57eba2218bf0b34ff7cf93bee4cbad701ce47391eeca462119fc083e3f",
+    "afterSHA256": "60aca3bf1fd47aa4553575b88575b6147d19af9c8fe8bf004051166174506dea",
+    "anchors": 2
+  },
+  "variantRegistryUnchanged": "4903a2aa3e72ef53559020842f23eb933e2ebdc23517644172f743778f083bf6",
+  "finalNative": {
+    "path": "docs/hanja-authored-source-u61af-dlheads-2026-10-30/native-actual-contact-final-review.json",
+    "SHA256": "956468597105aeb373286293285da96241877eb4984b0d63f7e158622017f5af",
+    "freshDiscrete": 150,
+    "acceptedNatural": 32,
+    "reportedNatural": 33,
+    "freshAccepted": 182,
+    "unchangedActualViewsReused": 123,
+    "oldGeneric6Residual": "source/fullround coverage only"
+  },
+  "actualReviewProfile": {
+    "path": "docs/hanja-authored-source-u61af-dlheads-2026-10-30/actual-profile-contact-start.pending.json",
+    "SHA256": "aa9aafda98034adcd7b19960bb6429f06a2eb03aee148715a2b934392b6d720f"
+  },
+  "R": "9c9061ab78746b0bbfd831f1daf05ce04c093923bd9d52f7c34d30e95f5f9816",
+  "H": "8fd878fd044af06ec6c5ab906a61ceebc3f081ab1bd0a6b99f6fdb36055050bb",
+  "helper": "f60d3ba123c252202c7bf6e5fde2f133c20369516ca044ad6edf8b2e99390476",
+  "activationOrder": [
+    "Apply approvedFourFiles (4 AddFiles).",
+    "Apply ordinaryRegistry (2anchors).",
+    "Set SOURCE_INPUT.runtimeApplied and GLYPHWIKI_BATCH1563_RUNTIME_APPLIED to true in the new module only; approved registrationAuthorized is already true.",
+    "Run focused3 once, confirm exactresolver憯15 and wrong14/16 null; expect5978/0.",
+    "ROOT writes activationreceipt/newactualmoduleSHA and commits ownedmanifest."
+  ],
+  "focusCommand": "node --experimental-strip-types --test lib/hanja-stroke-dictionary-glyphwiki-batch1563.test.ts",
+  "validation": {
+    "selectedTSSyntax": [
+      {
+        "name": "module",
+        "parseDiagnostics": 0
+      },
+      {
+        "name": "test",
+        "parseDiagnostics": 0
+      }
+    ],
+    "existingCanonicalLoaderPreserved": true,
+    "rawJSONStringifyBundleEquality": false,
+    "pendingSelectedSemanticReuse": 2,
+    "newFullTypecheck": false,
+    "newPhysicalTests": false,
+    "newSourceEqualityChecks": false,
+    "SSR": false,
+    "server": false,
+    "build": false
+  },
+  "registeredMetadataExact15": true,
+  "immutableSourceProofPins": 28,
+  "RHAreHistoricalReviewSnapshotsOnly": true,
+  "runtimeFlagsInPreparedSource": false,
+  "registrationAuthorized": true,
+  "actualTemporalApproved": true,
+  "actualProductUI": false,
+  "wholeGlyphAutoplay": false,
+  "actualSharedWrites": false,
+  "actualProductionWrites": false,
+  "ownedProductionTargets": [
+    "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch1563.json",
+    "lib/hanja-stroke-dictionary-glyphwiki-batch1563.ts",
+    "lib/hanja-stroke-dictionary-glyphwiki-batch1563.test.ts",
+    "public/hanja-strokes/sources/glyphwiki-batch1563-NOTICE.md",
+    "lib/hanja-strokes.ts"
+  ],
+  "pendingDocumentsPreserved": [
+    "capsule.pending.json",
+    "four-files.pending.patch",
+    "preparation.pending.json"
+  ],
+  "recommendedCommitMessage": "feat(hanja): register reviewed Can stroke animation"
+}

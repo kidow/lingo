@@ -1,0 +1,79 @@
+{
+  "schema": "hanja-conditional-registration-preparation/v1",
+  "date": "2026-10-30",
+  "glyph": "憯",
+  "batch": 1563,
+  "status": "BLOCKED-PENDING-ROOT-FINAL-ACTUAL-RECEIPT",
+  "capsule": {
+    "path": "docs/hanja-authored-source-u61af-dlheads-2026-10-30/registration-1563/capsule.pending.json",
+    "SHA256": "4e245cc5e24ee9ab5edbcda5fece41e269bb3bf9b802dca2ef6b26bd1835f41b"
+  },
+  "conditionalFourFiles": {
+    "path": "docs/hanja-authored-source-u61af-dlheads-2026-10-30/registration-1563/four-files.pending.patch",
+    "SHA256": "f8e71a5f6e50917266ff8cde61ad8963651b92234016fd03d3edacf5a3e4dd9a",
+    "applyAllowed": false,
+    "allProductionFlags": false,
+    "targets": [
+      {
+        "path": "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch1563.json",
+        "SHA256": "7ccc2b6ce5de7ecf11f2edb31cae2d78b0ac19006f77027e74870bf6d6d0b527"
+      },
+      {
+        "path": "lib/hanja-stroke-dictionary-glyphwiki-batch1563.ts",
+        "SHA256": "9ee333496702735c3757e4b3b3706f5a617f7e3a67519465a63df99cabca2a20"
+      },
+      {
+        "path": "lib/hanja-stroke-dictionary-glyphwiki-batch1563.test.ts",
+        "SHA256": "801e5c9a96cadbf005475e70273549837896c5dec61c8df7404fb79ade0da063"
+      },
+      {
+        "path": "public/hanja-strokes/sources/glyphwiki-batch1563-NOTICE.md",
+        "SHA256": "9b5721f024215ed88c99b82fce7ddd38fbe62a6da624c8bba8ed2549711447bc"
+      }
+    ]
+  },
+  "conditionalRegistry": {
+    "path": "docs/hanja-authored-source-u61af-dlheads-2026-10-30/registration-1563/ordinary-registry.pending.patch",
+    "SHA256": "3e7a0a7c3b6c22d96d497b3373f2faee3c0de723fe092b14b000c256e016b89c",
+    "applyAllowed": false,
+    "target": "lib/hanja-strokes.ts",
+    "beforeSHA256": "28a25d57eba2218bf0b34ff7cf93bee4cbad701ce47391eeca462119fc083e3f",
+    "afterSHA256": "60aca3bf1fd47aa4553575b88575b6147d19af9c8fe8bf004051166174506dea",
+    "variantRegistryUnchanged": true,
+    "variantRegistrySHA256": "4903a2aa3e72ef53559020842f23eb933e2ebdc23517644172f743778f083bf6",
+    "anchors": 2
+  },
+  "pending": {
+    "finalNativeReview": null,
+    "actualReviewProfile": null
+  },
+  "focusedTestPlan": {
+    "command": "node --experimental-strip-types --test lib/hanja-stroke-dictionary-glyphwiki-batch1563.test.ts",
+    "tests": 3,
+    "executedYet": false,
+    "scope": [
+      "conditionalfalse/null sourcecapsule and15 sourcegeometry binding",
+      "19raw21call41P source2wholeQ affine independentcontact and6Qcoverage evidence reuse",
+      "canonicaldescriptor loader rejects foreign/count/getter/prototype/shape and accepts propertykeyreordering"
+    ],
+    "afterFinalApproval": "Replace conditional-null branch with final receipt/profile/source snapshot pins and live resolver exact15/wrong14or16 checks; no placeholder treated as approval."
+  },
+  "validation": {
+    "selectedModuleAndTestVirtualSemanticRoots": 2,
+    "selectedDiagnostics": 0,
+    "fullProjectTypecheck": false,
+    "sourceGeometryEqualityRerun": false,
+    "actualFocusedTestsRun": false,
+    "existing1562CanonicalLoaderBodyReused": true,
+    "rawJSONStringifyBundlePropertyOrderComparison": false,
+    "fixtureGeometrySHA256": "5658697be4334ff89119b9aea9f6c592ebe47391907f7df3c41dad4ee8209ef3",
+    "inputPins": 20,
+    "build": 0,
+    "SSR": 0,
+    "server": 0
+  },
+  "actualSharedWrites": false,
+  "actualProductionWrites": false,
+  "registrationAuthorized": false,
+  "runtimeApplied": false
+}
