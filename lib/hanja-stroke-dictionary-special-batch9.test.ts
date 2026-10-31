@@ -1,3 +1,4 @@
+import { assertIndependentlyReviewedReplacement as laterReviewed } from './hanja-test-held-candidate.ts'
 import assert from 'node:assert/strict'
 import { readFileSync } from 'node:fs'
 import test from 'node:test'
@@ -52,7 +53,7 @@ test('forty-eight special grade forms reproduce 618 playable strokes with actual
     candidates('MM'), candidates('Ja'), [], candidates('Hans')), /geometry mismatch/)
 })
 
-test('two glyphs are held for a 戸 against 戶 form difference and stay out of the runtime', () => {
+test('two glyphs are held for a 戸 against 戶 form difference and stays out of this batch; later approvals use separate evidence', () => {
   const held = observations.entries.filter(e => e.decision === 'held')
   assert.deepEqual(held.map(e => e.glyph), ['牖', '扆'])
   for (const record of held) {
@@ -63,7 +64,7 @@ test('two glyphs are held for a 戸 against 戶 form difference and stay out of 
     assert.match(record.notes, /戸|戶/)
     assert.equal(HANJA_DICTIONARY_SPECIAL_BATCH9_STROKES.find(e => e.glyph === record.glyph), undefined)
     const original = originals.find(e => e.glyph === record.glyph)!
-    assert.equal(hanjaStrokeData({ glyph: record.glyph, strokes: original.strokes }), null)
+    laterReviewed({ glyph: record.glyph, strokes: original.strokes }, HANJA_DICTIONARY_SPECIAL_BATCH9_STROKES)
   }
 })
 

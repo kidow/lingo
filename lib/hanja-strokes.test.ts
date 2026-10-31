@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict'
-import { readFileSync } from 'node:fs'
+import { readFileSync, readdirSync } from 'node:fs'
 import test from 'node:test'
 import { HANJA_EOMUNHOE_STROKES, HANJA_STROKES, HANJA_STROKE_SOURCE, hanjaStrokeData, STROKE_DURATION, STROKE_GAP, strokeDuration, strokeNumberAt } from './hanja-strokes.ts'
 
@@ -41,8 +41,33 @@ test('한국어문회 출처는 5급까지 500자 전체와 별도 공식 도해
   assert.equal(HANJA_STROKE_SOURCE.sha256, '4e191bbee54edd6db595f16fc83a15b9929eba0e3e01095da1e828c70e10760c')
 })
 
-test('검증되지 않은 한자나 획수가 달라진 자형에 필순을 추정하지 않는다', () => {
-  assert.equal(hanjaStrokeData({ glyph: '警', strokes: 19 }), null)
+test('전체 카탈로그 5,978자에 검토된 재생 데이터가 빠짐없이 연결된다', () => {
+  const directory = new URL('../content/hanja/characters/', import.meta.url)
+  const catalog = readdirSync(directory).filter(name => name.endsWith('.json')).flatMap(name => {
+    const file: unknown = JSON.parse(readFileSync(new URL(name, directory), 'utf8'))
+    assert(file && typeof file === 'object' && 'characters' in file && Array.isArray(file.characters))
+    return file.characters.map((character: unknown) => {
+      assert(character && typeof character === 'object')
+      assert('glyph' in character && typeof character.glyph === 'string')
+      assert('strokes' in character && typeof character.strokes === 'number')
+      return { glyph: character.glyph, strokes: character.strokes }
+    })
+  })
+  assert.equal(catalog.length, 5978)
+  assert.equal(new Set(catalog.map(character => character.glyph)).size, catalog.length)
+  const missing = catalog.filter(character => !hanjaStrokeData(character))
+  assert.deepEqual(missing, [])
+  for (const character of catalog) {
+    const data = hanjaStrokeData(character)
+    assert(data, character.glyph)
+    assert.equal(data.glyph, character.glyph)
+    assert(data.paths.length > 0 && data.paths.every(path => path.length > 0), character.glyph)
+  }
+})
+
+test('미등록 글자나 검토하지 않은 획수로 필순을 추정하지 않는다', () => {
+  // 警19 is now reviewed; keep the negative case on an unreviewed count.
+  assert.equal(hanjaStrokeData({ glyph: '警', strokes: 18 }), null)
   assert.equal(hanjaStrokeData({ glyph: '性', strokes: 7 }), null)
   assert.equal(hanjaStrokeData({ glyph: '毎', strokes: 7 }), null)
   assert.equal(hanjaStrokeData({ glyph: '漢', strokes: 15 }), null)

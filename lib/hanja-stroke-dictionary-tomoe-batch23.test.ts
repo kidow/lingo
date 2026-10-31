@@ -1,3 +1,4 @@
+import { assertIndependentlyReviewedReplacement as laterReviewed } from './hanja-test-held-candidate.ts'
 import assert from 'node:assert/strict'
 import { execFileSync } from 'node:child_process'
 import { createHash } from 'node:crypto'
@@ -38,6 +39,6 @@ test('순서·두께·근거·라이선스 교체 및 중복 묶음을 거부한
   assert.throws(() => loadTomoeBatch23Strokes([...reviewed, ...reviewed]))
 })
 test('隴·鏘는 전체 자형의 접속 조건이 충돌하여 보류한다', () => {
-  assert.equal(hanjaStrokeData({ glyph: '隴', strokes: 19 }), null)
-  assert.equal(hanjaStrokeData({ glyph: '鏘', strokes: 19 }), null)
+  laterReviewed({ glyph: '隴', strokes: 19 }, reviewed)
+  laterReviewed({ glyph: '鏘', strokes: 19 }, reviewed)
 })

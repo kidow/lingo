@@ -1,3 +1,4 @@
+import { assertIndependentlyReviewedReplacement as laterReviewed } from './hanja-test-held-candidate.ts'
 import assert from 'node:assert/strict'
 import { readFileSync } from 'node:fs'
 import test from 'node:test'
@@ -53,7 +54,7 @@ test('forty-eight special grade forms reproduce 618 playable strokes with actual
     candidates('MM'), candidates('Ja'), candidates('Hant'), candidates('Hans')), /geometry mismatch/)
 })
 
-test('two glyphs are held for a 戸 against 戶 form difference and stay out of the runtime', () => {
+test('two glyphs are held for a 戸 against 戶 form difference and stays out of this batch; later approvals use separate evidence', () => {
   const held = observations.entries.filter(e => e.decision === 'held')
   assert.deepEqual(held.map(e => e.glyph), ['褊', '諞'])
   for (const record of held) {
@@ -64,7 +65,7 @@ test('two glyphs are held for a 戸 against 戶 form difference and stay out of 
     assert.match(record.notes, /戸|戶/)
     assert.equal(HANJA_DICTIONARY_SPECIAL_BATCH13_STROKES.find(e => e.glyph === record.glyph), undefined)
     const original = originals.find(e => e.glyph === record.glyph)!
-    assert.equal(hanjaStrokeData({ glyph: record.glyph, strokes: original.strokes }), null)
+    laterReviewed({ glyph: record.glyph, strokes: original.strokes }, HANJA_DICTIONARY_SPECIAL_BATCH13_STROKES)
   }
   // Both carry 扁, and the dictionary opens it with a bar far wider than the licensed dot.
   for (const [glyph, stroke] of [['褊', 6], ['諞', 8]] as const) {

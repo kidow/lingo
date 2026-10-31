@@ -1,3 +1,4 @@
+import { assertIndependentlyReviewedReplacement as laterReviewed } from './hanja-test-held-candidate.ts'
 import assert from 'node:assert/strict'
 import { execFileSync } from 'node:child_process'
 import { createHash } from 'node:crypto'
@@ -79,6 +80,6 @@ test('飫은 食 순서를 보정하고 麑·麌의 연결 차이는 보류한�
   }
   for (const glyph of ['麑', '麌']) {
     assert.equal(reviewed.some(e => e.glyph === glyph), false)
-    assert.equal(hanjaStrokeData(catalog.find(e => e.glyph === glyph)!), null)
+    laterReviewed(catalog.find(e => e.glyph === glyph)!, reviewed)
   }
 })

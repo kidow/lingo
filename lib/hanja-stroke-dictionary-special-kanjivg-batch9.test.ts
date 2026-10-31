@@ -1,3 +1,4 @@
+import { assertIndependentlyReviewedReplacement as laterReviewed } from './hanja-test-held-candidate.ts'
 import assert from 'node:assert/strict'
 import { execFileSync } from 'node:child_process'
 import { createHash } from 'node:crypto'
@@ -78,6 +79,6 @@ test('爨의 누락 경로·방향과 鏘의 연결 차이를 보류한다', () 
   assert.deepEqual(hzFirst.paths, [hair.paths[1], hair.paths[0], ...hair.paths.slice(2)])
   for (const glyph of ['鏘', '爨']) {
     assert.equal(reviewed.some(e => e.glyph === glyph), false)
-    assert.equal(hanjaStrokeData(catalog.find(c => c.glyph === glyph)!), null)
+    laterReviewed(catalog.find(c => c.glyph === glyph)!, reviewed)
   }
 })

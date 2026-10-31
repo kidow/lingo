@@ -1,3 +1,4 @@
+import { assertIndependentlyReviewedReplacement as laterReviewed } from './hanja-test-held-candidate.ts'
 import assert from 'node:assert/strict'
 import { createHash } from 'node:crypto'
 import { execFileSync } from 'node:child_process'
@@ -28,7 +29,7 @@ test('饉·睹·燐 50획은 검토된 원본 곡선·순열로 재현되고 런
     assert.deepEqual(data.sourceStrokeIndices, pin.sourceStrokeIndices)
     assert.equal(HANJA_STROKES.filter(e => e.glyph === pin.glyph).length, 1)
   }
-  assert.equal(hanjaStrokeData(catalog.find(c => c.glyph === '瀆')!), null)
+  laterReviewed(catalog.find(c => c.glyph === '瀆')!, reviewed)
 })
 
 test('필순 순열·출처·라이선스 오염 및 未검토 글자 추가를 거부한다', () => {

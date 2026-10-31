@@ -42,7 +42,8 @@ test('배정 획수가 바뀌거나 미검증 자형이면 예외를 허용하�
       assert.equal(hanjaPlaybackVariant({ glyph: data.glyph, strokes }), null)
     }
   }
-  assert.equal(hanjaStrokeData({ glyph: '庾', strokes: 11 }), null)
+  assert.equal(hanjaStrokeData({ glyph: '庾', strokes: 11 })?.paths.length, 12)
+  assert.equal(hanjaStrokeData({ glyph: '庾', strokes: 12 }), null)
   assert.equal(hanjaStrokeData({ glyph: '篠', strokes: 16 })?.paths.length, 17)
   assert.equal(hanjaStrokeData({ glyph: '篠', strokes: 17 }), null)
   assert.equal(hanjaStrokeData({ glyph: '宬', strokes: 10 })?.paths.length, 9)
@@ -55,7 +56,7 @@ test('배정 획수가 바뀌거나 미검증 자형이면 예외를 허용하�
   assert.equal(hanjaStrokeData({ glyph: '山', strokes: 4 }), null)
 })
 
-test('전체 카탈로그에서 획수가 다른 재생은 검토한 44자뿐이다', () => {
+test('전체 카탈로그의 획수 예외는 기존 44자와 후속 승인 19자에 한정된다', () => {
   const dir = new URL('../content/hanja/characters/', import.meta.url)
   const characters: HanjaCharacter[] = readdirSync(dir).filter(path => path.endsWith('.json'))
     .flatMap(path => JSON.parse(readFileSync(new URL(path, dir), 'utf8')).characters)
@@ -63,7 +64,14 @@ test('전체 카탈로그에서 획수가 다른 재생은 검토한 44자뿐이
     const data = hanjaStrokeData(character)
     return data && data.paths.length !== character.strokes
   })
-  assert.deepEqual(different.map(character => character.glyph).sort(), [...'飼祐禎夔犁蓼鵡筬亐臾贇卄渚猪簒砦穉啣嘯瀟嘴纛蘿藺兎禦祉兕珷珹菉囍翶瘝荓幩叟廋瞍缾篠宬晸娍'].sort())
+  const historical = [...'飼祐禎夔犁蓼鵡筬亐臾贇卄渚猪簒砦穉啣嘯瀟嘴纛蘿藺兎禦祉兕珷珹菉囍翶瘝荓幩叟廋瞍缾篠宬晸娍']
+  const laterReviewed = [...'褐菱嫂瘦諛塚斃庾莽萸奫逈凞蘷迸韡楰爨釁']
+  assert.equal(historical.length, 44)
+  assert.equal(laterReviewed.length, 19)
+  const approvedGlyphs = [...historical, ...laterReviewed].sort()
+  assert.equal(new Set(approvedGlyphs).size, 63)
+  assert.deepEqual(different.map(character => character.glyph).sort(), approvedGlyphs)
+  assert.deepEqual(HANJA_VARIANT_STROKES.map(data => data.glyph).sort(), approvedGlyphs)
   assert.equal(new Set(HANJA_STROKES.map(data => data.glyph)).size, HANJA_STROKES.length)
   assert.deepEqual(catalog.filter(character => '飼祐禎'.includes(character.glyph)).map(character => character.strokes).sort(), [10, 14, 14])
 })

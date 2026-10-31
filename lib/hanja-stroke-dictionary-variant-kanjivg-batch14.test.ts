@@ -1,3 +1,4 @@
+import { assertIndependentlyReviewedReplacement as laterReviewed } from './hanja-test-held-candidate.ts'
 import assert from 'node:assert/strict'
 import { execFileSync } from 'node:child_process'
 import { createHash } from 'node:crypto'
@@ -62,7 +63,7 @@ test('미검증 변형·굵기·순서·출처·라이선스 교체를 거부한
 test('塚·迸의 경로 차이는 획수 일치만으로 승인하지 않는다', () => {
   for (const glyph of ['塚', '迸']) {
     const character = catalog.find(c => c.glyph === glyph)!
-    assert.equal(hanjaStrokeData(character), null)
+    laterReviewed(character, reviewed)
     assert.equal(read('findings.json').entries.find((e: { glyph: string }) => e.glyph === glyph).decision, 'held')
   }
   assert.equal(read('findings.json').entries.find((e: { glyph: string }) => e.glyph === '祉').alternativeReview.reviewedStrokes.length, 8)

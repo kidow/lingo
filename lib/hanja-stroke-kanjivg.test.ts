@@ -1,3 +1,4 @@
+import { assertIndependentlyReviewedReplacement as laterReviewed } from './hanja-test-held-candidate.ts'
 import assert from 'node:assert/strict'
 import { createHash } from 'node:crypto'
 import { readFileSync } from 'node:fs'
@@ -68,6 +69,6 @@ test('세 글자 65획만 추가하고 이전 검토와 보류 상태를 보존�
   assert.deepEqual(runtime.map(e => e.glyph), [...'纛蘿藺'])
   assert.equal(runtime.reduce((n, e) => n + e.paths.length, 0), 65)
   assert.equal(findings.runtimeApprovalsAdded, 0, 'Historical review remains unchanged')
-  assert.equal(hanjaStrokeData({glyph:'鱉', strokes:22}), null)
-  assert.equal(hanjaStrokeData({glyph:'宬', strokes:10}), null)
+  laterReviewed({glyph:'鱉', strokes:22}, runtime)
+  laterReviewed({glyph:'宬', strokes:10}, runtime)
 })

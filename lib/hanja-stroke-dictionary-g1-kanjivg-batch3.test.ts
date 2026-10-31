@@ -1,3 +1,4 @@
+import { assertIndependentlyReviewedReplacement as laterReviewed } from './hanja-test-held-candidate.ts'
 import assert from 'node:assert/strict'
 import { execFileSync } from 'node:child_process'
 import { createHash } from 'node:crypto'
@@ -30,7 +31,7 @@ test('餞의 검토된 순열로 17획을 재현하고 두 보류 글자는 등�
     assert.equal(HANJA_STROKES.filter(e => e.glyph === pin.glyph).length, 1)
     assert.equal(findings.entries.find((e: { glyph: string }) => e.glyph === pin.glyph).decision, 'approved')
   }
-  for (const glyph of ['諭', '愉']) assert.equal(hanjaStrokeData(catalog.find(c => c.glyph === glyph)!), null)
+  for (const glyph of ['諭', '愉']) laterReviewed(catalog.find(c => c.glyph === glyph)!, reviewed)
 })
 
 test('원본 순서 복구와 근거·라이선스 교체는 공개 번들 검사를 통과하지 못한다', () => {

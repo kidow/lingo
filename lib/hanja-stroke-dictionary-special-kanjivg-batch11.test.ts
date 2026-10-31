@@ -1,3 +1,4 @@
+import { assertIndependentlyReviewedReplacement as laterReviewed } from './hanja-test-held-candidate.ts'
 import assert from 'node:assert/strict'
 import { execFileSync } from 'node:child_process'
 import { createHash } from 'node:crypto'
@@ -70,13 +71,17 @@ test('鐶의 접합 차이와 敝의 분할 획을 보류한다', () => {
   const split = entries.find(e => e.candidate.id === '0655d')!
   assert.equal(split.paths.length, 12)
   assert.equal(split.dictionaryStrokes, 11)
-  assert.equal(catalog.find(c => c.glyph === '敝')!.strokes, 12)
+  // The historical candidate is still 12; the separately reviewed catalog correction is 11.
+  const correction = JSON.parse(readFileSync(new URL('../content/hanja/stroke-count-corrections.json', import.meta.url), 'utf8')).entries.find((entry: {glyph:string}) => entry.glyph === '敝')
+  assert.equal(correction.sourceStrokes, 12)
+  assert.equal(correction.strokes, 11)
+  assert.equal(catalog.find(c => c.glyph === '敝')!.strokes, correction.strokes)
   const base = entries.find(e => e.candidate.id === '09914')!
   const alt = entries.find(e => e.candidate.id === '09914-Kaisho')!
   assert.deepEqual(base.paths.flatMap((p, i) => p === alt.paths[i] ? [] : [i + 1]), [6, 13, 14])
   assert.deepEqual(reviewed[0].sourceStrokeIndices, [1, 2, 3, 5, 6, 7, 4, 8, 9, 10, 11, 12, 13, 14, 15, 16])
   for (const glyph of ['鐶', '敝']) {
     assert.equal(reviewed.some(e => e.glyph === glyph), false)
-    assert.equal(hanjaStrokeData(catalog.find(c => c.glyph === glyph)!), null)
+    laterReviewed(catalog.find(c => c.glyph === glyph)!, reviewed)
   }
 })
