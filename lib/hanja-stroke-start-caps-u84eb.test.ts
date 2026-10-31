@@ -28,7 +28,7 @@ test('蓫 terminal7 whole-context/certificate binding new tail FIRST',()=>{
   assert.equal(p.maskSHA256,sha(JSON.stringify(s)));assert.equal(p.guide,s.revealPath);assert.equal(p.width,14);assert.equal(p.weight,s.weight);assert.equal(policy.certificate.syntax,p.syntax);
   assert(p.initialSufficientConditions&&p.previousMaskContactNotProved&&p.fullSweepNotProved);assert.equal(p.arithmeticRecomputedAfterTerminalPartition,false);
   if(p.syntax==='MQQ'){assert.equal(p.pen,7);assert.equal(p.initialKind,'first-quadratic-of-two');assert(p.firstQIsNotFullGuide&&p.secondQPreserved);assert.notEqual(p.arithmeticOriginalMaskSHA256,p.maskSHA256)}
-  else if(p.syntax==='MC'){assert.equal(p.pen,15);assert.equal(p.mask,2);assert.equal(p.initialKind,'single-cubic');assert.equal(p.T,'1/4');assert.equal(p.K,'1/12');assert.equal(p.lambdaBernstein.length,5);assert.equal(p.curvatureNumeratorBernstein.length,3)}
+  else if(p.syntax==='MC'){assert.equal(p.pen,15);assert.equal(p.mask,2);assert.equal(p.initialKind,'single-cubic');assert.equal(p.T,'1/4');assert.equal(p.K,'1/12');assert(p.lambdaBernstein&&p.curvatureNumeratorBernstein);assert.equal(p.lambdaBernstein.length,5);assert.equal(p.curvatureNumeratorBernstein.length,3)}
   else{assert.equal(p.initialKind,'single-quadratic');assert.equal(p.arithmeticOriginalMaskSHA256,p.maskSHA256)}
   assert(Object.isFrozen(policy)&&Object.isFrozen(policy.certificate.storedBounds));
  }

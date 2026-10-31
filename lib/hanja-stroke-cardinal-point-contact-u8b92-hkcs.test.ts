@@ -54,7 +54,7 @@ test('讒 absent prior stays rejected before browser access',()=>{
 test('讒 point folds shrink both dimensions and reject the native-held y-band policies',()=>{
  const c=makeReviewedU8b92HkcsPointHvSourceContext(f.fullProof,f.identity,s),old=oldContext(f.fullProof,f.identity,s);assert(c);assert(old)
  for(const pen of[6,11,20]){const p=reviewedU8b92HkcsPointHvPolicy(c,pen-1,1);assert(p);const held=oldPolicy(old,pen-1,1);assert(held);assert.throws(()=>sampleReviewedU8b92HkcsPointHvFrame(held as unknown as typeof p,p.segment,.01,1));assert.equal(verifyReviewedU8b92HkcsPointHvPrior(held as unknown as typeof p,null,1),false)
-  let last={x:p.originX,y:p.originY,w:0,h:0}
+  let last:{x:number;y:number;w:number;h:number}={x:p.originX,y:p.originY,w:0,h:0}
   for(const t of[1e-8,.001,.01,.03,.1,.5,.9,.999999]){const frame=sampleReviewedU8b92HkcsPointHvFrame(p,p.segment,t,1),r=frame.clip;assert(r);assert(r.x<=last.x&&r.y<=last.y&&r.width>=last.w&&r.height>=last.h);assert(r.width<=8.5*t+1e-12);assert(r.height<=(p.segment.bounds[3]-p.segment.bounds[1])*t+1e-12);assert(r.x<=p.originX&&r.x+r.width>=p.originX);assert(r.y<=p.originY&&r.y+r.height>=p.originY);last={x:r.x,y:r.y,w:r.width,h:r.height}}
   assert.equal(sampleReviewedU8b92HkcsPointHvFrame(p,p.segment,0,0).visible,false);assert.equal(sampleReviewedU8b92HkcsPointHvFrame(p,p.segment,1,1).originalPDirect,true)
  }

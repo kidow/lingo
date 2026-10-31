@@ -45,7 +45,7 @@ test('幪 kernel missing prior rejects before any browser read',()=>{const c=mak
 
 test('幪 XY point windows shrink both axes and reject previous fixed-width policies',()=>{
  const c=makeReviewedU5e6aHkcsKernelPointWindowSourceContext(f.fullProof,f.identity,s),oc=oldContext(f.fullProof,f.identity,s);assert(c);assert(oc);
- for(const pen of[2,9]){const p=reviewedU5e6aHkcsKernelPointWindowPolicy(c,pen-1,1),old=oldPolicy(oc,pen-1,1);assert(p);assert(old);assert.throws(()=>sampleReviewedU5e6aHkcsKernelPointWindowFrame(old as unknown as typeof p,p.segment,.01,1));let last={x:p.originX,y:p.originY,w:0,h:0};
+ for(const pen of[2,9]){const p=reviewedU5e6aHkcsKernelPointWindowPolicy(c,pen-1,1),old=oldPolicy(oc,pen-1,1);assert(p);assert(old);assert.throws(()=>sampleReviewedU5e6aHkcsKernelPointWindowFrame(old as unknown as typeof p,p.segment,.01,1));let last:{x:number;y:number;w:number;h:number}={x:p.originX,y:p.originY,w:0,h:0};
   for(const n of[1e-8,.000001,.001,.01,.03,.1,.5,.9,.999999]){const f=sampleReviewedU5e6aHkcsKernelPointWindowFrame(p,p.segment,n,1),r=f.clip;assert(r);assert(r.x<=last.x&&r.y<=last.y&&r.width>=last.w&&r.height>=last.h);assert(r.width<=(p.segment.bounds[2]-p.segment.bounds[0])*n+1e-12);assert(r.height<=(p.maximumY-p.minimumY)*n+1e-12);assert(r.x<=p.originX&&r.x+r.width>=p.originX);assert(r.y<=p.originY&&r.y+r.height>=p.originY);last={x:r.x,y:r.y,w:r.width,h:r.height}}
   assert.equal(sampleReviewedU5e6aHkcsKernelPointWindowFrame(p,p.segment,0,0).visible,false);assert.equal(sampleReviewedU5e6aHkcsKernelPointWindowFrame(p,p.segment,1,1).originalPDirect,true)
  }

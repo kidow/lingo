@@ -24,7 +24,7 @@ test('縶 own12 syntax-specific source certificate guard FIRST',()=>{
   assert.equal(p.maskSHA256,sha(JSON.stringify(s)));assert.equal(p.guide,s.revealPath);assert.equal(p.width,14);assert.equal(p.weight,s.weight);
   assert.equal(policy.certificate.syntax,p.syntax);assert(p.initialSufficientConditions&&p.previousMaskContactNotProved&&p.fullSweepNotProved);
   for(const key of ['lambdaMin','chordSquaredMinus49','cosMinusRK','tangentSquareMargin']){const v=String((p as any)[key]);assert(v&&!v.startsWith('-')&&v!=='0')}
-  if(p.syntax==='MQ'){assert.equal(p.initialKind,'single-quadratic');assert(!p.curvatureMargin.startsWith('-'))}
+  if(p.syntax==='MQ'){assert.equal(p.initialKind,'single-quadratic');assert(typeof p.curvatureMargin==='string');assert(!p.curvatureMargin.startsWith('-'))}
   else{assert.equal(p.pen,9);assert.equal(p.initialKind,'straight-first-leg');assert.equal(p.firstLegLength,'459/25');assert.equal(p.K,'0');assert(p.fullGuideNotFirstLeg)}
   assert(Object.isFrozen(policy)&&Object.isFrozen(policy.certificate.storedBounds));
  }
