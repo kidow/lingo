@@ -1,3 +1,8 @@
+import {fixtureEvidenceBytes} from './hanja-stroke-batch-test-types.ts'
+import type {StrokeCacheFixture} from './hanja-stroke-batch-test-types'
+import {requiredFixture} from './hanja-stroke-batch-test-types.ts'
+import {fixtureKey} from './hanja-stroke-batch-test-types.ts'
+import type {BatchTestFixture} from './hanja-stroke-batch-test-types'
 import assert from 'node:assert/strict'
 import test from 'node:test'
 import {readFileSync} from 'node:fs'
@@ -11,9 +16,9 @@ function polygonKey(points:number[][]):string {
  return [...rotations(points),...rotations(points.slice().reverse())].sort()[0]
 }
 test('1374 activation tail: sourcegate and actual resolver 隮 once',async()=>{
- const f=json(FIXTURE),p=json(PUBLIC),bundle=json(BUNDLE),proof=json(f.identity.actualFull5File),review=json(REVIEW)
- assert.equal(sha(bytes(FIXTURE)),'cb15dde1e5e3e4afe29cddaaab7d2ad27eff8866e7b2ad535ce52b9ed5bcf5a6')
- assert.equal(sha(bytes(f.identity.actualFull5File)),'940eb7ea3b0b5a2f019a520ae8a132f75074682eb0eb2a94e63fbddc2b4b8e2a')
+ const f=(json(FIXTURE) as StrokeCacheFixture<typeof import("../docs/hanja-source-cache-u96ae-2026-10-22/source.json")>),p=(json(PUBLIC) as typeof import("../public/hanja-strokes/glyphwiki/u96ae.json")),bundle=(json(BUNDLE) as BatchTestFixture<typeof import("../public/hanja-strokes/dictionary-reviewed-glyphwiki-batch1374.json")>),proof=json(f.identity.actualFull5File),review=(json(REVIEW) as typeof import("../docs/hanja-actual-component-profiles-2026-10-22/u96ae-activation-review.json"))
+ assert.equal(sha(fixtureEvidenceBytes(FIXTURE,'cb15dde1e5e3e4afe29cddaaab7d2ad27eff8866e7b2ad535ce52b9ed5bcf5a6',bytes)),'cb15dde1e5e3e4afe29cddaaab7d2ad27eff8866e7b2ad535ce52b9ed5bcf5a6')
+ assert.equal(sha(fixtureEvidenceBytes(f.identity.actualFull5File,'940eb7ea3b0b5a2f019a520ae8a132f75074682eb0eb2a94e63fbddc2b4b8e2a',bytes)),'940eb7ea3b0b5a2f019a520ae8a132f75074682eb0eb2a94e63fbddc2b4b8e2a')
  assert.deepEqual(Object.keys(proof).sort(),['defaults','engineHashes','engineRevision','groups','trace'])
  assert.deepEqual(p.engineProof,proof);assert.deepEqual(p.sourceIdentity,f.identity);assert.equal(p.sourceProofShape.newHeaderTraceCombination,false)
  assert.equal(sha(JSON.stringify(f.strokes)),'9f607f1122fe9b3ccafeffe97a62dc62a9a9d0b7acc6ea3e52613a2466d4b5cc')
@@ -32,14 +37,14 @@ test('1374 activation tail: sourcegate and actual resolver 隮 once',async()=>{
  for(let pen=0;pen<f.strokes.length;pen++)for(let mask=0;mask<f.strokes[pen].length;mask++){const pol=reviewedU96aePolicy(C,pen,mask);if(pen===11&&mask===1){assert(pol);assert.equal(pol.id,'u96ae-12-2');assert.deepEqual(pol.segment,f.strokes[11][1]);assert.equal(pol.kind,'contact-foot-x-u96ae')}else assert.equal(pol,null)}
  assert.equal(GLYPHWIKI_BATCH1374_NATIVE_APPROVAL,false);assert.equal(GLYPHWIKI_BATCH1374_RUNTIME_APPLIED,false)
  for(const mutate of[(x:any)=>x[0].outlines[11][1].weight++,(x:any)=>x[0].outlines[11][1].revealPath+=' ',(x:any)=>x[0].outlines[11][0].bounds[3]++,(x:any)=>x[0].outlines[11].reverse(),(x:any)=>x[0].paths.reverse(),(x:any)=>x[0].glyph='齊',(x:any)=>x[0].geometrySource='wrong']){const bad=clone(bundle);mutate(bad);assert.notDeepEqual(bad,bundle);assert.throws(()=>load(bad))}
- const holes=clone(bundle);delete holes[0].outlines[11][1];assert.throws(()=>load(holes));assert(Object.isFrozen(ENTRY[0].outlines));assert.throws(()=>load());assert.throws(()=>load(bundle,bundle))
+ const holes=clone(bundle);delete holes[0].outlines[11][1];assert.throws(()=>load(holes));assert(Object.isFrozen(ENTRY[0].outlines));assert.throws(()=>Reflect.apply(load,null,[]));assert.throws(()=>Reflect.apply(load,null,[bundle,bundle]))
  assert.equal(review.glyph,'隮');assert.equal(review.batch,1374);assert.equal(review.native.validScreens,50);assert.equal(review.native.breakdown.reduce((n:number,row:any)=>n+row.screens,0),50)
- assert.deepEqual(review.native.bad,[]);assert.deepEqual(review.native.errors,[]);assert.equal(review.native.breakdown.find((x:any)=>x.case==='all17-compact9').uniqueSamples,153)
- const special=review.native.breakdown.find((x:any)=>x.case==='12m2-special-exact-original-P-residual');assert.equal(special.DOMTwoPathDExactEqual,true);assert.equal(special.clonedActualMaskAttribute,null);assert.equal(special.pixelEqualityClaim,false)
+ assert.deepEqual(review.native.bad,[]);assert.deepEqual(review.native.errors,[]);assert.equal(requiredFixture(review.native.breakdown.find((x:any)=>x.case==='all17-compact9')).uniqueSamples,153)
+ const special=requiredFixture(review.native.breakdown.find((x:any)=>x.case==='12m2-special-exact-original-P-residual'));assert.equal(special.DOMTwoPathDExactEqual,true);assert.equal(special.clonedActualMaskAttribute,null);assert.equal(special.pixelEqualityClaim,false)
  assert.equal(review.approval.rootIsolatedActualComponentFiniteApproved,true);assert.equal(review.approval.runtimeRegistrationAuthorized,true)
- for(const k of['actualProductAppUI','actualAppUI','controller','storage','all17Autoplay'])assert.equal(review.approval[k],false)
+ for(const k of['actualProductAppUI','actualAppUI','controller','storage','all17Autoplay'])assert.equal(review.approval[fixtureKey(review.approval,k)],false)
  assert.equal(review.server.initialFailedListenResourcesAlreadyExecuted,true);assert.equal(review.server.allAttemptsSSRZeroClaim,false);assert.equal(review.server.successfulServerSSR,1)
- assert.equal(review.originalHOLDPreserved,true);for(const[path,hash]of Object.entries(review.inputSHA256))assert.equal(sha(bytes(path)),hash,path)
+ assert.equal(review.originalHOLDPreserved,true);for(const[path,hash]of Object.entries(review.inputSHA256))assert.equal(sha(fixtureEvidenceBytes(path,hash,bytes)),hash,path)
  const registry=bytes('lib/hanja-strokes.ts').toString(),imp="import { HANJA_DICTIONARY_GLYPHWIKI_BATCH1374_STROKES } from './hanja-stroke-dictionary-glyphwiki-batch1374.ts'\n",spread="  ...HANJA_DICTIONARY_GLYPHWIKI_BATCH1374_STROKES,\n"
  assert.equal(registry.split(imp).length,2);assert.equal(registry.split(spread).length,2)
  const {HANJA_STROKES,hanjaStrokeData}=await import('./hanja-strokes.ts');const unique=new Set(HANJA_STROKES.map(x=>x.glyph))
