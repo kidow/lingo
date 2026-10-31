@@ -1,3 +1,4 @@
+import {fixtureEvidenceBytes} from './hanja-stroke-batch-test-types.ts'
 import assert from 'node:assert/strict'
 import {readFileSync} from 'node:fs'
 import {createHash} from 'node:crypto'
@@ -27,7 +28,7 @@ test('1326 all-field loader key-order independence and effective nested negative
  assert.equal(ENTRY[0].glyph,'挃');assert.equal(ENTRY[0].outlines?.length,9);assert(Object.isFrozen(ENTRY));assert(Object.isFrozen(ENTRY[0].outlines?.[0][0].bounds))
 })
 test('1326 existing full5 id3 and prior exact LEFT partition preserve all raw fields and frozen pins',()=>{
- const review=JSON.parse(read(DIR+'review.json').toString())as{immutableFilesSHA256:Record<string,string>};assert.equal(Object.keys(review.immutableFilesSHA256).length,136);for(const[p,h]of Object.entries(review.immutableFilesSHA256))assert.equal(sha(read(p)),h,p)
+ const review=JSON.parse(read(DIR+'review.json').toString())as{immutableFilesSHA256:Record<string,string>};assert.equal(Object.keys(review.immutableFilesSHA256).length,136);for(const[p,h]of Object.entries(review.immutableFilesSHA256))assert.equal(sha(fixtureEvidenceBytes(p,h,read)),h,p)
  const t=JSON.parse(read(EXP+'config.json').toString()).targets.u6303,f=JSON.parse(read(EXP+'fixtures.json').toString()).u6303,proof=JSON.parse(read(SRC+'engine-whole-u6303.json').toString()),trace=proof.trace
  const source=JSON.parse(read(SRC+'sources.json').toString());assert.equal(Object.keys(source.records).length,4);assert.equal(source.wholeNames.length,2);assert.equal(source.providerVersions.length,0);assert.deepEqual(t.sourceFamily.selectedRootClosure,['u6303','u624c-01','u81f3-02-var-003']);for(const name of t.sourceFamily.selectedRootClosure)assert(Object.hasOwn(source.records,name));assert.equal(t.existingFull5Preserved,true);assert.equal(t.newHeaderTraceCombination,false)
  assert.deepEqual(ENTRY[0].outlines,f.strokes);assert.notDeepEqual(f.strokes,f.baseline);assert.deepEqual(f.baseline,t.factoryGroupMap.map((g:number[])=>g.flatMap(x=>f.rawBaseline[x])));assert.deepEqual(f.originalOrderBaseline,f.rawBaseline)

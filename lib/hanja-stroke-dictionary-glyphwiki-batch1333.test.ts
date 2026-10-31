@@ -1,3 +1,4 @@
+import {readHanjaHistoricalSource} from './hanja-test-component-loader.ts'
 import assert from 'node:assert/strict'
 import test from 'node:test'
 import{readFileSync}from'node:fs'
@@ -26,5 +27,19 @@ test('1333 preparation stays unregistered and approval false without runtime met
  for(const k of['nativeApproval','isolatedActualComponentBrowserVerified','actualAppUI','registrationApproved','runtimeRegistered','runtimeApplied'])assert.equal(a.preparationHistory[k],false,k)
  assert.equal(a.preparationHistory.unregisteredCandidate,true);assert.equal(a.sourceProvenance.review,null);assert.equal(GLYPHWIKI_BATCH1333_NATIVE_APPROVAL,false);assert.equal(GLYPHWIKI_BATCH1333_RUNTIME_APPLIED,false)
  assert.equal(sha(raw(SOURCE+'preparation.json')),a.sourceProvenance.sourcePreparationSHA256);assert.equal(sha(raw(a.sourceProvenance.staticMappingEvidence.path)),a.sourceProvenance.staticMappingEvidence.sha256);assert.equal(ENTRY[0].sourceReference.orderReviewSha256,a.sourceProvenance.staticMappingEvidence.sha256);assert.equal(ENTRY[0].sourceReference.geometryReviewSha256,a.sourceProvenance.sourcePreparationSHA256)
- const registry=raw('lib/hanja-strokes.ts').toString(),module=raw('lib/hanja-stroke-dictionary-glyphwiki-batch1333.ts').toString();assert(!registry.includes("from './hanja-stroke-dictionary-glyphwiki-batch1333'"));assert(!registry.includes('...HANJA_DICTIONARY_GLYPHWIKI_BATCH1333_STROKES'));assert(!/import\s+.*\.json/.test(module));assert.equal(a.terminalPartition.newSourceProjectionExecutions,0)
+ const registry=readHanjaHistoricalSource('lib/hanja-strokes.ts','a90835e467c843d71ca8ac5abc8d36dc7659268756ba0ec3f2839cf83cb7256b').toString(),module=raw('lib/hanja-stroke-dictionary-glyphwiki-batch1333.ts').toString();assert(!registry.includes("from './hanja-stroke-dictionary-glyphwiki-batch1333'"));assert(!registry.includes('...HANJA_DICTIONARY_GLYPHWIKI_BATCH1333_STROKES'));assert(!/import\s+.*\.json/.test(module));assert.equal(a.terminalPartition.newSourceProjectionExecutions,0)
+})
+
+test('1333 current registration follows the later approval without rewriting preparation history',async()=>{
+ const approval=json('docs/hanja-goal-glyphwiki-batch1333-2026-10-21/review.json'),checkpoint=json('docs/hanja-goal-glyphwiki-batch1333-2026-10-21/resume.json')
+ assert.equal(approval.nativeApproval,true);assert.equal(approval.isolatedActualComponentBrowserVerified,true);assert.equal(approval.runtimeAuthorization.rootApproved,true);assert.equal(approval.actualAppUI,false)
+ assert.equal(checkpoint.actualCheckpointVerified,true);assert.equal(checkpoint.actualRegistryVerified,true);assert.equal(checkpoint.runtimeRegistered,true);assert.equal(checkpoint.runtimeApplied,true)
+ const registry=raw('lib/hanja-strokes.ts').toString()
+ assert.equal((registry.match(/import \{ HANJA_DICTIONARY_GLYPHWIKI_BATCH1333_STROKES \} from '\.\/hanja-stroke-dictionary-glyphwiki-batch1333(?:\.ts)?'/g)||[]).length,1)
+ assert.equal((registry.match(/\.\.\.HANJA_DICTIONARY_GLYPHWIKI_BATCH1333_STROKES\b/g)||[]).length,1)
+ const{HANJA_STROKES,hanjaStrokeData}=await import('./hanja-strokes.ts')
+ assert.equal(HANJA_STROKES.filter(data=>data===ENTRY[0]).length,1)
+ const character={glyph:ENTRY[0].glyph,strokes:ENTRY[0].paths.length},resolved=hanjaStrokeData(character)
+ assert(resolved);assert.equal(resolved,ENTRY[0]);assert.deepEqual(resolved.paths,ENTRY[0].paths)
+ assert.equal(hanjaStrokeData({...character,strokes:character.strokes+1}),null);assert.equal(hanjaStrokeData({...character,strokes:0}),null)
 })

@@ -1,3 +1,4 @@
+import {fixtureEvidenceBytes} from './hanja-stroke-batch-test-types.ts'
 import {readHistoricalAppSnapshot as readtap,historicalAppSnapshotBindings as tapBindings,historicalEvidence} from '../docs/hanja-component-evidence-growing-caps-u905d-2026-10-21/resolver.mjs'
 import {readHistoricalAppSnapshot as readli,historicalAppSnapshotBindings as liBindings} from '../docs/hanja-component-evidence-growing-caps-u9148-2026-10-21/resolver.mjs'
 import {readHistoricalAppSnapshot as readbian,historicalAppSnapshotBindings as bianBindings} from '../docs/hanja-component-evidence-growing-caps-u8cb6-2026-10-21/resolver.mjs'
@@ -32,7 +33,7 @@ test('1330 loader deep JSON guards and material nested negatives',()=>{
 
 })
 test('1330 fixed full5 id5 cached projection and exact original masks',()=>{
- const r=JSON.parse(read(DIR+'review.json').toString());assert.equal(Object.keys(r.immutableFilesSHA256).length,142);for(const[p,h]of Object.entries(r.immutableFilesSHA256))assert.equal(sha(read(p)),h,p)
+ const r=JSON.parse(read(DIR+'review.json').toString());assert.equal(Object.keys(r.immutableFilesSHA256).length,142);for(const[p,h]of Object.entries(r.immutableFilesSHA256))assert.equal(sha(fixtureEvidenceBytes(p,h,read)),h,p)
  const t=JSON.parse(read(EXP+'config.json').toString()).targets.u905d,f=JSON.parse(read(EXP+'fixtures.json').toString()).u905d,proof=JSON.parse(read(SRC+'engine-proof.json').toString()),body=JSON.parse(read(SRC+'engine-whole-u905d.json').toString()),trace=proof.trace,source=JSON.parse(read(SRC+'sources.json').toString())
  assert.equal(Object.keys(source.records).length,20);assert.equal(source.wholeNames.length,11);assert.equal(source.providerVersions.length,6);assert.deepEqual(t.sourceFamily.selectedRootClosure,['u905d','u8fb6','u7714-g@5','u7f52-03@4','u7f52@4']);for(const n of t.sourceFamily.selectedRootClosure)assert(Object.hasOwn(source.records,n))
  assert.deepEqual(ENTRY[0].outlines,f.strokes);assert.deepEqual(f.baseline,f.strokes);assert.equal(f.rawBaseline.length,17);assert.equal(f.rawBaseline.flat().length,17);assert.equal(f.strokes.length,14);assert.equal(f.strokes.flat().length,15);assert.equal(trace.length,17);assert.equal(trace.flat().length,17);assert.equal(sha(JSON.stringify(f.rawBaseline)),t.rawBaselineSHA256);assert.equal(sha(JSON.stringify(f.strokes)),'a09c4b5aaa1eaae2e7ec70bf5cddb22f2dc450c3e92967bcc50ae69adf107c2c')

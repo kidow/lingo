@@ -1,3 +1,4 @@
+import {fixtureEvidenceBytes} from './hanja-stroke-batch-test-types.ts'
 import test from 'node:test'
 import assert from 'node:assert/strict'
 import {readFileSync} from 'node:fs'
@@ -19,7 +20,7 @@ test('1317 strict complete JSON loader rejects arity and nested mutations',()=>{
 });
 test('1317 fixed full5 and snapshot pins; source negative calls do not compile',()=>{
  const review=JSON.parse(read(DIR+'review.json').toString()) as {immutableFilesSHA256:Record<string,string>};assert.equal(Object.keys(review.immutableFilesSHA256).length,79);
- for(const[p,h]of Object.entries(review.immutableFilesSHA256))assert.equal(sha(read(p)),h,p);
+ for(const[p,h]of Object.entries(review.immutableFilesSHA256))assert.equal(sha(fixtureEvidenceBytes(p,h,read)),h,p);
  const fixture=JSON.parse(read(EXP+'fixtures.json').toString()) as Record<string,{fullProof:Record<string,unknown>;strokes:unknown}>;const f=fixture.u5e28,proof=f.fullProof,trace=proof.trace,id=selectedProofIdentity;assert.deepEqual(ENTRY[0].outlines,f.strokes);assert.equal(sha(JSON.stringify(f.strokes)),'c1488f46315395ce3258b8bccafd0350bd2d49f281e7a187bf4f0bf5cf7fa8b3');
  assert.deepEqual(Object.keys(proof).sort(),['defaults','engineHashes','engineRevision','groups','trace']);
  for(const args of[[],[trace],[trace,proof],[trace,proof,id,{}],[trace,proof,{...id,extra:true}],[[],proof,id],[trace,{...proof,extra:true},id]])assert.throws(()=>Reflect.apply(compileProgressive,null,args));

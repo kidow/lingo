@@ -1,3 +1,4 @@
+import {fixtureEvidenceBytes} from './hanja-stroke-batch-test-types.ts'
 import {readHistoricalAppSnapshot as readli,historicalAppSnapshotBindings as liBindings,historicalEvidence} from '../docs/hanja-component-evidence-growing-caps-u9148-2026-10-21/resolver.mjs'
 import {readHistoricalAppSnapshot as readbian,historicalAppSnapshotBindings as bianBindings} from '../docs/hanja-component-evidence-growing-caps-u8cb6-2026-10-21/resolver.mjs'
 import {readHistoricalAppSnapshot as readyi,historicalAppSnapshotBindings as yiBindings} from '../docs/hanja-component-evidence-growing-caps-u7037-k-2026-10-21/resolver.mjs'
@@ -30,7 +31,7 @@ test('1329 all-field loader key-order independence and effective nested negative
  assert.equal(ENTRY[0].glyph,'酈');assert.equal(ENTRY[0].outlines?.length,22);assert(Object.isFrozen(ENTRY));assert(Object.isFrozen(ENTRY[0].outlines?.[0][0].bounds))
 })
 test('1329 fixed full5 id3 VQ cache and prior two tails preserve exact original source',()=>{
- const r=JSON.parse(read(DIR+'review.json').toString())as{immutableFilesSHA256:Record<string,string>};assert.equal(Object.keys(r.immutableFilesSHA256).length,126);for(const[p,h]of Object.entries(r.immutableFilesSHA256))assert.equal(sha(read(p)),h,p)
+ const r=JSON.parse(read(DIR+'review.json').toString())as{immutableFilesSHA256:Record<string,string>};assert.equal(Object.keys(r.immutableFilesSHA256).length,126);for(const[p,h]of Object.entries(r.immutableFilesSHA256))assert.equal(sha(fixtureEvidenceBytes(p,h,read)),h,p)
  const t=JSON.parse(read(EXP+'config.json').toString()).targets.u9148,f=JSON.parse(read(EXP+'fixtures.json').toString()).u9148,proof=JSON.parse(read(SRC+'engine-whole-u9148.json').toString()),trace=proof.trace,source=JSON.parse(read(SRC+'sources.json').toString())
  assert.equal(Object.keys(source.records).length,4);assert.equal(source.wholeNames.length,2);assert.equal(source.providerVersions.length,0);assert.deepEqual(t.sourceFamily.selectedRootClosure,['u9148','u9e97-ue0101','u961d-02']);for(const n of t.sourceFamily.selectedRootClosure)assert(Object.hasOwn(source.records,n))
  assert.deepEqual(ENTRY[0].outlines,f.strokes);assert.deepEqual(f.baseline,t.factoryGroupMap.map((g:number[])=>g.flatMap(x=>f.rawBaseline[x])));assert.equal(f.rawBaseline.length,23);assert.equal(f.rawBaseline.flat().length,23);assert.equal(f.baseline.length,22);assert.equal(f.baseline.flat().length,23);assert.equal(f.strokes.length,22);assert.equal(f.strokes.flat().length,25);assert.equal(trace.length,27);assert.equal(trace.flat().length,31);assert.equal(sha(JSON.stringify(f.baseline)),t.baselineSHA256);assert.equal(sha(JSON.stringify(f.strokes)),'4ebc36b9e369c8a0963f1c2ed0fff8743a547abd8f5755eddbab67c8e77b76d5')

@@ -30,4 +30,3 @@ test('1343 archived public provenance and current activation are both preserved'
  assert.deepEqual(live.outlines,current.derived);assert.equal(sha(JSON.stringify(current.derived)),current.geometrySHA256);assert.deepEqual(current.counts,{pens:15,masks:17,polygons:33,raw:18,calls:18});
  assert.equal(hanjaStrokeData({glyph:'澐',strokes:14}),null);
 })
-

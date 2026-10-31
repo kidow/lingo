@@ -1,10 +1,40 @@
+import {readHanjaHistoricalSource} from './hanja-test-component-loader.ts'
 import assert from'node:assert/strict'
 import test from'node:test'
 import{readFileSync,existsSync}from'node:fs'
 import{createHash}from'node:crypto'
+import{gunzipSync}from'node:zlib'
 import{HANJA_DICTIONARY_GLYPHWIKI_BATCH1336_STROKES as ENTRY,loadGlyphWikiBatch1336Strokes as loadReviewed,GLYPHWIKI_BATCH1336_NATIVE_APPROVAL,GLYPHWIKI_BATCH1336_RUNTIME_APPLIED,GLYPHWIKI_BATCH1336_ASSIGNMENT_PROVISIONAL}from'./hanja-stroke-dictionary-glyphwiki-batch1336.ts'
 const ROOT=new URL('../',import.meta.url),SOURCE='docs/hanja-source-independent-qq-reorder-u7d7a-source-experiment-2026-10-21/',ORIGINAL='docs/hanja-goal-glyphwiki-batch949-2026-10-13/',ASSET='public/hanja-strokes/glyphwiki/u7d7a.json'
 const raw=(p:string)=>readFileSync(new URL(p,ROOT)),json=(p:string):any=>JSON.parse(raw(p).toString()),sha=(v:Uint8Array|string)=>createHash('sha256').update(v).digest('hex'),digest=(v:any)=>sha(JSON.stringify(v)),clone=(v:any):any=>JSON.parse(JSON.stringify(v))
+type NoticeAbsenceProof={schema:string;commit:string;path:string;objects:{oid:string;type:string;gzipBase64:string}[]}
+// A fixed commit -> root/public/hanja-strokes/glyphwiki Merkle path, not today's filesystem.
+function assertPreparedNoticeAbsent(proof:NoticeAbsenceProof){
+ assert.equal(proof.schema,'hanja-preparation-notice-absence-proof/v1')
+ assert.equal(proof.commit,'c0e137c623d3860d0f309f8cc3a94ca0940ace06')
+ assert.equal(proof.path,'public/hanja-strokes/glyphwiki/u7d7a.NOTICE.md')
+ assert.equal(proof.objects.length,5)
+ let expected=proof.commit
+ for(let index=0;index<proof.objects.length;index++){
+  const object=proof.objects[index],bytes=gunzipSync(Buffer.from(object.gzipBase64,'base64'),{maxOutputLength:1024*1024})
+  assert.equal(object.type,index===0?'commit':'tree');assert.equal(object.oid,expected)
+  assert.equal(createHash('sha1').update(object.type+' '+bytes.length+'\0').update(bytes).digest('hex'),object.oid)
+  if(index===0){const tree=/^tree ([a-f0-9]{40})\n/.exec(bytes.toString());assert(tree);expected=tree[1];continue}
+  const target=['public','hanja-strokes','glyphwiki','u7d7a.NOTICE.md'][index-1]
+  let offset=0,matches=0
+  while(offset<bytes.length){
+   const space=bytes.indexOf(32,offset);assert(space>offset)
+   const nul=bytes.indexOf(0,space+1);assert(nul>space&&nul+21<=bytes.length)
+   if(bytes.subarray(space+1,nul).toString()===target){
+    matches++;assert(index<4,'NOTICE was absent in the pinned preparation commit')
+    assert.equal(bytes.subarray(offset,space).toString(),'40000')
+    expected=bytes.subarray(nul+1,nul+21).toString('hex')
+   }
+   offset=nul+21
+  }
+  assert.equal(offset,bytes.length);assert.equal(matches,index===4?0:1)
+ }
+}
 test('1336 provisional semantic loader and substantive nested negatives',()=>{
  const b=json('public/hanja-strokes/dictionary-reviewed-glyphwiki-batch1336.json');assert.deepEqual(loadReviewed(b),ENTRY)
  const reorder=(x:any):any=>Array.isArray(x)?x.map(reorder):x&&typeof x==='object'?Object.fromEntries(Object.entries(x).reverse().map(([k,v])=>[k,reorder(v)])):x;assert.deepEqual(loadReviewed(reorder(b)),ENTRY)
@@ -32,5 +62,28 @@ test('1336 unregistered source-finite preparation and confirmed1335 parent',()=>
  assert.equal(sha(raw(SOURCE+'preparation.json')),a.sourceProvenance.sourcePreparationSHA256);assert.equal(sha(raw(a.sourceProvenance.staticMappingEvidence.path)),a.sourceProvenance.staticMappingEvidence.sha256);assert.equal(ENTRY[0].sourceReference.orderReviewSha256,a.sourceProvenance.staticMappingEvidence.sha256);assert.equal(ENTRY[0].sourceReference.geometryReviewSha256,a.sourceProvenance.sourcePreparationSHA256)
  const historical=json(a.sourcePreparationHistory.path),finite=json(a.sourceProvenance.finiteSourceEvidence.path);assert.equal(historical.nativeApproval,false);assert.equal(historical.runtimeApplied,false);assert.equal(a.sourcePreparationHistory.immutableHistoricalPreparation,true);assert.equal(sha(raw(a.sourceProvenance.finiteSourceEvidence.path)),a.sourceProvenance.finiteSourceEvidence.sha256);assert.equal(finite.sourceFiniteGateApprovalOnly,true);for(const k of['nativeApproval','fullNativeApproval','isolatedActualComponentBrowserVerified','actualAppUI','runtimeApplied'])assert.equal(finite[k],false,k)
  const prepared=json(h.componentPreparationReview.path);assert.equal(sha(raw(h.componentPreparationReview.path)),h.componentPreparationReview.sha256);for(const k of['nativeApproval','isolatedActualComponentBrowserVerified','actualAppUI','runtimeRegistered'])assert.equal(prepared[k],false,k)
- const registry=raw('lib/hanja-strokes.ts').toString(),module=raw('lib/hanja-stroke-dictionary-glyphwiki-batch1336.ts').toString();assert(!/from ['"]\.\/hanja-stroke-dictionary-glyphwiki-batch1336(?:\.ts)?['"]/.test(registry));assert(!registry.includes('...HANJA_DICTIONARY_GLYPHWIKI_BATCH1336_STROKES'));assert(!/import\s+.*\.json/.test(module));assert.equal(a.noticePreparation.appendWritten,false);assert.equal(a.noticePreparation.awaitingROOTActualAPPApproval,true);assert(!existsSync(new URL(a.noticePreparation.futureFile,ROOT)));for(const k of['authorSourceCompiler','authorFactory','authorProjection','authorDerive','authorEngine','authorGeometry'])assert.equal(h[k],0,k)
+ const registry=readHanjaHistoricalSource('lib/hanja-strokes.ts','f9971dffd7a1a44b9a1831c40cd2d4dfec1b47201e4ff48ea4ddf85c50934cc8').toString(),module=raw('lib/hanja-stroke-dictionary-glyphwiki-batch1336.ts').toString();assert(!/from ['"]\.\/hanja-stroke-dictionary-glyphwiki-batch1336(?:\.ts)?['"]/.test(registry));assert(!registry.includes('...HANJA_DICTIONARY_GLYPHWIKI_BATCH1336_STROKES'));assert(!/import\s+.*\.json/.test(module));assert.equal(a.noticePreparation.appendWritten,false);assert.equal(a.noticePreparation.awaitingROOTActualAPPApproval,true);assert.equal(a.noticePreparation.futureFile,'public/hanja-strokes/glyphwiki/u7d7a.NOTICE.md');assertPreparedNoticeAbsent(json('docs/hanja-goal-glyphwiki-batch1336-2026-10-21/preparation-notice-absence-proof.json'));for(const k of['authorSourceCompiler','authorFactory','authorProjection','authorDerive','authorEngine','authorGeometry'])assert.equal(h[k],0,k)
+})
+
+test('1336 current registration follows the later approval without rewriting preparation history',async()=>{
+ const approval=json('docs/hanja-goal-glyphwiki-batch1336-2026-10-21/review.json'),checkpoint=json('docs/hanja-goal-glyphwiki-batch1336-2026-10-21/resume.json')
+ assert.equal(approval.nativeApproval,true);assert.equal(approval.isolatedActualComponentBrowserVerified,true);assert.equal(approval.runtimeAuthorization.rootApproved,true);assert.equal(approval.actualAppUI,false)
+ assert.equal(checkpoint.actualCheckpointVerified,true);assert.equal(checkpoint.actualRegistryVerified,true);assert.equal(checkpoint.runtimeRegistered,true);assert.equal(checkpoint.runtimeApplied,true)
+ const notice=json(ASSET).noticePreparation;assert(existsSync(new URL(notice.futureFile,ROOT)));assert(raw(notice.futureFile).toString().startsWith(raw(notice.originalFile).toString()))
+ const registry=raw('lib/hanja-strokes.ts').toString()
+ assert.equal((registry.match(/import \{ HANJA_DICTIONARY_GLYPHWIKI_BATCH1336_STROKES \} from '\.\/hanja-stroke-dictionary-glyphwiki-batch1336(?:\.ts)?'/g)||[]).length,1)
+ assert.equal((registry.match(/\.\.\.HANJA_DICTIONARY_GLYPHWIKI_BATCH1336_STROKES\b/g)||[]).length,1)
+ const{HANJA_STROKES,hanjaStrokeData}=await import('./hanja-strokes.ts')
+ assert.equal(HANJA_STROKES.filter(data=>data===ENTRY[0]).length,1)
+ const character={glyph:ENTRY[0].glyph,strokes:ENTRY[0].paths.length},resolved=hanjaStrokeData(character)
+ assert(resolved);assert.equal(resolved,ENTRY[0]);assert.deepEqual(resolved.paths,ENTRY[0].paths)
+ assert.equal(hanjaStrokeData({...character,strokes:character.strokes+1}),null);assert.equal(hanjaStrokeData({...character,strokes:0}),null)
+})
+
+test('1336 historical NOTICE absence proof rejects altered commit, tree and path',()=>{
+ const proof=json('docs/hanja-goal-glyphwiki-batch1336-2026-10-21/preparation-notice-absence-proof.json') as NoticeAbsenceProof
+ assertPreparedNoticeAbsent(proof)
+ const wrongPath=structuredClone(proof);wrongPath.path='public/other';assert.throws(()=>assertPreparedNoticeAbsent(wrongPath))
+ const wrongTree=structuredClone(proof);wrongTree.objects[2].oid='0'.repeat(40);assert.throws(()=>assertPreparedNoticeAbsent(wrongTree))
+ const broken=structuredClone(proof);broken.objects[1].gzipBase64=Buffer.from('not gzip').toString('base64');assert.throws(()=>assertPreparedNoticeAbsent(broken))
 })

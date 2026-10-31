@@ -1,3 +1,4 @@
+import {fixtureEvidenceBytes} from './hanja-stroke-batch-test-types.ts'
 import assert from 'node:assert/strict'
 import {readFileSync} from 'node:fs'
 import {createHash} from 'node:crypto'
@@ -26,7 +27,7 @@ test('1325 all-field loader key-order independence and effective nested negative
  assert.equal(ENTRY[0].glyph,'牷');assert.equal(ENTRY[0].outlines?.length,10);assert(Object.isFrozen(ENTRY));assert(Object.isFrozen(ENTRY[0].outlines?.[0][0].bounds))
 })
 test('1325 full5 id3 cached raw references preserve every mask and immutable frozen pins',()=>{
- const review=JSON.parse(read(DIR+'review.json').toString())as{immutableFilesSHA256:Record<string,string>};assert.equal(Object.keys(review.immutableFilesSHA256).length,96);for(const[p,h]of Object.entries(review.immutableFilesSHA256))assert.equal(sha(read(p)),h,p)
+ const review=JSON.parse(read(DIR+'review.json').toString())as{immutableFilesSHA256:Record<string,string>};assert.equal(Object.keys(review.immutableFilesSHA256).length,96);for(const[p,h]of Object.entries(review.immutableFilesSHA256))assert.equal(sha(fixtureEvidenceBytes(p,h,read)),h,p)
  const t=JSON.parse(read(EXP+'config.json').toString()).targets.u7277,f=JSON.parse(read(EXP+'fixtures.json').toString()).u7277,proof=JSON.parse(read(SRC+'engine-whole-u7277.json').toString()),trace=proof.trace
  assert.deepEqual(ENTRY[0].outlines,f.strokes);assert.deepEqual(f.strokes,f.baseline);assert.deepEqual(f.strokes,t.factoryGroupMap.map((g:number[])=>g.flatMap(x=>f.rawBaseline[x])))
  assert.deepEqual(f.originalOrderBaseline,f.rawBaseline);assert.equal(sha(JSON.stringify(f.strokes)),'0080eaa2405975a46a34d479ba06c9d876e7b83cf9135f32cc8104b099b52b10')

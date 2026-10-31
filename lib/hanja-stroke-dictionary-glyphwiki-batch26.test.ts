@@ -7,6 +7,7 @@ import { fileURLToPath } from 'node:url'
 import reviewed from '../public/hanja-strokes/dictionary-reviewed-glyphwiki-batch26.json' with { type: 'json' }
 import { HANJA_STROKES, hanjaStrokeData } from './hanja-strokes.ts'
 import { loadGlyphWikiBatch26Strokes } from './hanja-stroke-dictionary-glyphwiki-batch26.ts'
+import { assertIndependentlyReviewedReplacement } from './hanja-test-held-candidate.ts'
 
 test('芥의 국내 8획 순서와 분리된 草 자형을 등록한다', () => {
   const data = hanjaStrokeData({ glyph: '芥', strokes: 8 })!
@@ -48,7 +49,12 @@ test('KAGE 변환은 지원하지 않는 필기 요소를 생략하지 않는다
   assert.match(output, /^# tests 4$/m)
   assert.match(output, /^# pass 4$/m)
 })
-test('庾의 새 후보는 마지막 획의 시작과 자형 차이로 보류한다', () => {
-  assert.equal(hanjaStrokeData({ glyph: '庾', strokes: 11 }), null)
+test('庾의 이 배치 후보는 보류하고 이후 독립 승인된 변형만 재생한다', () => {
+  const findings = JSON.parse(readFileSync(new URL('../docs/hanja-goal-glyphwiki-batch26-2026-09-22/findings.json', import.meta.url), 'utf8'))
+  const held = findings.entries.find((entry: {glyph: string}) => entry.glyph === '庾')
+  assert.equal(held.decision, 'hold')
+  assert.equal(held.sourceRoot, 'koseki-106330@6')
+  const current = assertIndependentlyReviewedReplacement({ glyph: '庾', strokes: 11 }, reviewed)
+  assert.equal(current.paths.length, 12)
   assert.equal(hanjaStrokeData({ glyph: '庾', strokes: 12 }), null)
 })

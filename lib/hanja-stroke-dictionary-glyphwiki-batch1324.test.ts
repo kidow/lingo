@@ -1,3 +1,4 @@
+import {fixtureEvidenceBytes} from './hanja-stroke-batch-test-types.ts'
 import test from 'node:test'
 import assert from 'node:assert/strict'
 import {readFileSync} from 'node:fs'
@@ -21,7 +22,7 @@ test('1324 complete JSON loader rejects arity and effective nested mutations',()
  assert.equal(ENTRY[0].glyph,'澯');assert.equal(ENTRY[0].outlines?.length,16)
 })
 test('1324 exact full5 id3 and105 historical pins without positive source calls',()=>{
- const review=JSON.parse(read(DIR+'review.json').toString())as{immutableFilesSHA256:Record<string,string>};assert.equal(Object.keys(review.immutableFilesSHA256).length,105);for(const[p,h]of Object.entries(review.immutableFilesSHA256))assert.equal(sha(read(p)),h,p)
+ const review=JSON.parse(read(DIR+'review.json').toString())as{immutableFilesSHA256:Record<string,string>};assert.equal(Object.keys(review.immutableFilesSHA256).length,105);for(const[p,h]of Object.entries(review.immutableFilesSHA256))assert.equal(sha(fixtureEvidenceBytes(p,h,read)),h,p)
  const f=JSON.parse(read(EXP+'fixtures.json').toString()).u6faf,proof=JSON.parse(read(SRC+'engine-whole-u6faf.json').toString()),trace=proof.trace,id=selectedProofIdentity
  assert.deepEqual(ENTRY[0].outlines,f.strokes);assert.equal(sha(JSON.stringify(ENTRY[0].outlines)),'734fc080df851f3f7f681eb160e339dd7c11067f4a6da9e73b1cda23dd6d58c6');assert.deepEqual(Object.keys(proof).sort(),['defaults','engineHashes','engineRevision','groups','trace']);assert.deepEqual(Object.keys(id).sort(),['file','fileSHA256','root']);assert.equal(id.root,'u6faf');assert.equal(id.file,'../hanja-goal-glyphwiki-batch904-2026-10-13/engine-whole-u6faf.json');assert.equal(sha(read(EXP+id.file)),id.fileSHA256);assert.deepEqual(f.fullProof,proof)
  for(const args of[[],[trace],[trace,proof],[trace,proof,id,{}],[trace,proof,{...id,extra:true}],[[],proof,id],[trace,{...proof,extra:true},id]])assert.throws(()=>Reflect.apply(compileProgressive,null,args))

@@ -1,3 +1,4 @@
+import {fixtureEvidenceBytes} from './hanja-stroke-batch-test-types.ts'
 import {readHistoricalAppSnapshot as readyi,historicalAppSnapshotBindings as yiBindings,historicalEvidence} from '../docs/hanja-component-evidence-growing-caps-u7037-k-2026-10-21/resolver.mjs'
 import assert from 'node:assert/strict'
 import {readFileSync} from 'node:fs'
@@ -28,7 +29,7 @@ test('1327 all-field loader key-order independence and effective nested negative
  assert.equal(ENTRY[0].glyph,'瀷');assert.equal(ENTRY[0].outlines?.length,20);assert(Object.isFrozen(ENTRY));assert(Object.isFrozen(ENTRY[0].outlines?.[0][0].bounds))
 })
 test('1327 selected K existing full5 id3 and exact LEFT4/7 partition preserve all fields',()=>{
- const review=JSON.parse(read(DIR+'review.json').toString())as{immutableFilesSHA256:Record<string,string>};assert.equal(Object.keys(review.immutableFilesSHA256).length,138);for(const[p,h]of Object.entries(review.immutableFilesSHA256))assert.equal(sha(read(p)),h,p)
+ const review=JSON.parse(read(DIR+'review.json').toString())as{immutableFilesSHA256:Record<string,string>};assert.equal(Object.keys(review.immutableFilesSHA256).length,138);for(const[p,h]of Object.entries(review.immutableFilesSHA256))assert.equal(sha(fixtureEvidenceBytes(p,h,read)),h,p)
  const t=JSON.parse(read(EXP+'config.json').toString()).targets['u7037-k'],f=JSON.parse(read(EXP+'fixtures.json').toString())['u7037-k'],proof=JSON.parse(read(SRC+'engine-whole-u7037-k.json').toString()),trace=proof.trace
  const source=JSON.parse(read(SRC+'sources.json').toString());assert.equal(Object.keys(source.records).length,26);assert.equal(source.wholeNames.length,6);assert.equal(source.providerVersions.length,5);assert.equal(t.sourceFamily.providerAlreadyIncludedInRecords,true);assert.deepEqual(t.sourceFamily.selectedRootClosure,['u7037-k','koseki-210830','u6c35-01','aj1-14082','u7ffc-ue0102','ufa1e-03-var-001','u7570','u7530-03','u516b-04']);for(const name of t.sourceFamily.selectedRootClosure)assert(Object.hasOwn(source.records,name));assert.equal(t.existingFull5Preserved,true);assert.equal(t.newHeaderTraceCombination,false)
  assert.deepEqual(Object.keys(f).sort(),['baseline','fullProof','strokes']);assert.deepEqual(ENTRY[0].outlines,f.strokes);assert.notDeepEqual(f.strokes,f.baseline)

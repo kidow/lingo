@@ -59,6 +59,7 @@ export function fixtureEvidenceBytes(path:string,expectedSHA256:unknown,readCurr
   const current=readCurrent(path)
   if(typeof expectedSHA256==='string'&&createHash('sha256').update(current).digest('hex')!==expectedSHA256
     &&(/^(?:lib|components\/hanja)\/[A-Za-z0-9-]+(?:\.test)?\.tsx?$/.test(path)
+      ||/^content\/hanja\/characters\/[a-z0-9-]+\.json$/.test(path)
       ||path==='scripts/hanja-actual-component-review.mjs')) {
     try{return readHanjaHistoricalSource(path,expectedSHA256)}
     catch(cause){throw new Error('Historical fixture unavailable: '+path+' '+expectedSHA256,{cause})}

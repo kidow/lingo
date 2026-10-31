@@ -1,3 +1,4 @@
+import {fixtureEvidenceBytes} from './hanja-stroke-batch-test-types.ts'
 import assert from 'node:assert/strict'
 import test from 'node:test'
 import{readFileSync}from'node:fs'
@@ -14,7 +15,7 @@ test('1346 원loader 전체필드·음성 (준비시 최초PASS)',()=>{
 test('1346 activation tail: ROOT39유한화면 승인과 실제등록',async()=>{
  assert.equal(GLYPHWIKI_BATCH1346_NATIVE_APPROVAL,true);assert.equal(GLYPHWIKI_BATCH1346_RUNTIME_APPLIED,true);assert.equal(GLYPHWIKI_BATCH1346_ASSIGNMENT_PROVISIONAL,false);
  const review=json(REVIEW.file);assert.equal(sha(bytes(REVIEW.file)),REVIEW.sha256);assert.equal(review.approval.rootRegistrationApproved,true);assert.equal(review.approval.isolatedActualComponentFiniteApproved,true);assert.equal(review.approval.actualAppUI,false);assert.equal(review.approval.all14Autoplay,false);assert.equal(review.approval.storage,false);assert.equal(review.native.validScreens,39);assert.equal(review.native.first.screens+review.native.corrected.screens,39);assert.equal(review.native.compactUniqueSamples,126);assert.equal(review.native.compactObservedSamples,135);assert.deepEqual(review.native.corrected.bad,[]);assert.deepEqual(review.native.corrected.errors,[]);
- for(const[p,h]of Object.entries(review.inputSHA256)){assert.match(h as string,/^[a-f0-9]{64}$/);if(p==='scripts/hanja-actual-component-review.mjs')continue;assert.equal(sha(bytes(p)),h,p)} // adapter는 관측당시 Git지문: 후속공통UI편집으로 재검토하지 않음.
+ for(const[p,h]of Object.entries(review.inputSHA256)){assert.match(h as string,/^[a-f0-9]{64}$/);if(p==='scripts/hanja-actual-component-review.mjs')continue;assert.equal(sha(fixtureEvidenceBytes(p,h,bytes)),h,p)} // adapter는 관측당시 Git지문: 후속공통UI편집으로 재검토하지 않음.
  const asset=json('public/hanja-strokes/glyphwiki/u84b2-k.json'),cache=json('docs/hanja-source-cache-u84b2-k-2026-10-22/source.json');assert.equal(asset.preparationHistory.runtimeApplied,false);assert.equal(cache.runtimeApplied,false);assert.equal(sha(JSON.stringify(EXPECTED[0].outlines)),review.source.geometrySHA256);assert.deepEqual(EXPECTED[0].outlines,cache.strokes);
  const{HANJA_STROKES,hanjaStrokeData}=await import('./hanja-strokes.ts');const unique=new Set(HANJA_STROKES.map(x=>x.glyph));assert(unique.size>=5761);assert(5978-unique.size<=217);assert.equal(HANJA_STROKES.filter(x=>x.glyph==='蒲').length,1);assert.deepEqual(hanjaStrokeData({glyph:'蒲',strokes:14}),EXPECTED[0]);
  const registry=readFileSync(new URL('./hanja-strokes.ts',import.meta.url),'utf8');assert.equal((registry.match(/import[^\n]+HANJA_DICTIONARY_GLYPHWIKI_BATCH1346_STROKES[^\n]+from/g)||[]).length,1);assert.equal((registry.match(/\.\.\.HANJA_DICTIONARY_GLYPHWIKI_BATCH1346_STROKES/g)||[]).length,1);

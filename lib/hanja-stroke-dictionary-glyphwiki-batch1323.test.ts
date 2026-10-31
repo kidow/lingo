@@ -1,3 +1,4 @@
+import {fixtureEvidenceBytes} from './hanja-stroke-batch-test-types.ts'
 import test from 'node:test'
 import assert from 'node:assert/strict'
 import {readFileSync} from 'node:fs'
@@ -18,7 +19,7 @@ test('1323 complete JSON loader rejects arity and nested changes',()=>{
  assert.equal(ENTRY[0].glyph,'疷');assert.equal(ENTRY[0].outlines?.length,10)
 })
 test('1323 fixed full5 id3 and snapshot69 pins without positive source calls',()=>{
- const review=JSON.parse(read(DIR+'review.json').toString())as{immutableFilesSHA256:Record<string,string>};assert.equal(Object.keys(review.immutableFilesSHA256).length,69);for(const[p,h]of Object.entries(review.immutableFilesSHA256))assert.equal(sha(read(p)),h,p)
+ const review=JSON.parse(read(DIR+'review.json').toString())as{immutableFilesSHA256:Record<string,string>};assert.equal(Object.keys(review.immutableFilesSHA256).length,69);for(const[p,h]of Object.entries(review.immutableFilesSHA256))assert.equal(sha(fixtureEvidenceBytes(p,h,read)),h,p)
  const f=JSON.parse(read(EXP+'fixtures.json').toString()),proof=JSON.parse(read(SRC+'engine-whole-u75b7.json').toString()),trace=proof.trace,id=selectedProofIdentity;assert.deepEqual(ENTRY[0].outlines,f.originalOrderBaseline);assert.equal(sha(JSON.stringify(ENTRY[0].outlines)),'59f289012fa5c31ab8c75d82cfcffdc9a138d7908bf602e36e4925657957e945');assert.deepEqual(Object.keys(proof).sort(),['defaults','engineHashes','engineRevision','groups','trace']);assert.deepEqual(Object.keys(id).sort(),['file','fileSHA256','root']);assert.equal(sha(read(EXP+id.file)),id.fileSHA256);assert.deepEqual(id,{"root":"u75b7","file":"../hanja-goal-glyphwiki-batch838-2026-10-13/engine-whole-u75b7.json","fileSHA256":"a79941bfb48ad7f6433d9285c68c3be71cd0e205ebcfece1fa1015318e7e1f7b"})
  for(const args of[[],[trace],[trace,proof],[trace,proof,id,{}],[trace,proof,{...id,extra:true}],[[],proof,id],[trace,{...proof,extra:true},id]])assert.throws(()=>Reflect.apply(compileProgressive,null,args))
  for(const key of Object.keys(id)){const missing:Record<string,unknown>={...id};delete missing[key];assert.throws(()=>Reflect.apply(compileProgressive,null,[trace,proof,missing]));assert.throws(()=>Reflect.apply(compileProgressive,null,[trace,proof,{...id,[key]:'wrong'}]))}

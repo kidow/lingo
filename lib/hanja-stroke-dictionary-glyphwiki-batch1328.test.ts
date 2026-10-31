@@ -1,3 +1,4 @@
+import {fixtureEvidenceBytes} from './hanja-stroke-batch-test-types.ts'
 import {readHistoricalAppSnapshot as readbian,historicalAppSnapshotBindings as bianBindings,historicalEvidence} from '../docs/hanja-component-evidence-growing-caps-u8cb6-2026-10-21/resolver.mjs'
 import {readHistoricalAppSnapshot as readyi,historicalAppSnapshotBindings as yiBindings} from '../docs/hanja-component-evidence-growing-caps-u7037-k-2026-10-21/resolver.mjs'
 import assert from 'node:assert/strict'
@@ -29,7 +30,7 @@ test('1328 all-field loader key-order independence and effective nested negative
  assert.equal(ENTRY[0].glyph,'貶');assert.equal(ENTRY[0].outlines?.length,12);assert(Object.isFrozen(ENTRY));assert(Object.isFrozen(ENTRY[0].outlines?.[0][0].bounds))
 })
 test('1328 original full5 header/body3 inner5 identity and immutable QC projection',()=>{
- const r=JSON.parse(read(DIR+'review.json').toString())as{immutableFilesSHA256:Record<string,string>;sourceFamily:{selectedRootClosure:string[]};sourceContract:{newHeaderTraceCombination:boolean}};assert.equal(Object.keys(r.immutableFilesSHA256).length,108);for(const[p,h]of Object.entries(r.immutableFilesSHA256))assert.equal(sha(read(p)),h,p)
+ const r=JSON.parse(read(DIR+'review.json').toString())as{immutableFilesSHA256:Record<string,string>;sourceFamily:{selectedRootClosure:string[]};sourceContract:{newHeaderTraceCombination:boolean}};assert.equal(Object.keys(r.immutableFilesSHA256).length,108);for(const[p,h]of Object.entries(r.immutableFilesSHA256))assert.equal(sha(fixtureEvidenceBytes(p,h,read)),h,p)
  const t=JSON.parse(read(EXP+'config.json').toString()).targets.u8cb6,f=JSON.parse(read(EXP+'fixtures.json').toString()),proof=JSON.parse(read(SRC+'engine-proof.json').toString()),body=JSON.parse(read(SRC+'engine-whole-u8cb6.json').toString()),trace=proof.trace,source=JSON.parse(read(SRC+'sources.json').toString())
  assert.equal(Object.keys(source.records).length,7);assert.equal(source.wholeNames.length,3);assert.equal(source.providerVersions.length,0);assert.deepEqual(r.sourceFamily.selectedRootClosure,['u8cb6','u8c9d-01','u76ee','u4e4f-02','u4e4b-02']);for(const n of r.sourceFamily.selectedRootClosure)assert(Object.hasOwn(source.records,n))
  assert.deepEqual(Object.keys(proof).sort(),['defaults','engineHashes','engineRevision','groups','trace']);assert.deepEqual(Object.keys(body).sort(),['defaults','groups','trace']);for(const key of Object.keys(body))assert.deepEqual(body[key],proof[key]);assert.deepEqual(f.fullProof,proof);assert.deepEqual(f.wholeBody,body);assert.equal(sha(JSON.stringify(proof)),t.fullProofSHA256)

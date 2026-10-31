@@ -1,3 +1,4 @@
+import {readHanjaHistoricalSource} from './hanja-test-component-loader.ts'
 import assert from'node:assert/strict'
 import test from'node:test'
 import{readFileSync}from'node:fs'
@@ -32,5 +33,19 @@ test('1335 unregistered limited finite-source evidence and confirmed1334 parent'
  const parent=json(h.parentResume);assert.equal(sha(raw(h.parentResume)),h.parentResumeSHA256);assert.equal(h.parentResumeSHA256,'5530b442e9a3a65880a4a00a582deaa6cc28820c397f3791c803083d884b3cd4');assert.equal(parent.actualCheckpointVerified,true);assert.equal(parent.runtimeApplied,true);assert.deepEqual([parent.completedRuntime,parent.remainingCommittedRuntime],[5750,228])
  assert.equal(sha(raw(SOURCE+'preparation.json')),a.sourceProvenance.sourcePreparationSHA256);assert.equal(sha(raw(a.sourceProvenance.staticMappingEvidence.path)),a.sourceProvenance.staticMappingEvidence.sha256);assert.equal(ENTRY[0].sourceReference.orderReviewSha256,a.sourceProvenance.staticMappingEvidence.sha256);assert.equal(ENTRY[0].sourceReference.geometryReviewSha256,a.sourceProvenance.sourcePreparationSHA256)
  const historical=json(a.sourcePreparationHistory.path),finite=json(a.sourceProvenance.finiteSourceEvidence.path);assert.equal(historical.nativeApproval,false);assert.equal(historical.runtimeApplied,false);assert.equal(a.sourcePreparationHistory.immutableHistoricalPreparation,true);assert.equal(sha(raw(a.sourceProvenance.finiteSourceEvidence.path)),a.sourceProvenance.finiteSourceEvidence.sha256);assert.equal(finite.sourceNativeApproval,true);assert.equal(finite.sourceFiniteGateApprovalOnly,true);for(const k of['nativeApproval','fullNativeApproval','isolatedActualComponentBrowserVerified','actualAppUI','runtimeApplied'])assert.equal(finite[k],false,k);assert.equal(finite.rootObservation.domestic.freshWholeApproved,false);assert.equal(finite.rootObservation.coverage.Q2.pureWhite,false);assert.equal(finite.rootObservation.Q2Local.exactOneInitial.status,'FIRST-FAIL')
- const registry=raw('lib/hanja-strokes.ts').toString(),module=raw('lib/hanja-stroke-dictionary-glyphwiki-batch1335.ts').toString();assert(!registry.includes("from './hanja-stroke-dictionary-glyphwiki-batch1335'"));assert(!registry.includes('...HANJA_DICTIONARY_GLYPHWIKI_BATCH1335_STROKES'));assert(!/import\s+.*\.json/.test(module));assert.equal(a.terminalPartition.sourceOperationsForThisBundle,0);for(const k of['authorSourceCompiler','authorFactory','authorProjection','authorDerive','authorEngine','authorGeometry'])assert.equal(h[k],0,k)
+ const registry=readHanjaHistoricalSource('lib/hanja-strokes.ts','736a6d4048486378f7d4f83737620544c8d123cd215b1c295cdf1a178baa3684').toString(),module=raw('lib/hanja-stroke-dictionary-glyphwiki-batch1335.ts').toString();assert(!registry.includes("from './hanja-stroke-dictionary-glyphwiki-batch1335'"));assert(!registry.includes('...HANJA_DICTIONARY_GLYPHWIKI_BATCH1335_STROKES'));assert(!/import\s+.*\.json/.test(module));assert.equal(a.terminalPartition.sourceOperationsForThisBundle,0);for(const k of['authorSourceCompiler','authorFactory','authorProjection','authorDerive','authorEngine','authorGeometry'])assert.equal(h[k],0,k)
+})
+
+test('1335 current registration follows the later approval without rewriting preparation history',async()=>{
+ const approval=json('docs/hanja-goal-glyphwiki-batch1335-2026-10-21/review.json'),checkpoint=json('docs/hanja-goal-glyphwiki-batch1335-2026-10-21/resume.json')
+ assert.equal(approval.nativeApproval,true);assert.equal(approval.isolatedActualComponentBrowserVerified,true);assert.equal(approval.runtimeAuthorization.rootApproved,true);assert.equal(approval.actualAppUI,false)
+ assert.equal(checkpoint.actualCheckpointVerified,true);assert.equal(checkpoint.actualRegistryVerified,true);assert.equal(checkpoint.runtimeRegistered,true);assert.equal(checkpoint.runtimeApplied,true)
+ const registry=raw('lib/hanja-strokes.ts').toString()
+ assert.equal((registry.match(/import \{ HANJA_DICTIONARY_GLYPHWIKI_BATCH1335_STROKES \} from '\.\/hanja-stroke-dictionary-glyphwiki-batch1335(?:\.ts)?'/g)||[]).length,1)
+ assert.equal((registry.match(/\.\.\.HANJA_DICTIONARY_GLYPHWIKI_BATCH1335_STROKES\b/g)||[]).length,1)
+ const{HANJA_STROKES,hanjaStrokeData}=await import('./hanja-strokes.ts')
+ assert.equal(HANJA_STROKES.filter(data=>data===ENTRY[0]).length,1)
+ const character={glyph:ENTRY[0].glyph,strokes:ENTRY[0].paths.length},resolved=hanjaStrokeData(character)
+ assert(resolved);assert.equal(resolved,ENTRY[0]);assert.deepEqual(resolved.paths,ENTRY[0].paths)
+ assert.equal(hanjaStrokeData({...character,strokes:character.strokes+1}),null);assert.equal(hanjaStrokeData({...character,strokes:0}),null)
 })
