@@ -1,0 +1,39 @@
+{
+  "schema": "hanja-historical-source-reconstruction/v1",
+  "originalPath": "scripts/hanja-actual-component-review.mjs",
+  "expectedSHA256": "d3c509e60e3fcae86e3c1c86bc8542d66de700b5ac54a9508782d2b9c92fc5e4",
+  "sourceBytes": 3195264,
+  "base": {
+    "gitCommit": "4a2f8347b38529147c1310113bdda5ecf6e91146",
+    "gitBlob": "95d0536d2cb904b376bcf5d8f28a015082332c23",
+    "sha256": "07f62d06a21b1b275ad098ccc331e72223537210cc698b2f96b5e87372aa8ae8"
+  },
+  "steps": [
+    {
+      "path": "docs/hanja-display-contact-u97ce-pen8-2026-10-29/source-contact-H-integration.patch",
+      "sha256": "d5b1ff33bc4867175e1addeb914a332616c037d7baf18723688f07327cf2dc52",
+      "hunks": 35,
+      "eachExactOldBlockOccurrence": 1,
+      "resultSHA256": "4277e845ba348761023c541f47593311c854a638caca6acf112b5413702c60d5"
+    },
+    {
+      "path": "docs/hanja-display-contact-u97ce-pen8-2026-10-29/observer-frame-progress.patch",
+      "sha256": "9014fbcf770f3637bbcecf298bf7fc15bca810b5c77345dc39b04fbdd7883a0b",
+      "hunks": 2,
+      "eachExactOldBlockOccurrence": 1,
+      "resultSHA256": "f0506bc7e2257d62753fa66d8c86d60b6705a4fc4a8e54878fa1e60bada27646"
+    },
+    {
+      "path": "docs/hanja-display-contact-u97ce-pen8-2026-10-29/observer-target-progress.patch",
+      "sha256": "0151c69348c11eb6e9f4954ceaf02c88dd7bcaaba886ba1cfdcee64a56ee5ac0",
+      "hunks": 1,
+      "eachExactOldBlockOccurrence": 1,
+      "resultSHA256": "d3c509e60e3fcae86e3c1c86bc8542d66de700b5ac54a9508782d2b9c92fc5e4"
+    }
+  ],
+  "method": "Apply only the three existing patches in memory to the exact Git base, requiring every old block to occur exactly once; authenticate every recorded intermediate and final SHA.",
+  "historicalEvidenceOnly": true,
+  "originalExpectedSHAUnchanged": true,
+  "newVisualReview": false,
+  "productionCodeChanged": false
+}

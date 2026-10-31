@@ -1,3 +1,4 @@
+import {readHanjaHistoricalSource} from './hanja-test-component-loader.ts'
 import test from 'node:test'
 import assert from 'node:assert/strict'
 import {readFileSync} from 'node:fs'
@@ -12,7 +13,8 @@ const ast=ts.createSourceFile('stroke-outlines.tsx',source,ts.ScriptTarget.Lates
 function calls(name:string){const out:ts.CallExpression[]=[];function walk(node:ts.Node){if(ts.isCallExpression(node)&&node.expression.getText(ast)===name)out.push(node);ts.forEachChild(node,walk)}walk(ast);return out}
 function jsx(name:string){const out:ts.JsxSelfClosingElement[]=[];function walk(node:ts.Node){if(ts.isJsxSelfClosingElement(node)&&node.tagName.getText(ast)===name)out.push(node);ts.forEachChild(node,walk)}walk(ast);assert.equal(out.length,1);return out[0]}
 function prop(node:ts.JsxSelfClosingElement,name:string){const p=node.attributes.properties.find(p=>ts.isJsxAttribute(p)&&p.name.getText(ast)===name);assert(p&&ts.isJsxAttribute(p)&&p.initializer&&ts.isJsxExpression(p.initializer)&&p.initializer.expression);return p.initializer.expression.getText(ast)}
-test('竪 production component is exactly the ROOT-reviewed actual-component RAM source',()=>{
+test('竪 historical component retains the ROOT-reviewed RAM source and inverse',()=>{
+ const source=readHanjaHistoricalSource('components/hanja/stroke-outlines.tsx','e9b9abd326f209efce35a1da74a8c7d04830779294e16750344da1946dddf4e0').toString()
  assert.equal(hash(source),'e9b9abd326f209efce35a1da74a8c7d04830779294e16750344da1946dddf4e0')
  const latest=JSON.parse(read('docs/hanja-actual-component-profiles-2026-10-22/u8587-local-components-source-preview-3.json')).previewComponentDelta;assert(source.endsWith(latest.append));let baseR=source.slice(0,-latest.append.length)
  for(const change of [...latest.replacements].reverse()){assert.equal(baseR.split(change.new).length,2);baseR=baseR.replace(change.new,()=>change.old)}

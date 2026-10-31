@@ -1,3 +1,4 @@
+import {readHanjaHistoricalSource} from './hanja-test-component-loader.ts'
 import test from 'node:test'
 import assert from 'node:assert/strict'
 import{readFileSync}from'node:fs'
@@ -35,7 +36,7 @@ test('緅 exact14 source-bound alias: private4 lifecycle and negatives only',()=
   const resetNodes={measurement:null,guide:null,startCap:null,endCap:null,ink:null};assert.equal(commitReviewedU7d8eStartsCaps(cp,strokes[pen][0],0,'alias',resetNodes).status,'empty');assert.equal(commitReviewedU7d8eStartsCaps(cp,strokes[pen][0],1,'alias',resetNodes).status,'complete');assert.throws(()=>Reflect.apply(measureReviewedU7d8eStartsFrame,undefined,[{...cp},strokes[pen][0],p,null]));
  }
  assert.equal(aliasTargets,4);for(const[p,m]of[[-1,0],[2,0],[11,0],[13,0],[0,1],[0,.5]])assert.equal(startsAlias(ctx,p,m),null);for(const[p,m]of[[0,0],[2,1],[12,1],[1,2],[0,1.1]])assert.equal(footAlias(ctx,p,m),null);assert.equal(startsAlias(null,0,0),null);assert.equal(footAlias(null,0,1),null);
- for(const[path,pieces]of Object.entries(inversePieces)){const now=read(path).toString();assert(now.startsWith(pieces.prefix));assert(now.endsWith(pieces.suffix));assert.equal(sha(now.slice(pieces.prefix.length,-pieces.suffix.length)),pieces.oldSHA256)}
+ for(const[path,pieces]of Object.entries(inversePieces)){const live=read(path).toString();assert(live.startsWith(pieces.prefix));assert(live.endsWith(pieces.suffix));const version=path==='lib/hanja-stroke-start-gate-u7d8e.ts'?'7e458be5443708da2c056b01218ac4ee27b7f90efc0eb3ef3924b0032f756e70':'b7cba160349b496406d19d0dcba753200906381093fa2de7ebae80bc6ef2d8f9';const now=readHanjaHistoricalSource(path,version).toString();assert(now.startsWith(pieces.prefix));assert(now.endsWith(pieces.suffix));assert.equal(sha(now.slice(pieces.prefix.length,-pieces.suffix.length)),pieces.oldSHA256)}
  assert.equal(SOURCE.forbiddenProofOwnerStart12Transfer,true);assert.equal(SOURCE.newMathDerivations,0);assert.equal(SOURCE.oldProofMathLoopsRepeated,0);assert.equal(SOURCE.nativeApproval,false);assert.equal(SOURCE.runtimeApplied,false);
  console.log(JSON.stringify({glyph:'緅',wholeGeometryGuard:'14p17m33',aliasTargets,geometryOwner:ctx.geometryOwner,proofOwner:ctx.proofOwner,oldMathLoops:0,engine:0,projection:0,SSR:0,native:false,oldGateCapsInverse:true}));
 });

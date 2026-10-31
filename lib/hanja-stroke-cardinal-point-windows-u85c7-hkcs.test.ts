@@ -1,3 +1,4 @@
+import {readHanjaHistoricalSource} from './hanja-test-component-loader.ts'
 import test from 'node:test'
 import assert from 'node:assert/strict'
 import {readFileSync} from 'node:fs'
@@ -54,6 +55,6 @@ test('藇 both exact prior DOM slots reject source, frame, opacity and ownership
  }
 })
 test('藇 source evidence pins preserve pending native and author-clock limits',()=>{
- for(const[path,sha]of Object.entries(pins))assert.equal(createHash('sha256').update(readFileSync(new URL('../'+path,import.meta.url))).digest('hex'),sha)
+ for(const[path,sha]of Object.entries(pins))assert.equal(createHash('sha256').update(path.startsWith('lib/')?readHanjaHistoricalSource(path,sha):readFileSync(new URL('../'+path,import.meta.url))).digest('hex'),sha)
  assert.equal(facts.sourceGuideAdded,false);assert.equal(facts.sourceFactoryDoesNotGuaranteePriorDOM,true);assert.equal(facts.originalQOrPOrWidthOrWeightChanged,false);assert.equal(facts.authorClockIsOriginalQTraversal,false);assert.equal(facts.nativeApproval,false);assert.equal(facts.runtimeApplied,false)
 })

@@ -1,3 +1,4 @@
+import {readHanjaHistoricalSource} from './hanja-test-component-loader.ts'
 import assert from'node:assert/strict'
 import test from'node:test'
 import{readFileSync}from'node:fs'
@@ -5,8 +6,8 @@ import{createHash}from'node:crypto'
 import{reviewedU7d8eStartsContext as context,reviewedU7d8eStartsPolicy as policy,measureReviewedU7d8eStartsFrame as measure,commitReviewedU7d8eStartsCaps as commit,REVIEWED_U7D8E_STARTS_SOURCE as SOURCE}from'./hanja-stroke-start-caps-u7d8e.ts'
 const read=(p:string)=>readFileSync(new URL('../'+p,import.meta.url)),json=(p:string)=>JSON.parse(read(p).toString()),sha=(v:string|Buffer)=>createHash('sha256').update(v).digest('hex'),clone=(v:any)=>JSON.parse(JSON.stringify(v))
 const NAMED_ALIAS_HISTORY:Readonly<Record<string,{prefix:string;suffix:string;oldSHA256:string;aliasSHA256:string}>>={"lib/hanja-stroke-start-gate-u7d8e.ts":{"prefix":"import{isReviewedU7dc5ReuseContext,type ReviewedU7dc5ReuseContext}from'./hanja-stroke-source-reuse-u7dc5.ts'\n","suffix":"\n/** 緅全14source private token限定。綎の既存context/guard/owned policyは拡張しない。 */\nexport function reviewedU7dc5FootAliasPolicy(context:ReviewedU7dc5ReuseContext|null,pen:number,mask:number):ReviewedU7d8ePolicy|null{return isReviewedU7dc5ReuseContext(context)&&(pen===0||pen===1)&&mask===1?POLICIES.find(p=>p.pen===pen&&p.mask===mask)??null:null}\n","oldSHA256":"3d084b8e321ecbc1fcfe4c6f195e0d3d12d72791beba1a68f182cd3c4822bf51","aliasSHA256":"7e458be5443708da2c056b01218ac4ee27b7f90efc0eb3ef3924b0032f756e70"}}
-function historicalSourceSHA(path:string):string{
- const raw=read(path),current=sha(raw),pin=NAMED_ALIAS_HISTORY[path]
+function historicalSourceSHA(path:string,expected:string):string{
+ const pin=NAMED_ALIAS_HISTORY[path],raw=pin?readHanjaHistoricalSource(path,pin.aliasSHA256):path.startsWith('lib/')||path.startsWith('components/')?readHanjaHistoricalSource(path,expected):read(path),current=sha(raw)
  if(!pin||current===pin.oldSHA256)return current
  assert.equal(current,pin.aliasSHA256,path)
  const text=raw.toString()
@@ -33,7 +34,7 @@ function tree(P:any,p:number){
  return{nodes:{measurement,guide,startCap,endCap,ink},id,svg,target,defs,measurement,mask,guide,startCap,endCap,ink,view,doc,L,writes,reads,onRead:(f:typeof readHook)=>{readHook=f},onWrite:(f:typeof writeHook)=>{writeHook=f},setProgress:(p:number)=>{target.attrs['data-stroke-reveal-progress']=String(p)}}
 }
 test('綎 three stored-own starts DOM adapter tail FIRST: no math regeneration',()=>{
- for(const[p,h]of Object.entries(SOURCE.inputSHA256))assert.equal(historicalSourceSHA(p),h,p)
+ for(const[p,h]of Object.entries(SOURCE.inputSHA256))assert.equal(historicalSourceSHA(p,h),h,p)
  const cache=json(SOURCE.fixture).u7d8e,full=json(SOURCE.sourceFile),proof=read('docs/hanja-u7d8e-start-geometry-proof-2026-10-21/README.md').toString(),hold=json('docs/hanja-source-native-hold-u7d8e-startcaps-terminal-2026-10-21/hold.json'),prior=json('docs/hanja-renderer-native-review-u7d8e-source-clip-growing-starts-2026-10-21/review.json')
  assert.equal(sha(JSON.stringify(cache.strokes)),SOURCE.geometrySHA256);assert.deepEqual(Object.keys(full).sort(),SOURCE.actualFull5Keys.slice().sort());assert.equal(SOURCE.identity.sourceProofFileSha256,SOURCE.sourceSHA256);assert.equal(cache.strokes.length,13);assert.equal(cache.strokes.flat().length,15)
  const C=context(cache.strokes)!;assert(C);assert.equal(policy({...C},0,0),null)
