@@ -2,6 +2,8 @@ import assert from 'node:assert/strict'
 import test from 'node:test'
 import {readFileSync} from 'node:fs'
 import {createHash} from 'node:crypto'
+import {readHanjaHistoricalSource} from './hanja-test-component-loader.ts'
+import {reviewedU7d3dContext as growingContext,reviewedU7d3dPolicy as growingPolicy} from './hanja-stroke-start-gate-u7d3d.ts'
 import {reviewedU7d3dContactContext as context,reviewedU7d3dContactPolicy as policy,sampleReviewedU7d3dContact as frame,measureReviewedU7d3dContact as measure,commitReviewedU7d3dContact as commit,applyReviewedU7d3dContact as apply,REVIEWED_U7D3D_CONTACT_PROOFS as PROOFS,REVIEWED_U7D3D_CONTACT_SOURCE as SOURCE,REVIEWED_U7D3D_CONTACT_INPUT_SHA256 as PINS} from './hanja-stroke-contact-foot-u7d3d.ts'
 type R=readonly[bigint,bigint];type P=readonly[R,R]
 const gcd=(a:bigint,b:bigint):bigint=>b?gcd(b,a%b):a<0n?-a:a
@@ -23,12 +25,12 @@ const fixture=()=>JSON.parse(readFileSync(SOURCE.fixture,'utf8')).u7d3d.strokes
 const polys=(m:any,axis:'x'|'y'):P[][]=>m.outline.match(/M[^Z]+Z/g).map((d:string)=>{const n=d.match(/-?\d+(?:\.\d+)?/g)!.map(Number);return ccw(Array.from({length:n.length/2},(_,i)=>axis==='x'?[dec(n[2*i]),dec(n[2*i+1])]:[dec(n[2*i+1]),dec(n[2*i])]))})
 function pk(p:number[][]){const rotations=(q:number[][])=>q.map((_,i)=>JSON.stringify([...q.slice(i),...q.slice(0,i)]));return [...rotations(p),...rotations(p.slice().reverse())].sort()[0]}
 test('1378 source-specific math: two original QQ contact partitions',()=>{
- for(const[p,h]of Object.entries(PINS))assert.equal(createHash('sha256').update(readFileSync(p)).digest('hex'),h,p)
+ for(const[p,h]of Object.entries(PINS))assert.equal(createHash('sha256').update(p.startsWith('lib/')?readHanjaHistoricalSource(p,h):readFileSync(p)).digest('hex'),h,p)
  const strokes=fixture(),proof=JSON.parse(readFileSync(SOURCE.sourceFile,'utf8'));assert.deepEqual(Object.keys(proof).sort(),['defaults','engineHashes','engineRevision','groups','trace'])
  assert.deepEqual([strokes.length,strokes.flat().length,strokes.flat().reduce((n:number,m:any)=>n+(m.outline.match(/M/g)||[]).length,0)],[11,14,37]);assert.equal(createHash('sha256').update(JSON.stringify(strokes)).digest('hex'),SOURCE.geometrySHA256)
  const actual=proof.trace.flat().flatMap((c:any)=>c.polygons).map((p:any[])=>pk(p.map(v=>[v.x/2,v.y/2]))).sort(),emitted=strokes.flat().flatMap((m:any)=>m.outline.match(/M[^Z]+Z/g)).map((d:string)=>{const n=d.match(/-?\d+(?:\.\d+)?/g)!.map(Number);return pk(Array.from({length:n.length/2},(_,i)=>[n[2*i],n[2*i+1]]))}).sort();assert.deepEqual(actual,emitted)
  const C=context(strokes);assert(C);let exactTri=0,slabs=0,negative=0
- for(let i=0;i<2;i++){const P=policy(C,i,1)!;assert(P);assert.equal(policy(C,i,0),null);assert.equal(policy(C,10,0),null);const f=PROOFS[i],original=polys(strokes[i][1],f.axis),p1=polys(strokes[i][0],f.axis),u=f.unionBoundary.map(point),sector=f.sector.map(point),tris=f.triangles.map(t=>t.map(point)),cut=rat(f.cutAxis)
+ for(let i=0;i<2;i++){const P:NonNullable<ReturnType<typeof policy>>=policy(C,i,1)!;assert(P);assert.equal(policy(C,i,0),null);assert.equal(policy(C,10,0),null);const f=PROOFS[i],original=polys(strokes[i][1],f.axis),p1=polys(strokes[i][0],f.axis),u=f.unionBoundary.map(point),sector=f.sector.map(point),tris=f.triangles.map(t=>t.map(point)),cut=rat(f.cutAxis)
  assert.deepEqual(P.segment,strokes[i][1]);assert.deepEqual(P.predecessor,strokes[i][0]);assert(eq(area(u),rat(f.unionArea)));assert(eq(area(sector),rat(f.sectorArea)))
  const xs=[...new Map([...u,...original.flat()].map(v=>[v[0].join('/'),v[0]])).values()].sort(cmp)
  for(let j=0;j<xs.length-1;j++){const mid=div(add(xs[j],xs[j+1]),r(2n)),a=unionIntervals(original.flatMap(p=>intervals(p,mid))),b=intervals(u,mid);assert.equal(a.length,1);assert.equal(b.length,1);assert(eq(a[0][0],b[0][0])&&eq(a[0][1],b[0][1]));slabs++}
@@ -69,4 +71,15 @@ test('1378 DOM tail: two own axes and completed original Q1 binding',()=>{
  const foot=mock(POL,1e-6);assert.equal(apply(POL,1e-6,foot.nodes as any),true);assert.deepEqual(foot.calls(),{Lcalls:0,pointCalls:0})
  }
  console.log(JSON.stringify({newDOMTail:true,sourceAxes:2,lifecycle,negative,nativeMockOnly:true,actualSVGUA:false,sourceGeometryChanged:false,SSR:0,engine:0}))
+})
+
+test('紽 historical dependency bytes stay archived; current growing context validates the exact fixture',()=>{
+ const strokes=fixture(),C=growingContext(strokes);assert(C)
+ const targets=new Set(['0:0','0:1','1:0','1:1','10:0'])
+ for(let pen=0;pen<strokes.length;pen++)for(let mask=0;mask<strokes[pen].length;mask++){
+  const current=growingPolicy(C,pen,mask);assert.equal(!!current,targets.has(pen+':'+mask))
+  if(current)assert.deepEqual(current.segment,strokes[pen][mask])
+ }
+ assert.equal(growingPolicy({...C},0,0),null)
+ const changed=structuredClone(strokes);changed[0][0].weight++;assert.equal(growingContext(changed),null)
 })

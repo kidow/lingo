@@ -11,14 +11,16 @@ function setup(index=0){
  const b=policy.segment.bounds,svg=node('svg',null),g=node('g',svg,{'data-stroke-start-gate':policy.id,'data-stroke-reveal-progress':'0'}),defs=node('defs',g),mask=node('mask',defs,{id:'test-u61e5-foot-foot-x-mask',maskUnits:'userSpaceOnUse'}),clip=node('clipPath',defs,{id:'test-u61e5-foot-body-clip',clipPathUnits:'userSpaceOnUse'}),ink=node('path',g,{id:'test-u61e5-foot-ink','data-owner':'test','data-u61e5-foot-ink':'true',d:policy.segment.outline,mask:'url(#test-u61e5-foot-foot-x-mask)'}),foot=node('path',mask,{id:'test-u61e5-foot-foot','data-u61e5-foot-foot':'true',fill:'white','fill-rule':'nonzero',stroke:'none'}),body=node('path',mask,{id:'test-u61e5-foot-body','data-u61e5-foot-body':'true',d:policy.segment.outline,fill:'white','fill-rule':'nonzero',stroke:'none','clip-path':'url(#test-u61e5-foot-body-clip)'}),rect=node('rect',clip,{id:'test-u61e5-foot-rect',x:String(b[0]),y:String(b[1]),height:String(b[3]-b[1]),width:'0'}),measurement:any=node('path',defs,{id:'test-u61e5-foot-measure','data-u61e5-foot-measurement':'true',d:policy.segment.revealPath!})
  for(const n of[g,defs,mask,clip,ink,foot,body,rect,measurement])n.ownerSVGElement=svg
  let lengths=0,points=0;const q=policy.segment.revealPath!.match(/-?\d+(?:\.\d+)?/g)!.map(Number);measurement.getTotalLength=()=>{lengths++;return 40};measurement.getPointAtLength=(d:number)=>{points++;const t=d/40;return{x:(1-t)**2*q[0]+2*t*(1-t)*q[2]+t*t*q[4],y:(1-t)**2*q[1]+2*t*(1-t)*q[3]+t*t*q[5]}}
- return{policy,nodes:{ink,foot,body,rect,measurement},svg,g,defs,mask,clip,writes,counts:()=>({lengths,points})}
+ // This structural DOM test double intentionally implements only the guarded surface.
+ const nodes={ink,foot,body,rect,measurement}
+ return{policy,nodes:nodes as unknown as typeof nodes & Parameters<typeof commitReviewedU61e5FootMask>[0],svg,g,defs,mask,clip,writes,counts:()=>({lengths,points})}
 }
 
 
 test('懥 13m2 source union/positive prior seed FIRST',()=>{
  assert.equal(sha(bytes(SOURCE.sourceFile)),SOURCE.sourceSHA256);assert.equal(sha(bytes(SOURCE.sourceCacheFile)),SOURCE.sourceCacheSHA256);assert.equal(sha(bytes(SOURCE.sourceConfigFile)),SOURCE.sourceConfigSHA256);
  assert.deepEqual(Object.keys(proof).sort(),['defaults','engineHashes','engineRevision','groups','trace']);
- assert.equal(sha(JSON.stringify(strokes)),SOURCE.geometrySHA256);assert.deepEqual([strokes.length,strokes.flat().length,strokes.flat().reduce((n,m)=>n+(m.outline.match(/M/g)||[]).length,0)],[18,21,38]);
+ assert.equal(sha(JSON.stringify(strokes)),SOURCE.geometrySHA256);assert.deepEqual([strokes.length,strokes.flat().length,strokes.flat().reduce((n:number,m:{outline:string})=>n+(m.outline.match(/M/g)||[]).length,0)],[18,21,38]);
  assert.equal(sha(JSON.stringify([feet])),SOURCE.footGeometrySHA256);assert(context);assert.equal(makeReviewedU61e5FootSourceContext(proof,identity,strokes),context);
  for(let i=0;i<strokes.length;i++)for(let j=0;j<strokes[i].length;j++)assert.equal(!!reviewedU61e5FootPolicy(context,i,j),i===12&&j===1);
  for(const mutate of[(x:any)=>x.trace[15][0].args[0]++,(x:any)=>x.groups[15].polygons[0][0].x++,(x:any)=>delete x.engineHashes['2d.js']]){const bad=clone(proof);mutate(bad);assert.equal(makeReviewedU61e5FootSourceContext(bad,identity,strokes),null)}

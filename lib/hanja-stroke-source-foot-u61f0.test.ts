@@ -11,7 +11,9 @@ function setup(index=0){
  const b=policy.segment.bounds,svg=node('svg',null),g=node('g',svg,{'data-stroke-start-gate':policy.id,'data-stroke-reveal-progress':'0'}),defs=node('defs',g),mask=node('mask',defs,{id:'test-u61f0-foot-foot-x-mask',maskUnits:'userSpaceOnUse'}),clip=node('clipPath',defs,{id:'test-u61f0-foot-body-clip',clipPathUnits:'userSpaceOnUse'}),ink=node('path',g,{id:'test-u61f0-foot-ink','data-owner':'test','data-u61f0-foot-ink':'true',d:policy.segment.outline,mask:'url(#test-u61f0-foot-foot-x-mask)'}),foot=node('path',mask,{id:'test-u61f0-foot-foot','data-u61f0-foot-foot':'true',fill:'white','fill-rule':'nonzero',stroke:'none'}),body=node('path',mask,{id:'test-u61f0-foot-body','data-u61f0-foot-body':'true',d:policy.segment.outline,fill:'white','fill-rule':'nonzero',stroke:'none','clip-path':'url(#test-u61f0-foot-body-clip)'}),rect=node('rect',clip,{id:'test-u61f0-foot-rect',x:String(b[0]),y:String(b[1]),height:String(b[3]-b[1]),width:'0'}),measurement:any=node('path',defs,{id:'test-u61f0-foot-measure','data-u61f0-foot-measurement':'true',d:policy.segment.revealPath!})
  for(const n of[g,defs,mask,clip,ink,foot,body,rect,measurement])n.ownerSVGElement=svg
  let lengths=0,points=0;const q=policy.segment.revealPath!.match(/-?\d+(?:\.\d+)?/g)!.map(Number);measurement.getTotalLength=()=>{lengths++;return 40};measurement.getPointAtLength=(d:number)=>{points++;const t=d/40;return{x:(1-t)**2*q[0]+2*t*(1-t)*q[2]+t*t*q[4],y:(1-t)**2*q[1]+2*t*(1-t)*q[3]+t*t*q[5]}}
- return{policy,nodes:{ink,foot,body,rect,measurement},svg,g,defs,mask,clip,writes,counts:()=>({lengths,points})}
+ // This structural DOM test double intentionally implements only the guarded surface.
+ const nodes={ink,foot,body,rect,measurement}
+ return{policy,nodes:nodes as unknown as typeof nodes & Parameters<typeof commitReviewedU61f0FootMask>[0],svg,g,defs,mask,clip,writes,counts:()=>({lengths,points})}
 }
 test('懰 original cached full5 and actual prior foot-source guard FIRST',()=>{
  assert(context);assert.equal(makeReviewedU61f0FootSourceContext(proof,identity,strokes),context)

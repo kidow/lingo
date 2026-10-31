@@ -58,7 +58,7 @@ test('獧 original MCQ body coverage and original LEFT connected prefixes',()=>{
   for(let i=0;i<10;i++)for(let j=i+1;j<10;j++)assert.ok(separated(cells[i],cells[j]))
  }
  assert.ok(convex(ps[1])&&convex(ps[3]))
- assert.ok(ps[1].every(p=>distance(p,C[3])<49))
+ assert.ok(ps[1].every((p:number[])=>distance(p,C[3])<49))
  // Q-body right-to-left ending edge is x20.8, y94→88. LEFT shares y88→91.
  assert.deepEqual(ps[2].slice(10,12),[[20.8,94],[20.8,88]])
  assert.deepEqual(ps[3],[[20.8,91],[13.8,89.5],[13.8,88],[20.8,88]])

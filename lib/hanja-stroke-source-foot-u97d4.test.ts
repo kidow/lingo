@@ -2,6 +2,7 @@ import assert from 'node:assert/strict'
 import test from 'node:test'
 import {readFileSync} from 'node:fs'
 import {createHash} from 'node:crypto'
+type TestProof={trace:{args:number[];polygons:{x:number;y:number}[][]}[][];groups:{polygons:{x:number;y:number}[][]}[];engineHashes:Record<string,string>}
 import {reviewedU97d4FootContext,reviewedU97d4FootPolicy,makeReviewedU97d4FootSourceContext,measureReviewedU97d4FootFrame,commitReviewedU97d4FootMask,REVIEWED_U97D4_FOOT_SOURCE as SOURCE} from './hanja-stroke-source-foot-u97d4.ts'
 const bytes=(p:string)=>readFileSync(new URL('../'+p,import.meta.url),'utf8'),sha=(s:string)=>createHash('sha256').update(s).digest('hex'),clone=(x:any)=>JSON.parse(JSON.stringify(x))
 const f=JSON.parse(bytes(SOURCE.sourceCacheFile)),proof=JSON.parse(bytes(SOURCE.sourceFile)),strokes=f.strokes,identity={"root":"u97d4","file":"../hanja-source-raw-compare-u97d4-2026-10-23/engine-whole-u97d4.json","fileSHA256":"e8a2b01d26c9cd76964af97ae98e2c458039f659a95ef1e7a30ba1bfb5a8ece4"},context=reviewedU97d4FootContext(strokes),policies=[reviewedU97d4FootPolicy(context,14,1)],code=readFileSync(new URL('./hanja-stroke-source-foot-u97d4.ts',import.meta.url),'utf8'),feet=JSON.parse(code.match(/^const FEET=(.*)$/m)![1])[0],R=(r:string[])=>r.map(BigInt),P=(p:string[][])=>p.map(R)
@@ -11,23 +12,25 @@ function setup(index=0){
  const b=policy.segment.bounds,svg=node('svg',null),g=node('g',svg,{'data-stroke-start-gate':policy.id,'data-stroke-reveal-progress':'0'}),defs=node('defs',g),mask=node('mask',defs,{id:'test-u97d4-foot-foot-x-mask',maskUnits:'userSpaceOnUse'}),clip=node('clipPath',defs,{id:'test-u97d4-foot-body-clip',clipPathUnits:'userSpaceOnUse'}),ink=node('path',g,{id:'test-u97d4-foot-ink','data-owner':'test','data-u97d4-foot-ink':'true',d:policy.segment.outline,mask:'url(#test-u97d4-foot-foot-x-mask)'}),foot=node('path',mask,{id:'test-u97d4-foot-foot','data-u97d4-foot-foot':'true',fill:'white','fill-rule':'nonzero',stroke:'none'}),body=node('path',mask,{id:'test-u97d4-foot-body','data-u97d4-foot-body':'true',d:policy.segment.outline,fill:'white','fill-rule':'nonzero',stroke:'none','clip-path':'url(#test-u97d4-foot-body-clip)'}),rect=node('rect',clip,{id:'test-u97d4-foot-rect',x:String(b[0]),y:String(b[1]),height:String(b[3]-b[1]),width:'0'}),measurement:any=node('path',defs,{id:'test-u97d4-foot-measure','data-u97d4-foot-measurement':'true',d:policy.segment.revealPath!})
  for(const n of[g,defs,mask,clip,ink,foot,body,rect,measurement])n.ownerSVGElement=svg
  let lengths=0,points=0;const q=policy.segment.revealPath!.match(/-?\d+(?:\.\d+)?/g)!.map(Number);measurement.getTotalLength=()=>{lengths++;return 40};measurement.getPointAtLength=(d:number)=>{points++;const t=d/40;return{x:(1-t)**2*q[0]+2*t*(1-t)*q[2]+t*t*q[4],y:(1-t)**2*q[1]+2*t*(1-t)*q[3]+t*t*q[5]}}
- return{policy,nodes:{ink,foot,body,rect,measurement},svg,g,defs,mask,clip,writes,counts:()=>({lengths,points})}
+ // This structural DOM test double intentionally implements only the guarded surface.
+ const nodes={ink,foot,body,rect,measurement}
+ return{policy,nodes:nodes as unknown as typeof nodes & Parameters<typeof commitReviewedU97d4FootMask>[0],svg,g,defs,mask,clip,writes,counts:()=>({lengths,points})}
 }
 
 
 test('u97d4 15m2 exact source authority and already-proved own contact certificate FIRST',()=>{
  assert.equal(sha(bytes(SOURCE.sourceFile)),SOURCE.sourceSHA256);assert.equal(sha(bytes(SOURCE.sourceCacheFile)),SOURCE.sourceCacheSHA256);assert.equal(sha(bytes(SOURCE.sourceConfigFile)),SOURCE.sourceConfigSHA256);
  assert.deepEqual(Object.keys(proof).sort(),['defaults','engineHashes','engineRevision','groups','trace']);assert.equal(sha(JSON.stringify(strokes)),SOURCE.geometrySHA256);
- assert.deepEqual([strokes.length,strokes.flat().length,strokes.flat().reduce((n,m)=>n+(m.outline.match(/M/g)||[]).length,0)],[17,21,37]);
+ assert.deepEqual([strokes.length,strokes.flat().length,strokes.flat().reduce((n:number,m:{outline:string})=>n+(m.outline.match(/M/g)||[]).length,0)],[17,21,37]);
  assert.equal(sha(JSON.stringify([feet])),SOURCE.footGeometrySHA256);assert(context);assert.equal(makeReviewedU97d4FootSourceContext(proof,identity,strokes),context);
  for(let i=0;i<strokes.length;i++)for(let j=0;j<strokes[i].length;j++)assert.equal(!!reviewedU97d4FootPolicy(context,i,j),i===14&&j===1);
- for(const mutate of[(x)=>x.trace[18][0].args[0]++,(x)=>x.groups[18].polygons[0][0].x++,(x)=>delete x.engineHashes['2d.js']]){const bad=clone(proof);mutate(bad);assert.equal(makeReviewedU97d4FootSourceContext(bad,identity,strokes),null)}
+ for(const mutate of[(x:TestProof)=>x.trace[18][0].args[0]++,(x:TestProof)=>x.groups[18].polygons[0][0].x++,(x:TestProof)=>delete x.engineHashes['2d.js']]){const bad=clone(proof);mutate(bad);assert.equal(makeReviewedU97d4FootSourceContext(bad,identity,strokes),null)}
  assert.equal(makeReviewedU97d4FootSourceContext(proof,{...identity,file:'other'},strokes),null);assert.equal(makeReviewedU97d4FootSourceContext({groups:proof.groups,trace:proof.trace,defaults:proof.defaults},identity,strokes),null);
  for(let i=0;i<strokes.length;i++)for(let j=0;j<strokes[i].length;j++)for(const key of Object.keys(strokes[i][j])){const bad=clone(strokes),v=bad[i][j][key];bad[i][j][key]=typeof v==='number'?v+1:typeof v==='string'?v+' ':Array.isArray(v)?[...v,0]:null;assert.equal(reviewedU97d4FootContext(bad),null)}
  let getters=0;const accessor={...strokes[0][0]};Object.defineProperty(accessor,'outline',{enumerable:true,get(){getters++;return strokes[0][0].outline}});const bad=clone(strokes);bad[0][0]=accessor;assert.equal(reviewedU97d4FootContext(bad),null);assert.equal(getters,0);
  assert.equal(reviewedU97d4FootPolicy({...context!},14,1),null);
  // The exact arrangement arithmetic was executed once before authoring; this tail binds its saved certificate, not a second calculation.
- assert.equal(feet.pen,15);assert.deepEqual(feet.cutX,["115","2"]);assert.equal(feet.triangles.length,12);assert.equal(feet.order.length,12);assert.equal(new Set(feet.order.map(x=>x.triangle)).size,12);
+ assert.equal(feet.pen,15);assert.deepEqual(feet.cutX,["115","2"]);assert.equal(feet.triangles.length,12);assert.equal(feet.order.length,12);assert.equal(new Set(feet.order.map((x:{triangle:number})=>x.triangle)).size,12);
  assert.deepEqual(feet.proof.priorIntersectionArea,["296573","40200"]);assert.deepEqual(feet.proof.rootActualP1IntersectionArea,["7477948583","1292303200"]);
  assert.equal(feet.proof.sourceP1IsCardinal,true);assert.equal(feet.proof.rootEndpointDiscNotAssumed,true);assert.equal(feet.proof.arithmeticBatchFirstPassed,true);
  assert.equal(feet.sourceUnionBoundary.length,24);assert.equal(feet.proof.xMonotoneSlabs,23);assert.equal(feet.proof.nonAdjacentPairs,252);
