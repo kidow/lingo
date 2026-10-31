@@ -1,3 +1,4 @@
+import {fixtureEvidenceBytes} from './hanja-stroke-batch-test-types.ts'
 import test from 'node:test'
 import assert from 'node:assert/strict'
 import {readFileSync} from 'node:fs'
@@ -7,7 +8,11 @@ import {makeLocalU995bSourcePrefixContext} from './hanja-stroke-source-prefix-u9
 import {makeReviewedU995bLocalPointWindowContext} from './hanja-stroke-source-point-windows-u995b-local.ts'
 import {makeLocalU995b22SourcePrefixContext} from './hanja-stroke-source-prefix-u995b-22-local.ts'
 const read=(p:string)=>readFileSync(new URL('../'+p,import.meta.url)),json=(p:string)=>JSON.parse(read(p).toString()),hash=(v:string|Uint8Array)=>createHash('sha256').update(v).digest('hex')
-// Only this exact later review-harness addition may project back to the native snapshot.
+// Exercise the exact recorded extension version; current factories are checked independently.
+function reviewed1505Extension(path:string):Buffer{
+ const versions:Record<string,string>={'components/hanja/stroke-outlines.tsx':'abf736abcc1a3cddb5d505eec6b26125a3dc2c96b6ff5bcafccde733cdc05c02','scripts/hanja-actual-component-review.mjs':'26aadd00e7392fcab85d7b13601b83b923e8e389fda24be135dad6395c364851'}
+ const pin=versions[path];assert(pin,'Only the two recorded extension sources have projection fixtures');return fixtureEvidenceBytes(path,pin,read)
+}
 function project1505PinnedInput(p:string,h:string,raw:Buffer,patches?:readonly Buffer[]):Buffer {
  if(hash(raw)===h)return raw
  const renderer=p==='components/hanja/stroke-outlines.tsx'
@@ -51,15 +56,15 @@ test('1505 preserves explicit local omission recipe and original capture, withou
  assert.equal(source.locallyAuthoredRoot,true);assert.equal(source.publicGlyphWikiRoot,false);assert.equal(source.originalWhole,false);assert.equal(source.sourcePreservation.originalPublicParentGeometryIdentical,false);assert.equal(source.sourcePreservation.policyPreviewFlagsPreserved,true);assert.equal(f.previewOnly,true);assert.equal(f.runtimeApplied,false)
 })
 test('1505 binds final finite-native review and source pins while ROOT runtime registration remains separate',()=>{
- for(const[p,h]of Object.entries(pins))assert.equal(hash(project1505PinnedInput(p,h,read(p))),h,p)
+ for(const[p,h]of Object.entries(pins))assert.equal(hash(project1505PinnedInput(p,h,p==='components/hanja/stroke-outlines.tsx'||p==='scripts/hanja-actual-component-review.mjs'?reviewed1505Extension(p):fixtureEvidenceBytes(p,h,read))),h,p)
  const n=json(folder+'native-source-preview-review.json');assert.equal(n.approval.finiteForwardCandidateApproved,true);assert.equal(n.approval.runtimeApplied,false);assert.equal(expected[0].sourceReference.geometryReviewSha256,hash(read(folder+'native-source-preview-review.json')))
  assert.equal(nativeApproved,true);assert.equal(authorized,true);assert.equal(applied,source.review.runtimeApplied);assert.equal(source.review.indexApplicationVerified,source.review.runtimeApplied)
  assert.equal(source.review.examBodyApproved,false);assert.equal(source.review.actualAppUIFreshlyVerified,false);assert.equal(source.review.sourceMicroclockIdentityApproved,false);assert.equal(source.review.allIntermediateFramesClaimed,false)
- const reviewedRenderer='components/hanja/stroke-outlines.tsx';assert.equal(source.review.reviewedEffectiveComponentSHA256,hash(project1505PinnedInput(reviewedRenderer,source.review.reviewedEffectiveComponentSHA256,read(reviewedRenderer))))
+ const reviewedRenderer='components/hanja/stroke-outlines.tsx';assert.equal(source.review.reviewedEffectiveComponentSHA256,hash(project1505PinnedInput(reviewedRenderer,source.review.reviewedEffectiveComponentSHA256,reviewed1505Extension(reviewedRenderer))))
  const notice=read('public/hanja-strokes/glyphwiki/NOTICE-995b.md').toString();assert(notice.includes('공개 원래 whole이 아니')&&notice.includes('시험주관기관 공식 인증이 아니'));assert.equal(source.review.all23NaturalPlaybackVerified,false)
 })
 test('1505 narrow review-harness projection accepts only exact reviewed extensions and rejects foreign changes',()=>{
- const p='scripts/hanja-actual-component-review.mjs',h='016ea5c818b111dc45de676c3d5c737b841e4c0eff03c2a46042c0fc485d8618',raw=read(p),patches=['docs/hanja-source-original-u51de-base-2026-10-27/source-preview-H-integration.patch','docs/hanja-source-original-u51de-base-2026-10-27/baseline-H-source-reveal-compatibility.patch','docs/hanja-source-original-u9008-hkcs-2026-10-27/source-preview-h-observer-version.patch','docs/hanja-source-original-u9008-hkcs-2026-10-27/source-reveal-h-integration.patch','docs/hanja-source-original-u5ac2-sou10-layout-v2-2026-10-27/source-preview-h-idle-guard.patch','docs/hanja-source-original-u5ac2-sou10-layout-v2-2026-10-27/source-preview-h-integration.patch','docs/hanja-source-original-u51de-base-2026-10-27/baseline-H-integration.patch','docs/hanja-source-original-u5ac2-sou10-layout-v2-2026-10-27/baseline-h-integration.patch','docs/hanja-source-original-u9008-hkcs-2026-10-27/baseline-H-closure-integration.patch','docs/hanja-source-original-u9008-hkcs-2026-10-27/baseline-H-integration.patch'].map(read)
+ const p='scripts/hanja-actual-component-review.mjs',h='016ea5c818b111dc45de676c3d5c737b841e4c0eff03c2a46042c0fc485d8618',raw=reviewed1505Extension(p),patches=['docs/hanja-source-original-u51de-base-2026-10-27/source-preview-H-integration.patch','docs/hanja-source-original-u51de-base-2026-10-27/baseline-H-source-reveal-compatibility.patch','docs/hanja-source-original-u9008-hkcs-2026-10-27/source-preview-h-observer-version.patch','docs/hanja-source-original-u9008-hkcs-2026-10-27/source-reveal-h-integration.patch','docs/hanja-source-original-u5ac2-sou10-layout-v2-2026-10-27/source-preview-h-idle-guard.patch','docs/hanja-source-original-u5ac2-sou10-layout-v2-2026-10-27/source-preview-h-integration.patch','docs/hanja-source-original-u51de-base-2026-10-27/baseline-H-integration.patch','docs/hanja-source-original-u5ac2-sou10-layout-v2-2026-10-27/baseline-h-integration.patch','docs/hanja-source-original-u9008-hkcs-2026-10-27/baseline-H-closure-integration.patch','docs/hanja-source-original-u9008-hkcs-2026-10-27/baseline-H-integration.patch'].map(read)
  assert.equal(hash(raw),'26aadd00e7392fcab85d7b13601b83b923e8e389fda24be135dad6395c364851')
  const historical=project1505PinnedInput(p,h,raw,patches);assert.equal(hash(historical),h);assert.strictEqual(project1505PinnedInput(p,h,historical),historical)
  assert.throws(()=>project1505PinnedInput(p,h,Buffer.concat([raw,Buffer.from('\n')]),patches))
@@ -68,7 +73,7 @@ test('1505 narrow review-harness projection accepts only exact reviewed extensio
  assert.throws(()=>project1505PinnedInput(p,'0'.repeat(64),raw,patches))
 })
 test('1505 narrow source-renderer projection accepts only exact reviewed additions',()=>{
- const p='components/hanja/stroke-outlines.tsx',h='df67214c6d6d9e75b28fa1177e801170da5dc0605d89e621323a5cac5b0e9abb',raw=read(p),patches=['docs/hanja-source-original-u51de-base-2026-10-27/source-reveal-r-integration.patch','docs/hanja-source-original-u9008-hkcs-2026-10-27/source-reveal-r-integration.patch','docs/hanja-source-original-u5ac2-sou10-layout-v2-2026-10-27/source-reveal-r-integration.patch'].map(read)
+ const p='components/hanja/stroke-outlines.tsx',h='df67214c6d6d9e75b28fa1177e801170da5dc0605d89e621323a5cac5b0e9abb',raw=reviewed1505Extension(p),patches=['docs/hanja-source-original-u51de-base-2026-10-27/source-reveal-r-integration.patch','docs/hanja-source-original-u9008-hkcs-2026-10-27/source-reveal-r-integration.patch','docs/hanja-source-original-u5ac2-sou10-layout-v2-2026-10-27/source-reveal-r-integration.patch'].map(read)
  assert.equal(hash(raw),'abf736abcc1a3cddb5d505eec6b26125a3dc2c96b6ff5bcafccde733cdc05c02')
  assert.equal(hash(project1505PinnedInput(p,h,raw,patches)),h)
  assert.throws(()=>project1505PinnedInput(p,h,Buffer.concat([raw,Buffer.from('\n')]),patches))

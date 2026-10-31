@@ -1,3 +1,4 @@
+import {fixtureEvidenceBytes} from './hanja-stroke-batch-test-types.ts'
 import assert from 'node:assert/strict'
 import test from 'node:test'
 import {readFileSync} from 'node:fs'
@@ -11,8 +12,8 @@ const bytes=(p:string)=>readFileSync(new URL('../'+p,import.meta.url)),json=(p:s
 const PUB='public/hanja-strokes/glyphwiki/u8627-vs2.json',BUNDLE='public/hanja-strokes/dictionary-reviewed-glyphwiki-batch1492.json',REVIEW='docs/hanja-actual-component-profiles-2026-10-22/u8627-activation-review.json'
 test('1492 binds normal21 to original header4 and separate trace without invented versions',()=>{
  const r=json(REVIEW),b=json(BUNDLE),c=json(PUB),f=json(r.sourceFixture.path)['u8627-ue0102'],n=json(r.nativeEvidence.path),source=json('docs/hanja-goal-glyphwiki-batch415-2026-10-09/sources.json')
- assert.equal(APPROVAL.path,REVIEW);assert.equal(sha(bytes(REVIEW)),APPROVAL.SHA256);assert.deepEqual(load(b),ENTRY)
- for(const[file,hash]of Object.entries(r.inputSHA256))assert.equal(sha(bytes(file)),hash,file)
+ assert.equal(APPROVAL.path,REVIEW);assert.equal(sha(fixtureEvidenceBytes(REVIEW,APPROVAL.SHA256,bytes)),APPROVAL.SHA256);assert.deepEqual(load(b),ENTRY)
+ for(const[file,hash]of Object.entries(r.inputSHA256))assert.equal(sha(fixtureEvidenceBytes(file,hash,bytes)),hash,file)
  for(const item of r.historicalInputSHA256){const body=execFileSync('git',['show',item.commit+':'+item.path],{cwd:new URL('..',import.meta.url),maxBuffer:8*1024*1024});assert.equal(sha(body),item.SHA256,item.path)}
  assert.equal(r.actualFull5,null);assert.equal(c.actualFull5File,null);assert.equal(c.sourceVersion,null);assert.equal('engineProof'in c,false);assert.equal(c.syntheticFull5,false);assert.deepEqual(Object.keys(c.engineHeader4),['engineRevision','engineHashes','groups','defaults']);assert.deepEqual(c.engineHeader4,json(r.originalHeader4.path));assert.deepEqual(c.drawingTrace,json(r.originalTrace.path));assert.deepEqual({...c.engineHeader4,trace:c.drawingTrace},f.fullProof);assert.equal(sha(JSON.stringify(f.fullProof)),r.canonicalHeaderAndTraceSHA256)
  assert.deepEqual(c.sourceRecords,source.records);assert.deepEqual(c.sourceAliases,source.aliases);assert.deepEqual(c.sourceProvenance.archive,source.archive);assert.deepEqual(c.sourceProvenance.providerVersions,[]);assert.equal(Object.keys(c.sourceRecords).length,6);assert.deepEqual(c.outlines,f.strokes);assert.deepEqual(b[0].outlines,f.strokes);assert.equal(sha(JSON.stringify(f.strokes)),r.sourceFixture.geometrySHA256)

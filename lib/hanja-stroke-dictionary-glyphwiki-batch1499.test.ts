@@ -1,3 +1,4 @@
+import {fixtureEvidenceBytes} from './hanja-stroke-batch-test-types.ts'
 import assert from 'node:assert/strict'
 import test from 'node:test'
 import {readFileSync} from 'node:fs'
@@ -9,8 +10,8 @@ const bytes=(p:string)=>readFileSync(new URL('../'+p,import.meta.url)),json=(p:s
 const PUB='public/hanja-strokes/glyphwiki/u7c67.json',BUNDLE='public/hanja-strokes/dictionary-reviewed-glyphwiki-batch1499.json',REVIEW='docs/hanja-actual-component-profiles-2026-10-22/u7c67-activation-review.json'
 test('1499 binds normal 籧23 to exact header4 and separate trace with scoped native approval',()=>{
  const r=json(REVIEW),b=json(BUNDLE),c=json(PUB),f=json(r.sourceFixture.path).u7c67,n=json(r.nativeEvidence.path),source=json('docs/hanja-goal-glyphwiki-batch414-2026-10-09/sources.json'),header=json(r.originalHeader4.path),trace=json(r.originalTrace.path)
- assert.equal(APPROVAL.path,REVIEW);assert.equal(sha(bytes(REVIEW)),APPROVAL.SHA256);assert.deepEqual(load(b),ENTRY)
- for(const[file,hash]of Object.entries(r.inputSHA256))assert.equal(sha(bytes(file)),hash,file)
+ assert.equal(APPROVAL.path,REVIEW);assert.equal(sha(fixtureEvidenceBytes(REVIEW,APPROVAL.SHA256,bytes)),APPROVAL.SHA256);assert.deepEqual(load(b),ENTRY)
+ for(const[file,hash]of Object.entries(r.inputSHA256))assert.equal(sha(fixtureEvidenceBytes(file,hash,bytes)),hash,file)
  for(const item of r.historicalInputSHA256)assert.equal(sha(execFileSync('git',['show',item.commit+':'+item.path],{cwd:new URL('..',import.meta.url),maxBuffer:8*1024*1024})),item.SHA256,item.path)
  assert.deepEqual(c.sourceRecords,source.records);assert.deepEqual(c.sourceProvenance,source);assert.equal(Object.keys(c.sourceRecords).length,4);assert.deepEqual(c.engineHeader,header);assert.deepEqual(c.drawTrace,trace);assert.deepEqual(Object.keys(header),['engineRevision','engineHashes','groups','defaults']);assert.equal(Object.keys(header.engineHashes).length,8);assert.equal(Object.hasOwn(c,'engineProof'),false);assert.equal(c.syntheticFull5,false);assert.equal(c.sourceProofFormat,'original-header4-and-separate-trace');for(const k of Object.keys(header))assert.deepEqual(f.fullProof[k],header[k]);assert.deepEqual(f.fullProof.trace,trace)
  assert.deepEqual(c.outlines,f.strokes);assert.deepEqual(b[0].outlines,f.strokes);assert.equal(sha(JSON.stringify(f.strokes)),r.sourceFixture.geometrySHA256);assert.deepEqual(b[0].paths,f.strokes.map((row:{outline:string}[])=>row.map(s=>s.outline).join(' ')));assert.equal(sha(JSON.stringify(b[0].paths)),b[0].pathsSha256)

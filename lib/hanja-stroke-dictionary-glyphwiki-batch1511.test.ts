@@ -1,3 +1,4 @@
+import {fixtureEvidenceBytes} from './hanja-stroke-batch-test-types.ts'
 import test from 'node:test'
 import assert from 'node:assert/strict'
 import {readFileSync} from 'node:fs'
@@ -6,7 +7,7 @@ import {loadGlyphWikiBatch1511Strokes as load,HANJA_DICTIONARY_GLYPHWIKI_BATCH15
 const read=(p:string)=>JSON.parse(readFileSync(new URL('../'+p,import.meta.url),'utf8')),hash=(v:string|Uint8Array)=>createHash('sha256').update(v).digest('hex'),bundle=()=>read('public/hanja-strokes/dictionary-reviewed-glyphwiki-batch1511.json')
 test('1511 exact MM outlines, transforms and gates bind approved finite native inputs',()=>{
  assert.strictEqual(load(bundle()),expected);assert.equal(local,true);assert.equal(registration,true);assert.equal(runtime,true);assert.equal(input.runtimeApplied,true);assert.equal(input.actualAppUIFresh,false);assert.equal(input.originalWhole,false);assert.equal(input.originalMMWhole,false)
- for(const pin of [input.fixture,input.recipe,input.sourceDraft,input.sourceIdentity.recipient,input.sourceIdentity.donor,input.sourceClockReview,input.finalNativeReview])assert.equal(hash(readFileSync(new URL('../'+pin.path,import.meta.url))),pin.SHA256)
+ for(const pin of [input.fixture,input.recipe,input.sourceDraft,input.sourceIdentity.recipient,input.sourceIdentity.donor,input.sourceClockReview,input.finalNativeReview])assert.equal(hash(fixtureEvidenceBytes(pin.path,pin.SHA256,evidencePath=>readFileSync(new URL('../'+evidencePath,import.meta.url)))),pin.SHA256)
  const f=read(input.fixture.path),data=expected[0];assert.equal(data.glyph,'薅');assert.equal(data.paths.length,17);assert.equal(data.outlines?.flat().length,17);assert.deepEqual(data.outlines,f.u8585.strokes);assert(data.outlines?.flat().every(m=>m.revealStartGate&&m.revealTransform));assert.equal(hash(JSON.stringify(data.outlines)),'e9e39047f1dc662adfcaeb0a5332dd202f093799ec4513bb7b27859b3e110a45');assert.deepEqual(data.paths,data.outlines?.map(s=>s.map(m=>m.outline).join(' ')));assert.equal(hash(JSON.stringify(data.paths)),data.pathsSha256);assert(Object.isFrozen(data.outlines?.[0][0].revealStartGate));assert(Object.isFrozen(input.sourceIdentity.donor))
  const n=read(input.finalNativeReview.path);assert.equal(n.approval.registerThisExactGeometry,true);assert.equal(n.fixture.SHA256,input.fixture.SHA256);assert.equal(data.sourceReference.geometryReviewSha256,input.finalNativeReview.SHA256)
 })

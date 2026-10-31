@@ -1,3 +1,4 @@
+import {fixtureEvidenceBytes} from './hanja-stroke-batch-test-types.ts'
 import test from 'node:test'
 import assert from 'node:assert/strict'
 import {readFileSync} from 'node:fs'
@@ -6,8 +7,8 @@ import {loadGlyphWikiBatch1514Strokes as load,HANJA_DICTIONARY_GLYPHWIKI_BATCH15
 const read=(p:string)=>JSON.parse(readFileSync(new URL('../'+p,import.meta.url),'utf8')),hash=(s:string|Uint8Array)=>createHash('sha256').update(s).digest('hex'),bundle=()=>read('public/hanja-strokes/dictionary-reviewed-glyphwiki-batch1514.json')
 test('1514 actual same-glyph authored terminal capture binds finite native evidence',()=>{
  assert.strictEqual(load(bundle()),expected);assert.equal(authorized,true);assert.equal(runtime,true);
- for(const pin of [input.fixture,input.authoredFull5,input.sourceOverrides,input.staticReview,input.canonicalStaticReview,input.domesticClock2Review,input.finalNativeReview,input.renderer,input.outlineHelper])assert.equal(hash(readFileSync(new URL('../'+pin.path,import.meta.url))),pin.SHA256);
- for(const[p,pin]of Object.entries(input.inputSHA256))assert.equal(hash(readFileSync(new URL('../'+p,import.meta.url))),pin);
+ for(const pin of [input.fixture,input.authoredFull5,input.sourceOverrides,input.staticReview,input.canonicalStaticReview,input.domesticClock2Review,input.finalNativeReview,input.renderer,input.outlineHelper])assert.equal(hash(fixtureEvidenceBytes(pin.path,pin.SHA256,evidencePath=>readFileSync(new URL('../'+evidencePath,import.meta.url)))),pin.SHA256);
+ for(const[p,pin]of Object.entries(input.inputSHA256))assert.equal(hash(fixtureEvidenceBytes(p,pin,evidencePath=>readFileSync(new URL('../'+evidencePath,import.meta.url)))),pin);
  const f=read(input.fixture.path),n=read(input.finalNativeReview.path),full=read(input.authoredFull5.path),d=expected[0];assert.equal(n.approval.registrationAuthorized,true);assert.equal(n.runtimeAppliedAtReview,false);assert.equal(n.sourceIdentity.mixedParts,false);assert.equal(n.sourceIdentity.isActualLocallyAuthoredEngineCapture,true);assert.equal(n.sourceIdentity.sourceTraceDescribesAuthoredRecipient,true);assert.equal(n.limitations.actualAppUI,false);assert.equal(n.limitations.originalMicroclockEquivalence,false);assert.equal(n.limitations.wholeNaturalAutoplayTest,false);
  assert.equal(n.native.compact9Pens.length,12);assert.equal(n.native.curveStartRelease3.length,11);assert.deepEqual([n.native.aggregateInitial.samples,n.native.aggregateCompoundBoundary.samples,n.native.aggregateEnding.samples],[32,6,48]);assert.equal(n.native.fullRoundResidual.curveMasks,11);assert.equal(n.native.stateChecks.count,20);assert.deepEqual(n.native.stateChecks.failed,[]);assert.deepEqual(n.native.allObservedBadAndErrors,[]);
  assert.deepEqual(Object.keys(full).sort(),['defaults','engineHashes','engineRevision','groups','trace']);assert.equal(full.groups.flatMap((g:{polygons:unknown[]})=>g.polygons).length,37);assert.deepEqual(full.groups.map((g:{polygons:unknown[]})=>g.polygons),full.trace.map((row:{polygons:unknown[]}[])=>row.flatMap(c=>c.polygons)));

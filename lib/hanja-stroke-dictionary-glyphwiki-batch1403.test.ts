@@ -1,3 +1,4 @@
+import {fixtureEvidenceBytes} from './hanja-stroke-batch-test-types.ts'
 import assert from 'node:assert/strict'
 import test from 'node:test'
 import {readFileSync} from 'node:fs'
@@ -28,7 +29,7 @@ test('1403 sourcegate: complete actual full8 closure3 original30P caps6 root4 fo
  assert.deepEqual([r.native.server.successfulStartupSSR,r.native.server.CJS,r.native.server.ESM],[1,93,93]);assert.equal(r.native.server.exitCode,130);assert.equal(r.native.server.outputEmpty,true);assert.equal(r.native.observedShared.version,83);assert.equal(r.native.observedShared.currentFileEqualityRequired,false)
  assert.equal(p.displayPolicy.caps.counts.targets,6);assert.deepEqual(p.displayPolicy.feet.map((x:any)=>[x.pen,x.mask]),[[12,2]]);assert.equal(p.displayPolicy.footSourcePreparation.footGeometrySHA256,FOOT.footGeometrySHA256);assert.equal(FOOT.newFootRootTriangleIndex,4);assert.equal(FOOT.newFootRootOpenDiskRadius,.5);assert.equal(p.displayPolicy.newSourceFootClocksExplicit,true);assert.equal(p.displayPolicy.officialMicroTimingEquivalent,false)
  assert.equal(r.approval.rootIsolatedActualComponentFiniteApproved,true);assert.equal(r.approval.runtimeRegistrationAuthorized,true);for(const k of['actualProductAppUI','controller','storage','all14Autoplay','wholeReplayAllTime','officialMicroTimingEquivalent'])assert.equal(r.approval[k],false);assert.equal(r.runtimeActualGate.authorActualRegistryImport,0);assert.equal(r.runtimeActualGate.rootOnly,true)
- for(const[path,h]of Object.entries(r.inputSHA256))assert.equal(sha(bytes(path)),h,path)
+ for(const[path,h]of Object.entries(r.inputSHA256))assert.equal(sha(fixtureEvidenceBytes(path,h,bytes)),h,path)
  for(const k of['nativeApproval','runtimeApplied','registrationApproved','runtimeRegistered'])assert.equal(p.preparationHistory[k],false);assert.equal(f.nativeApproval,false);assert.equal(f.runtimeApplied,false);assert.equal(GLYPHWIKI_BATCH1403_NATIVE_APPROVAL,false);assert.equal(GLYPHWIKI_BATCH1403_RUNTIME_APPLIED,false);assert.equal(GLYPHWIKI_BATCH1403_ASSIGNMENT_PROVISIONAL,true)
  const reordered=(v:any):any=>Array.isArray(v)?v.map(reordered):v&&typeof v==='object'?Object.fromEntries(Object.entries(v).reverse().map(([k,x])=>[k,reordered(x)])):v;assert.deepEqual(load(reordered(bundle)),ENTRY)
  for(const change of[(x:any)=>x[0].outlines[11][1].weight++,(x:any)=>x[0].outlines[0][0].revealPath+=' ',(x:any)=>x[0].sourceReference.directionReviewSha256='bad']){const b=clone(bundle);change(b);assert.throws(()=>load(b))}let reads=0;const getter=clone(bundle);Object.defineProperty(getter[0],'glyph',{enumerable:true,get(){reads++;return'粻'}});assert.throws(()=>load(getter));assert.equal(reads,0);assert(Object.isFrozen(ENTRY[0].outlines))

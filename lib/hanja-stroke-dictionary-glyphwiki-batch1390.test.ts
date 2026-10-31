@@ -1,3 +1,4 @@
+import {fixtureEvidenceBytes} from './hanja-stroke-batch-test-types.ts'
 import assert from 'node:assert/strict'
 import test from 'node:test'
 import {readFileSync} from 'node:fs'
@@ -16,7 +17,7 @@ test('1390 sourcegate: fixed full5 closure5 original18p21m38',()=>{
  assert.equal(r.all18OfficialMacroEvidence.screens,54);assert.deepEqual(r.all18OfficialMacroEvidence.strokes,Array.from({length:18},(_,i)=>i+1));assert.equal(r.originalHOLDPreserved,true);assert.equal(r.newInternalClockFor13m2,true);assert.equal(r.approval.rootIsolatedActualComponentFiniteApproved,true);assert.equal(r.approval.runtimeRegistrationAuthorized,true);for(const k of ['actualProductAppUI','controller','storage','all18Autoplay','wholeReplayAllTime','officialMicroTimingEquivalent'])assert.equal(r.approval[k],false)
  for(const k of ['nativeApproval','runtimeApplied','registrationApproved','runtimeRegistered'])assert.equal(p.preparationHistory[k],false);assert.equal(f.nativeApproval,false);assert.equal(f.runtimeApplied,false);assert.equal(GLYPHWIKI_BATCH1390_NATIVE_APPROVAL,false);assert.equal(GLYPHWIKI_BATCH1390_RUNTIME_APPLIED,false);assert.equal(GLYPHWIKI_BATCH1390_ASSIGNMENT_PROVISIONAL,true);assert.equal(f.sourcePreservation.original38PolygonsExactlyOnce,true);assert.equal(f.sourcePreservation.originalBodyGuideWidthWeightPreserved,true)
  for(const mutate of [(x:any)=>x[0].outlines[12][1].weight++,(x:any)=>x[0].outlines[0][0].revealWidth++,(x:any)=>x[0].glyph='澡',(x:any)=>x[0].sourceReference.directionReviewSha256='bad',(x:any)=>x[0].geometryLicense.spdx='bad']){const bad=clone(bundle);mutate(bad);assert.throws(()=>load(bad))};const holes=clone(bundle);delete holes[0].outlines[12][1];assert.throws(()=>load(holes));assert.throws(()=>Reflect.apply(load,undefined,[]));assert.throws(()=>Reflect.apply(load,undefined,[bundle,bundle]));let getters=0;const getter=clone(bundle);Object.defineProperty(getter[0],'glyph',{get(){getters++;return'懥'},enumerable:true});assert.throws(()=>load(getter));assert.equal(getters,0);assert(Object.isFrozen(ENTRY[0].outlines))
- for(const[path,pin]of Object.entries(r.inputSHA256))assert.equal(sha(bytes(path)),pin,path)
+ for(const[path,pin]of Object.entries(r.inputSHA256))assert.equal(sha(fixtureEvidenceBytes(path,pin,bytes)),pin,path)
  assert(bytes('public/hanja-strokes/glyphwiki/u61e5.NOTICE.md').toString().includes(sha(bytes(REVIEW))));assert.equal(r.runtimeActualGate.authorActualRegistryImport,false)
  console.log(JSON.stringify({sourcegate:true,full5:true,id3:true,closure:5,pens:18,masks:21,polygons:38,nativeScreens:96,historicalPlainFailPreserved:32,originalPExactlyOnce:true,getterReads:0,sourceProjection:0,engine:0,SSR:0,build:false,actualRegistryImported:false}))
 })

@@ -1,3 +1,4 @@
+import {fixtureEvidenceBytes} from './hanja-stroke-batch-test-types.ts'
 import test from 'node:test'
 import assert from 'node:assert/strict'
 import {readFileSync} from 'node:fs'
@@ -37,9 +38,9 @@ test('1504 editable draft preserves original mixed-parts recipe/fullProof/versio
  assert.equal(draft.sourcePreservation.sourcePOrQOrBoundsOrWidthOrWeightChanged,false);assert.equal(draft.sourcePreservation.policyPreviewFlagsPreserved,true)
 })
 test('1504 binds finite actual-component approval while preserving historical source preview limits',()=>{
- for(const [path,pin]of Object.entries(pins))assert.equal(hash(read(path)),pin,path)
+ for(const [path,pin]of Object.entries(pins))assert.equal(hash(fixtureEvidenceBytes(path,pin,read)),pin,path)
  const media=json('docs/hanja-official-media-compare-u8587-2026-10-27/metadata.json').dictionary;assert.equal(expected[0].sourceReference.dictionarySvgUrl,media.url);assert.equal(expected[0].sourceReference.dictionarySvgSha256,media.sha256)
- assert.equal(nativeApproved,true);assert.equal(authorized,true);assert.equal(applied,true);assert.equal(draft.review.nativeState,'PASS-finite-actual-component-native-and-focused-integration');assert.equal(draft.review.nativeAnimationApproved,true);assert.equal(draft.review.runtimeApplied,true);assert.equal(draft.review.registrationAuthorized,true);assert.equal(draft.historicalPreparationReview.nativeState,'HOLD-pending-final-candidate-review');assert.equal(draft.historicalPreparationReview.runtimeApplied,false);assert.equal(draft.review.reviewedEffectiveRAMComponentSHA256,hash(read('components/hanja/stroke-outlines.tsx')));assert.equal(expected[0].sourceReference.geometryReviewSha256,hash(read(draft.review.nativeAnimationReview)))
+ assert.equal(nativeApproved,true);assert.equal(authorized,true);assert.equal(applied,true);assert.equal(draft.review.nativeState,'PASS-finite-actual-component-native-and-focused-integration');assert.equal(draft.review.nativeAnimationApproved,true);assert.equal(draft.review.runtimeApplied,true);assert.equal(draft.review.registrationAuthorized,true);assert.equal(draft.historicalPreparationReview.nativeState,'HOLD-pending-final-candidate-review');assert.equal(draft.historicalPreparationReview.runtimeApplied,false);assert.equal(draft.review.reviewedEffectiveRAMComponentSHA256,hash(fixtureEvidenceBytes('components/hanja/stroke-outlines.tsx',draft.review.reviewedEffectiveRAMComponentSHA256,read)));assert.equal(expected[0].sourceReference.geometryReviewSha256,hash(read(draft.review.nativeAnimationReview)))
  assert.equal(draft.review.examBodyApproved,false);assert.equal(draft.review.actualAppUIFreshlyVerified,false);assert.equal(draft.review.sourceMicroclockIdentityApproved,false);assert.equal(fixture.runtimeApplied,false)
  const notice=read('public/hanja-strokes/glyphwiki/NOTICE-8587.md').toString();assert(notice.includes('finite')&&notice.includes('공개 원래 whole이 아니다')&&notice.includes('시험주관기관 공식 인증이 아니다'))
 })

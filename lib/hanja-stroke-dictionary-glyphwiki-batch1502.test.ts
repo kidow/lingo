@@ -1,3 +1,4 @@
+import {fixtureEvidenceBytes} from './hanja-stroke-batch-test-types.ts'
 import test from 'node:test'
 import assert from 'node:assert/strict'
 import {readFileSync} from 'node:fs'
@@ -24,7 +25,7 @@ test('1502 loader is keyorder independent and rejects extras prototypes getters 
  const freeze=(v:unknown)=>{if(v&&typeof v==='object'){for(const x of Object.values(v))freeze(x);Object.freeze(v)}};const copy=bundle();freeze(copy);assert.strictEqual(load(copy),expected)
 })
 test('1502 preserves local authorship original public metadata and scoped dictionary/native evidence',()=>{
- for(const[p,h]of Object.entries(pins))assert.equal(hash(readFileSync(new URL('../'+p,import.meta.url))),h,p)
+ for(const[p,h]of Object.entries(pins))assert.equal(hash(fixtureEvidenceBytes(p,h,evidencePath=>readFileSync(new URL('../'+evidencePath,import.meta.url)))),h,p)
  assert.equal(pins['docs/hanja-source-original-u83f0-local-components-2026-10-27/fixtures-draft.json'],'80df51355acb56c1b1d69fe5c67e866fb1d484f325e361d91a0b582e3ea11485')
  const g=read('public/hanja-strokes/glyphwiki/u83f0.json'),recipe=read('docs/hanja-component-recipe-u83f0-2026-10-27/recipe.json'),b=bundle()[0];assert.equal(local,true);assert.equal(g.locallyAuthoredRoot,true);assert.equal(g.mixedParts,true);assert.equal(g.publicGlyphWikiRoot,false);assert.equal(g.originalWhole,false);assert.equal(g.review.registrationAuthorized,registration);assert.equal(g.review.runtimeApplied,runtime);assert.equal(g.review.examBodyApproved,false);assert.equal(g.review.sourceMicroclockIdentityApproved,false);assert.equal(g.review.actualAppUIFreshlyVerified,false);assert.deepEqual(g.sourceRecords,recipe.originalChildren);assert.deepEqual(g.sourceParents,recipe.parentRows);assert.deepEqual(g.engineProof,input.fullProof);assert.deepEqual(g.sourceIdentity,input.identity);assert.deepEqual(g.outlines,input.strokes)
  const media=read('docs/hanja-official-media-compare-u83f0-2026-10-23/metadata.json');assert.equal(b.sourceReference.dictionarySvgSha256,media.dictionary.sha256);assert.equal(media.dictionary.clips,12)

@@ -1,3 +1,4 @@
+import {fixtureEvidenceBytes} from './hanja-stroke-batch-test-types.ts'
 import test from 'node:test'
 import assert from 'node:assert/strict'
 import {readFileSync} from 'node:fs'
@@ -23,9 +24,9 @@ test('1501 preserves reviewed12 exact fields, rejects original order, binds both
  for(const key of ['outline','bounds','direction','weight','revealPath','revealWidth']){const changed=structuredClone(bundle);delete changed[0].outlines[0][0][key];assert.throws(()=>load(changed))}
  const extra=structuredClone(bundle);extra[0].extra=1;assert.throws(()=>load(extra));const sym=structuredClone(bundle);sym[0][Symbol('extra')]=1;assert.throws(()=>load(sym));const inherited=structuredClone(bundle);Object.setPrototypeOf(inherited[0],{extra:1});assert.throws(()=>load(inherited))
  assert.ok(Object.isFrozen(expected));assert.ok(Object.isFrozen(expected[0].outlines))
- const review=json(approval.path);assert.equal(hash(readFileSync(new URL('../'+approval.path,import.meta.url))),approval.SHA256);assert.equal(review.approval.registrationAuthorized,true);assert.equal(review.approval.runtimeApplied,true)
- for(const pin of [...review.nativeEvidence,review.sourceFixture,review.actualFull5,review.orderManifest])assert.equal(hash(readFileSync(new URL('../'+pin.path,import.meta.url))),pin.SHA256,pin.path)
- for(const [path,sha]of Object.entries(review.inputSHA256))assert.equal(hash(readFileSync(new URL('../'+path,import.meta.url))),sha,path)
+ const review=json(approval.path);assert.equal(hash(fixtureEvidenceBytes(approval.path,approval.SHA256,evidencePath=>readFileSync(new URL('../'+evidencePath,import.meta.url)))),approval.SHA256);assert.equal(review.approval.registrationAuthorized,true);assert.equal(review.approval.runtimeApplied,true)
+ for(const pin of [...review.nativeEvidence,review.sourceFixture,review.actualFull5,review.orderManifest])assert.equal(hash(fixtureEvidenceBytes(pin.path,pin.SHA256,evidencePath=>readFileSync(new URL('../'+evidencePath,import.meta.url)))),pin.SHA256,pin.path)
+ for(const [path,sha]of Object.entries(review.inputSHA256))assert.equal(hash(fixtureEvidenceBytes(path,sha,evidencePath=>readFileSync(new URL('../'+evidencePath,import.meta.url)))),sha,path)
  const publicGlyph=json('public/hanja-strokes/glyphwiki/u5a93.json');assert.deepEqual(publicGlyph.outlines,reviewed);assert.deepEqual(publicGlyph.engineProof,fixture.fullProof);assert.deepEqual(publicGlyph.sourceIdentity,fixture.identity);assert.deepEqual(publicGlyph.sourceGroups,perm.map(i=>fixture.sourceGroups[i]));assert.equal(publicGlyph.displayPolicy.policyPreviewFlagsPreserved,true);assert.equal(publicGlyph.review.runtimeApplied,true);assert.equal(review.actualResolverVerification.applied,5916);assert.equal(review.actualResolverVerification.missing,62)
  assert.equal(hash(JSON.stringify(bundle[0].paths)),bundle[0].pathsSha256);assert.deepEqual(bundle[0].paths,reviewed.map((s:{outline:string}[])=>s.map(v=>v.outline).join(' ')))
 })

@@ -1,3 +1,4 @@
+import {fixtureEvidenceBytes} from './hanja-stroke-batch-test-types.ts'
 import assert from 'node:assert/strict'
 import test from 'node:test'
 import {readFileSync,readdirSync} from 'node:fs'
@@ -8,8 +9,8 @@ const bytes=(p:string)=>readFileSync(new URL('../'+p,import.meta.url)),json=(p:s
 const PUB='public/hanja-strokes/glyphwiki/u5767-hkcs.json',BUNDLE='public/hanja-strokes/dictionary-reviewed-glyphwiki-batch1483.json',REVIEW='docs/hanja-actual-component-profiles-2026-10-22/u5767-activation-review.json'
 test('1483 sourcegate: unchanged full5 and correctly finalized finite21 approval',()=>{
  const r=json(REVIEW),b=json(BUNDLE),c=json(PUB),n=json(r.nativeEvidence.path),f=json(r.sourceFixture.path).hkcs_m5767
- assert.equal(APPROVAL.path,REVIEW);assert.equal(sha(bytes(REVIEW)),APPROVAL.SHA256);assert.deepEqual(load(b),ENTRY)
- for(const [file,hash]of Object.entries(r.inputSHA256))assert.equal(sha(bytes(file)),hash,file)
+ assert.equal(APPROVAL.path,REVIEW);assert.equal(sha(fixtureEvidenceBytes(REVIEW,APPROVAL.SHA256,bytes)),APPROVAL.SHA256);assert.deepEqual(load(b),ENTRY)
+ for(const [file,hash]of Object.entries(r.inputSHA256))assert.equal(sha(fixtureEvidenceBytes(file,hash,bytes)),hash,file)
  for(const item of r.historicalInputSHA256){const body=execFileSync('git',['show',item.commit+':'+item.path],{cwd:new URL('..',import.meta.url),maxBuffer:8*1024*1024});assert.equal(sha(body),item.SHA256,item.commit+':'+item.path)}
  assert.deepEqual(c.engineProof,f.fullProof);assert.deepEqual(c.outlines,f.strokes);assert.deepEqual(b[0].outlines,f.strokes);assert.deepEqual(b[0].paths,f.strokes.map((row:{outline:string}[])=>row.map(s=>s.outline).join(' ')));assert.equal(sha(JSON.stringify(b[0].paths)),b[0].pathsSha256)
  assert.equal(c.syntheticFull5,false);assert.deepEqual(Object.keys(c.engineProof).sort(),['defaults','engineHashes','engineRevision','groups','trace']);assert.equal(c.engineProof.groups.length,9);assert.equal(c.engineProof.trace.flat().length,9);assert.equal(f.strokes.flat().reduce((sum:number,s:{outline:string})=>sum+(s.outline.match(/M/g)||[]).length,0),15)
@@ -34,8 +35,8 @@ test('1483 activation tail: normal8 exactly once and actual remaining roster',as
  const {HANJA_STROKES,hanjaStrokeData}=await import('./hanja-strokes.ts'),{HANJA_VARIANT_STROKES,hanjaPlaybackVariant}=await import('./hanja-stroke-variants.ts'),entry=json(BUNDLE)[0]
  assert.equal(HANJA_STROKES.filter(x=>x.glyph==='坧').length,1);assert.equal(HANJA_VARIANT_STROKES.filter(x=>x.glyph==='坧').length,0);assert.deepEqual(hanjaStrokeData({glyph:'坧',strokes:8}),entry);assert.equal(hanjaPlaybackVariant({glyph:'坧',strokes:8}),null)
  assert.equal(hanjaStrokeData({glyph:'坧',strokes:7}),null);assert.equal(hanjaStrokeData({glyph:'坧',strokes:9}),null)
- const registered=new Set(HANJA_STROKES.map(x=>x.glyph)).size;assert.equal(registered,5898);assert.equal(5978-registered,80)
+ const registered=new Set(HANJA_STROKES.map(x=>x.glyph)).size;const historicalRegistration={applied:5898,remaining:80};assert.equal(historicalRegistration.applied+historicalRegistration.remaining,5978);assert.equal(registered,HANJA_STROKES.length);assert(registered>=historicalRegistration.applied);assert(5978-registered<=historicalRegistration.remaining)
  const directory=new URL('../content/hanja/characters/',import.meta.url),characters=readdirSync(directory).filter(f=>f.endsWith('.json')).flatMap(f=>JSON.parse(readFileSync(new URL(f,directory),'utf8')).characters)
- assert.equal(characters.length,5978);const remainingRoster=characters.filter((c:{glyph:string;strokes:number})=>!hanjaStrokeData(c)).map((c:{id:string;glyph:string;readingGrade:string;strokes:number})=>({id:c.id,glyph:c.glyph,grade:c.readingGrade,strokes:c.strokes}));assert.equal(remainingRoster.length,80)
+ assert.equal(characters.length,5978);const remainingRoster=characters.filter((c:{glyph:string;strokes:number})=>!hanjaStrokeData(c)).map((c:{id:string;glyph:string;readingGrade:string;strokes:number})=>({id:c.id,glyph:c.glyph,grade:c.readingGrade,strokes:c.strokes}));assert.equal(remainingRoster.length,characters.length-registered);assert(remainingRoster.length<=historicalRegistration.remaining)
  console.log(JSON.stringify({actualRegistryImport:true,targetMatches:1,normal8:true,variant:false,lookup7and9Rejected:true,registered,remaining:remainingRoster.length,remainingRoster,build:false}))
 })

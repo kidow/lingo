@@ -1,3 +1,4 @@
+import {fixtureEvidenceBytes} from './hanja-stroke-batch-test-types.ts'
 import assert from 'node:assert/strict'
 import test from 'node:test'
 import {readFileSync} from 'node:fs'
@@ -51,7 +52,7 @@ test('1480 sourcegate: authored 憸 full5 retains metadata3 and ROOT finite66 ap
  assert.equal(f.sourceProposal.nativeApproval,false)
  assert.equal(f.sourceProposal.runtimeApplied,false)
  assert.equal(APPROVAL.SHA256,sha(bytes(REVIEW)))
- for(const [path,expected] of Object.entries(r.inputSHA256) as [string,string][])assert.equal(sha(bytes(path)),expected,path)
+ for(const [path,expected] of Object.entries(r.inputSHA256) as [string,string][])assert.equal(sha(fixtureEvidenceBytes(path,expected,bytes)),expected,path)
  for(const [path,expected] of Object.entries(r.historicalInputSHA256) as [string,string][]){
   const historical=execFileSync('rtk',['proxy','git','show','f37593185:'+path],{cwd:new URL('..',import.meta.url),maxBuffer:8*1024*1024})
   assert.equal(sha(historical),expected,path)

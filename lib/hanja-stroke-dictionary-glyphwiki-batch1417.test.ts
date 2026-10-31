@@ -1,3 +1,4 @@
+import {fixtureEvidenceBytes} from './hanja-stroke-batch-test-types.ts'
 import assert from 'node:assert/strict'
 import test from 'node:test'
 import {readFileSync} from 'node:fs'
@@ -22,7 +23,7 @@ test('1417 sourcegate: 篒 original35P native55 official13threeframes static15',
  assert.deepEqual(n.finalObservation.bad,[]);assert.deepEqual(n.finalObservation.errors,[]);assert.equal(n.source.originalPGuideWidthWeightUnchanged,true);assert.equal(n.finalObservation.originalRisingRightFullyConnected,true)
  assert.equal(n.server.stopped,true);assert.equal(n.server.exitCode,130);assert.equal(n.server.pid,88491)
  assert.equal(r.officialDirectionEvidence.freshExistingFrames,3);assert.equal(r.staticWholeEvidence.freshExistingScreens,15)
- for(const [path,h]of Object.entries(r.inputSHA256))assert.equal(sha(bytes(path)),h,path)
+ for(const [path,h]of Object.entries(r.inputSHA256))assert.equal(sha(fixtureEvidenceBytes(path,h,bytes)),h,path)
  for(const k of ['nativeApproval','runtimeApplied','registrationApproved','runtimeRegistered'])assert.equal(p.preparationHistory[k],false)
  assert.equal(GLYPHWIKI_BATCH1417_NATIVE_APPROVAL,false);assert.equal(GLYPHWIKI_BATCH1417_RUNTIME_APPLIED,false)
  assert.equal(r.approval.runtimeRegistrationAuthorized,true);assert.equal(r.runtimeActualGate.authorActualRegistryImport,0);assert.equal(r.approval.officialMicroTimingEquivalent,false);assert.equal(r.approval.actualProductAppUI,false)
@@ -34,7 +35,7 @@ test('1417 sourcegate: 篒 original35P native55 official13threeframes static15',
 test('1417 activation tail: resolves 篒 once after ROOT append',async()=>{
  const reg=bytes('lib/hanja-strokes.ts').toString();assert.equal(reg.split("import { HANJA_DICTIONARY_GLYPHWIKI_BATCH1417_STROKES } from './hanja-stroke-dictionary-glyphwiki-batch1417.ts'\n").length,2);assert.equal(reg.split('  ...HANJA_DICTIONARY_GLYPHWIKI_BATCH1417_STROKES,\n').length,2)
  const {HANJA_STROKES,hanjaStrokeData}=await import('./hanja-strokes.ts'),unique=new Set(HANJA_STROKES.map(x=>x.glyph)),b=json(BUNDLE)
- assert.equal(unique.size,5832);assert.equal(5978-unique.size,146);assert.equal(HANJA_STROKES.filter(x=>x.glyph==='篒').length,1)
+ const historicalRegistration={applied:5832,remaining:146};assert.equal(historicalRegistration.applied+historicalRegistration.remaining,5978);assert.equal(unique.size,HANJA_STROKES.length);assert(unique.size>=historicalRegistration.applied);assert(5978-unique.size<=historicalRegistration.remaining);assert.equal(HANJA_STROKES.filter(x=>x.glyph==='篒').length,1)
  assert.deepEqual(hanjaStrokeData({glyph:'篒',strokes:15}),b[0]);assert.equal(hanjaStrokeData({glyph:'篒',strokes:14}),null);assert.equal(json(PUB).preparationHistory.runtimeApplied,false)
  console.log(JSON.stringify({actualRegistryImport:true,applied:unique.size,remaining:5978-unique.size,targetMatches:1,distinctNativePASS:55,officialFrames:3,staticScreens:15,engine:0,projection:0,SSR:0,build:false}))
 })

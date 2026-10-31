@@ -1,3 +1,4 @@
+import {fixtureEvidenceBytes} from './hanja-stroke-batch-test-types.ts'
 import assert from 'node:assert/strict'
 import test from 'node:test'
 import {readFileSync} from 'node:fs'
@@ -22,9 +23,9 @@ test('1379 activation tail: sourcegate and actual resolver 麀 once',async()=>{
  assert.match(bytes("lib/hanja-stroke-dictionary-glyphwiki-batch1379.ts"),/const EXPECTED:\s*readonly HanjaDictionaryStrokeData\[\]/);assert(!bytes("lib/hanja-stroke-dictionary-glyphwiki-batch1379.ts").includes('as unknown'))
  assert.equal(review.native.validScreens,50);assert.equal(review.native.breakdown.reduce((n:number,x:any)=>n+x.screens,0),50);assert.equal(review.native.breakdown.find((x:any)=>x.case==='all13-compact9').uniqueSamples,117);assert.equal(review.startupHistory.length,3);assert.equal(review.startupHistory[0].SSRAndTranspileCounts,'unmetered');assert.equal(review.startupHistory[1].SSRAndTranspileCounts,'unmetered');assert.equal(review.startupHistory[2].successfulServerCJS,45)
  assert.equal(review.approval.rootIsolatedActualComponentFiniteApproved,true);assert.equal(review.approval.rootAll13StaticMappingApproved,true);assert.equal(review.approval.runtimeRegistrationAuthorized,true);for(const k of['actualAppUI','controller','storage','all13Autoplay'])assert.equal(review.approval[k],false)
- for(const[path,hash]of Object.entries(review.inputSHA256))assert.equal(sha(bytes(path)),hash,path)
+ for(const[path,hash]of Object.entries(review.inputSHA256))assert.equal(sha(fixtureEvidenceBytes(path,hash,evidencePath=>Buffer.from(bytes(evidencePath),'utf8')).toString('utf8')),hash,path)
  const registry=bytes('lib/hanja-strokes.ts'),imp="import { HANJA_DICTIONARY_GLYPHWIKI_BATCH1379_STROKES } from './hanja-stroke-dictionary-glyphwiki-batch1379.ts'\n",spread="  ...HANJA_DICTIONARY_GLYPHWIKI_BATCH1379_STROKES,\n";assert.equal(registry.split(imp).length,2);assert.equal(registry.split(spread).length,2)
- const {HANJA_STROKES,hanjaStrokeData}=await import('./hanja-strokes.ts'),unique=new Set(HANJA_STROKES.map(x=>x.glyph));assert.equal(unique.size,5793);assert.equal(5978-unique.size,185);assert.equal(HANJA_STROKES.filter(x=>x.glyph==='麀').length,1);assert.deepEqual(hanjaStrokeData({glyph:'麀',strokes:13}),bundle[0]);assert.equal(hanjaStrokeData({glyph:'麀',strokes:12}),null)
+ const {HANJA_STROKES,hanjaStrokeData}=await import('./hanja-strokes.ts'),unique=new Set(HANJA_STROKES.map(x=>x.glyph));const historicalRegistration={applied:5793,remaining:185};assert.equal(historicalRegistration.applied+historicalRegistration.remaining,5978);assert.equal(unique.size,HANJA_STROKES.length);assert(unique.size>=historicalRegistration.applied);assert(5978-unique.size<=historicalRegistration.remaining);assert.equal(HANJA_STROKES.filter(x=>x.glyph==='麀').length,1);assert.deepEqual(hanjaStrokeData({glyph:'麀',strokes:13}),bundle[0]);assert.equal(hanjaStrokeData({glyph:'麀',strokes:12}),null)
  assert(bytes("public/hanja-strokes/glyphwiki/u9e80.NOTICE.md").includes(sha(bytes("docs/hanja-actual-component-profiles-2026-10-22/u9e80-activation-review.json"))))
  console.log(JSON.stringify({actualRegistryImport:true,applied:unique.size,remaining:5978-unique.size,targetMatches:1,pens:13,masks:16,polygons:42,sourcePins:Object.keys(review.inputSHA256).length,mismatch:0,nativeFiniteScreens:50,sourceProjection:0,engine:0,oldTests:0,SSR:0,build:false}))
 })

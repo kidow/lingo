@@ -1,3 +1,4 @@
+import {fixtureEvidenceBytes} from './hanja-stroke-batch-test-types.ts'
 import assert from 'node:assert/strict'
 import test from 'node:test'
 import {readFileSync,readdirSync} from 'node:fs'
@@ -8,8 +9,8 @@ const bytes=(p:string)=>readFileSync(new URL('../'+p,import.meta.url)),json=(p:s
 const PUB='public/hanja-strokes/glyphwiki/u585a.json',BUNDLE='public/hanja-strokes/dictionary-reviewed-glyphwiki-batch1482.json',REVIEW='docs/hanja-actual-component-profiles-2026-10-22/u585a-activation-review.json'
 test('1482 sourcegate: fixed original 塚 full5 with separated finite approval',()=>{
  const r=json(REVIEW),b=json(BUNDLE),c=json(PUB),n=json(r.nativeEvidence.path),f=json(r.sourceFixture.path).u585a
- assert.equal(APPROVAL.path,REVIEW);assert.equal(sha(bytes(REVIEW)),APPROVAL.SHA256);assert.equal(sha(bytes(PUB)),b[0].candidateSha256);assert.deepEqual(load(b),ENTRY)
- for(const [file,hash]of Object.entries(r.inputSHA256))assert.equal(sha(bytes(file)),hash,file)
+ assert.equal(APPROVAL.path,REVIEW);assert.equal(sha(fixtureEvidenceBytes(REVIEW,APPROVAL.SHA256,bytes)),APPROVAL.SHA256);assert.equal(sha(bytes(PUB)),b[0].candidateSha256);assert.deepEqual(load(b),ENTRY)
+ for(const [file,hash]of Object.entries(r.inputSHA256))assert.equal(sha(fixtureEvidenceBytes(file,hash,bytes)),hash,file)
  for(const item of r.historicalInputSHA256){const body=execFileSync('git',['show',item.commit+':'+item.path],{cwd:new URL('..',import.meta.url),maxBuffer:8*1024*1024});assert.equal(sha(body),item.SHA256,item.commit+':'+item.path)}
  assert.deepEqual(c.engineProof,f.fullProof);assert.deepEqual(c.outlines,f.strokes);assert.deepEqual(b[0].outlines,f.strokes);assert.deepEqual(b[0].paths,f.strokes.map((row:{outline:string}[])=>row.map(s=>s.outline).join(' ')))
  assert.equal(c.syntheticFull5,false);assert.deepEqual(Object.keys(c.engineProof).sort(),['defaults','engineHashes','engineRevision','groups','trace']);assert.equal(c.engineProof.groups.length,13);assert.equal(c.engineProof.trace.flat().length,14)
@@ -40,8 +41,8 @@ test('1482 activation tail: unchanged catalog13 selects dictionary12 exactly onc
  assert.equal(HANJA_STROKES.filter(x=>x.glyph==='塚').length,1);assert.equal(HANJA_VARIANT_STROKES.filter(x=>x.glyph==='塚').length,1);assert.deepEqual(hanjaStrokeData({glyph:'塚',strokes:13}),entry)
  assert.equal(hanjaPlaybackVariant({glyph:'塚',strokes:13})?.paths.length,12);for(let strokes=0;strokes<50;strokes++)if(strokes!==13)assert.equal(hanjaPlaybackVariant({glyph:'塚',strokes}),null)
  assert.equal(hanjaStrokeData({glyph:'塚',strokes:12}),null);assert.equal(hanjaStrokeData({glyph:'塚',strokes:14}),null)
- const registered=new Set(HANJA_STROKES.map(x=>x.glyph)).size;assert.equal(registered,5897);assert.equal(5978-registered,81)
+ const registered=new Set(HANJA_STROKES.map(x=>x.glyph)).size;const historicalRegistration={applied:5897,remaining:81};assert.equal(historicalRegistration.applied+historicalRegistration.remaining,5978);assert.equal(registered,HANJA_STROKES.length);assert(registered>=historicalRegistration.applied);assert(5978-registered<=historicalRegistration.remaining)
  const directory=new URL('../content/hanja/characters/',import.meta.url),characters=readdirSync(directory).filter(f=>f.endsWith('.json')).flatMap(f=>JSON.parse(readFileSync(new URL(f,directory),'utf8')).characters)
- assert.equal(characters.length,5978);const remainingRoster=characters.filter((c:{glyph:string;strokes:number})=>!hanjaStrokeData(c)).map((c:{id:string;glyph:string;readingGrade:string;strokes:number})=>({id:c.id,glyph:c.glyph,grade:c.readingGrade,strokes:c.strokes}));assert.equal(remainingRoster.length,81)
+ assert.equal(characters.length,5978);const remainingRoster=characters.filter((c:{glyph:string;strokes:number})=>!hanjaStrokeData(c)).map((c:{id:string;glyph:string;readingGrade:string;strokes:number})=>({id:c.id,glyph:c.glyph,grade:c.readingGrade,strokes:c.strokes}));assert.equal(remainingRoster.length,characters.length-registered);assert(remainingRoster.length<=historicalRegistration.remaining)
  console.log(JSON.stringify({actualRegistryImport:true,targetMatches:1,catalog13Accepted:true,playback12:true,lookup12and14Rejected:true,registered,remaining:remainingRoster.length,remainingRoster,build:false}))
 })

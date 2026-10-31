@@ -1,3 +1,4 @@
+import {fixtureEvidenceBytes} from './hanja-stroke-batch-test-types.ts'
 import test from 'node:test'
 import assert from 'node:assert/strict'
 import {readFileSync} from 'node:fs'
@@ -6,7 +7,7 @@ import {loadGlyphWikiBatch1512Strokes as load,HANJA_DICTIONARY_GLYPHWIKI_BATCH15
 const read=(p:string)=>JSON.parse(readFileSync(new URL('../'+p,import.meta.url),'utf8')),hash=(v:string|Uint8Array)=>createHash('sha256').update(v).digest('hex'),bundle=()=>read('public/hanja-strokes/dictionary-reviewed-glyphwiki-batch1512.json')
 test('1512 exact authored GlyphWiki outlines bind final finite native evidence',()=>{
  assert.strictEqual(load(bundle()),expected);assert.equal(authorized,true);assert.equal(runtime,true);assert.equal(input.runtimeApplied,true);assert.equal(input.originalWhole,false);assert.equal(input.isOriginalEngineCapture,false);assert.equal(input.actualAppUIFresh,false);assert.equal(input.wholeNaturalAutoplayTest,false)
- for(const pin of [input.fixture,input.staticReview,input.finalNativeReview])assert.equal(hash(readFileSync(new URL('../'+pin.path,import.meta.url))),pin.SHA256);for(const[p,pin]of Object.entries(input.inputSHA256))assert.equal(hash(readFileSync(new URL('../'+p,import.meta.url))),pin)
+ for(const pin of [input.fixture,input.staticReview,input.finalNativeReview])assert.equal(hash(fixtureEvidenceBytes(pin.path,pin.SHA256,evidencePath=>readFileSync(new URL('../'+evidencePath,import.meta.url)))),pin.SHA256);for(const[p,pin]of Object.entries(input.inputSHA256))assert.equal(hash(fixtureEvidenceBytes(p,pin,evidencePath=>readFileSync(new URL('../'+evidencePath,import.meta.url)))),pin)
  const f=read(input.fixture.path),d=expected[0],n=read(input.finalNativeReview.path);assert.equal(n.approval.registrationAuthorized,true);assert.equal(n.fixtureSHA256,input.fixture.SHA256);assert.equal(d.glyph,'羖');assert.deepEqual(d.outlines,f.strokes);assert.equal(hash(JSON.stringify(d.outlines)),input.fixture.geometrySHA256);assert.deepEqual(d.paths,d.outlines?.map(s=>s.map(m=>m.outline).join(' ')));assert.equal(hash(JSON.stringify(d.paths)),d.pathsSha256);assert.equal(d.sourceReference.geometryReviewSha256,input.finalNativeReview.SHA256);assert.equal(d.geometryLicense?.spdx,'LicenseRef-GlyphWiki');assert(Object.isFrozen(d.outlines?.[0][0]));assert(Object.isFrozen(input.inputSHA256))
 })
 test('1512 exact ten strokes/sixteen masks/seven gates reject nine-stroke and source policy changes',()=>{

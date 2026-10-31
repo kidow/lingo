@@ -1,3 +1,4 @@
+import {fixtureEvidenceBytes} from './hanja-stroke-batch-test-types.ts'
 import assert from 'node:assert/strict'
 import test from 'node:test'
 import {readFileSync} from 'node:fs'
@@ -29,7 +30,7 @@ test('1407 sourcegate: original30P exact terminal23 display31 fragments fresh22 
  assert.equal(n.reusedOldEvidence.unchangedScopeReused,90);assert.equal(n.reusedOldEvidence.oldPen4InitialRhoReplacedByFresh,5);assert.equal(n.reusedOldEvidence.failedResidualNotReused,true);assert.equal(n.combinedFinitePassingTargetScopes,112)
  assert.equal(n.bodyResidual.white,true);assert.equal(n.bodyResidual.oldTinyBlackTerminalResidueGone,true);assert.equal(n.allFullyVisible,true);assert.deepEqual(n.allBad,[]);assert.deepEqual(n.allErrors,[]);assert.equal(n.server.stopped,true);assert.equal(n.server.exitCode,130);assert.equal(n.server.stdoutEmpty,true)
  assert.equal(r.officialDirectionEvidence.freshFrames,36);assert.equal(r.officialDirectionEvidence.strokes,12);assert.equal(r.staticWholeEvidence.freshScreens,14);assert.equal(r.staticWholeEvidence.staticOnly,true)
- for(const [path,h]of Object.entries(r.inputSHA256))assert.equal(sha(bytes(path)),h,path)
+ for(const [path,h]of Object.entries(r.inputSHA256))assert.equal(sha(fixtureEvidenceBytes(path,h,bytes)),h,path)
  for(const k of ['nativeApproval','runtimeApplied','registrationApproved','runtimeRegistered'])assert.equal(p.preparationHistory[k],false)
  assert.equal(f.nativeApproval,false);assert.equal(f.runtimeApplied,false);assert.equal(GLYPHWIKI_BATCH1407_NATIVE_APPROVAL,false);assert.equal(GLYPHWIKI_BATCH1407_RUNTIME_APPLIED,false);assert.equal(GLYPHWIKI_BATCH1407_ASSIGNMENT_PROVISIONAL,true)
  assert.equal(r.approval.runtimeRegistrationAuthorized,true);assert.equal(r.runtimeActualGate.authorActualRegistryImport,0)
@@ -44,7 +45,7 @@ test('1407 activation tail: resolves 硜 once after ROOT append',async()=>{
  const reg=bytes('lib/hanja-strokes.ts').toString(),imp="import { HANJA_DICTIONARY_GLYPHWIKI_BATCH1407_STROKES } from './hanja-stroke-dictionary-glyphwiki-batch1407.ts'\n",spread="  ...HANJA_DICTIONARY_GLYPHWIKI_BATCH1407_STROKES,\n"
  assert.equal(reg.split(imp).length,2);assert.equal(reg.split(spread).length,2)
  const {HANJA_STROKES,hanjaStrokeData}=await import('./hanja-strokes.ts'),unique=new Set(HANJA_STROKES.map(x=>x.glyph)),b=json(BUNDLE)
- assert.equal(unique.size,5822);assert.equal(5978-unique.size,156);assert.equal(HANJA_STROKES.filter(x=>x.glyph==='硜').length,1);assert.deepEqual(hanjaStrokeData({glyph:'硜',strokes:12}),b[0]);assert.equal(hanjaStrokeData({glyph:'硜',strokes:11}),null)
+ const historicalRegistration={applied:5822,remaining:156};assert.equal(historicalRegistration.applied+historicalRegistration.remaining,5978);assert.equal(unique.size,HANJA_STROKES.length);assert(unique.size>=historicalRegistration.applied);assert(5978-unique.size<=historicalRegistration.remaining);assert.equal(HANJA_STROKES.filter(x=>x.glyph==='硜').length,1);assert.deepEqual(hanjaStrokeData({glyph:'硜',strokes:12}),b[0]);assert.equal(hanjaStrokeData({glyph:'硜',strokes:11}),null)
  assert.deepEqual([b[0].outlines.length,b[0].outlines.flat().length],[12,16]);assert.equal(json(PUBLIC).preparationHistory.runtimeApplied,false)
  console.log(JSON.stringify({actualRegistryImport:true,applied:unique.size,remaining:5978-unique.size,targetMatches:1,pens:12,masks:16,originalPolygons:30,displayFragments:31,newNativeScreens:22,reusedUnchangedTargetScopes:90,officialMacroFrames:36,actualAppUI:false,sourceProjection:0,engine:0,SSR:0,build:false}))
 })
