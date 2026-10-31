@@ -76,7 +76,8 @@ export function WritingPractice({ character }: { character: HanjaCharacter }) {
       <h2 className="text-3xl font-semibold">{hunEum(character)}</h2>
       <p className="text-sm text-sub">{gradeLabel(character.readingGrade)}</p>
       <p className="empty:hidden text-sm text-sub"><HanjaStudyStrokeCount character={character} variantOnly /></p>
-      <div className="relative mx-auto mt-2 aspect-square w-full max-w-[340px] shrink-0 overflow-hidden rounded-card border border-line bg-img-bg">
+      <div className="relative mt-2 min-h-[120px] flex-1 [container-type:size]">
+      <div className="absolute inset-0 m-auto size-[min(100cqw,100cqh,340px)] overflow-hidden rounded-card border border-line bg-img-bg">
         <div className="pointer-events-none absolute inset-y-0 left-1/2 border-l border-dashed border-line" />
         <div className="pointer-events-none absolute inset-x-0 top-1/2 border-t border-dashed border-line" />
         {reference && !started && <div className="pointer-events-none absolute inset-4 text-accent/20" aria-hidden>
@@ -114,6 +115,7 @@ export function WritingPractice({ character }: { character: HanjaCharacter }) {
           onPointerCancel={cancel}
           onLostPointerCapture={cancel}
         />
+      </div>
       </div>
       {controls}
       <div className="flex items-center gap-1">
