@@ -1,0 +1,52 @@
+{
+  "schema": "hanja-isolated-H-preparation/v1",
+  "date": "2026-10-29",
+  "glyph": "釁",
+  "beforeH": "e91585959e9561d8e2f6bfcf53cccf4937f2567ad3db1c4ca1539d70f4247701",
+  "afterH": "e9ac19c090fc8f359bd31acdd751de31c6dcefcd1acf8233c46aed45d50745e7",
+  "patch": {
+    "path": "docs/hanja-authored-ownstroke-u91c1-omit-h-contact-v2-2026-10-29/actual-H-integration-width22.patch",
+    "SHA256": "1c5a2d46885204cbca4b9030853ed6a2eb9edce0dfcc0682b9530ff7acf43095"
+  },
+  "profile": {
+    "path": "docs/hanja-authored-ownstroke-u91c1-omit-h-contact-v2-2026-10-29/actual-profile-width22-start.json",
+    "SHA256": "85cf585ebc94fae69aa4059f1ec55831821c8dff306d859e0bfbb2bf81a80988"
+  },
+  "fixture": {
+    "path": "docs/hanja-authored-ownstroke-u91c1-omit-h-contact-v2-2026-10-29/fixtures-execution-draft-width22.json",
+    "SHA256": "e06bd95de33cd44ea36e26955e30c67703f0f6172992e79f8a6809f9e16b330a"
+  },
+  "geometrySHA256": "388369dc3309c651dce05dad34a6316e613a6f1e1e0dbbcb324589663702acb0",
+  "registryAtFreeze": "91270d373f73e7b908fbbdd0ccbb213028096f23efd58e4cb0125925e3f1f34d",
+  "inputCount": 905,
+  "checks": {
+    "orderedHunks": 34,
+    "forwardAndInverseExact": true,
+    "nodeSyntax": 0,
+    "actualWholeFixtureRouteFiveFields": true,
+    "baselineClosure386Selection": true,
+    "closedGuardPositive": 1,
+    "closedGuardNegative": 5,
+    "actualSetupInvokedInFakeDOM": true,
+    "all26PenCompactButtons": true,
+    "all10CurveGateButtons": true,
+    "aggregate160FakeDOMRenderRoots": true,
+    "uniqueReactIdentifierPrefixes160": true,
+    "clientProjectionNegative": 5,
+    "actualObserverFunctionsFakeDOMBeforeAndAfterGate20": true,
+    "wrongWidthAndForeignDocumentRejects40": true,
+    "Su4NumericPredicateByteUnchanged": true,
+    "all905InputPinsMatchActual": true
+  },
+  "execution": {
+    "childSSR": 0,
+    "server": 0,
+    "browser": 0,
+    "build": 0,
+    "wholeTypecheck": 0,
+    "sharedFilesWritten": 0
+  },
+  "limits": "Fake DOM wiring and source guard tests only. ROOT actual H apply/SSR/browser review is independent; no finite native result claimed here.",
+  "nativeApproval": false,
+  "runtimeApplied": false
+}

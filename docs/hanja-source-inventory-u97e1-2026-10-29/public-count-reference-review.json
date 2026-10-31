@@ -1,0 +1,78 @@
+{
+  "schema": "hanja-public-count-and-variant-policy-research/v1",
+  "date": "2026-10-29",
+  "glyph": "韡",
+  "catalogStrokes": 21,
+  "publisherPlaybackClips": 20,
+  "original20Clock": {
+    "path": "docs/hanja-official-media-compare-u97e1-2026-10-29/native-all20-review.json",
+    "SHA256": "09835b0ba296d59af25af5b6194b23dee7123fb99d4f33ccd2ab52324aed0b8a",
+    "freshViews": 60,
+    "grassOrder": "H/V/H/V four strokes10..13"
+  },
+  "officialReferences": [
+    {
+      "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=11435&q=1&word=%E9%9F%A1",
+      "publisher": "Taiwan Ministry of Education",
+      "title": "重編國語辭典修訂本 韡",
+      "directlyRead": true,
+      "radical": "韋",
+      "outsideStrokes": 12,
+      "totalStrokes": 21,
+      "excerpt": "韋部-12畫-共21畫",
+      "scope": "Dictionary metadata; does not identify the publisher20 trajectory difference."
+    },
+    {
+      "url": "https://dict.variants.moe.edu.tw/dictView.jsp?ID=75177",
+      "publisher": "Taiwan Ministry of Education",
+      "title": "異體字字典 B05658 韡",
+      "directlyRead": true,
+      "radical": "韋",
+      "outsideStrokes": 12,
+      "totalStrokes": 21,
+      "excerpt": "B05658 韡 韋-12-21",
+      "variantRefs": [
+        "https://dict.variants.moe.edu.tw/dictView.jsp?ID=75178",
+        "https://dict.variants.moe.edu.tw/dictView.jsp?ID=75179",
+        "https://dict.variants.moe.edu.tw/dictView.jsp?ID=75180"
+      ],
+      "scope": "Standard21 metadata and variant links. Linked historical glyph images and variant entry shapes were not directly inspected in this task."
+    }
+  ],
+  "findings": {
+    "official21Corroborated": true,
+    "officialPublic20TextEstablished": false,
+    "catalog21Publisher20CauseEstablished": false,
+    "grass3Versus4ExplanationRejectedByDirectPublisherObservation": true,
+    "whichSpecificStrokeDiffersEstablished": false
+  },
+  "existingRuntimePolicy": {
+    "path": "lib/hanja-stroke-variants.ts",
+    "SHA256": "b7b8141b56e26502c2115859068024f5fd6b157d551281f38998c4d3eb9a1a28",
+    "currentWeiEntry": false,
+    "mechanism": "Explicit allowed entry independently pins glyph/catalogStrokes/playbackStrokes/form/candidateSHA/pathsSHA; path count must equal playback count and eh anja verification source is required. Resolver returns variant only when requested catalog count matches its pinned catalog count.",
+    "precedents": [
+      {
+        "glyph": "釁",
+        "catalog": 25,
+        "playback": 26
+      },
+      {
+        "glyph": "蘷",
+        "catalog": 20,
+        "playback": 21
+      }
+    ],
+    "policyDoesNotApproveWeiAutomatically": true
+  },
+  "nextRequired": "Preserve catalog21; map all20 publisher roles to one compatible fixed public source and directly inspect all selected strokes. A playback20 variant is an existing possible route only after complete geometry/direction/actual-renderer verification; never force-split a stroke to21.",
+  "limits": [
+    "Two retrieved primary records are from the same Ministry of Education, not independent publishers.",
+    "Search did not establish an official20-count text or the exact cause; absence is not exhaustive proof.",
+    "No original source image or private media was transmitted; public reference text only.",
+    "No metadata, production variant, source geometry or shared runtime file was modified."
+  ],
+  "newServers": 0,
+  "newEngineRuns": 0,
+  "runtimeApplied": false
+}

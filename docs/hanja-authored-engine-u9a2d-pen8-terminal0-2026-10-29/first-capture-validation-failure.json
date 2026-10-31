@@ -1,0 +1,21 @@
+{
+  "schema": "hanja-actual-capture-post-validation-failure/v1",
+  "glyph": "騭",
+  "date": "2026-10-29",
+  "actualEngineExecutions": 1,
+  "actualVMContexts": 1,
+  "vendorEvaluations": 8,
+  "sourceMutation": "u6b65 source row5 end4 to0",
+  "failedAfterEngine": true,
+  "failure": "Incorrect postcondition expected raw9 adjusted end0, actual200",
+  "passedBeforeFailure": [
+    "All other21 raw groups and traces exactly equal original",
+    "raw9 type/startflag/input coordinates equal original"
+  ],
+  "outputPayloadSaved": false,
+  "resultBodyRecoverable": false,
+  "changedGuard": "Require actual engine-adjusted end200 and end%100===0; preserve source end0 assertion",
+  "additionalExecutionAuthorized": false,
+  "nativeApproval": false,
+  "runtimeApplied": false
+}

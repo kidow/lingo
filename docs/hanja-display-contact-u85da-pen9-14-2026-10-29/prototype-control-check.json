@@ -1,0 +1,55 @@
+{
+  "schema": "hanja-prototype-control-check/v1",
+  "glyph": "藚",
+  "prototype": {
+    "path": "docs/hanja-display-contact-u85da-pen9-14-2026-10-29/prototype.html",
+    "SHA256": "bf1522bce29ae034b5894ed3d9bf046f350fe630abd47deaedad42cf9228fb6d"
+  },
+  "math": {
+    "path": "docs/hanja-display-contact-u85da-pen9-14-2026-10-29/contact-proof.json",
+    "SHA256": "cbce9fb752d94ac174a98d46f0e859c2b5589b606db3dfedf7543203b9bed6da",
+    "verifier": "docs/hanja-display-contact-u85da-pen9-14-2026-10-29/verify-contact.py",
+    "verifierSHA256": "a4345605031e43b05ed612dc5729d2ac73297bac8c85b3ccbeb5074bdec07243"
+  },
+  "existingPolicy": {
+    "path": "lib/hanja-stroke-cardinal-contact-u61b8-hkcs.ts",
+    "SHA256": "a20fe21b4f69811198cbe2bb147bc3d04e32e6c0fabef6a019b4553dbeed959e"
+  },
+  "checks": {
+    "syntax": true,
+    "sourceDIdentity": true,
+    "p0Hidden": true,
+    "p1OriginalFull": true,
+    "compact20": true,
+    "wholeOriginal": true,
+    "DOMIsSynthetic": true,
+    "browserNative": false,
+    "HTTP": 0,
+    "server": 0
+  },
+  "targets": [
+    9,
+    14
+  ],
+  "localProgressSamples": [
+    0,
+    0.000001,
+    0.01,
+    0.05,
+    0.1,
+    0.25,
+    0.5,
+    0.75,
+    0.9999,
+    1
+  ],
+  "naturalSeconds": 8,
+  "sourcePCount": 33,
+  "maskCount": 21,
+  "geometrySHA256": "64df063aa2736999f9a95344c60cf1b7283b835127d5ac3a3418d8bb06725042",
+  "runtimeApplied": false,
+  "nativeApproval": false,
+  "sharedFilesChanged": false,
+  "otherGlyphPoliciesChanged": false,
+  "startup": "python3 -m http.server 0 --bind 127.0.0.1 --directory docs/hanja-display-contact-u85da-pen9-14-2026-10-29/"
+}

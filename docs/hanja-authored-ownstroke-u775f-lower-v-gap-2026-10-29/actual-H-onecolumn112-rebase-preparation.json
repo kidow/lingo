@@ -1,0 +1,35 @@
+{
+  "schema": "hanja-future-H-rebase-preparation/v1",
+  "glyph": "睟",
+  "supersedes": "docs/hanja-authored-ownstroke-u775f-lower-v-gap-2026-10-29/actual-H-integration.patch",
+  "before": {
+    "path": "scripts/hanja-actual-component-review.mjs",
+    "SHA256": "ade833749be6b24f39d4f421b91dc5d371413c40c1e1e1806c9ef972d987c5f4"
+  },
+  "after": {
+    "path": "scripts/hanja-actual-component-review.mjs",
+    "SHA256": "3b59442f1daba09fa78950ed27fbb3a0d037a312e4a22cad624c7cb6b76e783f"
+  },
+  "patch": {
+    "path": "docs/hanja-authored-ownstroke-u775f-lower-v-gap-2026-10-29/actual-H-integration.rebased-onecolumn112.patch",
+    "SHA256": "9ca4fa96a80e9d3235bbfaccd1263225eeca240d6403b07bc970ec88664d6c9a",
+    "ascendingHunks": 15
+  },
+  "profile": {
+    "path": "docs/hanja-authored-ownstroke-u775f-lower-v-gap-2026-10-29/actual-profile-start.json",
+    "oldSHA256": "e3439444aec97d779baadeebd93d108e62940365638ed79470f6cd19b2944703",
+    "SHA256": "8e6ec00464d2798177cfa213e60caffe2754a52d69b9c2c1cc8b80f88b477d04"
+  },
+  "reusedChecks": "Prior 睟 sourceguard/payload/controls/closure tests unchanged. Only the separate exact蠙 UIbutton is preserved; false for睟 root.",
+  "checks": {
+    "forwardInverseExact": true,
+    "syntax": true,
+    "sourceGuardBytesUnchanged": true,
+    "fixtureRouteLineUnchanged": true,
+    "rendererChanged": false,
+    "sharedWrites": 0,
+    "SSR": 0,
+    "server": 0
+  },
+  "startup": "node scripts/hanja-actual-component-review.mjs --profile docs/hanja-authored-ownstroke-u775f-lower-v-gap-2026-10-29/actual-profile-start.json --profile-sha 8e6ec00464d2798177cfa213e60caffe2754a52d69b9c2c1cc8b80f88b477d04 --port 0"
+}

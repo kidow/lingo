@@ -1,0 +1,179 @@
+{
+  "schema": "hanja-public-bbox-positive-affine-feasibility/v1",
+  "glyph": "爗",
+  "sourceSHA256": {
+    "docs/hanja-goal-glyphwiki-batch727-2026-10-12/engine-whole-u7217.json": "5eae89500ed2120e62ab0e016b23de45a00b54675f8e2c82b7c7ebc81c0f30e3",
+    "docs/hanja-goal-glyphwiki-batch727-2026-10-12/engine-whole-u7217-ue0102.json": "d3733dbbe10d338a2bc0c65acb2845e1f3ccc89832636627e8a74e23ff30fa21",
+    "docs/hanja-goal-glyphwiki-batch727-2026-10-12/sources.json": "b277bf04b9107beb622d6aa5bb78a098cb57b7677b27dbee3b34ed947b480827",
+    "docs/hanja-goal-glyphwiki-batch727-2026-10-12/engine-proof.json": "550651abb20f3b7c5e6d1af1606c9337ad1788606b795c3097195eb1053e2df7"
+  },
+  "sourceBBox": [
+    "321/5",
+    "69",
+    "1887/10",
+    "509/5"
+  ],
+  "targetDefaultGrassBBox": [
+    "67",
+    "633/10",
+    "1879/10",
+    "479/5"
+  ],
+  "matrixExact": [
+    "403/415",
+    "0",
+    "0",
+    "325/328",
+    "9662/2075",
+    "-8313/1640"
+  ],
+  "determinantExact": "26195/27224",
+  "sourceGrassRaw": [
+    10,
+    11,
+    12,
+    13
+  ],
+  "retainedDefaultRaw": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19
+  ],
+  "contactPairs": 64,
+  "positiveContacts": [
+    {
+      "donorVS2Raw": 11,
+      "retainedDefaultRaw": 5,
+      "contact": true,
+      "sumPrimitiveArea": "170454487049/525355140000",
+      "method": "exact-original-simple-P-intersection"
+    },
+    {
+      "donorVS2Raw": 13,
+      "retainedDefaultRaw": 7,
+      "contact": true,
+      "sumPrimitiveArea": "36667316164396793/4728458937570000",
+      "method": "exact-original-simple-P-intersection"
+    }
+  ],
+  "unresolved": [],
+  "internalContactTopologyPreserved": true,
+  "internalPairs": [
+    {
+      "a": 10,
+      "b": 11,
+      "before": {
+        "contact": true,
+        "sumPrimitiveArea": "48",
+        "method": "exact-original-simple-P-intersection"
+      },
+      "after": {
+        "contact": true,
+        "sumPrimitiveArea": "157170/3403",
+        "method": "exact-original-simple-P-intersection"
+      }
+    },
+    {
+      "a": 10,
+      "b": 12,
+      "before": {
+        "contact": false,
+        "sumPrimitiveArea": "0",
+        "method": "exact-disjoint-bbox"
+      },
+      "after": {
+        "contact": false,
+        "sumPrimitiveArea": "0",
+        "method": "exact-disjoint-bbox"
+      }
+    },
+    {
+      "a": 10,
+      "b": 13,
+      "before": {
+        "contact": false,
+        "sumPrimitiveArea": "0",
+        "method": "exact-disjoint-bbox"
+      },
+      "after": {
+        "contact": false,
+        "sumPrimitiveArea": "0",
+        "method": "exact-disjoint-bbox"
+      }
+    },
+    {
+      "a": 11,
+      "b": 12,
+      "before": {
+        "contact": false,
+        "sumPrimitiveArea": "0",
+        "method": "exact-disjoint-bbox"
+      },
+      "after": {
+        "contact": false,
+        "sumPrimitiveArea": "0",
+        "method": "exact-disjoint-bbox"
+      }
+    },
+    {
+      "a": 11,
+      "b": 13,
+      "before": {
+        "contact": false,
+        "sumPrimitiveArea": "0",
+        "method": "exact-disjoint-bbox"
+      },
+      "after": {
+        "contact": false,
+        "sumPrimitiveArea": "0",
+        "method": "exact-disjoint-bbox"
+      }
+    },
+    {
+      "a": 12,
+      "b": 13,
+      "before": {
+        "contact": true,
+        "sumPrimitiveArea": "48",
+        "method": "exact-original-simple-P-intersection"
+      },
+      "after": {
+        "contact": true,
+        "sumPrimitiveArea": "157170/3403",
+        "method": "exact-original-simple-P-intersection"
+      }
+    }
+  ],
+  "bodyPUnchanged": true,
+  "wholeGrassSingleTransform": true,
+  "POrGuideTrimmed": false,
+  "guideRule": "Every source guide point must use the same positive affine, not an inferred or newly drawn guide. No guide data materialized in this feasibility report.",
+  "authorPlacement": true,
+  "originalWhole": false,
+  "engineCapture": false,
+  "sourceOrderApproved": false,
+  "nativeStaticApproved": false,
+  "runtimeApplied": false,
+  "originalDefaultGrassAllRetainedContacts": [],
+  "reusedVerifier": {
+    "path": "docs/hanja-source-component-u7217-grass-body-2026-10-29/verify-world-combination.py",
+    "SHA256": "076900763c89706ef7fbf5e8fbbe637c6b660a083e1ffcd997b1afd33f9d4211",
+    "exactContactHelper": "docs/hanja-authored-ownstroke-u6030-raw6-head-gap-2026-10-29/verify-contact-strip-growth.py",
+    "SHA256Helper": "945d1d0f0297b056cd6e10049ee01a38271c1989e6676b528532656f411252ea"
+  },
+  "conclusion": "Single exact bounding-box fit removes the prior four body contacts but creates two positive-area contacts with retained default raw5/raw7; does not satisfy no-new-contact condition. No placement adopted.",
+  "moreCandidateSearchPerformed": false
+}

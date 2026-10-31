@@ -1,0 +1,189 @@
+{
+  "schema": "hanja-original-single-clock-and-public-guide-distinction/v1",
+  "glyph": "騭",
+  "date": "2026-10-29",
+  "source": {
+    "path": "docs/hanja-authored-engine-u9a2d-pen8-terminal0-2026-10-29/engine-authored-pen8-terminal0.json",
+    "SHA256": "e3ff8774511134995a8165ae04f83e1f5a11423c10cc8083ec8f29cd071252e4"
+  },
+  "publicGuideTable": [
+    {
+      "rawOneBased": 9,
+      "rawSource": [
+        1,
+        0,
+        200,
+        130.4,
+        45.105,
+        130.4,
+        76.29,
+        null,
+        null,
+        null,
+        null
+      ],
+      "calls": [
+        {
+          "kind": "cdDrawLine",
+          "guidePoints": [
+            [
+              130.4,
+              45.105
+            ],
+            [
+              130.4,
+              76.29
+            ]
+          ],
+          "sourceFlags": [
+            0,
+            200
+          ],
+          "filledP": 2,
+          "endpointDelta": [
+            0,
+            31.18500000000001
+          ],
+          "xStrictlyDecreasing": false,
+          "yStrictlyIncreasing": true,
+          "controlPolygonLength": 31.18500000000001,
+          "directionClassificationOnly": "vertical down"
+        }
+      ],
+      "canonicalDomesticPen": null
+    },
+    {
+      "rawOneBased": 10,
+      "rawSource": [
+        2,
+        0,
+        7,
+        104.3,
+        52.035,
+        95.6,
+        66.88499999999999,
+        70.95,
+        78.765,
+        null,
+        null
+      ],
+      "calls": [
+        {
+          "kind": "cdDrawCurve",
+          "guidePoints": [
+            [
+              104.3,
+              52.035
+            ],
+            [
+              95.6,
+              66.88499999999999
+            ],
+            [
+              70.95,
+              78.765
+            ]
+          ],
+          "sourceFlags": [
+            0,
+            7
+          ],
+          "filledP": 3,
+          "endpointDelta": [
+            -33.349999999999994,
+            26.730000000000004
+          ],
+          "xStrictlyDecreasing": true,
+          "yStrictlyIncreasing": true,
+          "controlPolygonLength": 44.574247747940596,
+          "directionClassificationOnly": "down-left from original guide; canonical number not assigned"
+        }
+      ],
+      "canonicalDomesticPen": null
+    },
+    {
+      "rawOneBased": 11,
+      "rawSource": [
+        2,
+        0,
+        7,
+        174.625,
+        55.5,
+        149.25,
+        93.615,
+        76.025,
+        99.06,
+        null,
+        null
+      ],
+      "calls": [
+        {
+          "kind": "cdDrawCurve",
+          "guidePoints": [
+            [
+              174.625,
+              55.5
+            ],
+            [
+              149.25,
+              93.615
+            ],
+            [
+              76.025,
+              99.06
+            ]
+          ],
+          "sourceFlags": [
+            0,
+            7
+          ],
+          "filledP": 3,
+          "endpointDelta": [
+            -98.6,
+            43.56
+          ],
+          "xStrictlyDecreasing": true,
+          "yStrictlyIncreasing": true,
+          "controlPolygonLength": 119.21628932186357,
+          "directionClassificationOnly": "down-left from original guide; canonical number not assigned"
+        }
+      ],
+      "canonicalDomesticPen": null
+    }
+  ],
+  "relativeFacts": {
+    "raw10ShorterControlPolygonThanRaw11": true,
+    "bothQuadraticGuidesMonotoneDL": true,
+    "canonicalDomestic9NotIdentified": true
+  },
+  "clock": {
+    "config": "docs/hanja-official-media-compare-u9a2d-pen9-2026-10-29/config-pen9.json",
+    "configSHA256": "fd4d4d456f7c862ab89c1c173ad80022211dc0419dc17f2b0ef0b66e10633a02",
+    "wrapper": "docs/hanja-official-media-compare-u9a2d-pen9-2026-10-29/clock.py",
+    "wrapperSHA256": "11a6fbac9ad0e4790d7b1d4e2622b8ccb2bbf447d5b81ed2c9840dc38c8d606b",
+    "allowed": [
+      9
+    ],
+    "catalog": 20,
+    "publisherClips": 20
+  },
+  "feasibilityStatus": {
+    "path": "docs/hanja-authored-engine-u9a2d-pen8-terminal0-2026-10-29/public-coordinate-feasibility.json",
+    "adopted": false,
+    "reason": "Raw10 has not been identified with domestic9; a positive contact does not establish correct counterpart or preserve the intended domestic center axis",
+    "centerAxisConcern": "Proposed large X translation may change centralV alignment; requires direct source role/mapping evidence",
+    "noNewGeometry": true
+  },
+  "execution": {
+    "engine": 0,
+    "server": 0,
+    "privateFetch": 0,
+    "build": 0
+  },
+  "approval": {
+    "domestic9Clock": false,
+    "mapping": false,
+    "whole": false,
+    "runtimeApplied": false
+  }
+}

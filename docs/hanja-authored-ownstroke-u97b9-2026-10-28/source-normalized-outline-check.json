@@ -1,0 +1,46 @@
+{
+  "schema": "hanja-ownstroke-normalized-draft-check/v1",
+  "inputSHA256": {
+    "docs/hanja-authored-ownstroke-u97b9-2026-10-28/materialize-draft.py": "6761365de1ee7db2e6f14bb520441425551220ad2fe46bae9454f14d001ea455",
+    "docs/hanja-authored-ownstroke-u97b9-2026-10-28/fixtures-draft.json": "b11cfd743b0f2a9c83f95376a3425af02c2f4d65d654fbcfda6831930b294f2a",
+    "docs/hanja-goal-glyphwiki-batch448-2026-10-09/engine-proof.json": "523b330f9910eebed458929133783b90a9086562606e44aa77c1c80ad8a96128",
+    "docs/hanja-goal-glyphwiki-batch448-2026-10-09/draw-trace.json": "161271d4cfdaacf696844a0cb1a1d8e73507dd5acb0a4dfb229f678472a6a68b",
+    "docs/hanja-goal-glyphwiki-batch297-2026-10-05/progressive.mjs": "9f339e897efd82150852e6923265dd5c0c2bc0a4263376f523929aa55742c24a",
+    "lib/hanja-stroke-outline.ts": "b4d289d1911c4d43934dfad39c4cfbe22a246303bb7012114d16786688c36c40"
+  },
+  "status": "PASS-limited-code-only",
+  "variants": 2,
+  "pointRoundtrips": 512,
+  "offFlags": [
+    0
+  ],
+  "unchangedRawGroupsPerVariant": 23,
+  "changedRawIndexZeroBased": 19,
+  "changedLogicalPenOneBased": 17,
+  "originalPolygonsPerVariant": 42,
+  "controlsSourceOnly": true,
+  "nativeReviewPerformed": false,
+  "runtimeExecutable": false,
+  "cardinalRightAnalysis": {
+    "rendererFunction": "outlineClip",
+    "revealPathAbsentBranchRequired": true,
+    "clipAtP": "x=minX, width=(maxX-minX)*p; full y bounds",
+    "p0ZeroWidth": true,
+    "p1FullBounds": true,
+    "nestedClipsMonotone": true,
+    "guideSlopeSourceYNegative": [
+      -0.1,
+      -0.2
+    ],
+    "serifEarlyExposureChecked": false,
+    "contactChecked": false,
+    "directionApproved": false,
+    "wholeApproved": false
+  },
+  "limitations": [
+    "No claim of exact source trace after author shear",
+    "No use of unchanged horizontal guide for authored17",
+    "No execution fixture with fabricated curve reveal width",
+    "Original polygon point order and separate paint retained; no compound winding/union assumption"
+  ]
+}

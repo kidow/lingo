@@ -1,0 +1,78 @@
+{
+  "schema": "hanja-independent-pen12-support-preparation/v1",
+  "glyph": "纘",
+  "pen": 12,
+  "module": {
+    "path": "lib/hanja-stroke-mixed-guide-u7e98-pen12.ts",
+    "SHA256": "9bfe268bfec499ccd966709be902a334da17f417cab684491f31997a6dcddced"
+  },
+  "test": {
+    "path": "lib/hanja-stroke-mixed-guide-u7e98-pen12.test.ts",
+    "SHA256": "b1e64c01286c396504ae503c7d05dbe8dd3df161bfdbee72b0136c5cedc8ad4b"
+  },
+  "nativePrototypeReview": {
+    "path": "docs/hanja-source-phase-u7e98-pen12-contact-2026-10-29/native-prototype-review.json",
+    "SHA256": "0b6d7a8b4905b7059c287165acc0b4cfd72a116dc64b1c3d68cf4bdcfc965287"
+  },
+  "sourceFixture": {
+    "path": "docs/hanja-authored-ownstroke-u7e98-cross-contact-v2-2026-10-29/fixtures-execution-draft.json",
+    "SHA256": "b6889acd4fdf6234ae8ad4000d088057dd8fb3b1216cd1e71ad10c329e3c8d98"
+  },
+  "sourceShape": [
+    25,
+    31,
+    62
+  ],
+  "runtimeFrameAPI": {
+    "maker": "makeReviewedU7e98Pen12Context(input,strokes)",
+    "sampler": "sampleReviewedU7e98Pen12Frame(context,progress)",
+    "modes": [
+      "none",
+      "rect",
+      "full"
+    ],
+    "targetPen": 12
+  },
+  "plan": {
+    "VEnd": 0.3186826127097574,
+    "leftHeadEnd": 0.5325830087935445,
+    "seedX": 55.91093422322734,
+    "seedY": 38.76599715502074,
+    "HBounds": [
+      48.2,
+      35.55,
+      65.05,
+      46.45
+    ],
+    "sourceVWeight": 11,
+    "sourceHWeight": 23.517101220135697,
+    "authorWeightRule": "Preserve original V weight boundary, split remaining H display by own seed-to-leftmost excursion versus own fullH xspan. Original Q retained as provenance only."
+  },
+  "timingChoice": {
+    "originalJSVEnd": 0.3186826127097574,
+    "prototypeFractionToDoubleVEnd": 0.31868261270975745,
+    "prototypeObservedAtItsOwnConstant": true,
+    "sourceFilledGeometryUnchanged": true,
+    "differenceIsAuthorDisplayTimeOneULP": true,
+    "claimIdenticalTiming": false
+  },
+  "checks": {
+    "focusedTestsPassed": 5,
+    "selectedSemanticDiagnostics": 0,
+    "sourceArrayAndAllFilledPExact": true,
+    "descriptorGetterForeignGuards": true,
+    "weakMapContextAndMutationRevoke": true,
+    "frameRectFrozen": true,
+    "sourceJSVBoundaryReused": true,
+    "prototypeHistoricalFilesUnchanged": true
+  },
+  "scope": {
+    "actualRIntegrated": false,
+    "actualRendererNativeApproved": false,
+    "runtimeApplied": false,
+    "sharedRendererOrHarnessChanged": false,
+    "registryChanged": false,
+    "serverStarts": 0,
+    "buildRun": false
+  }
+}

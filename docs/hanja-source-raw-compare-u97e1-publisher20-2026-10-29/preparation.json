@@ -1,0 +1,55 @@
+{
+  "schema": "hanja-original-whole-static-diagnostic-preparation/v1",
+  "glyph": "韡",
+  "date": "2026-10-29",
+  "catalogStrokes": 21,
+  "publisherClips": 20,
+  "config": {
+    "path": "docs/hanja-source-raw-compare-u97e1-publisher20-2026-10-29/config.json",
+    "SHA256": "de00b9fee5dd7782c364b855318fd7b846002fbd2b155fe5997495064192900c"
+  },
+  "adapter": {
+    "path": "docs/hanja-source-raw-compare-u97e1-publisher20-2026-10-29/compare.py",
+    "SHA256": "7af0086c84fb55160ce00624a5b5656f598a7dbd290798e138a2041e40b95910"
+  },
+  "mapping": {
+    "path": "docs/hanja-source-raw-compare-u97e1-publisher20-2026-10-29/mapping-hypothesis.json",
+    "SHA256": "d52fa1543994f425281e27bb2894c2109b01e25be13d28a10cc8753d7423bfb3"
+  },
+  "check": {
+    "codeCheck": "PASS",
+    "catalog": 21,
+    "publisher": 20,
+    "wholeSources": 2,
+    "VS3RawExactlyOnce": 24,
+    "VS3MappingSelections": 40,
+    "rawSelections": 92,
+    "sourcePointsChanged": false,
+    "engine": 0,
+    "HTTP": 0,
+    "server": 0,
+    "nativeApproval": false
+  },
+  "sourceEnvelope": {
+    "keys": [
+      "groups",
+      "trace",
+      "defaults"
+    ],
+    "originalExistingThreeKeyCaptures": true,
+    "full5HeaderClaim": false,
+    "newEngineRuns": 0,
+    "sourcePolygonsMatchOriginalTrace": true
+  },
+  "limitations": [
+    "Default grass3 longH is retained and cannot be forced into two publisherH strokes.",
+    "VS3 grass4 matches observed macro roles only as an unapproved role hypothesis; full24raw retained exactly once.",
+    "VS3 logical15 original19/24 has gap18.45; all current/prefix native comparison pending.",
+    "Catalog21 retained. Shared static parser receives a RAM-only publisher20 count override to read the actual pinned20 clips; catalog metadata is not modified.",
+    "Original public source font differences remain. No original canonical21 order or microclock identity is claimed."
+  ],
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "privateFetches": 0,
+  "serversStarted": 0
+}
