@@ -1,3 +1,4 @@
+import {readHanjaHistoricalSource} from './hanja-test-component-loader.ts'
 import assert from 'node:assert/strict'
 import {test} from 'node:test'
 import {readFileSync} from 'node:fs'
@@ -12,7 +13,7 @@ const targets=[[2,0],[2,1]] as const
 const nativeLengths=[30.532485961914062,45.09553146362305]
 const context=reviewedCanContext(strokes)
 function canPolicyAt(i:number){const[p,m]=targets[i],policy=reviewedCanPolicy(context,p,m);assert(policy);return policy}
-const clone=()=>JSON.parse(JSON.stringify(strokes)) as HanjaOutlineStrokes
+const clone=()=>JSON.parse(JSON.stringify(strokes)) as (Omit<HanjaOutlineStrokes[number][number], 'bounds'> & {bounds:number[]})[][]
 function fakeCan(i:number,id='can-'+i){
   const policy=canPolicyAt(i),segment=policy.segment,q0=segment.revealPath!.match(/-?\d+(?:\.\d+)?/g)!.slice(0,2).map(Number),L=nativeLengths[i],events:string[]=[]
   const document={defaultView:null as unknown},view={document,getComputedStyle:(n:Element)=>{const x=n as unknown as {cssTransform:string;cssTranslate:string};return{transform:x.cssTransform,getPropertyValue:(key:string)=>key==='translate'?x.cssTranslate:'none'}}};document.defaultView=view
@@ -36,7 +37,7 @@ test('澯 fixed whole two own certificates and strict target fields',()=>{
  assert(context);assert.equal(reviewedCanPolicy({id:'u6faf-two-q'},0,0),null)
  let targetCount=0
  for(let p=0;p<strokes.length;p++)for(let m=0;m<strokes[p].length;m++){
-  const policy=reviewedCanPolicy(context,p,m),i=targets.findIndex(([x,y])=>x===p&&y===m)
+  const policy:ReturnType<typeof reviewedCanPolicy>=reviewedCanPolicy(context,p,m),i=targets.findIndex(([x,y])=>x===p&&y===m)
   assert.equal(!!policy,i>=0)
   const extra=clone();Object.assign(extra[p][m],{extra:true});assert.equal(reviewedCanContext(extra),null)
   for(const key of Object.keys(strokes[p][m])){const changed=clone(),s=changed[p][m]as unknown as Record<string,unknown>;s[key]=key==='bounds'?[0,0,1,1]:typeof s[key]==='number'?Number(s[key])+1:String(s[key])+' ';assert.equal(reviewedCanContext(changed),null)}
@@ -49,12 +50,12 @@ test('澯 fixed whole two own certificates and strict target fields',()=>{
   }
  }
  assert.equal(targetCount,2)
- assert.equal(createHash('sha256').update(readFileSync(new URL('./hanja-stroke-start-gate-di.ts',import.meta.url))).digest('hex'),'53c2bd788f47d4c183ae826e52c767bb628e7e1c828cb59dec25f139106bfde6')
- assert.equal(createHash('sha256').update(readFileSync(new URL('./hanja-stroke-start-gate-di.test.ts',import.meta.url))).digest('hex'),'ff43c4ce6d608439b84e9dab200fd4c48a004580a617b82019179829243fe160')
- assert.equal(createHash('sha256').update(readFileSync(new URL('./hanja-stroke-start-gate.ts',import.meta.url))).digest('hex'),'1a734d87d44093198cda60bafff96d963b1e62510acb5f4e1fa4e3f3a60d1704')
- assert.equal(createHash('sha256').update(readFileSync(new URL('./hanja-stroke-start-gate.test.ts',import.meta.url))).digest('hex'),'0f0ea878d6a2c10f7104bfa92440bf8d7e4e2f3bb64efd78d40a44c76ad132c8')
- assert.equal(createHash('sha256').update(readFileSync(new URL('./hanja-stroke-start-gate-si.ts',import.meta.url))).digest('hex'),'57806d5be50d813dfbfbcb21ffc2056aa968a2f900cf4da72ba649582eecce73')
- assert.equal(createHash('sha256').update(readFileSync(new URL('./hanja-stroke-start-gate-si.test.ts',import.meta.url))).digest('hex'),'f939e0d4113e3cce88fba3c6f61be47fa4e6f1543236c31ddee360bea112b515')
+ assert.equal(createHash('sha256').update(readHanjaHistoricalSource('lib/hanja-stroke-start-gate-di.ts','53c2bd788f47d4c183ae826e52c767bb628e7e1c828cb59dec25f139106bfde6')).digest('hex'),'53c2bd788f47d4c183ae826e52c767bb628e7e1c828cb59dec25f139106bfde6')
+ assert.equal(createHash('sha256').update(readHanjaHistoricalSource('lib/hanja-stroke-start-gate-di.test.ts','ff43c4ce6d608439b84e9dab200fd4c48a004580a617b82019179829243fe160')).digest('hex'),'ff43c4ce6d608439b84e9dab200fd4c48a004580a617b82019179829243fe160')
+ assert.equal(createHash('sha256').update(readHanjaHistoricalSource('lib/hanja-stroke-start-gate.ts','1a734d87d44093198cda60bafff96d963b1e62510acb5f4e1fa4e3f3a60d1704')).digest('hex'),'1a734d87d44093198cda60bafff96d963b1e62510acb5f4e1fa4e3f3a60d1704')
+ assert.equal(createHash('sha256').update(readHanjaHistoricalSource('lib/hanja-stroke-start-gate.test.ts','0f0ea878d6a2c10f7104bfa92440bf8d7e4e2f3bb64efd78d40a44c76ad132c8')).digest('hex'),'0f0ea878d6a2c10f7104bfa92440bf8d7e4e2f3bb64efd78d40a44c76ad132c8')
+ assert.equal(createHash('sha256').update(readHanjaHistoricalSource('lib/hanja-stroke-start-gate-si.ts','57806d5be50d813dfbfbcb21ffc2056aa968a2f900cf4da72ba649582eecce73')).digest('hex'),'57806d5be50d813dfbfbcb21ffc2056aa968a2f900cf4da72ba649582eecce73')
+ assert.equal(createHash('sha256').update(readHanjaHistoricalSource('lib/hanja-stroke-start-gate-si.test.ts','f939e0d4113e3cce88fba3c6f61be47fa4e6f1543236c31ddee360bea112b515')).digest('hex'),'f939e0d4113e3cce88fba3c6f61be47fa4e6f1543236c31ddee360bea112b515')
 })
 test('澯 distance metadata matches same-frame caps and clears on cleanup',()=>{
  for(let i=0;i<targets.length;i++){
@@ -132,7 +133,7 @@ test('澯 actual component SSR hidden partials and exact full-round whole prefix
  for(let i=0;i<2;i++){const c=canPolicyAt(i).certificate;assert.equal(c.syntax,'Q');assert.equal(c.parameterBound,1/3);assert.equal(c.curvatureBound,1/11);assert.equal(c.notPolygonConnectivityProof,true);assert.equal(c.notFullSweepProof,true);assert.equal(c.bounds.tUpper,'1/3');assert.equal(c.bounds.curvatureUpper,'1/11')}
  const whole=renderToStaticMarkup(createElement('svg',null,createElement(StrokeOutlines,{strokes,clock:{current:[]},phase:'idle',manual:null,count:16})))
  assert.equal((whole.match(/data-stroke-reveal-policy="growing-can-caps"/g)||[]).length,2);assert.equal((whole.match(/data-growing-full-round="true"/g)||[]).length,2)
- const component=readFileSync(new URL('../components/hanja/stroke-outlines.tsx',import.meta.url),'utf8'),oldChildren=component.slice(component.indexOf('/** 疷만'))
+ const component=readFileSync(new URL('../components/hanja/stroke-outlines.tsx',import.meta.url),'utf8'),historicalComponent=readHanjaHistoricalSource('components/hanja/stroke-outlines.tsx','bb0f589c2b941cfbdf77dceede33232fd4ff2b956177b06806aa347afc32754a').toString(),oldChildren=historicalComponent.slice(historicalComponent.indexOf('/** 疷만'))
  assert.equal(createHash('sha256').update(oldChildren).digest('hex'),'8ac08e372ebcd927b2ab2f1b933b5aefa11bcf1ed5ae5a10b1bf1edd451d0169')
  assert(component.includes('Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN'))
 })

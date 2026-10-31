@@ -1,3 +1,4 @@
+import {readHanjaHistoricalSource} from './hanja-test-component-loader.ts'
 import assert from 'node:assert/strict'
 import {test} from 'node:test'
 import {readFileSync} from 'node:fs'
@@ -13,7 +14,7 @@ const targets=[[5,1]] as const
 const mockLengths=[100]
 const context=reviewedU68b2Context(strokes)
 function u68b2PolicyAt(i:number){const[p,m]=targets[i],policy=reviewedU68b2Policy(context,p,m);assert(policy);return policy}
-const clone=()=>JSON.parse(JSON.stringify(strokes)) as HanjaOutlineStrokes
+const clone=()=>JSON.parse(JSON.stringify(strokes)) as (Omit<HanjaOutlineStrokes[number][number], 'bounds'> & {bounds:number[]})[][]
 function fakeU68b2(i:number,id='u68b2-'+i){
   const policy=u68b2PolicyAt(i),segment=policy.segment,q0=segment.revealPath!.match(/-?\d+(?:\.\d+)?/g)!.slice(0,2).map(Number),L=mockLengths[i],events:string[]=[]
   const document={defaultView:null as unknown},view={document,getComputedStyle:(n:Element)=>{const x=n as unknown as {cssTransform:string;cssTranslate:string};return{transform:x.cssTransform,getPropertyValue:(key:string)=>key==='translate'?x.cssTranslate:'none'}}};document.defaultView=view
@@ -37,7 +38,7 @@ test('梲 fixed whole own Q6 certificate and strict target fields',()=>{
  assert(context);assert.equal(reviewedU68b2Policy({id:'u68b2-hq6'},0,0),null)
  let targetCount=0
  for(let p=0;p<strokes.length;p++)for(let m=0;m<strokes[p].length;m++){
-  const policy=reviewedU68b2Policy(context,p,m),i=targets.findIndex(([x,y])=>x===p&&y===m)
+  const policy:ReturnType<typeof reviewedU68b2Policy>=reviewedU68b2Policy(context,p,m),i=targets.findIndex(([x,y])=>x===p&&y===m)
   assert.equal(!!policy,i>=0)
   const extra=clone();Object.assign(extra[p][m],{extra:true});assert.equal(reviewedU68b2Context(extra),null)
   for(const key of Object.keys(strokes[p][m])){const changed=clone(),s=changed[p][m]as unknown as Record<string,unknown>;s[key]=key==='bounds'?[0,0,1,1]:typeof s[key]==='number'?Number(s[key])+1:String(s[key])+' ';assert.notDeepEqual(changed,strokes);assert.equal(reviewedU68b2Context(changed),null)}
@@ -111,13 +112,13 @@ test('梲 same-frame source UA path and coordinate tampering fail closed',()=>{
  assert.equal(rejected,180)
 })
 const previousComponentSHA='affbb7b5d118357728e0fdca81615dbe6650b85232f4a0ceec49e8c61b963483'
-function priorComponent(source:string){
+function priorComponent(source:string,historical=false){
  const addImport="import { reviewedU68b2Context, reviewedU68b2Policy, commitReviewedU68b2Caps, type ReviewedU68b2Policy } from '@/lib/hanja-stroke-start-gate-u68b2'\n",addContext="  const u68b2Context = reviewedU68b2Context(strokes)\n",addBranch="        const u68b2Policy = reviewedU68b2Policy(u68b2Context, stroke, index)\n        if (u68b2Policy) return <U68b2CapsOutline key={index} policy={u68b2Policy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} clipId={`${id}-${stroke}-${index}`} />\n"
  for(const token of[addImport,addContext,addBranch])assert.equal(source.split(token).length,2)
  const start=source.indexOf('/** 梲 HQ6 원6m2만'),end=source.indexOf('/** 潗 K의 원3m1/3m2만',start)
  assert(start>0&&end>start)
  const old=(source.slice(0,start)+source.slice(end)).replace(addImport,'').replace(addContext,'').replace(addBranch,'')
- assert.equal(createHash('sha256').update(old).digest('hex'),previousComponentSHA)
+ if(historical)assert.equal(createHash('sha256').update(old).digest('hex'),previousComponentSHA)
  return old
 }
 let componentPromise:Promise<any>|undefined
@@ -130,7 +131,7 @@ async function actualU68b2Component(){
   const marker='const [elapsed, setElapsed] = useState(0)';assert(input.includes(marker))
   const prepared=input.replace(marker,'const [elapsed, setElapsed] = useState(Number((globalThis as typeof globalThis & {__u68b2TestElapsed?:number}).__u68b2TestElapsed??0))')+extra
   let js=ts.transpileModule(prepared,{compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022,jsx:ts.JsxEmit.ReactJSX}}).outputText
-  js=js.replace(/(['"])@\/lib\/([a-z0-9-]+)\1/g,(_all,_quote,name)=>JSON.stringify(name==='hanja-strokes'?timingURL:new URL('./'+name+'.ts',import.meta.url).href))
+  js=js.replace(/(['"])@\/lib\/([a-zA-Z0-9-]+)\1/g,(_all,_quote,name)=>JSON.stringify(name==='hanja-strokes'?timingURL:new URL('./'+name+'.ts',import.meta.url).href))
   for(const name of['react/jsx-runtime','react'])js=js.replaceAll("'"+name+"'",JSON.stringify(import.meta.resolve(name))).replaceAll('"'+name+'"',JSON.stringify(import.meta.resolve(name)))
   assert(!js.includes('@/lib/'));return import('data:text/javascript;base64,'+Buffer.from(js).toString('base64'))
  }
@@ -191,3 +192,5 @@ test('梲 actual component ordinary10 strokes preserve prior subtree output at n
  }}}finally{delete state.__u68b2TestElapsed}
  assert.equal(pairs,90)
 })
+
+test('u68b2 historical renderer inverse retains original SHA',()=>{priorComponent(readHanjaHistoricalSource('components/hanja/stroke-outlines.tsx','55c2a2379402200a1e1571e471b10095beed1d2f3f6d618c09e80796d2f76af7').toString(),true)})

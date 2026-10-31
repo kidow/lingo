@@ -1,3 +1,4 @@
+import {readHanjaHistoricalSource} from './hanja-test-component-loader.ts'
 import assert from 'node:assert/strict'
 import {test} from 'node:test'
 import {readFileSync} from 'node:fs'
@@ -13,7 +14,7 @@ const targets=[[0,0],[0,1],[1,0],[1,1],[2,0],[4,0],[5,0],[7,0],[11,0],[12,0],[13
 const nativeLengths=[23.266868591308594,20.629228591918945,42.50424575805664,30.83692169189453,21.052942276000977,28.27726936340332,22.013219833374023,70.5625,24.747604370117188,49.74114608764648,20.627988815307617,24.61147117614746]
 const context=reviewedSiContext(strokes)
 function siPolicyAt(i:number){const[p,m]=targets[i],policy=reviewedSiPolicy(context,p,m);assert(policy);return policy}
-const clone=()=>JSON.parse(JSON.stringify(strokes)) as HanjaOutlineStrokes
+const clone=()=>JSON.parse(JSON.stringify(strokes)) as (Omit<HanjaOutlineStrokes[number][number], 'bounds'> & {bounds:number[]})[][]
 function fakeSi(i:number,id='si-'+i){
   const policy=siPolicyAt(i),segment=policy.segment,q0=segment.revealPath!.match(/-?\d+(?:\.\d+)?/g)!.slice(0,2).map(Number),L=nativeLengths[i],events:string[]=[]
   const document={defaultView:null as unknown},view={document,getComputedStyle:(n:Element)=>{const x=n as unknown as {cssTransform:string;cssTranslate:string};return{transform:x.cssTransform,getPropertyValue:(key:string)=>key==='translate'?x.cssTranslate:'none'}}};document.defaultView=view
@@ -37,7 +38,7 @@ test('緦 fixed whole twelve own certificates and strict target fields',()=>{
  assert(context);assert.equal(reviewedSiPolicy({id:'u7de6-order9'},0,0),null)
  let targetCount=0
  for(let p=0;p<strokes.length;p++)for(let m=0;m<strokes[p].length;m++){
-  const policy=reviewedSiPolicy(context,p,m),i=targets.findIndex(([x,y])=>x===p&&y===m)
+  const policy:ReturnType<typeof reviewedSiPolicy>=reviewedSiPolicy(context,p,m),i=targets.findIndex(([x,y])=>x===p&&y===m)
   assert.equal(!!policy,i>=0)
   const extra=clone();Object.assign(extra[p][m],{extra:true});assert.equal(reviewedSiContext(extra),null)
   for(const key of Object.keys(strokes[p][m])){const changed=clone(),s=changed[p][m]as unknown as Record<string,unknown>;s[key]=key==='bounds'?[0,0,1,1]:typeof s[key]==='number'?Number(s[key])+1:String(s[key])+' ';assert.equal(reviewedSiContext(changed),null)}
@@ -46,13 +47,13 @@ test('緦 fixed whole twelve own certificates and strict target fields',()=>{
   assert.throws(()=>{policy.segment.weight+=1});assert.throws(()=>{(policy.segment.bounds as number[])[0]+=1})
   for(const local of[.000001,.03,.5,.95,.9999]){
    const f=fakeSi(i),actual=measureReviewedSiCapsFrame(policy,policy.segment,local,f.nodes.measurement),point=actual.point
-   const expected=p===7||p===12?growingCapsState(policy.segment,local,nativeLengths[i],point):remainingQState(policy.segment,local,nativeLengths[i],point)
+   const expected:ReturnType<typeof growingCapsState>=p===7||p===12?growingCapsState(policy.segment,local,nativeLengths[i],point):remainingQState(policy.segment,local,nativeLengths[i],point)
    assert.equal(actual.d,expected.d);assert.equal(actual.rho,expected.rho);assert.deepEqual(actual.q0,expected.q0);assert.deepEqual(actual.point,expected.point);assert.equal(actual.progress,local);assert.deepEqual(f.counts(),{reads:1,pointReads:1})
   }
  }
  assert.equal(targetCount,12)
- assert.equal(createHash('sha256').update(readFileSync(new URL('./hanja-stroke-start-gate.ts',import.meta.url))).digest('hex'),'1a734d87d44093198cda60bafff96d963b1e62510acb5f4e1fa4e3f3a60d1704')
- assert.equal(createHash('sha256').update(readFileSync(new URL('./hanja-stroke-start-gate.test.ts',import.meta.url))).digest('hex'),'0f0ea878d6a2c10f7104bfa92440bf8d7e4e2f3bb64efd78d40a44c76ad132c8')
+ assert.equal(createHash('sha256').update(readHanjaHistoricalSource('lib/hanja-stroke-start-gate.ts','1a734d87d44093198cda60bafff96d963b1e62510acb5f4e1fa4e3f3a60d1704')).digest('hex'),'1a734d87d44093198cda60bafff96d963b1e62510acb5f4e1fa4e3f3a60d1704')
+ assert.equal(createHash('sha256').update(readHanjaHistoricalSource('lib/hanja-stroke-start-gate.test.ts','0f0ea878d6a2c10f7104bfa92440bf8d7e4e2f3bb64efd78d40a44c76ad132c8')).digest('hex'),'0f0ea878d6a2c10f7104bfa92440bf8d7e4e2f3bb64efd78d40a44c76ad132c8')
 })
 test('緦 same-frame twelve UA paths and coordinate tampering fail closed',()=>{
  let rejected=0

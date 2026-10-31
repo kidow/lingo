@@ -8,14 +8,14 @@ const gcd=(a:bigint,b:bigint):bigint=>b?gcd(b,a%b):a<0n?-a:a
 const r=(n:bigint,d=1n):R=>{assert(d);const g=gcd(n,d);return[n/g,d/g]},add=(a:R,b:R)=>r(a[0]*b[1]+b[0]*a[1],a[1]*b[1]),sub=(a:R,b:R)=>r(a[0]*b[1]-b[0]*a[1],a[1]*b[1]),mul=(a:R,b:R)=>r(a[0]*b[0],a[1]*b[1]),cmp=(a:R,b:R)=>a[0]*b[1]-b[0]*a[1],eq=(a:R,b:R)=>cmp(a,b)===0n
 const rat=(x:readonly string[]):R=>r(BigInt(x[0]),BigInt(x[1])),point=(x:readonly(readonly string[])[]):P=>[rat(x[0]),rat(x[1])],vec=(a:P,b:P):P=>[sub(a[0],b[0]),sub(a[1],b[1])],cross=(a:P,b:P)=>sub(mul(a[0],b[1]),mul(a[1],b[0])),ori=(a:P,b:P,p:P)=>cross(vec(b,a),vec(p,a))
 const bytes=(p:string)=>readFileSync(new URL('../'+p,import.meta.url)),json=(p:string)=>JSON.parse(bytes(p).toString()),sha=(x:string|Buffer)=>createHash('sha256').update(x).digest('hex'),clone=(x:any)=>JSON.parse(JSON.stringify(x))
-const normalized=(p:any[])=>p.map(v=>[v.x/2,v.y/2]),num=(x:readonly string[])=>Number(x[0])/Number(x[1])
+const normalized=(p:any[])=>p.map(v=>[v.x/2,v.y/2]),num=(x:readonly (string|bigint)[])=>Number(x[0])/Number(x[1])
 test('1377 own 梴8m2 cardinal contact prefix exact source/union certificate FIRST',()=>{
  for(const[p,h]of Object.entries(SOURCE.inputSHA256))assert.equal(sha(bytes(p)),h,p)
  const f=json(SOURCE.fixtureFile),strokes=f.originalOrderBaseline,full=json(SOURCE.actualFull5File),review=json('docs/hanja-goal-glyphwiki-batch915-2026-10-13/review.json'),hold=json('docs/hanja-source-native-hold-u68b4-vh-prefix-2026-10-20/hold.json')
  assert.deepEqual(Object.keys(full).sort(),['defaults','engineHashes','engineRevision','groups','trace']);assert.equal(full.groups.length,14);assert.equal(full.trace.flat().length,14);assert.equal(full.groups.flatMap((g:any)=>g.polygons).length,25)
  assert.equal(sha(JSON.stringify(strokes)),SOURCE.geometrySHA256);assert.deepEqual([strokes.length,strokes.flat().length],[11,12]);assert.equal(strokes.flat().reduce((n:number,s:any)=>n+(s.outline.match(/M/g)||[]).length,0),25)
  assert.equal(review.compatibleWholeRoots.length,1);assert.equal(review.compatibleWholeRoots[0],'u68b4-var-001');assert(review.dictionaryDirectionStrokes.includes(8));assert(review.reason.includes('Domestic pen8 is a continuous vertical-right turn.'));assert.equal(review.nativeApproval,false);assert.equal(hold.nativeApproval,false)
- const C=context(strokes)!;assert(C);const POL=policy(C,7,1)!;assert(POL);assert.equal(POL.kind,'cardinal-contact-prefix-u68b4');assert.deepEqual(POL.segment,strokes[7][1]);assert.deepEqual(POL.predecessor,strokes[7][0])
+ const C=context(strokes)!;assert(C);const POL:NonNullable<ReturnType<typeof policy>>=policy(C,7,1)!;assert(POL);assert.equal(POL.kind,'cardinal-contact-prefix-u68b4');assert.deepEqual(POL.segment,strokes[7][1]);assert.deepEqual(POL.predecessor,strokes[7][0])
  assert.equal(POL.segment.direction,'right');assert.equal(POL.segment.weight,39.425);assert(!Object.hasOwn(POL.segment,'revealPath'));assert(!Object.hasOwn(POL.segment,'revealWidth'));assert.equal(policy({...C},7,1),null)
  for(let pen=0;pen<strokes.length;pen++)for(let mask=0;mask<strokes[pen].length;mask++)assert.equal(policy(C,pen,mask),pen===7&&mask===1?POL:null)
  const R=F.originalHRectangle.map(point),T=F.originalHTriangle.map(point),V=F.originalVBody.map(point),core=F.originalPositiveCore.map(point),a=rat(F.initialLeft),b=rat(F.initialRight),x0=rat(F.xMin),x1=rat(F.xMax),left=rat(F.leftBackfill),right=rat(F.rightAdvance),bottom=rat(F.clipY),height=rat(F.clipHeight),stripY=R[0][1],stripHeight=sub(R[2][1],stripY)
@@ -58,7 +58,7 @@ function adapterMock(POL:any,p:number){
  return{nodes:{ink,rect},svg,outline,stroke,previous,target,defs,clip,rect,ink,doc,view,writes,UAReads:()=>UAReads}
 }
 test('1377 adapter tail: original complete V, clip lifecycle and fail-closed same-frame only',()=>{
- const strokes=json(SOURCE.fixtureFile).originalOrderBaseline,C=context(strokes)!,POL=policy(C,7,1)!;assert(C&&POL);assert.equal(ADAPTER.prepared,true)
+ const strokes=json(SOURCE.fixtureFile).originalOrderBaseline,C=context(strokes)!,POL:NonNullable<ReturnType<typeof policy>>=policy(C,7,1)!;assert(C&&POL);assert.equal(ADAPTER.prepared,true)
  const t=adapterMock(POL,0),originalV=t.previous.attrs.d,originalH=t.ink.attrs.d
  t.previous.attrs.d='incomplete source V';assert.equal(applyPrefix(POL,0,t.nodes),true);assert.equal(t.ink.attrs.visibility,'hidden');assert.equal(t.rect.attrs.width,'0')
  t.previous.attrs.d=originalV

@@ -1,3 +1,4 @@
+import {readHanjaHistoricalSource} from './hanja-test-component-loader.ts'
 import { createElement } from 'react'
 import { renderToStaticMarkup } from 'react-dom/server'
 import ts from 'typescript'
@@ -24,7 +25,7 @@ test('exact 棖 geometry only: committed guide measurement, continuous gate and 
   for (const mutate of [
     (s: MutableStrokes) => s.pop(), (s: MutableStrokes) => s[0][0].weight++, (s: MutableStrokes) => s[9].reverse(),
     (s: MutableStrokes) => s[9][1].outline += ' ', (s: MutableStrokes) => s[9][1].bounds[0]++,
-    (s: MutableStrokes) => s[9][1].revealPath += ' ', (s: MutableStrokes) => s[9][1].revealWidth++,
+    (s: MutableStrokes) => s[9][1].revealPath += ' ', (s: MutableStrokes) => s[9][1].revealWidth=(s[9][1].revealWidth??0)+1,
     (s: MutableStrokes) => s[9][1].weight++, (s: MutableStrokes) => s[9][1].direction = 'down',
     (s: MutableStrokes) => s[9][1].extra = true,
   ]) { const changed = structuredClone(strokes) as MutableStrokes; mutate(changed); assert(!hasReviewedHanjaStartGate(changed)); negatives++ }
@@ -183,7 +184,7 @@ function fakeGrowing(id = 'test-yu-11') {
   const owner = {}, writes: string[] = [], counts = { length:0, endpoint:0 }, body = yu[10][0]
   const node = (initial: Record<string,string>) => { const attrs = new Map(Object.entries(initial));return { isConnected:true,ownerSVGElement:owner,getAttribute:(key:string)=>attrs.get(key)??null,setAttribute:(key:string,value:string)=>{attrs.set(key,value);writes.push(key+'='+value)},removeAttribute:(key:string)=>{attrs.delete(key)},attrs } }
   const common = { 'data-growing-owner':id }, guide = Object.assign(node({ ...common,id:id+'-growing-guide',d:body.revealPath!,pathLength:'1','stroke-width':'14','stroke-linecap':'butt','stroke-linejoin':'miter' }), {
-    getTotalLength(){ counts.length++;return yuL },
+    getTotalLength():number{ counts.length++;return yuL },
     getPointAtLength(d:number){ assert.strictEqual(this,guide);counts.endpoint++;return d <= 11.8 ? {x:61.5,y:30.4+d} : {x:90,y:47.2} },
   })
   const startCap = node(common), endCap = node(common), ink = node({ ...common,mask:'url(#'+id+'-growing)' })
@@ -196,7 +197,7 @@ test('麌 exact context, immutable masks and single-path same-frame growing pari
   assert.equal(context.id,'u9e8c');assert.equal(q.id,'u9e8c-9-2');assert.equal(q.kind,'circle-start');assert.equal(growing.id,'u9e8c-11-1');assert.equal(growing.kind,'growing-caps')
   assert.equal(hasReviewedHanjaStartGate(yu),false);assert.equal(reviewedHanjaRevealPolicy({...context},10,0),null)
   for(let p=0;p<yu.length;p++)for(let m=0;m<yu[p].length;m++)if(!(p===8&&m===1)&&!(p===10&&m===0))assert.equal(reviewedHanjaRevealPolicy(context,p,m),null)
-  for(const mutate of [(s:MutableStrokes)=>s[0][0].weight++,(s:MutableStrokes)=>s.reverse(),(s:MutableStrokes)=>s[10].reverse(),(s:MutableStrokes)=>s[10][0].revealWidth++,(s:MutableStrokes)=>s[10][0].revealPath+=' ',(s:MutableStrokes)=>s[8][1].bounds[0]++,(s:MutableStrokes)=>s[10][0].extra=true]){const changed=structuredClone(yu) as MutableStrokes;mutate(changed);assert.equal(reviewedHanjaRevealContext(changed),null)}
+  for(const mutate of [(s:MutableStrokes)=>s[0][0].weight++,(s:MutableStrokes)=>s.reverse(),(s:MutableStrokes)=>s[10].reverse(),(s:MutableStrokes)=>s[10][0].revealWidth=(s[10][0].revealWidth??0)+1,(s:MutableStrokes)=>s[10][0].revealPath+=' ',(s:MutableStrokes)=>s[8][1].bounds[0]++,(s:MutableStrokes)=>s[10][0].extra=true]){const changed=structuredClone(yu) as MutableStrokes;mutate(changed);assert.equal(reviewedHanjaRevealContext(changed),null)}
   for(const policy of[q,growing]){assert(Object.isFrozen(policy));assert(Object.isFrozen(policy.segment));assert(Object.isFrozen(policy.segment.bounds));assert.throws(()=>{(policy.segment as HanjaOutlineSegment).weight++},TypeError);assert.throws(()=>{(policy.segment.bounds as number[])[0]++},TypeError)}
   const isolated=await import(new URL('../docs/hanja-renderer-growing-caps-u9e8c-11-experiment-2026-10-20/render.mjs',import.meta.url).href)
   for(const p of[0,1e-6,7/yuL,11.8/yuL,.95,.9999,1]){const f=fakeGrowing(),frame=measureReviewedGrowingCapsFrame(growing,body,p,f.nodes.guide),ref=isolated.growingCapsState(body,p,yuL,frame.point);assert.equal(f.counts.length,1);assert.equal(f.counts.endpoint,1);assert.equal(frame.progress,p);assert.equal(frame.d,p*yuL);assert.equal(frame.d,ref.d);assert.equal(frame.rho,ref.rho);assert.deepEqual(frame.q0,ref.q0);assert(Object.isFrozen(frame));assert(Object.isFrozen(frame.q0));assert(Object.isFrozen(frame.point));const circle=reviewedHanjaRevealClip(q,yu[8][1],p,36.421756744384766),old=isolated.gateState(yu[8][1],p,36.421756744384766);assert.equal(circle.threshold,old.h)}
@@ -271,7 +272,7 @@ function fakeQuadratic(i:number,id='test-shu-'+i) {
   const tokens=body.revealPath!.split(' '),n=[tokens[0].slice(1),tokens[1],tokens[2].slice(1),tokens[3],tokens[4],tokens[5]].map(Number)
   const node=(initial:Record<string,string>)=>{const attrs=new Map(Object.entries(initial));return{isConnected:true,ownerSVGElement:owner,getAttribute:(key:string)=>attrs.get(key)??null,setAttribute:(key:string,value:string)=>{attrs.set(key,value);writes.push(key+'='+value)},removeAttribute:(key:string)=>{attrs.delete(key)},attrs}}
   const common={'data-growing-owner':id},guide=Object.assign(node({...common,id:id+'-growing-guide',d:body.revealPath!,pathLength:'1','stroke-width':'14','stroke-linecap':'butt','stroke-linejoin':'miter'}),{
-    getTotalLength(){counts.length++;return L},
+    getTotalLength():number{counts.length++;return L},
     getPointAtLength(d:number){assert.strictEqual(this,guide);counts.endpoint++;const t=d/L;return{x:(1-t)**2*n[0]+2*(1-t)*t*n[2]+t*t*n[4],y:(1-t)**2*n[1]+2*(1-t)*t*n[3]+t*t*n[5]}},
   })
   const startCap=node(common),endCap=node(common),ink=node({...common,mask:'url(#'+id+'-growing)'})
@@ -289,9 +290,9 @@ test('癙 independent exact Q certificates and immutable whole allowlist preserv
     assert.throws(()=>{policy.segment.weight++},TypeError);assert.throws(()=>{(policy.segment.bounds as number[])[0]++},TypeError)
     assert.throws(()=>measureReviewedGrowingCapsFrame(policy as unknown as Parameters<typeof measureReviewedGrowingCapsFrame>[0],policy.segment,.1,fakeQuadratic(i).nodes.guide))
     assert.throws(()=>measureReviewedQuadraticCapsFrame({...policy},policy.segment,.1,fakeQuadratic(i).nodes.guide))
-    assert.equal(reviewedQuadraticCapsPolicy({...context},...shuTargets[i]),null)
+    assert.equal(reviewedQuadraticCapsPolicy({...context},shuTargets[i][0],shuTargets[i][1]),null)
   }
-  for(const mutate of[(s:MutableStrokes)=>s[0][0].weight++,(s:MutableStrokes)=>s.reverse(),(s:MutableStrokes)=>s[11].reverse(),(s:MutableStrokes)=>s[14][1].revealPath+=' ',(s:MutableStrokes)=>s[17][0].revealWidth++,(s:MutableStrokes)=>s[11][1].bounds[0]++,(s:MutableStrokes)=>s[1][0].extra=true]){const changed=structuredClone(shu) as MutableStrokes;mutate(changed);assert.equal(reviewedQuadraticCapsContext(changed),null)}
+  for(const mutate of[(s:MutableStrokes)=>s[0][0].weight++,(s:MutableStrokes)=>s.reverse(),(s:MutableStrokes)=>s[11].reverse(),(s:MutableStrokes)=>s[14][1].revealPath+=' ',(s:MutableStrokes)=>s[17][0].revealWidth=(s[17][0].revealWidth??0)+1,(s:MutableStrokes)=>s[11][1].bounds[0]++,(s:MutableStrokes)=>s[1][0].extra=true]){const changed=structuredClone(shu) as MutableStrokes;mutate(changed);assert.equal(reviewedQuadraticCapsContext(changed),null)}
   for(const other of[strokes,shui,yu])assert.equal(reviewedQuadraticCapsContext(other),null)
   const lib=readFileSync(new URL('./hanja-stroke-start-gate.ts',import.meta.url),'utf8')
   assert.equal(createHash('sha256').update(lib.slice(0,33354)).digest('hex'),'7e16cc13ab1326e7c89294e03c838f3504f94a28bed17f22a74df279d0316792')
@@ -406,7 +407,7 @@ test('荃 exact whole and two private certificates preserve every prior policy b
   assert.equal(createHash('sha256').update(source.slice(0,51743)).digest('hex'),'5e1eaaf4b99c72854370a499980bf97e9b3001bde8c35a1475149ec52bf40bf8')
   const component=readFileSync(new URL('../components/hanja/stroke-outlines.tsx',import.meta.url),'utf8'),oldChild=component.slice(component.indexOf('function QuadraticCapsOutline'),component.indexOf('\n/** 荃만'))
   assert.equal(createHash('sha256').update(oldChild).digest('hex'),'354ee362d6662ee4d9eed7d16d963703b548738e784d17f9049e2ab480216344')
-  const testSource=readFileSync(new URL('./hanja-stroke-start-gate.test.ts',import.meta.url),'utf8')
+  const testSource=readHanjaHistoricalSource('lib/hanja-stroke-start-gate.test.ts','0f0ea878d6a2c10f7104bfa92440bf8d7e4e2f3bb64efd78d40a44c76ad132c8').toString()
   assert.equal(createHash('sha256').update(testSource.slice(0,39948)).digest('hex'),'b79aea6e0fbc1a259edba29f93e4391119e5c99142a4d708f43d3b972b9fa3c5')
 })
 test('荃 connected original-path frames and atomic caps fail closed without prior-test reruns',()=>{
@@ -482,7 +483,7 @@ test('荃 coordinate binding failed-tail rejects parent document and rendered tr
     assert.equal(commitReviewedQuanQuadraticCaps(post.policy,post.segment,.03,post.id,post.nodes).status,'hidden');assert.equal(post.ink.attrs.visibility,'hidden');rejected++
     const source=readFileSync(new URL('./hanja-stroke-start-gate.ts',import.meta.url),'utf8')
     assert.equal(createHash('sha256').update(source.slice(0,51743)).digest('hex'),'5e1eaaf4b99c72854370a499980bf97e9b3001bde8c35a1475149ec52bf40bf8')
-    assert.equal(createHash('sha256').update(readFileSync(new URL('../components/hanja/stroke-outlines.tsx',import.meta.url))).digest('hex'),'f729f0db65f84dee49182a104d874fe48b347f05dbaeb0283e1a0777434c1900')
+    assert.equal(createHash('sha256').update(readHanjaHistoricalSource('components/hanja/stroke-outlines.tsx','f729f0db65f84dee49182a104d874fe48b347f05dbaeb0283e1a0777434c1900')).digest('hex'),'f729f0db65f84dee49182a104d874fe48b347f05dbaeb0283e1a0777434c1900')
   }
   assert.equal(rejected,362)
 })

@@ -26,14 +26,14 @@ test('綎 own QQ1-y/QQ2-x exact contact and pure original-P policy FIRST',()=>{
  const C=context(clone(cache.strokes));assert(C);assert.equal(context({} as any),null);assert.equal(policy({...C},0,1),null)
  let graphTriangles=0,slabs=0,negatives=0
  for(let k=0;k<2;k++){
-  const F=PROOFS[k],POL=policy(C,k,1)!;assert(POL);assert.equal(POL.axis,k===0?'y':'x');assert.equal(policy(C,k,0),null);assert.equal(policy(C,k,2),null)
+  const F=PROOFS[k],POL:NonNullable<ReturnType<typeof policy>>=policy(C,k,1)!;assert(POL);assert.equal(POL.axis,k===0?'y':'x');assert.equal(policy(C,k,0),null);assert.equal(policy(C,k,2),null)
   const project=(p:P):P=>POL.axis==='y'?[p[1],p[0]]:p
   const polygons=(raw:number):P[][]=>source.trace[raw].flatMap((c:any)=>c.polygons).map((p:any)=>ccw(p.map((v:any):P=>project([div(dec(v.x),r(2n)),div(dec(v.y),r(2n))]))))
   const p1=polygons(2*k),p2=polygons(2*k+1),union=ccw(F.unionBoundary.map(point)),sector=ccw(F.sector.map(point)),tris=F.triangles.map(t=>ccw(t.map(point))),p1tris=p1.flatMap(ear),cut=rat(F.cut),max=rat(F.projectionRange[1])
   assert(eq(area(union),rat(F.unionArea)));assert(eq(area(sector),rat(F.sectorArea)))
   const xs=[...new Map([...union,...p2.flat()].map(p=>[p[0].join('/'),p[0]])).values()].sort(cmp);let exactArea=r(0n)
   for(let i=0;i<xs.length-1;i++){const mid=div(add(xs[i],xs[i+1]),r(2n)),actual=unionIntervals(p2.flatMap(p=>intervals(p,mid))),expected=intervals(union,mid);assert.equal(actual.length,1);assert.deepEqual(actual,expected);exactArea=add(exactArea,mul(sub(xs[i+1],xs[i]),sub(actual[0][1],actual[0][0])))}assert(eq(exactArea,area(union)));slabs+=xs.length-1
-  let pairs=0;for(let i=0;i<union.length;i++)for(let j=i+1;j<union.length;j++){if(j===i+1||(i===0&&j===union.length-1))continue;pairs++;const a=union[i],b=union[(i+1)%union.length],c=union[j],d=union[(j+1)%union.length];assert(!(ori(a,b,c)[0]*ori(a,b,d)[0]<0n&&ori(c,d,a)[0]*ori(c,d,b)[0]<0n))}assert.equal(pairs,F.nonAdjacentPairs)
+  let pairs=0;for(let i=0;i<union.length;i++)for(let j=i+1;j<union.length;j++){if(j===i+1||(i===0&&j===union.length-1))continue;pairs++;const a=union[i],b:P=union[(i+1)%union.length],c:P=union[j],d:P=union[(j+1)%union.length];assert(!(ori(a,b,c)[0]*ori(a,b,d)[0]<0n&&ori(c,d,a)[0]*ori(c,d,b)[0]<0n))}assert.equal(pairs,F.nonAdjacentPairs)
   const contacts=p1tris.flatMap(a=>ear(union).flatMap(b=>{const q=intersect(a,b);return area(q)[0]>0n?q:[]}));assert(contacts.length);const maxContact=contacts.reduce((a,b)=>cmp(a[0],b[0])>0?a:b)[0];assert(eq(cut,maxContact));assert.deepEqual(sector,ccw(clip(union,[cut,r(0n)],[cut,r(100n)])));assert(eq(tris.reduce((s,t)=>add(s,area(t)),r(0n)),area(sector)))
   for(let i=0;i<tris.length;i++)for(let j=i+1;j<tris.length;j++)assert.equal(area(intersect(tris[i],tris[j]))[0],0n)
   const seen=new Set<number>();let weights=r(0n)

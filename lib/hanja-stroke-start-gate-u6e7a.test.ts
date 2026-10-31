@@ -1,3 +1,4 @@
+import {readHanjaHistoricalSource} from './hanja-test-component-loader.ts'
 import assert from 'node:assert/strict'
 import {test} from 'node:test'
 import {readFileSync} from 'node:fs'
@@ -39,7 +40,7 @@ test('湺 full source identity, private frozen five policies and own certificate
  assert.equal(REVIEWED_U6E7A_SOURCE.full5SHA256,'ccf22653a5c6c89fc3f1a186e8757ee07250ae36813dce4e07c52fc6ae48f2f9')
  assert.equal(REVIEWED_U6E7A_SOURCE.actualComponentApproval,false);assert.equal(REVIEWED_U6E7A_SOURCE.runtimeApplied,false)
  const expected=[['1/2','1/20'],['1/2','1/20'],['1/2','1/12'],['1/3','1/11']]
- for(let i=0;i<5;i++){const p=selected(i);assert(Object.isFrozen(p)&&Object.isFrozen(p.segment)&&Object.isFrozen(p.segment.bounds));assert.equal(reviewedU6e7aPolicy({...context!},...targets[i]),null);assert.throws(()=>{(p.segment.bounds as number[])[0]++});if(p.kind==='growing-u6e7a-caps'){assert.deepEqual([p.certificate.T,p.certificate.K],expected[i]);assert(Object.isFrozen(p.certificate.storedBounds));assert.equal(p.certificate.notPreviousMaskConnectivityProof,true)}}
+ for(let i=0;i<5;i++){const p=selected(i);assert(Object.isFrozen(p)&&Object.isFrozen(p.segment)&&Object.isFrozen(p.segment.bounds));assert.equal(reviewedU6e7aPolicy({...context!},targets[i][0],targets[i][1]),null);assert.throws(()=>{(p.segment.bounds as number[])[0]++});if(p.kind==='growing-u6e7a-caps'){assert.deepEqual([p.certificate.T,p.certificate.K],expected[i]);assert(Object.isFrozen(p.certificate.storedBounds));assert.equal(p.certificate.notPreviousMaskConnectivityProof,true)}}
  let count=0;for(let p=0;p<12;p++)for(let m=0;m<strokes[p].length;m++)if(reviewedU6e7aPolicy(context,p,m))count++;assert.equal(count,5)
 })
 test('湺 actual material field changes and sparse/inherited/nonenumerable payloads reject',()=>{
@@ -74,21 +75,25 @@ test('湺 stored mask fingerprints preserved independently of future component i
 
 // 새 TSX 분기만 RAM transpile한다. layoutEffect/UA 실행이나 실제 browser 승인 검사가 아니다.
 const u6e7aAddedImport="import { reviewedU6e7aContext, reviewedU6e7aPolicy, commitReviewedU6e7aCaps, commitReviewedU6e7aHV, REVIEWED_U6E7A_HV_PARTS, type ReviewedU6e7aGrowingPolicy, type ReviewedU6e7aHVPolicy } from '@/lib/hanja-stroke-start-gate-u6e7a'\n",u6e7aAddedContext="  const u6e7aContext = reviewedU6e7aContext(strokes)\n",u6e7aAddedBranch="        const u6e7aPolicy = reviewedU6e7aPolicy(u6e7aContext, stroke, index)\n        if (u6e7aPolicy?.kind === 'growing-u6e7a-caps') return <U6e7aCapsOutline key={index} policy={u6e7aPolicy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} clipId={`${id}-${stroke}-${index}`} />\n        if (u6e7aPolicy?.kind === 'original-HJ-B-u6e7a') return <U6e7aHVOutline key={index} policy={u6e7aPolicy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} clipId={`${id}-${stroke}-${index}`} />\n"
+function u6e7aPriorComponent(current:string,historical=false){
+  for(const token of[u6e7aAddedImport,u6e7aAddedContext,u6e7aAddedBranch])assert.equal(current.split(token).length,2)
+  const start=current.indexOf('/** 湺 원4MQ만'),end=current.indexOf('/** 簜 water9m1',start);assert(start>0&&end>start)
+  const prior=(current.slice(0,start)+current.slice(end)).replace(u6e7aAddedImport,'').replace(u6e7aAddedContext,'').replace(u6e7aAddedBranch,'')
+  if(historical)assert.equal(createHash('sha256').update(prior).digest('hex'),'af3a9e6bea7a495903b6d5e92fef3bea85c09c0f6fe09e63d0901a8b4e45859a')
+  return prior
+}
 let u6e7aComponents:Promise<any>|undefined
 async function actualU6e7aComponents(){
  if(u6e7aComponents)return u6e7aComponents
  u6e7aComponents=(async()=>{
   const current=readFileSync(new URL('../components/hanja/stroke-outlines.tsx',import.meta.url),'utf8')
-  for(const token of[u6e7aAddedImport,u6e7aAddedContext,u6e7aAddedBranch])assert.equal(current.split(token).length,2)
-  const start=current.indexOf('/** 湺 원4MQ만'),end=current.indexOf('/** 簜 water9m1',start);assert(start>0&&end>start)
-  const prior=(current.slice(0,start)+current.slice(end)).replace(u6e7aAddedImport,'').replace(u6e7aAddedContext,'').replace(u6e7aAddedBranch,'')
-  assert.equal(createHash('sha256').update(prior).digest('hex'),'af3a9e6bea7a495903b6d5e92fef3bea85c09c0f6fe09e63d0901a8b4e45859a')
+  const prior=u6e7aPriorComponent(current)
   const timingSource=readFileSync(new URL('./hanja-strokes.ts',import.meta.url),'utf8').split('\n'),timingURL='data:text/javascript;base64,'+Buffer.from(['const STROKE_PLAYBACK_SPEED =','export const STROKE_DURATION =','export const STROKE_GAP ='].map(prefix=>{const line=timingSource.find(l=>l.startsWith(prefix));assert(line);return line}).join('\n')).toString('base64')
   async function load(input:string,extra:string){
    const marker='const [elapsed, setElapsed] = useState(0)';assert(input.includes(marker))
    const prepared=input.replace(marker,'const [elapsed, setElapsed] = useState(Number((globalThis as typeof globalThis & {__u6e7aTestElapsed?:number}).__u6e7aTestElapsed??0))')+extra
    let js=ts.transpileModule(prepared,{compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022,jsx:ts.JsxEmit.ReactJSX}}).outputText
-   js=js.replace(/(['"])@\/lib\/([a-z0-9-]+)\1/g,(_all,_quote,name)=>JSON.stringify(name==='hanja-strokes'?timingURL:new URL('./'+name+'.ts',import.meta.url).href))
+   js=js.replace(/(['"])@\/lib\/([a-zA-Z0-9-]+)\1/g,(_all,_quote,name)=>JSON.stringify(name==='hanja-strokes'?timingURL:new URL('./'+name+'.ts',import.meta.url).href))
    for(const name of['react/jsx-runtime','react'])js=js.replaceAll("'"+name+"'",JSON.stringify(import.meta.resolve(name))).replaceAll('"'+name+'"',JSON.stringify(import.meta.resolve(name)))
    assert(!js.includes('@/lib/'));return import('data:text/javascript;base64,'+Buffer.from(js).toString('base64'))
   }
@@ -119,3 +124,5 @@ test('湺 actual component old children inverse byte proof and eight ordinary ro
  const c=await actualU6e7aComponents(),globals=globalThis as any,ordinary=[3,4,5,7,8,9,10,11];let compared=0
  try{for(const pen of ordinary)for(const p of[0,.125,.25,.375,.5,.625,.75,.875,1]){globals.__u6e7aTestElapsed=pen*(c.timing.STROKE_DURATION+c.timing.STROKE_GAP)+p*c.timing.STROKE_DURATION;const props={strokes,clock:{current:[]},phase:'playing',count:pen,manual:false},next=u6e7aSSR(c.StrokeOutlines,props),prior=u6e7aSSR(c.PriorStrokeOutlines,props);assert.equal(u6e7aGroup(next,'data-outline-stroke',String(pen+1)),u6e7aGroup(prior,'data-outline-stroke',String(pen+1)));compared++}assert.equal(compared,72)}finally{delete globals.__u6e7aTestElapsed}
 })
+
+test('湺 historical renderer inverse retains original SHA',()=>{u6e7aPriorComponent(readHanjaHistoricalSource('components/hanja/stroke-outlines.tsx','2a15c7489c8bcde9c607faf7f48af611359dfb6625fc5eeaedcaaa5cc4a4a3c9').toString(),true)})

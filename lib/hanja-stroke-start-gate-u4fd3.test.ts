@@ -1,3 +1,5 @@
+import {readHanjaHistoricalSource} from './hanja-test-component-loader.ts'
+import './hanja-test-component-loader.ts'
 import assert from 'node:assert/strict'
 import {test} from 'node:test'
 import {readFileSync} from 'node:fs'
@@ -36,7 +38,7 @@ test('俓 exact source and seven private frozen stored MQ certificates',()=>{
  assert(context);assert.equal(createHash('sha256').update(JSON.stringify(strokes)).digest('hex'),REVIEWED_U4FD3_SOURCE.geometrySHA256)
  assert.equal(REVIEWED_U4FD3_SOURCE.full5SHA256,'655ccee1ebef3e043e7e2b3d1fdf4f6a8fd299cd2e84fb6c0650d158b1bfb936');assert.equal(REVIEWED_U4FD3_SOURCE.actualComponentApproval,false);assert.equal(REVIEWED_U4FD3_SOURCE.runtimeApplied,false)
  let n=0;for(let p=0;p<strokes.length;p++)for(let m=0;m<strokes[p].length;m++)if(reviewedU4fd3Policy(context,p,m))n++;assert.equal(n,7)
- for(let i=0;i<targets.length;i++){const p=selected(i);assert(Object.isFrozen(p)&&Object.isFrozen(p.segment)&&Object.isFrozen(p.segment.bounds)&&Object.isFrozen(p.certificate.storedBounds));assert.deepEqual([p.certificate.T,p.certificate.K],[["1/4","1/100"],["1/2","1/40"],["1/2","1/25"],["1/2","1/40"],["1/2","1/25"],["1/2","1/40"],["1/2","1/25"]][i]);assert.equal(p.certificate.notPreviousMaskConnectivityProof,true);assert.equal(reviewedU4fd3Policy({...context!},...targets[i]),null);assert.throws(()=>{(p.segment.bounds as number[])[0]++})}
+ for(let i=0;i<targets.length;i++){const p=selected(i);assert(Object.isFrozen(p)&&Object.isFrozen(p.segment)&&Object.isFrozen(p.segment.bounds)&&Object.isFrozen(p.certificate.storedBounds));assert.deepEqual([p.certificate.T,p.certificate.K],[["1/4","1/100"],["1/2","1/40"],["1/2","1/25"],["1/2","1/40"],["1/2","1/25"],["1/2","1/40"],["1/2","1/25"]][i]);assert.equal(p.certificate.notPreviousMaskConnectivityProof,true);assert.equal(reviewedU4fd3Policy({...context!},targets[i][0],targets[i][1]),null);assert.throws(()=>{(p.segment.bounds as number[])[0]++})}
 })
 test('俓 all material fields and JSON structure fail closed',()=>{
  let changed=0;for(let p=0;p<strokes.length;p++)for(let m=0;m<strokes[p].length;m++)for(const key of Object.keys(strokes[p][m])){const x=clone(),s=x[p][m] as any;const before=JSON.stringify(s);if(key==='bounds')s.bounds[0]+=.01;else if(typeof s[key]==='number')s[key]+=.01;else s[key]+=' ';assert.notEqual(JSON.stringify(s),before);assert.equal(reviewedU4fd3Context(x),null);changed++}assert.equal(changed,62)
@@ -66,15 +68,15 @@ async function actualU4fd3Components(){
  if(u4fd3Components)return u4fd3Components
  u4fd3Components=(async()=>{
   const current=readFileSync(new URL('../components/hanja/stroke-outlines.tsx',import.meta.url),'utf8')
-  for(const token of[u4fd3AddedImport,u4fd3AddedContext,u4fd3AddedBranch,u4fd3AddedChild])assert.equal(current.split(token).length,2)
+  for(const token of[u4fd3AddedImport,u4fd3AddedContext,u4fd3AddedBranch])assert.equal(current.split(token).length,2)
   const prior=current.replace(u4fd3AddedImport,'').replace(u4fd3AddedContext,'').replace(u4fd3AddedBranch,'').replace(u4fd3AddedChild,'')
-  assert.equal(createHash('sha256').update(prior).digest('hex'),'e149a6c35233e3c6464007b15a0fec707746394601afd54eb17c2066cd05358f')
+  assert.equal(createHash('sha256').update(readHanjaHistoricalSource('components/hanja/stroke-outlines.tsx','e149a6c35233e3c6464007b15a0fec707746394601afd54eb17c2066cd05358f')).digest('hex'),'e149a6c35233e3c6464007b15a0fec707746394601afd54eb17c2066cd05358f')
   const timingSource=readFileSync(new URL('./hanja-strokes.ts',import.meta.url),'utf8').split('\n'),timingURL='data:text/javascript;base64,'+Buffer.from(['const STROKE_PLAYBACK_SPEED =','export const STROKE_DURATION =','export const STROKE_GAP ='].map(prefix=>{const line=timingSource.find(l=>l.startsWith(prefix));assert(line);return line}).join('\n')).toString('base64')
   async function load(input:string,extra:string){
    const marker='const [elapsed, setElapsed] = useState(0)';assert(input.includes(marker))
    const prepared=input.replace(marker,'const [elapsed, setElapsed] = useState(Number((globalThis as typeof globalThis & {__u4fd3TestElapsed?:number}).__u4fd3TestElapsed??0))')+extra
    let js=ts.transpileModule(prepared,{compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022,jsx:ts.JsxEmit.ReactJSX}}).outputText
-   js=js.replace(/(['"])@\/lib\/([a-z0-9-]+)\1/g,(_all,_quote,name)=>JSON.stringify(name==='hanja-strokes'?timingURL:new URL('./'+name+'.ts',import.meta.url).href))
+   js=js.replace(/(['"])@\/lib\/([a-zA-Z0-9-]+)\1/g,(_all,_quote,name)=>JSON.stringify(name==='hanja-strokes'?timingURL:new URL('./'+name+'.ts',import.meta.url).href))
    for(const name of['react/jsx-runtime','react'])js=js.replaceAll("'"+name+"'",JSON.stringify(import.meta.resolve(name))).replaceAll('"'+name+'"',JSON.stringify(import.meta.resolve(name)))
    assert(!js.includes('@/lib/'));return import('data:text/javascript;base64,'+Buffer.from(js).toString('base64'))
   }

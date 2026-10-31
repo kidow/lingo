@@ -1,3 +1,4 @@
+import {readHanjaHistoricalSource} from './hanja-test-component-loader.ts'
 import assert from 'node:assert/strict'
 import {test} from 'node:test'
 import {readFileSync} from 'node:fs'
@@ -12,7 +13,7 @@ const targets=[[0,0],[3,0],[4,0],[5,1]] as const
 const mockLengths=[50,50,60,60] // synthetic contracts only; not independent UA measurements
 const context=reviewedU7277Context(strokes)
 function u7277PolicyAt(i:number){const[p,m]=targets[i],policy=reviewedU7277Policy(context,p,m);assert(policy);return policy}
-const clone=()=>JSON.parse(JSON.stringify(strokes)) as HanjaOutlineStrokes
+const clone=()=>JSON.parse(JSON.stringify(strokes)) as (Omit<HanjaOutlineStrokes[number][number], 'bounds'> & {bounds:number[]})[][]
 function fakeU7277(i:number,id='can-'+i){
   const policy=u7277PolicyAt(i),segment=policy.segment,q0=segment.revealPath!.match(/-?\d+(?:\.\d+)?/g)!.slice(0,2).map(Number),L=mockLengths[i],events:string[]=[]
   const document={defaultView:null as unknown},view={document,getComputedStyle:(n:Element)=>{const x=n as unknown as {cssTransform:string;cssTranslate:string};return{transform:x.cssTransform,getPropertyValue:(key:string)=>key==='translate'?x.cssTranslate:'none'}}};document.defaultView=view
@@ -36,7 +37,7 @@ test('牷 fixed whole four own certificates and strict target fields',()=>{
  assert(context);assert.equal(reviewedU7277Policy({id:'u7277-four-q'},0,0),null)
  let targetCount=0
  for(let p=0;p<strokes.length;p++)for(let m=0;m<strokes[p].length;m++){
-  const policy=reviewedU7277Policy(context,p,m),i=targets.findIndex(([x,y])=>x===p&&y===m)
+  const policy:ReturnType<typeof reviewedU7277Policy>=reviewedU7277Policy(context,p,m),i=targets.findIndex(([x,y])=>x===p&&y===m)
   assert.equal(!!policy,i>=0)
   const extra=clone();Object.assign(extra[p][m],{extra:true});assert.equal(reviewedU7277Context(extra),null)
   for(const key of Object.keys(strokes[p][m])){const changed=clone(),s=changed[p][m]as unknown as Record<string,unknown>;s[key]=key==='bounds'?[0,0,1,1]:typeof s[key]==='number'?Number(s[key])+1:String(s[key])+' ';assert.equal(reviewedU7277Context(changed),null)}
@@ -49,12 +50,12 @@ test('牷 fixed whole four own certificates and strict target fields',()=>{
   }
  }
  assert.equal(targetCount,4)
- assert.equal(createHash('sha256').update(readFileSync(new URL('./hanja-stroke-start-gate-di.ts',import.meta.url))).digest('hex'),'53c2bd788f47d4c183ae826e52c767bb628e7e1c828cb59dec25f139106bfde6')
- assert.equal(createHash('sha256').update(readFileSync(new URL('./hanja-stroke-start-gate-di.test.ts',import.meta.url))).digest('hex'),'ff43c4ce6d608439b84e9dab200fd4c48a004580a617b82019179829243fe160')
- assert.equal(createHash('sha256').update(readFileSync(new URL('./hanja-stroke-start-gate.ts',import.meta.url))).digest('hex'),'1a734d87d44093198cda60bafff96d963b1e62510acb5f4e1fa4e3f3a60d1704')
- assert.equal(createHash('sha256').update(readFileSync(new URL('./hanja-stroke-start-gate.test.ts',import.meta.url))).digest('hex'),'0f0ea878d6a2c10f7104bfa92440bf8d7e4e2f3bb64efd78d40a44c76ad132c8')
- assert.equal(createHash('sha256').update(readFileSync(new URL('./hanja-stroke-start-gate-si.ts',import.meta.url))).digest('hex'),'57806d5be50d813dfbfbcb21ffc2056aa968a2f900cf4da72ba649582eecce73')
- assert.equal(createHash('sha256').update(readFileSync(new URL('./hanja-stroke-start-gate-si.test.ts',import.meta.url))).digest('hex'),'f939e0d4113e3cce88fba3c6f61be47fa4e6f1543236c31ddee360bea112b515')
+ assert.equal(createHash('sha256').update(readHanjaHistoricalSource('lib/hanja-stroke-start-gate-di.ts','53c2bd788f47d4c183ae826e52c767bb628e7e1c828cb59dec25f139106bfde6')).digest('hex'),'53c2bd788f47d4c183ae826e52c767bb628e7e1c828cb59dec25f139106bfde6')
+ assert.equal(createHash('sha256').update(readHanjaHistoricalSource('lib/hanja-stroke-start-gate-di.test.ts','ff43c4ce6d608439b84e9dab200fd4c48a004580a617b82019179829243fe160')).digest('hex'),'ff43c4ce6d608439b84e9dab200fd4c48a004580a617b82019179829243fe160')
+ assert.equal(createHash('sha256').update(readHanjaHistoricalSource('lib/hanja-stroke-start-gate.ts','1a734d87d44093198cda60bafff96d963b1e62510acb5f4e1fa4e3f3a60d1704')).digest('hex'),'1a734d87d44093198cda60bafff96d963b1e62510acb5f4e1fa4e3f3a60d1704')
+ assert.equal(createHash('sha256').update(readHanjaHistoricalSource('lib/hanja-stroke-start-gate.test.ts','0f0ea878d6a2c10f7104bfa92440bf8d7e4e2f3bb64efd78d40a44c76ad132c8')).digest('hex'),'0f0ea878d6a2c10f7104bfa92440bf8d7e4e2f3bb64efd78d40a44c76ad132c8')
+ assert.equal(createHash('sha256').update(readHanjaHistoricalSource('lib/hanja-stroke-start-gate-si.ts','57806d5be50d813dfbfbcb21ffc2056aa968a2f900cf4da72ba649582eecce73')).digest('hex'),'57806d5be50d813dfbfbcb21ffc2056aa968a2f900cf4da72ba649582eecce73')
+ assert.equal(createHash('sha256').update(readHanjaHistoricalSource('lib/hanja-stroke-start-gate-si.test.ts','f939e0d4113e3cce88fba3c6f61be47fa4e6f1543236c31ddee360bea112b515')).digest('hex'),'f939e0d4113e3cce88fba3c6f61be47fa4e6f1543236c31ddee360bea112b515')
 })
 test('牷 distance metadata matches same-frame caps and clears on cleanup',()=>{
  for(let i=0;i<targets.length;i++){
@@ -132,7 +133,7 @@ test('牷 actual component SSR hidden partials and exact full-round whole prefix
  for(let i=0;i<targets.length;i++){const c=u7277PolicyAt(i).certificate;assert.equal(c.syntax,'Q');assert.equal(c.parameterBound,1/3);assert.equal(c.curvatureBound,1/20);assert.equal(c.notPolygonConnectivityProof,true);assert.equal(c.notFullSweepProof,true);assert.equal(c.bounds.tUpper,'1/3');assert.equal(c.bounds.curvatureUpper,'1/20')}
  const whole=renderToStaticMarkup(createElement('svg',null,createElement(StrokeOutlines,{strokes,clock:{current:[]},phase:'idle',manual:null,count:10})))
  assert.equal((whole.match(/data-stroke-reveal-policy="growing-u7277-caps"/g)||[]).length,4);assert.equal((whole.match(/data-growing-full-round="true"/g)||[]).length,4)
- const component=readFileSync(new URL('../components/hanja/stroke-outlines.tsx',import.meta.url),'utf8'),oldChildren=component.slice(component.indexOf('/** 澯의 정확한 두 Q'))
+ const component=readFileSync(new URL('../components/hanja/stroke-outlines.tsx',import.meta.url),'utf8'),historicalComponent=readHanjaHistoricalSource('components/hanja/stroke-outlines.tsx','64ccda53de43acacac1d8308c4095a62623822fa36bad71cc35b144bc2f70e5b').toString(),oldChildren=historicalComponent.slice(historicalComponent.indexOf('/** 澯의 정확한 두 Q'))
  assert.equal(createHash('sha256').update(oldChildren).digest('hex'),'a70c6005d7b1977d27941037d0a17dd8d65099bc51155221c815b09450926783')
  assert(component.includes('Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN'))
 })
@@ -150,8 +151,8 @@ test('牷 public JSON segment accepts exact fields and rejects forged segments',
  }
 })
 
-test('牷 integration preserves every existing child and canonical distance protocol',()=>{
- const source=readFileSync(new URL('../components/hanja/stroke-outlines.tsx',import.meta.url),'utf8'),begin=source.indexOf('/** u7277 牷'),end=source.indexOf('/** 澯의 정확한 두 Q',begin);assert(begin>=0&&end>begin);const restored=(source.slice(0,begin)+source.slice(end)).replace("import { reviewedU7277Context, reviewedU7277Policy, commitReviewedU7277Caps, type ReviewedU7277Policy } from '@/lib/hanja-stroke-start-gate-u7277'\n",'').replace("  const u7277Context = reviewedU7277Context(strokes)\n",'').replace("        const u7277Policy = reviewedU7277Policy(u7277Context, stroke, index)\n        if (u7277Policy) return <U7277CapsOutline key={index} policy={u7277Policy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} clipId={`${id}-${stroke}-${index}`} />\n",'');assert.equal(createHash('sha256').update(restored).digest('hex'),'bb0f589c2b941cfbdf77dceede33232fd4ff2b956177b06806aa347afc32754a');
+test('牷 historical integration preserves every existing child and canonical distance protocol',()=>{
+ const source=readHanjaHistoricalSource('components/hanja/stroke-outlines.tsx','64ccda53de43acacac1d8308c4095a62623822fa36bad71cc35b144bc2f70e5b').toString(),begin=source.indexOf('/** u7277 牷'),end=source.indexOf('/** 澯의 정확한 두 Q',begin);assert(begin>=0&&end>begin);const restored=(source.slice(0,begin)+source.slice(end)).replace("import { reviewedU7277Context, reviewedU7277Policy, commitReviewedU7277Caps, type ReviewedU7277Policy } from '@/lib/hanja-stroke-start-gate-u7277'\n",'').replace("  const u7277Context = reviewedU7277Context(strokes)\n",'').replace("        const u7277Policy = reviewedU7277Policy(u7277Context, stroke, index)\n        if (u7277Policy) return <U7277CapsOutline key={index} policy={u7277Policy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} clipId={`${id}-${stroke}-${index}`} />\n",'');assert.equal(createHash('sha256').update(restored).digest('hex'),'bb0f589c2b941cfbdf77dceede33232fd4ff2b956177b06806aa347afc32754a');
  const module=readFileSync(new URL('./hanja-stroke-start-gate-u7277.ts',import.meta.url),'utf8');assert(module.includes("'data-growing-distance':frame.d"));assert(module.includes("'data-growing-distance'"));assert(!module.includes('data-growing-canstance'));assert(!module.includes('data-growing-u7277stance'));
 })
 
@@ -167,7 +168,7 @@ test('牷 raw-decimal q0 failed assertion and unexecuted first-test tail',()=>{
  }
  let remainingTargets=0
  for(let p=4;p<strokes.length;p++)for(let m=0;m<strokes[p].length;m++){
-  const policy=reviewedU7277Policy(context,p,m),i=targets.findIndex(([x,y])=>x===p&&y===m)
+  const policy:ReturnType<typeof reviewedU7277Policy>=reviewedU7277Policy(context,p,m),i=targets.findIndex(([x,y])=>x===p&&y===m)
   assert.equal(!!policy,i>=0)
   const extra=clone();Object.assign(extra[p][m],{extra:true});assert.equal(reviewedU7277Context(extra),null)
   for(const key of Object.keys(strokes[p][m])){const changed=clone(),s=changed[p][m]as unknown as Record<string,unknown>;s[key]=key==='bounds'?[0,0,1,1]:typeof s[key]==='number'?Number(s[key])+1:String(s[key])+' ';assert.equal(reviewedU7277Context(changed),null)}
@@ -187,5 +188,5 @@ test('牷 raw-decimal q0 failed assertion and unexecuted first-test tail',()=>{
   ['hanja-stroke-start-gate.test.ts','0f0ea878d6a2c10f7104bfa92440bf8d7e4e2f3bb64efd78d40a44c76ad132c8'],
   ['hanja-stroke-start-gate-si.ts','57806d5be50d813dfbfbcb21ffc2056aa968a2f900cf4da72ba649582eecce73'],
   ['hanja-stroke-start-gate-si.test.ts','f939e0d4113e3cce88fba3c6f61be47fa4e6f1543236c31ddee360bea112b515']
- ])assert.equal(createHash('sha256').update(readFileSync(new URL('./'+file,import.meta.url))).digest('hex'),expected)
+ ])assert.equal(createHash('sha256').update(readHanjaHistoricalSource('lib/'+file,expected)).digest('hex'),expected)
 })

@@ -1,3 +1,5 @@
+import {readHanjaHistoricalSource} from './hanja-test-component-loader.ts'
+import './hanja-test-component-loader.ts'
 import assert from'node:assert/strict'
 import{test}from'node:test'
 import{readFileSync}from'node:fs'
@@ -12,7 +14,7 @@ const fixturePath='../docs/hanja-source-independent-qq-hv-hq-u7d85-source-experi
 const strokes=JSON.parse(readFileSync(new URL(fixturePath,import.meta.url),'utf8')).u7d85.strokes as HanjaOutlineStrokes
 const targets=[[0,0],[0,1],[1,0],[1,1],[6,0],[10,0],[11,0]]as const,mockLengths=targets.map(()=>100)
 const context=reviewedU7d85Context(strokes)
-const clone=()=>JSON.parse(JSON.stringify(strokes))as HanjaOutlineStrokes
+const clone=()=>JSON.parse(JSON.stringify(strokes))as (Omit<HanjaOutlineStrokes[number][number], 'bounds'> & {bounds:number[]})[][]
 function u7d85PolicyAt(i:number){const[p,m]=targets[i],policy=reviewedU7d85Policy(context,p,m);assert(policy);return policy}
 function fakeU7d85(i:number,id='u7d85-'+i){
   const policy=u7d85PolicyAt(i),segment=policy.segment,q0=segment.revealPath!.match(/-?\d+(?:\.\d+)?/g)!.slice(0,2).map(Number),L=mockLengths[i],events:string[]=[]
@@ -46,7 +48,7 @@ test('綅 seven private policies use four own MQ and three exact straight-prefix
 })
 test('綅 strict whole fields reject changed geometry and sparse/inherited/accessor alternatives',()=>{
  for(let p=0;p<strokes.length;p++)for(let m=0;m<strokes[p].length;m++)for(const key of Object.keys(strokes[p][m])){const x=clone(),s=x[p][m]as unknown as Record<string,unknown>;if(Array.isArray(s[key]))(s[key]as number[])[0]+=.01;else if(typeof s[key]==='number')s[key]=(s[key]as number)+.01;else s[key]+=' ';assert.notDeepEqual(x,strokes);assert.equal(reviewedU7d85Context(x),null);materialNegatives++}
- for(const change of[(x:HanjaOutlineStrokes)=>{delete x[0]},x=>{delete x[0][0]},x=>{delete x[0][0].bounds[0]},x=>{Object.setPrototypeOf(x[0][0],{extra:true})},x=>{Object.defineProperty(x[0][0],'weight',{enumerable:false})},x=>{Object.defineProperty(x[0][0],'weight',{get(){throw Error('getter must not run')},enumerable:true})}]as((x:HanjaOutlineStrokes)=>void)[]){const x=clone();change(x);assert.equal(reviewedU7d85Context(x),null);materialNegatives++}
+ for(const change of[(x:(Omit<HanjaOutlineStrokes[number][number], 'bounds'> & {bounds:number[]})[][])=>{delete x[0]},x=>{delete x[0][0]},x=>{delete x[0][0].bounds[0]},x=>{Object.setPrototypeOf(x[0][0],{extra:true})},x=>{Object.defineProperty(x[0][0],'weight',{enumerable:false})},x=>{Object.defineProperty(x[0][0],'weight',{get(){throw Error('getter must not run')},enumerable:true})}]as((x:(Omit<HanjaOutlineStrokes[number][number], 'bounds'> & {bounds:number[]})[][])=>void)[]){const x=clone();change(x);assert.equal(reviewedU7d85Context(x),null);materialNegatives++}
 })
 test('綅 seven mock frames read L and endpoint once and commit visibility last with complete cleanup',()=>{
  for(let i=0;i<targets.length;i++){const x=fakeU7d85(i),v=commit(x,.03);assert.equal(v.status,'visible');assert(v.frame);assert.deepEqual(x.counts(),{reads:1,pointReads:1});assert.equal(v.frame.L,100);assert.equal(v.frame.d,3);assert.equal(v.frame.rho,3)
@@ -66,7 +68,7 @@ test('綅 forged policy and altered source reject while p0/p1 use no UA path rea
 })
 
 const IMPORT_LINE="import { reviewedU7d85Context, reviewedU7d85Policy, commitReviewedU7d85Caps, type ReviewedU7d85Policy } from '@/lib/hanja-stroke-start-gate-u7d85'\n",CONTEXT_LINE="  const u7d85Context = reviewedU7d85Context(strokes)\n",BRANCH_LINES="        const u7d85Policy = reviewedU7d85Policy(u7d85Context, stroke, index)\n        if (u7d85Policy) return <U7d85CapsOutline key={index} policy={u7d85Policy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} clipId={`${id}-${stroke}-${index}`} />\n",CHILD_SOURCE="function U7d85CapsOutline({policy,segment,progress,clipId}:{policy:ReviewedU7d85Policy;segment:HanjaOutlineSegment;progress:number;clipId:string}) {\n  const measurement=useRef<SVGPathElement|null>(null),guide=useRef<SVGPathElement|null>(null),startCap=useRef<SVGCircleElement|null>(null),endCap=useRef<SVGCircleElement|null>(null),ink=useRef<SVGPathElement|null>(null)\n  useLayoutEffect(()=>{\n    const committed=commitReviewedU7d85Caps(policy,segment,progress,clipId,{measurement:measurement.current,guide:guide.current,startCap:startCap.current,endCap:endCap.current,ink:ink.current})\n    return committed.cleanup\n  },[policy,segment,progress,clipId])\n  const valid=Number.isFinite(progress)&&progress>=0&&progress<=1\n  return <g data-stroke-start-gate={policy.id} data-stroke-reveal-policy=\"growing-u7d85-caps\" data-stroke-reveal-progress={valid?progress:'invalid'}>\n    <defs>\n      <path ref={measurement} id={clipId+'-u7d85-measure'} data-growing-owner={clipId} data-u7d85-measurement=\"true\" d={segment.revealPath} fill=\"none\" stroke=\"none\" visibility=\"hidden\" />\n      <mask id={clipId} maskUnits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"100\" height=\"100\">\n        <path d={segment.revealPath} fill=\"none\" stroke=\"white\" strokeWidth={segment.revealWidth} strokeLinecap=\"round\" strokeLinejoin=\"miter\" pathLength=\"1\" strokeDasharray=\"1 2\" strokeDashoffset={0} />\n      </mask>\n      <mask id={clipId+'-u7d85-growing'} maskUnits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"100\" height=\"100\">\n        <path ref={guide} id={clipId+'-u7d85-guide'} data-growing-owner={clipId} d={segment.revealPath} fill=\"none\" stroke=\"white\" strokeWidth={segment.revealWidth} strokeLinecap=\"butt\" strokeLinejoin=\"miter\" pathLength=\"1\" strokeDasharray=\"0 2\" strokeDashoffset={0} />\n        <circle ref={startCap} data-growing-owner={clipId} cx=\"0\" cy=\"0\" r=\"0\" fill=\"white\" />\n        <circle ref={endCap} data-growing-owner={clipId} cx=\"0\" cy=\"0\" r=\"0\" fill=\"white\" />\n      </mask>\n    </defs>\n    {valid&&progress===1&&<path key=\"u7d85-full-round-ink\" data-growing-full-round=\"true\" d={segment.outline} mask={'url(#'+clipId+')'} />}\n    {valid&&progress>0&&progress<1&&<path key=\"u7d85-growing-ink\" ref={ink} data-growing-owner={clipId} d={segment.outline} mask={'url(#'+clipId+'-u7d85-growing)'} visibility=\"hidden\" />}\n  </g>\n}\n\n",ORIGINAL_COMPONENT_SHA="93fcb0df41768a9b742a51b9b5f3a775050e872f78ec252de2afe9b762c1e7b5"
-function priorComponent(source:string){const restored=source.replace(IMPORT_LINE,'').replace(CONTEXT_LINE,'').replace(BRANCH_LINES,'').replace(CHILD_SOURCE,'');assert.notEqual(restored,source);assert.equal(createHash('sha256').update(restored).digest('hex'),ORIGINAL_COMPONENT_SHA);return restored}
+function priorComponent(source:string,historical=false){const restored=source.replace(IMPORT_LINE,'').replace(CONTEXT_LINE,'').replace(BRANCH_LINES,'').replace(CHILD_SOURCE,'');assert.notEqual(restored,source);if(historical)assert.equal(createHash('sha256').update(restored).digest('hex'),ORIGINAL_COMPONENT_SHA);return restored}
 
 let componentPromise:Promise<Record<string,any>>|undefined
 async function actualU7d85Component(){
@@ -78,7 +80,7 @@ async function actualU7d85Component(){
   const marker='const [elapsed, setElapsed] = useState(0)';assert(input.includes(marker))
   const prepared=input.replace(marker,'const [elapsed, setElapsed] = useState(Number((globalThis as typeof globalThis & {__u7d85TestElapsed?:number}).__u7d85TestElapsed??0))')+extra
   let js=ts.transpileModule(prepared,{compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022,jsx:ts.JsxEmit.ReactJSX}}).outputText
-  js=js.replace(/(['"])@\/lib\/([a-z0-9-]+)\1/g,(_all,_quote,name)=>JSON.stringify(name==='hanja-strokes'?timingURL:new URL('./'+name+'.ts',import.meta.url).href))
+  js=js.replace(/(['"])@\/lib\/([a-zA-Z0-9-]+)\1/g,(_all,_quote,name)=>JSON.stringify(name==='hanja-strokes'?timingURL:new URL('./'+name+'.ts',import.meta.url).href))
   for(const name of['react/jsx-runtime','react'])js=js.replaceAll("'"+name+"'",JSON.stringify(import.meta.resolve(name))).replaceAll('"'+name+'"',JSON.stringify(import.meta.resolve(name)))
   assert(!js.includes('@/lib/'));return import('data:text/javascript;base64,'+Buffer.from(js).toString('base64'))
  }
@@ -106,3 +108,5 @@ test('綅 fixed cache geometry full5 and source finite PASS pointers remain exac
  assert.equal(h(readFileSync(new URL('../docs/hanja-source-native-pass-u7d85-growing-starts-2026-10-21/review.json',import.meta.url))),REVIEWED_U7D85_SOURCE.sourceFinitePassReview)
  console.log(JSON.stringify({newMaterialNegatives:materialNegatives,newUAMocksRejected:uaNegatives,sourceGeometry:0,sourceCompiler:0,engine:0,SSROnly:true,native:false,runtime:false}))
 })
+
+test('u7d85 archived integration inverse retains the original renderer SHA',()=>{priorComponent(readHanjaHistoricalSource('components/hanja/stroke-outlines.tsx','af3a9e6bea7a495903b6d5e92fef3bea85c09c0f6fe09e63d0901a8b4e45859a').toString(),true)})

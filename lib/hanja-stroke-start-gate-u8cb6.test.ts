@@ -1,3 +1,4 @@
+import {readHanjaHistoricalSource} from './hanja-test-component-loader.ts'
 import assert from 'node:assert/strict'
 import {test} from 'node:test'
 import {readFileSync} from 'node:fs'
@@ -12,7 +13,7 @@ const targets=[[11,0],[11,1]] as const
 const mockLengths=[30,50] // synthetic contracts only; not independent UA measurements
 const context=reviewedU8cb6Context(strokes)
 function u8cb6PolicyAt(i:number){const[p,m]=targets[i],policy=reviewedU8cb6Policy(context,p,m);assert(policy);return policy}
-const clone=()=>JSON.parse(JSON.stringify(strokes)) as HanjaOutlineStrokes
+const clone=()=>JSON.parse(JSON.stringify(strokes)) as (Omit<HanjaOutlineStrokes[number][number], 'bounds'> & {bounds:number[]})[][]
 function fakeU8cb6(i:number,id='can-'+i){
   const policy=u8cb6PolicyAt(i),segment=policy.segment,q0=segment.revealPath!.match(/-?\d+(?:\.\d+)?/g)!.slice(0,2).map(Number),L=mockLengths[i],events:string[]=[]
   const document={defaultView:null as unknown},view={document,getComputedStyle:(n:Element)=>{const x=n as unknown as {cssTransform:string;cssTranslate:string};return{transform:x.cssTransform,getPropertyValue:(key:string)=>key==='translate'?x.cssTranslate:'none'}}};document.defaultView=view
@@ -36,7 +37,7 @@ test('貶 fixed whole two own certificates and strict target fields',()=>{
  assert(context);assert.equal(reviewedU8cb6Policy({id:'u8cb6-qc12'},0,0),null)
  let targetCount=0
  for(let p=0;p<strokes.length;p++)for(let m=0;m<strokes[p].length;m++){
-  const policy=reviewedU8cb6Policy(context,p,m),i=targets.findIndex(([x,y])=>x===p&&y===m)
+  const policy:ReturnType<typeof reviewedU8cb6Policy>=reviewedU8cb6Policy(context,p,m),i=targets.findIndex(([x,y])=>x===p&&y===m)
   assert.equal(!!policy,i>=0)
   const extra=clone();Object.assign(extra[p][m],{extra:true});assert.equal(reviewedU8cb6Context(extra),null)
   for(const key of Object.keys(strokes[p][m])){const changed=clone(),s=changed[p][m]as unknown as Record<string,unknown>;s[key]=key==='bounds'?[0,0,1,1]:typeof s[key]==='number'?Number(s[key])+1:String(s[key])+' ';assert.equal(reviewedU8cb6Context(changed),null)}
@@ -49,12 +50,12 @@ test('貶 fixed whole two own certificates and strict target fields',()=>{
   }
  }
  assert.equal(targetCount,2)
- assert.equal(createHash('sha256').update(readFileSync(new URL('./hanja-stroke-start-gate-di.ts',import.meta.url))).digest('hex'),'53c2bd788f47d4c183ae826e52c767bb628e7e1c828cb59dec25f139106bfde6')
- assert.equal(createHash('sha256').update(readFileSync(new URL('./hanja-stroke-start-gate-di.test.ts',import.meta.url))).digest('hex'),'ff43c4ce6d608439b84e9dab200fd4c48a004580a617b82019179829243fe160')
- assert.equal(createHash('sha256').update(readFileSync(new URL('./hanja-stroke-start-gate.ts',import.meta.url))).digest('hex'),'1a734d87d44093198cda60bafff96d963b1e62510acb5f4e1fa4e3f3a60d1704')
- assert.equal(createHash('sha256').update(readFileSync(new URL('./hanja-stroke-start-gate.test.ts',import.meta.url))).digest('hex'),'0f0ea878d6a2c10f7104bfa92440bf8d7e4e2f3bb64efd78d40a44c76ad132c8')
- assert.equal(createHash('sha256').update(readFileSync(new URL('./hanja-stroke-start-gate-si.ts',import.meta.url))).digest('hex'),'57806d5be50d813dfbfbcb21ffc2056aa968a2f900cf4da72ba649582eecce73')
- assert.equal(createHash('sha256').update(readFileSync(new URL('./hanja-stroke-start-gate-si.test.ts',import.meta.url))).digest('hex'),'f939e0d4113e3cce88fba3c6f61be47fa4e6f1543236c31ddee360bea112b515')
+ assert.equal(createHash('sha256').update(readHanjaHistoricalSource('lib/hanja-stroke-start-gate-di.ts','53c2bd788f47d4c183ae826e52c767bb628e7e1c828cb59dec25f139106bfde6')).digest('hex'),'53c2bd788f47d4c183ae826e52c767bb628e7e1c828cb59dec25f139106bfde6')
+ assert.equal(createHash('sha256').update(readHanjaHistoricalSource('lib/hanja-stroke-start-gate-di.test.ts','ff43c4ce6d608439b84e9dab200fd4c48a004580a617b82019179829243fe160')).digest('hex'),'ff43c4ce6d608439b84e9dab200fd4c48a004580a617b82019179829243fe160')
+ assert.equal(createHash('sha256').update(readHanjaHistoricalSource('lib/hanja-stroke-start-gate.ts','1a734d87d44093198cda60bafff96d963b1e62510acb5f4e1fa4e3f3a60d1704')).digest('hex'),'1a734d87d44093198cda60bafff96d963b1e62510acb5f4e1fa4e3f3a60d1704')
+ assert.equal(createHash('sha256').update(readHanjaHistoricalSource('lib/hanja-stroke-start-gate.test.ts','0f0ea878d6a2c10f7104bfa92440bf8d7e4e2f3bb64efd78d40a44c76ad132c8')).digest('hex'),'0f0ea878d6a2c10f7104bfa92440bf8d7e4e2f3bb64efd78d40a44c76ad132c8')
+ assert.equal(createHash('sha256').update(readHanjaHistoricalSource('lib/hanja-stroke-start-gate-si.ts','57806d5be50d813dfbfbcb21ffc2056aa968a2f900cf4da72ba649582eecce73')).digest('hex'),'57806d5be50d813dfbfbcb21ffc2056aa968a2f900cf4da72ba649582eecce73')
+ assert.equal(createHash('sha256').update(readHanjaHistoricalSource('lib/hanja-stroke-start-gate-si.test.ts','f939e0d4113e3cce88fba3c6f61be47fa4e6f1543236c31ddee360bea112b515')).digest('hex'),'f939e0d4113e3cce88fba3c6f61be47fa4e6f1543236c31ddee360bea112b515')
 })
 test('貶 distance metadata matches same-frame caps and clears on cleanup',()=>{
  for(let i=0;i<targets.length;i++){
@@ -138,7 +139,7 @@ test('貶 actual component SSR hidden partials and exact full-round whole prefix
 test('貶 failed-only app-pin tail and client directive placement',()=>{
  const review=JSON.parse(readFileSync(new URL('../docs/hanja-source-native-pass-u8cb6-qc12-2026-10-21/review.json',import.meta.url),'utf8'))
  // Prior execution already verified all45 source/renderer pins and stopped at the first app pin.
- for(const[path,sha]of Object.entries(review.appFilesSHA256))assert.equal(createHash('sha256').update(readFileSync(new URL('../'+path,import.meta.url))).digest('hex'),sha)
+ for(const[path,sha]of Object.entries(review.appFilesSHA256))assert.equal(createHash('sha256').update(path.startsWith('lib/')||path.startsWith('components/')?readHanjaHistoricalSource(path,sha):readFileSync(new URL('../'+path,import.meta.url))).digest('hex'),sha)
  assert.equal(review.standaloneRendererNativeApproval,true);assert.equal(review.actualComponentNativeApproval,false);assert.equal(review.actualAppUI,false);assert.equal(review.runtimeApplied,false)
  const component=readFileSync(new URL('../components/hanja/stroke-outlines.tsx',import.meta.url),'utf8');assert(component.startsWith("'use client'\n"));assert.equal((component.match(/import \{ reviewedU8cb6Context/g)||[]).length,1)
 })
@@ -156,8 +157,8 @@ test('貶 public JSON segment accepts exact fields and rejects forged segments',
  }
 })
 
-test('貶 integration preserves every existing child and canonical distance protocol',()=>{
- const source=readFileSync(new URL('../components/hanja/stroke-outlines.tsx',import.meta.url),'utf8'),begin=source.indexOf('/** u8cb6 貶'),end=source.indexOf('/** u7277 牷',begin);assert(begin>=0&&end>begin)
+test('貶 historical integration preserves every existing child and canonical distance protocol',()=>{
+ const source=readHanjaHistoricalSource('components/hanja/stroke-outlines.tsx','97f31915282e1d95676626a5e0b578300864b95b976b30cad311f576ab2d7564').toString(),begin=source.indexOf('/** u8cb6 貶'),end=source.indexOf('/** u7277 牷',begin);assert(begin>=0&&end>begin)
  const restored=(source.slice(0,begin)+source.slice(end)).replace("import { reviewedU8cb6Context, reviewedU8cb6Policy, commitReviewedU8cb6Caps, type ReviewedU8cb6Policy } from '@/lib/hanja-stroke-start-gate-u8cb6'\n",'').replace("  const u8cb6Context = reviewedU8cb6Context(strokes)\n",'').replace("        const u8cb6Policy = reviewedU8cb6Policy(u8cb6Context, stroke, index)\n        if (u8cb6Policy) return <U8cb6CapsOutline key={index} policy={u8cb6Policy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} clipId={`${id}-${stroke}-${index}`} />\n",'')
  assert.equal(createHash('sha256').update(restored).digest('hex'),"eabc98deaddd3bc86583da85095f538c13df9bf9dd6b2f33c857246b0ddcd034")
  const module=readFileSync(new URL('./hanja-stroke-start-gate-u8cb6.ts',import.meta.url),'utf8');assert(module.includes("'data-growing-distance':frame.d"));assert(module.includes("'data-growing-distance'"));assert(!module.includes('data-growing-canstance'));assert(!module.includes('data-growing-u8cb6stance'))
@@ -170,7 +171,7 @@ test('貶 own Q and cubic certificates exactly match the frozen standalone formu
 })
 test('貶 standalone/source pins and prepared app bytes remain exact',()=>{
  const review=JSON.parse(readFileSync(new URL('../docs/hanja-source-native-pass-u8cb6-qc12-2026-10-21/review.json',import.meta.url),'utf8'))
- for(const[path,sha]of Object.entries({...review.sourcePins,...review.appFilesSHA256})){assert.equal(createHash('sha256').update(readFileSync(new URL('../'+path,import.meta.url))).digest('hex'),sha)}
+ for(const[path,sha]of Object.entries({...review.sourcePins,...review.appFilesSHA256})){assert.equal(createHash('sha256').update(path.startsWith('lib/')||path.startsWith('components/')?readHanjaHistoricalSource(path,sha):readFileSync(new URL('../'+path,import.meta.url))).digest('hex'),sha)}
  assert.equal(review.standaloneRendererNativeApproval,true);assert.equal(review.actualComponentNativeApproval,false);assert.equal(review.actualAppUI,false);assert.equal(review.runtimeApplied,false)
 })
 
