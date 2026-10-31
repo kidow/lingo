@@ -40,7 +40,7 @@
     "test": "node --test \"lib/*.test.ts\"",
     "tocfl": "node scripts/tocfl.ts",
     "twins": "node scripts/twins.ts",
-    "typecheck": "tsc --noEmit",
+    "typecheck": "node --max-old-space-size=6144 node_modules/typescript/bin/tsc --noEmit",
     "also": "node scripts/also.ts",
     "echoes": "node scripts/echoes.ts"
   },
