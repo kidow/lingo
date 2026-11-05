@@ -428,3 +428,12 @@ plunger의 «압축기»). 예문 줄만 고쳤고 `meaning_ko`는 건드리지 
 - es · `harvest-moon`, `have-a-gap-broken-out`, `toast-glass`, `the-rule-that-is-in-force`, `howl-of-wind`, `snow-day`, `folk-dwelling`, `rush-along`, `the-line-of-life`
 - fr · `one-to-talk-with`, `payroll`, `navigation`, `isolate`, `fine`, `thanks-for-meal`
 - ru · `drugstore`, `one-who-stands-in-the-place`, `harvest-moon`, `cupboard-latch`
+
+## 표본에서 남긴 표제어 정리 (2026-11-06)
+
+42줄에 해당하는 카드 40개를 대조했다. 뜻줄 19개, 표제어 38개, 원문
+103줄, 한국어 번역 194줄을 고쳤다. `public-figure`는 기존 영어·일본어·중국어의
+«활동가»에 맞췄다. `howl-of-wind`는 강한 바람 소리를 가리키도록 뜻줄과
+예문을 맞췄다. `heatstroke`는 일본어를 온열질환의 총칭인 `熱中症`에서
+열사병을 뜻하는 `熱射病`으로 고쳤다.
+[일본 환경성 열중증 보건 매뉴얼](https://www.wbgt.env.go.jp/heatillness_manual_ov.php)
