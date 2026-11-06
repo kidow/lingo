@@ -476,3 +476,25 @@ plunger의 «압축기»). 예문 줄만 고쳤고 `meaning_ko`는 건드리지 
 `обратный билет`은 왕복표 전체보다 돌아오는 편의 표를 가리킨다. `пасха`는
 러시아 부활절 빵 `кулич`과 다른 음식이고, `be-out-of-season`의 `выйти из сезона`는
 식재료의 제철이 지났다는 뜻에 맞게 표제어부터 다시 잡아야 한다.
+
+## Goethe 누락 낱말 보완 (2026-11-06)
+
+Goethe-Institut의 공식 어휘 목록에서 A1 `Halbpension`, `Vorwahl`과 A2
+`Krankenkasse`, `Sprechstunde`를 골라 독일어 카드 네 장을 만들었다.
+[A1 목록](https://www.goethe.de/pro/relaunch/prf/de/A1_SD1_Wortliste_02.pdf) ·
+[A2 목록](https://www.goethe.de/pro/relaunch/prf/de/Goethe-Zertifikat_A2_Wortliste.pdf)
+
+B1 `Girokonto`, `anstellen`은 같은 뜻의 기존 카드에 표제어로 넣고 종전 표기는
+곁말로 옮겼다. `erforderlich`, `sich beteiligen`은 기존 A2 `notwendig`와
+A1 `mitmachen` 카드의 곁말로 넣었다. 기존 카드의 학습 기록은 같은 slug를 쓴다.
+[B1 목록](https://www.goethe.de/pro/relaunch/prf/de/Goethe-Zertifikat_B1_Wortliste.pdf)
+
+| 등급 | 보완 전 | 보완 후 |
+| --- | ---: | ---: |
+| A1 | 526/708 (74.3%) | 528/708 (74.6%) |
+| A2 | 476/575 (82.8%) | 478/575 (83.1%) |
+| B1 | 1,444/2,048 (70.5%) | 1,448/2,048 (70.7%) |
+| 합계 | 2,446/3,331 (73.4%) | 2,454/3,331 (73.7%) |
+
+`scripts/coverage.ts --missing goethe`에서 실제 누락 후보는 474개에서 466개로
+줄었다. 다음에는 `Vorname`, `Fundsachen`, `Chipkarte`의 뜻과 기존 그림을 대조한다.
