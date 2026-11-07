@@ -23,8 +23,9 @@ node scripts/levels.ts; node scripts/audio.ts manifest; node scripts/split.ts; p
   한 덩어리로 넘어가 «그런 개념이 없습니다»로 멈춘다. `${=slugs}`로 넘긴다.
 - `pnpm check`의 독일어 어순 경고 중 `belong-to` · `one-can-tell` · `be-made-up-of-it`은
   오탐이다. 문장은 맞다.
-- 커밋은 `git commit -o <경로>`로 한다. `lib/levels-stamp.ts` · `lib/audio-have.ts`,
-  hanja 쪽 파일, `docs/exam-materials-feasibility-2026-09-27.md`는 싣지 않는다.
+- 커밋은 `git commit -o <경로>`로 한다. hanja 쪽 파일은 싣지 않는다.
+- `lib/levels-stamp.ts` · `lib/audio-have.ts`는 커밋하는 생성물이다. 커밋 직전의 HEAD에서
+  다시 만들어 싣는다([concurrent-sessions.md](concurrent-sessions.md)).
 
 ## 1. 뜻이 겹치는 개념
 
