@@ -63,18 +63,10 @@ export const DISTANCE = {
  */
 export const SETTLED_STREAK = 4
 
-/**
- * 예약이 비었을 때 새 단어를 꽂는 확률.
- *
- * 복습이 끝나기를 기다리지 않는다 — 노벨티를 조건부로 미루면 피드가 굳는다.
- * 다만 **예약이 뽑기의 1순위라**(`pickNext`) 여기까지 못 오는 차례가 있어
- * 실제 유입은 이 값보다 낮다. 3,000장을 돌리면 15%가 아니라 9%다.
- *
- * 세션이 길어지면 값에 가까워진다 — 꼭대기에 앉은 카드가 예약에서 놓여나며
- * (`SETTLED_STREAK`) 큐가 비기 때문이다. 처음에는 복습이 촘촘하고 나중에는
- * 새것이 잦아지는 셈이라, 앉은 자리에서 배운 것을 먼저 굳힌다.
- */
+/** 도래한 예약이 없고 신규와 복습 후보가 모두 있을 때 새 카드를 고르는 확률 */
 export const NEW_RATE = 0.15
+/** 새 카드가 있으면 이만큼 연속 복습한 뒤에 낸다 */
+const MAX_CONSECUTIVE_REVIEWS = 4
 /** 최근 이만큼은 다시 뽑지 않는다 */
 export const COOLDOWN = 5
 /** 갓 소개한 단어에 주는 가중치 가산점과 감쇠 반감기(ms) */
@@ -87,6 +79,8 @@ export type EngineState = {
   progress: Progress
   /** 지금까지 낸 카드 수 */
   cursor: number
+  /** 마지막 새 카드 이후 연속으로 낸 복습 카드 수 */
+  consecutiveReviews: number
   /** slug → 이 cursor에 다시 낸다 */
   reservations: Record<string, number>
   /** 최근에 낸 slug들. 앞이 오래된 것 */
@@ -96,6 +90,7 @@ export type EngineState = {
 export const initialState = (progress: Progress = emptyProgress()): EngineState => ({
   progress,
   cursor: 0,
+  consecutiveReviews: 0,
   reservations: {},
   recent: [],
 })
@@ -108,17 +103,17 @@ export type Clock = () => number
 /**
  * 다음 카드를 고른다.
  *
- *   1. 예약이 도래한 카드가 있으면 그것
- *   2. 없으면 NEW_RATE 확률로 아직 안 본 단어
- *   3. 나머지는 (1 - 회상확률) 가중 추출. 최근 COOLDOWN장은 제외
+ *   1. 복습이 네 장 이어졌고 아직 안 본 카드가 있으면 새 카드
+ *   2. 예약이 도래한 카드가 있으면 그것
+ *   3. 없으면 NEW_RATE 확률로 아직 안 본 카드
+ *   4. 나머지는 (1 - 회상확률) 가중 추출. 최근 COOLDOWN장은 제외
  *
  * 낼 게 없으면 null. 단어가 0개일 때만 일어난다.
  *
  * **`ordered`면 새 카드를 목록 앞에서부터 낸다.** 낱말은 개념 사이에 배우는
  * 순서가 없어 아무거나 먼저 나와도 되지만, 상식은 `content/trivia/*.json`의
  * 배열 순서가 곧 커리큘럼이다 (spec.md §4). 히라가나를 지나기 전에 접속법이
- * 나오면 답할 수가 없다. 복습이 섞이는 비율(NEW_RATE)은 그대로 두고 **새로
- * 들어오는 카드의 차례만** 정한다.
+ * 나오면 답할 수가 없다.
  */
 export function pickNext<T extends LearnItem>(
   state: EngineState,
@@ -129,37 +124,38 @@ export function pickNext<T extends LearnItem>(
 ): T | null {
   if (entries.length === 0) return null
 
-  const bySlug = new Map(entries.map((e) => [e.key, e]))
-
-  // 1. 예약 도래 — 가장 오래 기다린 것부터
-  const due = Object.entries(state.reservations)
-    .filter(([slug, at]) => at <= state.cursor && bySlug.has(slug))
-    .sort((a, b) => a[1] - b[1])
-  if (due.length > 0) return bySlug.get(due[0][0]) ?? null
-
   // 쿨다운이 단어 수보다 크면 후보가 전멸해 방금 낸 카드를 또 내게 된다.
   // 풀 크기에 맞춰 줄여 항상 최소 한 장은 남긴다
   const cooldown = Math.min(COOLDOWN, Math.max(entries.length - 1, 0))
   const recent = new Set(state.recent.slice(state.recent.length - cooldown))
   const fresh = (e: T) => !recent.has(e.key)
 
-  const unseen = entries.filter((e) => !state.progress.cards[e.key] && fresh(e) && (
+  const isUnseen = (e: T) => !state.progress.cards[e.key] && fresh(e) && (
     !isHanja(e) || e.skill === 'recognition' ||
     state.progress.cards[hanjaKey(e.character.id, 'recognition')]
-  ))
+  )
+  const nextUnseen = (unseen: T[]) => (ordered ? unseen[0] : unseen[Math.floor(rng() * unseen.length)])
+
+  const forcedUnseen = state.consecutiveReviews >= MAX_CONSECUTIVE_REVIEWS
+    ? entries.filter(isUnseen)
+    : undefined
+  if (forcedUnseen?.length) return nextUnseen(forcedUnseen)
+
+  // 도래한 예약 중 가장 오래 기다린 것부터 낸다
+  const bySlug = new Map(entries.map((e) => [e.key, e]))
+  const due = Object.entries(state.reservations)
+    .filter(([slug, at]) => at <= state.cursor && bySlug.has(slug))
+    .sort((a, b) => a[1] - b[1])
+  if (due.length > 0) return bySlug.get(due[0][0]) ?? null
+
+  const unseen = forcedUnseen ?? entries.filter(isUnseen)
   const seen = entries.filter((e) => state.progress.cards[e.key] && fresh(e))
 
-  // 2. 신규 유입은 고정 비율이다. 복습이 끝나기를 기다리지 않는다 —
-  //    노벨티를 조건부로 미루면 피드가 굳는다
-  const nextUnseen = () => (ordered ? unseen[0] : unseen[Math.floor(rng() * unseen.length)])
-
   if (unseen.length > 0 && (seen.length === 0 || rng() < NEW_RATE)) {
-    return nextUnseen()
+    return nextUnseen(unseen)
   }
 
-  // 3. 가중 추출
   if (seen.length > 0) return weightedPick(seen, state.progress, rng, now)
-  if (unseen.length > 0) return nextUnseen()
 
   // 쿨다운에 전부 걸렸다. 그중 가장 오래된 것을 낸다
   const oldest = entries.find((e) => e.key === state.recent[0])
@@ -304,6 +300,7 @@ export function nextQuestion<T extends LearnItem>(
     state: {
       ...state,
       cursor: state.cursor + 1,
+      consecutiveReviews: state.progress.cards[slug] ? state.consecutiveReviews + 1 : 0,
       reservations,
       recent: [...state.recent, slug].slice(-COOLDOWN),
     },

@@ -151,6 +151,31 @@ test('난수가 NEW_RATE 아래면 새 단어, 위면 복습', () => {
   assert.equal(review?.concept.slug, 'cat')
 })
 
+test('복습 네 장 뒤에는 새 카드를 내고 밀린 예약은 다음에 낸다', () => {
+  const learned = ENTRIES.slice(0, 5).map((entry) => entry.key)
+  let state: EngineState = {
+    ...introduced(initialState(), ...learned),
+    cursor: 5,
+    reservations: Object.fromEntries(learned.map((key, index) => [key, index])),
+  }
+
+  for (const key of learned.slice(0, 4)) {
+    const next = nextQuestion(state, ENTRIES, rngOf(0.99), NOW)
+    assert.ok(next)
+    assert.equal(questionKey(next.question), key)
+    state = next.state
+  }
+
+  const deferred = learned[4]
+  assert.equal(pickNext(state, ENTRIES.slice(0, 5), rngOf(0.99), NOW)?.key, deferred)
+
+  const orderedEntries = [...ENTRIES, entry('apple', 'りんご')]
+  const next = nextQuestion(state, orderedEntries, rngOf(0.99), NOW, true)
+  assert.ok(next)
+  assert.equal(questionKey(next.question), 'book')
+  assert.equal(pickNext(next.state, orderedEntries, rngOf(0.99), NOW, true)?.key, deferred)
+})
+
 /* ── 기록 ────────────────────────────────────────────────────────── */
 
 test('소개를 지나가면 rung이 1로 오르고 3장 뒤에 예약된다', () => {
